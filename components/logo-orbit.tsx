@@ -126,33 +126,37 @@ export default function LogoOrbit() {
         </div>
       </div>
 
-      {/* Mockup of the app interface */}
+      {/* Mockup of the app interface - Redesigned to be less cluttered */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1 }}
-        className="absolute -bottom-64 left-1/2 -translate-x-1/2 w-full max-w-sm"
+        className="absolute -bottom-48 left-1/2 -translate-x-1/2 w-full max-w-sm"
       >
         <motion.div
-          className="bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden shadow-2xl"
+          className="bg-black/80 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden shadow-2xl"
           whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
           <div className="p-4 border-b border-white/10 flex items-center">
-            <div className="w-8 h-8 rounded-full bg-white/10 mr-3" />
+            <div className="w-8 h-8 rounded-full bg-white/10 mr-3 flex items-center justify-center">
+              <Image src="/logo.png" alt="Whatstask Logo" width={20} height={20} className="w-5 h-5" />
+            </div>
             <div className="text-left">
               <div className="text-sm font-medium">Whatstask</div>
               <div className="text-xs text-gray-400">Your personal task assistant</div>
             </div>
           </div>
-          <div className="p-4 space-y-3">
+          <div className="p-4 space-y-4">
             <motion.div
               className="flex items-start gap-3"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.5, duration: 0.5 }}
             >
-              <div className="w-8 h-8 rounded-full bg-white/10 flex-shrink-0" />
+              <div className="w-8 h-8 rounded-full bg-white/10 flex-shrink-0 flex items-center justify-center">
+                <span className="text-xs">You</span>
+              </div>
               <div className="bg-white/5 rounded-2xl rounded-tl-none p-3 text-sm">
                 Create a new task: Meeting with design team tomorrow at 2pm
               </div>
@@ -164,12 +168,53 @@ export default function LogoOrbit() {
               transition={{ delay: 2, duration: 0.5 }}
             >
               <div className="bg-white/10 rounded-2xl rounded-tr-none p-3 text-sm">
-                ✅ Task created: "Meeting with design team"
-                <br />📅 Tomorrow at 2:00 PM
-                <br />
-                🏷️ Category: Work
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="w-4 h-4 rounded-sm bg-green-500 flex items-center justify-center">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M20 6L9 17L4 12"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <span className="font-medium">Task created:</span>
+                </div>
+                <div className="ml-6 mb-1">"Meeting with design team"</div>
+                <div className="flex items-center gap-2 ml-6 mb-1">
+                  <div className="w-4 h-4 flex items-center justify-center">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="3" y="4" width="18" height="18" rx="2" stroke="white" strokeWidth="2" />
+                      <path d="M3 10H21" stroke="white" strokeWidth="2" />
+                      <path d="M8 2L8 6" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                      <path d="M16 2L16 6" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                  </div>
+                  <span>Tomorrow at 2:00 PM</span>
+                </div>
+                <div className="flex items-center gap-2 ml-6">
+                  <div className="w-4 h-4 flex items-center justify-center">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M4 9H20L19.2929 18.7071C19.1363 20.5919 17.5919 22 15.7059 22H8.29408C6.40812 22 4.86371 20.5919 4.70711 18.7071L4 9Z"
+                        stroke="white"
+                        strokeWidth="2"
+                      />
+                      <path
+                        d="M8 9V4C8 2.89543 8.89543 2 10 2H14C15.1046 2 16 2.89543 16 4V9"
+                        stroke="white"
+                        strokeWidth="2"
+                      />
+                    </svg>
+                  </div>
+                  <span>Category: Work</span>
+                </div>
               </div>
-              <div className="w-8 h-8 rounded-full bg-white/10 flex-shrink-0" />
+              <div className="w-8 h-8 rounded-full bg-white/10 flex-shrink-0 flex items-center justify-center">
+                <Image src="/logo.png" alt="Whatstask Logo" width={20} height={20} className="w-5 h-5" />
+              </div>
             </motion.div>
           </div>
         </motion.div>

@@ -5,12 +5,14 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Check, MessageSquare, Calendar, Clock, List, Menu, X, Send, ChevronDown } from "lucide-react"
+import { Check, MessageSquare, Calendar, Clock, List, Send } from "lucide-react"
 import LogoOrbit from "@/components/logo-orbit"
 import AnimatedCard from "@/components/animated-card"
 import PrivacyPolicy from "@/components/privacy-policy"
 import AnimatedText from "@/components/animated-text"
 import FloatingParticles from "@/components/floating-particles"
+import CustomCursor from "@/components/custom-cursor"
+import MobileMenuButton from "@/components/mobile-menu-button"
 import Image from "next/image"
 
 export default function LandingPage() {
@@ -89,6 +91,9 @@ export default function LandingPage() {
 
   return (
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
+      {/* Custom cursor */}
+      <CustomCursor />
+
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -158,14 +163,13 @@ export default function LandingPage() {
             )}
           </nav>
 
-          {/* Mobile Menu */}
+          {/* Mobile Menu - Redesigned */}
           <div className="md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="h-9 w-9 rounded-full">
-                  <Menu className="h-5 w-5" />
-                  <span className="sr-only">Toggle menu</span>
-                </Button>
+                <div>
+                  <MobileMenuButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
+                </div>
               </SheetTrigger>
               <SheetContent side="right" className="bg-black/95 border-l border-white/10 p-0">
                 <div className="flex flex-col h-full">
@@ -174,12 +178,6 @@ export default function LandingPage() {
                       <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} className="w-6 h-6" />
                       <span className="font-bold text-lg tracking-tight">Whatstask</span>
                     </div>
-                    <SheetTrigger asChild>
-                      <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
-                        <X className="h-4 w-4" />
-                        <span className="sr-only">Close menu</span>
-                      </Button>
-                    </SheetTrigger>
                   </div>
                   <motion.div
                     className="flex flex-col gap-1 p-4"
@@ -333,23 +331,6 @@ export default function LandingPage() {
           className="relative w-full max-w-2xl mx-auto mt-12"
         >
           <LogoOrbit />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.a
-            href="#features"
-            className="flex flex-col items-center text-white/50 hover:text-white transition-colors"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, repeatType: "loop" }}
-          >
-            <span className="text-sm mb-2">Discover More</span>
-            <ChevronDown className="h-6 w-6" />
-          </motion.a>
         </motion.div>
       </section>
 
