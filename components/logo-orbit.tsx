@@ -80,7 +80,7 @@ export default function LogoOrbit() {
             }}
             className="relative z-10 w-24 h-24 rounded-full bg-black flex items-center justify-center border border-white/20"
           >
-            <Image src="/logo.svg" alt="Whatstask Logo" width={64} height={64} className="w-16 h-16" />
+            <Image src="/logo.png" alt="Whatstask Logo" width={64} height={64} className="w-16 h-16" />
           </motion.div>
         </div>
       </div>

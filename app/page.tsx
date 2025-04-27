@@ -41,7 +41,7 @@ export default function LandingPage() {
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/30 border-b border-white/5">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Image src="/logo.svg" alt="Whatstask Logo" width={32} height={32} className="w-8 h-8" />
+            <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="w-8 h-8" />
             <span className="font-bold text-xl tracking-tight">Whatstask</span>
           </div>
           <nav className="hidden md:flex items-center gap-8">
@@ -265,7 +265,7 @@ export default function LandingPage() {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center gap-2 mb-4 md:mb-0">
-              <Image src="/logo.svg" alt="Whatstask Logo" width={24} height={24} className="w-6 h-6" />
+              <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} className="w-6 h-6" />
               <span className="font-bold text-lg">Whatstask</span>
             </div>
             <div className="flex flex-wrap justify-center gap-6 md:gap-8">
