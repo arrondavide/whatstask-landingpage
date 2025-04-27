@@ -13,6 +13,7 @@ import AnimatedText from "@/components/animated-text"
 import FloatingParticles from "@/components/floating-particles"
 import CustomCursor from "@/components/custom-cursor"
 import MobileMenuButton from "@/components/mobile-menu-button"
+import PageLoader from "@/components/page-loader"
 import Image from "next/image"
 
 export default function LandingPage() {
@@ -91,6 +92,9 @@ export default function LandingPage() {
 
   return (
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
+      {/* Page Loader */}
+      <PageLoader />
+
       {/* Custom cursor */}
       <CustomCursor />
 
