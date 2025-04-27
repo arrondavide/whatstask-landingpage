@@ -4,19 +4,58 @@ import { useState, useEffect, useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
-import { ArrowRight, Check, MessageSquare, Calendar, Clock, List } from "lucide-react"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Check, MessageSquare, Calendar, Clock, List, Menu, X, Send, ChevronDown } from "lucide-react"
 import LogoOrbit from "@/components/logo-orbit"
 import AnimatedCard from "@/components/animated-card"
 import PrivacyPolicy from "@/components/privacy-policy"
+import AnimatedText from "@/components/animated-text"
+import FloatingParticles from "@/components/floating-particles"
 import Image from "next/image"
 
 export default function LandingPage() {
   const [mounted, setMounted] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState("hero")
+
   const heroRef = useRef<HTMLDivElement>(null)
   const featuresRef = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll()
+  const howItWorksRef = useRef<HTMLDivElement>(null)
+  const ctaRef = useRef<HTMLDivElement>(null)
 
+  const { scrollYProgress } = useScroll()
+  const { scrollY } = useScroll()
+
+  // Parallax effects
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
+  const heroTextY = useTransform(scrollY, [0, 300], [0, 100])
+  const heroOpacity = useTransform(scrollY, [0, 300], [1, 0.3])
+
+  // Check which section is active based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2
+
+      if (heroRef.current && scrollPosition < heroRef.current.offsetTop + heroRef.current.offsetHeight) {
+        setActiveSection("hero")
+      } else if (
+        featuresRef.current &&
+        scrollPosition < featuresRef.current.offsetTop + featuresRef.current.offsetHeight
+      ) {
+        setActiveSection("features")
+      } else if (
+        howItWorksRef.current &&
+        scrollPosition < howItWorksRef.current.offsetTop + howItWorksRef.current.offsetHeight
+      ) {
+        setActiveSection("how-it-works")
+      } else {
+        setActiveSection("cta")
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   useEffect(() => {
     setMounted(true)
@@ -24,9 +63,33 @@ export default function LandingPage() {
 
   if (!mounted) return null
 
+  // Animation variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.7,
+        ease: "easeOut",
+      },
+    }),
+  }
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  }
+
   return (
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
-      {/* Animated background gradient */}
+      {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute inset-0 opacity-20"
@@ -35,79 +98,229 @@ export default function LandingPage() {
             y: backgroundY,
           }}
         />
+        <FloatingParticles />
       </div>
 
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/30 border-b border-white/5">
+      <motion.header
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/30 border-b border-white/5"
+      >
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <motion.div
+            className="flex items-center gap-2"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
             <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="w-8 h-8" />
             <span className="font-bold text-xl tracking-tight">Whatstask</span>
-          </div>
+          </motion.div>
+
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <motion.a
-              href="#features"
-              className="text-sm text-gray-400 hover:text-white transition-colors"
-              whileHover={{ y: -2 }}
-            >
-              Features
-            </motion.a>
-            <motion.a
-              href="#how-it-works"
-              className="text-sm text-gray-400 hover:text-white transition-colors"
-              whileHover={{ y: -2 }}
-            >
-              How It Works
-            </motion.a>
-            <Dialog>
-              <DialogTrigger asChild>
-                <motion.button
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
-                  whileHover={{ y: -2 }}
+            {[
+              { name: "Features", href: "#features", section: "features" },
+              { name: "How It Works", href: "#how-it-works", section: "how-it-works" },
+              { name: "Privacy", href: "#", section: "privacy", isDialog: true },
+            ].map((item) =>
+              item.isDialog ? (
+                <Dialog key={item.section}>
+                  <DialogTrigger asChild>
+                    <motion.button
+                      className={`text-sm hover:text-white transition-colors tracking-wide ${
+                        activeSection === item.section ? "text-white font-medium" : "text-gray-400"
+                      }`}
+                      whileHover={{ y: -2, scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {item.name}
+                    </motion.button>
+                  </DialogTrigger>
+                  <DialogContent className="bg-black/95 border border-white/10 text-white max-w-2xl">
+                    <PrivacyPolicy />
+                  </DialogContent>
+                </Dialog>
+              ) : (
+                <motion.a
+                  key={item.section}
+                  href={item.href}
+                  className={`text-sm hover:text-white transition-colors tracking-wide ${
+                    activeSection === item.section ? "text-white font-medium" : "text-gray-400"
+                  }`}
+                  whileHover={{ y: -2, scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  Privacy
-                </motion.button>
-              </DialogTrigger>
-              <DialogContent className="bg-black/95 border border-white/10 text-white max-w-2xl">
-                <PrivacyPolicy />
-              </DialogContent>
-            </Dialog>
+                  {item.name}
+                </motion.a>
+              ),
+            )}
           </nav>
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button asChild className="bg-white text-black hover:bg-white/90 rounded-full px-6">
-              <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                <span>Start Instantly</span>
-                <ArrowRight className="ml-2 h-4 w-4" />
+
+          {/* Mobile Menu */}
+          <div className="md:hidden">
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="h-9 w-9 rounded-full">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Toggle menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="bg-black/95 border-l border-white/10 p-0">
+                <div className="flex flex-col h-full">
+                  <div className="flex items-center justify-between p-4 border-b border-white/10">
+                    <div className="flex items-center gap-2">
+                      <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} className="w-6 h-6" />
+                      <span className="font-bold text-lg tracking-tight">Whatstask</span>
+                    </div>
+                    <SheetTrigger asChild>
+                      <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full">
+                        <X className="h-4 w-4" />
+                        <span className="sr-only">Close menu</span>
+                      </Button>
+                    </SheetTrigger>
+                  </div>
+                  <motion.div
+                    className="flex flex-col gap-1 p-4"
+                    variants={staggerContainer}
+                    initial="hidden"
+                    animate="visible"
+                  >
+                    {[
+                      { name: "Features", href: "#features" },
+                      { name: "How It Works", href: "#how-it-works" },
+                    ].map((item, index) => (
+                      <motion.a
+                        key={index}
+                        href={item.href}
+                        className="flex items-center gap-2 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors"
+                        onClick={() => setIsOpen(false)}
+                        variants={fadeInUp}
+                        custom={index}
+                      >
+                        <span className="text-lg font-medium tracking-wide">{item.name}</span>
+                      </motion.a>
+                    ))}
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <motion.button
+                          className="flex items-center gap-2 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors text-left"
+                          variants={fadeInUp}
+                          custom={2}
+                        >
+                          <span className="text-lg font-medium tracking-wide">Privacy</span>
+                        </motion.button>
+                      </DialogTrigger>
+                      <DialogContent className="bg-black/95 border border-white/10 text-white max-w-2xl">
+                        <PrivacyPolicy />
+                      </DialogContent>
+                    </Dialog>
+                  </motion.div>
+                  <div className="mt-auto p-4 border-t border-white/10">
+                    <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+                      <Button asChild className="w-full bg-white text-black hover:bg-white/90 rounded-full">
+                        <a
+                          href="https://t.me/whatstaskbot"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-2"
+                        >
+                          <Send className="h-4 w-4" />
+                          <span className="font-medium tracking-wide">Start on Telegram</span>
+                        </a>
+                      </Button>
+                    </motion.div>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="hidden md:block">
+            <Button
+              asChild
+              className="bg-white text-black hover:bg-white/90 rounded-full px-6 relative overflow-hidden group"
+            >
+              <a
+                href="https://t.me/whatstaskbot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <motion.span
+                  className="absolute inset-0 bg-white/30"
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: "100%" }}
+                  transition={{ duration: 0.5 }}
+                />
+                <Send className="h-4 w-4 relative z-10" />
+                <span className="font-medium tracking-wide relative z-10">Start on Telegram</span>
               </a>
             </Button>
           </motion.div>
         </div>
-      </header>
+      </motion.header>
 
       {/* Hero Section */}
       <section
         ref={heroRef}
         className="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-32 px-4"
       >
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center max-w-4xl mx-auto mb-8"
-        >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-6">
-            Manage Tasks. Launch Ideas.
-            <br />
-            <span className="text-gray-400">All from Telegram — Faster Than Ever.</span>
-          </h1>
-          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-8">
+        <motion.div style={{ y: heroTextY, opacity: heroOpacity }} className="text-center max-w-4xl mx-auto mb-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <AnimatedText
+              text="Manage Tasks. Launch Ideas."
+              className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-2"
+              once
+            />
+            <AnimatedText
+              text="All from Telegram — Faster Than Ever."
+              className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-gray-400 mb-6"
+              once
+              delay={0.5}
+            />
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-8 font-light tracking-wide leading-relaxed"
+          >
             The most elegant way to organize your life without leaving your favorite messenger.
-          </p>
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
-            <Button asChild className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-6 text-lg">
-              <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                <span>Start Instantly</span>
-                <ArrowRight className="ml-2 h-5 w-5" />
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 1 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block"
+          >
+            <Button
+              asChild
+              className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-6 text-lg relative overflow-hidden group"
+            >
+              <a
+                href="https://t.me/whatstaskbot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <motion.span
+                  className="absolute inset-0 bg-white/30"
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: "100%" }}
+                  transition={{ duration: 0.5 }}
+                />
+                <Send className="h-5 w-5 relative z-10" />
+                <span className="font-medium tracking-wide relative z-10">Start on Telegram</span>
               </a>
             </Button>
           </motion.div>
@@ -121,82 +334,126 @@ export default function LandingPage() {
         >
           <LogoOrbit />
         </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.5 }}
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+        >
+          <motion.a
+            href="#features"
+            className="flex flex-col items-center text-white/50 hover:text-white transition-colors"
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, repeatType: "loop" }}
+          >
+            <span className="text-sm mb-2">Discover More</span>
+            <ChevronDown className="h-6 w-6" />
+          </motion.a>
+        </motion.div>
       </section>
 
       {/* Features Section */}
-      <section id="features" ref={featuresRef} className="relative py-32 px-4">
+      <section id="features" ref={featuresRef} className="relative py-24 md:py-32 px-4">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-20"
+            className="text-center mb-16 md:mb-20"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Premium Features</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <AnimatedText
+              text="Premium Features"
+              className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight"
+              once
+            />
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light tracking-wide leading-relaxed">
               Designed for efficiency and elegance, Whatstask transforms how you manage tasks within Telegram.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <AnimatedCard
-              icon={<MessageSquare className="h-8 w-8" />}
-              title="Natural Language Input"
-              description="Create tasks using everyday language. Simply type what you need to do, and Whatstask understands."
-              delay={0.1}
-            />
-            <AnimatedCard
-              icon={<Calendar className="h-8 w-8" />}
-              title="Smart Scheduling"
-              description="Automatically detects dates and times in your messages to schedule tasks without extra steps."
-              delay={0.2}
-            />
-            <AnimatedCard
-              icon={<Clock className="h-8 w-8" />}
-              title="Intelligent Reminders"
-              description="Get notified at the perfect time with context-aware reminders that adapt to your habits."
-              delay={0.3}
-            />
-            <AnimatedCard
-              icon={<List className="h-8 w-8" />}
-              title="Organized Categories"
-              description="Keep work, personal, and project tasks separate with automatic categorization."
-              delay={0.4}
-            />
-            <AnimatedCard
-              icon={<Check className="h-8 w-8" />}
-              title="One-Tap Completion"
-              description="Mark tasks complete with a single tap, keeping your productivity flowing smoothly."
-              delay={0.5}
-            />
-            <AnimatedCard
-              icon={<MessageSquare className="h-8 w-8" />}
-              title="Seamless Collaboration"
-              description="Share tasks with friends or colleagues without them leaving Telegram."
-              delay={0.6}
-            />
-          </div>
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
+            {[
+              {
+                icon: <MessageSquare className="h-8 w-8" />,
+                title: "Natural Language Input",
+                description:
+                  "Create tasks using everyday language. Simply type what you need to do, and Whatstask understands.",
+              },
+              {
+                icon: <Calendar className="h-8 w-8" />,
+                title: "Smart Scheduling",
+                description:
+                  "Automatically detects dates and times in your messages to schedule tasks without extra steps.",
+              },
+              {
+                icon: <Clock className="h-8 w-8" />,
+                title: "Intelligent Reminders",
+                description: "Get notified at the perfect time with context-aware reminders that adapt to your habits.",
+              },
+              {
+                icon: <List className="h-8 w-8" />,
+                title: "Organized Categories",
+                description: "Keep work, personal, and project tasks separate with automatic categorization.",
+              },
+              {
+                icon: <Check className="h-8 w-8" />,
+                title: "One-Tap Completion",
+                description: "Mark tasks complete with a single tap, keeping your productivity flowing smoothly.",
+              },
+              {
+                icon: <MessageSquare className="h-8 w-8" />,
+                title: "Seamless Collaboration",
+                description: "Share tasks with friends or colleagues without them leaving Telegram.",
+              },
+            ].map((feature, index) => (
+              <AnimatedCard
+                key={index}
+                icon={feature.icon}
+                title={feature.title}
+                description={feature.description}
+                delay={index * 0.1}
+                index={index}
+              />
+            ))}
+          </motion.div>
         </div>
       </section>
 
       {/* How It Works Section */}
-      <section id="how-it-works" className="relative py-32 px-4 border-t border-white/5">
+      <section id="how-it-works" ref={howItWorksRef} className="relative py-24 md:py-32 px-4 border-t border-white/5">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-20"
+            className="text-center mb-16 md:mb-20"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">How It Works</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <AnimatedText
+              text="How It Works"
+              className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight"
+              once
+            />
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light tracking-wide leading-relaxed">
               Three simple steps to revolutionize your task management experience.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <motion.div
+            className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
             {[
               {
                 step: "01",
@@ -214,48 +471,85 @@ export default function LandingPage() {
                 description: "Receive smart reminders and manage everything without leaving Telegram.",
               },
             ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="relative"
-              >
+              <motion.div key={index} variants={fadeInUp} custom={index} className="relative">
                 <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 h-full border border-white/10 hover:border-white/20 transition-all duration-300 group">
-                  <div className="text-5xl font-bold text-white/10 mb-4">{item.step}</div>
-                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                  <p className="text-gray-400">{item.description}</p>
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-white/0 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="text-5xl font-black text-white/10 mb-4">{item.step}</div>
+                  <h3 className="text-xl font-bold mb-3 tracking-tight">{item.title}</h3>
+                  <p className="text-gray-400 font-light tracking-wide leading-relaxed">{item.description}</p>
+                  <motion.div
+                    className="absolute inset-0 rounded-2xl bg-gradient-to-r from-white/0 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    whileHover={{ opacity: 1 }}
+                  />
+
+                  {/* Animated corner accent */}
+                  <motion.div
+                    className="absolute top-0 right-0 w-0 h-0 border-t-[40px] border-r-[40px] border-t-transparent border-r-white/10"
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
+                  />
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-32 px-4 border-t border-white/5">
+      <section ref={ctaRef} className="relative py-24 md:py-32 px-4 border-t border-white/5">
         <div className="container mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-lg rounded-3xl p-12 border border-white/10 text-center"
+            className="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-lg rounded-3xl p-8 md:p-12 border border-white/10 text-center relative overflow-hidden"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Transform Your Productivity?</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto mb-8">
-              Join thousands of users who have streamlined their task management with Whatstask.
-            </p>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
-              <Button asChild className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-6 text-lg">
-                <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                  <span>Start Instantly</span>
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
-              </Button>
-            </motion.div>
+            {/* Animated background gradient */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0"
+              animate={{
+                x: ["100%", "-100%"],
+              }}
+              transition={{
+                repeat: Number.POSITIVE_INFINITY,
+                duration: 8,
+                ease: "linear",
+              }}
+            />
+
+            <div className="relative z-10">
+              <AnimatedText
+                text="Ready to Transform Your Productivity?"
+                className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight"
+                once
+              />
+              <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8 font-light tracking-wide leading-relaxed">
+                Join thousands of users who have streamlined their task management with Whatstask.
+              </p>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
+                <Button
+                  asChild
+                  className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-6 text-lg relative overflow-hidden group"
+                >
+                  <a
+                    href="https://t.me/whatstaskbot"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    <motion.span
+                      className="absolute inset-0 bg-white/30"
+                      initial={{ x: "-100%" }}
+                      whileHover={{ x: "100%" }}
+                      transition={{ duration: 0.5 }}
+                    />
+                    <Send className="h-5 w-5 relative z-10" />
+                    <span className="font-medium tracking-wide relative z-10">Start on Telegram</span>
+                  </a>
+                </Button>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -263,31 +557,65 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="relative py-12 px-4 border-t border-white/5">
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center gap-2 mb-4 md:mb-0">
+          <motion.div
+            className="flex flex-col md:flex-row justify-between items-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.div
+              className="flex items-center gap-2 mb-6 md:mb-0"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
               <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} className="w-6 h-6" />
-              <span className="font-bold text-lg">Whatstask</span>
+              <span className="font-bold text-lg tracking-tight">Whatstask</span>
+            </motion.div>
+            <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-6 md:mb-0">
+              {[
+                { name: "Features", href: "#features" },
+                { name: "How It Works", href: "#how-it-works" },
+                { name: "Privacy Policy", href: "#", isDialog: true },
+              ].map((item, index) =>
+                item.isDialog ? (
+                  <Dialog key={index}>
+                    <DialogTrigger asChild>
+                      <motion.button
+                        className="text-sm text-gray-400 hover:text-white transition-colors tracking-wide"
+                        whileHover={{ y: -2, scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        {item.name}
+                      </motion.button>
+                    </DialogTrigger>
+                    <DialogContent className="bg-black/95 border border-white/10 text-white max-w-2xl">
+                      <PrivacyPolicy />
+                    </DialogContent>
+                  </Dialog>
+                ) : (
+                  <motion.a
+                    key={index}
+                    href={item.href}
+                    className="text-sm text-gray-400 hover:text-white transition-colors tracking-wide"
+                    whileHover={{ y: -2, scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {item.name}
+                  </motion.a>
+                ),
+              )}
             </div>
-            <div className="flex flex-wrap justify-center gap-6 md:gap-8">
-              <a href="#features" className="text-sm text-gray-400 hover:text-white transition-colors">
-                Features
-              </a>
-              <a href="#how-it-works" className="text-sm text-gray-400 hover:text-white transition-colors">
-                How It Works
-              </a>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <button className="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</button>
-                </DialogTrigger>
-                <DialogContent className="bg-black/95 border border-white/10 text-white max-w-2xl">
-                  <PrivacyPolicy />
-                </DialogContent>
-              </Dialog>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-white/5 text-center text-sm text-gray-400">
+          </motion.div>
+          <motion.div
+            className="mt-8 pt-8 border-t border-white/5 text-center text-sm text-gray-400 font-light tracking-wide"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             © {new Date().getFullYear()} Whatstask. All rights reserved.
-          </div>
+          </motion.div>
         </div>
       </footer>
     </div>

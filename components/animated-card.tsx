@@ -8,16 +8,28 @@ interface AnimatedCardProps {
   title: string
   description: string
   delay?: number
+  index?: number
 }
 
-export default function AnimatedCard({ icon, title, description, delay = 0 }: AnimatedCardProps) {
+export default function AnimatedCard({ icon, title, description, delay = 0, index = 0 }: AnimatedCardProps) {
+  const variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.7,
+        ease: "easeOut",
+      },
+    }),
+  }
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6, delay }}
-      whileHover={{ y: -5, transition: { duration: 0.2 } }}
+      variants={variants}
+      custom={index}
+      whileHover={{ y: -8, transition: { duration: 0.2 } }}
       className="group"
     >
       <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 h-full border border-white/10 hover:border-white/20 transition-all duration-300 relative overflow-hidden">
@@ -27,14 +39,38 @@ export default function AnimatedCard({ icon, title, description, delay = 0 }: An
         {/* Icon with glow */}
         <div className="relative z-10 mb-6 w-16 h-16 rounded-2xl bg-black flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-all duration-300">
           <div className="text-white group-hover:text-white transition-colors duration-300">{icon}</div>
-          <div className="absolute inset-0 bg-white/5 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300" />
+          <motion.div
+            className="absolute inset-0 bg-white/5 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300"
+            animate={{
+              boxShadow: [
+                "0 0 0px rgba(255,255,255,0.2)",
+                "0 0 20px rgba(255,255,255,0.5)",
+                "0 0 0px rgba(255,255,255,0.2)",
+              ],
+            }}
+            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+          />
         </div>
 
         {/* Content */}
         <div className="relative z-10">
-          <h3 className="text-xl font-bold mb-3 group-hover:text-white transition-colors duration-300">{title}</h3>
-          <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">{description}</p>
+          <h3 className="text-xl font-bold mb-3 group-hover:text-white transition-colors duration-300 tracking-tight">
+            {title}
+          </h3>
+          <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 font-light tracking-wide leading-relaxed">
+            {description}
+          </p>
         </div>
+
+        {/* Animated corner accent */}
+        <motion.div
+          className="absolute bottom-0 right-0 w-12 h-12 opacity-0 group-hover:opacity-100"
+          initial={{ rotate: 45, x: 20, y: 20 }}
+          whileHover={{ rotate: 0, x: 0, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <div className="w-full h-full border-b border-r border-white/20" />
+        </motion.div>
       </div>
     </motion.div>
   )

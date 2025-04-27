@@ -9,31 +9,67 @@ export default function PrivacyPolicy() {
     day: "numeric",
   })
 
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  }
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+  }
+
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }} className="p-6">
-      <h2 className="text-2xl font-bold mb-6">Privacy Policy</h2>
-      <div className="text-sm text-gray-300 space-y-4">
-        <p className="text-gray-400">Effective Date: {currentDate}</p>
+      <motion.h2
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="text-2xl font-bold mb-6 tracking-tight"
+      >
+        Privacy Policy
+      </motion.h2>
 
-        <p className="font-medium text-white text-base">Welcome to Whatstask!</p>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="text-sm text-gray-300 space-y-4 font-light tracking-wide leading-relaxed"
+      >
+        <motion.p variants={item} className="text-gray-400">
+          Effective Date: {currentDate}
+        </motion.p>
 
-        <p>We care about your privacy. Here's the short version:</p>
+        <motion.p variants={item} className="font-medium text-white text-base">
+          Welcome to Whatstask!
+        </motion.p>
 
-        <ul className="list-disc pl-5 space-y-2">
-          <li>We do not store, sell, or share your private WhatsApp or Telegram data.</li>
-          <li>We only process the information necessary to create and manage your tasks.</li>
-          <li>No tracking, no selling your personal information to third parties.</li>
-          <li>Your chats are never saved outside your messaging app.</li>
-        </ul>
+        <motion.p variants={item}>We care about your privacy. Here's the short version:</motion.p>
 
-        <p>We use Telegram APIs securely and responsibly.</p>
+        <motion.ul variants={container} className="list-disc pl-5 space-y-2">
+          <motion.li variants={item}>We do not store, sell, or share your private WhatsApp or Telegram data.</motion.li>
+          <motion.li variants={item}>
+            We only process the information necessary to create and manage your tasks.
+          </motion.li>
+          <motion.li variants={item}>No tracking, no selling your personal information to third parties.</motion.li>
+          <motion.li variants={item}>Your chats are never saved outside your messaging app.</motion.li>
+        </motion.ul>
 
-        <p>By using Whatstask, you agree to this simple, transparent approach.</p>
+        <motion.p variants={item}>We use Telegram APIs securely and responsibly.</motion.p>
 
-        <p>Have questions? Reach out at support@whatstask.com.</p>
+        <motion.p variants={item}>By using Whatstask, you agree to this simple, transparent approach.</motion.p>
 
-        <p className="font-medium">Stay productive, stay private. 🚀</p>
-      </div>
+        <motion.p variants={item}>Have questions? Reach out at support@whatstask.com.</motion.p>
+
+        <motion.p variants={item} className="font-medium">
+          Stay productive, stay private. 🚀
+        </motion.p>
+      </motion.div>
     </motion.div>
   )
 }

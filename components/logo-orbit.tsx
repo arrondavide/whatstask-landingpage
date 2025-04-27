@@ -29,19 +29,40 @@ export default function LogoOrbit() {
   return (
     <div className="relative w-full aspect-square max-w-md mx-auto">
       {/* Glowing background */}
-      <div className="absolute inset-0 rounded-full bg-white/5 blur-3xl" />
+      <motion.div
+        className="absolute inset-0 rounded-full bg-white/5 blur-3xl"
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.5, 0.8, 0.5],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Number.POSITIVE_INFINITY,
+          repeatType: "reverse",
+        }}
+      />
 
       {/* Orbit path */}
       <motion.div ref={orbitRef} animate={controls} className="absolute inset-0 rounded-full border border-white/10">
         {/* Orbit particles */}
         {[...Array(12)].map((_, i) => (
-          <div
+          <motion.div
             key={i}
             className="absolute w-1 h-1 bg-white rounded-full"
             style={{
               top: "50%",
               left: "50%",
               transform: `rotate(${i * 30}deg) translateX(${Math.random() * 30 + 120}px) translateY(-50%)`,
+            }}
+            animate={{
+              opacity: [0.3, 1, 0.3],
+              scale: [1, 1.5, 1],
+            }}
+            transition={{
+              duration: 2 + Math.random() * 3,
+              repeat: Number.POSITIVE_INFINITY,
+              repeatType: "reverse",
+              delay: i * 0.2,
             }}
           />
         ))}
@@ -65,17 +86,37 @@ export default function LogoOrbit() {
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="relative w-32 h-32 flex items-center justify-center">
           {/* Glow effect */}
-          <div className="absolute inset-0 bg-white/10 rounded-full blur-xl" />
+          <motion.div
+            className="absolute inset-0 bg-white/10 rounded-full blur-xl"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.5, 1, 0.5],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Number.POSITIVE_INFINITY,
+              repeatType: "reverse",
+            }}
+          />
 
           {/* Logo */}
           <motion.div
             animate={{
               scale: [1, 1.05, 1],
+              rotate: [0, 5, 0, -5, 0],
               transition: {
-                duration: 4,
-                ease: "easeInOut",
-                repeat: Number.POSITIVE_INFINITY,
-                repeatType: "reverse",
+                scale: {
+                  duration: 4,
+                  ease: "easeInOut",
+                  repeat: Number.POSITIVE_INFINITY,
+                  repeatType: "reverse",
+                },
+                rotate: {
+                  duration: 6,
+                  ease: "easeInOut",
+                  repeat: Number.POSITIVE_INFINITY,
+                  repeatType: "reverse",
+                },
               },
             }}
             className="relative z-10 w-24 h-24 rounded-full bg-black flex items-center justify-center border border-white/20"
@@ -92,7 +133,11 @@ export default function LogoOrbit() {
         transition={{ duration: 0.8, delay: 1 }}
         className="absolute -bottom-64 left-1/2 -translate-x-1/2 w-full max-w-sm"
       >
-        <div className="bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
+        <motion.div
+          className="bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden shadow-2xl"
+          whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        >
           <div className="p-4 border-b border-white/10 flex items-center">
             <div className="w-8 h-8 rounded-full bg-white/10 mr-3" />
             <div className="text-left">
@@ -101,13 +146,23 @@ export default function LogoOrbit() {
             </div>
           </div>
           <div className="p-4 space-y-3">
-            <div className="flex items-start gap-3">
+            <motion.div
+              className="flex items-start gap-3"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1.5, duration: 0.5 }}
+            >
               <div className="w-8 h-8 rounded-full bg-white/10 flex-shrink-0" />
               <div className="bg-white/5 rounded-2xl rounded-tl-none p-3 text-sm">
                 Create a new task: Meeting with design team tomorrow at 2pm
               </div>
-            </div>
-            <div className="flex items-start gap-3 justify-end">
+            </motion.div>
+            <motion.div
+              className="flex items-start gap-3 justify-end"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 2, duration: 0.5 }}
+            >
               <div className="bg-white/10 rounded-2xl rounded-tr-none p-3 text-sm">
                 ✅ Task created: "Meeting with design team"
                 <br />📅 Tomorrow at 2:00 PM
@@ -115,9 +170,9 @@ export default function LogoOrbit() {
                 🏷️ Category: Work
               </div>
               <div className="w-8 h-8 rounded-full bg-white/10 flex-shrink-0" />
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </motion.div>
     </div>
   )
