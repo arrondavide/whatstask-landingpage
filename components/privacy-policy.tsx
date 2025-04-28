@@ -25,12 +25,17 @@ export default function PrivacyPolicy() {
   }
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }} className="p-6">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+      className="p-4 sm:p-6 max-h-[80vh] overflow-y-auto"
+    >
       <motion.h2
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="text-2xl font-bold mb-6 tracking-tight"
+        className="text-2xl font-bold mb-4 tracking-tight flex items-center"
       >
         Privacy Policy
       </motion.h2>

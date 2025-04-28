@@ -291,3 +291,34 @@ a[role="button"]:active,
   width: 100%;
   left: 0;
 }
+
+/* Dialog styles for better mobile responsiveness */
+@media (max-width: 640px) {
+  [data-radix-popper-content-wrapper] {
+    max-width: 95vw !important;
+    transform: translate(-50%, -50%) !important;
+  }
+}
+
+/* Ensure dialogs stay visible and don't close unexpectedly */
+[data-state="open"] {
+  animation-duration: 300ms !important;
+}
+
+[data-state="closed"] {
+  animation-duration: 300ms !important;
+}
+
+/* Fix scrolling behavior inside dialogs */
+.overflow-y-auto {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Better touch targets for close buttons */
+[aria-label="Close"] {
+  min-width: 40px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

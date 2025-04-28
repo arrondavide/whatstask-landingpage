@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogTrigger, DialogClose } from "@/components/ui/dialog"
 import { Check, MessageSquare, Calendar, Clock, List, Send, X } from "lucide-react"
 import LogoOrbit from "@/components/logo-orbit"
 import AnimatedCard from "@/components/animated-card"
@@ -158,8 +158,16 @@ export default function LandingPage() {
                       {item.name}
                     </motion.button>
                   </DialogTrigger>
-                  <DialogContent className="bg-black/95 border border-white/10 text-white max-w-2xl">
-                    <PrivacyPolicy />
+                  <DialogContent className="bg-black/95 border border-white/10 text-white w-[95vw] max-w-lg p-0">
+                    <div className="sticky top-0 z-10 flex justify-between items-center p-4 border-b border-white/10 bg-black/95">
+                      <h2 className="font-bold text-lg">Privacy Policy</h2>
+                      <DialogClose className="rounded-full p-1 hover:bg-white/10">
+                        <X className="h-5 w-5" />
+                      </DialogClose>
+                    </div>
+                    <div className="max-h-[70vh] overflow-y-auto">
+                      <PrivacyPolicy />
+                    </div>
                   </DialogContent>
                 </Dialog>
               ) : (
@@ -271,8 +279,16 @@ export default function LandingPage() {
                         Privacy
                       </motion.button>
                     </DialogTrigger>
-                    <DialogContent className="bg-black/95 border border-white/10 text-white max-w-2xl">
-                      <PrivacyPolicy />
+                    <DialogContent className="bg-black/95 border border-white/10 text-white w-[95vw] max-w-lg p-0">
+                      <div className="sticky top-0 z-10 flex justify-between items-center p-4 border-b border-white/10 bg-black/95">
+                        <h2 className="font-bold text-lg">Privacy Policy</h2>
+                        <DialogClose className="rounded-full p-1 hover:bg-white/10">
+                          <X className="h-5 w-5" />
+                        </DialogClose>
+                      </div>
+                      <div className="max-h-[70vh] overflow-y-auto">
+                        <PrivacyPolicy />
+                      </div>
                     </DialogContent>
                   </Dialog>
                 </motion.div>
@@ -613,8 +629,16 @@ export default function LandingPage() {
                         {item.name}
                       </motion.button>
                     </DialogTrigger>
-                    <DialogContent className="bg-black/95 border border-white/10 text-white max-w-2xl">
-                      <PrivacyPolicy />
+                    <DialogContent className="bg-black/95 border border-white/10 text-white w-[95vw] max-w-lg p-0">
+                      <div className="sticky top-0 z-10 flex justify-between items-center p-4 border-b border-white/10 bg-black/95">
+                        <h2 className="font-bold text-lg">Privacy Policy</h2>
+                        <DialogClose className="rounded-full p-1 hover:bg-white/10">
+                          <X className="h-5 w-5" />
+                        </DialogClose>
+                      </div>
+                      <div className="max-h-[70vh] overflow-y-auto">
+                        <PrivacyPolicy />
+                      </div>
                     </DialogContent>
                   </Dialog>
                 ) : (
