@@ -1,9 +1,11 @@
 "use client"
 
+import type React from "react"
+
 import { useState, useEffect, useRef } from "react"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogTrigger, DialogClose } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog"
 import { Check, MessageSquare, Calendar, Clock, List, Send, X } from "lucide-react"
 import LogoOrbit from "@/components/logo-orbit"
 import AnimatedCard from "@/components/animated-card"
@@ -19,6 +21,7 @@ export default function LandingPage() {
   const [mounted, setMounted] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("hero")
+  const [privacyDialogOpen, setPrivacyDialogOpen] = useState(false)
 
   const heroRef = useRef<HTMLDivElement>(null)
   const featuresRef = useRef<HTMLDivElement>(null)
@@ -75,6 +78,15 @@ export default function LandingPage() {
     }
   }, [isOpen])
 
+  // Prevent body scroll when privacy dialog is open
+  useEffect(() => {
+    if (privacyDialogOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+  }, [privacyDialogOpen])
+
   if (!mounted) return null
 
   // Animation variants
@@ -99,6 +111,13 @@ export default function LandingPage() {
         staggerChildren: 0.1,
       },
     },
+  }
+
+  // Function to handle privacy dialog clicks
+  const handlePrivacyClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setPrivacyDialogOpen(true)
   }
 
   return (
@@ -143,47 +162,27 @@ export default function LandingPage() {
             {[
               { name: "Features", href: "#features", section: "features" },
               { name: "How It Works", href: "#how-it-works", section: "how-it-works" },
-              { name: "Privacy", href: "#", section: "privacy", isDialog: true },
-            ].map((item) =>
-              item.isDialog ? (
-                <Dialog key={item.section}>
-                  <DialogTrigger asChild>
-                    <motion.button
-                      className={`text-sm hover:text-white transition-colors tracking-wide ${
-                        activeSection === item.section ? "text-white font-medium" : "text-gray-400"
-                      }`}
-                      whileHover={{ y: -2, scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {item.name}
-                    </motion.button>
-                  </DialogTrigger>
-                  <DialogContent className="bg-black/95 border border-white/10 text-white w-[95vw] max-w-lg p-0">
-                    <div className="sticky top-0 z-10 flex justify-between items-center p-4 border-b border-white/10 bg-black/95">
-                      <h2 className="font-bold text-lg">Privacy Policy</h2>
-                      <DialogClose className="rounded-full p-1 hover:bg-white/10">
-                        <X className="h-5 w-5" />
-                      </DialogClose>
-                    </div>
-                    <div className="max-h-[70vh] overflow-y-auto">
-                      <PrivacyPolicy />
-                    </div>
-                  </DialogContent>
-                </Dialog>
-              ) : (
-                <motion.a
-                  key={item.section}
-                  href={item.href}
-                  className={`text-sm hover:text-white transition-colors tracking-wide ${
-                    activeSection === item.section ? "text-white font-medium" : "text-gray-400"
-                  }`}
-                  whileHover={{ y: -2, scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {item.name}
-                </motion.a>
-              ),
-            )}
+            ].map((item) => (
+              <motion.a
+                key={item.section}
+                href={item.href}
+                className={`text-sm hover:text-white transition-colors tracking-wide ${
+                  activeSection === item.section ? "text-white font-medium" : "text-gray-400"
+                }`}
+                whileHover={{ y: -2, scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {item.name}
+              </motion.a>
+            ))}
+            <motion.button
+              className={`text-sm hover:text-white transition-colors tracking-wide text-gray-400`}
+              whileHover={{ y: -2, scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={handlePrivacyClick}
+            >
+              Privacy
+            </motion.button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -215,6 +214,27 @@ export default function LandingPage() {
           </motion.div>
         </div>
       </motion.header>
+
+      {/* Privacy Policy Dialog */}
+      <Dialog open={privacyDialogOpen} onOpenChange={setPrivacyDialogOpen}>
+        <DialogContent className="bg-black/95 border border-white/10 text-white w-[95vw] max-w-lg p-0">
+          <div className="sticky top-0 z-10 flex justify-between items-center p-4 border-b border-white/10 bg-black/95">
+            <h2 className="font-bold text-lg">Privacy Policy</h2>
+            <DialogClose
+              className="rounded-full p-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/20"
+              onClick={(e) => {
+                e.stopPropagation()
+                setPrivacyDialogOpen(false)
+              }}
+            >
+              <X className="h-5 w-5" />
+            </DialogClose>
+          </div>
+          <div className="max-h-[70vh] overflow-y-auto">
+            <PrivacyPolicy />
+          </div>
+        </DialogContent>
+      </Dialog>
 
       {/* Mobile Menu - Full Screen Overlay */}
       <AnimatePresence>
@@ -268,29 +288,18 @@ export default function LandingPage() {
                       {item.name}
                     </motion.a>
                   ))}
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <motion.button
-                        className="text-2xl font-medium tracking-wide text-right"
-                        variants={fadeInUp}
-                        custom={2}
-                        onClick={() => setIsOpen(false)}
-                      >
-                        Privacy
-                      </motion.button>
-                    </DialogTrigger>
-                    <DialogContent className="bg-black/95 border border-white/10 text-white w-[95vw] max-w-lg p-0">
-                      <div className="sticky top-0 z-10 flex justify-between items-center p-4 border-b border-white/10 bg-black/95">
-                        <h2 className="font-bold text-lg">Privacy Policy</h2>
-                        <DialogClose className="rounded-full p-1 hover:bg-white/10">
-                          <X className="h-5 w-5" />
-                        </DialogClose>
-                      </div>
-                      <div className="max-h-[70vh] overflow-y-auto">
-                        <PrivacyPolicy />
-                      </div>
-                    </DialogContent>
-                  </Dialog>
+                  <motion.button
+                    className="text-2xl font-medium tracking-wide text-right"
+                    variants={fadeInUp}
+                    custom={2}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      setIsOpen(false)
+                      setTimeout(() => setPrivacyDialogOpen(true), 100)
+                    }}
+                  >
+                    Privacy
+                  </motion.button>
                 </motion.div>
               </div>
 
@@ -388,7 +397,6 @@ export default function LandingPage() {
         </motion.div>
       </section>
 
-      {/* Rest of the page content remains the same */}
       {/* Features Section */}
       <section id="features" ref={featuresRef} className="relative py-24 md:py-32 px-4">
         <div className="container mx-auto">
@@ -616,43 +624,25 @@ export default function LandingPage() {
               {[
                 { name: "Features", href: "#features" },
                 { name: "How It Works", href: "#how-it-works" },
-                { name: "Privacy Policy", href: "#", isDialog: true },
-              ].map((item, index) =>
-                item.isDialog ? (
-                  <Dialog key={index}>
-                    <DialogTrigger asChild>
-                      <motion.button
-                        className="text-sm text-gray-400 hover:text-white transition-colors tracking-wide"
-                        whileHover={{ y: -2, scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        {item.name}
-                      </motion.button>
-                    </DialogTrigger>
-                    <DialogContent className="bg-black/95 border border-white/10 text-white w-[95vw] max-w-lg p-0">
-                      <div className="sticky top-0 z-10 flex justify-between items-center p-4 border-b border-white/10 bg-black/95">
-                        <h2 className="font-bold text-lg">Privacy Policy</h2>
-                        <DialogClose className="rounded-full p-1 hover:bg-white/10">
-                          <X className="h-5 w-5" />
-                        </DialogClose>
-                      </div>
-                      <div className="max-h-[70vh] overflow-y-auto">
-                        <PrivacyPolicy />
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                ) : (
-                  <motion.a
-                    key={index}
-                    href={item.href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors tracking-wide"
-                    whileHover={{ y: -2, scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {item.name}
-                  </motion.a>
-                ),
-              )}
+              ].map((item, index) => (
+                <motion.a
+                  key={index}
+                  href={item.href}
+                  className="text-sm text-gray-400 hover:text-white transition-colors tracking-wide"
+                  whileHover={{ y: -2, scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {item.name}
+                </motion.a>
+              ))}
+              <motion.button
+                className="text-sm text-gray-400 hover:text-white transition-colors tracking-wide"
+                whileHover={{ y: -2, scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handlePrivacyClick}
+              >
+                Privacy Policy
+              </motion.button>
             </div>
           </motion.div>
           <motion.div

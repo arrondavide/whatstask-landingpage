@@ -322,3 +322,29 @@ a[role="button"]:active,
   align-items: center;
   justify-content: center;
 }
+
+/* Fix for dialog closing unexpectedly */
+[role="dialog"] {
+  pointer-events: auto !important;
+}
+
+/* Ensure dialog backdrop stays in place */
+[data-radix-dialog-overlay] {
+  position: fixed !important;
+  inset: 0 !important;
+}
+
+/* Prevent dialog from being dismissed by clicking outside */
+[data-radix-dialog-content] {
+  pointer-events: auto !important;
+}
+
+/* Increase tap target for close button */
+[data-radix-dialog-close] {
+  min-width: 44px !important;
+  min-height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 9999px !important;
+}
