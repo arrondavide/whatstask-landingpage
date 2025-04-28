@@ -1,11 +1,10 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Check, MessageSquare, Calendar, Clock, List, Send } from "lucide-react"
+import { Check, MessageSquare, Calendar, Clock, List, Send, X } from "lucide-react"
 import LogoOrbit from "@/components/logo-orbit"
 import AnimatedCard from "@/components/animated-card"
 import PrivacyPolicy from "@/components/privacy-policy"
@@ -63,6 +62,18 @@ export default function LandingPage() {
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [isOpen])
 
   if (!mounted) return null
 
@@ -167,76 +178,9 @@ export default function LandingPage() {
             )}
           </nav>
 
-          {/* Mobile Menu - Redesigned */}
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger asChild>
-                <div>
-                  <MobileMenuButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
-                </div>
-              </SheetTrigger>
-              <SheetContent side="right" className="bg-black/95 border-l border-white/10 p-0">
-                <div className="flex flex-col h-full">
-                  <div className="flex items-center justify-between p-4 border-b border-white/10">
-                    <div className="flex items-center gap-2">
-                      <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} className="w-6 h-6" />
-                      <span className="font-bold text-lg tracking-tight">Whatstask</span>
-                    </div>
-                  </div>
-                  <motion.div
-                    className="flex flex-col gap-1 p-4"
-                    variants={staggerContainer}
-                    initial="hidden"
-                    animate="visible"
-                  >
-                    {[
-                      { name: "Features", href: "#features" },
-                      { name: "How It Works", href: "#how-it-works" },
-                    ].map((item, index) => (
-                      <motion.a
-                        key={index}
-                        href={item.href}
-                        className="flex items-center gap-2 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors"
-                        onClick={() => setIsOpen(false)}
-                        variants={fadeInUp}
-                        custom={index}
-                      >
-                        <span className="text-lg font-medium tracking-wide">{item.name}</span>
-                      </motion.a>
-                    ))}
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <motion.button
-                          className="flex items-center gap-2 px-4 py-3 rounded-lg hover:bg-white/5 transition-colors text-left"
-                          variants={fadeInUp}
-                          custom={2}
-                        >
-                          <span className="text-lg font-medium tracking-wide">Privacy</span>
-                        </motion.button>
-                      </DialogTrigger>
-                      <DialogContent className="bg-black/95 border border-white/10 text-white max-w-2xl">
-                        <PrivacyPolicy />
-                      </DialogContent>
-                    </Dialog>
-                  </motion.div>
-                  <div className="mt-auto p-4 border-t border-white/10">
-                    <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-                      <Button asChild className="w-full bg-white text-black hover:bg-white/90 rounded-full">
-                        <a
-                          href="https://t.me/whatstaskbot"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2 py-6"
-                        >
-                          <Send className="h-4 w-4" />
-                          <span className="font-medium tracking-wide">Start on Telegram</span>
-                        </a>
-                      </Button>
-                    </motion.div>
-                  </div>
-                </div>
-              </SheetContent>
-            </Sheet>
+            <MobileMenuButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
           </div>
 
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="hidden md:block">
@@ -263,6 +207,96 @@ export default function LandingPage() {
           </motion.div>
         </div>
       </motion.header>
+
+      {/* Mobile Menu - Full Screen Overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 bg-black md:hidden"
+          >
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="fixed inset-0 z-50 flex flex-col h-full bg-black"
+            >
+              <div className="flex items-center justify-between p-4 border-b border-white/10">
+                <div className="flex items-center gap-2">
+                  <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} className="w-6 h-6" />
+                  <span className="font-bold text-lg tracking-tight">Whatstask</span>
+                </div>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              <div className="flex-1 flex flex-col justify-center p-8">
+                <motion.div
+                  className="flex flex-col items-end gap-6"
+                  variants={staggerContainer}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  {[
+                    { name: "Features", href: "#features" },
+                    { name: "How It Works", href: "#how-it-works" },
+                  ].map((item, index) => (
+                    <motion.a
+                      key={index}
+                      href={item.href}
+                      className="text-2xl font-medium tracking-wide"
+                      onClick={() => setIsOpen(false)}
+                      variants={fadeInUp}
+                      custom={index}
+                    >
+                      {item.name}
+                    </motion.a>
+                  ))}
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <motion.button
+                        className="text-2xl font-medium tracking-wide text-right"
+                        variants={fadeInUp}
+                        custom={2}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Privacy
+                      </motion.button>
+                    </DialogTrigger>
+                    <DialogContent className="bg-black/95 border border-white/10 text-white max-w-2xl">
+                      <PrivacyPolicy />
+                    </DialogContent>
+                  </Dialog>
+                </motion.div>
+              </div>
+
+              <div className="p-8">
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+                  <Button asChild className="w-full bg-white text-black hover:bg-white/90 rounded-full">
+                    <a
+                      href="https://t.me/whatstaskbot"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 py-6 text-lg"
+                    >
+                      <Send className="h-5 w-5" />
+                      <span className="font-medium tracking-wide">Start on Telegram</span>
+                    </a>
+                  </Button>
+                </motion.div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Hero Section */}
       <section
@@ -338,6 +372,7 @@ export default function LandingPage() {
         </motion.div>
       </section>
 
+      {/* Rest of the page content remains the same */}
       {/* Features Section */}
       <section id="features" ref={featuresRef} className="relative py-24 md:py-32 px-4">
         <div className="container mx-auto">

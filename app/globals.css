@@ -249,3 +249,45 @@ a[role="button"]:active,
   transform: scale(0.98);
   transition: transform 0.1s ease;
 }
+
+/* Mobile menu overlay styles */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 2rem;
+}
+
+.mobile-menu-item {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.mobile-menu-item::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.mobile-menu-item:hover::after {
+  width: 100%;
+  left: 0;
+}
