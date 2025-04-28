@@ -210,3 +210,42 @@ p {
   transform: rotate(-45deg);
   bottom: 9px;
 }
+
+/* Enhanced button styles for better mobile responsiveness */
+button,
+a[role="button"],
+.button {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+/* Make buttons more tappable on mobile */
+@media (max-width: 768px) {
+  button,
+  a[role="button"],
+  .button,
+  a.rounded-full {
+    min-height: 44px; /* Apple's recommended minimum touch target size */
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Ensure CTA buttons are prominent and easy to tap */
+  .cta-button {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 18px;
+    margin: 8px 0;
+  }
+}
+
+/* Active state for better touch feedback */
+button:active,
+a[role="button"]:active,
+.button:active {
+  transform: scale(0.98);
+  transition: transform 0.1s ease;
+}

@@ -35,9 +35,9 @@ export const metadata = {
     siteName: "Whatstask",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
+        url: "/logo.png",
+        width: 512,
+        height: 512,
         alt: "Whatstask - Advanced Telegram Task Management Bot",
       },
     ],
@@ -48,7 +48,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Whatstask - Advanced Telegram Task Management Bot",
     description: "Manage tasks and projects easily inside Telegram. Fast, simple, and made for productivity.",
-    images: ["/twitter-image.png"],
+    images: ["/logo.png"],
     creator: "@whatstask",
   },
   robots: {
@@ -96,6 +96,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content="#000000" />
         <link rel="canonical" href="https://whatstask.com" />
+        <link rel="icon" href="/favicon.png" />
       </head>
       <body className={`${poppins.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>

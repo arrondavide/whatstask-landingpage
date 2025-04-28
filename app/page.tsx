@@ -226,7 +226,7 @@ export default function LandingPage() {
                           href="https://t.me/whatstaskbot"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2"
+                          className="flex items-center justify-center gap-2 py-6"
                         >
                           <Send className="h-4 w-4" />
                           <span className="font-medium tracking-wide">Start on Telegram</span>
@@ -248,7 +248,7 @@ export default function LandingPage() {
                 href="https://t.me/whatstaskbot"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 py-6"
               >
                 <motion.span
                   className="absolute inset-0 bg-white/30"
@@ -307,13 +307,13 @@ export default function LandingPage() {
           >
             <Button
               asChild
-              className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-6 text-lg relative overflow-hidden group"
+              className="bg-white text-black hover:bg-white/90 rounded-full px-8 relative overflow-hidden group"
             >
               <a
                 href="https://t.me/whatstaskbot"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 py-6 text-lg"
               >
                 <motion.span
                   className="absolute inset-0 bg-white/30"
@@ -480,7 +480,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section - Improved for mobile */}
       <section ref={ctaRef} className="relative py-24 md:py-32 px-4 border-t border-white/5">
         <div className="container mx-auto max-w-4xl">
           <motion.div
@@ -512,16 +512,20 @@ export default function LandingPage() {
               <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8 font-light tracking-wide leading-relaxed">
                 Join thousands of users who have streamlined their task management with Whatstask.
               </p>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="inline-block">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-block w-full sm:w-auto"
+              >
                 <Button
                   asChild
-                  className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-6 text-lg relative overflow-hidden group"
+                  className="w-full sm:w-auto bg-white text-black hover:bg-white/90 rounded-full px-8 relative overflow-hidden group"
                 >
                   <a
                     href="https://t.me/whatstaskbot"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2"
+                    className="flex items-center justify-center gap-2 py-6 text-lg"
                   >
                     <motion.span
                       className="absolute inset-0 bg-white/30"
