@@ -1,30 +1,66 @@
-# Whatstask Landing Page
+# WhatsTask Telegram Mini App
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+A task management mini app for Telegram that allows teams to manage tasks and track progress.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/arrondavides-projects/v0-whatstask-landing-page)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/LWe4uXlM3pj)
+## Environment Variables
 
-## Overview
+This project requires the following environment variables:
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+- `BOT_TOKEN`: Your Telegram bot token
+- `NEXT_PUBLIC_SUPABASE_URL`: Your Supabase project URL
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`: Your Supabase anonymous key
+- `SUPABASE_SERVICE_ROLE_KEY`: Your Supabase service role key (for admin operations)
+- `NEXT_PUBLIC_APP_URL`: The URL of your deployed app
+- `WEBHOOK_URL`: The URL for your Telegram webhook (usually `${NEXT_PUBLIC_APP_URL}/api/telegram-webhook`)
 
-## Deployment
+## Setup Instructions
 
-Your project is live at:
+1. **Deploy to Vercel**
 
-**[https://vercel.com/arrondavides-projects/v0-whatstask-landing-page](https://vercel.com/arrondavides-projects/v0-whatstask-landing-page)**
+   Deploy this project to Vercel and set up the environment variables.
 
-## Build your app
+2. **Set up the Webhook**
 
-Continue building your app on:
+   Run the webhook setup script:
 
-**[https://v0.dev/chat/projects/LWe4uXlM3pj](https://v0.dev/chat/projects/LWe4uXlM3pj)**
+   \`\`\`bash
+   npx tsx scripts/set-webhook.ts
+   \`\`\`
 
-## How It Works
+3. **Set up the Menu Button**
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+   Run the menu button setup script:
+
+   \`\`\`bash
+   npx tsx scripts/set-menu-button.ts
+   \`\`\`
+
+4. **Test the Integration**
+
+   Open your bot in Telegram and click the "Open WhatsTask" button in the menu.
+
+## Development
+
+To run the project locally:
+
+\`\`\`bash
+npm install
+npm run dev
+\`\`\`
+
+## Features
+
+- Task creation and assignment
+- Task status updates
+- Team management
+- Real-time notifications
+- Telegram integration
+
+## Security
+
+This project implements security best practices:
+
+- Telegram data validation
+- Secure environment variables
+- HTTPS-only communication
+- Proper authentication and authorization
