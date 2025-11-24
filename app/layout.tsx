@@ -97,6 +97,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#000000" />
         <link rel="canonical" href="https://whatstask.com" />
         <link rel="icon" href="/favicon.png" />
+        <meta name="google-adsense-account" content="ca-pub-5344273951045281" />
 
         <Script
           async
