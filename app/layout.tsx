@@ -82,7 +82,7 @@ export const metadata = {
     google: "google-site-verification=your-verification-code",
   },
   category: "productivity",
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -97,6 +97,12 @@ export default function RootLayout({
         <meta name="theme-color" content="#000000" />
         <link rel="canonical" href="https://whatstask.com" />
         <link rel="icon" href="/favicon.png" />
+
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5344273951045281"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className={`${poppins.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
