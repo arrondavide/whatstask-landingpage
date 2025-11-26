@@ -131,48 +131,6 @@ export default function PDFToolsSection() {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Single wider card for the 5th tool */}
-        <motion.div
-          variants={fadeInUp}
-          custom={4}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="max-w-2xl mx-auto"
-        >
-          <div className="group relative">
-            <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 h-full border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col">
-              <h3 className="text-2xl font-bold mb-4 tracking-tight">{pdfTools[4].name}</h3>
-              <p className="text-gray-400 font-light tracking-wide leading-relaxed mb-6 flex-grow">
-                {pdfTools[4].description}
-              </p>
-              <p className="text-xs text-gray-500 mb-6 pb-4 border-t border-white/5 font-light">
-                {pdfTools[4].seoTitle}
-              </p>
-              <Button
-                asChild
-                className="bg-white/10 text-white hover:bg-white/20 border border-white/20 rounded-full w-full relative overflow-hidden group/btn"
-              >
-                <a
-                  href={pdfTools[4].link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-6 text-base"
-                >
-                  <motion.span
-                    className="absolute inset-0 bg-white/10"
-                    initial={{ x: "-100%" }}
-                    whileHover={{ x: "100%" }}
-                    transition={{ duration: 0.5 }}
-                  />
-                  <span className="font-medium tracking-wide relative z-10">{pdfTools[4].buttonLabel}</span>
-                  <ExternalLink className="h-4 w-4 relative z-10" />
-                </a>
-              </Button>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )
