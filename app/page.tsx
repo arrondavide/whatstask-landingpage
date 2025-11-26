@@ -16,6 +16,8 @@ import CustomCursor from "@/components/custom-cursor"
 import MobileMenuButton from "@/components/mobile-menu-button"
 import PageLoader from "@/components/page-loader"
 import Image from "next/image"
+import PDFFAQ from "@/components/pdf-faq"
+import PDFToolsSection from "@/components/pdf-tools-section"
 
 export default function LandingPage() {
   const [mounted, setMounted] = useState(false)
@@ -601,6 +603,12 @@ export default function LandingPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* PDF Tools Section */}
+      <PDFToolsSection />
+
+      {/* PDF FAQ Section */}
+      <PDFFAQ />
 
       {/* Footer */}
       <footer className="relative py-12 px-4 border-t border-white/5">
