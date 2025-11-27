@@ -67,11 +67,5 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Main CTA - Telegram Bot -->
-  <url>
-    <loc>https://t.me/whatstaskbot</loc>
-    <lastmod>2025-11-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
+  
 </urlset>
