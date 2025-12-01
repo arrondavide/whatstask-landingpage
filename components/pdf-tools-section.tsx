@@ -44,6 +44,14 @@ const pdfTools = [
     link: "https://pdfsplitter.whatstask.com",
     buttonLabel: "Open PDF Splitter",
   },
+  {
+    name: "QR Code Generator",
+    description:
+      "Create custom QR codes instantly and download as PNG or SVG. Perfect for marketing, business cards, product packaging and campaigns. Free QR code generator with full customization.",
+    seoTitle: "Free QR Code Generator Online 2025 – Custom QR Codes | Whatstask",
+    link: "https://freeqrcodegenerator.whatstask.com",
+    buttonLabel: "Open QR Code Generator",
+  },
 ]
 
 const fadeInUp = {

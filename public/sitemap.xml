@@ -67,5 +67,12 @@
     <priority>0.8</priority>
   </url>
 
-  
+  <!-- Added QR Code Generator to sitemap -->
+  <url>
+    <loc>https://freeqrcodegenerator.whatstask.com</loc>
+    <lastmod>2025-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
