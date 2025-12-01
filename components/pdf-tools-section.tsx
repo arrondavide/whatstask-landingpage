@@ -52,6 +52,14 @@ const pdfTools = [
     link: "https://freeqrcodegenerator.whatstask.com",
     buttonLabel: "Open QR Code Generator",
   },
+  {
+    name: "GEO Analyzer",
+    description:
+      "Optimize your content for AI-powered search experiences like Google SGE. Analyze and structure your content for large language models (LLMs) with clarity and context. Free Generative Engine Optimization analyzer for AI visibility.",
+    seoTitle: "Free GEO Analyzer – Optimize for AI Search & LLMs | Whatstask",
+    link: "https://geoanalyzer.whatstask.com",
+    buttonLabel: "Open GEO Analyzer",
+  },
 ]
 
 const fadeInUp = {
