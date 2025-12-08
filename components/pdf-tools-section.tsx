@@ -9,7 +9,7 @@ const pdfTools = [
     description:
       "Merge multiple PDF files into one document in seconds. Drag and drop, reorder pages and download your combined PDF. Free online PDF merger for 2025.",
     seoTitle: "Free Online PDF Merger 2025 – Combine PDFs Quickly | Whatstask",
-    link: "https://pdfmerger.whatstask.com",
+    link: "/pdf-merger",
     buttonLabel: "Open PDF Merger",
   },
   {
@@ -17,7 +17,7 @@ const pdfTools = [
     description:
       "Reduce PDF file size without losing important quality. Compress PDFs online for email, uploads and storage. Free PDF compressor with up to 70% size reduction.",
     seoTitle: "Free PDF Compressor Online – Reduce File Size 70% | Whatstask",
-    link: "https://pdfcompressor.whatstask.com",
+    link: "/pdf-compressor",
     buttonLabel: "Open PDF Compressor",
   },
   {
@@ -25,7 +25,7 @@ const pdfTools = [
     description:
       "Convert PDF pages into high-quality JPG images instantly. Download individual pages or all pages as a ZIP. Convert PDF to JPG online for free – no software needed.",
     seoTitle: "Convert PDF to JPG Online Free – High Quality Images | Whatstask",
-    link: "https://pdftojpg.whatstask.com",
+    link: "/pdf-to-jpg",
     buttonLabel: "Open PDF to JPG",
   },
   {
@@ -33,7 +33,7 @@ const pdfTools = [
     description:
       "Turn one or many JPG images into a single PDF file. Upload, arrange order and generate a clean PDF in one click. Free JPG to PDF converter online for 2025.",
     seoTitle: "Free JPG to PDF Converter Online 2025 | Whatstask",
-    link: "https://jpgtopdf.whatstask.com",
+    link: "/jpg-to-pdf",
     buttonLabel: "Open JPG to PDF",
   },
   {
@@ -41,7 +41,7 @@ const pdfTools = [
     description:
       "Split a PDF into separate files or extract only the pages you need. Quick, free PDF splitter you can use directly in your browser.",
     seoTitle: "Split PDF Online Free – Extract Pages Easily | Whatstask",
-    link: "https://pdfsplitter.whatstask.com",
+    link: "/pdf-splitter",
     buttonLabel: "Open PDF Splitter",
   },
   {
@@ -49,7 +49,7 @@ const pdfTools = [
     description:
       "Create custom QR codes instantly and download as PNG or SVG. Perfect for marketing, business cards, product packaging and campaigns. Free QR code generator with full customization.",
     seoTitle: "Free QR Code Generator Online 2025 – Custom QR Codes | Whatstask",
-    link: "https://freeqrcodegenerator.whatstask.com",
+    link: "/qr-code-generator",
     buttonLabel: "Open QR Code Generator",
   },
   {
@@ -57,7 +57,7 @@ const pdfTools = [
     description:
       "Optimize your content for AI-powered search experiences like Google SGE. Analyze and structure your content for large language models (LLMs) with clarity and context. Free Generative Engine Optimization analyzer for AI visibility.",
     seoTitle: "Free GEO Analyzer – Optimize for AI Search & LLMs | Whatstask",
-    link: "https://geoanalyzer.whatstask.com",
+    link: "/seo-analyzer",
     buttonLabel: "Open GEO Analyzer",
   },
 ]
@@ -127,12 +127,7 @@ export default function PDFToolsSection() {
                   asChild
                   className="bg-white/10 text-white hover:bg-white/20 border border-white/20 rounded-full w-full relative overflow-hidden group/btn"
                 >
-                  <a
-                    href={tool.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 py-6 text-base"
-                  >
+                  <a href={tool.link} className="flex items-center justify-center gap-2 py-6 text-base">
                     <motion.span
                       className="absolute inset-0 bg-white/10"
                       initial={{ x: "-100%" }}

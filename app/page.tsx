@@ -29,6 +29,8 @@ export default function LandingPage() {
   const featuresRef = useRef<HTMLDivElement>(null)
   const howItWorksRef = useRef<HTMLDivElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
+  const toolsRef = useRef<HTMLDivElement>(null)
+  const taskManagementRef = useRef<HTMLDivElement>(null)
 
   const { scrollYProgress } = useScroll()
   const { scrollY } = useScroll()
@@ -45,6 +47,13 @@ export default function LandingPage() {
 
       if (heroRef.current && scrollPosition < heroRef.current.offsetTop + heroRef.current.offsetHeight) {
         setActiveSection("hero")
+      } else if (toolsRef.current && scrollPosition < toolsRef.current.offsetTop + toolsRef.current.offsetHeight) {
+        setActiveSection("tools")
+      } else if (
+        taskManagementRef.current &&
+        scrollPosition < taskManagementRef.current.offsetTop + taskManagementRef.current.offsetHeight
+      ) {
+        setActiveSection("task-management")
       } else if (
         featuresRef.current &&
         scrollPosition < featuresRef.current.offsetTop + featuresRef.current.offsetHeight
@@ -164,6 +173,8 @@ export default function LandingPage() {
             {[
               { name: "Features", href: "#features", section: "features" },
               { name: "How It Works", href: "#how-it-works", section: "how-it-works" },
+              { name: "Tools", href: "/tools", section: "tools" },
+              { name: "Task Management", href: "#task-management", section: "task-management" },
             ].map((item) => (
               <motion.a
                 key={item.section}
@@ -278,6 +289,8 @@ export default function LandingPage() {
                   {[
                     { name: "Features", href: "#features" },
                     { name: "How It Works", href: "#how-it-works" },
+                    { name: "Tools", href: "/tools" },
+                    { name: "Task Management", href: "#task-management" },
                   ].map((item, index) => (
                     <motion.a
                       key={index}
@@ -293,7 +306,7 @@ export default function LandingPage() {
                   <motion.button
                     className="text-2xl font-medium tracking-wide text-right"
                     variants={fadeInUp}
-                    custom={2}
+                    custom={4}
                     onClick={(e) => {
                       e.stopPropagation()
                       setIsOpen(false)
@@ -337,55 +350,62 @@ export default function LandingPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <AnimatedText
-              text="Manage Tasks. Launch Ideas."
+              text="Simple Tools to Get Things Done"
               className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-2"
               once
             />
             <AnimatedText
-              text="All from Telegram — Faster Than Ever."
-              className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-gray-400 mb-6"
+              text="Task management, PDF tools, and everyday utilities. No signups, no complexity."
+              className="text-xl md:text-2xl lg:text-3xl font-light leading-tight tracking-tight text-gray-400 mb-6"
               once
               delay={0.5}
             />
           </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-8 font-light tracking-wide leading-relaxed"
-          >
-            The most elegant way to organize your life without leaving your favorite messenger.
-          </motion.p>
-
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 1 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Button
-              asChild
-              className="bg-white text-black hover:bg-white/90 rounded-full px-8 relative overflow-hidden group"
-            >
-              <a
-                href="https://t.me/whatstaskbot"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 py-6 text-lg"
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button
+                asChild
+                className="bg-white text-black hover:bg-white/90 rounded-full px-8 relative overflow-hidden group"
               >
-                <motion.span
-                  className="absolute inset-0 bg-white/30"
-                  initial={{ x: "-100%" }}
-                  whileHover={{ x: "100%" }}
-                  transition={{ duration: 0.5 }}
-                />
-                <Send className="h-5 w-5 relative z-10" />
-                <span className="font-medium tracking-wide relative z-10">Start on Telegram</span>
-              </a>
-            </Button>
+                <a
+                  href="https://t.me/whatstaskbot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 py-6 text-lg"
+                >
+                  <motion.span
+                    className="absolute inset-0 bg-white/30"
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: "100%" }}
+                    transition={{ duration: 0.5 }}
+                  />
+                  <Send className="h-5 w-5 relative z-10" />
+                  <span className="font-medium tracking-wide relative z-10">Manage Tasks</span>
+                </a>
+              </Button>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button
+                asChild
+                className="bg-white/10 text-white hover:bg-white/20 border border-white/30 rounded-full px-8 relative overflow-hidden group"
+              >
+                <a href="/tools" className="flex items-center gap-2 py-6 text-lg">
+                  <motion.span
+                    className="absolute inset-0 bg-white/10"
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: "100%" }}
+                    transition={{ duration: 0.5 }}
+                  />
+                  <span className="font-medium tracking-wide relative z-10">Explore Tools</span>
+                </a>
+              </Button>
+            </motion.div>
           </motion.div>
         </motion.div>
 
@@ -397,6 +417,173 @@ export default function LandingPage() {
         >
           <LogoOrbit />
         </motion.div>
+      </section>
+
+      {/* Tools Preview Section */}
+      <section id="tools" ref={toolsRef} className="relative py-24 md:py-32 px-4 border-t border-white/5">
+        <div className="container mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16 md:mb-20"
+          >
+            <AnimatedText
+              text="Free Online Tools"
+              className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight"
+              once
+            />
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light tracking-wide leading-relaxed">
+              No signups required. Just upload, download and get things done instantly.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
+            {[
+              {
+                name: "PDF Merger",
+                link: "/pdf-merger",
+              },
+              {
+                name: "PDF Compressor",
+                link: "/pdf-compressor",
+              },
+              {
+                name: "PDF to JPG",
+                link: "/pdf-to-jpg",
+              },
+              {
+                name: "JPG to PDF",
+                link: "/jpg-to-pdf",
+              },
+              {
+                name: "PDF Splitter",
+                link: "/pdf-splitter",
+              },
+              {
+                name: "QR Code Generator",
+                link: "/qr-code-generator",
+              },
+            ].map((tool, index) => (
+              <motion.a
+                key={index}
+                href={tool.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                variants={fadeInUp}
+                custom={index}
+                className="group"
+                whileHover={{ y: -4 }}
+              >
+                <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 h-full border border-white/10 hover:border-white/20 transition-all duration-300 flex items-center justify-center cursor-pointer">
+                  <span className="text-xl font-semibold text-center tracking-tight">{tool.name}</span>
+                </div>
+              </motion.a>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Task Management Section */}
+      <section
+        id="task-management"
+        ref={taskManagementRef}
+        className="relative py-24 md:py-32 px-4 border-t border-white/5"
+      >
+        <div className="container mx-auto max-w-4xl">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">Manage Tasks from Telegram</h2>
+              <p className="text-lg text-gray-400 font-light tracking-wide leading-relaxed mb-8">
+                No need to switch apps. Create, organize, and complete tasks directly in your favorite messenger.
+              </p>
+
+              <div className="space-y-6 mb-8">
+                {[
+                  {
+                    title: "Natural Language Input",
+                    description: "Type tasks in plain English and Whatstask understands your intent automatically.",
+                  },
+                  {
+                    title: "Smart Scheduling",
+                    description:
+                      "Mentions dates and times are automatically detected and converted to scheduled tasks.",
+                  },
+                  {
+                    title: "Intelligent Reminders",
+                    description: "Get context-aware reminders that adapt to your habits and preferences.",
+                  },
+                ].map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="flex gap-4"
+                  >
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mt-1">
+                      <Check className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold mb-1">{feature.title}</h3>
+                      <p className="text-gray-400 font-light tracking-wide text-sm">{feature.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button
+                  asChild
+                  className="bg-white text-black hover:bg-white/90 rounded-full px-8 relative overflow-hidden group"
+                >
+                  <a
+                    href="https://t.me/whatstaskbot"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 py-6 text-lg"
+                  >
+                    <motion.span
+                      className="absolute inset-0 bg-white/30"
+                      initial={{ x: "-100%" }}
+                      whileHover={{ x: "100%" }}
+                      transition={{ duration: 0.5 }}
+                    />
+                    <Send className="h-5 w-5 relative z-10" />
+                    <span className="font-medium tracking-wide relative z-10">Start on Telegram</span>
+                  </a>
+                </Button>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+              className="relative h-96 md:h-full min-h-96 bg-gradient-to-br from-white/5 to-white/0 rounded-2xl border border-white/10 p-6 flex items-center justify-center"
+            >
+              <div className="text-center">
+                <div className="text-6xl mb-4">💬</div>
+                <p className="text-gray-400 font-light">Telegram Bot Interface</p>
+                <p className="text-xs text-gray-500 mt-2">Coming soon with interactive mockup</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* Features Section */}
@@ -610,51 +797,112 @@ export default function LandingPage() {
       {/* PDF FAQ Section */}
       <PDFFAQ />
 
-      {/* Footer */}
+      {/* Footer - Updated with tool links */}
       <footer className="relative py-12 px-4 border-t border-white/5">
         <div className="container mx-auto">
           <motion.div
-            className="flex flex-col md:flex-row justify-between items-center"
+            className="grid md:grid-cols-4 gap-8 mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <motion.div
-              className="flex items-center gap-2 mb-6 md:mb-0"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} className="w-6 h-6" />
-              <span className="font-bold text-lg tracking-tight">Whatstask</span>
-            </motion.div>
-            <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-6 md:mb-0">
-              {[
-                { name: "Features", href: "#features" },
-                { name: "How It Works", href: "#how-it-works" },
-              ].map((item, index) => (
-                <motion.a
-                  key={index}
-                  href={item.href}
-                  className="text-sm text-gray-400 hover:text-white transition-colors tracking-wide"
-                  whileHover={{ y: -2, scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {item.name}
-                </motion.a>
-              ))}
-              <motion.button
-                className="text-sm text-gray-400 hover:text-white transition-colors tracking-wide"
-                whileHover={{ y: -2, scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={handlePrivacyClick}
+            <div>
+              <motion.div
+                className="flex items-center gap-2 mb-4"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                Privacy Policy
-              </motion.button>
+                <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} className="w-6 h-6" />
+                <span className="font-bold text-lg tracking-tight">Whatstask</span>
+              </motion.div>
+              <p className="text-sm text-gray-400 font-light">Simple tools to get things done.</p>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4 text-sm tracking-tight">PDF Tools</h4>
+              <ul className="space-y-2">
+                {[
+                  { name: "PDF Merger", href: "/pdf-merger" },
+                  { name: "PDF Compressor", href: "/pdf-compressor" },
+                  { name: "PDF Splitter", href: "/pdf-splitter" },
+                ].map((link, index) => (
+                  <li key={index}>
+                    <motion.a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-gray-400 hover:text-white transition-colors tracking-wide"
+                      whileHover={{ x: 4 }}
+                    >
+                      {link.name}
+                    </motion.a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4 text-sm tracking-tight">Converters</h4>
+              <ul className="space-y-2">
+                {[
+                  { name: "PDF to JPG", href: "/pdf-to-jpg" },
+                  { name: "JPG to PDF", href: "/jpg-to-pdf" },
+                  { name: "QR Generator", href: "/qr-code-generator" },
+                ].map((link, index) => (
+                  <li key={index}>
+                    <motion.a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-gray-400 hover:text-white transition-colors tracking-wide"
+                      whileHover={{ x: 4 }}
+                    >
+                      {link.name}
+                    </motion.a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4 text-sm tracking-tight">More</h4>
+              <ul className="space-y-2">
+                <li>
+                  <motion.a
+                    href="#features"
+                    className="text-xs text-gray-400 hover:text-white transition-colors tracking-wide"
+                    whileHover={{ x: 4 }}
+                  >
+                    Features
+                  </motion.a>
+                </li>
+                <li>
+                  <motion.button
+                    onClick={handlePrivacyClick}
+                    className="text-xs text-gray-400 hover:text-white transition-colors tracking-wide text-left"
+                    whileHover={{ x: 4 }}
+                  >
+                    Privacy Policy
+                  </motion.button>
+                </li>
+                <li>
+                  <motion.a
+                    href="https://geoanalyzer.whatstask.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-gray-400 hover:text-white transition-colors tracking-wide"
+                    whileHover={{ x: 4 }}
+                  >
+                    GEO Analyzer
+                  </motion.a>
+                </li>
+              </ul>
             </div>
           </motion.div>
+
           <motion.div
-            className="mt-8 pt-8 border-t border-white/5 text-center text-sm text-gray-400 font-light tracking-wide"
+            className="pt-8 border-t border-white/5 text-center text-sm text-gray-400 font-light tracking-wide"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
