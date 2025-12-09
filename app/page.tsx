@@ -341,7 +341,7 @@ export default function LandingPage() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="relative min-h-screen flex flex-col items-center justify-center pt-20 pb-32 px-4"
+        className="relative min-h-screen flex flex-col items-center justify-center pt-40 pb-32 px-4"
       >
         <motion.div style={{ y: heroTextY, opacity: heroOpacity }} className="text-center max-w-4xl mx-auto mb-8">
           <motion.div
