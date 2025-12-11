@@ -21,8 +21,14 @@ const config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-poppins)", "sans-serif"],
+        heading: ["var(--font-montserrat)", "sans-serif"],
       },
       colors: {
+        brand: {
+          black: "#040404",
+          gray: "#464646",
+          white: "#ffffff",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

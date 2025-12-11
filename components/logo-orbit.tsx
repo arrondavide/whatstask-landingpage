@@ -4,6 +4,13 @@ import { useEffect, useRef } from "react"
 import { motion, useAnimation } from "framer-motion"
 import Image from "next/image"
 
+const orbitingPlanets = [
+  { size: 12, orbitRadius: 90, duration: 12, delay: 0, color: "bg-white" },
+  { size: 8, orbitRadius: 120, duration: 18, delay: 2, color: "bg-white/80" },
+  { size: 6, orbitRadius: 150, duration: 25, delay: 4, color: "bg-white/60" },
+  { size: 10, orbitRadius: 180, duration: 30, delay: 1, color: "bg-white/70" },
+]
+
 export default function LogoOrbit() {
   const orbitRef = useRef<HTMLDivElement>(null)
   const controls = useAnimation()
@@ -41,6 +48,47 @@ export default function LogoOrbit() {
           repeatType: "reverse",
         }}
       />
+
+      {orbitingPlanets.map((planet, index) => (
+        <motion.div
+          key={index}
+          className="absolute inset-0 flex items-center justify-center"
+          style={{ zIndex: 5 }}
+          animate={{
+            rotate: 360,
+          }}
+          transition={{
+            duration: planet.duration,
+            ease: "linear",
+            repeat: Number.POSITIVE_INFINITY,
+            repeatType: "loop",
+            delay: planet.delay,
+          }}
+        >
+          {/* Planet */}
+          <motion.div
+            className={`absolute rounded-full ${planet.color}`}
+            style={{
+              width: planet.size,
+              height: planet.size,
+              top: `calc(50% - ${planet.orbitRadius}px)`,
+              left: "50%",
+              marginLeft: -planet.size / 2,
+              boxShadow: `0 0 ${planet.size}px rgba(255, 255, 255, 0.3)`,
+            }}
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.7, 1, 0.7],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Number.POSITIVE_INFINITY,
+              repeatType: "reverse",
+              delay: index * 0.5,
+            }}
+          />
+        </motion.div>
+      ))}
 
       {/* Orbit path */}
       <motion.div ref={orbitRef} animate={controls} className="absolute inset-0 rounded-full border border-white/10">

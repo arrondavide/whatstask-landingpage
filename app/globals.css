@@ -2,20 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Updated CSS variables to use brand colors */
 :root {
-  --background: 0 0% 0%;
-  --foreground: 0 0% 100%;
-  --card: 0 0% 3%;
+  --background: 0 0% 2%; /* #040404 */
+  --foreground: 0 0% 100%; /* #ffffff */
+  --card: 0 0% 4%;
   --card-foreground: 0 0% 100%;
-  --popover: 0 0% 3%;
+  --popover: 0 0% 4%;
   --popover-foreground: 0 0% 100%;
   --primary: 0 0% 100%;
-  --primary-foreground: 0 0% 0%;
-  --secondary: 0 0% 10%;
+  --primary-foreground: 0 0% 2%;
+  --secondary: 0 0% 27%; /* #464646 */
   --secondary-foreground: 0 0% 100%;
-  --muted: 0 0% 10%;
+  --muted: 0 0% 27%;
   --muted-foreground: 0 0% 60%;
-  --accent: 0 0% 10%;
+  --accent: 0 0% 15%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 100% 50%;
   --destructive-foreground: 0 0% 100%;
@@ -26,9 +27,24 @@
 }
 
 body {
-  background-color: black;
-  color: white;
+  background-color: #040404; /* Brand black */
+  color: #ffffff; /* Brand white */
   font-family: var(--font-poppins), sans-serif;
+}
+
+/* Apply Montserrat to all headings per brand guidelines */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-montserrat), sans-serif;
+  letter-spacing: -0.02em;
+}
+
+p {
+  letter-spacing: 0.01em;
 }
 
 html {
@@ -51,20 +67,6 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.2);
-}
-
-/* Typography enhancements */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  letter-spacing: -0.02em;
-}
-
-p {
-  letter-spacing: 0.01em;
 }
 
 /* Animation utilities */
