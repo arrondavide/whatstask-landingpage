@@ -112,6 +112,16 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5344273951045281"
           crossOrigin="anonymous"
         />
+
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-BPVBYV6G38" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-BPVBYV6G38');
+          `}
+        </Script>
       </head>
       <body className={`${poppins.variable} ${montserrat.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
