@@ -350,12 +350,12 @@ export default function LandingPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <AnimatedText
-              text="Simple Tools to Get Things Done"
-              className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-2"
+              text="Tasks Made Simple."
+              className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-4"
               once
             />
             <AnimatedText
-              text="Task management, PDF tools, and everyday utilities. No signups, no complexity."
+              text="Remove friction from workflows with our Telegram bot and free PDF tools. Create, organize, complete – all in one reliable platform."
               className="text-xl md:text-2xl lg:text-3xl font-light leading-tight tracking-tight text-gray-400 mb-6"
               once
               delay={0.5}

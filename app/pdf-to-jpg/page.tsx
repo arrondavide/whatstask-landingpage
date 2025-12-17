@@ -1,18 +1,23 @@
 import ToolPageTemplate from "@/components/tool-page-template"
+import { generateMetadata } from "@/lib/seo-metadata"
 import type { Metadata } from "next"
 
-export const metadata: Metadata = {
-  title: "Free PDF to JPG Converter – Convert Pages to Images | Whatstask",
+export const metadata: Metadata = generateMetadata({
+  title: "Free PDF to JPG Converter Online - High Quality Images | Whatstask 2025",
   description:
-    "Convert PDF pages to high-quality JPG images instantly. Free PDF to JPG converter with batch processing. No signup required.",
-  keywords: "pdf to jpg, convert pdf to jpg, pdf to image, free pdf converter",
-  openGraph: {
-    title: "Free PDF to JPG Converter – Convert Pages to Images | Whatstask",
-    description:
-      "Convert PDF pages to high-quality JPG images instantly. Free PDF to JPG converter with batch processing.",
-    url: "https://www.whatstask.com/pdf-to-jpg",
-  },
-}
+    "Convert PDF pages to high-quality JPG images instantly. Free PDF to JPG converter with batch processing. No signup required. Browser-based tool for 2025.",
+  canonicalUrl: "https://www.whatstask.com/pdf-to-jpg",
+  ogImage: "/logo.png",
+  keywords: [
+    "pdf to jpg",
+    "convert pdf to jpg",
+    "pdf to image",
+    "free pdf converter",
+    "pdf to jpg 2025",
+    "pdf to jpeg converter",
+    "convert pdf to image online",
+  ],
+})
 
 export default function PDFToJpgPage() {
   return (

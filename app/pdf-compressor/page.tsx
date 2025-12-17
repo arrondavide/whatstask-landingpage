@@ -1,18 +1,23 @@
 import ToolPageTemplate from "@/components/tool-page-template"
+import { generateMetadata } from "@/lib/seo-metadata"
 import type { Metadata } from "next"
 
-export const metadata: Metadata = {
-  title: "Free PDF Compressor – Reduce File Size | Whatstask",
+export const metadata: Metadata = generateMetadata({
+  title: "Free PDF Compressor Online - Reduce Size by 70% | Whatstask 2025",
   description:
-    "Compress PDF files online and reduce file size by up to 70%. Fast, free PDF compressor with zero quality loss. No signup needed.",
-  keywords: "pdf compressor, reduce pdf size, compress pdf online, free pdf compressor",
-  openGraph: {
-    title: "Free PDF Compressor – Reduce File Size | Whatstask",
-    description:
-      "Compress PDF files online and reduce file size by up to 70%. Fast, free PDF compressor with no quality loss.",
-    url: "https://www.whatstask.com/pdf-compressor",
-  },
-}
+    "Compress PDF files online and reduce file size by up to 70%. Fast, free PDF compressor with zero quality loss. No signup needed. Works in browser 2025.",
+  canonicalUrl: "https://www.whatstask.com/pdf-compressor",
+  ogImage: "/logo.png",
+  keywords: [
+    "pdf compressor",
+    "reduce pdf size",
+    "compress pdf online",
+    "free pdf compressor",
+    "pdf compressor 2025",
+    "reduce pdf file size",
+    "compress pdf free",
+  ],
+})
 
 export default function PDFCompressorPage() {
   return (

@@ -1,18 +1,23 @@
 import ToolPageTemplate from "@/components/tool-page-template"
+import { generateMetadata } from "@/lib/seo-metadata"
 import type { Metadata } from "next"
 
-export const metadata: Metadata = {
-  title: "Free PDF Splitter – Extract Pages from PDF | Whatstask",
+export const metadata: Metadata = generateMetadata({
+  title: "Free PDF Splitter Online - Extract Pages Easily | Whatstask 2025",
   description:
-    "Split PDF files and extract specific pages instantly. Free PDF splitter with no signup or watermarks. Fast, secure, and easy to use.",
-  keywords: "pdf splitter, split pdf, extract pages, free pdf splitter",
-  openGraph: {
-    title: "Free PDF Splitter – Extract Pages from PDF | Whatstask",
-    description:
-      "Split PDF files and extract specific pages instantly. Free PDF splitter with no signup or watermarks.",
-    url: "https://www.whatstask.com/pdf-splitter",
-  },
-}
+    "Split PDF files and extract specific pages instantly. Free PDF splitter with no signup or watermarks. Fast, secure, and easy to use in 2025.",
+  canonicalUrl: "https://www.whatstask.com/pdf-splitter",
+  ogImage: "/logo.png",
+  keywords: [
+    "pdf splitter",
+    "split pdf",
+    "extract pages",
+    "free pdf splitter",
+    "pdf splitter 2025",
+    "split pdf online",
+    "extract pdf pages",
+  ],
+})
 
 export default function PDFSplitterPage() {
   return (

@@ -1,18 +1,23 @@
 import ToolPageTemplate from "@/components/tool-page-template"
+import { generateMetadata } from "@/lib/seo-metadata"
 import type { Metadata } from "next"
 
-export const metadata: Metadata = {
-  title: "Free QR Code Generator – Create Custom QR Codes | Whatstask",
+export const metadata: Metadata = generateMetadata({
+  title: "Free QR Code Generator - Custom QR Codes Online | Whatstask 2025",
   description:
-    "Generate custom QR codes instantly for marketing, business cards, and more. Free QR code generator with PNG and SVG export.",
-  keywords: "qr code generator, free qr code, create qr codes, qr code maker",
-  openGraph: {
-    title: "Free QR Code Generator – Create Custom QR Codes | Whatstask",
-    description:
-      "Generate custom QR codes instantly for marketing, business cards, and more. Free QR code generator with PNG and SVG export.",
-    url: "https://www.whatstask.com/qr-code-generator",
-  },
-}
+    "Generate custom QR codes instantly for marketing, business cards, and more. Free QR code generator with PNG and SVG export. No limits for 2025.",
+  canonicalUrl: "https://www.whatstask.com/qr-code-generator",
+  ogImage: "/logo.png",
+  keywords: [
+    "qr code generator",
+    "free qr code",
+    "create qr codes",
+    "qr code maker",
+    "qr code generator 2025",
+    "custom qr code",
+    "qr code creator online",
+  ],
+})
 
 export default function QrCodeGeneratorPage() {
   return (

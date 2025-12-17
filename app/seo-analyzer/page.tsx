@@ -1,18 +1,23 @@
 import ToolPageTemplate from "@/components/tool-page-template"
+import { generateMetadata } from "@/lib/seo-metadata"
 import type { Metadata } from "next"
 
-export const metadata: Metadata = {
-  title: "Free GEO Analyzer – Optimize for AI Search & LLMs | Whatstask",
+export const metadata: Metadata = generateMetadata({
+  title: "Free SEO Analyzer Tool - Optimize Content for AI Search | Whatstask 2025",
   description:
-    "Analyze and optimize your content for AI-powered search and LLMs. Free GEO analyzer for Generative Engine Optimization.",
-  keywords: "geo analyzer, generative engine optimization, seo for ai, llm optimization",
-  openGraph: {
-    title: "Free GEO Analyzer – Optimize for AI Search & LLMs | Whatstask",
-    description:
-      "Analyze and optimize your content for AI-powered search and LLMs. Free GEO analyzer for Generative Engine Optimization.",
-    url: "https://www.whatstask.com/seo-analyzer",
-  },
-}
+    "Analyze and optimize your content for AI-powered search and LLMs. Free SEO and GEO analyzer for Generative Engine Optimization. Future-proof your content for 2025.",
+  canonicalUrl: "https://www.whatstask.com/seo-analyzer",
+  ogImage: "/logo.png",
+  keywords: [
+    "seo analyzer",
+    "geo analyzer",
+    "generative engine optimization",
+    "seo for ai",
+    "llm optimization",
+    "ai search optimization",
+    "content optimization 2025",
+  ],
+})
 
 export default function SeoAnalyzerPage() {
   return (

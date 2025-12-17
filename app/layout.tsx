@@ -21,9 +21,11 @@ const montserrat = Montserrat({
 })
 
 export const metadata = {
-  title: "Whatstask - Advanced Telegram Task Management Bot",
-  description: "Manage tasks and projects easily inside Telegram. Fast, simple, and made for productivity.",
-  keywords: "task management, telegram bot, productivity, project management, to-do list, task organizer",
+  title: "Whatstask: Free Telegram Task Management Bot & PDF Tools 2025",
+  description:
+    "Manage tasks in Telegram with AI reminders. Free online PDF merger, compressor & more—secure, no signup.",
+  keywords:
+    "telegram task bot, task management, telegram bot, productivity, PDF tools, PDF merger, PDF compressor, free online tools",
   authors: [{ name: "Whatstask Team" }],
   creator: "Whatstask",
   publisher: "Whatstask",
@@ -32,21 +34,22 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://whatstask.com"),
+  metadataBase: new URL("https://www.whatstask.com"),
   alternates: {
-    canonical: "/",
+    canonical: "https://www.whatstask.com",
   },
   openGraph: {
-    title: "Whatstask - Advanced Telegram Task Management Bot",
-    description: "Manage tasks and projects easily inside Telegram. Fast, simple, and made for productivity.",
-    url: "https://whatstask.com",
+    title: "Whatstask: Free Telegram Task Management Bot & PDF Tools 2025",
+    description:
+      "Manage tasks in Telegram with AI reminders. Free online PDF merger, compressor & more—secure, no signup.",
+    url: "https://www.whatstask.com",
     siteName: "Whatstask",
     images: [
       {
         url: "/logo.png",
-        width: 512,
-        height: 512,
-        alt: "Whatstask - Advanced Telegram Task Management Bot",
+        width: 1200,
+        height: 630,
+        alt: "Whatstask - Telegram Task Management Bot",
       },
     ],
     locale: "en_US",
@@ -54,8 +57,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Whatstask - Advanced Telegram Task Management Bot",
-    description: "Manage tasks and projects easily inside Telegram. Fast, simple, and made for productivity.",
+    title: "Whatstask: Free Telegram Task Management Bot & PDF Tools 2025",
+    description:
+      "Manage tasks in Telegram with AI reminders. Free online PDF merger, compressor & more—secure, no signup.",
     images: ["/logo.png"],
     creator: "@whatstask",
   },
@@ -101,9 +105,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
         <meta name="theme-color" content="#040404" />
-        <link rel="canonical" href="https://whatstask.com" />
+
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
+        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
+
+        <link rel="canonical" href="https://www.whatstask.com" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <meta name="google-adsense-account" content="ca-pub-5344273951045281" />
 
@@ -128,9 +137,24 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
 
-        {/* Structured data for SEO */}
         <Script
-          id="schema-structured-data"
+          id="schema-organization"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Whatstask",
+              url: "https://www.whatstask.com",
+              logo: "https://www.whatstask.com/logo.png",
+              description: "Manage tasks in Telegram with AI reminders. Free online PDF tools.",
+              sameAs: ["https://t.me/whatstask_bot"],
+            }),
+          }}
+        />
+
+        <Script
+          id="schema-software"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -138,13 +162,14 @@ export default function RootLayout({
               "@type": "SoftwareApplication",
               name: "Whatstask",
               applicationCategory: "ProductivityApplication",
-              operatingSystem: "Telegram",
+              operatingSystem: "Telegram, Web",
               offers: {
                 "@type": "Offer",
                 price: "0",
                 priceCurrency: "USD",
               },
-              description: "Manage tasks and projects easily inside Telegram. Fast, simple, and made for productivity.",
+              description:
+                "Manage tasks in Telegram with AI reminders. Free online PDF merger, compressor & more—secure, no signup.",
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "4.8",

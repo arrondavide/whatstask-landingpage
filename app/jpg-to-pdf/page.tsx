@@ -1,17 +1,23 @@
 import ToolPageTemplate from "@/components/tool-page-template"
+import { generateMetadata } from "@/lib/seo-metadata"
 import type { Metadata } from "next"
 
-export const metadata: Metadata = {
-  title: "Free JPG to PDF Converter – Turn Images into PDF | Whatstask",
+export const metadata: Metadata = generateMetadata({
+  title: "Free JPG to PDF Converter - Create PDFs from Images | Whatstask 2025",
   description:
-    "Convert JPG images to PDF documents instantly. Free JPG to PDF converter with batch support. No signup or watermarks.",
-  keywords: "jpg to pdf, convert jpg to pdf, image to pdf, free image converter",
-  openGraph: {
-    title: "Free JPG to PDF Converter – Turn Images into PDF | Whatstask",
-    description: "Convert JPG images to PDF documents instantly. Free JPG to PDF converter with batch support.",
-    url: "https://www.whatstask.com/jpg-to-pdf",
-  },
-}
+    "Convert JPG images to PDF documents instantly. Free JPG to PDF converter with batch support. No signup or watermarks. Turn images into PDFs for 2025.",
+  canonicalUrl: "https://www.whatstask.com/jpg-to-pdf",
+  ogImage: "/logo.png",
+  keywords: [
+    "jpg to pdf",
+    "convert jpg to pdf",
+    "image to pdf",
+    "free image converter",
+    "jpg to pdf 2025",
+    "jpeg to pdf converter",
+    "convert image to pdf online",
+  ],
+})
 
 export default function JpgToPdfPage() {
   return (

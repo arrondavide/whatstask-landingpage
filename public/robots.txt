@@ -2,5 +2,15 @@
 User-agent: *
 Allow: /
 
+# Disallow admin or private directories (if any)
+Disallow: /api/
+Disallow: /_next/webpack-hmr
+
+# Crawl-delay (optional, uncomment if needed)
+# Crawl-delay: 1
+
 # Sitemap location
-Sitemap: https://whatstask.com/sitemap.xml
+Sitemap: https://www.whatstask.com/sitemap.xml
+
+# Additional sitemaps for better organization (if needed in future)
+# Sitemap: https://www.whatstask.com/sitemap-tools.xml

@@ -3,11 +3,21 @@ import { generateMetadata } from "@/lib/seo-metadata"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = generateMetadata({
-  title: "Free PDF Merger - Combine PDFs Online",
-  description: "Merge multiple PDF files into one document. Free, fast, no signup required. Works in your browser.",
+  title: "Free Online PDF Merger - Combine PDFs Securely | Whatstask 2025",
+  description:
+    "Merge multiple PDF files into one document for free. No signup, browser-based, secure. Combine unlimited PDFs with our free online PDF merger tool.",
   canonicalUrl: "https://www.whatstask.com/pdf-merger",
   ogImage: "/logo.png",
-  keywords: ["pdf merger", "combine pdfs", "merge pdf files", "free pdf merger", "online pdf merger"],
+  keywords: [
+    "pdf merger",
+    "combine pdfs",
+    "merge pdf files",
+    "free pdf merger",
+    "online pdf merger",
+    "pdf merger 2025",
+    "combine pdf online",
+    "merge pdf free",
+  ],
 })
 
 export default function PDFMergerPage() {

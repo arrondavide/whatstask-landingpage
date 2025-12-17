@@ -5,6 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { FileText, CheckCircle, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import PageLoader from "@/components/page-loader"
+import Script from "next/script"
 
 interface ToolPageProps {
   toolName: string
@@ -40,9 +41,67 @@ export default function ToolPageTemplate({
   relatedTools,
   iframeSource,
 }: ToolPageProps) {
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: `How to use ${toolName}`,
+    description: shortDescription,
+    step: steps.map((step) => ({
+      "@type": "HowToStep",
+      name: step.title,
+      text: step.description,
+      position: step.number,
+    })),
+  }
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  }
+
+  const softwareSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: toolName,
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "Web Browser",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    description: shortDescription,
+    featureList: features,
+  }
+
   return (
     <>
       <PageLoader />
+
+      <Script
+        id={`schema-howto-${toolSlug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      <Script
+        id={`schema-faq-${toolSlug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Script
+        id={`schema-software-${toolSlug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
+
       <div className="min-h-screen bg-black text-white">
         {/* Header */}
         <header className="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-md">
@@ -79,6 +138,7 @@ export default function ToolPageTemplate({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-24 rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-lg"
+            id="tool-embed"
           >
             {iframeSource ? (
               <iframe
@@ -86,6 +146,7 @@ export default function ToolPageTemplate({
                 className="w-full h-[600px] md:h-[700px] border-0"
                 title={toolName}
                 allow="fullscreen"
+                loading="lazy"
               />
             ) : (
               <div className="w-full h-[600px] md:h-[700px] flex items-center justify-center">
