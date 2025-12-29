@@ -2,49 +2,91 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Updated CSS variables to use brand colors */
+/* Updated CSS variables to use brand identity teal/cyan color palette */
 :root {
-  --background: 0 0% 2%; /* #040404 */
-  --foreground: 0 0% 100%; /* #ffffff */
-  --card: 0 0% 4%;
-  --card-foreground: 0 0% 100%;
-  --popover: 0 0% 4%;
-  --popover-foreground: 0 0% 100%;
-  --primary: 0 0% 100%;
-  --primary-foreground: 0 0% 2%;
-  --secondary: 0 0% 27%; /* #464646 */
-  --secondary-foreground: 0 0% 100%;
-  --muted: 0 0% 27%;
-  --muted-foreground: 0 0% 60%;
-  --accent: 0 0% 15%;
+  /* Primary Teal Colors per brand guidelines */
+  --color-primary-700: #0f766e;
+  --color-primary-500: #14b8a6;
+  --color-primary-100: #ccfbf1;
+
+  /* Neutrals - Slate palette */
+  --color-slate-900: #0f172a;
+  --color-slate-700: #334155;
+  --color-slate-500: #64748b;
+  --color-slate-300: #cbd5e1;
+  --color-slate-100: #f1f5f9;
+
+  /* Semantic Colors per brand guidelines */
+  --color-success: #059669;
+  --color-warning: #d97706;
+  --color-error: #e11d48;
+  --color-info: #0284c7;
+
+  /* Typography variables */
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+
+  /* Spacing scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* Border radius scale */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Shadcn theme variables - dark mode with teal accents */
+  --background: 222 47% 5%; /* Dark slate background */
+  --foreground: 210 40% 98%; /* Light foreground */
+  --card: 222 47% 7%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222 47% 7%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 172 66% 50%; /* Teal 500 as primary */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 215 20% 27%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 215 20% 20%;
+  --muted-foreground: 217 10% 64%;
+  --accent: 172 66% 45%; /* Teal accent */
   --accent-foreground: 0 0% 100%;
-  --destructive: 0 100% 50%;
+  --destructive: 348 83% 47%; /* Rose for errors */
   --destructive-foreground: 0 0% 100%;
-  --border: 0 0% 20%;
-  --input: 0 0% 20%;
-  --ring: 0 0% 100%;
+  --border: 215 20% 20%;
+  --input: 215 20% 20%;
+  --ring: 172 66% 50%;
   --radius: 0.75rem;
 }
 
+/* Updated body to use dark background with brand color references */
 body {
-  background-color: #040404; /* Brand black */
-  color: #ffffff; /* Brand white */
-  font-family: var(--font-poppins), sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-body), sans-serif;
 }
 
-/* Apply Montserrat to all headings per brand guidelines */
+/* Apply Plus Jakarta Sans to all headings per brand guidelines */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-montserrat), sans-serif;
+  font-family: var(--font-heading), sans-serif;
   letter-spacing: -0.02em;
+  font-weight: 700;
 }
 
 p {
   letter-spacing: 0.01em;
+  line-height: 1.6;
 }
 
 html {

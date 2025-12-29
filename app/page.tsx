@@ -328,7 +328,7 @@ export default function LandingPage() {
                       className="flex items-center justify-center gap-2 py-6 text-lg"
                     >
                       <Send className="h-5 w-5" />
-                      <span className="font-medium tracking-wide">Start on Telegram</span>
+                      <span className="font-medium tracking-wide">Manage Tasks</span>
                     </a>
                   </Button>
                 </motion.div>
@@ -350,13 +350,13 @@ export default function LandingPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <AnimatedText
-              text="Tasks Made Simple."
+              text="Tasks. Done. Right where you chat."
               className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-4"
               once
             />
             <AnimatedText
-              text="Remove friction from workflows with our Telegram bot and free PDF tools. Create, organize, complete – all in one reliable platform."
-              className="text-xl md:text-2xl lg:text-3xl font-light leading-tight tracking-tight text-gray-400 mb-6"
+              text="Task management that lives where you do—inside Telegram. Plus free online PDF tools. No signups, no complexity."
+              className="text-xl md:text-2xl lg:text-3xl font-light leading-tight tracking-tight text-slate-400 mb-6"
               once
               delay={0.5}
             />
@@ -371,7 +371,7 @@ export default function LandingPage() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 asChild
-                className="bg-white text-black hover:bg-white/90 rounded-full px-8 relative overflow-hidden group"
+                className="bg-teal-500 text-white hover:bg-teal-700 rounded-full px-8 relative overflow-hidden group"
               >
                 <a
                   href="https://t.me/whatstaskbot"
@@ -380,7 +380,7 @@ export default function LandingPage() {
                   className="flex items-center gap-2 py-6 text-lg"
                 >
                   <motion.span
-                    className="absolute inset-0 bg-white/30"
+                    className="absolute inset-0 bg-teal-600/30"
                     initial={{ x: "-100%" }}
                     whileHover={{ x: "100%" }}
                     transition={{ duration: 0.5 }}
@@ -548,7 +548,7 @@ export default function LandingPage() {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button
                   asChild
-                  className="bg-white text-black hover:bg-white/90 rounded-full px-8 relative overflow-hidden group"
+                  className="bg-teal-500 text-white hover:bg-teal-700 rounded-full px-8 relative overflow-hidden group"
                 >
                   <a
                     href="https://t.me/whatstaskbot"
@@ -557,7 +557,7 @@ export default function LandingPage() {
                     className="flex items-center gap-2 py-6 text-lg"
                   >
                     <motion.span
-                      className="absolute inset-0 bg-white/30"
+                      className="absolute inset-0 bg-teal-600/30"
                       initial={{ x: "-100%" }}
                       whileHover={{ x: "100%" }}
                       transition={{ duration: 0.5 }}
@@ -767,7 +767,7 @@ export default function LandingPage() {
               >
                 <Button
                   asChild
-                  className="w-full sm:w-auto bg-white text-black hover:bg-white/90 rounded-full px-8 relative overflow-hidden group"
+                  className="w-full sm:w-auto bg-teal-500 text-white hover:bg-teal-700 rounded-full px-8 relative overflow-hidden group"
                 >
                   <a
                     href="https://t.me/whatstaskbot"
@@ -776,7 +776,7 @@ export default function LandingPage() {
                     className="flex items-center justify-center gap-2 py-6 text-lg"
                   >
                     <motion.span
-                      className="absolute inset-0 bg-white/30"
+                      className="absolute inset-0 bg-teal-600/30"
                       initial={{ x: "-100%" }}
                       whileHover={{ x: "100%" }}
                       transition={{ duration: 0.5 }}

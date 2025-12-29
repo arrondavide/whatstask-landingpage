@@ -20,14 +20,39 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-poppins)", "sans-serif"],
-        heading: ["var(--font-montserrat)", "sans-serif"],
+        sans: ["var(--font-body)", "system-ui", "sans-serif"],
+        heading: ["var(--font-heading)", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
       colors: {
         brand: {
           black: "#040404",
           gray: "#464646",
           white: "#ffffff",
+        },
+        teal: {
+          700: "#0F766E",
+          500: "#14B8A6",
+          100: "#CCFBF1",
+        },
+        slate: {
+          900: "#0F172A",
+          700: "#334155",
+          500: "#64748B",
+          300: "#CBD5E1",
+          100: "#F1F5F9",
+        },
+        emerald: {
+          DEFAULT: "#059669",
+        },
+        amber: {
+          DEFAULT: "#D97706",
+        },
+        rose: {
+          DEFAULT: "#E11D48",
+        },
+        sky: {
+          DEFAULT: "#0284C7",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

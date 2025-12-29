@@ -1,31 +1,39 @@
 import type React from "react"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { Poppins, Montserrat } from "next/font/google"
+import { Plus_Jakarta_Sans, DM_Sans, JetBrains_Mono } from "next/font/google"
 import Script from "next/script"
 
-// Import Poppins font for body text
-const poppins = Poppins({
+// Import Plus Jakarta Sans font for headings per brand guidelines
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-poppins",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-heading",
   display: "swap",
 })
 
-// Import Montserrat font for headings per brand guidelines
-const montserrat = Montserrat({
+// Import DM Sans font for body text per brand guidelines
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-montserrat",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
+  display: "swap",
+})
+
+// Import JetBrains Mono for code/technical content
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-mono",
   display: "swap",
 })
 
 export const metadata = {
-  title: "Whatstask: Free Telegram Task Management Bot & PDF Tools 2025",
+  title: "Whatstask: Tasks. Done. Right where you chat. | Telegram Bot & Free PDF Tools",
   description:
-    "Manage tasks in Telegram with AI reminders. Free online PDF merger, compressor & more—secure, no signup.",
+    "Task management that lives where you do—inside Telegram. Plus free online PDF tools: merge, compress, convert. No app switching, no learning curve, just results.",
   keywords:
-    "telegram task bot, task management, telegram bot, productivity, PDF tools, PDF merger, PDF compressor, free online tools",
+    "telegram task bot, task management, productivity, PDF tools, PDF merger, PDF compressor, free online tools, telegram bot, ai task assistant",
   authors: [{ name: "Whatstask Team" }],
   creator: "Whatstask",
   publisher: "Whatstask",
@@ -39,9 +47,9 @@ export const metadata = {
     canonical: "https://www.whatstask.com",
   },
   openGraph: {
-    title: "Whatstask: Free Telegram Task Management Bot & PDF Tools 2025",
+    title: "Whatstask: Tasks. Done. Right where you chat.",
     description:
-      "Manage tasks in Telegram with AI reminders. Free online PDF merger, compressor & more—secure, no signup.",
+      "Task management that lives where you do—inside Telegram. Plus free online PDF tools. No signups, no complexity.",
     url: "https://www.whatstask.com",
     siteName: "Whatstask",
     images: [
@@ -57,9 +65,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Whatstask: Free Telegram Task Management Bot & PDF Tools 2025",
+    title: "Whatstask: Tasks. Done. Right where you chat.",
     description:
-      "Manage tasks in Telegram with AI reminders. Free online PDF merger, compressor & more—secure, no signup.",
+      "Task management that lives where you do—inside Telegram. Plus free online PDF tools. No signups, no complexity.",
     images: ["/logo.png"],
     creator: "@whatstask",
   },
@@ -106,7 +114,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-        <meta name="theme-color" content="#040404" />
+        <meta name="theme-color" content="#0F766E" />
 
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
         <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
@@ -132,7 +140,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${poppins.variable} ${montserrat.variable} font-sans`}>
+      <body className={`${plusJakartaSans.variable} ${dmSans.variable} ${jetBrainsMono.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           {children}
         </ThemeProvider>
