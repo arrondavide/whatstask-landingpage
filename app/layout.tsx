@@ -29,9 +29,9 @@ const jetBrainsMono = JetBrains_Mono({
 })
 
 export const metadata = {
-  title: "Whatstask: Tasks. Done. Right where you chat. | Telegram Bot & Free PDF Tools",
+  title: "Whatstask - Telegram Task Bot & Free PDF Tools",
   description:
-    "Task management that lives where you do—inside Telegram. Plus free online PDF tools: merge, compress, convert. No app switching, no learning curve, just results.",
+    "Manage tasks, set reminders, and convert PDFs without leaving Telegram. Join 10,000+ users who get more done. Free to start — add Whatstask now!",
   keywords:
     "telegram task bot, task management, productivity, PDF tools, PDF merger, PDF compressor, free online tools, telegram bot, ai task assistant",
   authors: [{ name: "Whatstask Team" }],
@@ -47,9 +47,9 @@ export const metadata = {
     canonical: "https://www.whatstask.com",
   },
   openGraph: {
-    title: "Whatstask: Tasks. Done. Right where you chat.",
+    title: "Whatstask - Telegram Task Bot & Free PDF Tools",
     description:
-      "Task management that lives where you do—inside Telegram. Plus free online PDF tools. No signups, no complexity.",
+      "Manage tasks, set reminders, and convert PDFs without leaving Telegram. Join 10,000+ users who get more done.",
     url: "https://www.whatstask.com",
     siteName: "Whatstask",
     images: [
@@ -65,9 +65,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Whatstask: Tasks. Done. Right where you chat.",
+    title: "Whatstask - Telegram Task Bot & Free PDF Tools",
     description:
-      "Task management that lives where you do—inside Telegram. Plus free online PDF tools. No signups, no complexity.",
+      "Manage tasks, set reminders, and convert PDFs without leaving Telegram. Join 10,000+ users who get more done.",
     images: ["/logo.png"],
     creator: "@whatstask",
   },
@@ -98,9 +98,10 @@ export const metadata = {
     ],
   },
   manifest: "/site.webmanifest",
-  verification: {
-    google: "google-site-verification=your-verification-code",
-  },
+  // Note: Add your Google Search Console verification code here after setting up GSC
+  // verification: {
+  //   google: "google-site-verification=your-verification-code",
+  // },
   category: "productivity",
     generator: 'v0.app'
 }
@@ -183,6 +184,78 @@ export default function RootLayout({
                 ratingValue: "4.8",
                 ratingCount: "1024",
               },
+            }),
+          }}
+        />
+
+        <Script
+          id="schema-faq"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "What is Whatstask?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Whatstask is a Telegram bot that helps you manage tasks, set reminders, and convert PDFs directly within Telegram. No app switching required - just chat with the bot to create tasks, schedule reminders, and handle documents.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "How do I use Whatstask?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Simply start a conversation with @whatstaskbot on Telegram. Type your tasks in natural language, and Whatstask will understand and organize them. You can create tasks, set reminders, and use PDF tools all through simple chat messages.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Is Whatstask free?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes! Whatstask is free to start. All basic task management features and PDF tools are available at no cost. No signup or credit card required.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "What PDF tools does Whatstask offer?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Whatstask offers free PDF tools including: PDF Merger, PDF Compressor, PDF to JPG converter, JPG to PDF converter, PDF Splitter, and QR Code Generator. All tools work directly in your browser without requiring signup.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Does Whatstask work on mobile?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes! Whatstask works perfectly on mobile devices through the Telegram app. Since it's a Telegram bot, you can access all features on iOS, Android, and desktop without downloading any additional apps.",
+                  },
+                },
+              ],
+            }),
+          }}
+        />
+
+        <Script
+          id="schema-breadcrumb"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://www.whatstask.com",
+                },
+              ],
             }),
           }}
         />
