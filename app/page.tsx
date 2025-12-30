@@ -801,7 +801,7 @@ export default function LandingPage() {
       <footer className="relative py-12 px-4 border-t border-white/5">
         <div className="container mx-auto">
           <motion.div
-            className="grid md:grid-cols-4 gap-8 mb-8"
+            className="grid md:grid-cols-5 gap-8 mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -820,18 +820,17 @@ export default function LandingPage() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4 text-sm tracking-tight">PDF Tools</h4>
+              <h4 className="font-semibold mb-4 text-sm tracking-tight">Product</h4>
               <ul className="space-y-2">
                 {[
-                  { name: "PDF Merger", href: "/pdf-merger" },
-                  { name: "PDF Compressor", href: "/pdf-compressor" },
-                  { name: "PDF Splitter", href: "/pdf-splitter" },
+                  { name: "Features", href: "/features" },
+                  { name: "How It Works", href: "/how-it-works" },
+                  { name: "Pricing", href: "/pricing" },
+                  { name: "About", href: "/about" },
                 ].map((link, index) => (
                   <li key={index}>
                     <motion.a
                       href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="text-xs text-gray-400 hover:text-white transition-colors tracking-wide"
                       whileHover={{ x: 4 }}
                     >
@@ -843,12 +842,35 @@ export default function LandingPage() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4 text-sm tracking-tight">Converters</h4>
+              <h4 className="font-semibold mb-4 text-sm tracking-tight">Resources</h4>
               <ul className="space-y-2">
                 {[
+                  { name: "Blog", href: "/blog" },
+                  { name: "Compare Skeddy", href: "/compare/skeddy" },
+                  { name: "Compare Todoist", href: "/compare/todoist" },
+                  { name: "For Freelancers", href: "/use-cases/freelancers" },
+                ].map((link, index) => (
+                  <li key={index}>
+                    <motion.a
+                      href={link.href}
+                      className="text-xs text-gray-400 hover:text-white transition-colors tracking-wide"
+                      whileHover={{ x: 4 }}
+                    >
+                      {link.name}
+                    </motion.a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-4 text-sm tracking-tight">PDF Tools</h4>
+              <ul className="space-y-2">
+                {[
+                  { name: "PDF Merger", href: "/pdf-merger" },
+                  { name: "PDF Compressor", href: "/pdf-compressor" },
                   { name: "PDF to JPG", href: "/pdf-to-jpg" },
                   { name: "JPG to PDF", href: "/jpg-to-pdf" },
-                  { name: "QR Generator", href: "/qr-code-generator" },
                 ].map((link, index) => (
                   <li key={index}>
                     <motion.a
@@ -868,15 +890,6 @@ export default function LandingPage() {
             <div>
               <h4 className="font-semibold mb-4 text-sm tracking-tight">More</h4>
               <ul className="space-y-2">
-                <li>
-                  <motion.a
-                    href="#features"
-                    className="text-xs text-gray-400 hover:text-white transition-colors tracking-wide"
-                    whileHover={{ x: 4 }}
-                  >
-                    Features
-                  </motion.a>
-                </li>
                 <li>
                   <motion.button
                     onClick={handlePrivacyClick}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Calendar, Clock, ArrowRight } from "lucide-react"
 import PageLoader from "@/components/page-loader"
@@ -65,7 +66,7 @@ export default function BlogPage() {
         <header className="border-b border-white/10">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
-              <img src="/logo.svg" alt="Whatstask" className="h-8 w-8" />
+              <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
               <span className="text-xl font-bold">Whatstask</span>
             </Link>
             <Link href="/">

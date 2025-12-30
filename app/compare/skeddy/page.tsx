@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Check, X, DollarSign, Zap, Users, Shield } from "lucide-react"
 import PageLoader from "@/components/page-loader"
@@ -137,7 +138,7 @@ export default function WhatstaskVsSkeddyPage() {
         <header className="border-b border-white/10">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
-              <img src="/logo.svg" alt="Whatstask" className="h-8 w-8" />
+              <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
               <span className="text-xl font-bold">Whatstask</span>
             </Link>
             <Link href="/">
@@ -220,7 +221,7 @@ export default function WhatstaskVsSkeddyPage() {
               {/* Whatstask Pros/Cons */}
               <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
                 <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                  <img src="/logo.svg" alt="Whatstask" className="h-6 w-6" />
+                  <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} className="h-6 w-6" />
                   Whatstask
                 </h3>
                 <div className="mb-6">
