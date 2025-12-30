@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { Breadcrumbs } from "@/components/breadcrumbs"
 import {
   MessageSquare,
   Calendar,
@@ -156,6 +157,8 @@ export default function FeaturesPage() {
 
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-20">
+          <Breadcrumbs items={[{ label: "Features", href: "/features" }]} />
+
           <div className="text-center max-w-4xl mx-auto mb-16">
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
               Everything You Need to Stay Organized

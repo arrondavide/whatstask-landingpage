@@ -121,6 +121,13 @@ export default function RootLayout({
         <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
         <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
 
+        {/* Preconnect to external domains for faster loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+
         <link rel="canonical" href="https://www.whatstask.com" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <meta name="google-adsense-account" content="ca-pub-5344273951045281" />
@@ -157,7 +164,37 @@ export default function RootLayout({
               url: "https://www.whatstask.com",
               logo: "https://www.whatstask.com/logo.png",
               description: "Manage tasks in Telegram with AI reminders. Free online PDF tools.",
-              sameAs: ["https://t.me/whatstask_bot"],
+              sameAs: [
+                "https://t.me/whatstask_bot",
+                "https://twitter.com/whatstask",
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "Customer Support",
+                availableLanguage: ["English"],
+              },
+            }),
+          }}
+        />
+
+        <Script
+          id="schema-website"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Whatstask",
+              url: "https://www.whatstask.com",
+              description: "Telegram task management bot and free PDF tools",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate: "https://www.whatstask.com/blog?q={search_term_string}",
+                },
+                "query-input": "required name=search_term_string",
+              },
             }),
           }}
         />

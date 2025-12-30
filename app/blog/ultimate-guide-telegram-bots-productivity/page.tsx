@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calendar, Clock, ArrowLeft, Check, Zap, Users, Shield } from "lucide-react"
 import PageLoader from "@/components/page-loader"
 import Script from "next/script"
@@ -93,6 +94,13 @@ export default function TelegramBotsGuidePage() {
         {/* Article */}
         <article className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
+            <Breadcrumbs
+              items={[
+                { label: "Blog", href: "/blog" },
+                { label: "Ultimate Guide to Telegram Bots", href: "/blog/ultimate-guide-telegram-bots-productivity" },
+              ]}
+            />
+
             {/* Meta */}
             <div className="flex items-center gap-4 mb-6 text-gray-400">
               <span className="bg-teal-500/10 border border-teal-500/20 text-teal-400 text-sm px-3 py-1 rounded-full font-medium">
@@ -223,9 +231,16 @@ export default function TelegramBotsGuidePage() {
               <div className="bg-teal-500/10 border border-teal-500/20 rounded-xl p-6 mb-8">
                 <p className="text-gray-300 font-medium mb-2">💡 Expert Tip:</p>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Start with a simple task bot like Whatstask. Most people overcomplicate productivity and end up
-                  spending more time managing tools than getting work done. Choose simplicity first, then add
-                  complexity if needed.
+                  Start with a simple task bot like{" "}
+                  <Link href="/features" className="text-teal-400 hover:underline">
+                    Whatstask
+                  </Link>
+                  . Most people overcomplicate productivity and end up spending more time managing tools than getting
+                  work done. Choose simplicity first, then add complexity if needed. Check out our{" "}
+                  <Link href="/how-it-works" className="text-teal-400 hover:underline">
+                    getting started guide
+                  </Link>{" "}
+                  to see how easy it is.
                 </p>
               </div>
 
@@ -356,8 +371,20 @@ export default function TelegramBotsGuidePage() {
                 <div className="flex gap-4">
                   <div className="text-teal-500 font-bold whitespace-nowrap">Day 1-2:</div>
                   <p className="text-gray-300">
-                    Set up a task management bot (we recommend Whatstask). Add 5-10 tasks to get comfortable with the
-                    interface.
+                    Set up a task management bot (we recommend{" "}
+                    <a
+                      href="https://t.me/whatstaskbot"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-teal-400 hover:underline"
+                    >
+                      Whatstask
+                    </a>
+                    ). Add 5-10 tasks to get comfortable with the interface. See our{" "}
+                    <Link href="/use-cases/freelancers" className="text-teal-400 hover:underline">
+                      freelancer guide
+                    </Link>{" "}
+                    for specific examples.
                   </p>
                 </div>
                 <div className="flex gap-4">
@@ -414,18 +441,18 @@ export default function TelegramBotsGuidePage() {
               <h3 className="text-2xl font-bold mb-6">Related Articles</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <Link
-                  href="/blog/how-to-set-up-task-reminders-telegram"
-                  className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all"
-                >
-                  <h4 className="font-bold mb-2">How to Set Up Task Reminders in Telegram</h4>
-                  <p className="text-gray-400 text-sm">Step-by-step tutorial with examples</p>
-                </Link>
-                <Link
                   href="/compare/todoist"
                   className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all"
                 >
                   <h4 className="font-bold mb-2">Telegram Task Bot vs Todoist</h4>
-                  <p className="text-gray-400 text-sm">Which is better for your workflow?</p>
+                  <p className="text-gray-400 text-sm">Detailed comparison of features and pricing</p>
+                </Link>
+                <Link
+                  href="/compare/skeddy"
+                  className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all"
+                >
+                  <h4 className="font-bold mb-2">Whatstask vs Skeddy</h4>
+                  <p className="text-gray-400 text-sm">Compare the two top Telegram task bots</p>
                 </Link>
               </div>
             </div>
