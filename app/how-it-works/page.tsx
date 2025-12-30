@@ -7,22 +7,22 @@ import PageLoader from "@/components/page-loader"
 import Script from "next/script"
 
 export const metadata: Metadata = {
-  title: "How It Works - Telegram Task Bot Setup Guide | Whatstask",
+  title: "How It Works - Telegram Mini App Setup | Whatstask",
   description:
-    "Learn how to use Whatstask in 3 simple steps: Add the bot, create tasks in natural language, and get smart reminders. Complete setup guide for Telegram task management.",
+    "Get started with Whatstask in 4 simple steps: Launch Mini App, create workspace, manage tasks & time, invite team. Complete guide to work management in Telegram.",
   keywords:
-    "how to use telegram task bot, telegram bot tutorial, whatstask setup, task management guide, telegram reminder setup",
+    "how to use telegram mini app, telegram webapp tutorial, whatstask setup, work management guide, telegram mini app onboarding, team setup telegram",
   openGraph: {
-    title: "How It Works - Telegram Task Bot Setup Guide | Whatstask",
-    description: "Add the bot → Create tasks → Get reminders. Simple task management in Telegram.",
+    title: "How It Works - Telegram Mini App Setup | Whatstask",
+    description: "Launch Mini App → Create workspace → Manage work → Invite team. Complete work management in Telegram.",
     url: "https://www.whatstask.com/how-it-works",
     siteName: "Whatstask",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "How It Works - Telegram Task Bot Setup Guide | Whatstask",
-    description: "Complete guide to using Whatstask for task management in Telegram.",
+    title: "How It Works - Telegram Mini App Setup | Whatstask",
+    description: "Complete guide to work management with Whatstask Mini App in Telegram.",
   },
   robots: {
     index: true,
@@ -37,35 +37,51 @@ export default function HowItWorksPage() {
   const steps = [
     {
       number: "01",
-      title: "Add Whatstask to Telegram",
-      description: "Open Telegram and search for @whatstaskbot, or click the button below to start instantly.",
+      title: "Launch the Mini App",
+      description: "Open Telegram and search for @whatstaskbot. Tap to open the full Mini App interface - no installation needed.",
       details: [
         "Works on iOS, Android, and Desktop",
-        "No installation required",
+        "Full app interface in Telegram",
+        "One-tap authentication with Telegram",
         "Free to start - no credit card needed",
       ],
       icon: <Send className="h-12 w-12" />,
     },
     {
       number: "02",
-      title: "Create Your First Task",
-      description: "Simply type your task in natural language. Whatstask understands context and dates automatically.",
+      title: "Create Your Workspace",
+      description: "Set up your first company workspace or join an existing team using an 8-character invitation code.",
       details: [
-        'Example: "Meeting with Sarah tomorrow at 3pm"',
-        'Example: "Buy groceries this weekend"',
-        'Example: "Review proposal by Friday"',
+        "Create unlimited companies/workspaces",
+        "Join teams with invitation codes",
+        "Switch between workspaces easily",
+        "Choose your role: Admin, Manager, or Employee",
       ],
       icon: <MessageSquare className="h-12 w-12" />,
     },
     {
       number: "03",
-      title: "Get Smart Reminders",
+      title: "Manage Tasks & Track Time",
       description:
-        "Receive notifications at the perfect time. Whatstask adapts to your schedule and never lets you forget.",
+        "Create tasks with subtasks, priorities, and due dates. Clock in/out to track time. View analytics and reports.",
       details: [
-        "Context-aware notifications",
-        "Works across all time zones",
-        "Recurring reminders for daily/weekly tasks",
+        "Create tasks with full details and attachments",
+        "One-tap time tracking with clock in/out",
+        "Add subtasks and recurring schedules",
+        "View productivity statistics and reports",
+      ],
+      icon: <Check className="h-12 w-12" />,
+    },
+    {
+      number: "04",
+      title: "Invite & Collaborate with Your Team",
+      description:
+        "Invite team members, assign tasks, add comments, and track progress together. Real-time collaboration built-in.",
+      details: [
+        "Invite unlimited team members",
+        "Assign tasks and set permissions",
+        "Comment and mention teammates",
+        "Track team time and productivity",
       ],
       icon: <Bell className="h-12 w-12" />,
     },
@@ -115,10 +131,9 @@ export default function HowItWorksPage() {
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-20">
           <div className="text-center max-w-4xl mx-auto mb-20">
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-6">How Whatstask Works</h1>
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-6">Get Started in 4 Simple Steps</h1>
             <p className="text-xl text-gray-400 leading-relaxed">
-              Get started in under 60 seconds. No complex setup, no learning curve - just open Telegram and start
-              managing tasks.
+              Launch the Mini App, create your workspace, manage tasks & time, and invite your team. Complete work management in Telegram - ready in minutes.
             </p>
           </div>
 

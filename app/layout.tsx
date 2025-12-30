@@ -29,11 +29,11 @@ const jetBrainsMono = JetBrains_Mono({
 })
 
 export const metadata = {
-  title: "Whatstask - Telegram Task Bot & Free PDF Tools",
+  title: "Whatstask - Complete Work Management Platform in Telegram",
   description:
-    "Manage tasks, set reminders, and convert PDFs without leaving Telegram. Join 10,000+ users who get more done. Free to start — add Whatstask now!",
+    "Full-featured Telegram Mini App for task management, time tracking, and team collaboration. Manage teams, track hours, analyze productivity - all in Telegram. Free for teams.",
   keywords:
-    "telegram task bot, task management, productivity, PDF tools, PDF merger, PDF compressor, free online tools, telegram bot, ai task assistant",
+    "telegram mini app, telegram webapp, work management platform, task management, time tracking app, team collaboration, company workspace, project management telegram, telegram time tracker, team task management",
   authors: [{ name: "Whatstask Team" }],
   creator: "Whatstask",
   publisher: "Whatstask",
@@ -47,9 +47,9 @@ export const metadata = {
     canonical: "https://www.whatstask.com",
   },
   openGraph: {
-    title: "Whatstask - Telegram Task Bot & Free PDF Tools",
+    title: "Whatstask - Work Management Platform in Telegram",
     description:
-      "Manage tasks, set reminders, and convert PDFs without leaving Telegram. Join 10,000+ users who get more done.",
+      "Full-featured Telegram Mini App: Task management, time tracking, team collaboration & analytics. Manage teams, track hours, boost productivity.",
     url: "https://www.whatstask.com",
     siteName: "Whatstask",
     images: [
@@ -57,7 +57,7 @@ export const metadata = {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Whatstask - Telegram Task Management Bot",
+        alt: "Whatstask - Telegram Work Management Mini App",
       },
     ],
     locale: "en_US",
@@ -65,9 +65,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Whatstask - Telegram Task Bot & Free PDF Tools",
+    title: "Whatstask - Work Management Platform in Telegram",
     description:
-      "Manage tasks, set reminders, and convert PDFs without leaving Telegram. Join 10,000+ users who get more done.",
+      "Full-featured Telegram Mini App: Task management, time tracking, team collaboration & analytics. Free for teams.",
     images: ["/logo.png"],
     creator: "@whatstask",
   },
@@ -207,15 +207,26 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
               name: "Whatstask",
-              applicationCategory: "ProductivityApplication",
-              operatingSystem: "Telegram, Web",
+              applicationCategory: "BusinessApplication",
+              applicationSubCategory: "Project Management Software",
+              operatingSystem: "Telegram Mini App, iOS, Android, Web",
               offers: {
                 "@type": "Offer",
                 price: "0",
                 priceCurrency: "USD",
               },
               description:
-                "Manage tasks in Telegram with AI reminders. Free online PDF merger, compressor & more—secure, no signup.",
+                "Complete work management platform in Telegram. Full-featured Mini App for task management, time tracking, team collaboration, and productivity analytics. Free for teams.",
+              featureList: [
+                "Task Management with subtasks and recurring tasks",
+                "Time Tracking with clock in/out",
+                "Team Collaboration with roles and permissions",
+                "Company Workspaces and multi-tenancy",
+                "Real-time Statistics and Analytics",
+                "In-app and Telegram Push Notifications",
+                "Comments and Activity Feed",
+                "Offline Mode with Auto-sync"
+              ],
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "4.8",

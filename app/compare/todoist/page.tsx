@@ -7,22 +7,22 @@ import PageLoader from "@/components/page-loader"
 import Script from "next/script"
 
 export const metadata: Metadata = {
-  title: "Telegram Task Bot vs Todoist: Pros & Cons [2025 Comparison]",
+  title: "Whatstask Mini App vs Todoist: Complete Comparison [2025]",
   description:
-    "Should you use Whatstask (Telegram bot) or Todoist for task management? Compare features, pricing, ease of use, and mobile experience. Honest comparison for 2025.",
+    "Whatstask Telegram Mini App vs Todoist: Compare time tracking, team collaboration, pricing, and features. Which work management platform is right for you in 2025?",
   keywords:
-    "telegram task bot vs todoist, whatstask vs todoist, todoist alternative telegram, task management comparison, telegram vs todoist app",
+    "telegram mini app vs todoist, whatstask vs todoist, todoist alternative telegram, work management comparison, time tracking todoist, team collaboration telegram",
   openGraph: {
-    title: "Telegram Task Bot vs Todoist: Pros & Cons [2025]",
-    description: "Whatstask (Telegram) vs Todoist: Which task manager is right for you? Compare features and pricing.",
+    title: "Whatstask Mini App vs Todoist: Full Comparison [2025]",
+    description: "Compare Whatstask (Telegram Mini App with time tracking & teams) vs Todoist. Features, pricing, and which is best for you.",
     url: "https://www.whatstask.com/compare/todoist",
     siteName: "Whatstask",
     type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Telegram Task Bot vs Todoist: Which is Better?",
-    description: "Honest comparison to help you choose between Telegram-based and standalone task management.",
+    title: "Whatstask Mini App vs Todoist: Which is Better?",
+    description: "Honest comparison: Telegram Mini App with time tracking vs Todoist's standalone app.",
   },
   robots: {
     index: true,
@@ -36,6 +36,42 @@ export const metadata: Metadata = {
 export default function WhatstaskVsTodoistPage() {
   const comparison = [
     {
+      category: "Platform Type",
+      whatstask: "Full Mini App (complete UI)",
+      todoist: "Native App (requires installation)",
+      winner: "whatstask",
+    },
+    {
+      category: "Time Tracking",
+      whatstask: "Built-in (clock in/out, reports)",
+      todoist: "Not available (need Toggl integration)",
+      winner: "whatstask",
+    },
+    {
+      category: "Team Collaboration",
+      whatstask: "Full support with 3-tier roles (Free)",
+      todoist: "Limited on free, full on Business plan",
+      winner: "whatstask",
+    },
+    {
+      category: "Multi-Company Workspaces",
+      whatstask: "Unlimited companies/workspaces",
+      todoist: "Not available",
+      winner: "whatstask",
+    },
+    {
+      category: "Subtasks & Checklists",
+      whatstask: "Full support",
+      todoist: "Full support",
+      winner: "tie",
+    },
+    {
+      category: "Analytics Dashboard",
+      whatstask: "Personal & team time tracking metrics",
+      todoist: "Karma points & productivity trends",
+      winner: "tie",
+    },
+    {
       category: "Platform",
       whatstask: "Works in Telegram (no app needed)",
       todoist: "Dedicated app required",
@@ -48,14 +84,8 @@ export default function WhatstaskVsTodoistPage() {
       winner: "tie",
     },
     {
-      category: "Natural Language Input",
-      whatstask: "Advanced AI understanding",
-      todoist: "Good, but requires specific syntax",
-      winner: "whatstask",
-    },
-    {
       category: "Setup Time",
-      whatstask: "< 60 seconds (just add bot)",
+      whatstask: "< 60 seconds (just open Mini App)",
       todoist: "~5 minutes (download, signup, setup)",
       winner: "whatstask",
     },
@@ -73,25 +103,19 @@ export default function WhatstaskVsTodoistPage() {
     },
     {
       category: "Task Organization",
-      whatstask: "Categories & tags",
+      whatstask: "Categories, tags, companies",
       todoist: "Projects, sections, labels, filters",
       winner: "todoist",
     },
     {
       category: "Mobile Experience",
-      whatstask: "Works in Telegram app",
+      whatstask: "Mini App in Telegram",
       todoist: "Native iOS/Android apps",
       winner: "tie",
     },
     {
-      category: "Productivity Score",
-      whatstask: "Task analytics (Pro)",
-      todoist: "Karma system & trends",
-      winner: "todoist",
-    },
-    {
       category: "Learning Curve",
-      whatstask: "Instant - just chat",
+      whatstask: "Easy - familiar UI",
       todoist: "Moderate - need to learn features",
       winner: "whatstask",
     },
@@ -224,27 +248,27 @@ export default function WhatstaskVsTodoistPage() {
                 <ul className="space-y-3 text-gray-300">
                   <li className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    You already use Telegram daily
+                    You need built-in time tracking for billing clients accurately
                   </li>
                   <li className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    You want zero setup time
+                    You want team collaboration with roles (Admin/Manager/Employee)
                   </li>
                   <li className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    You hate switching between apps
+                    You manage multiple companies or client workspaces
                   </li>
                   <li className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    You need PDF tools alongside tasks
+                    You already use Telegram daily and want everything in one app
                   </li>
                   <li className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    You're a freelancer or solopreneur
+                    You want zero setup time (no app installation needed)
                   </li>
                   <li className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    You want natural language input
+                    You need unlimited team members on the free tier
                   </li>
                 </ul>
               </div>
@@ -351,7 +375,7 @@ export default function WhatstaskVsTodoistPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild className="bg-teal-500 text-white hover:bg-teal-700 rounded-full px-8 py-6">
                 <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                  Start on Telegram
+                  Launch Mini App
                 </a>
               </Button>
               <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">

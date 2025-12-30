@@ -21,23 +21,23 @@ import PageLoader from "@/components/page-loader"
 import Script from "next/script"
 
 export const metadata: Metadata = {
-  title: "Features - Telegram Task Management Bot | Whatstask",
+  title: "Features - Work Management Mini App | Whatstask",
   description:
-    "Explore all Whatstask features: natural language task creation, smart reminders, PDF tools, team collaboration, and more. Everything you need to stay organized in Telegram.",
+    "Full-featured Telegram Mini App: Task management with subtasks, time tracking with clock in/out, team collaboration with roles, company workspaces, analytics & more. Built for teams.",
   keywords:
-    "telegram task bot features, task management features, telegram reminder bot, natural language tasks, smart scheduling, team collaboration telegram",
+    "telegram mini app features, work management features, time tracking app, team collaboration features, task management telegram, company workspace, project management telegram",
   openGraph: {
-    title: "Features - Telegram Task Management Bot | Whatstask",
+    title: "Features - Work Management Mini App | Whatstask",
     description:
-      "Natural language task creation, smart reminders, PDF tools, and team collaboration - all in Telegram.",
+      "Task management, time tracking, team collaboration, analytics - complete work management platform in Telegram.",
     url: "https://www.whatstask.com/features",
     siteName: "Whatstask",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Features - Telegram Task Management Bot | Whatstask",
-    description: "All features for task management, reminders, and PDF tools in Telegram.",
+    title: "Features - Work Management Mini App | Whatstask",
+    description: "Task management, time tracking, teams, analytics - all in one Telegram Mini App.",
   },
   robots: {
     index: true,
@@ -51,88 +51,95 @@ export const metadata: Metadata = {
 export default function FeaturesPage() {
   const features = [
     {
-      icon: <MessageSquare className="h-8 w-8" />,
-      title: "Natural Language Input",
-      description:
-        "Create tasks using everyday language. Simply type 'Meeting with John tomorrow at 3pm' and Whatstask automatically understands, schedules, and sets reminders. No complex commands or syntax to learn.",
-      category: "Core Features",
-    },
-    {
-      icon: <Calendar className="h-8 w-8" />,
-      title: "Smart Scheduling",
-      description:
-        "Automatically detects dates and times in your messages. Mentions like 'next Monday', 'in 2 hours', or 'December 15th' are converted to scheduled tasks without extra steps. Works across all time zones.",
-      category: "Core Features",
-    },
-    {
-      icon: <Bell className="h-8 w-8" />,
-      title: "Intelligent Reminders",
-      description:
-        "Get notified at the perfect time with context-aware reminders that adapt to your habits. Set recurring reminders for daily, weekly, or custom intervals. Never miss an important deadline again.",
-      category: "Core Features",
-    },
-    {
       icon: <List className="h-8 w-8" />,
-      title: "Organized Categories",
+      title: "Complete Task Management",
       description:
-        "Keep work, personal, and project tasks separate with automatic categorization. Create custom categories and use tags to organize complex workflows. Filter and search tasks instantly.",
-      category: "Organization",
+        "Create tasks with full details: subtasks, priorities, due dates, file attachments, and recurring schedules (daily/weekly/monthly). Organize with categories and tags. Complete project management in Telegram.",
+      category: "Task Management",
     },
     {
       icon: <Check className="h-8 w-8" />,
-      title: "One-Tap Completion",
+      title: "Subtasks & Checklists",
       description:
-        "Mark tasks complete with a single tap, keeping your productivity flowing smoothly. View completion history and track your progress over time. Undo accidental completions easily.",
-      category: "Productivity",
+        "Break down complex tasks into manageable subtasks. Create checklists for step-by-step workflows. Track progress as you complete each item. Perfect for project planning and execution.",
+      category: "Task Management",
     },
     {
-      icon: <Users className="h-8 w-8" />,
-      title: "Team Collaboration",
+      icon: <Calendar className="h-8 w-8" />,
+      title: "Recurring Tasks",
       description:
-        "Share tasks with friends or colleagues without them leaving Telegram. Assign tasks, set deadlines, and track team progress. Perfect for remote teams and group projects.",
-      category: "Collaboration",
-    },
-    {
-      icon: <FileText className="h-8 w-8" />,
-      title: "PDF Tools Suite",
-      description:
-        "Free online PDF tools: merge multiple PDFs, compress large files, convert PDFs to images, and more. All processing happens in your browser - secure and private. No uploads to external servers.",
-      category: "Productivity",
-    },
-    {
-      icon: <Zap className="h-8 w-8" />,
-      title: "Quick Actions",
-      description:
-        "Use shortcuts for common tasks. Type '/today' to see today's tasks, '/upcoming' for the week ahead, or '/done' to mark recent tasks complete. Lightning-fast workflow.",
-      category: "Productivity",
-    },
-    {
-      icon: <BarChart3 className="h-8 w-8" />,
-      title: "Progress Analytics",
-      description:
-        "Track your productivity with visual analytics. See completion rates, busiest days, and category breakdowns. Understand your patterns and optimize your workflow.",
-      category: "Analytics",
-    },
-    {
-      icon: <Shield className="h-8 w-8" />,
-      title: "Privacy-First Design",
-      description:
-        "Your data stays secure with end-to-end encryption. We never sell or share personal information. All PDF processing happens locally in your browser. Full GDPR compliance.",
-      category: "Security",
-    },
-    {
-      icon: <Smartphone className="h-8 w-8" />,
-      title: "Cross-Platform Sync",
-      description:
-        "Access your tasks on any device - iOS, Android, desktop, or web. Everything syncs instantly via Telegram. Start on mobile, finish on desktop seamlessly.",
-      category: "Accessibility",
+        "Set up daily, weekly, or monthly recurring tasks for habits and regular responsibilities. Automatic creation based on your schedule. Never forget routine tasks again.",
+      category: "Task Management",
     },
     {
       icon: <Clock className="h-8 w-8" />,
-      title: "Time Zone Intelligence",
+      title: "Time Tracking with Clock In/Out",
       description:
-        "Works perfectly for remote teams across different time zones. Automatically adjusts reminders to your local time. Schedule meetings without timezone confusion.",
-      category: "Collaboration",
+        "Track time spent on tasks with one-tap clock in/out. Automatic duration calculation with millisecond precision. Generate daily, weekly, and monthly time reports. Bill clients accurately.",
+      category: "Time Tracking",
+    },
+    {
+      icon: <BarChart3 className="h-8 w-8" />,
+      title: "Time Reports & Analytics",
+      description:
+        "View detailed time logs per task and project. Generate reports for invoicing. See where your time goes with visual analytics. Export data for billing systems.",
+      category: "Time Tracking",
+    },
+    {
+      icon: <Users className="h-8 w-8" />,
+      title: "Team Collaboration & Roles",
+      description:
+        "Invite unlimited team members. Assign 3-tier roles: Admin (full control), Manager (team oversight), Employee (task execution). Role-based permissions for security.",
+      category: "Team Features",
+    },
+    {
+      icon: <MessageSquare className="h-8 w-8" />,
+      title: "Task Comments & Activity Feed",
+      description:
+        "Comment on tasks for collaboration. Mention team members with @username. Track all activity with complete audit trail. Real-time updates for everyone.",
+      category: "Team Features",
+    },
+    {
+      icon: <FileText className="h-8 w-8" />,
+      title: "Multi-Company Workspaces",
+      description:
+        "Create and switch between multiple companies or projects. Perfect for freelancers managing multiple clients or agencies handling different accounts. Separate workspace for each context.",
+      category: "Company Management",
+    },
+    {
+      icon: <Zap className="h-8 w-8" />,
+      title: "8-Character Invitation Codes",
+      description:
+        "Invite team members with simple 8-character hex codes. Secure, easy to share, and instantly join teams. No email verification needed. Just share the code and start collaborating.",
+      category: "Company Management",
+    },
+    {
+      icon: <BarChart3 className="h-8 w-8" />,
+      title: "Statistics & Analytics Dashboard",
+      description:
+        "Personal and team productivity metrics. Task completion rates, time spent analysis, busiest days tracking. Visual charts and graphs. Make data-driven decisions.",
+      category: "Analytics",
+    },
+    {
+      icon: <Bell className="h-8 w-8" />,
+      title: "Dual Notification System",
+      description:
+        "In-app notifications within the Mini App plus Telegram push notifications. Never miss task updates, comments, assignments, or deadlines. 6 notification types for different events.",
+      category: "Notifications",
+    },
+    {
+      icon: <Smartphone className="h-8 w-8" />,
+      title: "Offline Mode with Auto-Sync",
+      description:
+        "Work offline and changes sync automatically when back online. Optimistic UI updates for instant feel. LocalStorage persistence. Never lose your work due to connection issues.",
+      category: "Advanced Features",
+    },
+    {
+      icon: <Shield className="h-8 w-8" />,
+      title: "Security & Access Control",
+      description:
+        "Telegram OAuth authentication. HMAC-SHA256 validation. Role-based access control. Secure API endpoints. Your data is protected with enterprise-grade security.",
+      category: "Advanced Features",
     },
   ]
 
@@ -161,11 +168,10 @@ export default function FeaturesPage() {
 
           <div className="text-center max-w-4xl mx-auto mb-16">
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
-              Everything You Need to Stay Organized
+              Complete Work Management Platform
             </h1>
             <p className="text-xl text-gray-400 leading-relaxed">
-              Whatstask combines powerful task management with intelligent automation - all inside Telegram. No app
-              switching, no learning curve, just results.
+              Full-featured Telegram Mini App with task management, time tracking, team collaboration, and analytics. Everything you need to manage work - built right into Telegram.
             </p>
           </div>
 

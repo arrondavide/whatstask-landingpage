@@ -350,12 +350,12 @@ export default function LandingPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <AnimatedText
-              text="Tasks. Done. Right where you chat."
+              text="Your Complete Work Management Platform in Telegram"
               className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-4"
               once
             />
             <AnimatedText
-              text="Task management that lives where you do—inside Telegram. Plus free online PDF tools. No signups, no complexity."
+              text="Full-featured Mini App for task management, time tracking, and team collaboration. Manage teams, track hours, analyze productivity - all without leaving Telegram."
               className="text-xl md:text-2xl lg:text-3xl font-light leading-tight tracking-tight text-slate-400 mb-6"
               once
               delay={0.5}
@@ -386,7 +386,7 @@ export default function LandingPage() {
                     transition={{ duration: 0.5 }}
                   />
                   <Send className="h-5 w-5 relative z-10" />
-                  <span className="font-medium tracking-wide relative z-10">Manage Tasks</span>
+                  <span className="font-medium tracking-wide relative z-10">Launch Mini App</span>
                 </a>
               </Button>
             </motion.div>
@@ -505,25 +505,29 @@ export default function LandingPage() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">Manage Tasks from Telegram</h2>
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">Complete Work Management in One Mini App</h2>
               <p className="text-lg text-gray-400 font-light tracking-wide leading-relaxed mb-8">
-                No need to switch apps. Create, organize, and complete tasks directly in your favorite messenger.
+                Full-featured Telegram Mini App with tasks, time tracking, team collaboration, and analytics. Everything you need to manage work - no app installation required.
               </p>
 
               <div className="space-y-6 mb-8">
                 {[
                   {
-                    title: "Natural Language Input",
-                    description: "Type tasks in plain English and Whatstask understands your intent automatically.",
+                    title: "Task Management & Subtasks",
+                    description: "Create tasks, add subtasks, set priorities, attach files. Full project management capabilities.",
                   },
                   {
-                    title: "Smart Scheduling",
+                    title: "Time Tracking Built-in",
                     description:
-                      "Mentions dates and times are automatically detected and converted to scheduled tasks.",
+                      "Clock in/out with one tap. Track hours per task, generate reports, and bill clients accurately.",
                   },
                   {
-                    title: "Intelligent Reminders",
-                    description: "Get context-aware reminders that adapt to your habits and preferences.",
+                    title: "Team Collaboration",
+                    description: "Assign tasks, manage team members with roles (Admin/Manager/Employee), add comments, track progress.",
+                  },
+                  {
+                    title: "Multi-Company Workspaces",
+                    description: "Switch between multiple companies or projects. Perfect for freelancers and agencies.",
                   },
                 ].map((feature, index) => (
                   <motion.div
@@ -563,7 +567,7 @@ export default function LandingPage() {
                       transition={{ duration: 0.5 }}
                     />
                     <Send className="h-5 w-5 relative z-10" />
-                    <span className="font-medium tracking-wide relative z-10">Start on Telegram</span>
+                    <span className="font-medium tracking-wide relative z-10">Launch Mini App</span>
                   </a>
                 </Button>
               </motion.div>
@@ -782,7 +786,7 @@ export default function LandingPage() {
                       transition={{ duration: 0.5 }}
                     />
                     <Send className="h-5 w-5 relative z-10" />
-                    <span className="font-medium tracking-wide relative z-10">Start on Telegram</span>
+                    <span className="font-medium tracking-wide relative z-10">Launch Mini App</span>
                   </a>
                 </Button>
               </motion.div>

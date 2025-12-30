@@ -37,15 +37,45 @@ export const metadata: Metadata = {
 export default function WhatstaskVsSkeddyPage() {
   const comparison = [
     {
+      category: "Platform Type",
+      whatstask: "Full Mini App (complete UI)",
+      skeddy: "Bot (command-based)",
+      winner: "whatstask",
+    },
+    {
       category: "Pricing",
       whatstask: "Free + $4.99/mo Pro",
       skeddy: "Free + $9.99/mo Premium",
       winner: "whatstask",
     },
     {
-      category: "Natural Language Input",
+      category: "Time Tracking",
+      whatstask: "Built-in (clock in/out, reports)",
+      skeddy: "Not available",
+      winner: "whatstask",
+    },
+    {
+      category: "Team Collaboration",
+      whatstask: "Full support with 3-tier roles",
+      skeddy: "Limited (Premium only)",
+      winner: "whatstask",
+    },
+    {
+      category: "Multi-Company Workspaces",
+      whatstask: "Unlimited companies/workspaces",
+      skeddy: "Not available",
+      winner: "whatstask",
+    },
+    {
+      category: "Subtasks & Checklists",
       whatstask: "Full support",
       skeddy: "Limited",
+      winner: "whatstask",
+    },
+    {
+      category: "Analytics Dashboard",
+      whatstask: "Personal & team metrics",
+      skeddy: "Basic stats",
       winner: "whatstask",
     },
     {
@@ -53,18 +83,6 @@ export default function WhatstaskVsSkeddyPage() {
       whatstask: "Included (merge, compress, convert)",
       skeddy: "Not available",
       winner: "whatstask",
-    },
-    {
-      category: "Smart Reminders",
-      whatstask: "AI-powered, context-aware",
-      skeddy: "Basic reminders",
-      winner: "whatstask",
-    },
-    {
-      category: "Team Collaboration",
-      whatstask: "Yes (Pro)",
-      skeddy: "Yes (Premium)",
-      winner: "tie",
     },
     {
       category: "Recurring Tasks",
@@ -360,23 +378,27 @@ export default function WhatstaskVsSkeddyPage() {
                 <ul className="space-y-3 text-gray-300">
                   <li className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    You want the best value for money
+                    You need a full Mini App interface (not just bot commands)
                   </li>
                   <li className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    Natural language input is important
+                    You want built-in time tracking for billing clients
                   </li>
                   <li className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    You need PDF tools alongside tasks
+                    You need team collaboration with roles and permissions
                   </li>
                   <li className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    You're a freelancer or small team
+                    You manage multiple companies or client workspaces
                   </li>
                   <li className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    You want modern AI features
+                    You want unlimited team members on the free tier
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    You need analytics dashboards and productivity reports
                   </li>
                 </ul>
               </div>
