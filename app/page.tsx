@@ -831,6 +831,7 @@ export default function LandingPage() {
                   { name: "How It Works", href: "/how-it-works" },
                   { name: "Pricing", href: "/pricing" },
                   { name: "About", href: "/about" },
+                  { name: "Founder", href: "/founder" },
                 ].map((link, index) => (
                   <li key={index}>
                     <motion.a
