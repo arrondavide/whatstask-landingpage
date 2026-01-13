@@ -41,6 +41,22 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Founder Page - High SEO value for personal brand -->
+  <url>
+    <loc>https://www.whatstask.com/founder</loc>
+    <lastmod>2026-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Consulting Page -->
+  <url>
+    <loc>https://www.whatstask.com/consulting</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Comparison Pages - High conversion potential -->
   <url>
     <loc>https://www.whatstask.com/compare/skeddy</loc>

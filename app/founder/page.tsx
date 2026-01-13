@@ -69,25 +69,6 @@ export default function FounderPage() {
     },
   ]
 
-  const expertise = [
-    {
-      title: "Artificial Intelligence",
-      skills: ["Large Language Models", "RAG Systems", "Fine-tuned AI Models", "AI Automation"],
-    },
-    {
-      title: "Telegram Development",
-      skills: ["Mini Apps (WebApps)", "Bot Development", "TON Blockchain Integration", "Real-time Systems"],
-    },
-    {
-      title: "Full-Stack Engineering",
-      skills: ["React & Next.js", "Node.js Backend", "MongoDB & Databases", "System Architecture"],
-    },
-    {
-      title: "Product Leadership",
-      skills: ["0-to-1 Product Building", "User-Centric Design", "Growth Strategy", "Team Leadership"],
-    },
-  ]
-
   const journey = [
     {
       year: "Early Career",
@@ -261,31 +242,6 @@ export default function FounderPage() {
                       <p className="text-gray-300 leading-relaxed">{milestone.description}</p>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Expertise Section */}
-        <section className="container mx-auto px-4 py-20">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl font-bold mb-12 text-center">Areas of Expertise</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {expertise.map((area, index) => (
-                <div
-                  key={index}
-                  className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 hover:border-teal-500/50 transition-colors"
-                >
-                  <h3 className="text-2xl font-bold mb-4 text-teal-500">{area.title}</h3>
-                  <ul className="space-y-2">
-                    {area.skills.map((skill, skillIndex) => (
-                      <li key={skillIndex} className="text-gray-300 flex items-start gap-2">
-                        <span className="text-teal-500 mt-1">•</span>
-                        {skill}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               ))}
             </div>
