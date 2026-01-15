@@ -21,9 +21,9 @@ import PageLoader from "@/components/page-loader"
 import Script from "next/script"
 
 export const metadata: Metadata = {
-  title: "Features - Work Management Mini App | Whatstask",
+  title: "Features - Task Management, Time Tracking & Teams | Whatstask",
   description:
-    "Full-featured Telegram Mini App: Task management with subtasks, time tracking with clock in/out, team collaboration with roles, company workspaces, analytics & more. Built for teams.",
+    "Complete task management with subtasks, built-in time tracking, 3-tier team roles, multi-company workspaces, and real-time analytics. All in Telegram. Start free →",
   keywords:
     "telegram mini app features, work management features, time tracking app, team collaboration features, task management telegram, company workspace, project management telegram",
   openGraph: {

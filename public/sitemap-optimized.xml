@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ============================================
+       OPTIMIZED SITEMAP FOR GOOGLE SITELINKS
+       Last Updated: 2026-01-15
+       ============================================ -->
+
+  <!-- TIER 1: Homepage - Highest Priority -->
+  <url>
+    <loc>https://www.whatstask.com/</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- ============================================
+       TIER 1: Primary Sitelink Candidates
+       Priority: 0.95 (Critical for sitelinks)
+       ============================================ -->
+
+  <url>
+    <loc>https://www.whatstask.com/features</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://www.whatstask.com/pricing</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://www.whatstask.com/tools</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- ============================================
+       TIER 2: Secondary Sitelink Candidates
+       Priority: 0.85-0.90 (Important pages)
+       ============================================ -->
+
+  <url>
+    <loc>https://www.whatstask.com/how-it-works</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://www.whatstask.com/compare/todoist</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.whatstask.com/blog</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ============================================
+       TIER 3: Supporting Pages
+       Priority: 0.70-0.80 (Standard pages)
+       ============================================ -->
+
+  <url>
+    <loc>https://www.whatstask.com/founder</loc>
+    <lastmod>2026-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.whatstask.com/about</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://www.whatstask.com/compare/skeddy</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://www.whatstask.com/use-cases/freelancers</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://www.whatstask.com/consulting</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- ============================================
+       CONTENT: Blog Articles
+       Priority: 0.70 (Updated regularly)
+       ============================================ -->
+
+  <url>
+    <loc>https://www.whatstask.com/blog/ultimate-guide-telegram-bots-productivity</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- ============================================
+       TOOLS: Individual Tool Pages
+       Priority: 0.70 (Supporting tools)
+       NOTE: Currently at root level
+       RECOMMENDED: Move to /tools/[tool-name] structure
+       ============================================ -->
+
+  <url>
+    <loc>https://www.whatstask.com/pdf-merger</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://www.whatstask.com/pdf-compressor</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://www.whatstask.com/pdf-to-jpg</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://www.whatstask.com/jpg-to-pdf</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://www.whatstask.com/pdf-splitter</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://www.whatstask.com/qr-code-generator</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://www.whatstask.com/seo-analyzer</loc>
+    <lastmod>2026-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- ============================================
+       REMOVED: Anchor Links (Duplicate Content)
+
+       Previously included but removed for SEO:
+       - /#features (duplicate of /features)
+       - /#how-it-works (duplicate of /how-it-works)
+       - /#task-management (homepage section)
+
+       These are NOT separate pages and should not be in sitemap.
+       ============================================ -->
+
+</urlset>

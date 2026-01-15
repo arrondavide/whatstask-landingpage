@@ -3,11 +3,12 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Check, X } from "lucide-react"
 import PageLoader from "@/components/page-loader"
+import { Breadcrumbs } from "@/components/breadcrumbs"
 
 export const metadata: Metadata = {
-  title: "Pricing – Free & Pro Plans | Whatstask 2025",
+  title: "Pricing - Free Forever & Pro Plans | Whatstask",
   description:
-    "Start free with unlimited tasks. Upgrade to Pro for $4.99/mo for AI-powered features, priority support, and advanced integrations.",
+    "Start free forever with unlimited tasks and team collaboration. Upgrade to Pro for $4.99/mo for advanced features. No credit card required. Try now →",
   openGraph: {
     title: "Pricing – Free & Pro Plans | Whatstask 2025",
     description: "Start free with unlimited tasks. Upgrade to Pro for $4.99/mo for AI-powered features.",
@@ -77,6 +78,8 @@ export default function PricingPage() {
 
         {/* Main Content */}
         <main className="container mx-auto px-4 py-20">
+          <Breadcrumbs items={[{ label: "Pricing", href: "/pricing" }]} />
+
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6">Simple Pricing for Everyone</h1>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">

@@ -3,9 +3,9 @@ import { generateMetadata } from "@/lib/seo-metadata"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = generateMetadata({
-  title: "Free Online Tools - PDF Tools & More | Whatstask 2025",
+  title: "Free PDF Tools & Utilities | Whatstask",
   description:
-    "Free online tools for productivity. PDF merger, compressor, converters, QR code generator, and SEO analyzer. No signups, no watermarks, no hassle.",
+    "Free online PDF tools: merge, compress, convert, split PDFs. Plus QR code generator and SEO analyzer. No signup required. Use instantly →",
   canonicalUrl: "https://www.whatstask.com/tools",
   ogImage: "/logo.png",
   keywords: [

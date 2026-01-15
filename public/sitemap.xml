@@ -12,26 +12,26 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Core Pages - High SEO priority -->
+  <!-- Core Pages - Primary Sitelink Candidates -->
   <url>
     <loc>https://www.whatstask.com/features</loc>
-    <lastmod>2025-12-30</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
 
   <url>
     <loc>https://www.whatstask.com/pricing</loc>
-    <lastmod>2025-12-30</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
 
   <url>
     <loc>https://www.whatstask.com/how-it-works</loc>
-    <lastmod>2025-12-30</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.90</priority>
   </url>
 
   <url>
@@ -59,48 +59,48 @@
 
   <!-- Comparison Pages - High conversion potential -->
   <url>
-    <loc>https://www.whatstask.com/compare/skeddy</loc>
-    <lastmod>2025-12-30</lastmod>
+    <loc>https://www.whatstask.com/compare/todoist</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://www.whatstask.com/compare/todoist</loc>
-    <lastmod>2025-12-30</lastmod>
+    <loc>https://www.whatstask.com/compare/skeddy</loc>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
 
   <!-- Use Case Pages - Persona targeting -->
   <url>
     <loc>https://www.whatstask.com/use-cases/freelancers</loc>
-    <lastmod>2025-12-30</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
 
-  <!-- Blog Pages - Content marketing -->
+  <!-- Blog Pages - Secondary Sitelink Candidate -->
   <url>
     <loc>https://www.whatstask.com/blog</loc>
-    <lastmod>2025-12-30</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://www.whatstask.com/blog/ultimate-guide-telegram-bots-productivity</loc>
-    <lastmod>2025-12-30</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.70</priority>
   </url>
 
-  <!-- Tools Directory Page -->
+  <!-- Tools Directory Page - Primary Sitelink Candidate -->
   <url>
     <loc>https://www.whatstask.com/tools</loc>
-    <lastmod>2025-12-30</lastmod>
+    <lastmod>2026-01-15</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
 
   <!-- Individual Tool Landing Pages - Main indexable pages -->
@@ -153,26 +153,8 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Homepage Sections (Anchor links for internal linking) -->
-  <url>
-    <loc>https://www.whatstask.com/#features</loc>
-    <lastmod>2025-12-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.whatstask.com/#how-it-works</loc>
-    <lastmod>2025-12-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.whatstask.com/#task-management</loc>
-    <lastmod>2025-12-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <!-- Note: Anchor links removed for SEO optimization.
+       These were duplicate content (/#features, /#how-it-works, /#task-management)
+       and have been replaced with proper page URLs above. -->
 
 </urlset>
