@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ExternalLink, FileText, Zap, ImageIcon, QrCode, Brain, SplitSquareHorizontal } from "lucide-react"
+import { ExternalLink, FileText, Zap, ImageIcon, QrCode, SplitSquareHorizontal } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import PageLoader from "@/components/page-loader"
 import { Breadcrumbs } from "@/components/breadcrumbs"
@@ -60,15 +60,6 @@ const tools = [
     link: "/qr-code-generator",
     icon: QrCode,
     color: "from-indigo-500/20 to-blue-500/20",
-  },
-  {
-    name: "SEO Analyzer",
-    description: "Analyze your website SEO",
-    fullDescription:
-      "Optimize your content for AI-powered search experiences like Google SGE. Analyze and structure your content for large language models (LLMs) with clarity and context. Free Generative Engine Optimization analyzer for AI visibility.",
-    link: "/seo-analyzer",
-    icon: Brain,
-    color: "from-teal-500/20 to-cyan-500/20",
   },
 ]
 

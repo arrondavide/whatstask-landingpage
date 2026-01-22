@@ -174,7 +174,7 @@ export default function LandingPage() {
               { name: "Features", href: "#features", section: "features" },
               { name: "How It Works", href: "#how-it-works", section: "how-it-works" },
               { name: "Tools", href: "/tools", section: "tools" },
-              { name: "Task Management", href: "#task-management", section: "task-management" },
+              { name: "GEO Analyzer", href: "/geoanalyzer", section: "geoanalyzer" },
             ].map((item) => (
               <motion.a
                 key={item.section}
@@ -290,7 +290,7 @@ export default function LandingPage() {
                     { name: "Features", href: "#features" },
                     { name: "How It Works", href: "#how-it-works" },
                     { name: "Tools", href: "/tools" },
-                    { name: "Task Management", href: "#task-management" },
+                    { name: "GEO Analyzer", href: "/geoanalyzer" },
                   ].map((item, index) => (
                     <motion.a
                       key={index}
@@ -487,6 +487,103 @@ export default function LandingPage() {
                 </div>
               </motion.a>
             ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* GEO Analyzer Featured Section */}
+      <section className="relative py-24 md:py-32 px-4 border-t border-white/5 bg-gradient-to-b from-teal-500/5 to-transparent">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <div className="inline-flex items-center gap-2 bg-teal-500/10 border border-teal-500/30 rounded-full px-4 py-2 mb-6">
+              <span className="text-sm text-teal-400 font-medium">Featured Product</span>
+            </div>
+            <AnimatedText
+              text="GEO Analyzer"
+              className="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight"
+              once
+            />
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-light tracking-wide leading-relaxed">
+              Generative Engine Optimization for AI-powered search. Rank in ChatGPT, Google SGE, Perplexity, and more.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-gradient-to-br from-teal-500/10 via-cyan-500/5 to-transparent rounded-3xl p-8 md:p-12 border border-teal-500/20"
+          >
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl font-bold mb-4">Optimize for the Future of Search</h3>
+                <p className="text-gray-400 font-light mb-6 leading-relaxed">
+                  As AI systems become primary search interfaces, traditional SEO isn't enough. GEO Analyzer helps you
+                  optimize content for AI comprehension and citation.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  {[
+                    "Get cited by ChatGPT, Claude, and Perplexity",
+                    "Appear in Google SGE AI overviews",
+                    "Increase organic traffic from AI search",
+                    "Free to use, no signup required",
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-teal-400" />
+                      <span className="text-gray-300">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <Button
+                      asChild
+                      className="bg-gradient-to-r from-teal-500 to-cyan-500 text-white hover:from-teal-600 hover:to-cyan-600 rounded-full px-6"
+                    >
+                      <a
+                        href="https://geoanalyzer.whatstask.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 py-5"
+                      >
+                        <span className="font-medium tracking-wide">Launch GEO Analyzer</span>
+                      </a>
+                    </Button>
+                  </motion.div>
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="border-white/20 text-white hover:bg-white/10 rounded-full px-6"
+                    >
+                      <a href="/geoanalyzer" className="flex items-center gap-2 py-5">
+                        <span className="font-medium tracking-wide">Learn More</span>
+                      </a>
+                    </Button>
+                  </motion.div>
+                </div>
+              </div>
+              <div className="hidden md:flex justify-center">
+                <div className="relative">
+                  <div className="w-64 h-64 rounded-full bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="text-6xl mb-2">🧠</div>
+                      <p className="text-teal-400 font-bold">GEO</p>
+                      <p className="text-sm text-gray-500">AI Search Optimization</p>
+                    </div>
+                  </div>
+                  <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-teal-500/10 blur-xl" />
+                  <div className="absolute -bottom-4 -left-4 w-16 h-16 rounded-full bg-cyan-500/10 blur-xl" />
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -906,13 +1003,22 @@ export default function LandingPage() {
                 </li>
                 <li>
                   <motion.a
-                    href="https://geoanalyzer.whatstask.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/geoanalyzer"
                     className="text-xs text-gray-400 hover:text-white transition-colors tracking-wide"
                     whileHover={{ x: 4 }}
                   >
                     GEO Analyzer
+                  </motion.a>
+                </li>
+                <li>
+                  <motion.a
+                    href="https://geoanalyzer.whatstask.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-teal-400 hover:text-teal-300 transition-colors tracking-wide"
+                    whileHover={{ x: 4 }}
+                  >
+                    Launch GEO Tool
                   </motion.a>
                 </li>
               </ul>

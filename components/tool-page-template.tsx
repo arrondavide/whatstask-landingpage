@@ -350,6 +350,11 @@ export default function ToolPageTemplate({
                       QR Code Gen
                     </Link>
                   </li>
+                  <li>
+                    <Link href="/geoanalyzer" className="hover:text-teal-400 transition text-teal-400/80">
+                      GEO Analyzer
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div>
