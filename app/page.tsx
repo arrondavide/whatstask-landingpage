@@ -533,7 +533,7 @@ export default function LandingPage() {
                     "Get cited by ChatGPT, Claude, and Perplexity",
                     "Appear in Google SGE AI overviews",
                     "Increase organic traffic from AI search",
-                    "Free to use, no signup required",
+                    "3 free analyses per day, no signup",
                   ].map((item, index) => (
                     <li key={index} className="flex items-center gap-3">
                       <Check className="w-5 h-5 text-teal-400" />

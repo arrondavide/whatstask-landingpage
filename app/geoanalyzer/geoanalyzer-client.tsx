@@ -123,7 +123,7 @@ const faqs = [
   {
     question: "Is GEO Analyzer free to use?",
     answer:
-      "Yes! GEO Analyzer is completely free to use. There's no signup required, no hidden fees, and no limits on analysis. We believe everyone should have access to AI search optimization tools to help their content succeed in the new era of search.",
+      "Yes! GEO Analyzer offers 3 free analyses per day with no signup required. This generous daily limit lets you optimize your most important content without any hidden fees or subscriptions.",
   },
   {
     question: "How do I improve my GEO score?",
@@ -145,7 +145,7 @@ const faqs = [
 const stats = [
   { value: "40%", label: "of searches will be AI-powered by 2026" },
   { value: "3x", label: "more likely to be cited with GEO optimization" },
-  { value: "Free", label: "No signup, no fees, unlimited analysis" },
+  { value: "Free", label: "3 free analyses per day, no signup" },
 ]
 
 export default function GeoAnalyzerClient() {
@@ -670,7 +670,7 @@ export default function GeoAnalyzerClient() {
                       </span>
                     </a>
                   </Button>
-                  <p className="text-sm text-gray-500 mt-4">No signup required. 100% Free.</p>
+                  <p className="text-sm text-gray-500 mt-4">No signup required. 3 free analyses per day.</p>
                 </div>
               </motion.div>
             </div>
