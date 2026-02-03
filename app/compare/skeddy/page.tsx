@@ -7,15 +7,15 @@ import PageLoader from "@/components/page-loader"
 import Script from "next/script"
 
 export const metadata: Metadata = {
-  title: "Whatstask vs Skeddy: Which Telegram Bot is Better? [2025]",
+  title: "Whatstask vs Skeddy: Best Telegram Task Bot Comparison [2025]",
   description:
-    "Detailed comparison of Whatstask and Skeddy for Telegram task management. Compare features, pricing, ease of use, and which bot is best for your needs in 2025.",
+    "Complete comparison: Whatstask Mini App vs Skeddy Telegram bot. Features, pricing, time tracking, team collaboration. Why Whatstask wins on friction, features & price. Free comparison guide.",
   keywords:
-    "whatstask vs skeddy, skeddy alternative, telegram task bot comparison, best telegram reminder bot, whatstask comparison",
+    "whatstask vs skeddy, telegram task management bot, skeddy alternative, best telegram bot 2025, task bot comparison, time tracking telegram, team collaboration telegram",
   openGraph: {
-    title: "Whatstask vs Skeddy: Which Telegram Bot is Better? [2025]",
+    title: "Whatstask vs Skeddy: Which Telegram Task Bot is Better? 2025",
     description:
-      "Compare Whatstask and Skeddy features, pricing, and usability. See which Telegram task bot wins.",
+      "Whatstask Mini App vs Skeddy: Compare features, pricing, UI/UX, natural language, PDF tools. Why WhatsTask wins for individuals and teams.",
     url: "https://www.whatstask.com/compare/skeddy",
     siteName: "Whatstask",
     type: "article",
@@ -38,112 +38,132 @@ export default function WhatstaskVsSkeddyPage() {
   const comparison = [
     {
       category: "Platform Type",
-      whatstask: "Full Mini App (complete UI)",
-      skeddy: "Bot (command-based)",
+      whatstask: "Full Mini App (complete modern UI/UX)",
+      skeddy: "Bot (command-based interface)",
       winner: "whatstask",
+      whyWhatstask: "Full Mini App feels like a native app, no command learning needed"
     },
     {
       category: "Pricing",
       whatstask: "Free + $4.99/mo Pro",
       skeddy: "Free + $9.99/mo Premium",
       winner: "whatstask",
+      whyWhatstask: "50% cheaper - save $60/year per user"
     },
     {
       category: "Time Tracking",
-      whatstask: "Built-in (clock in/out, reports)",
-      skeddy: "Not available",
+      whatstask: "Built-in (clock in/out, detailed reports)",
+      skeddy: "Not available (need external tool)",
       winner: "whatstask",
+      whyWhatstask: "One-tap timer, automatic duration tracking, invoicing-ready reports"
     },
     {
-      category: "Team Collaboration",
-      whatstask: "Full support with 3-tier roles",
+      category: "Team Collaboration with Roles",
+      whatstask: "3-tier roles (Admin/Manager/Employee) - Free",
       skeddy: "Limited (Premium only)",
       winner: "whatstask",
+      whyWhatstask: "Full team management included in free tier"
     },
     {
       category: "Multi-Company Workspaces",
-      whatstask: "Unlimited companies/workspaces",
+      whatstask: "Unlimited companies/projects",
       skeddy: "Not available",
       winner: "whatstask",
+      whyWhatstask: "Perfect for freelancers & agencies managing multiple clients"
     },
     {
       category: "Subtasks & Checklists",
-      whatstask: "Full support",
-      skeddy: "Limited",
+      whatstask: "Full nested subtasks with progress",
+      skeddy: "Limited subtask support",
       winner: "whatstask",
+      whyWhatstask: "Better for complex project management"
     },
     {
       category: "Analytics Dashboard",
-      whatstask: "Personal & team metrics",
-      skeddy: "Basic stats",
+      whatstask: "Personal & team productivity metrics",
+      skeddy: "Basic stats only",
       winner: "whatstask",
+      whyWhatstask: "Time tracking analytics, completion rates, team insights"
     },
     {
-      category: "PDF Tools",
-      whatstask: "Included (merge, compress, convert)",
+      category: "PDF Tools Included",
+      whatstask: "Yes (merge, compress, convert) - Free",
       skeddy: "Not available",
       winner: "whatstask",
+      whyWhatstask: "Save $10-20/month on separate PDF tool subscriptions"
     },
     {
-      category: "Recurring Tasks",
-      whatstask: "Yes",
-      skeddy: "Yes",
-      winner: "tie",
-    },
-    {
-      category: "Cross-Platform Sync",
-      whatstask: "Automatic via Telegram",
-      skeddy: "Automatic via Telegram",
-      winner: "tie",
-    },
-    {
-      category: "Time Zone Support",
-      whatstask: "Intelligent detection",
-      skeddy: "Manual setup",
+      category: "Natural Language Processing",
+      whatstask: "AI-powered (understands context)",
+      skeddy: "Basic parsing",
       winner: "whatstask",
+      whyWhatstask: "Type naturally, AI understands dates, priorities, context"
     },
     {
-      category: "User Interface",
-      whatstask: "Modern, intuitive",
-      skeddy: "Clean, functional",
-      winner: "tie",
+      category: "Mobile Experience",
+      whatstask: "Mini App in Telegram (responsive, fast)",
+      skeddy: "Telegram bot (text-based)",
+      winner: "whatstask",
+      whyWhatstask: "Visual interface, buttons, modern design"
+    },
+    {
+      category: "Offline Mode",
+      whatstask: "Yes (with auto-sync)",
+      skeddy: "Limited",
+      winner: "whatstask",
+      whyWhatstask: "Works without internet, syncs when connection returns"
     },
     {
       category: "Setup Time",
-      whatstask: "< 60 seconds",
+      whatstask: "< 30 seconds",
       skeddy: "~2 minutes",
       winner: "whatstask",
+      whyWhatstask: "Just add bot and open - no forms or configuration"
+    },
+    {
+      category: "Recurring Tasks",
+      whatstask: "Daily/Weekly/Monthly",
+      skeddy: "Daily/Weekly/Monthly",
+      winner: "tie",
     },
   ]
 
   const prosAndCons = {
     whatstask: {
       pros: [
-        "More affordable pricing ($4.99 vs $9.99/mo)",
-        "Better natural language understanding",
-        "Free PDF tools included",
-        "AI-powered smart reminders",
-        "Faster setup and onboarding",
-        "Automatic time zone detection",
+        "50% cheaper pricing ($4.99 vs $9.99/mo)",
+        "Built-in time tracking with invoicing",
+        "AI-powered natural language understanding",
+        "Free PDF tools (save $10-20/mo elsewhere)",
+        "Unlimited team members on free plan",
+        "Multi-company workspaces for freelancers",
+        "Modern Mini App interface, not just commands",
+        "Faster setup (30 seconds vs 2 minutes)",
+        "Better analytics dashboard",
+        "Offline mode with auto-sync",
       ],
       cons: [
-        "Newer product (smaller user base)",
-        "Fewer third-party integrations (currently)",
-        "Analytics in Pro tier only",
+        "Newer product (but rapidly improving)",
+        "Fewer third-party integrations (focus on Telegram ecosystem)",
+        "Some advanced integrations coming soon",
       ],
     },
     skeddy: {
       pros: [
-        "Established user base",
-        "More integrations with external tools",
-        "Detailed analytics in free tier",
+        "Established user base (since 2019)",
+        "Some third-party integrations available",
+        "Familiar to existing Skeddy users",
       ],
       cons: [
-        "Higher pricing for premium features",
+        "2x more expensive ($9.99 vs $4.99/mo)",
+        "No built-in time tracking",
+        "No PDF tools included",
         "Limited natural language support",
-        "No PDF tools",
+        "Text-based interface (not visual)",
         "Manual time zone configuration",
-        "Basic reminder system",
+        "Longer setup process",
+        "Limited analytics",
+        "Team features locked behind premium",
       ],
     },
   }
@@ -180,51 +200,118 @@ export default function WhatstaskVsSkeddyPage() {
           <div className="bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-teal-500/20 max-w-4xl mx-auto mb-16">
             <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
               <Zap className="h-6 w-6 text-teal-500" />
-              Quick Verdict
+              Quick Verdict: Whatstask Wins
             </h2>
             <p className="text-lg text-gray-300 leading-relaxed mb-4">
-              <strong>Whatstask wins</strong> on pricing, natural language input, PDF tools, and ease of setup. It's
-              the better choice for individuals and small teams who want powerful task management without complexity.
+              <strong className="text-teal-400">Whatstask is the clear winner</strong> for anyone wanting modern task management without friction. It's 50% cheaper, includes time tracking & PDF tools, and has a beautiful Mini App interface instead of command-based interaction.
             </p>
-            <p className="text-lg text-gray-300 leading-relaxed">
-              <strong>Skeddy</strong> is a solid option if you need extensive third-party integrations and don't mind
-              the higher price tag. It's more established but lacks some modern features like AI reminders and PDF
-              tools.
+            <div className="bg-white/5 rounded-lg p-4 mb-4 border border-white/10">
+              <p className="text-gray-300 mb-2"><strong>Bottom Line:</strong></p>
+              <ul className="space-y-2 text-gray-300">
+                <li>💰 Save $60/year per user compared to Skeddy</li>
+                <li>⏱️ Built-in time tracking (Skeddy doesn't have this)</li>
+                <li>📄 Free PDF tools included</li>
+                <li>🤖 AI understands natural language</li>
+                <li>👥 Unlimited team members (even on free tier)</li>
+              </ul>
+            </div>
+            <p className="text-gray-400 text-sm">
+              The only reason to choose Skeddy: if you already use it and want continuity. Otherwise, Whatstask is objectively better for teams and individuals.
             </p>
+          </div>
+
+          {/* Why Whatstask Wins Section */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold mb-8 text-center">Why Whatstask Wins in 2025</h2>
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-8">
+              <div className="bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-teal-500/20">
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                  <span className="text-2xl">💸</span>
+                  Better Value (50% Cheaper)
+                </h3>
+                <p className="text-gray-300 mb-3">Whatstask Pro is $4.99/month vs Skeddy's $9.99/month</p>
+                <ul className="space-y-2 text-sm text-gray-300">
+                  <li>✓ Unlimited tasks (both)</li>
+                  <li>✓ Time tracking (Whatstask only)</li>
+                  <li>✓ Free PDF tools (Whatstask only)</li>
+                  <li>✓ Team features free (Whatstask); paid (Skeddy)</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-teal-500/20">
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                  <span className="text-2xl">⏱️</span>
+                  Built-in Time Tracking
+                </h3>
+                <p className="text-gray-300 mb-3">Track billable hours directly in the task app</p>
+                <ul className="space-y-2 text-sm text-gray-300">
+                  <li>✓ One-tap clock in/out</li>
+                  <li>✓ Automatic duration calculation</li>
+                  <li>✓ Invoicing-ready reports</li>
+                  <li>✓ No external tool needed</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-teal-500/20">
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                  <span className="text-2xl">🤖</span>
+                  AI Understands Your Language
+                </h3>
+                <p className="text-gray-300 mb-3">Natural language processing that actually works</p>
+                <ul className="space-y-2 text-sm text-gray-300">
+                  <li>✓ Type: "meeting with Sarah tomorrow 2pm"</li>
+                  <li>✓ AI extracts: task, person, date, time</li>
+                  <li>✓ No special commands needed</li>
+                  <li>✓ Detects priority from context</li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-teal-500/20">
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                  <span className="text-2xl">🎨</span>
+                  Modern Mini App vs Text Bot
+                </h3>
+                <p className="text-gray-300 mb-3">Whatstask feels like a real app, not a chatbot</p>
+                <ul className="space-y-2 text-sm text-gray-300">
+                  <li>✓ Visual interface with buttons</li>
+                  <li>✓ Task cards and drag-and-drop</li>
+                  <li>✓ Real-time status updates</li>
+                  <li>✓ No learning curve</li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           {/* Detailed Comparison Table */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center">Feature-by-Feature Comparison</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">Complete Feature Comparison</h2>
             <div className="bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 overflow-hidden">
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-white/10 bg-white/5">
-                    <th className="text-left p-6 font-bold">Feature</th>
-                    <th className="text-center p-6 font-bold">Whatstask</th>
-                    <th className="text-center p-6 font-bold">Skeddy</th>
+                    <th className="text-left p-4 font-bold">Feature</th>
+                    <th className="text-center p-4 font-bold text-teal-400">Whatstask</th>
+                    <th className="text-center p-4 font-bold">Skeddy</th>
+                    <th className="text-left p-4 font-bold text-sm">Why It Matters</th>
                   </tr>
                 </thead>
                 <tbody>
                   {comparison.map((row, idx) => (
                     <tr key={idx} className="border-b border-white/10 last:border-0 hover:bg-white/5 transition">
-                      <td className="p-6 font-medium">{row.category}</td>
-                      <td
-                        className={`p-6 text-center ${row.winner === "whatstask" ? "bg-teal-500/10" : ""}`}
-                      >
-                        {row.whatstask}
+                      <td className="p-4 font-medium text-sm">{row.category}</td>
+                      <td className={`p-4 text-center text-sm font-medium ${row.winner === "whatstask" ? "bg-teal-500/10" : ""}`}>
+                        <div>{row.whatstask}</div>
                         {row.winner === "whatstask" && (
-                          <span className="ml-2 text-teal-500">✓</span>
+                          <span className="text-teal-400 text-xs mt-1 block">✓ Winner</span>
                         )}
                       </td>
-                      <td
-                        className={`p-6 text-center ${row.winner === "skeddy" ? "bg-blue-500/10" : ""}`}
-                      >
-                        {row.skeddy}
+                      <td className={`p-4 text-center text-sm font-medium ${row.winner === "skeddy" ? "bg-blue-500/10" : ""}`}>
+                        <div>{row.skeddy}</div>
                         {row.winner === "skeddy" && (
-                          <span className="ml-2 text-blue-500">✓</span>
+                          <span className="text-blue-400 text-xs mt-1 block">✓ Winner</span>
                         )}
                       </td>
+                      <td className="p-4 text-xs text-gray-400">{row.whyWhatstask || "—"}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -522,4 +609,4 @@ export default function WhatstaskVsSkeddyPage() {
       </div>
     </>
   )
-}`1`   
+}

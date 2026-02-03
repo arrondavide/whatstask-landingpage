@@ -350,12 +350,12 @@ export default function LandingPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <AnimatedText
-              text="Your Complete Work Management Platform in Telegram"
+              text="Task Management Without the Friction"
               className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-4"
               once
             />
             <AnimatedText
-              text="Full-featured Mini App for task management, time tracking, and team collaboration. Manage teams, track hours, analyze productivity - all without leaving Telegram."
+              text="Full-featured Mini App for task management, time tracking, and team collaboration. Works inside Telegram - no app download, no signup forms, no learning curve. Start in 30 seconds."
               className="text-xl md:text-2xl lg:text-3xl font-light leading-tight tracking-tight text-slate-400 mb-6"
               once
               delay={0.5}
