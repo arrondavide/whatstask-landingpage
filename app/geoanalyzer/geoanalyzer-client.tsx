@@ -257,17 +257,20 @@ export default function GeoAnalyzerClient() {
               <span className="text-xl font-bold">Whatstask</span>
             </Link>
             <nav className="hidden md:flex items-center gap-8">
-              <Link href="/" className="text-gray-400 hover:text-white transition-colors">
-                Home
+              <Link href="/project-management" className="text-gray-400 hover:text-white transition-colors">
+                Project Management
+              </Link>
+              <Link href="/geoanalyzer" className="text-white font-medium">
+                GEO Analyzer
               </Link>
               <Link href="/tools" className="text-gray-400 hover:text-white transition-colors">
-                Tools
+                Free Tools
               </Link>
-              <Link href="/features" className="text-gray-400 hover:text-white transition-colors">
-                Features
+              <Link href="/pricing" className="text-gray-400 hover:text-white transition-colors">
+                Pricing
               </Link>
-              <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
-                About
+              <Link href="/enterprise" className="text-gray-400 hover:text-white transition-colors">
+                Enterprise
               </Link>
             </nav>
             <Button
@@ -687,7 +690,7 @@ export default function GeoAnalyzerClient() {
                 className="text-center mb-12"
               >
                 <h2 className="text-3xl font-bold mb-4 tracking-tight">More from Whatstask</h2>
-                <p className="text-gray-400">Discover other tools and products from the Whatstask ecosystem.</p>
+                <p className="text-gray-400">Simple tools that scale with you.</p>
               </motion.div>
 
               <div className="grid md:grid-cols-3 gap-6">
@@ -698,11 +701,11 @@ export default function GeoAnalyzerClient() {
                   transition={{ duration: 0.5 }}
                   className="bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all"
                 >
-                  <h3 className="text-xl font-bold mb-2">Whatstask Bot</h3>
+                  <h3 className="text-xl font-bold mb-2">Project Management</h3>
                   <p className="text-gray-400 text-sm mb-4">
-                    Full-featured task management in Telegram. Teams, time tracking, and more.
+                    Simple project management with free AI. List, Kanban, Calendar, Timeline views.
                   </p>
-                  <Link href="/" className="text-teal-400 font-medium flex items-center gap-2 hover:gap-3 transition-all">
+                  <Link href="/project-management" className="text-teal-400 font-medium flex items-center gap-2 hover:gap-3 transition-all">
                     Learn more <ArrowRight className="w-4 h-4" />
                   </Link>
                 </motion.div>
@@ -730,15 +733,15 @@ export default function GeoAnalyzerClient() {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all"
                 >
-                  <h3 className="text-xl font-bold mb-2">QR Code Generator</h3>
+                  <h3 className="text-xl font-bold mb-2">Enterprise Solutions</h3>
                   <p className="text-gray-400 text-sm mb-4">
-                    Create custom QR codes instantly. Download as PNG or SVG.
+                    Custom development, white-label solutions, and B2B integrations.
                   </p>
                   <Link
-                    href="/qr-code-generator"
+                    href="/enterprise"
                     className="text-teal-400 font-medium flex items-center gap-2 hover:gap-3 transition-all"
                   >
-                    Create QR code <ArrowRight className="w-4 h-4" />
+                    Contact us <ArrowRight className="w-4 h-4" />
                   </Link>
                 </motion.div>
               </div>
@@ -756,15 +759,20 @@ export default function GeoAnalyzerClient() {
                   <span className="font-bold">Whatstask</span>
                 </Link>
                 <p className="text-gray-400 font-light text-sm">
-                  Productivity tools for the modern digital landscape.
+                  Simple scales.
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold mb-4">Product</h4>
+                <h4 className="font-semibold mb-4">Products</h4>
                 <ul className="space-y-2 text-sm text-gray-400 font-light">
                   <li>
-                    <Link href="/features" className="hover:text-white transition">
-                      Features
+                    <Link href="/project-management" className="hover:text-white transition">
+                      Project Management
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/geoanalyzer" className="hover:text-white transition">
+                      GEO Analyzer
                     </Link>
                   </li>
                   <li>
@@ -773,24 +781,19 @@ export default function GeoAnalyzerClient() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/about" className="hover:text-white transition">
-                      About
+                    <Link href="/enterprise" className="hover:text-white transition">
+                      Enterprise
                     </Link>
                   </li>
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold mb-4">Tools</h4>
+                <h4 className="font-semibold mb-4">Free Tools</h4>
                 <ul className="space-y-2 text-sm text-gray-400 font-light">
                   <li>
-                    <a
-                      href="https://geoanalyzer.whatstask.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-white transition"
-                    >
-                      GEO Analyzer
-                    </a>
+                    <Link href="/tools" className="hover:text-white transition">
+                      All Tools
+                    </Link>
                   </li>
                   <li>
                     <Link href="/pdf-merger" className="hover:text-white transition">
@@ -805,23 +808,33 @@ export default function GeoAnalyzerClient() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold mb-4">Resources</h4>
+                <h4 className="font-semibold mb-4">Company</h4>
                 <ul className="space-y-2 text-sm text-gray-400 font-light">
                   <li>
-                    <Link href="/blog" className="hover:text-white transition">
-                      Blog
+                    <Link href="/about" className="hover:text-white transition">
+                      About
                     </Link>
                   </li>
                   <li>
-                    <Link href="/founder" className="hover:text-white transition">
-                      Founder
+                    <Link href="/contact" className="hover:text-white transition">
+                      Contact
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/privacy" className="hover:text-white transition">
+                      Privacy
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/terms" className="hover:text-white transition">
+                      Terms
                     </Link>
                   </li>
                 </ul>
               </div>
             </div>
             <div className="border-t border-white/10 pt-8 text-center text-gray-500 font-light text-sm">
-              <p>&copy; {new Date().getFullYear()} Whatstask. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} Whatstask. Simple scales.</p>
             </div>
           </div>
         </footer>

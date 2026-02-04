@@ -2,8 +2,9 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Check, X, DollarSign, Zap, Users, Shield } from "lucide-react"
+import { Check, X, DollarSign, Zap, Users, Shield, Send } from "lucide-react"
 import PageLoader from "@/components/page-loader"
+import { Breadcrumbs } from "@/components/breadcrumbs"
 import Script from "next/script"
 
 export const metadata: Metadata = {
@@ -179,15 +180,25 @@ export default function WhatstaskVsSkeddyPage() {
               <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
               <span className="text-xl font-bold">Whatstask</span>
             </Link>
-            <Link href="/">
-              <Button variant="ghost">Back to Home</Button>
-            </Link>
+            <Button asChild className="bg-teal-500 text-white hover:bg-teal-600 rounded-full px-6">
+              <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
+                <Send className="h-4 w-4 mr-2" />
+                Try Free
+              </a>
+            </Button>
           </div>
         </header>
 
         {/* Hero Section */}
-        <section className="container mx-auto px-4 py-16">
-          <div className="max-w-4xl mx-auto text-center mb-12">
+        <section className="container mx-auto px-4 py-12">
+          <Breadcrumbs
+            items={[
+              { label: "Compare", href: "/compare/skeddy" },
+              { label: "vs Skeddy", href: "/compare/skeddy" },
+            ]}
+          />
+
+          <div className="max-w-4xl mx-auto text-center mb-12 mt-8">
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
               Whatstask vs Skeddy: Which Telegram Bot is Better?
             </h1>
@@ -521,21 +532,29 @@ export default function WhatstaskVsSkeddyPage() {
           <div className="text-center bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-12 border border-teal-500/20 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-4">Ready to Try Whatstask?</h2>
             <p className="text-xl text-gray-400 mb-8">
-              Start free today - no credit card required. Upgrade to Pro only if you need advanced features.
+              Start free today - no credit card required.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-teal-500 text-white hover:bg-teal-700 rounded-full px-8 py-6">
+              <Button asChild className="bg-teal-500 text-white hover:bg-teal-600 rounded-full px-8 py-6">
                 <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                  Start on Telegram
+                  <Send className="h-5 w-5 mr-2" />
+                  Start Free
                 </a>
               </Button>
               <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
-                <Link href="/features">View All Features</Link>
+                <Link href="/project-management">Learn More</Link>
               </Button>
             </div>
-            <p className="text-sm text-gray-500 mt-4">Takes less than 60 seconds to set up</p>
+            <p className="text-sm text-gray-500 mt-4">30 seconds to start</p>
           </div>
         </section>
+
+        {/* Footer */}
+        <footer className="border-t border-white/5 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-gray-500">
+            <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
+          </div>
+        </footer>
 
         {/* FAQ Schema */}
         <Script
