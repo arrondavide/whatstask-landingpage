@@ -6,34 +6,7 @@ import { Button } from "@/components/ui/button"
 import {
   ChevronDown,
   X,
-  Send,
-  CheckSquare,
-  Clock,
-  Users,
-  Calendar,
-  LayoutGrid,
-  Brain,
-  Search,
-  FileText,
-  QrCode,
-  ImageIcon,
-  Scissors,
-  Minimize2,
-  Megaphone,
-  Code,
-  Wifi,
-  UserCircle,
-  Building2,
-  Rocket,
-  Briefcase,
-  BookOpen,
-  HelpCircle,
-  MessageSquare,
-  Shield,
   ArrowRight,
-  BarChart3,
-  Layers,
-  Zap,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -47,9 +20,10 @@ interface NavItem {
 const navItems: NavItem[] = [
   { name: "Products", hasDropdown: true },
   { name: "Solutions", hasDropdown: true },
+  { name: "GEO Analyzer", href: "/geoanalyzer" },
+  { name: "Tools", href: "/tools" },
   { name: "Resources", hasDropdown: true },
   { name: "Pricing", href: "/pricing" },
-  { name: "Enterprise", href: "/enterprise" },
 ]
 
 export default function Navigation() {
@@ -106,11 +80,11 @@ export default function Navigation() {
       <div>
         <h3 className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-4">Work Management</h3>
         <div className="space-y-1">
-          <DropdownLink href="/project-management" icon={<CheckSquare className="h-5 w-5" />} title="Project Management" description="Tasks, boards, and timelines" />
-          <DropdownLink href="/features" icon={<LayoutGrid className="h-5 w-5" />} title="All Features" description="Everything Whatstask offers" />
-          <DropdownLink href="/project-management#time-tracking" icon={<Clock className="h-5 w-5" />} title="Time Tracking" description="Track hours and productivity" />
-          <DropdownLink href="/project-management#collaboration" icon={<Users className="h-5 w-5" />} title="Team Collaboration" description="Work together seamlessly" />
-          <DropdownLink href="/project-management#views" icon={<Calendar className="h-5 w-5" />} title="Multiple Views" description="List, Kanban, Calendar, Timeline" />
+          <DropdownLink href="/project-management" title="Project Management" description="Tasks, boards, and timelines" />
+          <DropdownLink href="/features" title="All Features" description="Everything Whatstask offers" />
+          <DropdownLink href="/project-management#time-tracking" title="Time Tracking" description="Track hours and productivity" />
+          <DropdownLink href="/project-management#collaboration" title="Team Collaboration" description="Work together seamlessly" />
+          <DropdownLink href="/project-management#views" title="Multiple Views" description="List, Kanban, Calendar, Timeline" />
         </div>
       </div>
 
@@ -118,31 +92,27 @@ export default function Navigation() {
       <div>
         <h3 className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-4">AI Tools</h3>
         <div className="space-y-1">
-          <DropdownLink href="/project-management#ai" icon={<Brain className="h-5 w-5" />} title="AI Task Creation" description="Create tasks with natural language" highlight />
-          <DropdownLink href="/geoanalyzer" icon={<Search className="h-5 w-5" />} title="GEO Analyzer" description="AI search optimization tool" highlight />
-          <DropdownLink href="/geoanalyzer/guide" icon={<BookOpen className="h-5 w-5" />} title="GEO Guide" description="Learn about AI search" />
+          <DropdownLink href="/project-management#ai" title="AI Task Creation" description="Create tasks with natural language" highlight />
+          <DropdownLink href="/geoanalyzer" title="GEO Analyzer" description="AI search optimization tool" highlight />
+          <DropdownLink href="/geoanalyzer/guide" title="GEO Guide" description="Learn about AI search" />
         </div>
 
         <h3 className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-4 mt-8">Free PDF Tools</h3>
         <div className="space-y-1">
-          <DropdownLink href="/tools" icon={<FileText className="h-5 w-5" />} title="All Tools" description="PDF & QR utilities" />
-          <DropdownLink href="/pdf-merger" icon={<Layers className="h-5 w-5" />} title="PDF Merger" description="Combine PDFs" />
-          <DropdownLink href="/pdf-compressor" icon={<Minimize2 className="h-5 w-5" />} title="PDF Compressor" description="Reduce file size" />
+          <DropdownLink href="/tools" title="All Tools" description="PDF & QR utilities" />
+          <DropdownLink href="/pdf-merger" title="PDF Merger" description="Combine PDFs" />
+          <DropdownLink href="/pdf-compressor" title="PDF Compressor" description="Reduce file size" />
         </div>
       </div>
 
       {/* Featured Column */}
       <div className="bg-gradient-to-br from-violet-500/10 to-violet-500/5 rounded-xl p-6 border border-violet-500/20">
-        <div className="flex items-center gap-2 mb-3">
-          <Zap className="h-5 w-5 text-violet-400" />
-          <span className="text-sm font-semibold text-violet-400">Try Whatstask Free</span>
-        </div>
+        <p className="text-sm font-semibold text-violet-400 mb-3">Try Whatstask Free</p>
         <p className="text-sm text-slate-600 mb-4">
           Get started in 30 seconds. No credit card required. Works right in Telegram.
         </p>
         <Button asChild className="w-full bg-violet-500 hover:bg-violet-600 text-white rounded-full">
-          <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-            <Send className="h-4 w-4" />
+          <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
             Launch in Telegram
           </a>
         </Button>
@@ -159,10 +129,10 @@ export default function Navigation() {
       <div>
         <h3 className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-4">By Team</h3>
         <div className="space-y-1">
-          <DropdownLink href="/solutions/marketing" icon={<Megaphone className="h-5 w-5" />} title="Marketing Teams" description="Campaigns, content, launches" />
-          <DropdownLink href="/solutions/development" icon={<Code className="h-5 w-5" />} title="Development Teams" description="Sprints, bugs, roadmaps" />
-          <DropdownLink href="/solutions/remote" icon={<Wifi className="h-5 w-5" />} title="Remote Teams" description="Async collaboration" />
-          <DropdownLink href="/solutions/operations" icon={<BarChart3 className="h-5 w-5" />} title="Operations" description="Process management" />
+          <DropdownLink href="/solutions/marketing" title="Marketing Teams" description="Campaigns, content, launches" />
+          <DropdownLink href="/solutions/development" title="Development Teams" description="Sprints, bugs, roadmaps" />
+          <DropdownLink href="/solutions/remote" title="Remote Teams" description="Async collaboration" />
+          <DropdownLink href="/solutions/operations" title="Operations" description="Process management" />
         </div>
       </div>
 
@@ -170,11 +140,11 @@ export default function Navigation() {
       <div>
         <h3 className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-4">By Company Size</h3>
         <div className="space-y-1">
-          <DropdownLink href="/use-cases/freelancers" icon={<UserCircle className="h-5 w-5" />} title="Freelancers" description="Solo productivity" />
-          <DropdownLink href="/solutions/small-teams" icon={<Users className="h-5 w-5" />} title="Small Teams" description="2-10 people" />
-          <DropdownLink href="/use-cases/startups" icon={<Rocket className="h-5 w-5" />} title="Startups" description="Move fast, stay organized" />
-          <DropdownLink href="/use-cases/agencies" icon={<Briefcase className="h-5 w-5" />} title="Agencies" description="Client work management" />
-          <DropdownLink href="/enterprise" icon={<Building2 className="h-5 w-5" />} title="Enterprise" description="Custom solutions" />
+          <DropdownLink href="/use-cases/freelancers" title="Freelancers" description="Solo productivity" />
+          <DropdownLink href="/solutions/small-teams" title="Small Teams" description="2-10 people" />
+          <DropdownLink href="/use-cases/startups" title="Startups" description="Move fast, stay organized" />
+          <DropdownLink href="/use-cases/agencies" title="Agencies" description="Client work management" />
+          <DropdownLink href="/enterprise" title="Enterprise" description="Custom solutions" />
         </div>
       </div>
 
@@ -182,16 +152,16 @@ export default function Navigation() {
       <div>
         <h3 className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-4">Use Cases</h3>
         <div className="space-y-1">
-          <DropdownLink href="/how-it-works" icon={<Zap className="h-5 w-5" />} title="How It Works" description="See Whatstask in action" />
-          <DropdownLink href="/project-management" icon={<CheckSquare className="h-5 w-5" />} title="Project Management" description="Plan and execute projects" />
-          <DropdownLink href="/project-management#time-tracking" icon={<Clock className="h-5 w-5" />} title="Time Tracking" description="Track billable hours" />
+          <DropdownLink href="/how-it-works" title="How It Works" description="See Whatstask in action" />
+          <DropdownLink href="/project-management" title="Project Management" description="Plan and execute projects" />
+          <DropdownLink href="/project-management#time-tracking" title="Time Tracking" description="Track billable hours" />
         </div>
 
         <div className="mt-6 p-4 bg-slate-50 rounded-lg border border-slate-200">
           <p className="text-sm font-medium mb-2">Not sure which solution?</p>
           <p className="text-xs text-slate-600 mb-3">Talk to us about your team's needs.</p>
-          <Link href="/contact" className="text-sm text-violet-400 hover:text-violet-300 flex items-center gap-1">
-            Contact Sales <ArrowRight className="h-3 w-3" />
+          <Link href="/contact" className="text-sm text-violet-400 hover:text-violet-300">
+            Contact Sales →
           </Link>
         </div>
       </div>
@@ -204,10 +174,10 @@ export default function Navigation() {
       <div>
         <h3 className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-4">Learn</h3>
         <div className="space-y-1">
-          <DropdownLink href="/blog" icon={<BookOpen className="h-5 w-5" />} title="Blog" description="Tips, guides, and updates" />
-          <DropdownLink href="/templates" icon={<FileText className="h-5 w-5" />} title="Templates" description="Ready-to-use project templates" />
-          <DropdownLink href="/geoanalyzer/guide" icon={<Search className="h-5 w-5" />} title="GEO Guide" description="Master AI search optimization" />
-          <DropdownLink href="/how-it-works" icon={<Zap className="h-5 w-5" />} title="Getting Started" description="Quick start guide" />
+          <DropdownLink href="/blog" title="Blog" description="Tips, guides, and updates" />
+          <DropdownLink href="/templates" title="Templates" description="Ready-to-use project templates" />
+          <DropdownLink href="/geoanalyzer/guide" title="GEO Guide" description="Master AI search optimization" />
+          <DropdownLink href="/how-it-works" title="Getting Started" description="Quick start guide" />
         </div>
       </div>
 
@@ -215,15 +185,15 @@ export default function Navigation() {
       <div>
         <h3 className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-4">Support</h3>
         <div className="space-y-1">
-          <DropdownLink href="/help" icon={<HelpCircle className="h-5 w-5" />} title="Help Center" description="FAQs and documentation" />
-          <DropdownLink href="/contact" icon={<MessageSquare className="h-5 w-5" />} title="Contact Support" description="Get help from our team" />
-          <DropdownLink href="/security" icon={<Shield className="h-5 w-5" />} title="Security" description="How we protect your data" />
+          <DropdownLink href="/help" title="Help Center" description="FAQs and documentation" />
+          <DropdownLink href="/contact" title="Contact Support" description="Get help from our team" />
+          <DropdownLink href="/security" title="Security" description="How we protect your data" />
         </div>
 
         <h3 className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-4 mt-8">Company</h3>
         <div className="space-y-1">
-          <DropdownLink href="/about" icon={<Building2 className="h-5 w-5" />} title="About Us" description="Our mission and values" />
-          <DropdownLink href="/founder" icon={<UserCircle className="h-5 w-5" />} title="Founder Story" description="Why we built Whatstask" />
+          <DropdownLink href="/about" title="About Us" description="Our mission and values" />
+          <DropdownLink href="/founder" title="Founder Story" description="Why we built Whatstask" />
         </div>
       </div>
 
@@ -237,8 +207,8 @@ export default function Navigation() {
           <DropdownLink href="/compare/notion" title="vs Notion" description="Task-focused" />
           <DropdownLink href="/compare/todoist" title="vs Todoist" description="Team features included" />
         </div>
-        <Link href="/compare/clickup" className="mt-4 text-sm text-violet-400 hover:text-violet-300 flex items-center gap-1">
-          See all comparisons <ArrowRight className="h-3 w-3" />
+        <Link href="/compare/clickup" className="mt-4 text-sm text-violet-400 hover:text-violet-300">
+          See all comparisons →
         </Link>
       </div>
     </div>
@@ -465,8 +435,7 @@ export default function Navigation() {
               {/* Mobile CTAs */}
               <div className="p-4 border-t border-slate-200 space-y-3">
                 <Button asChild className="w-full bg-violet-500 hover:bg-violet-600 text-white rounded-full py-6">
-                  <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                    <Send className="h-4 w-4" />
+                  <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                     Start Free in Telegram
                   </a>
                 </Button>
@@ -487,13 +456,11 @@ export default function Navigation() {
 // Dropdown Link Component
 function DropdownLink({
   href,
-  icon,
   title,
   description,
   highlight,
 }: {
   href: string
-  icon?: React.ReactNode
   title: string
   description: string
   highlight?: boolean
@@ -501,19 +468,12 @@ function DropdownLink({
   return (
     <Link
       href={href}
-      className={`flex items-start gap-3 p-3 rounded-lg transition-colors group ${
+      className={`block p-3 rounded-lg transition-colors group ${
         highlight ? "hover:bg-violet-500/10" : "hover:bg-slate-50"
       }`}
     >
-      {icon && (
-        <div className={`mt-0.5 ${highlight ? "text-violet-400" : "text-slate-600 group-hover:text-slate-900"}`}>
-          {icon}
-        </div>
-      )}
-      <div>
-        <p className={`text-sm font-medium ${highlight ? "text-violet-600" : "text-slate-900"}`}>{title}</p>
-        <p className="text-xs text-slate-500 mt-0.5">{description}</p>
-      </div>
+      <p className={`text-sm font-medium ${highlight ? "text-violet-600" : "text-slate-900"}`}>{title}</p>
+      <p className="text-xs text-slate-500 mt-0.5">{description}</p>
     </Link>
   )
 }
