@@ -130,9 +130,9 @@ export default function LandingPage() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-[1]" />
 
         <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-            {/* Left side - Text content */}
-            <motion.div style={{ opacity: heroOpacity }} className="text-center md:text-left">
+          <div className="flex flex-col items-center">
+            {/* Text content - centered */}
+            <motion.div style={{ opacity: heroOpacity }} className="text-center max-w-4xl">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -161,7 +161,7 @@ export default function LandingPage() {
                   />
                 </h1>
 
-                <p className="text-xl md:text-2xl text-slate-600 font-light leading-relaxed max-w-xl mb-4">
+                <p className="text-xl md:text-2xl text-slate-600 font-light leading-relaxed max-w-2xl mx-auto mb-4">
                   <BlurText text="Project management and AI tools for teams of any size who want to work, not manage tools." delay={0.3} />
                 </p>
 
@@ -175,7 +175,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center mb-8 md:mb-0"
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center"
               >
                 <MagneticButton magneticStrength={0.2}>
                   <motion.div
@@ -211,43 +211,43 @@ export default function LandingPage() {
               </motion.div>
             </motion.div>
 
-            {/* Right side - Phone Mockups */}
+            {/* Phone Mockups - Below text with slanted effect */}
             <motion.div
-              initial={{ opacity: 0, x: 60 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="relative flex justify-center md:justify-end items-center"
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="relative flex justify-center items-end mt-12 lg:mt-16"
             >
-              <div className="flex items-end gap-3 md:gap-4">
-                {/* Left phone */}
+              <div className="flex items-end gap-[-20px] md:gap-[-30px]">
+                {/* Left phone - slanted left */}
                 <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                  whileHover={{ scale: 1.05, y: -8 }}
-                  className="hidden sm:block scale-[0.65] md:scale-[0.7] lg:scale-[0.75] origin-bottom cursor-pointer"
+                  initial={{ opacity: 0, y: 40, rotate: -12 }}
+                  animate={{ opacity: 1, y: 0, rotate: -12 }}
+                  transition={{ duration: 0.6, delay: 0.9 }}
+                  whileHover={{ scale: 1.08, rotate: -6, y: -10 }}
+                  className="hidden sm:block scale-[0.6] md:scale-[0.65] lg:scale-[0.7] origin-bottom -mr-8 md:-mr-12 cursor-pointer"
                 >
                   <PhoneMockup src="/appui/app-projects.webp" alt="Projects Screen" />
                 </motion.div>
 
-                {/* Center phone - main */}
+                {/* Center phone - main, upright */}
                 <motion.div
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  whileHover={{ scale: 1.03, y: -5 }}
-                  className="relative z-10 scale-[0.8] md:scale-[0.85] lg:scale-[0.9] cursor-pointer"
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  whileHover={{ scale: 1.05, y: -8 }}
+                  className="relative z-10 scale-[0.75] md:scale-[0.8] lg:scale-[0.85] cursor-pointer"
                 >
                   <PhoneMockup src="/appui/app-onboarding.webp" alt="WhatsTask Onboarding" priority />
                 </motion.div>
 
-                {/* Right phone */}
+                {/* Right phone - slanted right */}
                 <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                  whileHover={{ scale: 1.05, y: -8 }}
-                  className="hidden sm:block scale-[0.65] md:scale-[0.7] lg:scale-[0.75] origin-bottom cursor-pointer"
+                  initial={{ opacity: 0, y: 40, rotate: 12 }}
+                  animate={{ opacity: 1, y: 0, rotate: 12 }}
+                  transition={{ duration: 0.6, delay: 0.9 }}
+                  whileHover={{ scale: 1.08, rotate: 6, y: -10 }}
+                  className="hidden sm:block scale-[0.6] md:scale-[0.65] lg:scale-[0.7] origin-bottom -ml-8 md:-ml-12 cursor-pointer"
                 >
                   <PhoneMockup src="/appui/app-stats-personal.webp" alt="Statistics Screen" />
                 </motion.div>
