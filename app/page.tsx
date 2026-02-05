@@ -106,9 +106,9 @@ export default function LandingPage() {
       </Dialog>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-24 pb-20 px-4 overflow-hidden">
-        {/* Grainient Background - Contained to Hero */}
-        <div className="absolute inset-0 z-0">
+      <section className="relative min-h-screen flex items-center pt-24 pb-20 w-full">
+        {/* Grainient Background - Full width edge to edge */}
+        <div className="absolute inset-0 z-0 w-screen left-1/2 -translate-x-1/2">
           <Grainient
             color1="#8B5CF6"
             color2="#A78BFA"
@@ -127,10 +127,10 @@ export default function LandingPage() {
             className="opacity-60"
           />
         </div>
-        {/* Gradient fade at bottom of hero */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-[1]" />
+        {/* Gradient fade at bottom of hero - full width */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-screen h-32 bg-gradient-to-t from-white to-transparent z-[1]" />
 
-        <div className="container mx-auto max-w-7xl relative z-10">
+        <div className="container mx-auto max-w-7xl relative z-10 px-4">
           <div className="flex flex-col items-center">
             {/* Text content - centered */}
             <motion.div style={{ opacity: heroOpacity }} className="text-center max-w-4xl">
