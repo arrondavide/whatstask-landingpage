@@ -394,3 +394,13 @@ a[role="button"]:active,
   justify-content: center !important;
   border-radius: 9999px !important;
 }
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
