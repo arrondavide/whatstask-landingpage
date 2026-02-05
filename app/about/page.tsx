@@ -67,7 +67,7 @@ export default function AboutPage() {
                   consultant to configure. Asana charges enterprise prices for basic AI.
                 </p>
                 <p>
-                  We believe <strong className="text-white">simple scales</strong>.
+                  We believe <strong className="text-violet-600">simple scales</strong>.
                 </p>
                 <p>
                   A 5-person startup and a 500-person enterprise have the same core need: get work done.

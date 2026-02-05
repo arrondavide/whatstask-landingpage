@@ -202,7 +202,7 @@ export default function PricingPage() {
                     className={`w-full rounded-full py-5 ${
                       plan.highlight
                         ? "bg-violet-500 text-white hover:bg-violet-600"
-                        : "bg-slate-100 hover:bg-white/20"
+                        : "bg-slate-200 text-slate-900 hover:bg-slate-300"
                     }`}
                   >
                     <a
@@ -241,7 +241,7 @@ export default function PricingPage() {
                     ))}
                   </ul>
 
-                  <Button asChild className="w-full rounded-full py-5 bg-slate-100 hover:bg-white/20">
+                  <Button asChild className="w-full rounded-full py-5 bg-slate-200 text-slate-900 hover:bg-slate-300">
                     <a
                       href={plan.ctaLink}
                       target={plan.ctaLink.startsWith("http") ? "_blank" : undefined}

@@ -104,16 +104,16 @@ export default function ToolPageTemplate({
 
       <div className="min-h-screen bg-white text-slate-900">
         {/* Header */}
-        <header className="sticky top-0 z-50 border-b border-slate-200 bg-black/80 backdrop-blur-md">
+        <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
           <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold">
+            <Link href="/" className="text-2xl font-bold text-slate-900">
               Whatstask
             </Link>
             <nav className="hidden md:flex gap-8">
-              <Link href="/" className="hover:text-slate-600 transition-colors">
+              <Link href="/" className="text-slate-600 hover:text-slate-900 transition-colors">
                 Home
               </Link>
-              <Link href="/tools" className="hover:text-slate-600 transition-colors">
+              <Link href="/tools" className="text-violet-600 font-medium hover:text-violet-700 transition-colors">
                 All Tools
               </Link>
             </nav>
@@ -207,7 +207,7 @@ export default function ToolPageTemplate({
                   className="relative"
                 >
                   {/* Step number */}
-                  <div className="absolute -left-0 -top-0 text-6xl font-bold text-white/5">{step.number}</div>
+                  <div className="absolute -left-0 -top-0 text-6xl font-bold text-slate-100">{step.number}</div>
                   <div className="relative z-10 pl-12">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center border border-slate-300">
@@ -272,7 +272,7 @@ export default function ToolPageTemplate({
                   <p className="text-slate-600 font-light text-sm mb-4 leading-relaxed">{tool.description}</p>
                   <Link
                     href={`/${tool.slug}`}
-                    className="inline-flex items-center gap-2 text-white font-medium group-hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 text-violet-600 font-medium group-hover:gap-3 transition-all"
                   >
                     Learn more <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -295,7 +295,7 @@ export default function ToolPageTemplate({
             </p>
             <Button
               asChild
-              className="bg-white text-black hover:bg-gray-200 rounded-full px-8 py-6 text-lg font-semibold"
+              className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6 text-lg font-semibold"
             >
               <a href={`#tool-embed`} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
                 Use {toolName} Now <ArrowRight className="w-5 h-5 ml-2" />
@@ -305,15 +305,15 @@ export default function ToolPageTemplate({
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-slate-200 bg-black/50 backdrop-blur">
+        <footer className="border-t border-slate-200 bg-slate-50">
           <div className="container mx-auto px-4 py-12">
             <div className="grid md:grid-cols-4 gap-8 mb-12">
               <div>
-                <h3 className="font-bold mb-4">Whatstask</h3>
+                <h3 className="font-bold text-slate-900 mb-4">Whatstask</h3>
                 <p className="text-slate-600 font-light text-sm">Free online tools and task management for 2025.</p>
               </div>
               <div>
-                <h4 className="font-semibold mb-4">PDF Tools</h4>
+                <h4 className="font-semibold text-slate-900 mb-4">PDF Tools</h4>
                 <ul className="space-y-2 text-sm text-slate-600 font-light">
                   <li>
                     <Link href="/pdf-merger" className="hover:text-slate-900 transition">
@@ -333,7 +333,7 @@ export default function ToolPageTemplate({
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold mb-4">More Tools</h4>
+                <h4 className="font-semibold text-slate-900 mb-4">More Tools</h4>
                 <ul className="space-y-2 text-sm text-slate-600 font-light">
                   <li>
                     <Link href="/jpg-to-pdf" className="hover:text-slate-900 transition">
@@ -351,14 +351,14 @@ export default function ToolPageTemplate({
                     </Link>
                   </li>
                   <li>
-                    <Link href="/geoanalyzer" className="hover:text-violet-400 transition text-violet-400/80">
+                    <Link href="/geoanalyzer" className="hover:text-violet-600 transition text-violet-500">
                       GEO Analyzer
                     </Link>
                   </li>
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold mb-4">Legal</h4>
+                <h4 className="font-semibold text-slate-900 mb-4">Legal</h4>
                 <ul className="space-y-2 text-sm text-slate-600 font-light">
                   <li>
                     <Link href="#" className="hover:text-slate-900 transition">

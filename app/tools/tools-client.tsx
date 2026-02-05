@@ -107,7 +107,7 @@ export default function ToolsClient() {
               <Link href="/geoanalyzer" className="text-slate-600 hover:text-slate-900 transition-colors">
                 GEO Analyzer
               </Link>
-              <Link href="/tools" className="text-white font-medium">
+              <Link href="/tools" className="text-violet-600 font-medium">
                 Free Tools
               </Link>
               <Link href="/pricing" className="text-slate-600 hover:text-slate-900 transition-colors">
@@ -161,8 +161,8 @@ export default function ToolsClient() {
                       >
                         {/* Icon */}
                         <div className="mb-6">
-                          <div className="w-12 h-12 rounded-lg bg-slate-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <IconComponent className="w-6 h-6 text-white" />
+                          <div className="w-12 h-12 rounded-lg bg-violet-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <IconComponent className="w-6 h-6 text-violet-600" />
                           </div>
                         </div>
 
@@ -180,18 +180,12 @@ export default function ToolsClient() {
                         {/* CTA Button */}
                         <Button
                           asChild
-                          className="bg-slate-100 text-white hover:bg-white/20 border border-slate-300 rounded-full w-full relative overflow-hidden group/btn"
+                          className="bg-violet-500 text-white hover:bg-violet-600 border border-violet-500 rounded-full w-full relative overflow-hidden group/btn"
                         >
                           <a
                             href={tool.link}
                             className="flex items-center justify-center gap-2 py-6 text-base font-medium tracking-wide"
                           >
-                            <motion.span
-                              className="absolute inset-0 bg-slate-100"
-                              initial={{ x: "-100%" }}
-                              whileHover={{ x: "100%" }}
-                              transition={{ duration: 0.5 }}
-                            />
                             <span className="relative z-10">Open Tool</span>
                             <ExternalLink className="h-4 w-4 relative z-10" />
                           </a>

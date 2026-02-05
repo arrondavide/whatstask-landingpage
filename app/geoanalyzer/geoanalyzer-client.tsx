@@ -229,17 +229,17 @@ export default function GeoAnalyzerClient() {
 
       <div className="min-h-screen bg-white text-slate-900">
         {/* Header */}
-        <header className="sticky top-0 z-50 border-b border-slate-200 bg-black/80 backdrop-blur-md">
+        <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
           <div className="container mx-auto px-4 py-4 flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="w-8 h-8" />
-              <span className="text-xl font-bold">Whatstask</span>
+              <span className="text-xl font-bold text-slate-900">Whatstask</span>
             </Link>
             <nav className="hidden md:flex items-center gap-8">
               <Link href="/project-management" className="text-slate-600 hover:text-slate-900 transition-colors">
                 Project Management
               </Link>
-              <Link href="/geoanalyzer" className="text-white font-medium">
+              <Link href="/geoanalyzer" className="text-violet-600 font-medium">
                 GEO Analyzer
               </Link>
               <Link href="/tools" className="text-slate-600 hover:text-slate-900 transition-colors">
@@ -291,7 +291,7 @@ export default function GeoAnalyzerClient() {
                 </motion.div>
 
                 <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight leading-tight">
-                  <span className="bg-gradient-to-r from-white via-violet-200 to-cyan-200 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-violet-600 via-violet-500 to-cyan-500 bg-clip-text text-transparent">
                     GEO Analyzer
                   </span>
                   <br />
@@ -302,9 +302,9 @@ export default function GeoAnalyzerClient() {
 
                 <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto mb-8 leading-relaxed font-light">
                   Optimize your content for AI-powered search. Rank in{" "}
-                  <span className="text-white font-medium">ChatGPT</span>,{" "}
-                  <span className="text-white font-medium">Google SGE</span>,{" "}
-                  <span className="text-white font-medium">Perplexity</span>, and more.
+                  <span className="text-violet-600 font-medium">ChatGPT</span>,{" "}
+                  <span className="text-violet-600 font-medium">Google SGE</span>,{" "}
+                  <span className="text-violet-600 font-medium">Perplexity</span>, and more.
                 </p>
 
                 {/* Stats */}
@@ -346,7 +346,7 @@ export default function GeoAnalyzerClient() {
                     asChild
                     variant="outline"
                     size="lg"
-                    className="border-slate-300 text-white hover:bg-slate-100 rounded-full px-8 py-6 text-lg"
+                    className="border-slate-300 text-slate-700 hover:bg-slate-100 rounded-full px-8 py-6 text-lg"
                   >
                     <a href="#features">
                       <span className="flex items-center gap-2">
@@ -717,20 +717,20 @@ export default function GeoAnalyzerClient() {
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-slate-200 bg-black/50 backdrop-blur py-12 px-4">
+        <footer className="border-t border-slate-200 bg-slate-50 py-12 px-4">
           <div className="container mx-auto max-w-5xl">
             <div className="grid md:grid-cols-4 gap-8 mb-12">
               <div>
                 <Link href="/" className="flex items-center gap-2 mb-4">
                   <Image src="/logo-black.png" alt="Whatstask Logo" width={24} height={24} className="w-6 h-6" />
-                  <span className="font-bold">Whatstask</span>
+                  <span className="font-bold text-slate-900">Whatstask</span>
                 </Link>
                 <p className="text-slate-600 font-light text-sm">
                   Simple scales.
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold mb-4">Products</h4>
+                <h4 className="font-semibold text-slate-900 mb-4">Products</h4>
                 <ul className="space-y-2 text-sm text-slate-600 font-light">
                   <li>
                     <Link href="/project-management" className="hover:text-slate-900 transition">
@@ -755,7 +755,7 @@ export default function GeoAnalyzerClient() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold mb-4">Free Tools</h4>
+                <h4 className="font-semibold text-slate-900 mb-4">Free Tools</h4>
                 <ul className="space-y-2 text-sm text-slate-600 font-light">
                   <li>
                     <Link href="/tools" className="hover:text-slate-900 transition">
@@ -775,7 +775,7 @@ export default function GeoAnalyzerClient() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold mb-4">Company</h4>
+                <h4 className="font-semibold text-slate-900 mb-4">Company</h4>
                 <ul className="space-y-2 text-sm text-slate-600 font-light">
                   <li>
                     <Link href="/about" className="hover:text-slate-900 transition">
