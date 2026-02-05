@@ -54,7 +54,7 @@ export const metadata = {
     siteName: "Whatstask",
     images: [
       {
-        url: "/logo.png",
+        url: "/logo-black.png",
         width: 1200,
         height: 630,
         alt: "Whatstask - Telegram Work Management Mini App",
@@ -68,7 +68,7 @@ export const metadata = {
     title: "Whatstask - Work Management Platform in Telegram",
     description:
       "Full-featured Telegram Mini App: Task management, time tracking, team collaboration & analytics. Free for teams.",
-    images: ["/logo.png"],
+    images: ["/logo-black.png"],
     creator: "@whatstask",
   },
   robots: {
@@ -162,7 +162,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Whatstask",
               url: "https://www.whatstask.com",
-              logo: "https://www.whatstask.com/logo.png",
+              logo: "https://www.whatstask.com/logo-black.png",
               description: "Manage tasks in Telegram with AI reminders. Free online PDF tools.",
               sameAs: [
                 "https://t.me/whatstask_bot",

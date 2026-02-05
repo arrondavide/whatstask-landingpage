@@ -97,7 +97,7 @@ export default function ToolsClient() {
         <header className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
+              <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
               <span className="text-xl font-bold">Whatstask</span>
             </Link>
             <nav className="hidden md:flex items-center gap-8">
@@ -264,7 +264,7 @@ export default function ToolsClient() {
             <div className="grid md:grid-cols-4 gap-8 mb-8">
               <div>
                 <Link href="/" className="flex items-center gap-2 mb-4">
-                  <Image src="/logo.png" alt="Whatstask" width={24} height={24} className="h-6 w-6" />
+                  <Image src="/logo-black.png" alt="Whatstask" width={24} height={24} className="h-6 w-6" />
                   <span className="font-bold">Whatstask</span>
                 </Link>
                 <p className="text-sm text-slate-500">Simple scales.</p>

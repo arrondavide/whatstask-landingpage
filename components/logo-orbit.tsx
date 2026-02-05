@@ -169,7 +169,7 @@ export default function LogoOrbit() {
             }}
             className="relative z-10 w-24 h-24 rounded-full bg-black flex items-center justify-center border border-slate-300"
           >
-            <Image src="/logo.png" alt="Whatstask Logo" width={64} height={64} className="w-16 h-16" />
+            <Image src="/logo-black.png" alt="Whatstask Logo" width={64} height={64} className="w-16 h-16" />
           </motion.div>
         </div>
       </div>
@@ -188,7 +188,7 @@ export default function LogoOrbit() {
         >
           <div className="p-4 border-b border-slate-200 flex items-center">
             <div className="w-8 h-8 rounded-full bg-slate-100 mr-3 flex items-center justify-center">
-              <Image src="/logo.png" alt="Whatstask Logo" width={20} height={20} className="w-5 h-5" />
+              <Image src="/logo-black.png" alt="Whatstask Logo" width={20} height={20} className="w-5 h-5" />
             </div>
             <div className="text-left">
               <div className="text-sm font-medium">Whatstask</div>
@@ -261,7 +261,7 @@ export default function LogoOrbit() {
                 </div>
               </div>
               <div className="w-8 h-8 rounded-full bg-slate-100 flex-shrink-0 flex items-center justify-center">
-                <Image src="/logo.png" alt="Whatstask Logo" width={20} height={20} className="w-5 h-5" />
+                <Image src="/logo-black.png" alt="Whatstask Logo" width={20} height={20} className="w-5 h-5" />
               </div>
             </motion.div>
           </div>

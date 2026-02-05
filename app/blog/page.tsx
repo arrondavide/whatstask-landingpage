@@ -66,7 +66,7 @@ export default function BlogPage() {
         <header className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
+              <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
               <span className="text-xl font-bold">Whatstask</span>
             </Link>
             <Link href="/">
@@ -199,7 +199,7 @@ export default function BlogPage() {
                 name: "Whatstask",
                 logo: {
                   "@type": "ImageObject",
-                  url: "https://www.whatstask.com/logo.png",
+                  url: "https://www.whatstask.com/logo-black.png",
                 },
               },
             }),

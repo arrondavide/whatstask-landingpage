@@ -7,7 +7,7 @@ export const metadata: Metadata = generateMetadata({
   description:
     "Free online PDF tools: merge, compress, convert, split PDFs. Plus QR code generator and SEO analyzer. No signup required. Use instantly →",
   canonicalUrl: "https://www.whatstask.com/tools",
-  ogImage: "/logo.png",
+  ogImage: "/logo-black.png",
   keywords: [
     "free online tools",
     "pdf tools",

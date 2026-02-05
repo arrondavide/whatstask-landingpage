@@ -7,7 +7,7 @@ export const metadata: Metadata = generateMetadata({
   description:
     "Merge multiple PDF files into one document for free. No signup, browser-based, secure. Combine unlimited PDFs with our free online PDF merger tool.",
   canonicalUrl: "https://www.whatstask.com/pdf-merger",
-  ogImage: "/logo.png",
+  ogImage: "/logo-black.png",
   keywords: [
     "pdf merger",
     "combine pdfs",

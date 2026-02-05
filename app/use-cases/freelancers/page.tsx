@@ -108,7 +108,7 @@ export default function FreelancersPage() {
         <header className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
+              <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
               <span className="text-xl font-bold">Whatstask</span>
             </Link>
             <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
@@ -256,7 +256,7 @@ export default function FreelancersPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">Why Not Just Use...</h2>
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <div className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200">
-                <h3 className="font-bold mb-3">❌ Notion / Asana</h3>
+                <h3 className="font-bold mb-3">Notion / Asana</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   Too complex for freelancers. You need tasks done, not project management frameworks. Plus, they
                   cost $10-20/mo for features you won't use.
@@ -264,7 +264,7 @@ export default function FreelancersPage() {
               </div>
 
               <div className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200">
-                <h3 className="font-bold mb-3">❌ Pen & Paper</h3>
+                <h3 className="font-bold mb-3">Pen & Paper</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   Can't set reminders, no cross-device sync, easy to lose. Great for brainstorming, terrible for
                   tracking client deadlines.
@@ -272,7 +272,7 @@ export default function FreelancersPage() {
               </div>
 
               <div className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200">
-                <h3 className="font-bold mb-3">❌ Todoist / TickTick</h3>
+                <h3 className="font-bold mb-3">Todoist / TickTick</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   Good apps, but require switching contexts. Whatstask lives where you already work - in Telegram
                   with your clients.
@@ -285,7 +285,7 @@ export default function FreelancersPage() {
           <div className="mb-20 max-w-3xl mx-auto">
             <div className="bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-violet-500/20">
               <div className="text-center mb-6">
-                <div className="text-5xl mb-4">💬</div>
+                <div className="text-5xl mb-4"></div>
                 <h3 className="text-2xl font-bold mb-4">The Freelancer's Dream Workflow</h3>
               </div>
               <div className="space-y-4 text-slate-700 leading-relaxed">

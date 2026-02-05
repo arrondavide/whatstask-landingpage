@@ -7,7 +7,7 @@ export const metadata: Metadata = generateMetadata({
   description:
     "Generate custom QR codes instantly for marketing, business cards, and more. Free QR code generator with PNG and SVG export. No limits for 2025.",
   canonicalUrl: "https://www.whatstask.com/qr-code-generator",
-  ogImage: "/logo.png",
+  ogImage: "/logo-black.png",
   keywords: [
     "qr code generator",
     "free qr code",

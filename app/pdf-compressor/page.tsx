@@ -7,7 +7,7 @@ export const metadata: Metadata = generateMetadata({
   description:
     "Compress PDF files online and reduce file size by up to 70%. Fast, free PDF compressor with zero quality loss. No signup needed. Works in browser 2025.",
   canonicalUrl: "https://www.whatstask.com/pdf-compressor",
-  ogImage: "/logo.png",
+  ogImage: "/logo-black.png",
   keywords: [
     "pdf compressor",
     "reduce pdf size",

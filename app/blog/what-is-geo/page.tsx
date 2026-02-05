@@ -45,7 +45,7 @@ export default function WhatIsGEOPage() {
     "@type": "Article",
     headline: "What is GEO? Generative Engine Optimization Explained",
     description: "What is Generative Engine Optimization (GEO)? Learn how GEO helps your content rank in ChatGPT, Google SGE, Perplexity, and AI search engines.",
-    image: "https://www.whatstask.com/logo.png",
+    image: "https://www.whatstask.com/logo-black.png",
     author: {
       "@type": "Organization",
       name: "Whatstask",
@@ -56,7 +56,7 @@ export default function WhatIsGEOPage() {
       name: "Whatstask",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.whatstask.com/logo.png"
+        url: "https://www.whatstask.com/logo-black.png"
       }
     },
     datePublished: "2026-01-10",
@@ -78,7 +78,7 @@ export default function WhatIsGEOPage() {
         <header className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
+              <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
               <span className="text-xl font-bold">Whatstask</span>
             </Link>
             <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">

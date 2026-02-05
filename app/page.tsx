@@ -563,7 +563,7 @@ export default function LandingPage() {
             {/* Brand */}
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-4">
-                <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} />
+                <Image src="/logo-black.png" alt="Whatstask Logo" width={24} height={24} />
                 <span className="font-bold text-lg">Whatstask</span>
               </div>
               <p className="text-sm text-slate-500 mb-4 max-w-xs">

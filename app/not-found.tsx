@@ -17,7 +17,7 @@ export default function NotFound() {
         <div className="max-w-2xl mx-auto text-center">
           {/* Logo */}
           <Link href="/" className="inline-flex items-center gap-2 mb-8">
-            <Image src="/logo.png" alt="Whatstask Logo" width={48} height={48} className="h-12 w-12" />
+            <Image src="/logo-black.png" alt="Whatstask Logo" width={48} height={48} className="h-12 w-12" />
             <span className="text-2xl font-bold">Whatstask</span>
           </Link>
 

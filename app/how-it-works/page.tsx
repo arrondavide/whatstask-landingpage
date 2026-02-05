@@ -90,15 +90,15 @@ export default function HowItWorksPage() {
   const examples = [
     {
       input: "Remind me to call mom tomorrow at 2pm",
-      output: "✅ Task created: Call mom\n📅 Tomorrow at 2:00 PM\n🔔 Reminder set",
+      output: "Task created: Call mom\nTomorrow at 2:00 PM\nReminder set",
     },
     {
       input: "Team meeting every Monday at 10am",
-      output: "✅ Recurring task created: Team meeting\n📅 Every Monday at 10:00 AM\n🔔 Weekly reminder set",
+      output: "Recurring task created: Team meeting\nEvery Monday at 10:00 AM\nWeekly reminder set",
     },
     {
       input: "Submit report by end of week",
-      output: "✅ Task created: Submit report\n📅 Friday, Dec 29\n🔔 Reminder set for Thursday evening",
+      output: "Task created: Submit report\nFriday, Dec 29\nReminder set for Thursday evening",
     },
   ]
 
@@ -119,7 +119,7 @@ export default function HowItWorksPage() {
         <header className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
+              <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
               <span className="text-xl font-bold">Whatstask</span>
             </Link>
             <Link href="/">
@@ -162,7 +162,7 @@ export default function HowItWorksPage() {
                   <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-8 border border-slate-200 flex items-center justify-center min-h-[300px]">
                     <div className="text-center">
                       <div className="text-6xl mb-4">
-                        {idx === 0 && "💬"}
+                        {idx === 0 && ""}
                         {idx === 1 && "✍️"}
                         {idx === 2 && "🔔"}
                       </div>

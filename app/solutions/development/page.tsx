@@ -142,7 +142,7 @@ export default function DevelopmentSolutionPage() {
       <header className="border-b border-slate-200">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
+            <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
             <span className="text-xl font-bold">Whatstask</span>
           </Link>
           <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
@@ -269,11 +269,11 @@ export default function DevelopmentSolutionPage() {
             </div>
             <div className="space-y-2">
               <p><span className="text-blue-400">You:</span> Create sprint "v2.0 Release"</p>
-              <p><span className="text-green-400">Whatstask:</span> ✓ Sprint created! Add tasks or import from backlog?</p>
+              <p><span className="text-green-400">Whatstask:</span> Done: Sprint created! Add tasks or import from backlog?</p>
               <p><span className="text-blue-400">You:</span> Add "Implement auth flow" @sarah</p>
-              <p><span className="text-green-400">Whatstask:</span> ✓ Task added, assigned to Sarah</p>
+              <p><span className="text-green-400">Whatstask:</span> Done: Task added, assigned to Sarah</p>
               <p><span className="text-blue-400">You:</span> Add "Fix login bug" priority:high</p>
-              <p><span className="text-green-400">Whatstask:</span> ✓ High priority bug added to sprint</p>
+              <p><span className="text-green-400">Whatstask:</span> Done: High priority bug added to sprint</p>
             </div>
           </div>
         </div>
@@ -308,7 +308,7 @@ export default function DevelopmentSolutionPage() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} />
+              <Image src="/logo-black.png" alt="Whatstask Logo" width={24} height={24} />
               <span className="font-bold">Whatstask</span>
             </Link>
             <div className="flex flex-wrap gap-6 text-sm text-slate-600">

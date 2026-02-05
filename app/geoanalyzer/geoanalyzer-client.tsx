@@ -196,7 +196,7 @@ export default function GeoAnalyzerClient() {
     "@type": "Organization",
     name: "Whatstask",
     url: "https://www.whatstask.com",
-    logo: "https://www.whatstask.com/logo.png",
+    logo: "https://www.whatstask.com/logo-black.png",
     sameAs: ["https://geoanalyzer.whatstask.com"],
     offers: {
       "@type": "Offer",
@@ -253,7 +253,7 @@ export default function GeoAnalyzerClient() {
         <header className="sticky top-0 z-50 border-b border-slate-200 bg-black/80 backdrop-blur-md">
           <div className="container mx-auto px-4 py-4 flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="w-8 h-8" />
+              <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="w-8 h-8" />
               <span className="text-xl font-bold">Whatstask</span>
             </Link>
             <nav className="hidden md:flex items-center gap-8">
@@ -755,7 +755,7 @@ export default function GeoAnalyzerClient() {
             <div className="grid md:grid-cols-4 gap-8 mb-12">
               <div>
                 <Link href="/" className="flex items-center gap-2 mb-4">
-                  <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} className="w-6 h-6" />
+                  <Image src="/logo-black.png" alt="Whatstask Logo" width={24} height={24} className="w-6 h-6" />
                   <span className="font-bold">Whatstask</span>
                 </Link>
                 <p className="text-slate-600 font-light text-sm">

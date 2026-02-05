@@ -263,7 +263,7 @@ export default function Navigation() {
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <Link href="/" className="flex items-center gap-2">
-                <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="w-8 h-8" />
+                <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="w-8 h-8" />
                 <span className="font-bold text-xl tracking-tight">Whatstask</span>
               </Link>
             </motion.div>
@@ -381,7 +381,7 @@ export default function Navigation() {
               {/* Mobile Header */}
               <div className="flex items-center justify-between p-4 border-b border-slate-200">
                 <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-                  <Image src="/logo.png" alt="Whatstask Logo" width={28} height={28} />
+                  <Image src="/logo-black.png" alt="Whatstask Logo" width={28} height={28} />
                   <span className="font-bold text-lg">Whatstask</span>
                 </Link>
                 <button

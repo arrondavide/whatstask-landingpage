@@ -105,7 +105,7 @@ export default function FounderPage() {
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
               <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                <Image src="/logo.png" alt="Whatstask" width={40} height={40} className="rounded-lg" />
+                <Image src="/logo-black.png" alt="Whatstask" width={40} height={40} className="rounded-lg" />
                 <span className="text-xl font-bold">Whatstask</span>
               </Link>
               <nav className="hidden md:flex items-center gap-6">

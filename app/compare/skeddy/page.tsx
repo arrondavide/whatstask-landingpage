@@ -177,7 +177,7 @@ export default function WhatstaskVsSkeddyPage() {
         <header className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
+              <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
               <span className="text-xl font-bold">Whatstask</span>
             </Link>
             <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
@@ -222,7 +222,7 @@ export default function WhatstaskVsSkeddyPage() {
                 <li>💰 Save $60/year per user compared to Skeddy</li>
                 <li>⏱️ Built-in time tracking (Skeddy doesn't have this)</li>
                 <li>📄 Free PDF tools included</li>
-                <li>🤖 AI understands natural language</li>
+                <li>AI understands natural language</li>
                 <li>👥 Unlimited team members (even on free tier)</li>
               </ul>
             </div>
@@ -242,10 +242,10 @@ export default function WhatstaskVsSkeddyPage() {
                 </h3>
                 <p className="text-slate-700 mb-3">Whatstask Pro is $4.99/month vs Skeddy's $9.99/month</p>
                 <ul className="space-y-2 text-sm text-slate-700">
-                  <li>✓ Unlimited tasks (both)</li>
-                  <li>✓ Time tracking (Whatstask only)</li>
-                  <li>✓ Free PDF tools (Whatstask only)</li>
-                  <li>✓ Team features free (Whatstask); paid (Skeddy)</li>
+                  <li>Done: Unlimited tasks (both)</li>
+                  <li>Done: Time tracking (Whatstask only)</li>
+                  <li>Done: Free PDF tools (Whatstask only)</li>
+                  <li>Done: Team features free (Whatstask); paid (Skeddy)</li>
                 </ul>
               </div>
 
@@ -256,24 +256,24 @@ export default function WhatstaskVsSkeddyPage() {
                 </h3>
                 <p className="text-slate-700 mb-3">Track billable hours directly in the task app</p>
                 <ul className="space-y-2 text-sm text-slate-700">
-                  <li>✓ One-tap clock in/out</li>
-                  <li>✓ Automatic duration calculation</li>
-                  <li>✓ Invoicing-ready reports</li>
-                  <li>✓ No external tool needed</li>
+                  <li>Done: One-tap clock in/out</li>
+                  <li>Done: Automatic duration calculation</li>
+                  <li>Done: Invoicing-ready reports</li>
+                  <li>Done: No external tool needed</li>
                 </ul>
               </div>
 
               <div className="bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-violet-500/20">
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                  <span className="text-2xl">🤖</span>
+                  <span className="text-2xl"></span>
                   AI Understands Your Language
                 </h3>
                 <p className="text-slate-700 mb-3">Natural language processing that actually works</p>
                 <ul className="space-y-2 text-sm text-slate-700">
-                  <li>✓ Type: "meeting with Sarah tomorrow 2pm"</li>
-                  <li>✓ AI extracts: task, person, date, time</li>
-                  <li>✓ No special commands needed</li>
-                  <li>✓ Detects priority from context</li>
+                  <li>Done: Type: "meeting with Sarah tomorrow 2pm"</li>
+                  <li>Done: AI extracts: task, person, date, time</li>
+                  <li>Done: No special commands needed</li>
+                  <li>Done: Detects priority from context</li>
                 </ul>
               </div>
 
@@ -284,10 +284,10 @@ export default function WhatstaskVsSkeddyPage() {
                 </h3>
                 <p className="text-slate-700 mb-3">Whatstask feels like a real app, not a chatbot</p>
                 <ul className="space-y-2 text-sm text-slate-700">
-                  <li>✓ Visual interface with buttons</li>
-                  <li>✓ Task cards and drag-and-drop</li>
-                  <li>✓ Real-time status updates</li>
-                  <li>✓ No learning curve</li>
+                  <li>Done: Visual interface with buttons</li>
+                  <li>Done: Task cards and drag-and-drop</li>
+                  <li>Done: Real-time status updates</li>
+                  <li>Done: No learning curve</li>
                 </ul>
               </div>
             </div>
@@ -313,13 +313,13 @@ export default function WhatstaskVsSkeddyPage() {
                       <td className={`p-4 text-center text-sm font-medium ${row.winner === "whatstask" ? "bg-violet-500/10" : ""}`}>
                         <div>{row.whatstask}</div>
                         {row.winner === "whatstask" && (
-                          <span className="text-violet-400 text-xs mt-1 block">✓ Winner</span>
+                          <span className="text-violet-400 text-xs mt-1 block">Done: Winner</span>
                         )}
                       </td>
                       <td className={`p-4 text-center text-sm font-medium ${row.winner === "skeddy" ? "bg-blue-500/10" : ""}`}>
                         <div>{row.skeddy}</div>
                         {row.winner === "skeddy" && (
-                          <span className="text-blue-400 text-xs mt-1 block">✓ Winner</span>
+                          <span className="text-blue-400 text-xs mt-1 block">Done: Winner</span>
                         )}
                       </td>
                       <td className="p-4 text-xs text-slate-600">{row.whyWhatstask || "—"}</td>
@@ -337,7 +337,7 @@ export default function WhatstaskVsSkeddyPage() {
               {/* Whatstask Pros/Cons */}
               <div className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
                 <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                  <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} className="h-6 w-6" />
+                  <Image src="/logo-black.png" alt="Whatstask Logo" width={24} height={24} className="h-6 w-6" />
                   Whatstask
                 </h3>
                 <div className="mb-6">

@@ -130,7 +130,7 @@ export default function WhatstaskVsTodoistPage() {
         <header className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
+              <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
               <span className="text-xl font-bold">Whatstask</span>
             </Link>
             <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
@@ -255,7 +255,7 @@ export default function WhatstaskVsTodoistPage() {
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {/* Whatstask Use Cases */}
               <div className="bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-violet-500/20">
-                <h3 className="text-xl font-bold mb-4">✅ Choose Whatstask if:</h3>
+                <h3 className="text-xl font-bold mb-4">Choose Whatstask if:</h3>
                 <ul className="space-y-3 text-slate-700">
                   <li className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
@@ -286,7 +286,7 @@ export default function WhatstaskVsTodoistPage() {
 
               {/* Todoist Use Cases */}
               <div className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
-                <h3 className="text-xl font-bold mb-4">✅ Choose Todoist if:</h3>
+                <h3 className="text-xl font-bold mb-4">Choose Todoist if:</h3>
                 <ul className="space-y-3 text-slate-700">
                   <li className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />

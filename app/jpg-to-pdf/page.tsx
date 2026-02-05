@@ -7,7 +7,7 @@ export const metadata: Metadata = generateMetadata({
   description:
     "Convert JPG images to PDF documents instantly. Free JPG to PDF converter with batch support. No signup or watermarks. Turn images into PDFs for 2025.",
   canonicalUrl: "https://www.whatstask.com/jpg-to-pdf",
-  ogImage: "/logo.png",
+  ogImage: "/logo-black.png",
   keywords: [
     "jpg to pdf",
     "convert jpg to pdf",

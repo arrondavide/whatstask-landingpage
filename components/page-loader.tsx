@@ -64,7 +64,7 @@ export default function PageLoader() {
                   repeat: Number.POSITIVE_INFINITY,
                 }}
               >
-                <Image src="/logo.png" alt="Whatstask Logo" width={48} height={48} className="w-12 h-12" />
+                <Image src="/logo-black.png" alt="Whatstask Logo" width={48} height={48} className="w-12 h-12" />
               </motion.div>
             </motion.div>
 

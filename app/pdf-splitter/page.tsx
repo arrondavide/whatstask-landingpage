@@ -7,7 +7,7 @@ export const metadata: Metadata = generateMetadata({
   description:
     "Split PDF files and extract specific pages instantly. Free PDF splitter with no signup or watermarks. Fast, secure, and easy to use in 2025.",
   canonicalUrl: "https://www.whatstask.com/pdf-splitter",
-  ogImage: "/logo.png",
+  ogImage: "/logo-black.png",
   keywords: [
     "pdf splitter",
     "split pdf",
