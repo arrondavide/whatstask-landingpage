@@ -111,19 +111,22 @@ export default function Navigation() {
         </div>
       </div>
 
-      {/* Featured Column */}
-      <div className="bg-gradient-to-br from-violet-500/10 to-violet-500/5 rounded-xl p-6 border border-violet-500/20">
-        <p className="text-sm font-semibold text-violet-400 mb-3">Try Whatstask Free</p>
-        <p className="text-sm text-slate-600 mb-4">
-          Get started in 30 seconds. No credit card required. Works right in Telegram.
-        </p>
-        <Button asChild className="w-full bg-violet-500 hover:bg-violet-600 text-white rounded-full">
-          <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-            Launch in Telegram
-          </a>
-        </Button>
-        <div className="mt-4 pt-4 border-t border-slate-200">
-          <p className="text-xs text-slate-500">Trusted by 10,000+ teams</p>
+      {/* Featured Column - Liquid Glass */}
+      <div className="relative bg-gradient-to-br from-violet-500/15 to-violet-400/5 rounded-xl p-6 border border-violet-300/30 backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.6),0_4px_16px_rgba(139,92,246,0.1)] overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent pointer-events-none" />
+        <div className="relative z-10">
+          <p className="text-sm font-semibold text-violet-600 mb-3">Try Whatstask Free</p>
+          <p className="text-sm text-slate-600 mb-4">
+            Get started in 30 seconds. No credit card required. Works right in Telegram.
+          </p>
+          <Button asChild className="w-full bg-violet-500/90 hover:bg-violet-600 text-white rounded-full backdrop-blur-sm shadow-lg shadow-violet-500/20 transition-all hover:shadow-xl hover:shadow-violet-500/30 hover:scale-[1.02]">
+            <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
+              Launch in Telegram
+            </a>
+          </Button>
+          <div className="mt-4 pt-4 border-t border-violet-200/30">
+            <p className="text-xs text-slate-500">Trusted by 10,000+ teams</p>
+          </div>
         </div>
       </div>
     </div>
@@ -163,10 +166,10 @@ export default function Navigation() {
           <DropdownLink href="/project-management#time-tracking" title="Time Tracking" description="Track billable hours" />
         </div>
 
-        <div className="mt-6 p-4 bg-slate-50 rounded-lg border border-slate-200">
+        <div className="mt-6 p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-slate-200/50 shadow-[inset_0_1px_1px_rgba(255,255,255,0.8),0_2px_8px_rgba(0,0,0,0.04)]">
           <p className="text-sm font-medium mb-2">Not sure which solution?</p>
           <p className="text-xs text-slate-600 mb-3">Talk to us about your team's needs.</p>
-          <Link href="/contact" className="text-sm text-violet-400 hover:text-violet-300">
+          <Link href="/contact" className="text-sm text-violet-500 hover:text-violet-600 font-medium transition-colors">
             Contact Sales →
           </Link>
         </div>
@@ -330,19 +333,19 @@ export default function Navigation() {
           </div>
         </div>
 
-        {/* Dropdown Menus */}
+        {/* Dropdown Menus - Liquid Glass Effect */}
         <AnimatePresence>
           {activeDropdown && (
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
-              className="absolute top-full left-0 right-0 bg-white backdrop-blur-xl border-b border-slate-200 shadow-2xl"
+              initial={{ opacity: 0, y: -10, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -10, scale: 0.98 }}
+              transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
+              className="absolute top-full left-0 right-0 bg-white/70 backdrop-blur-2xl border-b border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.6)] before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/50 before:to-transparent before:pointer-events-none"
               onMouseEnter={() => timeoutRef.current && clearTimeout(timeoutRef.current)}
               onMouseLeave={handleMouseLeave}
             >
-              <div className="container mx-auto">
+              <div className="container mx-auto relative z-10">
                 {activeDropdown === "Products" && <ProductsDropdown />}
                 {activeDropdown === "Solutions" && <SolutionsDropdown />}
                 {activeDropdown === "Resources" && <ResourcesDropdown />}
@@ -477,7 +480,7 @@ export default function Navigation() {
   )
 }
 
-// Dropdown Link Component
+// Dropdown Link Component - Interactive Hover
 function DropdownLink({
   href,
   title,
@@ -492,12 +495,14 @@ function DropdownLink({
   return (
     <Link
       href={href}
-      className={`block p-3 rounded-lg transition-colors group ${
-        highlight ? "hover:bg-violet-500/10" : "hover:bg-slate-50"
-      }`}
+      className={`block p-3 rounded-xl transition-all duration-200 group relative ${
+        highlight
+          ? "hover:bg-violet-500/10 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.6),0_2px_8px_rgba(139,92,246,0.1)]"
+          : "hover:bg-white/80 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.8),0_2px_8px_rgba(0,0,0,0.04)]"
+      } hover:scale-[1.01]`}
     >
-      <p className={`text-sm font-medium ${highlight ? "text-violet-600" : "text-slate-900"}`}>{title}</p>
-      <p className="text-xs text-slate-500 mt-0.5">{description}</p>
+      <p className={`text-sm font-medium transition-colors ${highlight ? "text-violet-600 group-hover:text-violet-700" : "text-slate-900"}`}>{title}</p>
+      <p className="text-xs text-slate-500 mt-0.5 group-hover:text-slate-600 transition-colors">{description}</p>
     </Link>
   )
 }

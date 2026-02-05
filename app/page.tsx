@@ -19,6 +19,8 @@ import CustomCursor from "@/components/custom-cursor"
 import Navigation from "@/components/navigation"
 import PageLoader from "@/components/page-loader"
 import Grainient from "@/components/grainient"
+import { InteractiveCard, MagneticButton } from "@/components/interactive-card"
+import { BlurText, GradientText } from "@/components/animated-text"
 
 export default function LandingPage() {
   const [mounted, setMounted] = useState(false)
@@ -49,7 +51,7 @@ export default function LandingPage() {
       transition: {
         delay: i * 0.1,
         duration: 0.7,
-        ease: "easeOut",
+        ease: [0.25, 0.46, 0.45, 0.94] as const,
       },
     }),
   }
@@ -75,28 +77,6 @@ export default function LandingPage() {
       <PageLoader />
       <CustomCursor />
 
-      {/* Grainient Background - Hero Section */}
-      <div className="fixed inset-0 overflow-hidden z-0">
-        <div className="absolute inset-0 h-screen">
-          <Grainient
-            color1="#8B5CF6"
-            color2="#A78BFA"
-            color3="#E9D5FF"
-            grainAmount={0.08}
-            grainAnimated={true}
-            timeSpeed={0.3}
-            warpStrength={1.2}
-            warpFrequency={3.0}
-            warpSpeed={1.0}
-            warpAmplitude={40.0}
-            rotationAmount={360.0}
-            contrast={1.2}
-            saturation={1.3}
-            className="opacity-40"
-          />
-        </div>
-      </div>
-
       {/* Header */}
       <Navigation />
 
@@ -116,30 +96,60 @@ export default function LandingPage() {
       </Dialog>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-20 px-4">
-        <motion.div style={{ opacity: heroOpacity }} className="text-center max-w-5xl mx-auto">
+      <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-20 px-4 overflow-hidden">
+        {/* Grainient Background - Contained to Hero */}
+        <div className="absolute inset-0 z-0">
+          <Grainient
+            color1="#8B5CF6"
+            color2="#A78BFA"
+            color3="#E9D5FF"
+            grainAmount={0.08}
+            grainAnimated={true}
+            timeSpeed={0.3}
+            warpStrength={1.2}
+            warpFrequency={3.0}
+            warpSpeed={1.0}
+            warpAmplitude={40.0}
+            rotationAmount={360.0}
+            contrast={1.2}
+            saturation={1.3}
+            className="opacity-40"
+          />
+        </div>
+        {/* Gradient fade at bottom of hero */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-[1]" />
+
+        <motion.div style={{ opacity: heroOpacity }} className="text-center max-w-5xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {/* Tagline Badge */}
+            {/* Tagline Badge - Liquid Glass */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.9, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-full px-4 py-2 mb-8"
+              whileHover={{ scale: 1.02 }}
+              className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-md border border-white/50 rounded-full px-5 py-2.5 mb-8 shadow-[0_4px_16px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.8)] cursor-default"
             >
-              <span className="text-sm text-slate-600">Work tools that respect your time</span>
+              <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>
+              <span className="text-sm text-slate-700 font-medium">Work tools that respect your time</span>
             </motion.div>
 
             {/* Main Headline */}
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.1] tracking-tight mb-6">
-              Simple scales.
+              <GradientText
+                text="Simple scales."
+                from="#7C3AED"
+                via="#8B5CF6"
+                to="#A78BFA"
+                animate={true}
+              />
             </h1>
 
             <p className="text-xl md:text-2xl text-slate-600 font-light leading-relaxed max-w-3xl mx-auto mb-4">
-              Project management and AI tools for teams of any size who want to work, not manage tools.
+              <BlurText text="Project management and AI tools for teams of any size who want to work, not manage tools." delay={0.3} />
             </p>
 
             <p className="text-lg text-slate-500 font-light mb-10">
@@ -147,32 +157,44 @@ export default function LandingPage() {
             </p>
           </motion.div>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons - Liquid Glass with Magnetic Effect */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
           >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6 text-lg">
-                <Link href="/project-management" className="flex items-center gap-2">
-                  <span className="font-medium">Try Project Management</span>
-                  <ArrowRight className="h-5 w-5" />
-                </Link>
-              </Button>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                asChild
-                className="bg-slate-100 text-slate-900 hover:bg-slate-200 border border-slate-300 rounded-full px-8 py-6 text-lg"
+            <MagneticButton magneticStrength={0.2}>
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <Link href="/geoanalyzer" className="flex items-center gap-2">
-                  <span className="font-medium">Try GEO Analyzer</span>
-                  <ArrowRight className="h-5 w-5" />
-                </Link>
-              </Button>
-            </motion.div>
+                <Button asChild className="bg-violet-500/90 text-white hover:bg-violet-600 rounded-full px-8 py-6 text-lg backdrop-blur-sm shadow-[0_8px_32px_rgba(139,92,246,0.35),inset_0_1px_0_rgba(255,255,255,0.2)] hover:shadow-[0_12px_40px_rgba(139,92,246,0.45),inset_0_1px_0_rgba(255,255,255,0.3)] transition-all duration-300">
+                  <Link href="/project-management" className="flex items-center gap-2">
+                    <span className="font-medium">Try Project Management</span>
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                </Button>
+              </motion.div>
+            </MagneticButton>
+            <MagneticButton magneticStrength={0.2}>
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              >
+                <Button
+                  asChild
+                  className="bg-white/70 text-slate-900 hover:bg-white/90 border border-white/50 rounded-full px-8 py-6 text-lg backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-300"
+                >
+                  <Link href="/geoanalyzer" className="flex items-center gap-2">
+                    <span className="font-medium">Try GEO Analyzer</span>
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                </Button>
+              </motion.div>
+            </MagneticButton>
           </motion.div>
 
           {/* Scroll indicator */}
@@ -208,7 +230,7 @@ export default function LandingPage() {
             </p>
           </motion.div>
 
-          {/* Comparison Grid */}
+          {/* Comparison Grid - Interactive Cards */}
           <motion.div
             className="grid md:grid-cols-3 gap-6 mb-12"
             variants={staggerContainer}
@@ -225,35 +247,45 @@ export default function LandingPage() {
                 key={index}
                 variants={fadeInUp}
                 custom={index}
-                className="bg-slate-50 rounded-2xl p-8 border border-slate-200 text-center"
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/60 text-center shadow-[0_4px_24px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.9)] transition-shadow duration-300 cursor-default"
               >
                 <p className="text-sm text-slate-500 mb-2">{item.label}</p>
-                <p className="text-4xl font-bold mb-2">{item.stat}</p>
+                <p className="text-4xl font-bold mb-2 bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">{item.stat}</p>
                 <p className="text-slate-600">{item.desc}</p>
               </motion.div>
             ))}
           </motion.div>
 
-          {/* WhatsTask difference */}
+          {/* WhatsTask difference - Liquid Glass */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-violet-500/10 to-white/5 rounded-3xl p-8 md:p-12 border border-violet-500/20 text-center"
+            className="relative bg-gradient-to-br from-violet-500/15 to-violet-400/5 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-violet-300/30 text-center shadow-[0_8px_32px_rgba(139,92,246,0.12),inset_0_1px_0_rgba(255,255,255,0.6)] overflow-hidden"
           >
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">WhatsTask is different</h3>
-            <div className="grid md:grid-cols-4 gap-8 mt-8">
-              {[
-                { stat: "4", desc: "views that matter" },
-                { stat: "Free", desc: "AI features included" },
-                { stat: "30s", desc: "to get started" },
-                { stat: "Any", desc: "team size" },
-              ].map((item, index) => (
-                <div key={index}>
-                  <p className="text-3xl md:text-4xl font-bold text-violet-400 mb-2">{item.stat}</p>
-                  <p className="text-slate-600">{item.desc}</p>
-                </div>
-              ))}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent pointer-events-none" />
+            <div className="relative z-10">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">WhatsTask is different</h3>
+              <div className="grid md:grid-cols-4 gap-8 mt-8">
+                {[
+                  { stat: "4", desc: "views that matter" },
+                  { stat: "Free", desc: "AI features included" },
+                  { stat: "30s", desc: "to get started" },
+                  { stat: "Any", desc: "team size" },
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                    className="p-4 rounded-2xl bg-white/40 backdrop-blur-sm border border-white/30 shadow-[inset_0_1px_0_rgba(255,255,255,0.5)] hover:shadow-[0_8px_24px_rgba(139,92,246,0.15),inset_0_1px_0_rgba(255,255,255,0.6)] transition-shadow duration-300"
+                  >
+                    <p className="text-3xl md:text-4xl font-bold text-violet-500 mb-2">{item.stat}</p>
+                    <p className="text-slate-600">{item.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
@@ -274,96 +306,131 @@ export default function LandingPage() {
             </p>
           </motion.div>
 
-          {/* Product Cards */}
+          {/* Product Cards - Interactive Liquid Glass */}
           <div className="grid md:grid-cols-2 gap-8">
             {/* Project Management */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="bg-slate-50 rounded-3xl p-8 md:p-10 border border-slate-200 hover:border-slate-300 transition-all"
+            <InteractiveCard
+              spotlightColor="rgba(139, 92, 246, 0.12)"
+              tiltAmount={5}
+              className="rounded-3xl"
             >
-              <h3 className="text-2xl font-bold mb-6">Project Management</h3>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                className="relative bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-slate-200/60 shadow-[0_4px_24px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_20px_50px_rgba(139,92,246,0.12),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-500 overflow-hidden group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <h3 className="text-2xl font-bold mb-6">Project Management</h3>
 
-              <p className="text-slate-600 mb-6 leading-relaxed">
-                Full-featured project management with AI built-in. Tasks, time tracking, team collaboration. Works
-                instantly in Telegram or web.
-              </p>
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  Full-featured project management with AI built-in. Tasks, time tracking, team collaboration. Works
+                  instantly in Telegram or web.
+                </p>
 
-              <div className="space-y-3 mb-8">
-                {[
-                  "4 views: List, Kanban, Calendar, Timeline",
-                  "Free AI task creation & suggestions",
-                  "Built-in time tracking",
-                  "Team roles & permissions",
-                  "Works for 2 or 2000 people",
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <Check className="h-5 w-5 text-violet-400 flex-shrink-0" />
-                    <span className="text-slate-700">{feature}</span>
-                  </div>
-                ))}
-              </div>
+                <div className="space-y-3 mb-8">
+                  {[
+                    "4 views: List, Kanban, Calendar, Timeline",
+                    "Free AI task creation & suggestions",
+                    "Built-in time tracking",
+                    "Team roles & permissions",
+                    "Works for 2 or 2000 people",
+                  ].map((feature, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                      className="flex items-center gap-3"
+                    >
+                      <div className="w-6 h-6 rounded-full bg-violet-100 flex items-center justify-center">
+                        <Check className="h-4 w-4 text-violet-500 flex-shrink-0" />
+                      </div>
+                      <span className="text-slate-700">{feature}</span>
+                    </motion.div>
+                  ))}
+                </div>
 
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
-                  <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                    <Send className="h-4 w-4 mr-2" />
-                    Launch in Telegram
-                  </a>
-                </Button>
-                <Button asChild variant="outline" className="rounded-full px-6 border-slate-300">
-                  <Link href="/project-management">Learn More</Link>
-                </Button>
-              </div>
-            </motion.div>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Button asChild className="bg-violet-500/90 text-white hover:bg-violet-600 rounded-full px-6 shadow-lg shadow-violet-500/20 hover:shadow-xl hover:shadow-violet-500/30 transition-all">
+                    <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
+                      <Send className="h-4 w-4 mr-2" />
+                      Launch in Telegram
+                    </a>
+                  </Button>
+                  <Button asChild variant="outline" className="rounded-full px-6 border-slate-300 hover:bg-white/80 hover:border-slate-400 transition-all">
+                    <Link href="/project-management">Learn More</Link>
+                  </Button>
+                </div>
+              </motion.div>
+            </InteractiveCard>
 
             {/* GEO Analyzer */}
-            <motion.div
+            <InteractiveCard
+              spotlightColor="rgba(6, 182, 212, 0.12)"
+              tiltAmount={5}
+              className="rounded-3xl"
+            >
+              <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
+              whileHover={{ y: -4 }}
               viewport={{ once: true }}
-              className="bg-slate-50 rounded-3xl p-8 md:p-10 border border-slate-200 hover:border-slate-300 transition-all"
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              className="relative bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-slate-200/60 shadow-[0_4px_24px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_20px_50px_rgba(6,182,212,0.12),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-500 overflow-hidden group"
             >
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold">GEO Analyzer</h3>
-                <span className="text-xs text-slate-500 font-medium">Future of Marketing</span>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="relative z-10">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold">GEO Analyzer</h3>
+                  <span className="text-xs text-cyan-600 font-medium bg-cyan-50 px-2 py-0.5 rounded-full">Future of Marketing</span>
+                </div>
 
-              <p className="text-slate-600 mb-6 leading-relaxed">
-                Generative Engine Optimization. Optimize your content for AI-powered search. Get cited by ChatGPT,
-                Perplexity, and Google SGE.
-              </p>
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  Generative Engine Optimization. Optimize your content for AI-powered search. Get cited by ChatGPT,
+                  Perplexity, and Google SGE.
+                </p>
 
-              <div className="space-y-3 mb-8">
-                {[
-                  "Analyze content for AI readability",
-                  "Optimize for ChatGPT & Perplexity",
-                  "Track AI search performance",
-                  "Get cited in AI responses",
-                  "3 free analyses per day",
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <Check className="h-5 w-5 text-cyan-400 flex-shrink-0" />
-                    <span className="text-slate-700">{feature}</span>
-                  </div>
-                ))}
-              </div>
+                <div className="space-y-3 mb-8">
+                  {[
+                    "Analyze content for AI readability",
+                    "Optimize for ChatGPT & Perplexity",
+                    "Track AI search performance",
+                    "Get cited in AI responses",
+                    "3 free analyses per day",
+                  ].map((feature, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                      className="flex items-center gap-3"
+                    >
+                      <div className="w-6 h-6 rounded-full bg-cyan-100 flex items-center justify-center">
+                        <Check className="h-4 w-4 text-cyan-500 flex-shrink-0" />
+                      </div>
+                      <span className="text-slate-700">{feature}</span>
+                    </motion.div>
+                  ))}
+                </div>
 
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button
-                  asChild
-                  className="bg-gradient-to-r from-violet-500 to-cyan-500 text-white hover:from-violet-600 hover:to-cyan-600 rounded-full px-6"
-                >
-                  <a href="https://geoanalyzer.whatstask.com" target="_blank" rel="noopener noreferrer">
-                    Launch GEO Analyzer
-                  </a>
-                </Button>
-                <Button asChild variant="outline" className="rounded-full px-6 border-slate-300">
-                  <Link href="/geoanalyzer">Learn More</Link>
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Button
+                    asChild
+                    className="bg-gradient-to-r from-violet-500 to-cyan-500 text-white hover:from-violet-600 hover:to-cyan-600 rounded-full px-6 shadow-lg shadow-violet-500/20 hover:shadow-xl hover:shadow-cyan-500/30 transition-all"
+                  >
+                    <a href="https://geoanalyzer.whatstask.com" target="_blank" rel="noopener noreferrer">
+                      Launch GEO Analyzer
+                    </a>
+                  </Button>
+                  <Button asChild variant="outline" className="rounded-full px-6 border-slate-300 hover:bg-white/80 hover:border-slate-400 transition-all">
+                    <Link href="/geoanalyzer">Learn More</Link>
+                  </Button>
+                </div>
               </div>
             </motion.div>
+            </InteractiveCard>
           </div>
         </div>
       </section>
@@ -387,18 +454,20 @@ export default function LandingPage() {
 
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               {[
-                { title: "Custom Development", desc: "Tailored PM tools for your workflow" },
-                { title: "White-Label", desc: "Your brand, our infrastructure" },
-                { title: "Integrations", desc: "Connect with your existing tools" },
+                { title: "Custom Development", desc: "Tailored PM tools for your workflow", icon: "🛠️" },
+                { title: "White-Label", desc: "Your brand, our infrastructure", icon: "🏷️" },
+                { title: "Integrations", desc: "Connect with your existing tools", icon: "🔗" },
               ].map((item, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ y: -6, scale: 1.02 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-slate-50 rounded-2xl p-6 border border-slate-200"
+                  transition={{ type: "spring", stiffness: 300, damping: 20, delay: index * 0.1 }}
+                  className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/60 shadow-[0_4px_16px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.9)] transition-shadow duration-300 cursor-default"
                 >
+                  <span className="text-2xl mb-3 block">{item.icon}</span>
                   <h3 className="font-bold mb-2">{item.title}</h3>
                   <p className="text-sm text-slate-500">{item.desc}</p>
                 </motion.div>
@@ -440,22 +509,25 @@ export default function LandingPage() {
             viewport={{ once: true }}
           >
             {[
-              { name: "PDF Merger", href: "/pdf-merger" },
-              { name: "PDF Compressor", href: "/pdf-compressor" },
-              { name: "PDF to JPG", href: "/pdf-to-jpg" },
-              { name: "JPG to PDF", href: "/jpg-to-pdf" },
-              { name: "PDF Splitter", href: "/pdf-splitter" },
-              { name: "QR Code", href: "/qr-code-generator" },
+              { name: "PDF Merger", href: "/pdf-merger", icon: "📑" },
+              { name: "PDF Compressor", href: "/pdf-compressor", icon: "📦" },
+              { name: "PDF to JPG", href: "/pdf-to-jpg", icon: "🖼️" },
+              { name: "JPG to PDF", href: "/jpg-to-pdf", icon: "📄" },
+              { name: "PDF Splitter", href: "/pdf-splitter", icon: "✂️" },
+              { name: "QR Code", href: "/qr-code-generator", icon: "📱" },
             ].map((tool, index) => (
               <motion.a
                 key={index}
                 href={tool.href}
                 variants={fadeInUp}
                 custom={index}
-                whileHover={{ y: -4 }}
-                className="bg-slate-50 rounded-xl p-4 border border-slate-200 hover:border-slate-300 transition-all text-center"
+                whileHover={{ y: -6, scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                className="bg-white/70 backdrop-blur-sm rounded-xl p-5 border border-slate-200/60 shadow-[0_2px_12px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_8px_24px_rgba(139,92,246,0.1),inset_0_1px_0_rgba(255,255,255,0.9)] transition-shadow duration-300 text-center group"
               >
-                <span className="text-sm font-medium">{tool.name}</span>
+                <span className="text-xl mb-2 block group-hover:scale-110 transition-transform duration-300">{tool.icon}</span>
+                <span className="text-sm font-medium text-slate-700 group-hover:text-violet-600 transition-colors">{tool.name}</span>
               </motion.a>
             ))}
           </motion.div>
@@ -468,16 +540,17 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Social Proof / Stats */}
+      {/* Social Proof / Stats - Liquid Glass */}
       <section className="relative py-24 px-4 border-t border-slate-100">
         <div className="container mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-violet-500/10 to-white/5 rounded-3xl p-8 md:p-12 border border-violet-500/20"
+            className="relative bg-gradient-to-br from-violet-500/10 to-violet-400/5 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-violet-300/30 shadow-[0_8px_32px_rgba(139,92,246,0.08),inset_0_1px_0_rgba(255,255,255,0.5)] overflow-hidden"
           >
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent pointer-events-none" />
+            <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold mb-4">Built for how you actually work</h2>
                 <p className="text-slate-600 leading-relaxed mb-6">
@@ -491,10 +564,18 @@ export default function LandingPage() {
                     "No enterprise complexity",
                     "Just tools that work",
                   ].map((item, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      <Check className="h-5 w-5 text-violet-400" />
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="flex items-center gap-3"
+                    >
+                      <div className="w-6 h-6 rounded-full bg-violet-100 flex items-center justify-center">
+                        <Check className="h-4 w-4 text-violet-500" />
+                      </div>
                       <span>{item}</span>
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
               </div>
@@ -505,10 +586,15 @@ export default function LandingPage() {
                   { stat: "30s", label: "setup time" },
                   { stat: "24/7", label: "availability" },
                 ].map((item, index) => (
-                  <div key={index} className="bg-black/30 rounded-2xl p-6 text-center">
-                    <p className="text-2xl md:text-3xl font-bold text-violet-400 mb-1">{item.stat}</p>
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                    className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.6),0_4px_16px_rgba(139,92,246,0.08)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_8px_24px_rgba(139,92,246,0.15)] transition-shadow duration-300"
+                  >
+                    <p className="text-2xl md:text-3xl font-bold text-violet-500 mb-1">{item.stat}</p>
                     <p className="text-sm text-slate-500">{item.label}</p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -516,29 +602,45 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* Final CTA - Liquid Glass */}
       <section className="relative py-24 px-4 border-t border-slate-100">
         <div className="container mx-auto max-w-3xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="relative bg-gradient-to-br from-violet-500/10 to-violet-400/5 backdrop-blur-sm rounded-3xl p-10 md:p-16 border border-violet-300/30 shadow-[0_8px_32px_rgba(139,92,246,0.1),inset_0_1px_0_rgba(255,255,255,0.5)] overflow-hidden"
           >
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">Ready to simplify?</h2>
-            <p className="text-xl text-slate-600 mb-10 font-light">
-              Join teams who've chosen simplicity over complexity.
-            </p>
+            <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent pointer-events-none" />
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">Ready to simplify?</h2>
+              <p className="text-xl text-slate-600 mb-10 font-light">
+                Join teams who've chosen simplicity over complexity.
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6 text-lg">
-                <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                  <Send className="h-5 w-5 mr-2" />
-                  Start Free
-                </a>
-              </Button>
-              <Button asChild variant="outline" className="rounded-full px-8 py-6 text-lg border-slate-300">
-                <Link href="/contact">Talk to Us</Link>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                >
+                  <Button asChild className="bg-violet-500/90 text-white hover:bg-violet-600 rounded-full px-8 py-6 text-lg shadow-[0_8px_24px_rgba(139,92,246,0.35),inset_0_1px_0_rgba(255,255,255,0.2)] hover:shadow-[0_12px_32px_rgba(139,92,246,0.45)] transition-all">
+                    <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
+                      <Send className="h-5 w-5 mr-2" />
+                      Start Free
+                    </a>
+                  </Button>
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                >
+                  <Button asChild className="bg-white/70 text-slate-900 hover:bg-white/90 border border-white/50 rounded-full px-8 py-6 text-lg backdrop-blur-sm shadow-[0_4px_16px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)] transition-all">
+                    <Link href="/contact">Talk to Us</Link>
+                  </Button>
+                </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>
