@@ -246,8 +246,14 @@ export default function Navigation() {
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <Link href="/" className="flex items-center gap-2">
-                <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="w-8 h-8" />
-                <span className="font-bold text-xl tracking-tight text-slate-900">Whatstask</span>
+                <Image
+                  src={scrolled ? "/logo-black.png" : "/logo.png"}
+                  alt="Whatstask Logo"
+                  width={32}
+                  height={32}
+                  className="w-8 h-8 transition-all duration-300"
+                />
+                <span className={`font-bold text-xl tracking-tight transition-colors duration-300 ${scrolled ? "text-slate-900" : "text-white"}`}>Whatstask</span>
               </Link>
             </motion.div>
 
@@ -266,7 +272,7 @@ export default function Navigation() {
                       className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
                         scrolled
                           ? "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
-                          : "text-slate-700 hover:text-slate-900 hover:bg-white/40"
+                          : "text-white/90 hover:text-white hover:bg-white/20"
                       }`}
                     >
                       {item.name}
@@ -275,10 +281,10 @@ export default function Navigation() {
                     <button
                       className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
                         activeDropdown === item.name
-                          ? scrolled ? "text-slate-900 bg-slate-100" : "text-slate-900 bg-white/50"
+                          ? scrolled ? "text-slate-900 bg-slate-100" : "text-white bg-white/30"
                           : scrolled
                             ? "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
-                            : "text-slate-700 hover:text-slate-900 hover:bg-white/40"
+                            : "text-white/90 hover:text-white hover:bg-white/20"
                       }`}
                     >
                       {item.name}
@@ -300,7 +306,7 @@ export default function Navigation() {
                 className={`text-sm font-medium transition-all duration-300 px-4 py-2 rounded-lg ${
                   scrolled
                     ? "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
-                    : "text-slate-700 hover:text-slate-900 hover:bg-white/40"
+                    : "text-white/90 hover:text-white hover:bg-white/20"
                 }`}
               >
                 Contact Sales
@@ -319,14 +325,14 @@ export default function Navigation() {
               className={`lg:hidden w-10 h-10 flex items-center justify-center rounded-lg transition-all duration-300 ${
                 scrolled
                   ? "bg-slate-100 border border-slate-200"
-                  : "bg-white/50 backdrop-blur-sm border border-white/30"
+                  : "bg-white/20 backdrop-blur-sm border border-white/30"
               }`}
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 text-slate-900" /> : (
+              {mobileMenuOpen ? <X className={`w-5 h-5 ${scrolled ? "text-slate-900" : "text-white"}`} /> : (
                 <div className="flex flex-col gap-1.5">
-                  <span className="w-5 h-0.5 bg-slate-900"></span>
-                  <span className="w-5 h-0.5 bg-slate-900"></span>
-                  <span className="w-3 h-0.5 bg-slate-900"></span>
+                  <span className={`w-5 h-0.5 ${scrolled ? "bg-slate-900" : "bg-white"}`}></span>
+                  <span className={`w-5 h-0.5 ${scrolled ? "bg-slate-900" : "bg-white"}`}></span>
+                  <span className={`w-3 h-0.5 ${scrolled ? "bg-slate-900" : "bg-white"}`}></span>
                 </div>
               )}
             </button>
