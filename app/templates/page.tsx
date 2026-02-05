@@ -2,26 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import {
-  Send,
-  ArrowRight,
-  LayoutGrid,
-  Megaphone,
-  Code,
-  Briefcase,
-  Users,
-  Target,
-  Calendar,
-  CheckSquare,
-  Clock,
-  FileText,
-  Lightbulb,
-  Rocket,
-  BarChart3,
-  Repeat,
-  MessageSquare,
-  Layers,
-} from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 
 export const metadata: Metadata = {
@@ -57,7 +38,6 @@ interface Template {
   title: string
   description: string
   category: string
-  icon: React.ReactNode
   tasks: number
   popular?: boolean
 }
@@ -69,7 +49,6 @@ const templates: Template[] = [
     title: "Marketing Campaign",
     description: "Plan and execute marketing campaigns with tasks for content, design, launch, and analytics.",
     category: "Marketing",
-    icon: <Megaphone className="h-6 w-6" />,
     tasks: 12,
     popular: true,
   },
@@ -78,7 +57,6 @@ const templates: Template[] = [
     title: "Content Calendar",
     description: "Organize your content strategy with scheduled posts, deadlines, and publishing workflows.",
     category: "Marketing",
-    icon: <Calendar className="h-6 w-6" />,
     tasks: 8,
     popular: true,
   },
@@ -87,7 +65,6 @@ const templates: Template[] = [
     title: "Social Media Planner",
     description: "Schedule and track social media posts across platforms with approval workflows.",
     category: "Marketing",
-    icon: <MessageSquare className="h-6 w-6" />,
     tasks: 10,
   },
   {
@@ -95,7 +72,6 @@ const templates: Template[] = [
     title: "Product Launch",
     description: "Comprehensive checklist for launching a new product or feature successfully.",
     category: "Marketing",
-    icon: <Rocket className="h-6 w-6" />,
     tasks: 18,
     popular: true,
   },
@@ -106,7 +82,6 @@ const templates: Template[] = [
     title: "Sprint Planning",
     description: "Agile sprint board with backlog, in-progress, review, and done columns.",
     category: "Development",
-    icon: <Repeat className="h-6 w-6" />,
     tasks: 15,
     popular: true,
   },
@@ -115,7 +90,6 @@ const templates: Template[] = [
     title: "Bug Tracker",
     description: "Track and prioritize bugs with severity levels, assignees, and resolution status.",
     category: "Development",
-    icon: <Code className="h-6 w-6" />,
     tasks: 6,
   },
   {
@@ -123,7 +97,6 @@ const templates: Template[] = [
     title: "Product Roadmap",
     description: "Plan your product's future with quarterly goals, features, and milestones.",
     category: "Development",
-    icon: <Target className="h-6 w-6" />,
     tasks: 10,
   },
   {
@@ -131,7 +104,6 @@ const templates: Template[] = [
     title: "Release Checklist",
     description: "Ensure smooth deployments with pre and post-release verification tasks.",
     category: "Development",
-    icon: <CheckSquare className="h-6 w-6" />,
     tasks: 14,
   },
 
@@ -141,7 +113,6 @@ const templates: Template[] = [
     title: "Project Timeline",
     description: "Visual timeline for project phases, milestones, and key deliverables.",
     category: "Operations",
-    icon: <BarChart3 className="h-6 w-6" />,
     tasks: 12,
     popular: true,
   },
@@ -150,7 +121,6 @@ const templates: Template[] = [
     title: "Meeting Agenda",
     description: "Structured meeting template with topics, time allocations, and action items.",
     category: "Operations",
-    icon: <Users className="h-6 w-6" />,
     tasks: 5,
   },
   {
@@ -158,7 +128,6 @@ const templates: Template[] = [
     title: "Process Documentation",
     description: "Document standard operating procedures with step-by-step task breakdowns.",
     category: "Operations",
-    icon: <FileText className="h-6 w-6" />,
     tasks: 8,
   },
   {
@@ -166,7 +135,6 @@ const templates: Template[] = [
     title: "Resource Allocation",
     description: "Track team capacity, assignments, and workload distribution across projects.",
     category: "Operations",
-    icon: <Layers className="h-6 w-6" />,
     tasks: 7,
   },
 
@@ -176,7 +144,6 @@ const templates: Template[] = [
     title: "Client Onboarding",
     description: "Smooth onboarding process for new clients with welcome tasks and setup guides.",
     category: "Sales",
-    icon: <Briefcase className="h-6 w-6" />,
     tasks: 11,
     popular: true,
   },
@@ -185,7 +152,6 @@ const templates: Template[] = [
     title: "Sales Pipeline",
     description: "Track leads through your sales funnel from prospect to closed deal.",
     category: "Sales",
-    icon: <Target className="h-6 w-6" />,
     tasks: 8,
   },
   {
@@ -193,7 +159,6 @@ const templates: Template[] = [
     title: "Proposal Workflow",
     description: "Manage proposal creation, review, and submission with approval stages.",
     category: "Sales",
-    icon: <FileText className="h-6 w-6" />,
     tasks: 9,
   },
 
@@ -203,7 +168,6 @@ const templates: Template[] = [
     title: "Team OKRs",
     description: "Set and track Objectives and Key Results for your team's quarterly goals.",
     category: "General",
-    icon: <Target className="h-6 w-6" />,
     tasks: 6,
   },
   {
@@ -211,7 +175,6 @@ const templates: Template[] = [
     title: "Weekly Planner",
     description: "Organize your week with daily tasks, priorities, and time blocks.",
     category: "General",
-    icon: <Calendar className="h-6 w-6" />,
     tasks: 7,
   },
   {
@@ -219,7 +182,6 @@ const templates: Template[] = [
     title: "1:1 Meeting",
     description: "Structured template for effective manager-report one-on-one meetings.",
     category: "General",
-    icon: <Users className="h-6 w-6" />,
     tasks: 5,
   },
   {
@@ -227,7 +189,6 @@ const templates: Template[] = [
     title: "Brainstorming Session",
     description: "Capture and organize ideas during team brainstorming with voting and prioritization.",
     category: "General",
-    icon: <Lightbulb className="h-6 w-6" />,
     tasks: 4,
   },
   {
@@ -235,7 +196,6 @@ const templates: Template[] = [
     title: "Event Planning",
     description: "Comprehensive event planning checklist from venue booking to post-event follow-up.",
     category: "General",
-    icon: <Calendar className="h-6 w-6" />,
     tasks: 16,
   },
 
@@ -245,7 +205,6 @@ const templates: Template[] = [
     title: "Daily Tasks",
     description: "Simple daily task list with morning routines, work tasks, and evening wrap-up.",
     category: "Personal",
-    icon: <CheckSquare className="h-6 w-6" />,
     tasks: 5,
   },
   {
@@ -253,7 +212,6 @@ const templates: Template[] = [
     title: "Habit Tracker",
     description: "Track daily and weekly habits with streak counts and progress visualization.",
     category: "Personal",
-    icon: <Repeat className="h-6 w-6" />,
     tasks: 7,
   },
   {
@@ -261,20 +219,11 @@ const templates: Template[] = [
     title: "Side Project",
     description: "Manage your passion project with milestones, tasks, and progress tracking.",
     category: "Personal",
-    icon: <Rocket className="h-6 w-6" />,
     tasks: 10,
   },
 ]
 
-const categories = [
-  { name: "All", icon: <LayoutGrid className="h-4 w-4" /> },
-  { name: "Marketing", icon: <Megaphone className="h-4 w-4" /> },
-  { name: "Development", icon: <Code className="h-4 w-4" /> },
-  { name: "Operations", icon: <BarChart3 className="h-4 w-4" /> },
-  { name: "Sales", icon: <Briefcase className="h-4 w-4" /> },
-  { name: "General", icon: <Users className="h-4 w-4" /> },
-  { name: "Personal", icon: <CheckSquare className="h-4 w-4" /> },
-]
+const categories = ["All", "Marketing", "Development", "Operations", "Sales", "General", "Personal"]
 
 export default function TemplatesPage() {
   const popularTemplates = templates.filter((t) => t.popular)
@@ -290,7 +239,6 @@ export default function TemplatesPage() {
           </Link>
           <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
             <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-              <Send className="h-4 w-4 mr-2" />
               Try Free
             </a>
           </Button>
@@ -307,10 +255,7 @@ export default function TemplatesPage() {
         />
 
         <div className="max-w-4xl mx-auto text-center mt-8 mb-16">
-          <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/20 rounded-full px-4 py-2 mb-6">
-            <LayoutGrid className="h-4 w-4 text-violet-400" />
-            <span className="text-violet-400 text-sm font-medium">Project Templates</span>
-          </div>
+          <p className="text-sm text-slate-500 mb-6">Project Templates</p>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             Start Projects Faster with Templates
           </h1>
@@ -319,8 +264,7 @@ export default function TemplatesPage() {
             planning, get started in seconds with pre-built task structures.
           </p>
           <Button asChild className="bg-violet-500 hover:bg-violet-600 text-white rounded-full px-8 py-6">
-            <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-              <Send className="h-4 w-4" />
+            <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
               Use Templates Free
             </a>
           </Button>
@@ -342,11 +286,10 @@ export default function TemplatesPage() {
         <div className="flex flex-wrap gap-3 justify-center mb-12">
           {categories.map((category) => (
             <button
-              key={category.name}
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 hover:bg-slate-100 hover:border-slate-300 transition-colors text-sm"
+              key={category}
+              className="px-4 py-2 rounded-full bg-slate-50 border border-slate-200 hover:bg-slate-100 hover:border-slate-300 transition-colors text-sm"
             >
-              {category.icon}
-              {category.name}
+              {category}
             </button>
           ))}
         </div>
@@ -380,8 +323,7 @@ export default function TemplatesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild className="bg-violet-500 hover:bg-violet-600 text-white rounded-full px-8 py-6">
-              <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                <Send className="h-4 w-4" />
+              <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                 Start Free in Telegram
               </a>
             </Button>
@@ -436,20 +378,17 @@ function TemplateCard({ template }: { template: Template }) {
   return (
     <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:border-violet-500/30 transition-all group">
       <div className="flex items-start justify-between mb-4">
-        <div className="p-3 rounded-xl bg-violet-500/10 text-violet-400">
-          {template.icon}
-        </div>
+        <h3 className="text-lg font-semibold group-hover:text-violet-400 transition-colors">
+          {template.title}
+        </h3>
         {template.popular && (
           <span className="text-xs bg-violet-500/20 text-violet-400 px-2 py-1 rounded-full">Popular</span>
         )}
       </div>
-      <h3 className="text-lg font-semibold mb-2 group-hover:text-violet-400 transition-colors">
-        {template.title}
-      </h3>
       <p className="text-sm text-slate-600 mb-4 line-clamp-2">{template.description}</p>
       <div className="flex items-center justify-between">
         <span className="text-xs text-slate-500">{template.tasks} tasks</span>
-        <span className="text-xs text-slate-500 bg-slate-50 px-2 py-1 rounded">{template.category}</span>
+        <span className="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">{template.category}</span>
       </div>
     </div>
   )
@@ -458,14 +397,9 @@ function TemplateCard({ template }: { template: Template }) {
 function TemplateCardSmall({ template }: { template: Template }) {
   return (
     <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 hover:border-violet-500/30 transition-all group cursor-pointer">
-      <div className="flex items-center gap-3 mb-2">
-        <div className="p-2 rounded-lg bg-violet-500/10 text-violet-400">
-          {template.icon}
-        </div>
-        <h3 className="font-medium group-hover:text-violet-400 transition-colors text-sm">
-          {template.title}
-        </h3>
-      </div>
+      <h3 className="font-medium group-hover:text-violet-400 transition-colors text-sm mb-2">
+        {template.title}
+      </h3>
       <p className="text-xs text-slate-500">{template.tasks} tasks</p>
     </div>
   )

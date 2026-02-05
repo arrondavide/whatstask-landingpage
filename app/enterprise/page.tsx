@@ -2,18 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import {
-  Check,
-  Zap,
-  Shield,
-  Users,
-  Settings,
-  FileText,
-  BarChart3,
-  Headphones,
-  ArrowRight,
-  Building2,
-} from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import PageLoader from "@/components/page-loader"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 
@@ -46,25 +35,21 @@ export const metadata: Metadata = {
 export default function EnterprisePage() {
   const services = [
     {
-      icon: Settings,
       title: "Custom Development",
       description:
         "Tailored project management tools built for your specific workflow. We understand your needs and build exactly what you require.",
     },
     {
-      icon: Building2,
       title: "White-Label Solutions",
       description:
         "Launch your own branded project management platform. Your brand, our infrastructure. Full customization available.",
     },
     {
-      icon: Zap,
       title: "System Integrations",
       description:
         "Connect with your existing tools - CRM, ERP, communication platforms. Seamless data flow across your tech stack.",
     },
     {
-      icon: FileText,
       title: "Migration Services",
       description:
         "Moving from ClickUp, Monday, or Asana? We handle the migration. Zero data loss, minimal disruption.",
@@ -73,22 +58,18 @@ export default function EnterprisePage() {
 
   const benefits = [
     {
-      icon: Shield,
       title: "Enterprise Security",
       description: "SOC 2 compliance ready, data encryption, SSO integration, audit logs.",
     },
     {
-      icon: Users,
       title: "Unlimited Scale",
       description: "From 50 to 50,000 users. Our architecture scales with your growth.",
     },
     {
-      icon: Headphones,
       title: "Dedicated Support",
       description: "Direct access to our engineering team. Priority response times.",
     },
     {
-      icon: BarChart3,
       title: "Custom Analytics",
       description: "Build the dashboards and reports that matter to your business.",
     },
@@ -139,10 +120,7 @@ export default function EnterprisePage() {
 
           {/* Hero */}
           <section className="text-center max-w-4xl mx-auto mb-20">
-            <div className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-full px-4 py-2 mb-6">
-              <Building2 className="h-4 w-4 text-slate-600" />
-              <span className="text-sm text-slate-600">B2B Custom Solutions</span>
-            </div>
+            <p className="text-sm text-slate-500 mb-6">B2B Custom Solutions</p>
 
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
               Simple at scale
@@ -207,7 +185,6 @@ export default function EnterprisePage() {
                   key={index}
                   className="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:border-slate-300 transition-all"
                 >
-                  <service.icon className="h-10 w-10 text-violet-400 mb-4" />
                   <h3 className="text-xl font-bold mb-3">{service.title}</h3>
                   <p className="text-slate-600 leading-relaxed">{service.description}</p>
                 </div>
@@ -230,7 +207,6 @@ export default function EnterprisePage() {
                   key={index}
                   className="bg-slate-50 rounded-2xl p-6 border border-slate-200"
                 >
-                  <benefit.icon className="h-8 w-8 text-slate-600 mb-4" />
                   <h3 className="font-bold mb-2">{benefit.title}</h3>
                   <p className="text-slate-500 text-sm">{benefit.description}</p>
                 </div>

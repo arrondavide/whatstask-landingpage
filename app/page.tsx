@@ -10,11 +10,6 @@ import {
   Send,
   X,
   ArrowRight,
-  Zap,
-  Users,
-  BarChart3,
-  Brain,
-  FileText,
   ChevronDown,
 } from "lucide-react"
 import Image from "next/image"
@@ -281,12 +276,7 @@ export default function LandingPage() {
               viewport={{ once: true }}
               className="bg-slate-50 rounded-3xl p-8 md:p-10 border border-slate-200 hover:border-slate-300 transition-all"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-2xl bg-violet-500/20 flex items-center justify-center">
-                  <Zap className="h-6 w-6 text-violet-400" />
-                </div>
-                <h3 className="text-2xl font-bold">Project Management</h3>
-              </div>
+              <h3 className="text-2xl font-bold mb-6">Project Management</h3>
 
               <p className="text-slate-600 mb-6 leading-relaxed">
                 Full-featured project management with AI built-in. Tasks, time tracking, team collaboration. Works
@@ -328,14 +318,9 @@ export default function LandingPage() {
               viewport={{ once: true }}
               className="bg-slate-50 rounded-3xl p-8 md:p-10 border border-slate-200 hover:border-slate-300 transition-all"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-2xl bg-cyan-500/20 flex items-center justify-center">
-                  <Brain className="h-6 w-6 text-cyan-400" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold">GEO Analyzer</h3>
-                  <span className="text-xs text-cyan-400 font-medium">Future of Marketing</span>
-                </div>
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold">GEO Analyzer</h3>
+                <span className="text-xs text-slate-500 font-medium">Future of Marketing</span>
               </div>
 
               <p className="text-slate-600 mb-6 leading-relaxed">
@@ -385,10 +370,7 @@ export default function LandingPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <div className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-full px-4 py-2 mb-6">
-              <Users className="h-4 w-4 text-slate-600" />
-              <span className="text-sm text-slate-600">B2B Custom Solutions</span>
-            </div>
+            <p className="text-sm text-slate-500 mb-6">B2B Custom Solutions</p>
 
             <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">Need something custom?</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto font-light mb-8">
@@ -398,9 +380,9 @@ export default function LandingPage() {
 
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               {[
-                { icon: Zap, title: "Custom Development", desc: "Tailored PM tools for your workflow" },
-                { icon: FileText, title: "White-Label", desc: "Your brand, our infrastructure" },
-                { icon: BarChart3, title: "Integrations", desc: "Connect with your existing tools" },
+                { title: "Custom Development", desc: "Tailored PM tools for your workflow" },
+                { title: "White-Label", desc: "Your brand, our infrastructure" },
+                { title: "Integrations", desc: "Connect with your existing tools" },
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -410,7 +392,6 @@ export default function LandingPage() {
                   transition={{ delay: index * 0.1 }}
                   className="bg-slate-50 rounded-2xl p-6 border border-slate-200"
                 >
-                  <item.icon className="h-8 w-8 text-slate-600 mb-4" />
                   <h3 className="font-bold mb-2">{item.title}</h3>
                   <p className="text-sm text-slate-500">{item.desc}</p>
                 </motion.div>

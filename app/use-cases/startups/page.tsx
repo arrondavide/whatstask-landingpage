@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Check, Send, Zap, Users, Clock, Brain } from "lucide-react"
+import { Check, Send } from "lucide-react"
 import PageLoader from "@/components/page-loader"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 
@@ -33,22 +33,18 @@ export const metadata: Metadata = {
 export default function StartupsPage() {
   const benefits = [
     {
-      icon: Zap,
       title: "Start in 30 Seconds",
       description: "No setup wizards. No configuration. Open Telegram, start the bot, create your first task. Done.",
     },
     {
-      icon: Brain,
       title: "Free AI Features",
       description: "Natural language task creation, smart suggestions, daily digest. Included free—not a $28/user add-on.",
     },
     {
-      icon: Users,
       title: "Grow Without Complexity",
       description: "Same simple tool whether you're 2 people or 200. Scale without switching platforms.",
     },
     {
-      icon: Clock,
       title: "Track Time, Not Tools",
       description: "Built-in time tracking. Know where hours go. No integrations needed.",
     },
@@ -81,10 +77,7 @@ export default function StartupsPage() {
           />
 
           <section className="text-center max-w-4xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/30 rounded-full px-4 py-2 mb-6">
-              <Zap className="h-4 w-4 text-violet-400" />
-              <span className="text-sm text-violet-400">For Startups</span>
-            </div>
+            <p className="text-sm text-slate-500 mb-6">For Startups</p>
 
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
               Move fast. Stay organized.
@@ -108,7 +101,6 @@ export default function StartupsPage() {
             <div className="grid md:grid-cols-2 gap-6">
               {benefits.map((benefit, index) => (
                 <div key={index} className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                  <benefit.icon className="h-10 w-10 text-violet-400 mb-4" />
                   <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
                   <p className="text-slate-600">{benefit.description}</p>
                 </div>
@@ -121,15 +113,15 @@ export default function StartupsPage() {
               <h2 className="text-2xl font-bold mb-4 text-center">Why startups choose Whatstask over ClickUp/Monday/Asana</h2>
               <div className="grid md:grid-cols-3 gap-6 mt-8">
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-violet-400 mb-2">30s</p>
+                  <p className="text-3xl font-bold text-slate-900 mb-2">30s</p>
                   <p className="text-slate-600">to first task (not 30 days)</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-violet-400 mb-2">$0</p>
+                  <p className="text-3xl font-bold text-slate-900 mb-2">$0</p>
                   <p className="text-slate-600">for AI features (not $28/user)</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-violet-400 mb-2">4</p>
+                  <p className="text-3xl font-bold text-slate-900 mb-2">4</p>
                   <p className="text-slate-600">views that matter (not 15+)</p>
                 </div>
               </div>

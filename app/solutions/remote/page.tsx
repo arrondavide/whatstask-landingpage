@@ -5,16 +5,6 @@ import { Button } from "@/components/ui/button"
 import {
   Send,
   ArrowRight,
-  CheckCircle2,
-  Wifi,
-  Globe,
-  Clock,
-  Users,
-  MessageSquare,
-  Bell,
-  Zap,
-  Video,
-  Calendar,
   Sun,
   Moon,
 } from "lucide-react"
@@ -51,37 +41,31 @@ export const metadata: Metadata = {
 export default function RemoteSolutionPage() {
   const features = [
     {
-      icon: <Globe className="h-8 w-8" />,
       title: "Works Across Time Zones",
       description:
         "Team in Tokyo, London, and New York? Whatstask shows deadlines in everyone's local time automatically.",
     },
     {
-      icon: <MessageSquare className="h-8 w-8" />,
       title: "Async-First Communication",
       description:
         "Leave updates, comments, and context on tasks. Your team catches up when they come online.",
     },
     {
-      icon: <Bell className="h-8 w-8" />,
       title: "Smart Notifications",
       description:
         "Get notified in Telegram when you're mentioned or tasks update. No need to check another app.",
     },
     {
-      icon: <Clock className="h-8 w-8" />,
       title: "Time Tracking",
       description:
         "Track hours worked across the team. See who's working when and manage capacity fairly.",
     },
     {
-      icon: <Users className="h-8 w-8" />,
       title: "Clear Ownership",
       description:
         "Every task has an owner. No confusion about who's responsible when you can't tap someone on the shoulder.",
     },
     {
-      icon: <Calendar className="h-8 w-8" />,
       title: "Deadline Visibility",
       description:
         "Calendar and timeline views show what's coming up. Plan handoffs between team members in different zones.",
@@ -142,10 +126,7 @@ export default function RemoteSolutionPage() {
         />
 
         <div className="max-w-4xl mx-auto text-center mb-16 mt-8">
-          <div className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/20 rounded-full px-4 py-2 mb-6">
-            <Wifi className="h-4 w-4 text-purple-400" />
-            <span className="text-purple-400 text-sm font-medium">For Remote Teams</span>
-          </div>
+          <p className="text-sm text-slate-500 mb-6">For Remote Teams</p>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             Async Collaboration That Actually Works
           </h1>
@@ -199,9 +180,8 @@ export default function RemoteSolutionPage() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-purple-500/30 transition-colors"
+              className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-violet-500/30 transition-colors"
             >
-              <div className="text-purple-400 mb-4">{feature.icon}</div>
               <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
               <p className="text-slate-600">{feature.description}</p>
             </div>
@@ -211,18 +191,13 @@ export default function RemoteSolutionPage() {
 
       {/* Async Benefits */}
       <section className="container mx-auto px-4 py-16">
-        <div className="bg-gradient-to-br from-purple-500/10 to-transparent border border-purple-500/20 rounded-3xl p-8 md:p-12">
+        <div className="bg-gradient-to-br from-violet-500/10 to-transparent border border-violet-500/20 rounded-3xl p-8 md:p-12">
           <h2 className="text-3xl font-bold text-center mb-12">The Async Advantage</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {asyncBenefits.map((benefit, index) => (
-              <div key={index} className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center">
-                  <Zap className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">{benefit.title}</h3>
-                  <p className="text-slate-600">{benefit.description}</p>
-                </div>
+              <div key={index} className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                <h3 className="font-semibold text-lg mb-2">{benefit.title}</h3>
+                <p className="text-slate-600">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -234,38 +209,23 @@ export default function RemoteSolutionPage() {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">How Async Handoffs Work</h2>
           <div className="space-y-6">
-            <div className="flex items-start gap-4 bg-slate-50 rounded-xl p-6 border border-slate-200">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <p className="text-slate-700 mb-2">
-                  <span className="text-orange-400 font-medium">Sarah (SF) at 5pm:</span> Completes the design mockups
-                </p>
-                <p className="text-sm text-slate-500">Updates task with notes: "Ready for dev. Used the new color palette. Questions? Leave a comment."</p>
-              </div>
+            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <p className="text-slate-700 mb-2">
+                <span className="font-semibold">1. Sarah (SF) at 5pm:</span> Completes the design mockups
+              </p>
+              <p className="text-sm text-slate-500">Updates task with notes: "Ready for dev. Used the new color palette. Questions? Leave a comment."</p>
             </div>
-            <div className="flex items-start gap-4 bg-slate-50 rounded-xl p-6 border border-slate-200">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <p className="text-slate-700 mb-2">
-                  <span className="text-blue-400 font-medium">Alex (London) at 9am:</span> Sees the notification, starts implementing
-                </p>
-                <p className="text-sm text-slate-500">Everything needed is in the task. No need to schedule a call.</p>
-              </div>
+            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <p className="text-slate-700 mb-2">
+                <span className="font-semibold">2. Alex (London) at 9am:</span> Sees the notification, starts implementing
+              </p>
+              <p className="text-sm text-slate-500">Everything needed is in the task. No need to schedule a call.</p>
             </div>
-            <div className="flex items-start gap-4 bg-slate-50 rounded-xl p-6 border border-slate-200">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <p className="text-slate-700 mb-2">
-                  <span className="text-green-400 font-medium">Yuki (Tokyo) at 6pm:</span> Reviews the implementation, ships to staging
-                </p>
-                <p className="text-sm text-slate-500">When Sarah wakes up, it's already live for testing. 24-hour progress.</p>
-              </div>
+            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <p className="text-slate-700 mb-2">
+                <span className="font-semibold">3. Yuki (Tokyo) at 6pm:</span> Reviews the implementation, ships to staging
+              </p>
+              <p className="text-sm text-slate-500">When Sarah wakes up, it's already live for testing. 24-hour progress.</p>
             </div>
           </div>
         </div>
@@ -284,17 +244,14 @@ export default function RemoteSolutionPage() {
                 "No VPN issues, no corporate firewalls",
                 "End-to-end encryption for sensitive projects",
               ].map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-purple-400 mt-0.5" />
-                  <span className="text-slate-700">{item}</span>
-                </li>
+                <li key={index} className="text-slate-700">• {item}</li>
               ))}
             </ul>
           </div>
           <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 text-center">
-            <p className="text-5xl font-bold text-purple-400 mb-2">800M+</p>
+            <p className="text-5xl font-bold text-slate-900 mb-2">800M+</p>
             <p className="text-slate-600 mb-6">Telegram users worldwide</p>
-            <p className="text-5xl font-bold text-purple-400 mb-2">200+</p>
+            <p className="text-5xl font-bold text-slate-900 mb-2">200+</p>
             <p className="text-slate-600">Countries with active users</p>
           </div>
         </div>

@@ -5,17 +5,6 @@ import { Button } from "@/components/ui/button"
 import {
   Send,
   ArrowRight,
-  CheckCircle2,
-  Users,
-  Zap,
-  DollarSign,
-  Clock,
-  Heart,
-  Rocket,
-  MessageSquare,
-  Target,
-  Shield,
-  Sparkles,
 } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 
@@ -69,32 +58,26 @@ export default function SmallTeamsSolutionPage() {
 
   const features = [
     {
-      icon: <Zap className="h-8 w-8" />,
       title: "30-Second Setup",
       description: "Start your team on Whatstask in 30 seconds. No installation, no configuration, no training required.",
     },
     {
-      icon: <DollarSign className="h-8 w-8" />,
       title: "Actually Affordable",
       description: "Free for basic use. Pro is $4.99/user/month. A team of 5? That's less than one coffee run.",
     },
     {
-      icon: <Users className="h-8 w-8" />,
       title: "Built for Small Teams",
       description: "Not a stripped-down enterprise tool. Designed from scratch for teams of 2-10 people.",
     },
     {
-      icon: <MessageSquare className="h-8 w-8" />,
       title: "No New App to Learn",
       description: "Works in Telegram, which your team already uses. Zero learning curve.",
     },
     {
-      icon: <Target className="h-8 w-8" />,
       title: "Just What You Need",
       description: "Tasks, deadlines, assignees, and 4 views. That's it. No feature bloat.",
     },
     {
-      icon: <Clock className="h-8 w-8" />,
       title: "Time Tracking Included",
       description: "Track hours without a separate tool. Perfect for billable work or capacity planning.",
     },
@@ -147,10 +130,7 @@ export default function SmallTeamsSolutionPage() {
         />
 
         <div className="max-w-4xl mx-auto text-center mb-16 mt-8">
-          <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/20 rounded-full px-4 py-2 mb-6">
-            <Users className="h-4 w-4 text-green-400" />
-            <span className="text-green-400 text-sm font-medium">For Teams of 2-10</span>
-          </div>
+          <p className="text-sm text-slate-500 mb-6">For Teams of 2-10</p>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             Project Management That Doesn't Insult Your Intelligence
           </h1>
@@ -189,23 +169,22 @@ export default function SmallTeamsSolutionPage() {
 
       {/* Solution */}
       <section className="container mx-auto px-4 py-16">
-        <div className="bg-gradient-to-br from-green-500/10 to-transparent border border-green-500/20 rounded-3xl p-8 md:p-12 text-center">
-          <Sparkles className="h-12 w-12 text-green-400 mx-auto mb-6" />
+        <div className="bg-gradient-to-br from-violet-500/10 to-transparent border border-violet-500/20 rounded-3xl p-8 md:p-12 text-center">
           <h2 className="text-3xl font-bold mb-4">Whatstask is Different</h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-8">
             Built specifically for small teams. Simple by design, not by limitation.
           </p>
           <div className="grid md:grid-cols-3 gap-8 text-left max-w-4xl mx-auto">
             <div>
-              <p className="text-4xl font-bold text-green-400 mb-2">$0</p>
+              <p className="text-4xl font-bold text-slate-900 mb-2">$0</p>
               <p className="text-slate-600">to get started</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-green-400 mb-2">30 sec</p>
+              <p className="text-4xl font-bold text-slate-900 mb-2">30 sec</p>
               <p className="text-slate-600">to set up your team</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-green-400 mb-2">4</p>
+              <p className="text-4xl font-bold text-slate-900 mb-2">4</p>
               <p className="text-slate-600">views (not 40)</p>
             </div>
           </div>
@@ -219,9 +198,8 @@ export default function SmallTeamsSolutionPage() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-green-500/30 transition-colors"
+              className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-violet-500/30 transition-colors"
             >
-              <div className="text-green-400 mb-4">{feature.icon}</div>
               <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
               <p className="text-slate-600">{feature.description}</p>
             </div>
@@ -234,15 +212,15 @@ export default function SmallTeamsSolutionPage() {
         <h2 className="text-3xl font-bold text-center mb-12">The Real Comparison</h2>
         <div className="max-w-3xl mx-auto">
           <div className="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden">
-            <div className="grid grid-cols-3 bg-slate-50 p-4 font-semibold">
+            <div className="grid grid-cols-3 bg-slate-100 p-4 font-semibold">
               <div>Feature</div>
-              <div className="text-green-400">Whatstask</div>
+              <div>Whatstask</div>
               <div className="text-slate-600">Others</div>
             </div>
             {comparison.map((row, index) => (
               <div key={index} className="grid grid-cols-3 p-4 border-t border-slate-100">
                 <div className="text-slate-700">{row.feature}</div>
-                <div className="text-green-400 font-medium">{row.whatstask}</div>
+                <div className="font-medium">{row.whatstask}</div>
                 <div className="text-slate-500">{row.competitors}</div>
               </div>
             ))}
@@ -255,7 +233,6 @@ export default function SmallTeamsSolutionPage() {
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {testimonialStyle.map((testimonial, index) => (
             <div key={index} className="bg-slate-50 border border-slate-200 rounded-2xl p-8">
-              <Heart className="h-8 w-8 text-red-400 mb-4" />
               <p className="text-lg text-slate-700 mb-4">"{testimonial.quote}"</p>
               <p className="text-sm text-slate-500">— {testimonial.author}</p>
             </div>
@@ -277,9 +254,8 @@ export default function SmallTeamsSolutionPage() {
             "Research teams",
             "Creator teams",
           ].map((team, index) => (
-            <div key={index} className="flex items-center gap-2 bg-slate-50 rounded-lg p-4">
-              <CheckCircle2 className="h-5 w-5 text-green-400" />
-              <span className="text-slate-700">{team}</span>
+            <div key={index} className="bg-slate-50 rounded-lg p-4 text-slate-700 text-center">
+              {team}
             </div>
           ))}
         </div>

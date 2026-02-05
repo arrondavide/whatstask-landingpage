@@ -4,20 +4,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import {
   Send,
-  ArrowRight,
-  HelpCircle,
-  BookOpen,
-  MessageSquare,
-  Zap,
-  Users,
-  Clock,
-  CheckSquare,
-  Settings,
-  Bell,
-  Shield,
-  FileText,
   Search,
-  ChevronRight,
 } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 
@@ -75,7 +62,6 @@ export default function HelpPage() {
 
   const helpCategories = [
     {
-      icon: <Zap className="h-6 w-6" />,
       title: "Getting Started",
       description: "New to Whatstask? Start here.",
       links: [
@@ -85,7 +71,6 @@ export default function HelpPage() {
       ],
     },
     {
-      icon: <CheckSquare className="h-6 w-6" />,
       title: "Tasks & Projects",
       description: "Learn to manage tasks effectively.",
       links: [
@@ -96,7 +81,6 @@ export default function HelpPage() {
       ],
     },
     {
-      icon: <Users className="h-6 w-6" />,
       title: "Team Collaboration",
       description: "Work together seamlessly.",
       links: [
@@ -106,7 +90,6 @@ export default function HelpPage() {
       ],
     },
     {
-      icon: <Clock className="h-6 w-6" />,
       title: "Time Tracking",
       description: "Track and report time.",
       links: [
@@ -116,7 +99,6 @@ export default function HelpPage() {
       ],
     },
     {
-      icon: <Bell className="h-6 w-6" />,
       title: "Notifications",
       description: "Stay updated on what matters.",
       links: [
@@ -126,7 +108,6 @@ export default function HelpPage() {
       ],
     },
     {
-      icon: <Settings className="h-6 w-6" />,
       title: "Account & Settings",
       description: "Manage your account.",
       links: [
@@ -192,10 +173,7 @@ export default function HelpPage() {
         />
 
         <div className="max-w-4xl mx-auto text-center mt-8 mb-16">
-          <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/20 rounded-full px-4 py-2 mb-6">
-            <HelpCircle className="h-4 w-4 text-violet-400" />
-            <span className="text-violet-400 text-sm font-medium">Help Center</span>
-          </div>
+          <p className="text-sm text-slate-500 mb-6">Help Center</p>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             How Can We Help?
           </h1>
@@ -225,9 +203,7 @@ export default function HelpPage() {
           <div className="grid md:grid-cols-4 gap-6">
             {quickStartSteps.map((item) => (
               <div key={item.step} className="text-center">
-                <div className="w-12 h-12 rounded-full bg-violet-500 text-white text-xl font-bold flex items-center justify-center mx-auto mb-4">
-                  {item.step}
-                </div>
+                <p className="text-xl font-bold text-slate-900 mb-2">Step {item.step}</p>
                 <h3 className="font-semibold mb-2">{item.title}</h3>
                 <p className="text-sm text-slate-600">{item.description}</p>
               </div>
@@ -253,7 +229,6 @@ export default function HelpPage() {
               key={index}
               className="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:border-violet-500/30 transition-colors"
             >
-              <div className="text-violet-400 mb-4">{category.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{category.title}</h3>
               <p className="text-slate-600 text-sm mb-4">{category.description}</p>
               <ul className="space-y-2">
@@ -261,10 +236,9 @@ export default function HelpPage() {
                   <li key={i}>
                     <Link
                       href={link.href}
-                      className="flex items-center gap-2 text-sm text-slate-700 hover:text-violet-400 transition-colors"
+                      className="text-sm text-slate-700 hover:text-violet-500 transition-colors"
                     >
-                      <ChevronRight className="h-4 w-4" />
-                      {link.title}
+                      → {link.title}
                     </Link>
                   </li>
                 ))}
@@ -301,24 +275,21 @@ export default function HelpPage() {
             href="/blog"
             className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-violet-500/30 transition-colors text-center group"
           >
-            <BookOpen className="h-10 w-10 text-violet-400 mx-auto mb-4" />
-            <h3 className="font-semibold text-lg mb-2 group-hover:text-violet-400 transition-colors">Blog</h3>
+            <h3 className="font-semibold text-lg mb-2 group-hover:text-violet-500 transition-colors">Blog</h3>
             <p className="text-sm text-slate-600">Tips, guides, and product updates</p>
           </Link>
           <Link
             href="/templates"
             className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-violet-500/30 transition-colors text-center group"
           >
-            <FileText className="h-10 w-10 text-violet-400 mx-auto mb-4" />
-            <h3 className="font-semibold text-lg mb-2 group-hover:text-violet-400 transition-colors">Templates</h3>
+            <h3 className="font-semibold text-lg mb-2 group-hover:text-violet-500 transition-colors">Templates</h3>
             <p className="text-sm text-slate-600">Ready-to-use project templates</p>
           </Link>
           <Link
             href="/security"
             className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-violet-500/30 transition-colors text-center group"
           >
-            <Shield className="h-10 w-10 text-violet-400 mx-auto mb-4" />
-            <h3 className="font-semibold text-lg mb-2 group-hover:text-violet-400 transition-colors">Security</h3>
+            <h3 className="font-semibold text-lg mb-2 group-hover:text-violet-500 transition-colors">Security</h3>
             <p className="text-sm text-slate-600">How we protect your data</p>
           </Link>
         </div>
@@ -327,7 +298,6 @@ export default function HelpPage() {
       {/* Contact Support */}
       <section className="container mx-auto px-4 py-16">
         <div className="bg-gradient-to-r from-violet-500/20 to-violet-500/5 border border-violet-500/20 rounded-3xl p-8 md:p-12 text-center">
-          <MessageSquare className="h-12 w-12 text-violet-400 mx-auto mb-6" />
           <h2 className="text-3xl font-bold mb-4">Still Need Help?</h2>
           <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
             Our support team is here to help. Reach out and we'll get back to you as soon as possible.

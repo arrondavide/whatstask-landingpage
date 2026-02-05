@@ -2,22 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import {
-  Brain,
-  Search,
-  Target,
-  BarChart3,
-  CheckCircle,
-  ArrowRight,
-  ExternalLink,
-  BookOpen,
-  Lightbulb,
-  TrendingUp,
-  FileText,
-  MessageSquare,
-  Globe,
-  Zap
-} from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import PageLoader from "@/components/page-loader"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import Script from "next/script"
@@ -249,10 +234,7 @@ export default function GEOGuidePage() {
 
           {/* Hero */}
           <section className="max-w-4xl mx-auto text-center mb-16 mt-8">
-            <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/30 rounded-full px-4 py-2 mb-6">
-              <BookOpen className="h-4 w-4 text-violet-400" />
-              <span className="text-sm text-violet-400">Complete Guide • Updated 2026</span>
-            </div>
+            <p className="text-sm text-slate-500 mb-6">Complete Guide • Updated 2026</p>
 
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
               The Complete Guide to{" "}
@@ -269,7 +251,6 @@ export default function GEOGuidePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6">
                 <a href="https://geoanalyzer.whatstask.com" target="_blank" rel="noopener noreferrer">
-                  <Zap className="h-5 w-5 mr-2" />
                   Analyze Your Content Free
                 </a>
               </Button>
@@ -284,10 +265,7 @@ export default function GEOGuidePage() {
           {/* Table of Contents */}
           <section className="max-w-4xl mx-auto mb-16">
             <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
-              <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
-                <FileText className="h-5 w-5 text-violet-400" />
-                Table of Contents
-              </h2>
+              <h2 className="text-xl font-bold mb-6">Table of Contents</h2>
               <nav className="grid md:grid-cols-2 gap-3">
                 {tableOfContents.map((item, index) => (
                   <a
@@ -308,8 +286,7 @@ export default function GEOGuidePage() {
 
             {/* Section 1: What is GEO */}
             <section id="what-is-geo" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                <Brain className="h-8 w-8 text-violet-400" />
+              <h2 className="text-3xl font-bold mb-6">
                 What is Generative Engine Optimization?
               </h2>
 
@@ -334,10 +311,7 @@ export default function GEOGuidePage() {
               </p>
 
               <div className="bg-slate-50 rounded-xl p-6 border border-slate-200 my-8">
-                <h4 className="font-bold mb-3 flex items-center gap-2">
-                  <Lightbulb className="h-5 w-5 text-yellow-400" />
-                  Key Insight
-                </h4>
+                <h4 className="font-bold mb-3">Key Insight</h4>
                 <p className="text-slate-600 m-0">
                   GEO isn't about replacing SEO—it's about extending your optimization strategy to cover how AI
                   systems discover, understand, and reference your content. The best approach combines both.
@@ -347,8 +321,7 @@ export default function GEOGuidePage() {
 
             {/* Section 2: Why GEO Matters */}
             <section id="why-geo-matters" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                <TrendingUp className="h-8 w-8 text-violet-400" />
+              <h2 className="text-3xl font-bold mb-6">
                 Why GEO Matters in 2026
               </h2>
 
@@ -388,19 +361,19 @@ export default function GEOGuidePage() {
 
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-violet-400 flex-shrink-0 mt-1" />
+                  <span className="text-violet-400 mt-1">•</span>
                   <span><strong>Brand Authority:</strong> Being cited by AI establishes you as an authoritative source</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-violet-400 flex-shrink-0 mt-1" />
+                  <span className="text-violet-400 mt-1">•</span>
                   <span><strong>Referral Traffic:</strong> AI citations often include links, driving qualified traffic</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-violet-400 flex-shrink-0 mt-1" />
+                  <span className="text-violet-400 mt-1">•</span>
                   <span><strong>Competitive Advantage:</strong> Early GEO adopters capture market share while competitors catch up</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-violet-400 flex-shrink-0 mt-1" />
+                  <span className="text-violet-400 mt-1">•</span>
                   <span><strong>Future-Proofing:</strong> Content optimized for GEO performs well in both AI and traditional search</span>
                 </li>
               </ul>
@@ -408,8 +381,7 @@ export default function GEOGuidePage() {
 
             {/* Section 3: GEO vs SEO */}
             <section id="geo-vs-seo" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                <Target className="h-8 w-8 text-violet-400" />
+              <h2 className="text-3xl font-bold mb-6">
                 GEO vs Traditional SEO
               </h2>
 
@@ -474,8 +446,7 @@ export default function GEOGuidePage() {
 
             {/* Section 4: How AI Search Works */}
             <section id="how-ai-search-works" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                <Search className="h-8 w-8 text-violet-400" />
+              <h2 className="text-3xl font-bold mb-6">
                 How AI Search Engines Work
               </h2>
 
@@ -559,8 +530,7 @@ export default function GEOGuidePage() {
 
             {/* Section 5: GEO Ranking Factors */}
             <section id="geo-ranking-factors" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                <BarChart3 className="h-8 w-8 text-violet-400" />
+              <h2 className="text-3xl font-bold mb-6">
                 GEO Ranking Factors
               </h2>
 
@@ -601,8 +571,7 @@ export default function GEOGuidePage() {
 
             {/* Section 6: Optimization Strategies */}
             <section id="optimization-strategies" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                <Lightbulb className="h-8 w-8 text-violet-400" />
+              <h2 className="text-3xl font-bold mb-6">
                 GEO Optimization Strategies
               </h2>
 
@@ -645,8 +614,7 @@ export default function GEOGuidePage() {
 
             {/* Section 7: Content Structure */}
             <section id="content-structure" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                <FileText className="h-8 w-8 text-violet-400" />
+              <h2 className="text-3xl font-bold mb-6">
                 Content Structure for GEO
               </h2>
 
@@ -673,27 +641,27 @@ export default function GEOGuidePage() {
 
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-violet-400 flex-shrink-0 mt-1" />
+                  <span className="text-violet-400 mt-1">•</span>
                   <span>Start with a clear definition or direct answer</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-violet-400 flex-shrink-0 mt-1" />
+                  <span className="text-violet-400 mt-1">•</span>
                   <span>Use descriptive H2 and H3 headings that match search queries</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-violet-400 flex-shrink-0 mt-1" />
+                  <span className="text-violet-400 mt-1">•</span>
                   <span>Include summary boxes or TL;DR sections</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-violet-400 flex-shrink-0 mt-1" />
+                  <span className="text-violet-400 mt-1">•</span>
                   <span>Use numbered lists for processes and steps</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-violet-400 flex-shrink-0 mt-1" />
+                  <span className="text-violet-400 mt-1">•</span>
                   <span>Include tables for comparisons and data</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-violet-400 flex-shrink-0 mt-1" />
+                  <span className="text-violet-400 mt-1">•</span>
                   <span>Add FAQ sections with common questions</span>
                 </li>
               </ul>
@@ -701,8 +669,7 @@ export default function GEOGuidePage() {
 
             {/* Section 8: Measuring GEO */}
             <section id="measuring-geo" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                <BarChart3 className="h-8 w-8 text-violet-400" />
+              <h2 className="text-3xl font-bold mb-6">
                 Measuring GEO Success
               </h2>
 
@@ -742,8 +709,7 @@ export default function GEOGuidePage() {
 
             {/* Section 9: Tools */}
             <section id="tools" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                <Zap className="h-8 w-8 text-violet-400" />
+              <h2 className="text-3xl font-bold mb-6">
                 GEO Tools & Resources
               </h2>
 
@@ -755,25 +721,24 @@ export default function GEOGuidePage() {
                 </p>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-center gap-2 text-slate-700">
-                    <CheckCircle className="h-5 w-5 text-violet-400" />
+                    <span className="text-violet-400">•</span>
                     Instant GEO score calculation
                   </li>
                   <li className="flex items-center gap-2 text-slate-700">
-                    <CheckCircle className="h-5 w-5 text-violet-400" />
+                    <span className="text-violet-400">•</span>
                     Content clarity analysis
                   </li>
                   <li className="flex items-center gap-2 text-slate-700">
-                    <CheckCircle className="h-5 w-5 text-violet-400" />
+                    <span className="text-violet-400">•</span>
                     Structure and readability metrics
                   </li>
                   <li className="flex items-center gap-2 text-slate-700">
-                    <CheckCircle className="h-5 w-5 text-violet-400" />
+                    <span className="text-violet-400">•</span>
                     Specific improvement recommendations
                   </li>
                 </ul>
                 <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6">
                   <a href="https://geoanalyzer.whatstask.com" target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="h-5 w-5 mr-2" />
                     Try GEO Analyzer Free
                   </a>
                 </Button>
@@ -783,8 +748,7 @@ export default function GEOGuidePage() {
 
             {/* Section 10: Future */}
             <section id="future" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                <Globe className="h-8 w-8 text-violet-400" />
+              <h2 className="text-3xl font-bold mb-6">
                 The Future of GEO
               </h2>
 

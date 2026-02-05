@@ -5,17 +5,6 @@ import { Button } from "@/components/ui/button"
 import {
   Send,
   ArrowRight,
-  CheckCircle2,
-  Code,
-  GitBranch,
-  Bug,
-  Rocket,
-  Clock,
-  Users,
-  Zap,
-  Target,
-  Repeat,
-  Terminal,
 } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 
@@ -50,37 +39,31 @@ export const metadata: Metadata = {
 export default function DevelopmentSolutionPage() {
   const features = [
     {
-      icon: <Repeat className="h-8 w-8" />,
       title: "Sprint Planning",
       description:
         "Plan sprints with backlog grooming, story points, and velocity tracking. Kanban boards adapt to your workflow.",
     },
     {
-      icon: <Bug className="h-8 w-8" />,
       title: "Bug Tracking",
       description:
         "Track bugs with severity, assignees, and status. Link issues to features and never lose context.",
     },
     {
-      icon: <Target className="h-8 w-8" />,
       title: "Roadmap Planning",
       description:
         "Plan features, set milestones, and track progress. Timeline view shows dependencies at a glance.",
     },
     {
-      icon: <Clock className="h-8 w-8" />,
       title: "Time Tracking",
       description:
         "Track development time per task, feature, or project. Export reports for standups and retrospectives.",
     },
     {
-      icon: <Users className="h-8 w-8" />,
       title: "Team Coordination",
       description:
         "Assign tasks, share updates, and @mention teammates. Everyone stays aligned without meetings.",
     },
     {
-      icon: <Terminal className="h-8 w-8" />,
       title: "Developer-Friendly",
       description:
         "Works where you already are - Telegram. No heavy desktop app, no browser tabs, just chat-based productivity.",
@@ -164,10 +147,7 @@ export default function DevelopmentSolutionPage() {
         />
 
         <div className="max-w-4xl mx-auto text-center mb-16 mt-8">
-          <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 mb-6">
-            <Code className="h-4 w-4 text-blue-400" />
-            <span className="text-blue-400 text-sm font-medium">For Development Teams</span>
-          </div>
+          <p className="text-sm text-slate-500 mb-6">For Development Teams</p>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             Ship Faster Without the Overhead
           </h1>
@@ -198,9 +178,8 @@ export default function DevelopmentSolutionPage() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-blue-500/30 transition-colors"
+              className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-violet-500/30 transition-colors"
             >
-              <div className="text-blue-400 mb-4">{feature.icon}</div>
               <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
               <p className="text-slate-600">{feature.description}</p>
             </div>
@@ -214,18 +193,10 @@ export default function DevelopmentSolutionPage() {
         <div className="grid md:grid-cols-3 gap-8">
           {workflows.map((workflow, index) => (
             <div key={index} className="bg-slate-50 border border-slate-200 rounded-2xl p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <GitBranch className="h-6 w-6 text-blue-400" />
-                <h3 className="text-xl font-semibold">{workflow.title}</h3>
-              </div>
-              <ol className="space-y-4">
+              <h3 className="text-xl font-semibold mb-6">{workflow.title}</h3>
+              <ol className="space-y-3 list-decimal list-inside">
                 {workflow.steps.map((step, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm flex items-center justify-center">
-                      {i + 1}
-                    </span>
-                    <span className="text-slate-700 text-sm">{step}</span>
-                  </li>
+                  <li key={i} className="text-slate-700 text-sm">{step}</li>
                 ))}
               </ol>
             </div>
@@ -235,21 +206,13 @@ export default function DevelopmentSolutionPage() {
 
       {/* Why Switch */}
       <section className="container mx-auto px-4 py-16">
-        <div className="bg-gradient-to-br from-blue-500/10 to-transparent border border-blue-500/20 rounded-3xl p-8 md:p-12">
+        <div className="bg-gradient-to-br from-violet-500/10 to-transparent border border-violet-500/20 rounded-3xl p-8 md:p-12">
           <h2 className="text-3xl font-bold text-center mb-12">Why Dev Teams Switch to Whatstask</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {whySwitch.map((item, index) => (
-              <div key={index} className="flex items-start gap-4 bg-black/30 rounded-xl p-6">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center">
-                  ✕
-                </div>
-                <div>
-                  <p className="text-slate-600 line-through mb-2">{item.problem}</p>
-                  <div className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-400 mt-0.5" />
-                    <p className="text-white">{item.solution}</p>
-                  </div>
-                </div>
+              <div key={index} className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                <p className="text-slate-500 line-through mb-2">{item.problem}</p>
+                <p className="text-slate-900 font-medium">{item.solution}</p>
               </div>
             ))}
           </div>

@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Check, Send, Clock, Users, FolderKanban, BarChart3 } from "lucide-react"
+import { Send } from "lucide-react"
 import PageLoader from "@/components/page-loader"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 
@@ -33,22 +33,18 @@ export const metadata: Metadata = {
 export default function AgenciesPage() {
   const benefits = [
     {
-      icon: FolderKanban,
       title: "Multi-Client Workspaces",
       description: "Keep each client's projects separate. Switch between them instantly. No mixing up deliverables.",
     },
     {
-      icon: Clock,
       title: "Billable Hours Tracking",
       description: "Track time on every task. Generate reports for clients. Bill accurately, get paid fairly.",
     },
     {
-      icon: Users,
       title: "Team Collaboration",
       description: "Assign tasks, set roles, track progress. Know who's working on what, always.",
     },
     {
-      icon: BarChart3,
       title: "Client-Ready Reports",
       description: "Show clients what you've done. Time spent, tasks completed, progress made.",
     },
@@ -100,9 +96,7 @@ export default function AgenciesPage() {
           />
 
           <section className="text-center max-w-4xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/30 rounded-full px-4 py-2 mb-6">
-              <span className="text-sm text-violet-400">For Agencies</span>
-            </div>
+            <p className="text-sm text-slate-500 mb-6">For Agencies</p>
 
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
               Project management that agencies actually use
@@ -126,7 +120,6 @@ export default function AgenciesPage() {
             <div className="grid md:grid-cols-2 gap-6">
               {benefits.map((benefit, index) => (
                 <div key={index} className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                  <benefit.icon className="h-10 w-10 text-violet-400 mb-4" />
                   <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
                   <p className="text-slate-600">{benefit.description}</p>
                 </div>
@@ -165,10 +158,7 @@ export default function AgenciesPage() {
                     "AI helps create and organize tasks",
                     "Team members see only what they need",
                   ].map((item, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      <Check className="h-5 w-5 text-violet-400 flex-shrink-0" />
-                      <span>{item}</span>
-                    </li>
+                    <li key={index}>• {item}</li>
                   ))}
                 </ul>
                 <ul className="space-y-3">
@@ -178,10 +168,7 @@ export default function AgenciesPage() {
                     "Simple pricing, no per-seat surprises",
                     "Start in 30 seconds, not 30 days",
                   ].map((item, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      <Check className="h-5 w-5 text-violet-400 flex-shrink-0" />
-                      <span>{item}</span>
-                    </li>
+                    <li key={index}>• {item}</li>
                   ))}
                 </ul>
               </div>

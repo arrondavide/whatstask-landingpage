@@ -157,10 +157,7 @@ export default function ProjectManagementPage() {
 
           {/* Hero */}
           <section className="text-center max-w-4xl mx-auto mb-20">
-            <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/30 rounded-full px-4 py-2 mb-6">
-              <Zap className="h-4 w-4 text-violet-400" />
-              <span className="text-sm text-violet-400 font-medium">Simple scales.</span>
-            </div>
+            <p className="text-sm text-slate-500 mb-6">Simple scales.</p>
 
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
               Project management that gets out of your way

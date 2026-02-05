@@ -3,22 +3,8 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import {
-  Shield,
-  Lock,
-  Server,
-  Eye,
-  FileCheck,
-  Users,
-  Globe,
-  CheckCircle2,
   ArrowRight,
   Send,
-  ShieldCheck,
-  KeyRound,
-  Database,
-  CloudCog,
-  Bell,
-  Fingerprint,
 } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 
@@ -53,37 +39,31 @@ export const metadata: Metadata = {
 export default function SecurityPage() {
   const securityFeatures = [
     {
-      icon: <Lock className="h-8 w-8" />,
       title: "End-to-End Encryption",
       description:
         "All data is encrypted in transit using TLS 1.3 and at rest using AES-256 encryption. Your tasks and team communications are protected at every stage.",
     },
     {
-      icon: <Server className="h-8 w-8" />,
       title: "Secure Infrastructure",
       description:
         "Our infrastructure runs on enterprise-grade cloud providers with SOC 2 Type II certified data centers. We use isolated environments and regular security audits.",
     },
     {
-      icon: <KeyRound className="h-8 w-8" />,
       title: "Access Controls",
       description:
         "Role-based access control (RBAC) ensures team members only see what they need. Admins have full control over permissions and user management.",
     },
     {
-      icon: <Eye className="h-8 w-8" />,
       title: "Privacy by Design",
       description:
         "We collect only the minimum data necessary to provide our service. Your data is never sold or shared with third parties for advertising.",
     },
     {
-      icon: <Database className="h-8 w-8" />,
       title: "Data Residency",
       description:
         "Your data is stored in secure data centers. Enterprise customers can request specific data residency locations to meet regulatory requirements.",
     },
     {
-      icon: <Bell className="h-8 w-8" />,
       title: "Incident Response",
       description:
         "We have a dedicated security team monitoring 24/7. Any security incidents are promptly investigated and communicated transparently.",
@@ -92,22 +72,18 @@ export default function SecurityPage() {
 
   const complianceItems = [
     {
-      icon: <Globe className="h-6 w-6" />,
       title: "GDPR Compliant",
       description: "Full compliance with EU General Data Protection Regulation",
     },
     {
-      icon: <FileCheck className="h-6 w-6" />,
       title: "Data Processing Agreement",
       description: "DPA available for enterprise customers upon request",
     },
     {
-      icon: <Users className="h-6 w-6" />,
       title: "Right to Data Portability",
       description: "Export your data anytime in standard formats",
     },
     {
-      icon: <ShieldCheck className="h-6 w-6" />,
       title: "Right to Erasure",
       description: "Request complete deletion of your data at any time",
     },
@@ -152,10 +128,7 @@ export default function SecurityPage() {
         />
 
         <div className="max-w-4xl mx-auto text-center mt-8 mb-16">
-          <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/20 rounded-full px-4 py-2 mb-6">
-            <Shield className="h-4 w-4 text-violet-400" />
-            <span className="text-violet-400 text-sm font-medium">Security & Trust</span>
-          </div>
+          <p className="text-sm text-slate-500 mb-6">Security & Trust</p>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             Your Data Security is Our Priority
           </h1>
@@ -163,19 +136,10 @@ export default function SecurityPage() {
             We understand that you're trusting us with your team's work. That's why we've built
             Whatstask with enterprise-grade security from the ground up.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <div className="flex items-center gap-2 bg-slate-50 rounded-full px-4 py-2">
-              <Lock className="h-4 w-4 text-violet-400" />
-              <span className="text-sm">256-bit Encryption</span>
-            </div>
-            <div className="flex items-center gap-2 bg-slate-50 rounded-full px-4 py-2">
-              <Globe className="h-4 w-4 text-violet-400" />
-              <span className="text-sm">GDPR Compliant</span>
-            </div>
-            <div className="flex items-center gap-2 bg-slate-50 rounded-full px-4 py-2">
-              <Server className="h-4 w-4 text-violet-400" />
-              <span className="text-sm">99.9% Uptime</span>
-            </div>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            <span className="bg-slate-50 rounded-full px-4 py-2">256-bit Encryption</span>
+            <span className="bg-slate-50 rounded-full px-4 py-2">GDPR Compliant</span>
+            <span className="bg-slate-50 rounded-full px-4 py-2">99.9% Uptime</span>
           </div>
         </div>
       </section>
@@ -192,7 +156,6 @@ export default function SecurityPage() {
               key={index}
               className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-violet-500/30 transition-colors"
             >
-              <div className="text-violet-400 mb-4">{feature.icon}</div>
               <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
               <p className="text-slate-600 leading-relaxed">{feature.description}</p>
             </div>
@@ -205,10 +168,7 @@ export default function SecurityPage() {
         <div className="bg-gradient-to-br from-violet-500/10 to-transparent border border-violet-500/20 rounded-3xl p-8 md:p-12">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Fingerprint className="h-6 w-6 text-violet-400" />
-                <span className="text-violet-400 font-medium">Telegram Integration Security</span>
-              </div>
+              <p className="text-slate-500 text-sm mb-4">Telegram Integration Security</p>
               <h2 className="text-3xl font-bold mb-4">
                 Secure by Design with Telegram
               </h2>
@@ -224,43 +184,28 @@ export default function SecurityPage() {
                   "You control exactly what data to share",
                   "Revoke access anytime from Telegram settings",
                 ].map((item, index) => (
-                  <li key={index} className="flex items-center gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-violet-400 flex-shrink-0" />
-                    <span className="text-slate-700">{item}</span>
-                  </li>
+                  <li key={index} className="text-slate-700">• {item}</li>
                 ))}
               </ul>
             </div>
-            <div className="bg-black/50 rounded-2xl p-8 border border-slate-200">
+            <div className="bg-slate-100 rounded-2xl p-8 border border-slate-200">
               <h3 className="text-xl font-semibold mb-6">Telegram Bot Permissions</h3>
               <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-green-400 mt-0.5" />
-                  <div>
-                    <p className="font-medium">Send messages</p>
-                    <p className="text-sm text-slate-500">To deliver task notifications</p>
-                  </div>
+                <div>
+                  <p className="font-medium">✓ Send messages</p>
+                  <p className="text-sm text-slate-500">To deliver task notifications</p>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-green-400 mt-0.5" />
-                  <div>
-                    <p className="font-medium">Receive messages</p>
-                    <p className="text-sm text-slate-500">To process your commands</p>
-                  </div>
+                <div>
+                  <p className="font-medium">✓ Receive messages</p>
+                  <p className="text-sm text-slate-500">To process your commands</p>
                 </div>
-                <div className="flex items-start gap-3 opacity-50">
-                  <div className="h-5 w-5 rounded-full border-2 border-gray-600 mt-0.5" />
-                  <div>
-                    <p className="font-medium line-through">Read private chats</p>
-                    <p className="text-sm text-slate-500">Never requested</p>
-                  </div>
+                <div className="opacity-50">
+                  <p className="font-medium line-through">✗ Read private chats</p>
+                  <p className="text-sm text-slate-500">Never requested</p>
                 </div>
-                <div className="flex items-start gap-3 opacity-50">
-                  <div className="h-5 w-5 rounded-full border-2 border-gray-600 mt-0.5" />
-                  <div>
-                    <p className="font-medium line-through">Access contacts</p>
-                    <p className="text-sm text-slate-500">Never requested</p>
-                  </div>
+                <div className="opacity-50">
+                  <p className="font-medium line-through">✗ Access contacts</p>
+                  <p className="text-sm text-slate-500">Never requested</p>
                 </div>
               </div>
             </div>
@@ -280,9 +225,6 @@ export default function SecurityPage() {
               key={index}
               className="bg-slate-50 border border-slate-200 rounded-xl p-6 text-center"
             >
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-violet-500/10 text-violet-400 mb-4">
-                {item.icon}
-              </div>
               <h3 className="font-semibold mb-2">{item.title}</h3>
               <p className="text-sm text-slate-600">{item.description}</p>
             </div>
@@ -301,10 +243,9 @@ export default function SecurityPage() {
             {securityPractices.map((practice, index) => (
               <div
                 key={index}
-                className="flex items-center gap-3 bg-slate-50 rounded-lg p-4 border border-slate-100"
+                className="bg-slate-50 rounded-lg p-4 border border-slate-100 text-slate-700"
               >
-                <CheckCircle2 className="h-5 w-5 text-violet-400 flex-shrink-0" />
-                <span className="text-slate-700">{practice}</span>
+                • {practice}
               </div>
             ))}
           </div>
@@ -318,37 +259,25 @@ export default function SecurityPage() {
             <h2 className="text-3xl font-bold text-center mb-8">What Data We Collect</h2>
             <div className="space-y-6">
               <div className="border-b border-slate-200 pb-6">
-                <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
-                  <Database className="h-5 w-5 text-violet-400" />
-                  Account Information
-                </h3>
+                <h3 className="font-semibold text-lg mb-2">Account Information</h3>
                 <p className="text-slate-600">
                   Your Telegram user ID and display name to identify your account. We don't have access to your phone number or email unless you provide it.
                 </p>
               </div>
               <div className="border-b border-slate-200 pb-6">
-                <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-violet-400" />
-                  Task & Project Data
-                </h3>
+                <h3 className="font-semibold text-lg mb-2">Task & Project Data</h3>
                 <p className="text-slate-600">
                   The tasks, projects, and notes you create within Whatstask. This data is encrypted and only accessible to you and your team members.
                 </p>
               </div>
               <div className="border-b border-slate-200 pb-6">
-                <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
-                  <CloudCog className="h-5 w-5 text-violet-400" />
-                  Usage Analytics
-                </h3>
+                <h3 className="font-semibold text-lg mb-2">Usage Analytics</h3>
                 <p className="text-slate-600">
                   Anonymous usage data to improve our service (feature usage, performance metrics). This data cannot be used to identify individual users.
                 </p>
               </div>
               <div>
-                <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
-                  <Lock className="h-5 w-5 text-violet-400" />
-                  What We Don't Collect
-                </h3>
+                <h3 className="font-semibold text-lg mb-2">What We Don't Collect</h3>
                 <p className="text-slate-600">
                   We never access your private Telegram messages, contacts, or any data outside of your direct interactions with the Whatstask bot.
                 </p>
@@ -392,7 +321,6 @@ export default function SecurityPage() {
       {/* Contact Security Team */}
       <section className="container mx-auto px-4 py-16">
         <div className="bg-gradient-to-r from-violet-500/20 to-violet-500/5 border border-violet-500/20 rounded-3xl p-8 md:p-12 text-center">
-          <Shield className="h-12 w-12 text-violet-400 mx-auto mb-6" />
           <h2 className="text-3xl font-bold mb-4">Have Security Questions?</h2>
           <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
             Our team is here to answer any questions about our security practices. For security

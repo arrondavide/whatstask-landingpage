@@ -4,20 +4,9 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import {
-  Brain,
-  Sparkles,
-  Target,
-  BarChart3,
-  Zap,
-  Globe,
-  CheckCircle,
   ArrowRight,
   ExternalLink,
   Search,
-  Bot,
-  TrendingUp,
-  FileText,
-  MessageSquare,
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -26,37 +15,31 @@ import Script from "next/script"
 
 const features = [
   {
-    icon: Brain,
     title: "AI-Powered Analysis",
     description:
       "Deep analysis of your content structure, semantics, and readability for large language models like GPT-4, Claude, and Gemini.",
   },
   {
-    icon: Target,
     title: "GEO Score & Metrics",
     description:
       "Get a comprehensive GEO score with actionable metrics showing how well your content is optimized for AI search engines.",
   },
   {
-    icon: Sparkles,
     title: "Smart Recommendations",
     description:
       "Receive intelligent suggestions to improve your content's visibility in AI-generated responses and search results.",
   },
   {
-    icon: BarChart3,
     title: "Competitive Analysis",
     description:
       "Compare your content against competitors and understand what makes top-ranking content perform in AI search.",
   },
   {
-    icon: Zap,
     title: "Instant Results",
     description:
       "Get immediate feedback on your content. No waiting, no signup required. Analyze and optimize in real-time.",
   },
   {
-    icon: Globe,
     title: "Multi-Platform Ready",
     description:
       "Optimize for Google SGE, ChatGPT, Perplexity, Claude, Bing Copilot, and other AI-powered search experiences.",
@@ -65,25 +48,21 @@ const features = [
 
 const useCases = [
   {
-    icon: FileText,
     title: "Content Creators & Bloggers",
     description:
       "Ensure your articles, blog posts, and guides are optimized to appear in AI-generated summaries and featured snippets.",
   },
   {
-    icon: TrendingUp,
     title: "SEO Professionals",
     description:
       "Stay ahead of the curve by mastering Generative Engine Optimization alongside traditional SEO strategies.",
   },
   {
-    icon: MessageSquare,
     title: "Marketing Teams",
     description:
       "Optimize landing pages, product descriptions, and marketing content for maximum AI search visibility.",
   },
   {
-    icon: Bot,
     title: "AI & Tech Companies",
     description:
       "Ensure your technical documentation and product pages are properly understood and cited by AI systems.",
@@ -306,10 +285,9 @@ export default function GeoAnalyzerClient() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5 }}
-                  className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/30 rounded-full px-4 py-2 mb-8"
+                  className="mb-8"
                 >
-                  <Sparkles className="w-4 h-4 text-violet-400" />
-                  <span className="text-sm text-violet-400 font-medium">Free AI Search Optimization Tool</span>
+                  <p className="text-sm text-slate-500">Free AI Search Optimization Tool</p>
                 </motion.div>
 
                 <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight leading-tight">
@@ -439,19 +417,19 @@ export default function GeoAnalyzerClient() {
                     </h3>
                     <ul className="space-y-3 text-slate-600">
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-violet-400 mt-0.5 flex-shrink-0" />
+                        <span className="text-violet-400 mt-0.5">✓</span>
                         Optimizes for AI comprehension
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-violet-400 mt-0.5 flex-shrink-0" />
+                        <span className="text-violet-400 mt-0.5">✓</span>
                         Gets cited in AI responses
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-violet-400 mt-0.5 flex-shrink-0" />
+                        <span className="text-violet-400 mt-0.5">✓</span>
                         Direct traffic from AI search
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-violet-400 mt-0.5 flex-shrink-0" />
+                        <span className="text-violet-400 mt-0.5">✓</span>
                         Future-proof strategy
                       </li>
                     </ul>
@@ -489,9 +467,6 @@ export default function GeoAnalyzerClient() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="bg-slate-50 backdrop-blur rounded-2xl p-8 border border-slate-200 hover:border-violet-500/30 transition-all duration-300 group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-violet-500/10 flex items-center justify-center mb-6 group-hover:bg-violet-500/20 transition-colors">
-                      <feature.icon className="w-6 h-6 text-violet-400" />
-                    </div>
                     <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                     <p className="text-slate-600 font-light leading-relaxed">{feature.description}</p>
                   </motion.div>
@@ -525,7 +500,7 @@ export default function GeoAnalyzerClient() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="flex items-center gap-4 bg-slate-50 rounded-xl p-4 border border-slate-200"
                   >
-                    <CheckCircle className="w-6 h-6 text-violet-400 flex-shrink-0" />
+                    <span className="text-violet-400 flex-shrink-0">•</span>
                     <span className="text-lg">{benefit}</span>
                   </motion.div>
                 ))}
@@ -583,15 +558,8 @@ export default function GeoAnalyzerClient() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="bg-slate-50 backdrop-blur rounded-2xl p-8 border border-slate-200"
                   >
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center flex-shrink-0">
-                        <useCase.icon className="w-6 h-6 text-violet-400" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold mb-2">{useCase.title}</h3>
-                        <p className="text-slate-600 font-light leading-relaxed">{useCase.description}</p>
-                      </div>
-                    </div>
+                    <h3 className="text-xl font-bold mb-2">{useCase.title}</h3>
+                    <p className="text-slate-600 font-light leading-relaxed">{useCase.description}</p>
                   </motion.div>
                 ))}
               </div>
@@ -654,7 +622,6 @@ export default function GeoAnalyzerClient() {
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl" />
 
                 <div className="relative z-10">
-                  <Brain className="w-16 h-16 mx-auto mb-6 text-violet-400" />
                   <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
                     Ready to Dominate <span className="text-violet-400">AI Search</span>?
                   </h2>

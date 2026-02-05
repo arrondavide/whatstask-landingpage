@@ -5,16 +5,6 @@ import { Button } from "@/components/ui/button"
 import {
   Send,
   ArrowRight,
-  CheckCircle2,
-  Megaphone,
-  Calendar,
-  Users,
-  Target,
-  BarChart3,
-  Clock,
-  Zap,
-  MessageSquare,
-  FileText,
 } from "lucide-react"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 
@@ -49,37 +39,31 @@ export const metadata: Metadata = {
 export default function MarketingSolutionPage() {
   const features = [
     {
-      icon: <Calendar className="h-8 w-8" />,
       title: "Content Calendar",
       description:
         "Plan and schedule content across channels. See what's publishing when with calendar and timeline views.",
     },
     {
-      icon: <Target className="h-8 w-8" />,
       title: "Campaign Tracking",
       description:
         "Organize campaigns with tasks, deadlines, and assignees. Track progress from ideation to launch.",
     },
     {
-      icon: <Users className="h-8 w-8" />,
       title: "Team Collaboration",
       description:
         "Work with designers, copywriters, and stakeholders. Share updates and get approvals in real-time.",
     },
     {
-      icon: <Clock className="h-8 w-8" />,
       title: "Time Tracking",
       description:
         "Track time spent on campaigns and clients. Generate reports for billing and capacity planning.",
     },
     {
-      icon: <MessageSquare className="h-8 w-8" />,
       title: "Client Communication",
       description:
         "Keep client feedback organized. Comment threads on tasks mean nothing gets lost in email.",
     },
     {
-      icon: <BarChart3 className="h-8 w-8" />,
       title: "Project Analytics",
       description:
         "See team workload, project progress, and bottlenecks at a glance with built-in dashboards.",
@@ -139,10 +123,7 @@ export default function MarketingSolutionPage() {
         />
 
         <div className="max-w-4xl mx-auto text-center mb-16 mt-8">
-          <div className="inline-flex items-center gap-2 bg-pink-500/10 border border-pink-500/20 rounded-full px-4 py-2 mb-6">
-            <Megaphone className="h-4 w-4 text-pink-400" />
-            <span className="text-pink-400 text-sm font-medium">For Marketing Teams</span>
-          </div>
+          <p className="text-sm text-slate-500 mb-6">For Marketing Teams</p>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             Run Campaigns Without the Chaos
           </h1>
@@ -173,9 +154,8 @@ export default function MarketingSolutionPage() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-pink-500/30 transition-colors"
+              className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-violet-500/30 transition-colors"
             >
-              <div className="text-pink-400 mb-4">{feature.icon}</div>
               <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
               <p className="text-slate-600">{feature.description}</p>
             </div>
@@ -193,9 +173,8 @@ export default function MarketingSolutionPage() {
               <p className="text-slate-600 mb-6">{useCase.description}</p>
               <ul className="space-y-2">
                 {useCase.tasks.map((task, i) => (
-                  <li key={i} className="flex items-center gap-2 text-sm text-slate-700">
-                    <CheckCircle2 className="h-4 w-4 text-pink-400" />
-                    {task}
+                  <li key={i} className="text-sm text-slate-700">
+                    • {task}
                   </li>
                 ))}
               </ul>
@@ -212,9 +191,8 @@ export default function MarketingSolutionPage() {
               <h2 className="text-3xl font-bold mb-6">Why Marketing Teams Choose Whatstask</h2>
               <ul className="space-y-4">
                 {benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <Zap className="h-5 w-5 text-pink-400 mt-0.5" />
-                    <span className="text-slate-700">{benefit}</span>
+                  <li key={index} className="text-slate-700">
+                    • {benefit}
                   </li>
                 ))}
               </ul>
