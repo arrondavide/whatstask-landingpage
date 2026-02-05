@@ -76,7 +76,7 @@ export default function LandingPage() {
       <CustomCursor />
 
       {/* Grainient Background - Hero Section */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="fixed inset-0 overflow-hidden z-0">
         <div className="absolute inset-0 h-screen">
           <Grainient
             color1="#8B5CF6"
