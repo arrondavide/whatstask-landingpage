@@ -103,15 +103,15 @@ export default function FreelancersPage() {
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-white text-slate-900">
         {/* Header */}
-        <header className="border-b border-white/10">
+        <header className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
               <span className="text-xl font-bold">Whatstask</span>
             </Link>
-            <Button asChild className="bg-teal-500 text-white hover:bg-teal-600 rounded-full px-6">
+            <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
               <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                 <Send className="h-4 w-4 mr-2" />
                 Try Free
@@ -130,27 +130,27 @@ export default function FreelancersPage() {
           />
 
           <div className="max-w-4xl mx-auto text-center mb-16 mt-8">
-            <div className="inline-block bg-teal-500/10 border border-teal-500/20 rounded-full px-4 py-2 mb-6">
-              <span className="text-teal-400 text-sm font-medium">For Freelancers</span>
+            <div className="inline-block bg-violet-500/10 border border-violet-500/20 rounded-full px-4 py-2 mb-6">
+              <span className="text-violet-400 text-sm font-medium">For Freelancers</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
               Manage Clients & Deadlines Without Leaving Telegram
             </h1>
-            <p className="text-xl text-gray-400 leading-relaxed mb-8">
+            <p className="text-xl text-slate-600 leading-relaxed mb-8">
               You're already chatting with clients in Telegram. Why not manage your tasks there too? Whatstask keeps
               your freelance workflow simple and focused.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-teal-500 text-white hover:bg-teal-700 rounded-full px-8 py-6">
+              <Button asChild className="bg-violet-500 text-white hover:bg-violet-700 rounded-full px-8 py-6">
                 <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                   Start Free on Telegram
                 </a>
               </Button>
-              <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
+              <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
                 <Link href="/pricing">View Pricing</Link>
               </Button>
             </div>
-            <p className="text-sm text-gray-500 mt-4">Free forever • No credit card • Setup in 60 seconds</p>
+            <p className="text-sm text-slate-500 mt-4">Free forever • No credit card • Setup in 60 seconds</p>
           </div>
 
           {/* Benefits Grid */}
@@ -160,11 +160,11 @@ export default function FreelancersPage() {
               {benefits.map((benefit, idx) => (
                 <div
                   key={idx}
-                  className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all"
+                  className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200 hover:border-slate-300 transition-all"
                 >
-                  <div className="text-teal-500 mb-4">{benefit.icon}</div>
+                  <div className="text-violet-500 mb-4">{benefit.icon}</div>
                   <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{benefit.description}</p>
+                  <p className="text-slate-600 leading-relaxed">{benefit.description}</p>
                 </div>
               ))}
             </div>
@@ -177,20 +177,20 @@ export default function FreelancersPage() {
               {workflows.map((workflow, idx) => (
                 <div
                   key={idx}
-                  className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all"
+                  className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200 hover:border-slate-300 transition-all"
                 >
                   <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
-                    <MessageSquare className="h-5 w-5 text-teal-500" />
+                    <MessageSquare className="h-5 w-5 text-violet-500" />
                     {workflow.scenario}
                   </h3>
                   <div className="space-y-3">
                     <div>
                       <span className="text-red-400 font-medium">Problem: </span>
-                      <span className="text-gray-400">{workflow.problem}</span>
+                      <span className="text-slate-600">{workflow.problem}</span>
                     </div>
                     <div>
                       <span className="text-green-400 font-medium">With Whatstask: </span>
-                      <span className="text-gray-300">{workflow.solution}</span>
+                      <span className="text-slate-700">{workflow.solution}</span>
                     </div>
                   </div>
                 </div>
@@ -201,49 +201,49 @@ export default function FreelancersPage() {
           {/* Example Day */}
           <div className="mb-20 max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">A Day in the Life</h2>
-            <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+            <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
               <div className="space-y-6">
                 <div className="flex gap-4">
-                  <div className="text-teal-500 font-mono text-sm whitespace-nowrap">8:00 AM</div>
+                  <div className="text-violet-500 font-mono text-sm whitespace-nowrap">8:00 AM</div>
                   <div>
-                    <p className="text-gray-300">Check today's tasks: <code className="bg-black/40 px-2 py-1 rounded text-teal-400 text-sm">/today</code></p>
+                    <p className="text-slate-700">Check today's tasks: <code className="bg-black/40 px-2 py-1 rounded text-violet-400 text-sm">/today</code></p>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="text-teal-500 font-mono text-sm whitespace-nowrap">10:30 AM</div>
+                  <div className="text-violet-500 font-mono text-sm whitespace-nowrap">10:30 AM</div>
                   <div>
-                    <p className="text-gray-300">
+                    <p className="text-slate-700">
                       Client messages: "Can you update the homepage?" → Immediately add task without leaving chat
                     </p>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="text-teal-500 font-mono text-sm whitespace-nowrap">2:00 PM</div>
+                  <div className="text-violet-500 font-mono text-sm whitespace-nowrap">2:00 PM</div>
                   <div>
-                    <p className="text-gray-300">Merge 3 invoices using Whatstask PDF tools → Send to client</p>
+                    <p className="text-slate-700">Merge 3 invoices using Whatstask PDF tools → Send to client</p>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="text-teal-500 font-mono text-sm whitespace-nowrap">4:00 PM</div>
+                  <div className="text-violet-500 font-mono text-sm whitespace-nowrap">4:00 PM</div>
                   <div>
-                    <p className="text-gray-300">
+                    <p className="text-slate-700">
                       Create recurring task: "Send weekly progress update every Friday 9am"
                     </p>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="text-teal-500 font-mono text-sm whitespace-nowrap">6:00 PM</div>
+                  <div className="text-violet-500 font-mono text-sm whitespace-nowrap">6:00 PM</div>
                   <div>
-                    <p className="text-gray-300">Mark completed tasks, check upcoming deadlines for tomorrow</p>
+                    <p className="text-slate-700">Mark completed tasks, check upcoming deadlines for tomorrow</p>
                   </div>
                 </div>
               </div>
-              <div className="mt-8 pt-6 border-t border-white/10">
-                <p className="text-gray-400 italic">
+              <div className="mt-8 pt-6 border-t border-slate-200">
+                <p className="text-slate-600 italic">
                   Total time spent on task management: <strong className="text-white">Less than 5 minutes</strong>.
                   Zero app switching. Zero friction.
                 </p>
@@ -255,25 +255,25 @@ export default function FreelancersPage() {
           <div className="mb-20">
             <h2 className="text-3xl font-bold mb-8 text-center">Why Not Just Use...</h2>
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10">
+              <div className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200">
                 <h3 className="font-bold mb-3">❌ Notion / Asana</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="text-slate-600 text-sm leading-relaxed">
                   Too complex for freelancers. You need tasks done, not project management frameworks. Plus, they
                   cost $10-20/mo for features you won't use.
                 </p>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10">
+              <div className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200">
                 <h3 className="font-bold mb-3">❌ Pen & Paper</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="text-slate-600 text-sm leading-relaxed">
                   Can't set reminders, no cross-device sync, easy to lose. Great for brainstorming, terrible for
                   tracking client deadlines.
                 </p>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10">
+              <div className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200">
                 <h3 className="font-bold mb-3">❌ Todoist / TickTick</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <p className="text-slate-600 text-sm leading-relaxed">
                   Good apps, but require switching contexts. Whatstask lives where you already work - in Telegram
                   with your clients.
                 </p>
@@ -283,12 +283,12 @@ export default function FreelancersPage() {
 
           {/* Testimonial-style section */}
           <div className="mb-20 max-w-3xl mx-auto">
-            <div className="bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-teal-500/20">
+            <div className="bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-violet-500/20">
               <div className="text-center mb-6">
                 <div className="text-5xl mb-4">💬</div>
                 <h3 className="text-2xl font-bold mb-4">The Freelancer's Dream Workflow</h3>
               </div>
-              <div className="space-y-4 text-gray-300 leading-relaxed">
+              <div className="space-y-4 text-slate-700 leading-relaxed">
                 <p>
                   "As a freelance designer with 8 active clients, I live in Telegram. Whatstask means I never lose
                   track of a deadline because I can add tasks <strong>in the moment</strong> - right when a client
@@ -310,7 +310,7 @@ export default function FreelancersPage() {
           <div className="mb-20">
             <h2 className="text-3xl font-bold mb-8 text-center">Pricing Built for Freelance Budgets</h2>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+              <div className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
                 <h3 className="text-2xl font-bold mb-4">Free Plan</h3>
                 <div className="text-4xl font-extrabold mb-6">$0</div>
                 <ul className="space-y-3 mb-6">
@@ -331,16 +331,16 @@ export default function FreelancersPage() {
                     <span>Free PDF tools</span>
                   </li>
                 </ul>
-                <p className="text-sm text-gray-400">Perfect for starting out or light freelance work</p>
+                <p className="text-sm text-slate-600">Perfect for starting out or light freelance work</p>
               </div>
 
-              <div className="bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border-2 border-teal-500/20 relative">
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-teal-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+              <div className="bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border-2 border-violet-500/20 relative">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-violet-500 text-white px-4 py-1 rounded-full text-sm font-bold">
                   Recommended
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Pro Plan</h3>
                 <div className="text-4xl font-extrabold mb-6">
-                  $4.99<span className="text-lg text-gray-400">/month</span>
+                  $4.99<span className="text-lg text-slate-600">/month</span>
                 </div>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start gap-3">
@@ -360,36 +360,36 @@ export default function FreelancersPage() {
                     <span>Priority support</span>
                   </li>
                 </ul>
-                <p className="text-sm text-gray-400">For serious freelancers managing multiple clients</p>
+                <p className="text-sm text-slate-600">For serious freelancers managing multiple clients</p>
               </div>
             </div>
           </div>
 
           {/* Final CTA */}
-          <div className="text-center bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-12 border border-teal-500/20 max-w-3xl mx-auto">
+          <div className="text-center bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-12 border border-violet-500/20 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Start Managing Clients Smarter</h2>
-            <p className="text-xl text-gray-400 mb-8">
+            <p className="text-xl text-slate-600 mb-8">
               Join freelancers who simplified their workflows with Whatstask. Free to start, upgrade
               anytime.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-teal-500 text-white hover:bg-teal-600 rounded-full px-8 py-6 text-lg">
+              <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6 text-lg">
                 <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                   <Send className="h-5 w-5 mr-2" />
                   Start Free
                 </a>
               </Button>
-              <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
+              <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
                 <Link href="/pricing">See Pricing</Link>
               </Button>
             </div>
-            <p className="text-sm text-gray-500 mt-4">30 seconds to start • No credit card required</p>
+            <p className="text-sm text-slate-500 mt-4">30 seconds to start • No credit card required</p>
           </div>
         </section>
 
         {/* Footer */}
-        <footer className="border-t border-white/5 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-gray-500">
+        <footer className="border-t border-slate-100 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

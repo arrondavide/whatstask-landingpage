@@ -130,19 +130,19 @@ export default function ProjectManagementPage() {
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-white text-slate-900">
         {/* Header */}
-        <header className="border-b border-white/10">
+        <header className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
               <span className="text-xl font-bold">Whatstask</span>
             </Link>
             <div className="flex items-center gap-4">
-              <Link href="/pricing" className="text-sm text-gray-400 hover:text-white hidden sm:block">
+              <Link href="/pricing" className="text-sm text-slate-600 hover:text-slate-900 hidden sm:block">
                 Pricing
               </Link>
-              <Button asChild className="bg-teal-500 text-white hover:bg-teal-600 rounded-full px-6">
+              <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
                 <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                   <Send className="h-4 w-4 mr-2" />
                   Try Free
@@ -157,30 +157,30 @@ export default function ProjectManagementPage() {
 
           {/* Hero */}
           <section className="text-center max-w-4xl mx-auto mb-20">
-            <div className="inline-flex items-center gap-2 bg-teal-500/10 border border-teal-500/30 rounded-full px-4 py-2 mb-6">
-              <Zap className="h-4 w-4 text-teal-400" />
-              <span className="text-sm text-teal-400 font-medium">Simple scales.</span>
+            <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/30 rounded-full px-4 py-2 mb-6">
+              <Zap className="h-4 w-4 text-violet-400" />
+              <span className="text-sm text-violet-400 font-medium">Simple scales.</span>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
               Project management that gets out of your way
             </h1>
 
-            <p className="text-xl text-gray-400 mb-4 leading-relaxed">
+            <p className="text-xl text-slate-600 mb-4 leading-relaxed">
               4 views. Free AI. Built-in time tracking. No complexity.
             </p>
-            <p className="text-lg text-gray-500 mb-10">
+            <p className="text-lg text-slate-500 mb-10">
               Works for a 2-person startup or a 2000-person enterprise. Same simplicity.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-teal-500 text-white hover:bg-teal-600 rounded-full px-8 py-6 text-lg">
+              <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6 text-lg">
                 <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                   <Send className="h-5 w-5 mr-2" />
                   Launch in Telegram
                 </a>
               </Button>
-              <Button asChild variant="outline" className="rounded-full px-8 py-6 text-lg border-white/20">
+              <Button asChild variant="outline" className="rounded-full px-8 py-6 text-lg border-slate-300">
                 <Link href="/compare/clickup">Compare with ClickUp</Link>
               </Button>
             </div>
@@ -188,14 +188,14 @@ export default function ProjectManagementPage() {
 
           {/* The Problem */}
           <section className="max-w-5xl mx-auto mb-20">
-            <div className="bg-white/5 rounded-3xl p-8 md:p-12 border border-white/10">
+            <div className="bg-slate-50 rounded-3xl p-8 md:p-12 border border-slate-200">
               <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
                 Why we built this
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="font-bold text-red-400 mb-3">The Problem</h3>
-                  <ul className="space-y-2 text-gray-400">
+                  <ul className="space-y-2 text-slate-600">
                     <li>• ClickUp has 15+ views you'll never use</li>
                     <li>• Monday charges $12/seat for basic AI</li>
                     <li>• Asana takes weeks to set up properly</li>
@@ -203,8 +203,8 @@ export default function ProjectManagementPage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-bold text-teal-400 mb-3">Our Solution</h3>
-                  <ul className="space-y-2 text-gray-400">
+                  <h3 className="font-bold text-violet-400 mb-3">Our Solution</h3>
+                  <ul className="space-y-2 text-slate-600">
                     <li>• 4 views that actually matter</li>
                     <li>• AI features included free</li>
                     <li>• Set up in 30 seconds, not 30 days</li>
@@ -219,7 +219,7 @@ export default function ProjectManagementPage() {
           <section className="mb-20">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">4 views. That's it.</h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-slate-600 text-lg">
                 Every feature earns its place. If it doesn't help you finish work, it doesn't exist.
               </p>
             </div>
@@ -228,11 +228,11 @@ export default function ProjectManagementPage() {
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-teal-500/30 transition-all"
+                  className="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-violet-500/30 transition-all"
                 >
-                  <feature.icon className="h-10 w-10 text-teal-400 mb-4" />
+                  <feature.icon className="h-10 w-10 text-violet-400 mb-4" />
                   <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
+                  <p className="text-slate-600 text-sm leading-relaxed">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -242,7 +242,7 @@ export default function ProjectManagementPage() {
           <section className="mb-20">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Everything you need. Nothing you don't.</h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-slate-600 text-lg">
                 Full-featured doesn't have to mean complicated.
               </p>
             </div>
@@ -253,13 +253,13 @@ export default function ProjectManagementPage() {
                   key={index}
                   className={`rounded-2xl p-6 border transition-all ${
                     cap.highlight
-                      ? "bg-gradient-to-br from-teal-500/10 to-white/5 border-teal-500/30"
-                      : "bg-white/5 border-white/10 hover:border-white/20"
+                      ? "bg-gradient-to-br from-violet-500/10 to-white/5 border-violet-500/30"
+                      : "bg-slate-50 border-slate-200 hover:border-slate-300"
                   }`}
                 >
-                  <cap.icon className={`h-8 w-8 mb-4 ${cap.highlight ? "text-teal-400" : "text-gray-400"}`} />
+                  <cap.icon className={`h-8 w-8 mb-4 ${cap.highlight ? "text-violet-400" : "text-slate-600"}`} />
                   <h3 className="text-lg font-bold mb-2">{cap.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{cap.description}</p>
+                  <p className="text-slate-600 text-sm leading-relaxed">{cap.description}</p>
                 </div>
               ))}
             </div>
@@ -269,34 +269,34 @@ export default function ProjectManagementPage() {
           <section className="mb-20">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">See how we compare</h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-slate-600 text-lg">
                 Same features. Less complexity. Better price.
               </p>
             </div>
 
-            <div className="bg-white/5 rounded-3xl border border-white/10 overflow-hidden overflow-x-auto">
+            <div className="bg-slate-50 rounded-3xl border border-slate-200 overflow-hidden overflow-x-auto">
               <table className="w-full min-w-[600px]">
                 <thead>
-                  <tr className="border-b border-white/10 bg-white/5">
+                  <tr className="border-b border-slate-200 bg-slate-50">
                     <th className="text-left p-4 font-bold">Feature</th>
-                    <th className="text-center p-4 font-bold text-teal-400">Whatstask</th>
-                    <th className="text-center p-4 font-bold text-gray-500">ClickUp</th>
-                    <th className="text-center p-4 font-bold text-gray-500">Monday</th>
-                    <th className="text-center p-4 font-bold text-gray-500">Asana</th>
+                    <th className="text-center p-4 font-bold text-violet-400">Whatstask</th>
+                    <th className="text-center p-4 font-bold text-slate-500">ClickUp</th>
+                    <th className="text-center p-4 font-bold text-slate-500">Monday</th>
+                    <th className="text-center p-4 font-bold text-slate-500">Asana</th>
                   </tr>
                 </thead>
                 <tbody>
                   {comparison.map((row, index) => (
-                    <tr key={index} className="border-b border-white/5 hover:bg-white/5">
+                    <tr key={index} className="border-b border-slate-100 hover:bg-slate-50">
                       <td className="p-4 font-medium">{row.feature}</td>
                       <td className="p-4 text-center">
                         {row.whatstask === true ? (
-                          <Check className="h-5 w-5 text-teal-400 mx-auto" />
+                          <Check className="h-5 w-5 text-violet-400 mx-auto" />
                         ) : (
-                          <span className="text-teal-400 font-medium">{row.whatstask}</span>
+                          <span className="text-violet-400 font-medium">{row.whatstask}</span>
                         )}
                       </td>
-                      <td className="p-4 text-center text-gray-500">
+                      <td className="p-4 text-center text-slate-500">
                         {row.clickup === true ? (
                           <Check className="h-5 w-5 mx-auto" />
                         ) : row.clickup === false ? (
@@ -305,7 +305,7 @@ export default function ProjectManagementPage() {
                           <span>{row.clickup}</span>
                         )}
                       </td>
-                      <td className="p-4 text-center text-gray-500">
+                      <td className="p-4 text-center text-slate-500">
                         {row.monday === true ? (
                           <Check className="h-5 w-5 mx-auto" />
                         ) : row.monday === false ? (
@@ -314,7 +314,7 @@ export default function ProjectManagementPage() {
                           <span>{row.monday}</span>
                         )}
                       </td>
-                      <td className="p-4 text-center text-gray-500">
+                      <td className="p-4 text-center text-slate-500">
                         {row.asana === true ? (
                           <Check className="h-5 w-5 mx-auto" />
                         ) : row.asana === false ? (
@@ -330,7 +330,7 @@ export default function ProjectManagementPage() {
             </div>
 
             <div className="text-center mt-6">
-              <Link href="/compare/clickup" className="text-teal-400 hover:text-teal-300 inline-flex items-center gap-2">
+              <Link href="/compare/clickup" className="text-violet-400 hover:text-violet-300 inline-flex items-center gap-2">
                 See full comparison <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -340,7 +340,7 @@ export default function ProjectManagementPage() {
           <section className="mb-20">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Built for everyone</h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-slate-600 text-lg">
                 Same tool. Same simplicity. Any team size.
               </p>
             </div>
@@ -366,13 +366,13 @@ export default function ProjectManagementPage() {
                 <Link
                   key={index}
                   href={item.href}
-                  className="bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all group"
+                  className="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-slate-300 transition-all group"
                 >
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-teal-400 transition-colors">
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-violet-400 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-gray-400 text-sm mb-4">{item.description}</p>
-                  <span className="text-teal-400 text-sm inline-flex items-center gap-1">
+                  <p className="text-slate-600 text-sm mb-4">{item.description}</p>
+                  <span className="text-violet-400 text-sm inline-flex items-center gap-1">
                     Learn more <ArrowRight className="h-3 w-3" />
                   </span>
                 </Link>
@@ -382,27 +382,27 @@ export default function ProjectManagementPage() {
 
           {/* CTA */}
           <section className="max-w-3xl mx-auto text-center">
-            <div className="bg-gradient-to-br from-teal-500/10 to-white/5 rounded-3xl p-8 md:p-12 border border-teal-500/20">
+            <div className="bg-gradient-to-br from-violet-500/10 to-white/5 rounded-3xl p-8 md:p-12 border border-violet-500/20">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Ready to simplify?</h2>
-              <p className="text-gray-400 mb-8 text-lg">
+              <p className="text-slate-600 mb-8 text-lg">
                 No credit card. No signup forms. Just open Telegram and start working.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild className="bg-teal-500 text-white hover:bg-teal-600 rounded-full px-8 py-6 text-lg">
+                <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6 text-lg">
                   <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                     <Send className="h-5 w-5 mr-2" />
                     Start Free in Telegram
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full px-8 py-6 text-lg border-white/20">
+                <Button asChild variant="outline" className="rounded-full px-8 py-6 text-lg border-slate-300">
                   <Link href="/contact">Talk to Sales</Link>
                 </Button>
               </div>
 
-              <p className="text-sm text-gray-500 mt-6">
+              <p className="text-sm text-slate-500 mt-6">
                 Need custom solutions?{" "}
-                <Link href="/enterprise" className="text-teal-400 hover:underline">
+                <Link href="/enterprise" className="text-violet-400 hover:underline">
                   Explore enterprise options
                 </Link>
               </p>
@@ -411,8 +411,8 @@ export default function ProjectManagementPage() {
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-white/5 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-gray-500">
+        <footer className="border-t border-slate-100 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

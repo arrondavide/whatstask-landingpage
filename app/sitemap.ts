@@ -51,6 +51,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/use-cases/enterprise', priority: 0.7, changeFrequency: 'monthly' as const },
   ]
 
+  // Solutions pages - team and company size targeting
+  const solutionPages = [
+    { url: '/solutions/marketing', priority: 0.8, changeFrequency: 'monthly' as const },
+    { url: '/solutions/development', priority: 0.8, changeFrequency: 'monthly' as const },
+    { url: '/solutions/remote', priority: 0.8, changeFrequency: 'monthly' as const },
+    { url: '/solutions/small-teams', priority: 0.8, changeFrequency: 'monthly' as const },
+    { url: '/solutions/operations', priority: 0.8, changeFrequency: 'monthly' as const },
+  ]
+
+  // Trust and resource pages
+  const trustPages = [
+    { url: '/security', priority: 0.8, changeFrequency: 'monthly' as const },
+    { url: '/help', priority: 0.7, changeFrequency: 'weekly' as const },
+    { url: '/templates', priority: 0.8, changeFrequency: 'weekly' as const },
+  ]
+
   // Blog and content pages
   const blogPages = [
     { url: '/blog', priority: 0.6, changeFrequency: 'weekly' as const },
@@ -73,6 +89,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...toolPages,
     ...comparisonPages,
     ...useCasePages,
+    ...solutionPages,
+    ...trustPages,
     ...blogPages,
     ...otherPages,
   ]

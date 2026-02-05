@@ -40,7 +40,7 @@ export default function PageLoader() {
             >
               {/* Glow effect */}
               <motion.div
-                className="absolute inset-0 bg-white/10 rounded-full blur-xl"
+                className="absolute inset-0 bg-slate-100 rounded-full blur-xl"
                 animate={{
                   scale: [1, 1.2, 1],
                   opacity: [0.5, 1, 0.5],
@@ -54,7 +54,7 @@ export default function PageLoader() {
 
               {/* Logo */}
               <motion.div
-                className="absolute inset-0 flex items-center justify-center rounded-full bg-black border border-white/20"
+                className="absolute inset-0 flex items-center justify-center rounded-full bg-black border border-slate-300"
                 animate={{
                   rotate: [0, 360],
                 }}
@@ -80,7 +80,7 @@ export default function PageLoader() {
 
             {/* Loading bar */}
             <motion.div
-              className="w-48 h-[2px] bg-white/10 mt-4 rounded-full overflow-hidden"
+              className="w-48 h-[2px] bg-slate-100 mt-4 rounded-full overflow-hidden"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.5 }}

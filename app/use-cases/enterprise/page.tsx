@@ -56,8 +56,8 @@ export default function EnterpriseUseCasePage() {
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-black text-white">
-        <header className="border-b border-white/10">
+      <div className="min-h-screen bg-white text-slate-900">
+        <header className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
@@ -78,16 +78,16 @@ export default function EnterpriseUseCasePage() {
           />
 
           <section className="text-center max-w-4xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-6">
-              <Shield className="h-4 w-4 text-gray-400" />
-              <span className="text-sm text-gray-400">Enterprise Solutions</span>
+            <div className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-full px-4 py-2 mb-6">
+              <Shield className="h-4 w-4 text-slate-600" />
+              <span className="text-sm text-slate-600">Enterprise Solutions</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
               Enterprise-grade. Not enterprise-complex.
             </h1>
 
-            <p className="text-xl text-gray-400 leading-relaxed mb-8">
+            <p className="text-xl text-slate-600 leading-relaxed mb-8">
               Your 500-person company doesn't need 500 features. They need tools that work,
               with security and scale that matches your requirements.
             </p>
@@ -96,16 +96,16 @@ export default function EnterpriseUseCasePage() {
               <Button asChild className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-6 text-lg">
                 <a href="mailto:charlesaarondavid@gmail.com">Talk to Sales</a>
               </Button>
-              <Button asChild variant="outline" className="rounded-full px-8 py-6 text-lg border-white/20">
+              <Button asChild variant="outline" className="rounded-full px-8 py-6 text-lg border-slate-300">
                 <Link href="/enterprise">Custom Solutions</Link>
               </Button>
             </div>
           </section>
 
           <section className="max-w-4xl mx-auto mb-16">
-            <div className="bg-gradient-to-br from-teal-500/10 to-white/5 rounded-3xl p-8 border border-teal-500/20">
+            <div className="bg-gradient-to-br from-violet-500/10 to-white/5 rounded-3xl p-8 border border-violet-500/20">
               <h2 className="text-2xl font-bold mb-4 text-center">Our philosophy for enterprise</h2>
-              <p className="text-center text-gray-400 text-lg leading-relaxed">
+              <p className="text-center text-slate-600 text-lg leading-relaxed">
                 The software industry sold complexity as a feature. We believe the opposite.
                 <br />
                 <span className="text-white font-medium">Simple scales. Complexity doesn't.</span>
@@ -117,10 +117,10 @@ export default function EnterpriseUseCasePage() {
             <h2 className="text-3xl font-bold mb-8 text-center">Enterprise capabilities</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {capabilities.map((cap, index) => (
-                <div key={index} className="bg-white/5 rounded-2xl p-6 border border-white/10">
-                  <cap.icon className="h-10 w-10 text-teal-400 mb-4" />
+                <div key={index} className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                  <cap.icon className="h-10 w-10 text-violet-400 mb-4" />
                   <h3 className="text-xl font-bold mb-2">{cap.title}</h3>
-                  <p className="text-gray-400">{cap.description}</p>
+                  <p className="text-slate-600">{cap.description}</p>
                 </div>
               ))}
             </div>
@@ -141,8 +141,8 @@ export default function EnterpriseUseCasePage() {
                 "White-label options available",
                 "On-premise deployment (on request)",
               ].map((feature, index) => (
-                <div key={index} className="flex items-center gap-3 p-4 bg-white/5 rounded-xl border border-white/10">
-                  <Check className="h-5 w-5 text-teal-400 flex-shrink-0" />
+                <div key={index} className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl border border-slate-200">
+                  <Check className="h-5 w-5 text-violet-400 flex-shrink-0" />
                   <span>{feature}</span>
                 </div>
               ))}
@@ -170,35 +170,35 @@ export default function EnterpriseUseCasePage() {
                   description: "No per-seat surprises. No feature-gating. Know exactly what you're paying.",
                 },
               ].map((item, index) => (
-                <div key={index} className="bg-white/5 rounded-xl p-6 border border-white/10">
+                <div key={index} className="bg-slate-50 rounded-xl p-6 border border-slate-200">
                   <h3 className="font-bold mb-2">{item.title}</h3>
-                  <p className="text-gray-400">{item.description}</p>
+                  <p className="text-slate-600">{item.description}</p>
                 </div>
               ))}
             </div>
           </section>
 
           <section className="max-w-3xl mx-auto text-center">
-            <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-3xl p-8 md:p-12 border border-white/10">
+            <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-3xl p-8 md:p-12 border border-slate-200">
               <h2 className="text-3xl font-bold mb-4">Let's discuss your needs</h2>
-              <p className="text-gray-400 mb-8">
+              <p className="text-slate-600 mb-8">
                 Every enterprise is different. Let's talk about what you need.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
                 <Button asChild className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-6">
                   <a href="mailto:charlesaarondavid@gmail.com">Email Us</a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
+                <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
                   <Link href="/contact">Contact Form</Link>
                 </Button>
               </div>
-              <p className="text-sm text-gray-500">charlesaarondavid@gmail.com</p>
+              <p className="text-sm text-slate-500">charlesaarondavid@gmail.com</p>
             </div>
           </section>
         </main>
 
-        <footer className="border-t border-white/5 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-gray-500">
+        <footer className="border-t border-slate-100 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

@@ -54,9 +54,9 @@ export default function ContactPage() {
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-white text-slate-900">
         {/* Header */}
-        <header className="border-b border-white/10">
+        <header className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
@@ -76,7 +76,7 @@ export default function ContactPage() {
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
               Let's talk
             </h1>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               Questions, feedback, or interested in working together? We'd love to hear from you.
             </p>
           </section>
@@ -87,18 +87,18 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold mb-6">Get in touch</h2>
 
               {/* Direct Email */}
-              <div className="bg-gradient-to-br from-teal-500/10 to-white/5 rounded-2xl p-6 border border-teal-500/20 mb-6">
+              <div className="bg-gradient-to-br from-violet-500/10 to-white/5 rounded-2xl p-6 border border-violet-500/20 mb-6">
                 <div className="flex items-center gap-3 mb-3">
-                  <Mail className="h-6 w-6 text-teal-400" />
+                  <Mail className="h-6 w-6 text-violet-400" />
                   <h3 className="font-bold">Email us directly</h3>
                 </div>
                 <a
                   href="mailto:charlesaarondavid@gmail.com"
-                  className="text-teal-400 hover:text-teal-300 text-lg font-medium"
+                  className="text-violet-400 hover:text-violet-300 text-lg font-medium"
                 >
                   charlesaarondavid@gmail.com
                 </a>
-                <p className="text-gray-500 text-sm mt-2">We typically respond within 24 hours</p>
+                <p className="text-slate-500 text-sm mt-2">We typically respond within 24 hours</p>
               </div>
 
               {/* Quick Links */}
@@ -114,10 +114,10 @@ export default function ContactPage() {
                     href={link.href}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
                     rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="flex items-center gap-3 p-4 bg-white/5 rounded-xl border border-white/10 hover:border-white/20 transition-all group"
+                    className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl border border-slate-200 hover:border-slate-300 transition-all group"
                   >
-                    <link.icon className="h-5 w-5 text-gray-400 group-hover:text-teal-400" />
-                    <span className="group-hover:text-white transition-colors">{link.title}</span>
+                    <link.icon className="h-5 w-5 text-slate-600 group-hover:text-violet-400" />
+                    <span className="group-hover:text-slate-900 transition-colors">{link.title}</span>
                   </a>
                 ))}
               </div>
@@ -132,19 +132,19 @@ export default function ContactPage() {
                       onClick={() => setFormData({ ...formData, type: reason.value })}
                       className={`w-full text-left p-4 rounded-xl border transition-all ${
                         formData.type === reason.value
-                          ? "bg-teal-500/10 border-teal-500/30"
-                          : "bg-white/5 border-white/10 hover:border-white/20"
+                          ? "bg-violet-500/10 border-violet-500/30"
+                          : "bg-slate-50 border-slate-200 hover:border-slate-300"
                       }`}
                     >
                       <div className="flex items-center gap-3">
                         <reason.icon
                           className={`h-5 w-5 ${
-                            formData.type === reason.value ? "text-teal-400" : "text-gray-400"
+                            formData.type === reason.value ? "text-violet-400" : "text-slate-600"
                           }`}
                         />
                         <div>
                           <p className="font-medium">{reason.title}</p>
-                          <p className="text-sm text-gray-500">{reason.description}</p>
+                          <p className="text-sm text-slate-500">{reason.description}</p>
                         </div>
                       </div>
                     </button>
@@ -158,18 +158,18 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold mb-6">Send a message</h2>
 
               {submitted ? (
-                <div className="bg-teal-500/10 border border-teal-500/30 rounded-2xl p-8 text-center">
-                  <div className="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Mail className="h-8 w-8 text-teal-400" />
+                <div className="bg-violet-500/10 border border-violet-500/30 rounded-2xl p-8 text-center">
+                  <div className="w-16 h-16 bg-violet-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Mail className="h-8 w-8 text-violet-400" />
                   </div>
                   <h3 className="text-xl font-bold mb-2">Email client opened!</h3>
-                  <p className="text-gray-400 mb-4">
+                  <p className="text-slate-600 mb-4">
                     Complete sending the email in your email client. We'll get back to you soon.
                   </p>
                   <Button
                     onClick={() => setSubmitted(false)}
                     variant="outline"
-                    className="rounded-full border-white/20"
+                    className="rounded-full border-slate-300"
                   >
                     Send another message
                   </Button>
@@ -186,7 +186,7 @@ export default function ContactPage() {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:border-teal-500 focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:border-violet-500 focus:outline-none transition-colors"
                       placeholder="Your name"
                     />
                   </div>
@@ -201,7 +201,7 @@ export default function ContactPage() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:border-teal-500 focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:border-violet-500 focus:outline-none transition-colors"
                       placeholder="you@example.com"
                     />
                   </div>
@@ -215,7 +215,7 @@ export default function ContactPage() {
                       id="company"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:border-teal-500 focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:border-violet-500 focus:outline-none transition-colors"
                       placeholder="Your company (optional)"
                     />
                   </div>
@@ -230,20 +230,20 @@ export default function ContactPage() {
                       rows={5}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:border-teal-500 focus:outline-none transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:border-violet-500 focus:outline-none transition-colors resize-none"
                       placeholder="How can we help you?"
                     />
                   </div>
 
                   <Button
                     type="submit"
-                    className="w-full bg-teal-500 text-white hover:bg-teal-600 rounded-full py-6 text-lg"
+                    className="w-full bg-violet-500 text-white hover:bg-violet-600 rounded-full py-6 text-lg"
                   >
                     <Send className="h-5 w-5 mr-2" />
                     Send Message
                   </Button>
 
-                  <p className="text-xs text-gray-500 text-center">
+                  <p className="text-xs text-slate-500 text-center">
                     This will open your email client with the message pre-filled.
                   </p>
                 </form>
@@ -253,8 +253,8 @@ export default function ContactPage() {
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-white/5 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-gray-500">
+        <footer className="border-t border-slate-100 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

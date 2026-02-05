@@ -74,9 +74,9 @@ export default function TelegramBotsGuidePage() {
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-white text-slate-900">
         {/* Header */}
-        <header className="border-b border-white/10">
+        <header className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
@@ -102,8 +102,8 @@ export default function TelegramBotsGuidePage() {
             />
 
             {/* Meta */}
-            <div className="flex items-center gap-4 mb-6 text-gray-400">
-              <span className="bg-teal-500/10 border border-teal-500/20 text-teal-400 text-sm px-3 py-1 rounded-full font-medium">
+            <div className="flex items-center gap-4 mb-6 text-slate-600">
+              <span className="bg-violet-500/10 border border-violet-500/20 text-violet-400 text-sm px-3 py-1 rounded-full font-medium">
                 Guide
               </span>
               <div className="flex items-center gap-2">
@@ -122,20 +122,20 @@ export default function TelegramBotsGuidePage() {
             </h1>
 
             {/* Excerpt */}
-            <p className="text-xl text-gray-400 leading-relaxed mb-12">
+            <p className="text-xl text-slate-600 leading-relaxed mb-12">
               Telegram isn't just a messaging app—it's a productivity powerhouse. Discover the best bots that can
               transform how you work in 2025, from task management to automation.
             </p>
 
             {/* Table of Contents */}
-            <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 mb-12">
+            <div className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200 mb-12">
               <h2 className="text-xl font-bold mb-4">Table of Contents</h2>
               <nav className="space-y-2">
                 {tableOfContents.map((item, idx) => (
                   <a
                     key={idx}
                     href={`#${item.id}`}
-                    className="block text-gray-400 hover:text-white transition-colors"
+                    className="block text-slate-600 hover:text-slate-900 transition-colors"
                   >
                     {idx + 1}. {item.title}
                   </a>
@@ -149,35 +149,35 @@ export default function TelegramBotsGuidePage() {
               <h2 id="why-telegram" className="text-3xl font-bold mb-4 mt-12">
                 Why Use Telegram for Productivity?
               </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
+              <p className="text-slate-700 leading-relaxed mb-6">
                 In 2025, Telegram has evolved from a simple messaging app into a complete productivity ecosystem. With
                 over 900 million active users, it's become the platform of choice for individuals and teams who value
                 privacy, speed, and flexibility.
               </p>
-              <p className="text-gray-300 leading-relaxed mb-6">
+              <p className="text-slate-700 leading-relaxed mb-6">
                 Here's why Telegram beats traditional productivity apps:
               </p>
               <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-3 text-gray-300">
+                <li className="flex items-start gap-3 text-slate-700">
                   <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                   <span>
                     <strong>No App Switching:</strong> Manage tasks where you already chat with team members and
                     clients
                   </span>
                 </li>
-                <li className="flex items-start gap-3 text-gray-300">
+                <li className="flex items-start gap-3 text-slate-700">
                   <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                   <span>
                     <strong>Cross-Platform Sync:</strong> Seamless experience across mobile, desktop, and web
                   </span>
                 </li>
-                <li className="flex items-start gap-3 text-gray-300">
+                <li className="flex items-start gap-3 text-slate-700">
                   <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                   <span>
                     <strong>Privacy-First:</strong> End-to-end encryption and no data selling (unlike other platforms)
                   </span>
                 </li>
-                <li className="flex items-start gap-3 text-gray-300">
+                <li className="flex items-start gap-3 text-slate-700">
                   <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                   <span>
                     <strong>Instant Setup:</strong> Most bots work immediately—no lengthy onboarding or training
@@ -189,7 +189,7 @@ export default function TelegramBotsGuidePage() {
               <h2 id="task-management" className="text-3xl font-bold mb-4 mt-12">
                 Best Task Management Bots
               </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
+              <p className="text-slate-700 leading-relaxed mb-6">
                 Task management is the foundation of productivity. These Telegram bots help you capture, organize, and
                 complete tasks without leaving your chat app.
               </p>
@@ -198,27 +198,27 @@ export default function TelegramBotsGuidePage() {
                 {taskBots.map((bot, idx) => (
                   <div
                     key={idx}
-                    className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all"
+                    className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200 hover:border-slate-300 transition-all"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <h3 className="text-2xl font-bold">{bot.name}</h3>
-                      <span className="text-sm text-gray-400">{bot.pricing}</span>
+                      <span className="text-sm text-slate-600">{bot.pricing}</span>
                     </div>
-                    <p className="text-gray-400 mb-4">{bot.description}</p>
+                    <p className="text-slate-600 mb-4">{bot.description}</p>
                     <div className="mb-4">
-                      <span className="text-sm text-gray-500 font-medium">Best for: </span>
-                      <span className="text-sm text-gray-300">{bot.bestFor}</span>
+                      <span className="text-sm text-slate-500 font-medium">Best for: </span>
+                      <span className="text-sm text-slate-700">{bot.bestFor}</span>
                     </div>
                     <div className="space-y-2 mb-4">
                       {bot.pros.map((pro, proIdx) => (
-                        <div key={proIdx} className="flex items-center gap-2 text-sm text-gray-300">
+                        <div key={proIdx} className="flex items-center gap-2 text-sm text-slate-700">
                           <Check className="h-4 w-4 text-green-500" />
                           {pro}
                         </div>
                       ))}
                     </div>
                     {bot.link && (
-                      <Button asChild variant="outline" className="rounded-full border-teal-500/20">
+                      <Button asChild variant="outline" className="rounded-full border-violet-500/20">
                         <a href={bot.link} target="_blank" rel="noopener noreferrer">
                           Try {bot.name}
                         </a>
@@ -228,16 +228,16 @@ export default function TelegramBotsGuidePage() {
                 ))}
               </div>
 
-              <div className="bg-teal-500/10 border border-teal-500/20 rounded-xl p-6 mb-8">
-                <p className="text-gray-300 font-medium mb-2">💡 Expert Tip:</p>
-                <p className="text-gray-400 text-sm leading-relaxed">
+              <div className="bg-violet-500/10 border border-violet-500/20 rounded-xl p-6 mb-8">
+                <p className="text-slate-700 font-medium mb-2">💡 Expert Tip:</p>
+                <p className="text-slate-600 text-sm leading-relaxed">
                   Start with a simple task bot like{" "}
-                  <Link href="/features" className="text-teal-400 hover:underline">
+                  <Link href="/features" className="text-violet-400 hover:underline">
                     Whatstask
                   </Link>
                   . Most people overcomplicate productivity and end up spending more time managing tools than getting
                   work done. Choose simplicity first, then add complexity if needed. Check out our{" "}
-                  <Link href="/how-it-works" className="text-teal-400 hover:underline">
+                  <Link href="/how-it-works" className="text-violet-400 hover:underline">
                     getting started guide
                   </Link>{" "}
                   to see how easy it is.
@@ -248,26 +248,26 @@ export default function TelegramBotsGuidePage() {
               <h2 id="automation" className="text-3xl font-bold mb-4 mt-12">
                 Automation & Integration Bots
               </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
+              <p className="text-slate-700 leading-relaxed mb-6">
                 Automation bots connect Telegram to other services, eliminating repetitive tasks and creating seamless
                 workflows.
               </p>
 
               <h3 className="text-2xl font-bold mb-4">IFTTT Bot</h3>
-              <p className="text-gray-300 leading-relaxed mb-4">
+              <p className="text-slate-700 leading-relaxed mb-4">
                 Connect Telegram to 700+ services. Examples: Post tweets from Telegram, save messages to Google Sheets,
                 get weather alerts, and more.
               </p>
-              <p className="text-gray-400 text-sm mb-6">
+              <p className="text-slate-600 text-sm mb-6">
                 <strong>Use case:</strong> "When I star a message in Telegram, save it to my Notion database"
               </p>
 
               <h3 className="text-2xl font-bold mb-4">Zapier Bot</h3>
-              <p className="text-gray-300 leading-relaxed mb-4">
+              <p className="text-slate-700 leading-relaxed mb-4">
                 Similar to IFTTT but with more business-focused integrations. Great for connecting CRMs, project
                 management tools, and databases.
               </p>
-              <p className="text-gray-400 text-sm mb-6">
+              <p className="text-slate-600 text-sm mb-6">
                 <strong>Use case:</strong> "When a new lead fills my form, send details to Telegram for instant
                 follow-up"
               </p>
@@ -276,24 +276,24 @@ export default function TelegramBotsGuidePage() {
               <h2 id="communication" className="text-3xl font-bold mb-4 mt-12">
                 Communication & Team Collaboration Bots
               </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
+              <p className="text-slate-700 leading-relaxed mb-6">
                 These bots supercharge team communication and make group chats more productive.
               </p>
 
-              <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 mb-6">
+              <div className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200 mb-6">
                 <h3 className="text-xl font-bold mb-3">PollBot</h3>
-                <p className="text-gray-400 mb-4">
+                <p className="text-slate-600 mb-4">
                   Create polls and surveys directly in chats. Perfect for team decisions, feedback collection, and
                   quick votes.
                 </p>
-                <p className="text-sm text-gray-500">
-                  Command: <code className="bg-black/40 px-2 py-1 rounded text-teal-400">/poll</code>
+                <p className="text-sm text-slate-500">
+                  Command: <code className="bg-black/40 px-2 py-1 rounded text-violet-400">/poll</code>
                 </p>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 mb-6">
+              <div className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200 mb-6">
                 <h3 className="text-xl font-bold mb-3">VoteBot</h3>
-                <p className="text-gray-400 mb-4">
+                <p className="text-slate-600 mb-4">
                   Advanced voting system with anonymous votes, multiple choice, and result analytics. Great for team
                   decisions.
                 </p>
@@ -303,18 +303,18 @@ export default function TelegramBotsGuidePage() {
               <h2 id="notes" className="text-3xl font-bold mb-4 mt-12">
                 Note-Taking & Knowledge Management Bots
               </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
+              <p className="text-slate-700 leading-relaxed mb-6">
                 Capture ideas, save important messages, and build your personal knowledge base—all within Telegram.
               </p>
 
               <h3 className="text-2xl font-bold mb-4">Saved Messages</h3>
-              <p className="text-gray-300 leading-relaxed mb-6">
+              <p className="text-slate-700 leading-relaxed mb-6">
                 Telegram's built-in feature that acts as a personal cloud. Forward messages, files, and notes to
                 yourself. Searchable, organized, and synced across devices.
               </p>
 
               <h3 className="text-2xl font-bold mb-4">Notion Bot</h3>
-              <p className="text-gray-300 leading-relaxed mb-6">
+              <p className="text-slate-700 leading-relaxed mb-6">
                 Send messages directly to Notion databases. Perfect for capturing ideas on the go and organizing them
                 later.
               </p>
@@ -323,39 +323,39 @@ export default function TelegramBotsGuidePage() {
               <h2 id="choosing" className="text-3xl font-bold mb-4 mt-12">
                 How to Choose the Right Bot for You
               </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
+              <p className="text-slate-700 leading-relaxed mb-6">
                 With thousands of Telegram bots available, here's a framework for choosing the right ones:
               </p>
 
               <div className="space-y-4 mb-8">
-                <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10">
+                <div className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200">
                   <h4 className="font-bold mb-2 flex items-center gap-2">
-                    <Zap className="h-5 w-5 text-teal-500" />
+                    <Zap className="h-5 w-5 text-violet-500" />
                     Step 1: Identify Your Bottleneck
                   </h4>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-slate-600 text-sm">
                     What's slowing you down? Task management? Note-taking? Team communication? Focus on solving one
                     problem at a time.
                   </p>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10">
+                <div className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200">
                   <h4 className="font-bold mb-2 flex items-center gap-2">
-                    <Users className="h-5 w-5 text-teal-500" />
+                    <Users className="h-5 w-5 text-violet-500" />
                     Step 2: Start Simple
                   </h4>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-slate-600 text-sm">
                     Don't add 10 bots at once. Start with one core bot (like a task manager) and use it for a week
                     before adding more.
                   </p>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10">
+                <div className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200">
                   <h4 className="font-bold mb-2 flex items-center gap-2">
-                    <Shield className="h-5 w-5 text-teal-500" />
+                    <Shield className="h-5 w-5 text-violet-500" />
                     Step 3: Check Privacy & Permissions
                   </h4>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-slate-600 text-sm">
                     Only use bots from trusted developers. Check what permissions they request and read user reviews.
                   </p>
                 </div>
@@ -365,63 +365,63 @@ export default function TelegramBotsGuidePage() {
               <h2 id="getting-started" className="text-3xl font-bold mb-4 mt-12">
                 Getting Started: Your First Week
               </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">Here's a proven roadmap for your first week:</p>
+              <p className="text-slate-700 leading-relaxed mb-6">Here's a proven roadmap for your first week:</p>
 
               <div className="space-y-4 mb-8">
                 <div className="flex gap-4">
-                  <div className="text-teal-500 font-bold whitespace-nowrap">Day 1-2:</div>
-                  <p className="text-gray-300">
+                  <div className="text-violet-500 font-bold whitespace-nowrap">Day 1-2:</div>
+                  <p className="text-slate-700">
                     Set up a task management bot (we recommend{" "}
                     <a
                       href="https://t.me/whatstaskbot"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-teal-400 hover:underline"
+                      className="text-violet-400 hover:underline"
                     >
                       Whatstask
                     </a>
                     ). Add 5-10 tasks to get comfortable with the interface. See our{" "}
-                    <Link href="/use-cases/freelancers" className="text-teal-400 hover:underline">
+                    <Link href="/use-cases/freelancers" className="text-violet-400 hover:underline">
                       freelancer guide
                     </Link>{" "}
                     for specific examples.
                   </p>
                 </div>
                 <div className="flex gap-4">
-                  <div className="text-teal-500 font-bold whitespace-nowrap">Day 3-4:</div>
-                  <p className="text-gray-300">
+                  <div className="text-violet-500 font-bold whitespace-nowrap">Day 3-4:</div>
+                  <p className="text-slate-700">
                     Create your first automated reminder. Test recurring tasks for daily habits.
                   </p>
                 </div>
                 <div className="flex gap-4">
-                  <div className="text-teal-500 font-bold whitespace-nowrap">Day 5-6:</div>
-                  <p className="text-gray-300">
+                  <div className="text-violet-500 font-bold whitespace-nowrap">Day 5-6:</div>
+                  <p className="text-slate-700">
                     Explore one automation bot (IFTTT or Zapier). Set up a simple workflow like "Save starred messages
                     to a spreadsheet."
                   </p>
                 </div>
                 <div className="flex gap-4">
-                  <div className="text-teal-500 font-bold whitespace-nowrap">Day 7:</div>
-                  <p className="text-gray-300">
+                  <div className="text-violet-500 font-bold whitespace-nowrap">Day 7:</div>
+                  <p className="text-slate-700">
                     Review what worked. Remove any bots you didn't use. Double down on what added value.
                   </p>
                 </div>
               </div>
 
               {/* Conclusion */}
-              <div className="bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-teal-500/20 mt-12">
+              <div className="bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-violet-500/20 mt-12">
                 <h2 className="text-2xl font-bold mb-4">Final Thoughts</h2>
-                <p className="text-gray-300 leading-relaxed mb-4">
+                <p className="text-slate-700 leading-relaxed mb-4">
                   Telegram bots aren't just productivity tools—they're a paradigm shift. Instead of installing
                   separate apps for every task, you centralize everything in one messaging platform you already use
                   daily.
                 </p>
-                <p className="text-gray-300 leading-relaxed mb-6">
+                <p className="text-slate-700 leading-relaxed mb-6">
                   The key is starting simple. Pick one bot that solves your biggest pain point, master it, then
                   expand. The bots mentioned in this guide have helped hundreds of thousands of users reclaim hours of
                   productivity every week.
                 </p>
-                <Button asChild className="bg-teal-500 text-white hover:bg-teal-700 rounded-full px-8 py-6">
+                <Button asChild className="bg-violet-500 text-white hover:bg-violet-700 rounded-full px-8 py-6">
                   <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                     Start with Whatstask (Free)
                   </a>
@@ -430,8 +430,8 @@ export default function TelegramBotsGuidePage() {
             </div>
 
             {/* Author Bio */}
-            <div className="mt-12 pt-8 border-t border-white/10">
-              <p className="text-gray-400 text-sm">
+            <div className="mt-12 pt-8 border-t border-slate-200">
+              <p className="text-slate-600 text-sm">
                 Written by the Whatstask team • Last updated: December 30, 2025
               </p>
             </div>
@@ -442,17 +442,17 @@ export default function TelegramBotsGuidePage() {
               <div className="grid md:grid-cols-2 gap-4">
                 <Link
                   href="/compare/todoist"
-                  className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all"
+                  className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200 hover:border-slate-300 transition-all"
                 >
                   <h4 className="font-bold mb-2">Telegram Task Bot vs Todoist</h4>
-                  <p className="text-gray-400 text-sm">Detailed comparison of features and pricing</p>
+                  <p className="text-slate-600 text-sm">Detailed comparison of features and pricing</p>
                 </Link>
                 <Link
                   href="/compare/skeddy"
-                  className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all"
+                  className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200 hover:border-slate-300 transition-all"
                 >
                   <h4 className="font-bold mb-2">Whatstask vs Skeddy</h4>
-                  <p className="text-gray-400 text-sm">Compare the two top Telegram task bots</p>
+                  <p className="text-slate-600 text-sm">Compare the two top Telegram task bots</p>
                 </Link>
               </div>
             </div>

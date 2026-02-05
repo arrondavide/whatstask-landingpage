@@ -48,14 +48,14 @@ export default function MondayComparisonPage() {
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-black text-white">
-        <header className="border-b border-white/10">
+      <div className="min-h-screen bg-white text-slate-900">
+        <header className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
               <span className="text-xl font-bold">Whatstask</span>
             </Link>
-            <Button asChild className="bg-teal-500 text-white hover:bg-teal-600 rounded-full px-6">
+            <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
               <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                 Try Free
               </a>
@@ -75,22 +75,22 @@ export default function MondayComparisonPage() {
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
               Whatstask vs Monday.com
             </h1>
-            <p className="text-xl text-gray-400 leading-relaxed">
+            <p className="text-xl text-slate-600 leading-relaxed">
               Monday.com is feature-rich but expensive. Whatstask is simple and affordable.
               Here's an honest look at both.
             </p>
           </section>
 
           <section className="max-w-4xl mx-auto mb-16">
-            <div className="bg-gradient-to-br from-teal-500/10 to-white/5 rounded-3xl p-8 border border-teal-500/20">
+            <div className="bg-gradient-to-br from-violet-500/10 to-white/5 rounded-3xl p-8 border border-violet-500/20">
               <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                <Zap className="h-6 w-6 text-teal-400" />
+                <Zap className="h-6 w-6 text-violet-400" />
                 Quick Verdict
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-bold text-teal-400 mb-2">Choose Whatstask if:</h3>
-                  <ul className="space-y-2 text-gray-300">
+                  <h3 className="font-bold text-violet-400 mb-2">Choose Whatstask if:</h3>
+                  <ul className="space-y-2 text-slate-700">
                     <li>• You want free AI features</li>
                     <li>• Budget matters to you</li>
                     <li>• You want instant setup</li>
@@ -99,8 +99,8 @@ export default function MondayComparisonPage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-400 mb-2">Choose Monday if:</h3>
-                  <ul className="space-y-2 text-gray-400">
+                  <h3 className="font-bold text-slate-600 mb-2">Choose Monday if:</h3>
+                  <ul className="space-y-2 text-slate-600">
                     <li>• You need visual dashboards</li>
                     <li>• You want extensive automations</li>
                     <li>• You need 200+ integrations</li>
@@ -115,47 +115,47 @@ export default function MondayComparisonPage() {
           <section className="max-w-5xl mx-auto mb-16">
             <h2 className="text-3xl font-bold mb-8 text-center">The key differences</h2>
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white/5 rounded-2xl p-6 border border-white/10 text-center">
-                <DollarSign className="h-10 w-10 text-teal-400 mx-auto mb-4" />
+              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center">
+                <DollarSign className="h-10 w-10 text-violet-400 mx-auto mb-4" />
                 <h3 className="text-lg font-bold mb-2">AI Pricing</h3>
-                <p className="text-gray-400 text-sm mb-4">Monday: $12/seat/month extra</p>
-                <p className="text-teal-400 font-medium">Whatstask: Included free</p>
+                <p className="text-slate-600 text-sm mb-4">Monday: $12/seat/month extra</p>
+                <p className="text-violet-400 font-medium">Whatstask: Included free</p>
               </div>
-              <div className="bg-white/5 rounded-2xl p-6 border border-white/10 text-center">
-                <Clock className="h-10 w-10 text-teal-400 mx-auto mb-4" />
+              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center">
+                <Clock className="h-10 w-10 text-violet-400 mx-auto mb-4" />
                 <h3 className="text-lg font-bold mb-2">Time Tracking</h3>
-                <p className="text-gray-400 text-sm mb-4">Monday: Requires add-on</p>
-                <p className="text-teal-400 font-medium">Whatstask: Built-in free</p>
+                <p className="text-slate-600 text-sm mb-4">Monday: Requires add-on</p>
+                <p className="text-violet-400 font-medium">Whatstask: Built-in free</p>
               </div>
-              <div className="bg-white/5 rounded-2xl p-6 border border-white/10 text-center">
-                <Zap className="h-10 w-10 text-teal-400 mx-auto mb-4" />
+              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center">
+                <Zap className="h-10 w-10 text-violet-400 mx-auto mb-4" />
                 <h3 className="text-lg font-bold mb-2">Getting Started</h3>
-                <p className="text-gray-400 text-sm mb-4">Monday: Complex setup</p>
-                <p className="text-teal-400 font-medium">Whatstask: 30 seconds</p>
+                <p className="text-slate-600 text-sm mb-4">Monday: Complex setup</p>
+                <p className="text-violet-400 font-medium">Whatstask: 30 seconds</p>
               </div>
             </div>
           </section>
 
           <section className="mb-16">
             <h2 className="text-3xl font-bold mb-8 text-center">Feature comparison</h2>
-            <div className="bg-white/5 rounded-3xl border border-white/10 overflow-hidden overflow-x-auto">
+            <div className="bg-slate-50 rounded-3xl border border-slate-200 overflow-hidden overflow-x-auto">
               <table className="w-full min-w-[500px]">
                 <thead>
-                  <tr className="border-b border-white/10 bg-white/5">
+                  <tr className="border-b border-slate-200 bg-slate-50">
                     <th className="text-left p-4 font-bold">Feature</th>
-                    <th className="text-center p-4 font-bold text-teal-400">Whatstask</th>
-                    <th className="text-center p-4 font-bold text-gray-500">Monday.com</th>
+                    <th className="text-center p-4 font-bold text-violet-400">Whatstask</th>
+                    <th className="text-center p-4 font-bold text-slate-500">Monday.com</th>
                   </tr>
                 </thead>
                 <tbody>
                   {comparison.map((row, index) => (
-                    <tr key={index} className="border-b border-white/5 hover:bg-white/5">
+                    <tr key={index} className="border-b border-slate-100 hover:bg-slate-50">
                       <td className="p-4 font-medium">{row.feature}</td>
-                      <td className={`p-4 text-center ${row.winner === "whatstask" ? "text-teal-400" : ""}`}>
+                      <td className={`p-4 text-center ${row.winner === "whatstask" ? "text-violet-400" : ""}`}>
                         {row.whatstask}
                         {row.winner === "whatstask" && <Check className="h-4 w-4 inline ml-2" />}
                       </td>
-                      <td className={`p-4 text-center ${row.winner === "monday" ? "text-gray-300" : "text-gray-500"}`}>
+                      <td className={`p-4 text-center ${row.winner === "monday" ? "text-slate-700" : "text-slate-500"}`}>
                         {row.monday}
                         {row.winner === "monday" && <Check className="h-4 w-4 inline ml-2" />}
                       </td>
@@ -168,49 +168,49 @@ export default function MondayComparisonPage() {
 
           <section className="max-w-4xl mx-auto mb-16">
             <h2 className="text-3xl font-bold mb-8 text-center">Monday.com pricing reality</h2>
-            <div className="bg-white/5 rounded-2xl p-8 border border-white/10">
-              <p className="text-gray-400 mb-6">
+            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+              <p className="text-slate-600 mb-6">
                 Monday.com's pricing can be confusing. Here's what you actually pay:
               </p>
               <div className="space-y-4">
-                <div className="flex justify-between items-center p-4 bg-white/5 rounded-xl">
+                <div className="flex justify-between items-center p-4 bg-slate-50 rounded-xl">
                   <span>Basic (per seat/month)</span>
-                  <span className="text-gray-400">$9</span>
+                  <span className="text-slate-600">$9</span>
                 </div>
-                <div className="flex justify-between items-center p-4 bg-white/5 rounded-xl">
+                <div className="flex justify-between items-center p-4 bg-slate-50 rounded-xl">
                   <span>Standard (per seat/month)</span>
-                  <span className="text-gray-400">$12</span>
+                  <span className="text-slate-600">$12</span>
                 </div>
-                <div className="flex justify-between items-center p-4 bg-white/5 rounded-xl">
+                <div className="flex justify-between items-center p-4 bg-slate-50 rounded-xl">
                   <span>Pro (per seat/month)</span>
-                  <span className="text-gray-400">$19</span>
+                  <span className="text-slate-600">$19</span>
                 </div>
-                <div className="flex justify-between items-center p-4 bg-white/5 rounded-xl">
+                <div className="flex justify-between items-center p-4 bg-slate-50 rounded-xl">
                   <span>AI add-on (per seat/month)</span>
-                  <span className="text-gray-400">+$12</span>
+                  <span className="text-slate-600">+$12</span>
                 </div>
-                <div className="flex justify-between items-center p-4 bg-teal-500/10 rounded-xl border border-teal-500/30">
-                  <span className="text-teal-400 font-medium">Whatstask Pro (flat)</span>
-                  <span className="text-teal-400 font-medium">$4.99/month (AI included)</span>
+                <div className="flex justify-between items-center p-4 bg-violet-500/10 rounded-xl border border-violet-500/30">
+                  <span className="text-violet-400 font-medium">Whatstask Pro (flat)</span>
+                  <span className="text-violet-400 font-medium">$4.99/month (AI included)</span>
                 </div>
               </div>
             </div>
           </section>
 
           <section className="max-w-3xl mx-auto text-center">
-            <div className="bg-gradient-to-br from-teal-500/10 to-white/5 rounded-3xl p-8 md:p-12 border border-teal-500/20">
+            <div className="bg-gradient-to-br from-violet-500/10 to-white/5 rounded-3xl p-8 md:p-12 border border-violet-500/20">
               <h2 className="text-3xl font-bold mb-4">Try the affordable alternative</h2>
-              <p className="text-gray-400 mb-8">
+              <p className="text-slate-600 mb-8">
                 Same core features. Free AI. Fraction of the cost.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild className="bg-teal-500 text-white hover:bg-teal-600 rounded-full px-8 py-6">
+                <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6">
                   <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                     <Send className="h-5 w-5 mr-2" />
                     Try Whatstask Free
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
+                <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
                   <Link href="/pricing">See Pricing</Link>
                 </Button>
               </div>
@@ -218,8 +218,8 @@ export default function MondayComparisonPage() {
           </section>
         </main>
 
-        <footer className="border-t border-white/5 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-gray-500">
+        <footer className="border-t border-slate-100 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

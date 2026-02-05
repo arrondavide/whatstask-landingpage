@@ -125,15 +125,15 @@ export default function WhatstaskVsTodoistPage() {
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-white text-slate-900">
         {/* Header */}
-        <header className="border-b border-white/10">
+        <header className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
               <span className="text-xl font-bold">Whatstask</span>
             </Link>
-            <Button asChild className="bg-teal-500 text-white hover:bg-teal-600 rounded-full px-6">
+            <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
               <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                 <Send className="h-4 w-4 mr-2" />
                 Try Free
@@ -155,24 +155,24 @@ export default function WhatstaskVsTodoistPage() {
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
               Telegram Task Bot vs Todoist: Pros & Cons
             </h1>
-            <p className="text-xl text-gray-400 leading-relaxed">
+            <p className="text-xl text-slate-600 leading-relaxed">
               Honest comparison between Whatstask (Telegram-based) and Todoist (standalone app). Which is better for
               your workflow?
             </p>
           </div>
 
           {/* Quick Verdict */}
-          <div className="bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-teal-500/20 max-w-4xl mx-auto mb-16">
+          <div className="bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-violet-500/20 max-w-4xl mx-auto mb-16">
             <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-              <Zap className="h-6 w-6 text-teal-500" />
+              <Zap className="h-6 w-6 text-violet-500" />
               Quick Verdict
             </h2>
-            <p className="text-lg text-gray-300 leading-relaxed mb-4">
+            <p className="text-lg text-slate-700 leading-relaxed mb-4">
               <strong>Choose Whatstask</strong> if you live in Telegram and want task management without app
               switching. It's faster to set up, includes free PDF tools, and has better natural language
               understanding. Perfect for individuals and small teams.
             </p>
-            <p className="text-lg text-gray-300 leading-relaxed">
+            <p className="text-lg text-slate-700 leading-relaxed">
               <strong>Choose Todoist</strong> if you need deep integrations with other productivity tools, advanced
               project organization, or prefer a dedicated app experience. It's more mature with better analytics and
               gamification features.
@@ -182,10 +182,10 @@ export default function WhatstaskVsTodoistPage() {
           {/* Comparison Table */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-8 text-center">Head-to-Head Comparison</h2>
-            <div className="bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 overflow-hidden">
+            <div className="bg-slate-50 backdrop-blur-lg rounded-2xl border border-slate-200 overflow-hidden">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-white/10 bg-white/5">
+                  <tr className="border-b border-slate-200 bg-slate-50">
                     <th className="text-left p-6 font-bold">Feature</th>
                     <th className="text-center p-6 font-bold">Whatstask (Telegram)</th>
                     <th className="text-center p-6 font-bold">Todoist</th>
@@ -193,11 +193,11 @@ export default function WhatstaskVsTodoistPage() {
                 </thead>
                 <tbody>
                   {comparison.map((row, idx) => (
-                    <tr key={idx} className="border-b border-white/10 last:border-0 hover:bg-white/5 transition">
+                    <tr key={idx} className="border-b border-slate-200 last:border-0 hover:bg-slate-50 transition">
                       <td className="p-6 font-medium">{row.category}</td>
-                      <td className={`p-6 text-center ${row.winner === "whatstask" ? "bg-teal-500/10" : ""}`}>
+                      <td className={`p-6 text-center ${row.winner === "whatstask" ? "bg-violet-500/10" : ""}`}>
                         {row.whatstask}
-                        {row.winner === "whatstask" && <span className="ml-2 text-teal-500">✓</span>}
+                        {row.winner === "whatstask" && <span className="ml-2 text-violet-500">✓</span>}
                       </td>
                       <td className={`p-6 text-center ${row.winner === "todoist" ? "bg-red-500/10" : ""}`}>
                         {row.todoist}
@@ -214,35 +214,35 @@ export default function WhatstaskVsTodoistPage() {
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-8 text-center">Key Differences</h2>
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
-                <Smartphone className="h-8 w-8 text-teal-500 mb-4" />
+              <div className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
+                <Smartphone className="h-8 w-8 text-violet-500 mb-4" />
                 <h3 className="text-xl font-bold mb-3">Platform Philosophy</h3>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed">
                   <strong>Whatstask:</strong> Lives inside Telegram. No app switching, instant access via chat.
                 </p>
-                <p className="text-gray-400 leading-relaxed mt-2">
+                <p className="text-slate-600 leading-relaxed mt-2">
                   <strong>Todoist:</strong> Standalone app. More powerful but requires separate installation.
                 </p>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
-                <DollarSign className="h-8 w-8 text-teal-500 mb-4" />
+              <div className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
+                <DollarSign className="h-8 w-8 text-violet-500 mb-4" />
                 <h3 className="text-xl font-bold mb-3">Value Proposition</h3>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed">
                   <strong>Whatstask:</strong> Task management + PDF tools + no learning curve.
                 </p>
-                <p className="text-gray-400 leading-relaxed mt-2">
+                <p className="text-slate-600 leading-relaxed mt-2">
                   <strong>Todoist:</strong> Deep task organization + analytics + 1000+ integrations.
                 </p>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
-                <Zap className="h-8 w-8 text-teal-500 mb-4" />
+              <div className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
+                <Zap className="h-8 w-8 text-violet-500 mb-4" />
                 <h3 className="text-xl font-bold mb-3">Target User</h3>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed">
                   <strong>Whatstask:</strong> Telegram power users, freelancers, small teams.
                 </p>
-                <p className="text-gray-400 leading-relaxed mt-2">
+                <p className="text-slate-600 leading-relaxed mt-2">
                   <strong>Todoist:</strong> Productivity enthusiasts, large teams, power organizers.
                 </p>
               </div>
@@ -254,9 +254,9 @@ export default function WhatstaskVsTodoistPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">Which Should You Choose?</h2>
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {/* Whatstask Use Cases */}
-              <div className="bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-teal-500/20">
+              <div className="bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-violet-500/20">
                 <h3 className="text-xl font-bold mb-4">✅ Choose Whatstask if:</h3>
-                <ul className="space-y-3 text-gray-300">
+                <ul className="space-y-3 text-slate-700">
                   <li className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                     You need built-in time tracking for billing clients accurately
@@ -285,9 +285,9 @@ export default function WhatstaskVsTodoistPage() {
               </div>
 
               {/* Todoist Use Cases */}
-              <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+              <div className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
                 <h3 className="text-xl font-bold mb-4">✅ Choose Todoist if:</h3>
-                <ul className="space-y-3 text-gray-300">
+                <ul className="space-y-3 text-slate-700">
                   <li className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                     You need 1000+ app integrations
@@ -321,39 +321,39 @@ export default function WhatstaskVsTodoistPage() {
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-8 text-center">Real-World Scenarios</h2>
             <div className="space-y-6 max-w-4xl mx-auto">
-              <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10">
+              <div className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200">
                 <h4 className="font-bold mb-2">Scenario: "I need to quickly capture a task while messaging someone"</h4>
-                <p className="text-gray-400 mb-2">
-                  <strong className="text-teal-500">Whatstask wins:</strong> Open Telegram, type task to bot - done in
+                <p className="text-slate-600 mb-2">
+                  <strong className="text-violet-500">Whatstask wins:</strong> Open Telegram, type task to bot - done in
                   10 seconds without leaving your current chat.
                 </p>
-                <p className="text-gray-400">
+                <p className="text-slate-600">
                   <strong className="text-red-400">Todoist:</strong> Switch apps, wait for load, navigate to add
                   task, type, save, switch back - takes 30+ seconds.
                 </p>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10">
+              <div className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200">
                 <h4 className="font-bold mb-2">
                   Scenario: "I need to organize 50 tasks across 5 projects with custom filters"
                 </h4>
-                <p className="text-gray-400 mb-2">
+                <p className="text-slate-600 mb-2">
                   <strong className="text-red-400">Todoist wins:</strong> Advanced project hierarchy, custom
                   filters, labels, and sections make complex organization effortless.
                 </p>
-                <p className="text-gray-400">
-                  <strong className="text-teal-500">Whatstask:</strong> Can handle this but organization features
+                <p className="text-slate-600">
+                  <strong className="text-violet-500">Whatstask:</strong> Can handle this but organization features
                   are simpler - better for straightforward task lists.
                 </p>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10">
+              <div className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200">
                 <h4 className="font-bold mb-2">Scenario: "I need to merge 3 PDFs and set a reminder to send them"</h4>
-                <p className="text-gray-400 mb-2">
-                  <strong className="text-teal-500">Whatstask wins:</strong> All-in-one solution. Merge PDFs in the
+                <p className="text-slate-600 mb-2">
+                  <strong className="text-violet-500">Whatstask wins:</strong> All-in-one solution. Merge PDFs in the
                   web tools, create reminder in the bot - seamless workflow.
                 </p>
-                <p className="text-gray-400">
+                <p className="text-slate-600">
                   <strong className="text-red-400">Todoist:</strong> Need separate PDF tool + Todoist app. More app
                   switching and friction.
                 </p>
@@ -363,13 +363,13 @@ export default function WhatstaskVsTodoistPage() {
 
           {/* Migration Guide */}
           <div className="mb-16 max-w-4xl mx-auto">
-            <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+            <div className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
               <h2 className="text-2xl font-bold mb-4">Can I Use Both?</h2>
-              <p className="text-gray-400 leading-relaxed mb-4">
+              <p className="text-slate-600 leading-relaxed mb-4">
                 Yes! Many users keep Todoist for long-term project planning and use Whatstask for quick daily tasks
                 and Telegram-based workflows.
               </p>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed">
                 <strong>Pro tip:</strong> Start with Whatstask (it's instant to set up). If you find yourself needing
                 more advanced features after a few weeks, add Todoist to your toolkit. There's no lock-in with either
                 platform.
@@ -378,19 +378,19 @@ export default function WhatstaskVsTodoistPage() {
           </div>
 
           {/* CTA */}
-          <div className="text-center bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-12 border border-teal-500/20 max-w-3xl mx-auto">
+          <div className="text-center bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-12 border border-violet-500/20 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-4">Try Whatstask Free Today</h2>
-            <p className="text-xl text-gray-400 mb-8">
+            <p className="text-xl text-slate-600 mb-8">
               Start in 30 seconds. No app download, no signup forms.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-teal-500 text-white hover:bg-teal-600 rounded-full px-8 py-6">
+              <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6">
                 <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                   <Send className="h-5 w-5 mr-2" />
                   Start Free
                 </a>
               </Button>
-              <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
+              <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
                 <Link href="/project-management">Learn More</Link>
               </Button>
             </div>
@@ -398,8 +398,8 @@ export default function WhatstaskVsTodoistPage() {
         </section>
 
         {/* Footer */}
-        <footer className="border-t border-white/5 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-gray-500">
+        <footer className="border-t border-slate-100 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

@@ -44,9 +44,9 @@ export default function PrivacyPolicy() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="text-sm text-gray-300 space-y-4 font-light tracking-wide leading-relaxed"
+        className="text-sm text-slate-700 space-y-4 font-light tracking-wide leading-relaxed"
       >
-        <motion.p variants={item} className="text-gray-400">
+        <motion.p variants={item} className="text-slate-600">
           Effective Date: {currentDate}
         </motion.p>
 

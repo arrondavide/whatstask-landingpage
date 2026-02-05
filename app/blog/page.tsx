@@ -61,9 +61,9 @@ export default function BlogPage() {
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-white text-slate-900">
         {/* Header */}
-        <header className="border-b border-white/10">
+        <header className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
@@ -79,7 +79,7 @@ export default function BlogPage() {
         <section className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6">Whatstask Blog</h1>
-            <p className="text-xl text-gray-400 leading-relaxed">
+            <p className="text-xl text-slate-600 leading-relaxed">
               Productivity tips, Telegram tutorials, and task management strategies to help you work smarter, not
               harder.
             </p>
@@ -95,26 +95,26 @@ export default function BlogPage() {
                   <Link
                     key={idx}
                     href={`/blog/${post.slug}`}
-                    className="group bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all"
+                    className="group bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200 hover:border-slate-300 transition-all"
                   >
                     <div className="flex items-center gap-3 mb-4">
-                      <span className="bg-teal-500/10 border border-teal-500/20 text-teal-400 text-xs px-3 py-1 rounded-full font-medium">
+                      <span className="bg-violet-500/10 border border-violet-500/20 text-violet-400 text-xs px-3 py-1 rounded-full font-medium">
                         {post.category}
                       </span>
-                      <div className="flex items-center gap-2 text-gray-500 text-sm">
+                      <div className="flex items-center gap-2 text-slate-500 text-sm">
                         <Calendar className="h-4 w-4" />
                         <span>{new Date(post.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-gray-500 text-sm">
+                      <div className="flex items-center gap-2 text-slate-500 text-sm">
                         <Clock className="h-4 w-4" />
                         <span>{post.readTime}</span>
                       </div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3 group-hover:text-teal-400 transition-colors">
+                    <h3 className="text-2xl font-bold mb-3 group-hover:text-violet-400 transition-colors">
                       {post.title}
                     </h3>
-                    <p className="text-gray-400 mb-4 leading-relaxed">{post.excerpt}</p>
-                    <div className="flex items-center gap-2 text-teal-400 font-medium group-hover:gap-3 transition-all">
+                    <p className="text-slate-600 mb-4 leading-relaxed">{post.excerpt}</p>
+                    <div className="flex items-center gap-2 text-violet-400 font-medium group-hover:gap-3 transition-all">
                       Read Article
                       <ArrowRight className="h-4 w-4" />
                     </div>
@@ -130,10 +130,10 @@ export default function BlogPage() {
               {["Guides", "Tutorials", "Productivity", "Case Studies"].map((category, idx) => (
                 <div
                   key={idx}
-                  className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all cursor-pointer text-center"
+                  className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200 hover:border-slate-300 transition-all cursor-pointer text-center"
                 >
                   <h3 className="font-bold">{category}</h3>
-                  <p className="text-sm text-gray-400 mt-2">Coming soon</p>
+                  <p className="text-sm text-slate-600 mt-2">Coming soon</p>
                 </div>
               ))}
             </div>
@@ -141,13 +141,13 @@ export default function BlogPage() {
 
           {/* Newsletter CTA */}
           <div className="max-w-3xl mx-auto">
-            <div className="bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-12 border border-teal-500/20 text-center">
+            <div className="bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-12 border border-violet-500/20 text-center">
               <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
-              <p className="text-xl text-gray-400 mb-8">
+              <p className="text-xl text-slate-600 mb-8">
                 New productivity tips and Telegram guides delivered weekly. Join our community.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-                <Button asChild className="bg-teal-500 text-white hover:bg-teal-700 rounded-full px-8 py-6">
+                <Button asChild className="bg-violet-500 text-white hover:bg-violet-700 rounded-full px-8 py-6">
                   <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                     Follow on Telegram
                   </a>

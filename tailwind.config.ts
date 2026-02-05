@@ -30,10 +30,12 @@ const config = {
           gray: "#464646",
           white: "#ffffff",
         },
-        teal: {
-          700: "#0F766E",
-          500: "#14B8A6",
-          100: "#CCFBF1",
+        violet: {
+          700: "#6D28D9",
+          600: "#7C3AED",
+          500: "#8B5CF6",
+          400: "#A78BFA",
+          100: "#EDE9FE",
         },
         slate: {
           900: "#0F172A",

@@ -37,7 +37,7 @@ export default function LogoOrbit() {
     <div className="relative w-full aspect-square max-w-md mx-auto">
       {/* Glowing background */}
       <motion.div
-        className="absolute inset-0 rounded-full bg-white/5 blur-3xl"
+        className="absolute inset-0 rounded-full bg-slate-50 blur-3xl"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.5, 0.8, 0.5],
@@ -91,7 +91,7 @@ export default function LogoOrbit() {
       ))}
 
       {/* Orbit path */}
-      <motion.div ref={orbitRef} animate={controls} className="absolute inset-0 rounded-full border border-white/10">
+      <motion.div ref={orbitRef} animate={controls} className="absolute inset-0 rounded-full border border-slate-200">
         {/* Orbit particles */}
         {[...Array(12)].map((_, i) => (
           <motion.div
@@ -127,7 +127,7 @@ export default function LogoOrbit() {
             repeatType: "loop",
           },
         }}
-        className="absolute inset-8 rounded-full border border-white/20"
+        className="absolute inset-8 rounded-full border border-slate-300"
       />
 
       {/* Logo container with glow */}
@@ -135,7 +135,7 @@ export default function LogoOrbit() {
         <div className="relative w-32 h-32 flex items-center justify-center">
           {/* Glow effect */}
           <motion.div
-            className="absolute inset-0 bg-white/10 rounded-full blur-xl"
+            className="absolute inset-0 bg-slate-100 rounded-full blur-xl"
             animate={{
               scale: [1, 1.2, 1],
               opacity: [0.5, 1, 0.5],
@@ -167,7 +167,7 @@ export default function LogoOrbit() {
                 },
               },
             }}
-            className="relative z-10 w-24 h-24 rounded-full bg-black flex items-center justify-center border border-white/20"
+            className="relative z-10 w-24 h-24 rounded-full bg-black flex items-center justify-center border border-slate-300"
           >
             <Image src="/logo.png" alt="Whatstask Logo" width={64} height={64} className="w-16 h-16" />
           </motion.div>
@@ -182,17 +182,17 @@ export default function LogoOrbit() {
         className="absolute -bottom-48 left-1/2 -translate-x-1/2 w-full max-w-sm"
       >
         <motion.div
-          className="bg-black/80 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden shadow-2xl"
+          className="bg-black/80 backdrop-blur-md rounded-2xl border border-slate-200 overflow-hidden shadow-2xl"
           whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          <div className="p-4 border-b border-white/10 flex items-center">
-            <div className="w-8 h-8 rounded-full bg-white/10 mr-3 flex items-center justify-center">
+          <div className="p-4 border-b border-slate-200 flex items-center">
+            <div className="w-8 h-8 rounded-full bg-slate-100 mr-3 flex items-center justify-center">
               <Image src="/logo.png" alt="Whatstask Logo" width={20} height={20} className="w-5 h-5" />
             </div>
             <div className="text-left">
               <div className="text-sm font-medium">Whatstask</div>
-              <div className="text-xs text-gray-400">Your personal task assistant</div>
+              <div className="text-xs text-slate-600">Your personal task assistant</div>
             </div>
           </div>
           <div className="p-4 space-y-4">
@@ -202,10 +202,10 @@ export default function LogoOrbit() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.5, duration: 0.5 }}
             >
-              <div className="w-8 h-8 rounded-full bg-white/10 flex-shrink-0 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-slate-100 flex-shrink-0 flex items-center justify-center">
                 <span className="text-xs">You</span>
               </div>
-              <div className="bg-white/5 rounded-2xl rounded-tl-none p-3 text-sm">
+              <div className="bg-slate-50 rounded-2xl rounded-tl-none p-3 text-sm">
                 Create a new task: Meeting with design team tomorrow at 2pm
               </div>
             </motion.div>
@@ -215,7 +215,7 @@ export default function LogoOrbit() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 2, duration: 0.5 }}
             >
-              <div className="bg-white/10 rounded-2xl rounded-tr-none p-3 text-sm">
+              <div className="bg-slate-100 rounded-2xl rounded-tr-none p-3 text-sm">
                 <div className="flex items-center gap-2 mb-1">
                   <div className="w-4 h-4 rounded-sm bg-green-500 flex items-center justify-center">
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -260,7 +260,7 @@ export default function LogoOrbit() {
                   <span>Category: Work</span>
                 </div>
               </div>
-              <div className="w-8 h-8 rounded-full bg-white/10 flex-shrink-0 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-slate-100 flex-shrink-0 flex items-center justify-center">
                 <Image src="/logo.png" alt="Whatstask Logo" width={20} height={20} className="w-5 h-5" />
               </div>
             </motion.div>

@@ -148,9 +148,9 @@ export default function FeaturesPage() {
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-white text-slate-900">
         {/* Header */}
-        <header className="border-b border-white/10">
+        <header className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
@@ -170,24 +170,24 @@ export default function FeaturesPage() {
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
               Complete Work Management Platform
             </h1>
-            <p className="text-xl text-gray-400 leading-relaxed">
+            <p className="text-xl text-slate-600 leading-relaxed">
               Full-featured Telegram Mini App with task management, time tracking, team collaboration, and analytics. Everything you need to manage work - built right into Telegram.
             </p>
           </div>
 
           {/* Quick Stats */}
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-20">
-            <div className="text-center bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+            <div className="text-center bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
               <div className="text-4xl font-extrabold mb-2">10,000+</div>
-              <div className="text-gray-400">Active Users</div>
+              <div className="text-slate-600">Active Users</div>
             </div>
-            <div className="text-center bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+            <div className="text-center bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
               <div className="text-4xl font-extrabold mb-2">500K+</div>
-              <div className="text-gray-400">Tasks Completed</div>
+              <div className="text-slate-600">Tasks Completed</div>
             </div>
-            <div className="text-center bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+            <div className="text-center bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
               <div className="text-4xl font-extrabold mb-2">4.8/5</div>
-              <div className="text-gray-400">User Rating</div>
+              <div className="text-slate-600">User Rating</div>
             </div>
           </div>
 
@@ -202,11 +202,11 @@ export default function FeaturesPage() {
                     .map((feature, idx) => (
                       <div
                         key={idx}
-                        className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300"
+                        className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200 hover:border-slate-300 transition-all duration-300"
                       >
-                        <div className="mb-4 text-teal-500">{feature.icon}</div>
+                        <div className="mb-4 text-violet-500">{feature.icon}</div>
                         <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                        <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+                        <p className="text-slate-600 leading-relaxed">{feature.description}</p>
                       </div>
                     ))}
                 </div>
@@ -217,10 +217,10 @@ export default function FeaturesPage() {
           {/* Comparison Table */}
           <div className="mt-20">
             <h2 className="text-3xl font-bold mb-8 text-center">Whatstask vs Traditional Task Apps</h2>
-            <div className="bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 overflow-hidden">
+            <div className="bg-slate-50 backdrop-blur-lg rounded-2xl border border-slate-200 overflow-hidden">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-white/10">
+                  <tr className="border-b border-slate-200">
                     <th className="text-left p-6 font-bold">Feature</th>
                     <th className="text-center p-6 font-bold">Whatstask</th>
                     <th className="text-center p-6 font-bold">Traditional Apps</th>
@@ -236,20 +236,20 @@ export default function FeaturesPage() {
                     { feature: "Cross-Platform Sync", whatstask: true, traditional: true },
                     { feature: "Team Collaboration", whatstask: true, traditional: true },
                   ].map((row, idx) => (
-                    <tr key={idx} className="border-b border-white/10 last:border-0">
+                    <tr key={idx} className="border-b border-slate-200 last:border-0">
                       <td className="p-6">{row.feature}</td>
                       <td className="p-6 text-center">
                         {row.whatstask ? (
                           <Check className="h-6 w-6 text-green-500 inline" />
                         ) : (
-                          <span className="text-gray-500">—</span>
+                          <span className="text-slate-500">—</span>
                         )}
                       </td>
                       <td className="p-6 text-center">
                         {row.traditional ? (
                           <Check className="h-6 w-6 text-green-500 inline" />
                         ) : (
-                          <span className="text-gray-500">—</span>
+                          <span className="text-slate-500">—</span>
                         )}
                       </td>
                     </tr>
@@ -260,18 +260,18 @@ export default function FeaturesPage() {
           </div>
 
           {/* CTA */}
-          <div className="mt-20 text-center bg-white/5 backdrop-blur-lg rounded-2xl p-12 border border-white/10">
+          <div className="mt-20 text-center bg-slate-50 backdrop-blur-lg rounded-2xl p-12 border border-slate-200">
             <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-            <p className="text-xl text-gray-400 mb-8">
+            <p className="text-xl text-slate-600 mb-8">
               Join 10,000+ users who manage tasks without switching apps.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-teal-500 text-white hover:bg-teal-700 rounded-full px-8 py-6">
+              <Button asChild className="bg-violet-500 text-white hover:bg-violet-700 rounded-full px-8 py-6">
                 <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                   Start on Telegram
                 </a>
               </Button>
-              <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
+              <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
                 <Link href="/pricing">View Pricing</Link>
               </Button>
             </div>

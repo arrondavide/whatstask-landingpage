@@ -79,7 +79,7 @@ const staggerContainer = {
 
 export default function PDFToolsSection() {
   return (
-    <section id="pdf-tools" className="relative py-24 md:py-32 px-4 border-t border-white/5">
+    <section id="pdf-tools" className="relative py-24 md:py-32 px-4 border-t border-slate-100">
       <div className="container mx-auto">
         {/* Section Header */}
         <motion.div
@@ -92,7 +92,7 @@ export default function PDFToolsSection() {
           <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">
             Free Online PDF Tools by Whatstask
           </h2>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto font-light tracking-wide leading-relaxed">
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto font-light tracking-wide leading-relaxed">
             Alongside our Telegram task management tools, Whatstask also offers free online PDF utilities. Merge,
             compress, convert and split PDFs directly in your browser – no signups, just upload and download. These
             tools are fast, secure and designed to help you work smarter in 2025.
@@ -109,19 +109,19 @@ export default function PDFToolsSection() {
         >
           {pdfTools.map((tool, index) => (
             <motion.div key={index} variants={fadeInUp} custom={index} className="group relative">
-              <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 h-full border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col">
+              <div className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 h-full border border-slate-200 hover:border-slate-300 transition-all duration-300 flex flex-col">
                 <h3 className="text-2xl font-bold mb-4 tracking-tight">{tool.name}</h3>
-                <p className="text-gray-400 font-light tracking-wide leading-relaxed mb-6 flex-grow">
+                <p className="text-slate-600 font-light tracking-wide leading-relaxed mb-6 flex-grow">
                   {tool.description}
                 </p>
-                <p className="text-xs text-gray-500 mb-6 pb-4 border-t border-white/5 font-light">{tool.seoTitle}</p>
+                <p className="text-xs text-slate-500 mb-6 pb-4 border-t border-slate-100 font-light">{tool.seoTitle}</p>
                 <Button
                   asChild
-                  className="bg-white/10 text-white hover:bg-white/20 border border-white/20 rounded-full w-full relative overflow-hidden group/btn"
+                  className="bg-slate-100 text-white hover:bg-white/20 border border-slate-300 rounded-full w-full relative overflow-hidden group/btn"
                 >
                   <a href={tool.link} className="flex items-center justify-center gap-2 py-6 text-base">
                     <motion.span
-                      className="absolute inset-0 bg-white/10"
+                      className="absolute inset-0 bg-slate-100"
                       initial={{ x: "-100%" }}
                       whileHover={{ x: "100%" }}
                       transition={{ duration: 0.5 }}

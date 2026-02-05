@@ -30,7 +30,7 @@ export default function PDFFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section className="relative py-24 md:py-32 px-4 border-t border-white/5">
+    <section className="relative py-24 md:py-32 px-4 border-t border-slate-100">
       <div className="container mx-auto max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,7 @@ export default function PDFFAQ() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">Frequently Asked Questions</h2>
-          <p className="text-lg text-gray-400 font-light tracking-wide leading-relaxed">
+          <p className="text-lg text-slate-600 font-light tracking-wide leading-relaxed">
             Everything you need to know about our free PDF tools
           </p>
         </motion.div>
@@ -58,7 +58,7 @@ export default function PDFFAQ() {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full text-left bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all duration-300 flex items-start justify-between gap-4"
+                className="w-full text-left bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200 hover:border-slate-300 transition-all duration-300 flex items-start justify-between gap-4"
               >
                 <span className="text-lg font-semibold tracking-wide pr-4">{item.question}</span>
                 <motion.div
@@ -66,7 +66,7 @@ export default function PDFFAQ() {
                   transition={{ duration: 0.3 }}
                   className="flex-shrink-0 mt-1"
                 >
-                  <ChevronDown className="h-5 w-5 text-gray-400" />
+                  <ChevronDown className="h-5 w-5 text-slate-600" />
                 </motion.div>
               </button>
 
@@ -77,9 +77,9 @@ export default function PDFFAQ() {
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="overflow-hidden bg-white/[0.02] border border-t-0 border-white/10 rounded-b-xl"
+                    className="overflow-hidden bg-white/[0.02] border border-t-0 border-slate-200 rounded-b-xl"
                   >
-                    <p className="p-6 text-gray-400 font-light tracking-wide leading-relaxed">{item.answer}</p>
+                    <p className="p-6 text-slate-600 font-light tracking-wide leading-relaxed">{item.answer}</p>
                   </motion.div>
                 )}
               </AnimatePresence>

@@ -76,14 +76,14 @@ export default function AgenciesPage() {
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-black text-white">
-        <header className="border-b border-white/10">
+      <div className="min-h-screen bg-white text-slate-900">
+        <header className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
               <span className="text-xl font-bold">Whatstask</span>
             </Link>
-            <Button asChild className="bg-teal-500 text-white hover:bg-teal-600 rounded-full px-6">
+            <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
               <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                 Try Free
               </a>
@@ -100,20 +100,20 @@ export default function AgenciesPage() {
           />
 
           <section className="text-center max-w-4xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 bg-teal-500/10 border border-teal-500/30 rounded-full px-4 py-2 mb-6">
-              <span className="text-sm text-teal-400">For Agencies</span>
+            <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/30 rounded-full px-4 py-2 mb-6">
+              <span className="text-sm text-violet-400">For Agencies</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
               Project management that agencies actually use
             </h1>
 
-            <p className="text-xl text-gray-400 leading-relaxed mb-8">
+            <p className="text-xl text-slate-600 leading-relaxed mb-8">
               Manage multiple clients without the chaos. Track billable hours without the headache.
               Collaborate without complex tools getting in the way.
             </p>
 
-            <Button asChild className="bg-teal-500 text-white hover:bg-teal-600 rounded-full px-8 py-6 text-lg">
+            <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6 text-lg">
               <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                 <Send className="h-5 w-5 mr-2" />
                 Start Free
@@ -125,10 +125,10 @@ export default function AgenciesPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">Built for agency workflows</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {benefits.map((benefit, index) => (
-                <div key={index} className="bg-white/5 rounded-2xl p-6 border border-white/10">
-                  <benefit.icon className="h-10 w-10 text-teal-400 mb-4" />
+                <div key={index} className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                  <benefit.icon className="h-10 w-10 text-violet-400 mb-4" />
                   <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
-                  <p className="text-gray-400">{benefit.description}</p>
+                  <p className="text-slate-600">{benefit.description}</p>
                 </div>
               ))}
             </div>
@@ -138,15 +138,15 @@ export default function AgenciesPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">Agency problems, solved</h2>
             <div className="space-y-4">
               {painPoints.map((item, index) => (
-                <div key={index} className="bg-white/5 rounded-xl p-6 border border-white/10">
+                <div key={index} className="bg-slate-50 rounded-xl p-6 border border-slate-200">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <p className="text-sm text-red-400 mb-1">The problem:</p>
-                      <p className="text-gray-300">{item.problem}</p>
+                      <p className="text-slate-700">{item.problem}</p>
                     </div>
                     <div>
-                      <p className="text-sm text-teal-400 mb-1">Our solution:</p>
-                      <p className="text-gray-300">{item.solution}</p>
+                      <p className="text-sm text-violet-400 mb-1">Our solution:</p>
+                      <p className="text-slate-700">{item.solution}</p>
                     </div>
                   </div>
                 </div>
@@ -155,7 +155,7 @@ export default function AgenciesPage() {
           </section>
 
           <section className="max-w-4xl mx-auto mb-16">
-            <div className="bg-gradient-to-br from-teal-500/10 to-white/5 rounded-3xl p-8 border border-teal-500/20">
+            <div className="bg-gradient-to-br from-violet-500/10 to-white/5 rounded-3xl p-8 border border-violet-500/20">
               <h2 className="text-2xl font-bold mb-6">Why agencies choose Whatstask</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <ul className="space-y-3">
@@ -166,7 +166,7 @@ export default function AgenciesPage() {
                     "Team members see only what they need",
                   ].map((item, index) => (
                     <li key={index} className="flex items-center gap-3">
-                      <Check className="h-5 w-5 text-teal-400 flex-shrink-0" />
+                      <Check className="h-5 w-5 text-violet-400 flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -179,7 +179,7 @@ export default function AgenciesPage() {
                     "Start in 30 seconds, not 30 days",
                   ].map((item, index) => (
                     <li key={index} className="flex items-center gap-3">
-                      <Check className="h-5 w-5 text-teal-400 flex-shrink-0" />
+                      <Check className="h-5 w-5 text-violet-400 flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -189,19 +189,19 @@ export default function AgenciesPage() {
           </section>
 
           <section className="max-w-3xl mx-auto text-center">
-            <div className="bg-white/5 rounded-3xl p-8 md:p-12 border border-white/10">
+            <div className="bg-slate-50 rounded-3xl p-8 md:p-12 border border-slate-200">
               <h2 className="text-3xl font-bold mb-4">Ready to simplify your agency?</h2>
-              <p className="text-gray-400 mb-8">
+              <p className="text-slate-600 mb-8">
                 Join agencies who've ditched complex tools for something that actually works.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild className="bg-teal-500 text-white hover:bg-teal-600 rounded-full px-8 py-6">
+                <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6">
                   <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                     <Send className="h-5 w-5 mr-2" />
                     Start Free
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
+                <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
                   <Link href="/enterprise">Need Custom Solution?</Link>
                 </Button>
               </div>
@@ -209,8 +209,8 @@ export default function AgenciesPage() {
           </section>
         </main>
 
-        <footer className="border-t border-white/5 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-gray-500">
+        <footer className="border-t border-slate-100 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

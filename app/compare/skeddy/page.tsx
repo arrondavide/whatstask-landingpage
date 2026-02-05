@@ -172,15 +172,15 @@ export default function WhatstaskVsSkeddyPage() {
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-white text-slate-900">
         {/* Header */}
-        <header className="border-b border-white/10">
+        <header className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
               <span className="text-xl font-bold">Whatstask</span>
             </Link>
-            <Button asChild className="bg-teal-500 text-white hover:bg-teal-600 rounded-full px-6">
+            <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
               <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                 <Send className="h-4 w-4 mr-2" />
                 Try Free
@@ -202,23 +202,23 @@ export default function WhatstaskVsSkeddyPage() {
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
               Whatstask vs Skeddy: Which Telegram Bot is Better?
             </h1>
-            <p className="text-xl text-gray-400 leading-relaxed">
+            <p className="text-xl text-slate-600 leading-relaxed">
               Comprehensive comparison of the two leading Telegram task management bots. Updated for 2025.
             </p>
           </div>
 
           {/* Quick Verdict */}
-          <div className="bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-teal-500/20 max-w-4xl mx-auto mb-16">
+          <div className="bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-violet-500/20 max-w-4xl mx-auto mb-16">
             <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-              <Zap className="h-6 w-6 text-teal-500" />
+              <Zap className="h-6 w-6 text-violet-500" />
               Quick Verdict: Whatstask Wins
             </h2>
-            <p className="text-lg text-gray-300 leading-relaxed mb-4">
-              <strong className="text-teal-400">Whatstask is the clear winner</strong> for anyone wanting modern task management without friction. It's 50% cheaper, includes time tracking & PDF tools, and has a beautiful Mini App interface instead of command-based interaction.
+            <p className="text-lg text-slate-700 leading-relaxed mb-4">
+              <strong className="text-violet-400">Whatstask is the clear winner</strong> for anyone wanting modern task management without friction. It's 50% cheaper, includes time tracking & PDF tools, and has a beautiful Mini App interface instead of command-based interaction.
             </p>
-            <div className="bg-white/5 rounded-lg p-4 mb-4 border border-white/10">
-              <p className="text-gray-300 mb-2"><strong>Bottom Line:</strong></p>
-              <ul className="space-y-2 text-gray-300">
+            <div className="bg-slate-50 rounded-lg p-4 mb-4 border border-slate-200">
+              <p className="text-slate-700 mb-2"><strong>Bottom Line:</strong></p>
+              <ul className="space-y-2 text-slate-700">
                 <li>💰 Save $60/year per user compared to Skeddy</li>
                 <li>⏱️ Built-in time tracking (Skeddy doesn't have this)</li>
                 <li>📄 Free PDF tools included</li>
@@ -226,7 +226,7 @@ export default function WhatstaskVsSkeddyPage() {
                 <li>👥 Unlimited team members (even on free tier)</li>
               </ul>
             </div>
-            <p className="text-gray-400 text-sm">
+            <p className="text-slate-600 text-sm">
               The only reason to choose Skeddy: if you already use it and want continuity. Otherwise, Whatstask is objectively better for teams and individuals.
             </p>
           </div>
@@ -235,13 +235,13 @@ export default function WhatstaskVsSkeddyPage() {
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-8 text-center">Why Whatstask Wins in 2025</h2>
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-8">
-              <div className="bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-teal-500/20">
+              <div className="bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-violet-500/20">
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                   <span className="text-2xl">💸</span>
                   Better Value (50% Cheaper)
                 </h3>
-                <p className="text-gray-300 mb-3">Whatstask Pro is $4.99/month vs Skeddy's $9.99/month</p>
-                <ul className="space-y-2 text-sm text-gray-300">
+                <p className="text-slate-700 mb-3">Whatstask Pro is $4.99/month vs Skeddy's $9.99/month</p>
+                <ul className="space-y-2 text-sm text-slate-700">
                   <li>✓ Unlimited tasks (both)</li>
                   <li>✓ Time tracking (Whatstask only)</li>
                   <li>✓ Free PDF tools (Whatstask only)</li>
@@ -249,13 +249,13 @@ export default function WhatstaskVsSkeddyPage() {
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-teal-500/20">
+              <div className="bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-violet-500/20">
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                   <span className="text-2xl">⏱️</span>
                   Built-in Time Tracking
                 </h3>
-                <p className="text-gray-300 mb-3">Track billable hours directly in the task app</p>
-                <ul className="space-y-2 text-sm text-gray-300">
+                <p className="text-slate-700 mb-3">Track billable hours directly in the task app</p>
+                <ul className="space-y-2 text-sm text-slate-700">
                   <li>✓ One-tap clock in/out</li>
                   <li>✓ Automatic duration calculation</li>
                   <li>✓ Invoicing-ready reports</li>
@@ -263,13 +263,13 @@ export default function WhatstaskVsSkeddyPage() {
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-teal-500/20">
+              <div className="bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-violet-500/20">
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                   <span className="text-2xl">🤖</span>
                   AI Understands Your Language
                 </h3>
-                <p className="text-gray-300 mb-3">Natural language processing that actually works</p>
-                <ul className="space-y-2 text-sm text-gray-300">
+                <p className="text-slate-700 mb-3">Natural language processing that actually works</p>
+                <ul className="space-y-2 text-sm text-slate-700">
                   <li>✓ Type: "meeting with Sarah tomorrow 2pm"</li>
                   <li>✓ AI extracts: task, person, date, time</li>
                   <li>✓ No special commands needed</li>
@@ -277,13 +277,13 @@ export default function WhatstaskVsSkeddyPage() {
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-teal-500/20">
+              <div className="bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-violet-500/20">
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                   <span className="text-2xl">🎨</span>
                   Modern Mini App vs Text Bot
                 </h3>
-                <p className="text-gray-300 mb-3">Whatstask feels like a real app, not a chatbot</p>
-                <ul className="space-y-2 text-sm text-gray-300">
+                <p className="text-slate-700 mb-3">Whatstask feels like a real app, not a chatbot</p>
+                <ul className="space-y-2 text-sm text-slate-700">
                   <li>✓ Visual interface with buttons</li>
                   <li>✓ Task cards and drag-and-drop</li>
                   <li>✓ Real-time status updates</li>
@@ -296,24 +296,24 @@ export default function WhatstaskVsSkeddyPage() {
           {/* Detailed Comparison Table */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-8 text-center">Complete Feature Comparison</h2>
-            <div className="bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 overflow-hidden">
+            <div className="bg-slate-50 backdrop-blur-lg rounded-2xl border border-slate-200 overflow-hidden">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-white/10 bg-white/5">
+                  <tr className="border-b border-slate-200 bg-slate-50">
                     <th className="text-left p-4 font-bold">Feature</th>
-                    <th className="text-center p-4 font-bold text-teal-400">Whatstask</th>
+                    <th className="text-center p-4 font-bold text-violet-400">Whatstask</th>
                     <th className="text-center p-4 font-bold">Skeddy</th>
                     <th className="text-left p-4 font-bold text-sm">Why It Matters</th>
                   </tr>
                 </thead>
                 <tbody>
                   {comparison.map((row, idx) => (
-                    <tr key={idx} className="border-b border-white/10 last:border-0 hover:bg-white/5 transition">
+                    <tr key={idx} className="border-b border-slate-200 last:border-0 hover:bg-slate-50 transition">
                       <td className="p-4 font-medium text-sm">{row.category}</td>
-                      <td className={`p-4 text-center text-sm font-medium ${row.winner === "whatstask" ? "bg-teal-500/10" : ""}`}>
+                      <td className={`p-4 text-center text-sm font-medium ${row.winner === "whatstask" ? "bg-violet-500/10" : ""}`}>
                         <div>{row.whatstask}</div>
                         {row.winner === "whatstask" && (
-                          <span className="text-teal-400 text-xs mt-1 block">✓ Winner</span>
+                          <span className="text-violet-400 text-xs mt-1 block">✓ Winner</span>
                         )}
                       </td>
                       <td className={`p-4 text-center text-sm font-medium ${row.winner === "skeddy" ? "bg-blue-500/10" : ""}`}>
@@ -322,7 +322,7 @@ export default function WhatstaskVsSkeddyPage() {
                           <span className="text-blue-400 text-xs mt-1 block">✓ Winner</span>
                         )}
                       </td>
-                      <td className="p-4 text-xs text-gray-400">{row.whyWhatstask || "—"}</td>
+                      <td className="p-4 text-xs text-slate-600">{row.whyWhatstask || "—"}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -335,7 +335,7 @@ export default function WhatstaskVsSkeddyPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">Pros & Cons</h2>
             <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {/* Whatstask Pros/Cons */}
-              <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+              <div className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
                 <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
                   <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} className="h-6 w-6" />
                   Whatstask
@@ -347,7 +347,7 @@ export default function WhatstaskVsSkeddyPage() {
                   </h4>
                   <ul className="space-y-2">
                     {prosAndCons.whatstask.pros.map((pro, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-gray-300">
+                      <li key={idx} className="flex items-start gap-3 text-slate-700">
                         <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                         <span>{pro}</span>
                       </li>
@@ -361,7 +361,7 @@ export default function WhatstaskVsSkeddyPage() {
                   </h4>
                   <ul className="space-y-2">
                     {prosAndCons.whatstask.cons.map((con, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-gray-400">
+                      <li key={idx} className="flex items-start gap-3 text-slate-600">
                         <X className="h-5 w-5 text-red-400 flex-shrink-0 mt-0.5" />
                         <span>{con}</span>
                       </li>
@@ -371,7 +371,7 @@ export default function WhatstaskVsSkeddyPage() {
               </div>
 
               {/* Skeddy Pros/Cons */}
-              <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+              <div className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
                 <h3 className="text-2xl font-bold mb-6">Skeddy</h3>
                 <div className="mb-6">
                   <h4 className="font-bold mb-3 text-green-400 flex items-center gap-2">
@@ -380,7 +380,7 @@ export default function WhatstaskVsSkeddyPage() {
                   </h4>
                   <ul className="space-y-2">
                     {prosAndCons.skeddy.pros.map((pro, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-gray-300">
+                      <li key={idx} className="flex items-start gap-3 text-slate-700">
                         <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                         <span>{pro}</span>
                       </li>
@@ -394,7 +394,7 @@ export default function WhatstaskVsSkeddyPage() {
                   </h4>
                   <ul className="space-y-2">
                     {prosAndCons.skeddy.cons.map((con, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-gray-400">
+                      <li key={idx} className="flex items-start gap-3 text-slate-600">
                         <X className="h-5 w-5 text-red-400 flex-shrink-0 mt-0.5" />
                         <span>{con}</span>
                       </li>
@@ -409,20 +409,20 @@ export default function WhatstaskVsSkeddyPage() {
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-8 text-center">Pricing Comparison</h2>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <div className="bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border-2 border-teal-500/20">
+              <div className="bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border-2 border-violet-500/20">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-2xl font-bold">Whatstask</h3>
-                  <span className="bg-teal-500 text-white text-xs px-3 py-1 rounded-full font-bold">
+                  <span className="bg-violet-500 text-white text-xs px-3 py-1 rounded-full font-bold">
                     Better Value
                   </span>
                 </div>
                 <div className="mb-6">
                   <div className="text-4xl font-extrabold mb-2">$0</div>
-                  <div className="text-gray-400 mb-4">Free Forever Plan</div>
+                  <div className="text-slate-600 mb-4">Free Forever Plan</div>
                   <div className="text-3xl font-extrabold mb-2">$4.99<span className="text-lg">/mo</span></div>
-                  <div className="text-gray-400">Pro Plan</div>
+                  <div className="text-slate-600">Pro Plan</div>
                 </div>
-                <ul className="space-y-2 text-sm text-gray-300">
+                <ul className="space-y-2 text-sm text-slate-700">
                   <li className="flex items-start gap-2">
                     <Check className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
                     Unlimited tasks (Free)
@@ -438,15 +438,15 @@ export default function WhatstaskVsSkeddyPage() {
                 </ul>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+              <div className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
                 <h3 className="text-2xl font-bold mb-4">Skeddy</h3>
                 <div className="mb-6">
                   <div className="text-4xl font-extrabold mb-2">$0</div>
-                  <div className="text-gray-400 mb-4">Basic Plan</div>
+                  <div className="text-slate-600 mb-4">Basic Plan</div>
                   <div className="text-3xl font-extrabold mb-2">$9.99<span className="text-lg">/mo</span></div>
-                  <div className="text-gray-400">Premium Plan</div>
+                  <div className="text-slate-600">Premium Plan</div>
                 </div>
-                <ul className="space-y-2 text-sm text-gray-300">
+                <ul className="space-y-2 text-sm text-slate-700">
                   <li className="flex items-start gap-2">
                     <Check className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
                     Limited tasks (Free)
@@ -468,12 +468,12 @@ export default function WhatstaskVsSkeddyPage() {
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-8 text-center">Which Should You Choose?</h2>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <div className="bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-teal-500/20">
+              <div className="bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-8 border border-violet-500/20">
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                  <Users className="h-6 w-6 text-teal-500" />
+                  <Users className="h-6 w-6 text-violet-500" />
                   Choose Whatstask if:
                 </h3>
-                <ul className="space-y-3 text-gray-300">
+                <ul className="space-y-3 text-slate-700">
                   <li className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                     You need a full Mini App interface (not just bot commands)
@@ -501,12 +501,12 @@ export default function WhatstaskVsSkeddyPage() {
                 </ul>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
+              <div className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                   <Shield className="h-6 w-6 text-blue-500" />
                   Choose Skeddy if:
                 </h3>
-                <ul className="space-y-3 text-gray-300">
+                <ul className="space-y-3 text-slate-700">
                   <li className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                     You need many third-party integrations
@@ -529,29 +529,29 @@ export default function WhatstaskVsSkeddyPage() {
           </div>
 
           {/* Final CTA */}
-          <div className="text-center bg-gradient-to-br from-teal-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-12 border border-teal-500/20 max-w-3xl mx-auto">
+          <div className="text-center bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-12 border border-violet-500/20 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-4">Ready to Try Whatstask?</h2>
-            <p className="text-xl text-gray-400 mb-8">
+            <p className="text-xl text-slate-600 mb-8">
               Start free today - no credit card required.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-teal-500 text-white hover:bg-teal-600 rounded-full px-8 py-6">
+              <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6">
                 <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                   <Send className="h-5 w-5 mr-2" />
                   Start Free
                 </a>
               </Button>
-              <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
+              <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
                 <Link href="/project-management">Learn More</Link>
               </Button>
             </div>
-            <p className="text-sm text-gray-500 mt-4">30 seconds to start</p>
+            <p className="text-sm text-slate-500 mt-4">30 seconds to start</p>
           </div>
         </section>
 
         {/* Footer */}
-        <footer className="border-t border-white/5 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-gray-500">
+        <footer className="border-t border-slate-100 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

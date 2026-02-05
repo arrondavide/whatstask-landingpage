@@ -120,9 +120,9 @@ export default function EnterprisePage() {
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-white text-slate-900">
         {/* Header */}
-        <header className="border-b border-white/10">
+        <header className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
@@ -139,19 +139,19 @@ export default function EnterprisePage() {
 
           {/* Hero */}
           <section className="text-center max-w-4xl mx-auto mb-20">
-            <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-6">
-              <Building2 className="h-4 w-4 text-gray-400" />
-              <span className="text-sm text-gray-400">B2B Custom Solutions</span>
+            <div className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-full px-4 py-2 mb-6">
+              <Building2 className="h-4 w-4 text-slate-600" />
+              <span className="text-sm text-slate-600">B2B Custom Solutions</span>
             </div>
 
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
               Simple at scale
             </h1>
 
-            <p className="text-xl text-gray-400 mb-4 leading-relaxed">
+            <p className="text-xl text-slate-600 mb-4 leading-relaxed">
               Custom project management solutions for teams with specific needs.
             </p>
-            <p className="text-lg text-gray-500 mb-10">
+            <p className="text-lg text-slate-500 mb-10">
               Same philosophy: simple, fast, no bloat. Just built exactly for you.
             </p>
 
@@ -161,7 +161,7 @@ export default function EnterprisePage() {
                   Schedule a Call
                 </a>
               </Button>
-              <Button asChild variant="outline" className="rounded-full px-8 py-6 text-lg border-white/20">
+              <Button asChild variant="outline" className="rounded-full px-8 py-6 text-lg border-slate-300">
                 <Link href="/project-management">See Standard Product</Link>
               </Button>
             </div>
@@ -169,11 +169,11 @@ export default function EnterprisePage() {
 
           {/* Our Philosophy */}
           <section className="max-w-4xl mx-auto mb-20">
-            <div className="bg-gradient-to-br from-white/5 to-white/[0.02] rounded-3xl p-8 md:p-12 border border-white/10">
+            <div className="bg-gradient-to-br from-white/5 to-white/[0.02] rounded-3xl p-8 md:p-12 border border-slate-200">
               <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
                 Enterprise doesn't mean complex
               </h2>
-              <p className="text-gray-400 text-center text-lg leading-relaxed mb-8">
+              <p className="text-slate-600 text-center text-lg leading-relaxed mb-8">
                 The software industry has been selling complexity as a feature for too long.
                 Your 500-person company doesn't need 500 features. They need tools that work.
               </p>
@@ -184,8 +184,8 @@ export default function EnterprisePage() {
                   { stat: "Scale", label: "from 50 to 50,000 users" },
                 ].map((item, index) => (
                   <div key={index}>
-                    <p className="text-2xl font-bold text-teal-400 mb-1">{item.stat}</p>
-                    <p className="text-sm text-gray-500">{item.label}</p>
+                    <p className="text-2xl font-bold text-violet-400 mb-1">{item.stat}</p>
+                    <p className="text-sm text-slate-500">{item.label}</p>
                   </div>
                 ))}
               </div>
@@ -196,7 +196,7 @@ export default function EnterprisePage() {
           <section className="mb-20">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">What we build</h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-slate-600 text-lg">
                 Custom solutions that fit your workflow, not the other way around.
               </p>
             </div>
@@ -205,11 +205,11 @@ export default function EnterprisePage() {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="bg-white/5 rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all"
+                  className="bg-slate-50 rounded-2xl p-8 border border-slate-200 hover:border-slate-300 transition-all"
                 >
-                  <service.icon className="h-10 w-10 text-teal-400 mb-4" />
+                  <service.icon className="h-10 w-10 text-violet-400 mb-4" />
                   <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{service.description}</p>
+                  <p className="text-slate-600 leading-relaxed">{service.description}</p>
                 </div>
               ))}
             </div>
@@ -219,7 +219,7 @@ export default function EnterprisePage() {
           <section className="mb-20">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Enterprise-grade capabilities</h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-slate-600 text-lg">
                 Built for scale, security, and reliability.
               </p>
             </div>
@@ -228,11 +228,11 @@ export default function EnterprisePage() {
               {benefits.map((benefit, index) => (
                 <div
                   key={index}
-                  className="bg-white/5 rounded-2xl p-6 border border-white/10"
+                  className="bg-slate-50 rounded-2xl p-6 border border-slate-200"
                 >
-                  <benefit.icon className="h-8 w-8 text-gray-400 mb-4" />
+                  <benefit.icon className="h-8 w-8 text-slate-600 mb-4" />
                   <h3 className="font-bold mb-2">{benefit.title}</h3>
-                  <p className="text-gray-500 text-sm">{benefit.description}</p>
+                  <p className="text-slate-500 text-sm">{benefit.description}</p>
                 </div>
               ))}
             </div>
@@ -242,7 +242,7 @@ export default function EnterprisePage() {
           <section className="mb-20">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">How we work</h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-slate-600 text-lg">
                 Transparent process from first call to launch.
               </p>
             </div>
@@ -250,10 +250,10 @@ export default function EnterprisePage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {process.map((step, index) => (
                 <div key={index} className="relative">
-                  <div className="bg-white/5 rounded-2xl p-6 border border-white/10 h-full">
+                  <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200 h-full">
                     <span className="text-4xl font-black text-white/10 mb-2 block">{step.step}</span>
                     <h3 className="text-lg font-bold mb-2">{step.title}</h3>
-                    <p className="text-gray-500 text-sm">{step.description}</p>
+                    <p className="text-slate-500 text-sm">{step.description}</p>
                   </div>
                   {index < process.length - 1 && (
                     <ArrowRight className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 text-white/10 h-6 w-6" />
@@ -267,7 +267,7 @@ export default function EnterprisePage() {
           <section className="mb-20">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Who we work with</h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-slate-600 text-lg">
                 Teams that need more than off-the-shelf solutions.
               </p>
             </div>
@@ -292,10 +292,10 @@ export default function EnterprisePage() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white/5 rounded-2xl p-6 border border-white/10"
+                  className="bg-slate-50 rounded-2xl p-6 border border-slate-200"
                 >
                   <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                  <p className="text-gray-400 mb-4">{item.description}</p>
+                  <p className="text-slate-600 mb-4">{item.description}</p>
                   <p className="text-xs text-gray-600">{item.examples}</p>
                 </div>
               ))}
@@ -304,9 +304,9 @@ export default function EnterprisePage() {
 
           {/* CTA */}
           <section className="max-w-3xl mx-auto text-center">
-            <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-3xl p-8 md:p-12 border border-white/10">
+            <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-3xl p-8 md:p-12 border border-slate-200">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Let's talk about your project</h2>
-              <p className="text-gray-400 mb-8 text-lg">
+              <p className="text-slate-600 mb-8 text-lg">
                 No sales pitch. Just a conversation about what you need and how we can help.
               </p>
 
@@ -316,12 +316,12 @@ export default function EnterprisePage() {
                     Email Us Directly
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full px-8 py-6 text-lg border-white/20">
+                <Button asChild variant="outline" className="rounded-full px-8 py-6 text-lg border-slate-300">
                   <Link href="/contact">Contact Form</Link>
                 </Button>
               </div>
 
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-slate-500">
                 charlesaarondavid@gmail.com
               </p>
             </div>
@@ -329,8 +329,8 @@ export default function EnterprisePage() {
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-white/5 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-gray-500">
+        <footer className="border-t border-slate-100 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

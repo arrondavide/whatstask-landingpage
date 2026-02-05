@@ -32,15 +32,15 @@ export default function AnimatedCard({ icon, title, description, delay = 0, inde
       whileHover={{ y: -8, transition: { duration: 0.2 } }}
       className="group"
     >
-      <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 h-full border border-white/10 hover:border-white/20 transition-all duration-300 relative overflow-hidden">
+      <div className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 h-full border border-slate-200 hover:border-slate-300 transition-all duration-300 relative overflow-hidden">
         {/* Glassmorphism effect */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
         {/* Icon with glow */}
-        <div className="relative z-10 mb-6 w-16 h-16 rounded-2xl bg-black flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-all duration-300">
-          <div className="text-white group-hover:text-white transition-colors duration-300">{icon}</div>
+        <div className="relative z-10 mb-6 w-16 h-16 rounded-2xl bg-black flex items-center justify-center border border-slate-200 group-hover:border-slate-300 transition-all duration-300">
+          <div className="text-white group-hover:text-slate-900 transition-colors duration-300">{icon}</div>
           <motion.div
-            className="absolute inset-0 bg-white/5 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300"
+            className="absolute inset-0 bg-slate-50 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300"
             animate={{
               boxShadow: [
                 "0 0 0px rgba(255,255,255,0.2)",
@@ -54,10 +54,10 @@ export default function AnimatedCard({ icon, title, description, delay = 0, inde
 
         {/* Content */}
         <div className="relative z-10">
-          <h3 className="text-xl font-bold mb-3 group-hover:text-white transition-colors duration-300 tracking-tight">
+          <h3 className="text-xl font-bold mb-3 group-hover:text-slate-900 transition-colors duration-300 tracking-tight">
             {title}
           </h3>
-          <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 font-light tracking-wide leading-relaxed">
+          <p className="text-slate-600 group-hover:text-slate-700 transition-colors duration-300 font-light tracking-wide leading-relaxed">
             {description}
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function AnimatedCard({ icon, title, description, delay = 0, inde
           whileHover={{ rotate: 0, x: 0, y: 0 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="w-full h-full border-b border-r border-white/20" />
+          <div className="w-full h-full border-b border-r border-slate-300" />
         </motion.div>
       </div>
     </motion.div>

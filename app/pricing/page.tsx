@@ -121,8 +121,8 @@ export default function PricingPage() {
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-black text-white">
-        <header className="border-b border-white/10">
+      <div className="min-h-screen bg-white text-slate-900">
+        <header className="border-b border-slate-200">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
@@ -142,7 +142,7 @@ export default function PricingPage() {
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
               Simple pricing. No surprises.
             </h1>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               Free forever tier with AI included. No per-seat pricing games. No feature-gating tricks.
             </p>
           </section>
@@ -150,7 +150,7 @@ export default function PricingPage() {
           {/* Project Management Pricing */}
           <section className="mb-20">
             <div className="flex items-center justify-center gap-3 mb-8">
-              <Zap className="h-6 w-6 text-teal-400" />
+              <Zap className="h-6 w-6 text-violet-400" />
               <h2 className="text-2xl font-bold">Project Management</h2>
             </div>
 
@@ -160,12 +160,12 @@ export default function PricingPage() {
                   key={index}
                   className={`rounded-2xl p-6 border ${
                     plan.highlight
-                      ? "bg-gradient-to-br from-teal-500/10 to-white/5 border-teal-500/30 relative"
-                      : "bg-white/5 border-white/10"
+                      ? "bg-gradient-to-br from-violet-500/10 to-white/5 border-violet-500/30 relative"
+                      : "bg-slate-50 border-slate-200"
                   }`}
                 >
                   {plan.highlight && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-violet-500 text-white px-3 py-1 rounded-full text-xs font-bold">
                       Most Popular
                     </div>
                   )}
@@ -174,23 +174,23 @@ export default function PricingPage() {
                   <div className="mb-2">
                     <span className="text-4xl font-extrabold">{plan.price}</span>
                     {plan.period !== "contact us" && (
-                      <span className="text-gray-400 ml-2">{plan.period}</span>
+                      <span className="text-slate-600 ml-2">{plan.period}</span>
                     )}
                     {plan.period === "contact us" && (
-                      <span className="text-gray-400 ml-2 text-sm">{plan.period}</span>
+                      <span className="text-slate-600 ml-2 text-sm">{plan.period}</span>
                     )}
                   </div>
-                  <p className="text-sm text-gray-500 mb-6">{plan.description}</p>
+                  <p className="text-sm text-slate-500 mb-6">{plan.description}</p>
 
                   <ul className="space-y-3 mb-6">
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm">
-                        <Check className="h-4 w-4 text-teal-400 flex-shrink-0 mt-0.5" />
+                        <Check className="h-4 w-4 text-violet-400 flex-shrink-0 mt-0.5" />
                         <span>{feature}</span>
                       </li>
                     ))}
                     {plan.limitations.map((limitation, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-gray-500">
+                      <li key={idx} className="flex items-start gap-2 text-sm text-slate-500">
                         <X className="h-4 w-4 flex-shrink-0 mt-0.5" />
                         <span>{limitation}</span>
                       </li>
@@ -201,8 +201,8 @@ export default function PricingPage() {
                     asChild
                     className={`w-full rounded-full py-5 ${
                       plan.highlight
-                        ? "bg-teal-500 text-white hover:bg-teal-600"
-                        : "bg-white/10 hover:bg-white/20"
+                        ? "bg-violet-500 text-white hover:bg-violet-600"
+                        : "bg-slate-100 hover:bg-white/20"
                     }`}
                   >
                     <a
@@ -227,10 +227,10 @@ export default function PricingPage() {
 
             <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
               {geoPlans.map((plan, index) => (
-                <div key={index} className="bg-white/5 rounded-2xl p-6 border border-white/10">
+                <div key={index} className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
                   <h3 className="text-xl font-bold mb-1">{plan.name}</h3>
                   <p className="text-2xl font-extrabold mb-2">{plan.price}</p>
-                  <p className="text-sm text-gray-500 mb-4">{plan.description}</p>
+                  <p className="text-sm text-slate-500 mb-4">{plan.description}</p>
 
                   <ul className="space-y-2 mb-6">
                     {plan.features.map((feature, idx) => (
@@ -241,7 +241,7 @@ export default function PricingPage() {
                     ))}
                   </ul>
 
-                  <Button asChild className="w-full rounded-full py-5 bg-white/10 hover:bg-white/20">
+                  <Button asChild className="w-full rounded-full py-5 bg-slate-100 hover:bg-white/20">
                     <a
                       href={plan.ctaLink}
                       target={plan.ctaLink.startsWith("http") ? "_blank" : undefined}
@@ -258,32 +258,32 @@ export default function PricingPage() {
           {/* Comparison with competitors */}
           <section className="mb-20">
             <h2 className="text-3xl font-bold mb-8 text-center">How we compare</h2>
-            <div className="bg-white/5 rounded-3xl border border-white/10 overflow-hidden overflow-x-auto max-w-5xl mx-auto">
+            <div className="bg-slate-50 rounded-3xl border border-slate-200 overflow-hidden overflow-x-auto max-w-5xl mx-auto">
               <table className="w-full min-w-[500px]">
                 <thead>
-                  <tr className="border-b border-white/10 bg-white/5">
+                  <tr className="border-b border-slate-200 bg-slate-50">
                     <th className="text-left p-4 font-bold">Feature</th>
-                    <th className="text-center p-4 font-bold text-teal-400">Whatstask</th>
-                    <th className="text-center p-4 font-bold text-gray-500">ClickUp</th>
-                    <th className="text-center p-4 font-bold text-gray-500">Monday</th>
-                    <th className="text-center p-4 font-bold text-gray-500">Asana</th>
+                    <th className="text-center p-4 font-bold text-violet-400">Whatstask</th>
+                    <th className="text-center p-4 font-bold text-slate-500">ClickUp</th>
+                    <th className="text-center p-4 font-bold text-slate-500">Monday</th>
+                    <th className="text-center p-4 font-bold text-slate-500">Asana</th>
                   </tr>
                 </thead>
                 <tbody>
                   {comparison.map((row, index) => (
-                    <tr key={index} className="border-b border-white/5">
+                    <tr key={index} className="border-b border-slate-100">
                       <td className="p-4 font-medium">{row.feature}</td>
-                      <td className="p-4 text-center text-teal-400">{row.whatstask}</td>
-                      <td className="p-4 text-center text-gray-500">{row.clickup}</td>
-                      <td className="p-4 text-center text-gray-500">{row.monday}</td>
-                      <td className="p-4 text-center text-gray-500">{row.asana}</td>
+                      <td className="p-4 text-center text-violet-400">{row.whatstask}</td>
+                      <td className="p-4 text-center text-slate-500">{row.clickup}</td>
+                      <td className="p-4 text-center text-slate-500">{row.monday}</td>
+                      <td className="p-4 text-center text-slate-500">{row.asana}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
             <div className="text-center mt-6">
-              <Link href="/compare/clickup" className="text-teal-400 hover:text-teal-300 inline-flex items-center gap-2">
+              <Link href="/compare/clickup" className="text-violet-400 hover:text-violet-300 inline-flex items-center gap-2">
                 See full comparisons <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -315,9 +315,9 @@ export default function PricingPage() {
                   a: "Contact us about Enterprise plans. We build custom solutions for teams with specific needs.",
                 },
               ].map((faq, index) => (
-                <div key={index} className="bg-white/5 rounded-xl p-6 border border-white/10">
+                <div key={index} className="bg-slate-50 rounded-xl p-6 border border-slate-200">
                   <h3 className="font-bold mb-2">{faq.q}</h3>
-                  <p className="text-gray-400">{faq.a}</p>
+                  <p className="text-slate-600">{faq.a}</p>
                 </div>
               ))}
             </div>
@@ -325,12 +325,12 @@ export default function PricingPage() {
 
           {/* CTA */}
           <section className="max-w-3xl mx-auto text-center">
-            <div className="bg-gradient-to-br from-teal-500/10 to-white/5 rounded-3xl p-8 md:p-12 border border-teal-500/20">
+            <div className="bg-gradient-to-br from-violet-500/10 to-white/5 rounded-3xl p-8 md:p-12 border border-violet-500/20">
               <h2 className="text-3xl font-bold mb-4">Start free today</h2>
-              <p className="text-gray-400 mb-8">
+              <p className="text-slate-600 mb-8">
                 No credit card required. No time limits. Just start working.
               </p>
-              <Button asChild className="bg-teal-500 text-white hover:bg-teal-600 rounded-full px-8 py-6 text-lg">
+              <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6 text-lg">
                 <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                   <Send className="h-5 w-5 mr-2" />
                   Get Started Free
@@ -340,8 +340,8 @@ export default function PricingPage() {
           </section>
         </main>
 
-        <footer className="border-t border-white/5 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-gray-500">
+        <footer className="border-t border-slate-100 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>
