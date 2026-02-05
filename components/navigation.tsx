@@ -111,22 +111,19 @@ export default function Navigation() {
         </div>
       </div>
 
-      {/* Featured Column - Liquid Glass */}
-      <div className="relative bg-gradient-to-br from-violet-500/15 to-violet-400/5 rounded-xl p-6 border border-violet-300/30 backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.6),0_4px_16px_rgba(139,92,246,0.1)] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent pointer-events-none" />
-        <div className="relative z-10">
-          <p className="text-sm font-semibold text-violet-600 mb-3">Try Whatstask Free</p>
-          <p className="text-sm text-slate-600 mb-4">
-            Get started in 30 seconds. No credit card required. Works right in Telegram.
-          </p>
-          <Button asChild className="w-full bg-violet-500/90 hover:bg-violet-600 text-white rounded-full backdrop-blur-sm shadow-lg shadow-violet-500/20 transition-all hover:shadow-xl hover:shadow-violet-500/30 hover:scale-[1.02]">
-            <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-              Launch in Telegram
-            </a>
-          </Button>
-          <div className="mt-4 pt-4 border-t border-violet-200/30">
-            <p className="text-xs text-slate-500">Trusted by 10,000+ teams</p>
-          </div>
+      {/* Featured Column */}
+      <div className="relative bg-gradient-to-br from-violet-50 to-violet-100/50 rounded-xl p-6 border-l-2 border-violet-400">
+        <p className="text-sm font-semibold text-violet-700 mb-3">Try Whatstask Free</p>
+        <p className="text-sm text-slate-600 mb-4">
+          Get started in 30 seconds. No credit card required. Works right in Telegram.
+        </p>
+        <Button asChild className="w-full bg-violet-500 hover:bg-violet-600 text-white rounded-full transition-all hover:scale-[1.02]">
+          <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
+            Launch in Telegram
+          </a>
+        </Button>
+        <div className="mt-4 pt-4 border-t border-violet-200/50">
+          <p className="text-xs text-slate-500">Trusted by 10,000+ teams</p>
         </div>
       </div>
     </div>
@@ -166,10 +163,10 @@ export default function Navigation() {
           <DropdownLink href="/project-management#time-tracking" title="Time Tracking" description="Track billable hours" />
         </div>
 
-        <div className="mt-6 p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-slate-200/50 shadow-[inset_0_1px_1px_rgba(255,255,255,0.8),0_2px_8px_rgba(0,0,0,0.04)]">
-          <p className="text-sm font-medium mb-2">Not sure which solution?</p>
+        <div className="mt-6 p-4 bg-violet-50 rounded-lg border-l-2 border-violet-400">
+          <p className="text-sm font-medium text-slate-800 mb-2">Not sure which solution?</p>
           <p className="text-xs text-slate-600 mb-3">Talk to us about your team's needs.</p>
-          <Link href="/contact" className="text-sm text-violet-500 hover:text-violet-600 font-medium transition-colors">
+          <Link href="/contact" className="text-sm text-violet-600 hover:text-violet-700 font-medium transition-colors">
             Contact Sales →
           </Link>
         </div>
@@ -216,7 +213,7 @@ export default function Navigation() {
           <DropdownLink href="/compare/notion" title="vs Notion" description="Task-focused" />
           <DropdownLink href="/compare/todoist" title="vs Todoist" description="Team features included" />
         </div>
-        <Link href="/compare/clickup" className="mt-4 text-sm text-violet-400 hover:text-violet-300">
+        <Link href="/compare/clickup" className="inline-block mt-4 text-sm text-violet-600 hover:text-violet-700 font-medium transition-colors">
           See all comparisons →
         </Link>
       </div>
@@ -347,20 +344,16 @@ export default function Navigation() {
         <AnimatePresence>
           {activeDropdown && (
             <motion.div
-              initial={{ opacity: 0, y: 8 }}
+              initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 8 }}
+              exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
-              className={`absolute top-[calc(100%-4px)] left-0 right-0 mt-1 ${
-                scrolled
-                  ? "bg-white border-t border-b border-slate-200 shadow-[0_10px_40px_rgba(0,0,0,0.12),0_4px_12px_rgba(0,0,0,0.08)]"
-                  : "bg-white/95 backdrop-blur-xl border-t border-b border-slate-200/50 shadow-[0_10px_40px_rgba(0,0,0,0.15),0_4px_12px_rgba(0,0,0,0.1)]"
-              }`}
+              className="absolute top-full left-0 right-0 bg-white border-b border-slate-200/80 shadow-[0_10px_40px_rgba(0,0,0,0.1),0_2px_10px_rgba(0,0,0,0.06)]"
               onMouseEnter={() => timeoutRef.current && clearTimeout(timeoutRef.current)}
               onMouseLeave={handleMouseLeave}
             >
-              {/* Connecting bridge to navbar */}
-              <div className="absolute -top-1 left-0 right-0 h-2 bg-transparent" />
+              {/* Connecting bridge to prevent hover gap */}
+              <div className="absolute -top-2 left-0 right-0 h-3 bg-transparent" />
               <div className="container mx-auto relative z-10">
                 {activeDropdown === "Products" && <ProductsDropdown />}
                 {activeDropdown === "Solutions" && <SolutionsDropdown />}
@@ -511,13 +504,9 @@ function DropdownLink({
   return (
     <Link
       href={href}
-      className={`block p-3 rounded-xl transition-all duration-200 group relative ${
-        highlight
-          ? "hover:bg-violet-500/10 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.6),0_2px_8px_rgba(139,92,246,0.1)]"
-          : "hover:bg-white/80 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.8),0_2px_8px_rgba(0,0,0,0.04)]"
-      } hover:scale-[1.01]`}
+      className="block p-3 rounded-lg transition-all duration-200 group relative hover:bg-violet-500/[0.08] hover:translate-x-1 border-l-2 border-transparent hover:border-violet-500"
     >
-      <p className={`text-sm font-medium transition-colors ${highlight ? "text-violet-600 group-hover:text-violet-700" : "text-slate-900"}`}>{title}</p>
+      <p className={`text-sm font-medium transition-colors ${highlight ? "text-violet-600 group-hover:text-violet-700" : "text-slate-800 group-hover:text-slate-900"}`}>{title}</p>
       <p className="text-xs text-slate-500 mt-0.5 group-hover:text-slate-600 transition-colors">{description}</p>
     </Link>
   )
@@ -575,7 +564,7 @@ function MobileNavLink({
     <Link
       href={href}
       onClick={onClick}
-      className="block px-4 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg"
+      className="block px-4 py-2 text-sm text-slate-600 hover:text-slate-900 hover:bg-violet-500/[0.08] hover:translate-x-1 transition-all duration-200 rounded-lg border-l-2 border-transparent hover:border-violet-500"
     >
       {children}
     </Link>
