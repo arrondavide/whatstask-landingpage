@@ -4,8 +4,6 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Check, Send } from "lucide-react"
 import PageLoader from "@/components/page-loader"
-import { Breadcrumbs } from "@/components/breadcrumbs"
-
 export const metadata: Metadata = {
   title: "Project Management for Startups | Whatstask",
   description:
@@ -69,13 +67,6 @@ export default function StartupsPage() {
         </header>
 
         <main className="container mx-auto px-4 py-12">
-          <Breadcrumbs
-            items={[
-              { label: "Use Cases", href: "/use-cases/startups" },
-              { label: "Startups", href: "/use-cases/startups" },
-            ]}
-          />
-
           <section className="text-center max-w-4xl mx-auto mb-16">
             <p className="text-sm text-slate-500 mb-6">For Startups</p>
 

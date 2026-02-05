@@ -6,8 +6,6 @@ import {
   Send,
   ArrowRight,
 } from "lucide-react"
-import { Breadcrumbs } from "@/components/breadcrumbs"
-
 export const metadata: Metadata = {
   title: "Project Management for Small Teams (2-10 People) | Whatstask",
   description:
@@ -122,14 +120,7 @@ export default function SmallTeamsSolutionPage() {
 
       {/* Hero */}
       <section className="container mx-auto px-4 py-12">
-        <Breadcrumbs
-          items={[
-            { label: "Solutions", href: "/solutions/small-teams" },
-            { label: "Small Teams", href: "/solutions/small-teams" },
-          ]}
-        />
-
-        <div className="max-w-4xl mx-auto text-center mb-16 mt-8">
+        <div className="max-w-4xl mx-auto text-center mb-16">
           <p className="text-sm text-slate-500 mb-6">For Teams of 2-10</p>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             Project Management That Doesn't Insult Your Intelligence

@@ -3,7 +3,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Search, Send } from "lucide-react"
-import { Breadcrumbs } from "@/components/breadcrumbs"
 import Navigation from "@/components/navigation"
 
 export const metadata: Metadata = {
@@ -149,14 +148,7 @@ export default function HelpPage() {
       <div className="min-h-screen bg-white text-slate-900 pt-16">
         {/* Hero */}
         <section className="container mx-auto px-4 py-12">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Help Center", href: "/help" },
-          ]}
-        />
-
-        <div className="max-w-4xl mx-auto text-center mt-8 mb-16">
+        <div className="max-w-4xl mx-auto text-center mb-16">
           <p className="text-sm text-slate-500 mb-6">Help Center</p>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             How Can We Help?

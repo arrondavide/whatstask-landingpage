@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 import { ExternalLink, FileText, Zap, ImageIcon, QrCode, SplitSquareHorizontal, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import PageLoader from "@/components/page-loader"
-import { Breadcrumbs } from "@/components/breadcrumbs"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -127,8 +126,6 @@ export default function ToolsClient() {
           {/* Header Section */}
           <section className="relative py-20 md:py-32 px-4 border-b border-slate-100">
             <div className="container mx-auto max-w-6xl">
-              <Breadcrumbs items={[{ label: "Free Tools", href: "/tools" }]} />
-
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

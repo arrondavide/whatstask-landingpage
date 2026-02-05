@@ -4,8 +4,6 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import PageLoader from "@/components/page-loader"
 import Navigation from "@/components/navigation"
-import { Breadcrumbs } from "@/components/breadcrumbs"
-
 export const metadata: Metadata = {
   title: "Enterprise & Custom Solutions - B2B Project Management | Whatstask",
   description:
@@ -104,8 +102,6 @@ export default function EnterprisePage() {
       <Navigation variant="solid" />
       <div className="min-h-screen bg-white text-slate-900 pt-16">
         <main className="container mx-auto px-4 py-12">
-          <Breadcrumbs items={[{ label: "Enterprise", href: "/enterprise" }]} />
-
           {/* Hero */}
           <section className="text-center max-w-4xl mx-auto mb-20">
             <p className="text-sm text-slate-500 mb-6">B2B Custom Solutions</p>

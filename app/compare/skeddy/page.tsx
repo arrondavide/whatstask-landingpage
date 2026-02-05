@@ -4,7 +4,6 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Check, X, DollarSign, Zap, Users, Shield, Send } from "lucide-react"
 import PageLoader from "@/components/page-loader"
-import { Breadcrumbs } from "@/components/breadcrumbs"
 import Script from "next/script"
 
 export const metadata: Metadata = {
@@ -191,14 +190,7 @@ export default function WhatstaskVsSkeddyPage() {
 
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-12">
-          <Breadcrumbs
-            items={[
-              { label: "Compare", href: "/compare/skeddy" },
-              { label: "vs Skeddy", href: "/compare/skeddy" },
-            ]}
-          />
-
-          <div className="max-w-4xl mx-auto text-center mb-12 mt-8">
+          <div className="max-w-4xl mx-auto text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
               Whatstask vs Skeddy: Which Telegram Bot is Better?
             </h1>

@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import PageLoader from "@/components/page-loader"
 import Navigation from "@/components/navigation"
-import { Breadcrumbs } from "@/components/breadcrumbs"
 import Script from "next/script"
 
 export const metadata: Metadata = {
@@ -212,15 +211,8 @@ export default function GEOGuidePage() {
       <Navigation variant="solid" />
       <div className="min-h-screen bg-white text-slate-900 pt-16">
         <main className="container mx-auto px-4 py-12">
-          <Breadcrumbs
-            items={[
-              { label: "GEO Analyzer", href: "/geoanalyzer" },
-              { label: "Complete Guide", href: "/geoanalyzer/guide" },
-            ]}
-          />
-
           {/* Hero */}
-          <section className="max-w-4xl mx-auto text-center mb-16 mt-8">
+          <section className="max-w-4xl mx-auto text-center mb-16">
             <p className="text-sm text-slate-500 mb-6">Complete Guide • Updated 2026</p>
 
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">

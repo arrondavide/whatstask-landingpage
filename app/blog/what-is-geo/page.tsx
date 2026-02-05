@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button"
 import { Brain, ArrowRight, CheckCircle, ExternalLink, Clock } from "lucide-react"
 import PageLoader from "@/components/page-loader"
 import Navigation from "@/components/navigation"
-import { Breadcrumbs } from "@/components/breadcrumbs"
 import Script from "next/script"
 
 export const metadata: Metadata = {
@@ -111,14 +110,7 @@ export default function WhatIsGEOPage() {
 
       <div className="min-h-screen bg-white text-slate-900 pt-16">
         <main className="container mx-auto px-4 py-12">
-          <Breadcrumbs
-            items={[
-              { label: "Blog", href: "/blog" },
-              { label: "What is GEO?", href: "/blog/what-is-geo" },
-            ]}
-          />
-
-          <article className="max-w-3xl mx-auto mt-8">
+          <article className="max-w-3xl mx-auto">
             {/* Article Header */}
             <header className="mb-12">
               <div className="flex items-center gap-4 text-sm text-slate-600 mb-4">

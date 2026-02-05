@@ -4,7 +4,6 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Check, Clock, DollarSign, Users, Zap, FileText, Calendar, MessageSquare, Send } from "lucide-react"
 import PageLoader from "@/components/page-loader"
-import { Breadcrumbs } from "@/components/breadcrumbs"
 import Script from "next/script"
 
 export const metadata: Metadata = {
@@ -122,14 +121,7 @@ export default function FreelancersPage() {
 
         {/* Hero */}
         <section className="container mx-auto px-4 py-12">
-          <Breadcrumbs
-            items={[
-              { label: "Use Cases", href: "/use-cases/freelancers" },
-              { label: "Freelancers", href: "/use-cases/freelancers" },
-            ]}
-          />
-
-          <div className="max-w-4xl mx-auto text-center mb-16 mt-8">
+          <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-block bg-violet-500/10 border border-violet-500/20 rounded-full px-4 py-2 mb-6">
               <span className="text-violet-400 text-sm font-medium">For Freelancers</span>
             </div>

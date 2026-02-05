@@ -4,7 +4,6 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Check, X, DollarSign, Zap, Smartphone, Send } from "lucide-react"
 import PageLoader from "@/components/page-loader"
-import { Breadcrumbs } from "@/components/breadcrumbs"
 import Script from "next/script"
 
 export const metadata: Metadata = {
@@ -144,14 +143,7 @@ export default function WhatstaskVsTodoistPage() {
 
         {/* Hero */}
         <section className="container mx-auto px-4 py-12">
-          <Breadcrumbs
-            items={[
-              { label: "Compare", href: "/compare/todoist" },
-              { label: "vs Todoist", href: "/compare/todoist" },
-            ]}
-          />
-
-          <div className="max-w-4xl mx-auto text-center mb-12 mt-8">
+          <div className="max-w-4xl mx-auto text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
               Telegram Task Bot vs Todoist: Pros & Cons
             </h1>

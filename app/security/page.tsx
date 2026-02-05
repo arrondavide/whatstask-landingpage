@@ -4,7 +4,6 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import Navigation from "@/components/navigation"
-import { Breadcrumbs } from "@/components/breadcrumbs"
 
 export const metadata: Metadata = {
   title: "Security & Trust Center | Whatstask",
@@ -104,14 +103,7 @@ export default function SecurityPage() {
       <div className="min-h-screen bg-white text-slate-900 pt-16">
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-12">
-        <Breadcrumbs
-          items={[
-            { label: "Home", href: "/" },
-            { label: "Security", href: "/security" },
-          ]}
-        />
-
-        <div className="max-w-4xl mx-auto text-center mt-8 mb-16">
+        <div className="max-w-4xl mx-auto text-center mb-16">
           <p className="text-sm text-slate-500 mb-6">Security & Trust</p>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             Your Data Security is Our Priority

@@ -17,7 +17,6 @@ import {
   ArrowRight,
 } from "lucide-react"
 import PageLoader from "@/components/page-loader"
-import { Breadcrumbs } from "@/components/breadcrumbs"
 import Script from "next/script"
 
 export const metadata: Metadata = {
@@ -153,8 +152,6 @@ export default function ProjectManagementPage() {
         </header>
 
         <main className="container mx-auto px-4 py-12">
-          <Breadcrumbs items={[{ label: "Project Management", href: "/project-management" }]} />
-
           {/* Hero */}
           <section className="text-center max-w-4xl mx-auto mb-20">
             <p className="text-sm text-slate-500 mb-6">Simple scales.</p>

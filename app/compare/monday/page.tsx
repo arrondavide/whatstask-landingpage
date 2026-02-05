@@ -4,7 +4,6 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Check, Send, Zap, DollarSign, Clock } from "lucide-react"
 import PageLoader from "@/components/page-loader"
-import { Breadcrumbs } from "@/components/breadcrumbs"
 import Script from "next/script"
 
 export const metadata: Metadata = {
@@ -64,13 +63,6 @@ export default function MondayComparisonPage() {
         </header>
 
         <main className="container mx-auto px-4 py-12">
-          <Breadcrumbs
-            items={[
-              { label: "Compare", href: "/compare/monday" },
-              { label: "vs Monday", href: "/compare/monday" },
-            ]}
-          />
-
           <section className="text-center max-w-4xl mx-auto mb-16">
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
               Whatstask vs Monday.com

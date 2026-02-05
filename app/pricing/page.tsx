@@ -4,8 +4,6 @@ import { Button } from "@/components/ui/button"
 import { Check, X, Send, Zap, Brain, ArrowRight } from "lucide-react"
 import PageLoader from "@/components/page-loader"
 import Navigation from "@/components/navigation"
-import { Breadcrumbs } from "@/components/breadcrumbs"
-
 export const metadata: Metadata = {
   title: "Pricing - Simple, Transparent Plans | Whatstask",
   description:
@@ -124,8 +122,6 @@ export default function PricingPage() {
       <Navigation variant="solid" />
       <div className="min-h-screen bg-white text-slate-900 pt-16">
         <main className="container mx-auto px-4 py-12">
-          <Breadcrumbs items={[{ label: "Pricing", href: "/pricing" }]} />
-
           {/* Hero */}
           <section className="text-center max-w-4xl mx-auto mb-16">
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">

@@ -4,7 +4,6 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Check, X, Send, Zap, DollarSign, Clock } from "lucide-react"
 import PageLoader from "@/components/page-loader"
-import { Breadcrumbs } from "@/components/breadcrumbs"
 import Script from "next/script"
 
 export const metadata: Metadata = {
@@ -67,13 +66,6 @@ export default function ClickUpComparisonPage() {
         </header>
 
         <main className="container mx-auto px-4 py-12">
-          <Breadcrumbs
-            items={[
-              { label: "Compare", href: "/compare/clickup" },
-              { label: "vs ClickUp", href: "/compare/clickup" },
-            ]}
-          />
-
           {/* Hero */}
           <section className="text-center max-w-4xl mx-auto mb-16">
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">

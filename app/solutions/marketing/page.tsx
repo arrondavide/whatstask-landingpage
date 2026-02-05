@@ -6,8 +6,6 @@ import {
   Send,
   ArrowRight,
 } from "lucide-react"
-import { Breadcrumbs } from "@/components/breadcrumbs"
-
 export const metadata: Metadata = {
   title: "Project Management for Marketing Teams | Whatstask",
   description:
@@ -115,14 +113,7 @@ export default function MarketingSolutionPage() {
 
       {/* Hero */}
       <section className="container mx-auto px-4 py-12">
-        <Breadcrumbs
-          items={[
-            { label: "Solutions", href: "/solutions/marketing" },
-            { label: "Marketing Teams", href: "/solutions/marketing" },
-          ]}
-        />
-
-        <div className="max-w-4xl mx-auto text-center mb-16 mt-8">
+        <div className="max-w-4xl mx-auto text-center mb-16">
           <p className="text-sm text-slate-500 mb-6">For Marketing Teams</p>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             Run Campaigns Without the Chaos

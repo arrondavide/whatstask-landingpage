@@ -4,8 +4,6 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Check, Shield, Users, Settings, BarChart3, ArrowRight } from "lucide-react"
 import PageLoader from "@/components/page-loader"
-import { Breadcrumbs } from "@/components/breadcrumbs"
-
 export const metadata: Metadata = {
   title: "Enterprise Project Management | Whatstask",
   description:
@@ -70,13 +68,6 @@ export default function EnterpriseUseCasePage() {
         </header>
 
         <main className="container mx-auto px-4 py-12">
-          <Breadcrumbs
-            items={[
-              { label: "Use Cases", href: "/use-cases/enterprise" },
-              { label: "Enterprise", href: "/use-cases/enterprise" },
-            ]}
-          />
-
           <section className="text-center max-w-4xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-full px-4 py-2 mb-6">
               <Shield className="h-4 w-4 text-slate-600" />

@@ -7,8 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Mail, Send, MapPin, MessageSquare, Building2, User, ArrowRight } from "lucide-react"
 import PageLoader from "@/components/page-loader"
 import Navigation from "@/components/navigation"
-import { Breadcrumbs } from "@/components/breadcrumbs"
-
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -57,8 +55,6 @@ export default function ContactPage() {
       <Navigation variant="solid" />
       <div className="min-h-screen bg-white text-slate-900 pt-16">
         <main className="container mx-auto px-4 py-12 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Contact", href: "/contact" }]} />
-
           {/* Hero */}
           <section className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">

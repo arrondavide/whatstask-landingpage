@@ -4,8 +4,6 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Zap, Shield, Heart, Send } from "lucide-react"
 import PageLoader from "@/components/page-loader"
 import Navigation from "@/components/navigation"
-import { Breadcrumbs } from "@/components/breadcrumbs"
-
 export const metadata: Metadata = {
   title: "About Whatstask - Simple Scales | Our Mission & Philosophy",
   description:
@@ -34,8 +32,6 @@ export default function AboutPage() {
       <div className="min-h-screen bg-white text-slate-900 pt-16">
         {/* Main Content */}
         <main className="container mx-auto px-4 py-12 max-w-4xl">
-          <Breadcrumbs items={[{ label: "About", href: "/about" }]} />
-
           {/* Hero */}
           <section className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">Simple scales.</h1>

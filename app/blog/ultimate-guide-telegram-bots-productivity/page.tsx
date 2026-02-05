@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Calendar, Clock, Check, Zap, Users, Shield } from "lucide-react"
 import PageLoader from "@/components/page-loader"
 import Navigation from "@/components/navigation"
@@ -79,13 +78,6 @@ export default function TelegramBotsGuidePage() {
         {/* Article */}
         <article className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
-            <Breadcrumbs
-              items={[
-                { label: "Blog", href: "/blog" },
-                { label: "Ultimate Guide to Telegram Bots", href: "/blog/ultimate-guide-telegram-bots-productivity" },
-              ]}
-            />
-
             {/* Meta */}
             <div className="flex items-center gap-4 mb-6 text-slate-600">
               <span className="bg-violet-500/10 border border-violet-500/20 text-violet-400 text-sm px-3 py-1 rounded-full font-medium">
