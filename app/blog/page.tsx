@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { Button } from "@/components/ui/button"
 import { Calendar, Clock, ArrowRight } from "lucide-react"
 import PageLoader from "@/components/page-loader"
 import Navigation from "@/components/navigation"

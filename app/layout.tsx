@@ -98,9 +98,15 @@ export const metadata = {
     ],
   },
   manifest: "/site.webmanifest",
-  // Note: Add your Google Search Console verification code here after setting up GSC
+  // Google Search Console verification
+  // To verify your site with Google Search Console:
+  // 1. Go to https://search.google.com/search-console
+  // 2. Add your property (https://www.whatstask.com)
+  // 3. Choose "HTML tag" verification method
+  // 4. Copy the content value from the meta tag (e.g., "ABC123xyz...")
+  // 5. Uncomment the verification block below and paste the code
   // verification: {
-  //   google: "google-site-verification=your-verification-code",
+  //   google: "your-verification-code-here",
   // },
   category: "productivity",
     generator: 'v0.app'

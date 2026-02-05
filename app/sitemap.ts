@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // GEO content - high priority for authority building
   const geoPages = [
     { url: '/geoanalyzer/guide', priority: 0.9, changeFrequency: 'weekly' as const },
+    { url: '/seo-analyzer', priority: 0.8, changeFrequency: 'monthly' as const },
     { url: '/blog/what-is-geo', priority: 0.8, changeFrequency: 'monthly' as const },
     { url: '/blog/geo-vs-seo', priority: 0.8, changeFrequency: 'monthly' as const },
   ]

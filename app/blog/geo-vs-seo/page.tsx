@@ -82,12 +82,51 @@ export default function GEOvsSEOPage() {
     "@type": "Article",
     headline: "GEO vs SEO: What's the Difference? Complete Comparison",
     description: "GEO vs SEO: Learn the key differences between Generative Engine Optimization and traditional SEO.",
+    image: "https://www.whatstask.com/logo-black.png",
     author: {
       "@type": "Organization",
       name: "Whatstask",
+      url: "https://www.whatstask.com"
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Whatstask",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.whatstask.com/logo-black.png"
+      }
     },
     datePublished: "2026-01-12",
     dateModified: new Date().toISOString().split('T')[0],
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.whatstask.com/blog/geo-vs-seo"
+    }
+  }
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.whatstask.com"
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://www.whatstask.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "GEO vs SEO",
+        item: "https://www.whatstask.com/blog/geo-vs-seo"
+      }
+    ]
   }
 
   return (
@@ -98,6 +137,12 @@ export default function GEOvsSEOPage() {
         id="article-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <Navigation variant="solid" />

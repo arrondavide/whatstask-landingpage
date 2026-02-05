@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Brain, ArrowRight, CheckCircle, ExternalLink, Clock } from "lucide-react"
 import PageLoader from "@/components/page-loader"
+import Navigation from "@/components/navigation"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import Script from "next/script"
 
@@ -61,11 +61,41 @@ export default function WhatIsGEOPage() {
     },
     datePublished: "2026-01-10",
     dateModified: new Date().toISOString().split('T')[0],
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.whatstask.com/blog/what-is-geo"
+    }
+  }
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.whatstask.com"
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://www.whatstask.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "What is GEO?",
+        item: "https://www.whatstask.com/blog/what-is-geo"
+      }
+    ]
   }
 
   return (
     <>
       <PageLoader />
+      <Navigation variant="solid" />
 
       <Script
         id="article-schema"
@@ -73,22 +103,13 @@ export default function WhatIsGEOPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      <div className="min-h-screen bg-white text-slate-900">
-        {/* Header */}
-        <header className="border-b border-slate-200">
-          <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-            <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
-              <span className="text-xl font-bold">Whatstask</span>
-            </Link>
-            <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
-              <a href="https://geoanalyzer.whatstask.com" target="_blank" rel="noopener noreferrer">
-                Try GEO Analyzer
-              </a>
-            </Button>
-          </div>
-        </header>
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
 
+      <div className="min-h-screen bg-white text-slate-900 pt-16">
         <main className="container mx-auto px-4 py-12">
           <Breadcrumbs
             items={[

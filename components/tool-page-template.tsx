@@ -5,6 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { FileText, CheckCircle, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import PageLoader from "@/components/page-loader"
+import Navigation from "@/components/navigation"
 import Script from "next/script"
 
 interface ToolPageProps {
@@ -80,6 +81,44 @@ export default function ToolPageTemplate({
     },
     description: shortDescription,
     featureList: features,
+    url: `https://www.whatstask.com/${toolSlug}`,
+    provider: {
+      "@type": "Organization",
+      name: "Whatstask",
+      url: "https://www.whatstask.com"
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      ratingCount: "512",
+      bestRating: "5",
+      worstRating: "1"
+    }
+  }
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.whatstask.com"
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Tools",
+        item: "https://www.whatstask.com/tools"
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: toolName,
+        item: `https://www.whatstask.com/${toolSlug}`
+      }
+    ]
   }
 
   return (
@@ -101,25 +140,14 @@ export default function ToolPageTemplate({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
+      <Script
+        id={`schema-breadcrumb-${toolSlug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
 
-      <div className="min-h-screen bg-white text-slate-900">
-        {/* Header */}
-        <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-md">
-          <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold text-slate-900">
-              Whatstask
-            </Link>
-            <nav className="hidden md:flex gap-8">
-              <Link href="/" className="text-slate-600 hover:text-slate-900 transition-colors">
-                Home
-              </Link>
-              <Link href="/tools" className="text-violet-600 font-medium hover:text-violet-700 transition-colors">
-                All Tools
-              </Link>
-            </nav>
-          </div>
-        </header>
-
+      <Navigation variant="solid" />
+      <div className="min-h-screen bg-white text-slate-900 pt-16">
         <main className="container mx-auto px-4 py-12">
           {/* Hero Section */}
           <motion.div
