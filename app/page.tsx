@@ -113,7 +113,8 @@ export default function LandingPage() {
             color1="#8B5CF6"
             color2="#A78BFA"
             color3="#E9D5FF"
-            grainAmount={0.25}
+            grainAmount={0.35}
+            grainScale={0.8}
             grainAnimated={true}
             timeSpeed={0.3}
             warpStrength={1.2}
@@ -123,7 +124,7 @@ export default function LandingPage() {
             rotationAmount={360.0}
             contrast={1.3}
             saturation={1.4}
-            className="opacity-50"
+            className="opacity-60"
           />
         </div>
         {/* Gradient fade at bottom of hero */}
