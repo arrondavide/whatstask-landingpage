@@ -1,8 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
 import PageLoader from "@/components/page-loader"
+import Navigation from "@/components/navigation"
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Whatstask",
@@ -20,19 +19,8 @@ export default function PrivacyPage() {
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-white text-slate-900">
-        <header className="border-b border-slate-200">
-          <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-            <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
-              <span className="text-xl font-bold">Whatstask</span>
-            </Link>
-            <Link href="/">
-              <Button variant="ghost">Back to Home</Button>
-            </Link>
-          </div>
-        </header>
-
+      <Navigation variant="solid" />
+      <div className="min-h-screen bg-white text-slate-900 pt-16">
         <main className="container mx-auto px-4 py-12 max-w-3xl">
           <h1 className="text-4xl font-extrabold mb-8">Privacy Policy</h1>
           <p className="text-slate-600 mb-8">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>

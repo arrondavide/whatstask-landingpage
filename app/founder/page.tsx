@@ -2,8 +2,9 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Linkedin, Twitter, Mail, Globe, Code, Zap, Users, Award } from "lucide-react"
+import { Linkedin, Twitter, Globe, Code, Zap, Users, Award } from "lucide-react"
 import PageLoader from "@/components/page-loader"
+import Navigation from "@/components/navigation"
 import Script from "next/script"
 
 export const metadata: Metadata = {
@@ -99,35 +100,8 @@ export default function FounderPage() {
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-white text-slate-900">
-        {/* Header */}
-        <header className="border-b border-slate-200 bg-white/90 backdrop-blur-md sticky top-0 z-50">
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex items-center justify-between">
-              <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                <Image src="/logo-black.png" alt="Whatstask" width={40} height={40} className="rounded-lg" />
-                <span className="text-xl font-bold text-slate-900">Whatstask</span>
-              </Link>
-              <nav className="hidden md:flex items-center gap-6">
-                <Link href="/features" className="text-slate-600 hover:text-violet-500 transition-colors">
-                  Features
-                </Link>
-                <Link href="/how-it-works" className="text-slate-600 hover:text-violet-500 transition-colors">
-                  How It Works
-                </Link>
-                <Link href="/blog" className="text-slate-600 hover:text-violet-500 transition-colors">
-                  Blog
-                </Link>
-                <Button asChild className="bg-violet-500 hover:bg-violet-600 text-white rounded-full">
-                  <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                    Launch Mini App
-                  </a>
-                </Button>
-              </nav>
-            </div>
-          </div>
-        </header>
-
+      <Navigation variant="solid" />
+      <div className="min-h-screen bg-white text-slate-900 pt-16">
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-20 lg:py-32">
           <div className="max-w-5xl mx-auto">

@@ -1,10 +1,10 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Breadcrumbs } from "@/components/breadcrumbs"
-import { Calendar, Clock, ArrowLeft, Check, Zap, Users, Shield } from "lucide-react"
+import { Calendar, Clock, Check, Zap, Users, Shield } from "lucide-react"
 import PageLoader from "@/components/page-loader"
+import Navigation from "@/components/navigation"
 import Script from "next/script"
 
 export const metadata: Metadata = {
@@ -74,23 +74,8 @@ export default function TelegramBotsGuidePage() {
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-white text-slate-900">
-        {/* Header */}
-        <header className="border-b border-slate-200">
-          <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-            <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
-              <span className="text-xl font-bold">Whatstask</span>
-            </Link>
-            <Link href="/blog">
-              <Button variant="ghost">
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to Blog
-              </Button>
-            </Link>
-          </div>
-        </header>
-
+      <Navigation variant="solid" />
+      <div className="min-h-screen bg-white text-slate-900 pt-16">
         {/* Article */}
         <article className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">

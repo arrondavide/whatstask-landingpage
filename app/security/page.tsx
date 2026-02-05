@@ -1,11 +1,8 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import {
-  ArrowRight,
-  Send,
-} from "lucide-react"
+import { ArrowRight } from "lucide-react"
+import Navigation from "@/components/navigation"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 
 export const metadata: Metadata = {
@@ -101,25 +98,11 @@ export default function SecurityPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
-      {/* Header */}
-      <header className="border-b border-slate-200">
-        <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-2">
-            <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
-            <span className="text-xl font-bold">Whatstask</span>
-          </Link>
-          <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
-            <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-              <Send className="h-4 w-4 mr-2" />
-              Try Free
-            </a>
-          </Button>
-        </div>
-      </header>
-
-      {/* Hero Section */}
-      <section className="container mx-auto px-4 py-12">
+    <>
+      <Navigation variant="solid" />
+      <div className="min-h-screen bg-white text-slate-900 pt-16">
+        {/* Hero Section */}
+        <section className="container mx-auto px-4 py-12">
         <Breadcrumbs
           items={[
             { label: "Home", href: "/" },
@@ -360,6 +343,7 @@ export default function SecurityPage() {
           </div>
         </div>
       </footer>
-    </div>
+      </div>
+    </>
   )
 }

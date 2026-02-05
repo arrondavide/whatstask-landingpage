@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import PageLoader from "@/components/page-loader"
+import Navigation from "@/components/navigation"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import Script from "next/script"
 
@@ -208,22 +208,8 @@ export default function GEOGuidePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <div className="min-h-screen bg-white text-slate-900">
-        {/* Header */}
-        <header className="border-b border-slate-200">
-          <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-            <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
-              <span className="text-xl font-bold">Whatstask</span>
-            </Link>
-            <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
-              <a href="https://geoanalyzer.whatstask.com" target="_blank" rel="noopener noreferrer">
-                Try GEO Analyzer
-              </a>
-            </Button>
-          </div>
-        </header>
-
+      <Navigation variant="solid" />
+      <div className="min-h-screen bg-white text-slate-900 pt-16">
         <main className="container mx-auto px-4 py-12">
           <Breadcrumbs
             items={[

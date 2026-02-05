@@ -26,18 +26,27 @@ const navItems: NavItem[] = [
   { name: "Pricing", href: "/pricing" },
 ]
 
-export default function Navigation() {
+interface NavigationProps {
+  variant?: 'default' | 'solid'  // 'solid' always shows black logo/text for non-hero pages
+}
+
+export default function Navigation({ variant = 'default' }: NavigationProps) {
   const [mounted, setMounted] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [mobileActiveSection, setMobileActiveSection] = useState<string | null>(null)
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(variant === 'solid')
   const dropdownRef = useRef<HTMLDivElement>(null)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const { scrollY } = useScroll()
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setScrolled(latest > 50)
+    // For solid variant, always keep scrolled appearance
+    if (variant === 'solid') {
+      setScrolled(true)
+    } else {
+      setScrolled(latest > 50)
+    }
   })
 
   useEffect(() => {

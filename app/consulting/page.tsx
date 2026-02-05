@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Bot, FileText, Workflow, Zap } from "lucide-react"
 import PageLoader from "@/components/page-loader"
+import Navigation from "@/components/navigation"
 
 export const metadata: Metadata = {
   title: "IT Consulting Services – Custom Bot & Workflow Solutions | Whatstask",
@@ -52,20 +53,8 @@ export default function ConsultingPage() {
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-brand-black text-white">
-        {/* Header */}
-        <header className="border-b border-slate-200">
-          <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-            <Link href="/" className="flex items-center gap-2">
-              <img src="/logo.svg" alt="Whatstask" className="h-8 w-8" />
-              <span className="text-xl font-bold">Whatstask</span>
-            </Link>
-            <Link href="/">
-              <Button variant="ghost">Back to Home</Button>
-            </Link>
-          </div>
-        </header>
-
+      <Navigation variant="solid" />
+      <div className="min-h-screen bg-white text-slate-900 pt-16">
         {/* Hero */}
         <section className="container mx-auto px-4 py-20 text-center">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">Scale Your Workflows with Expert IT Consulting</h1>
@@ -73,7 +62,7 @@ export default function ConsultingPage() {
             Custom bot development, workflow automation, and enterprise integrations. Our team helps businesses
             streamline operations with tailored task management solutions.
           </p>
-          <Button asChild className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-6 text-lg">
+          <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6 text-lg">
             <a href="mailto:contact@whatstask.com">Get a Free Consultation</a>
           </Button>
         </section>
@@ -84,7 +73,7 @@ export default function ConsultingPage() {
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {services.map((service, idx) => (
               <div key={idx} className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
-                <service.icon className="h-12 w-12 mb-4 text-white" />
+                <service.icon className="h-12 w-12 mb-4 text-violet-500" />
                 <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
                 <p className="text-slate-600 leading-relaxed">{service.description}</p>
               </div>
@@ -99,7 +88,7 @@ export default function ConsultingPage() {
             <p className="text-slate-600 mb-6">
               Contact us today for a free consultation. We'll analyze your needs and propose a custom solution.
             </p>
-            <Button asChild className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-6">
+            <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6">
               <a href="mailto:contact@whatstask.com">Contact Us</a>
             </Button>
           </div>
