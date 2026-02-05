@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useState, useEffect } from "react"
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog"
 import {
@@ -15,19 +15,16 @@ import {
 import Image from "next/image"
 import Link from "next/link"
 import PrivacyPolicy from "@/components/privacy-policy"
-import FloatingParticles from "@/components/floating-particles"
 import CustomCursor from "@/components/custom-cursor"
 import Navigation from "@/components/navigation"
 import PageLoader from "@/components/page-loader"
+import Grainient from "@/components/grainient"
 
 export default function LandingPage() {
   const [mounted, setMounted] = useState(false)
   const [privacyDialogOpen, setPrivacyDialogOpen] = useState(false)
 
-  const { scrollYProgress } = useScroll()
   const { scrollY } = useScroll()
-
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
   const heroOpacity = useTransform(scrollY, [0, 300], [1, 0.3])
 
   useEffect(() => {
@@ -78,16 +75,24 @@ export default function LandingPage() {
       <PageLoader />
       <CustomCursor />
 
-      {/* Animated background */}
+      {/* Grainient Background - Hero Section */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: "radial-gradient(circle at 50% 50%, #333 0%, transparent 50%)",
-            y: backgroundY,
-          }}
-        />
-        <FloatingParticles />
+        <div className="absolute inset-0 h-screen">
+          <Grainient
+            color1="#8B5CF6"
+            color2="#A78BFA"
+            color3="#C4B5FD"
+            grainAmount={0.15}
+            grainAnimated={true}
+            timeSpeed={0.15}
+            warpStrength={0.8}
+            warpFrequency={4.0}
+            warpSpeed={1.5}
+            contrast={1.3}
+            saturation={1.2}
+            className="opacity-30"
+          />
+        </div>
       </div>
 
       {/* Header */}
