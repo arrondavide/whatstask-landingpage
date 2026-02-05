@@ -227,10 +227,10 @@ export default function Navigation() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "backdrop-blur-md bg-white/95 border-b border-slate-200 shadow-sm"
-            : "bg-transparent border-b border-transparent"
+            ? "backdrop-blur-md bg-white/90 border-b border-slate-200/50 shadow-sm"
+            : "bg-transparent"
         }`}
         ref={dropdownRef}
       >
@@ -244,7 +244,7 @@ export default function Navigation() {
             >
               <Link href="/" className="flex items-center gap-2">
                 <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="w-8 h-8" />
-                <span className="font-bold text-xl tracking-tight">Whatstask</span>
+                <span className="font-bold text-xl tracking-tight text-slate-900">Whatstask</span>
               </Link>
             </motion.div>
 
@@ -260,22 +260,22 @@ export default function Navigation() {
                   {item.href ? (
                     <Link
                       href={item.href}
-                      className={`flex items-center gap-1 px-4 py-2 text-sm transition-colors rounded-lg ${
+                      className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
                         scrolled
-                          ? "text-slate-700 hover:text-slate-900 hover:bg-slate-50"
-                          : "text-slate-800 hover:text-slate-900 hover:bg-white/20"
+                          ? "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
+                          : "text-slate-700 hover:text-slate-900 hover:bg-white/40"
                       }`}
                     >
                       {item.name}
                     </Link>
                   ) : (
                     <button
-                      className={`flex items-center gap-1 px-4 py-2 text-sm transition-colors rounded-lg ${
+                      className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
                         activeDropdown === item.name
-                          ? scrolled ? "text-slate-900 bg-slate-100" : "text-slate-900 bg-white/30"
+                          ? scrolled ? "text-slate-900 bg-slate-100" : "text-slate-900 bg-white/50"
                           : scrolled
-                            ? "text-slate-700 hover:text-slate-900 hover:bg-slate-50"
-                            : "text-slate-800 hover:text-slate-900 hover:bg-white/20"
+                            ? "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
+                            : "text-slate-700 hover:text-slate-900 hover:bg-white/40"
                       }`}
                     >
                       {item.name}
@@ -294,10 +294,10 @@ export default function Navigation() {
             <div className="hidden lg:flex items-center gap-3">
               <Link
                 href="/contact"
-                className={`text-sm transition-colors px-4 py-2 ${
+                className={`text-sm font-medium transition-all duration-300 px-4 py-2 rounded-lg ${
                   scrolled
-                    ? "text-slate-700 hover:text-slate-900"
-                    : "text-slate-800 hover:text-slate-900"
+                    ? "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
+                    : "text-slate-700 hover:text-slate-900 hover:bg-white/40"
                 }`}
               >
                 Contact Sales
@@ -313,7 +313,11 @@ export default function Navigation() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-slate-50 border border-slate-200"
+              className={`lg:hidden w-10 h-10 flex items-center justify-center rounded-lg transition-all duration-300 ${
+                scrolled
+                  ? "bg-slate-100 border border-slate-200"
+                  : "bg-white/50 backdrop-blur-sm border border-white/30"
+              }`}
             >
               {mobileMenuOpen ? <X className="w-5 h-5 text-slate-900" /> : (
                 <div className="flex flex-col gap-1.5">
