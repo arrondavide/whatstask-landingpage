@@ -130,9 +130,9 @@ export default function LandingPage() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-[1]" />
 
         <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left side - Text content */}
-            <motion.div style={{ opacity: heroOpacity }} className="text-center lg:text-left">
+            <motion.div style={{ opacity: heroOpacity }} className="text-center md:text-left">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -175,7 +175,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8 lg:mb-0"
+                className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center mb-8 md:mb-0"
               >
                 <MagneticButton magneticStrength={0.2}>
                   <motion.div
@@ -216,7 +216,7 @@ export default function LandingPage() {
               initial={{ opacity: 0, x: 60 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="relative flex justify-center lg:justify-end items-center"
+              className="relative flex justify-center md:justify-end items-center"
             >
               <div className="flex items-end gap-3 md:gap-4">
                 {/* Left phone */}
