@@ -212,13 +212,53 @@ export default function LandingPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
-            className="flex flex-col items-center gap-2 text-slate-500"
+            className="flex flex-col items-center gap-2 text-slate-500 mb-12"
           >
             <span className="text-sm">See what we build</span>
             <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
               <ChevronDown className="h-5 w-5" />
             </motion.div>
           </motion.div>
+        </motion.div>
+
+        {/* Hero Phone Showcase */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="relative z-10 w-full max-w-5xl mx-auto mt-8"
+        >
+          <div className="flex items-end justify-center gap-4 md:gap-8">
+            {/* Left phone - tilted */}
+            <motion.div
+              initial={{ opacity: 0, x: -50, rotate: -12 }}
+              animate={{ opacity: 1, x: 0, rotate: -8 }}
+              transition={{ duration: 0.6, delay: 1 }}
+              className="hidden md:block scale-[0.7] md:scale-[0.8] origin-bottom"
+            >
+              <PhoneMockup src="/appui/app-projects.webp" alt="Projects Screen" />
+            </motion.div>
+
+            {/* Center phone - main */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
+              className="relative z-10 scale-[0.9] md:scale-100"
+            >
+              <PhoneMockup src="/appui/app-onboarding.webp" alt="WhatsTask Onboarding" priority />
+            </motion.div>
+
+            {/* Right phone - tilted */}
+            <motion.div
+              initial={{ opacity: 0, x: 50, rotate: 12 }}
+              animate={{ opacity: 1, x: 0, rotate: 8 }}
+              transition={{ duration: 0.6, delay: 1 }}
+              className="hidden md:block scale-[0.7] md:scale-[0.8] origin-bottom"
+            >
+              <PhoneMockup src="/appui/app-stats-personal.webp" alt="Statistics Screen" />
+            </motion.div>
+          </div>
         </motion.div>
       </section>
 
@@ -460,70 +500,82 @@ export default function LandingPage() {
             </p>
           </motion.div>
 
-          {/* Phone Showcase */}
-          <div className="relative h-[650px] md:h-[750px]">
-            {/* Center phone - main focus */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
-            >
-              <PhoneMockup src="/appui/app-onboarding.webp" alt="WhatsTask App Onboarding" priority />
-              <motion.p
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                className="text-center mt-6 text-sm font-medium text-slate-600"
-              >
-                Quick onboarding
-              </motion.p>
-            </motion.div>
-
-            {/* Left phone */}
-            <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 0.8, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="absolute left-[2%] md:left-[10%] top-1/2 -translate-y-1/2 z-10 scale-[0.85] -rotate-6 hidden sm:block"
-            >
-              <PhoneMockup src="/appui/app-create-project.webp" alt="Create Project Screen" />
-              <motion.p
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5 }}
-                className="text-center mt-6 text-sm font-medium text-slate-500"
-              >
-                Create projects
-              </motion.p>
-            </motion.div>
-
-            {/* Right phone */}
-            <motion.div
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 0.8, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="absolute right-[2%] md:right-[10%] top-1/2 -translate-y-1/2 z-10 scale-[0.85] rotate-6 hidden sm:block"
-            >
-              <PhoneMockup src="/appui/app-stats-personal.webp" alt="Statistics Screen" />
-              <motion.p
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5 }}
-                className="text-center mt-6 text-sm font-medium text-slate-500"
-              >
-                Track progress
-              </motion.p>
-            </motion.div>
-
+          {/* Phone Showcase - Flexbox Layout */}
+          <div className="relative">
             {/* Background glow */}
-            <div className="absolute inset-0 bg-gradient-radial from-violet-500/10 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-b from-violet-500/5 via-violet-500/10 to-transparent rounded-3xl pointer-events-none" />
+
+            <div className="flex items-center justify-center gap-4 md:gap-8 lg:gap-12 py-8">
+              {/* Left phone */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="hidden sm:flex flex-col items-center"
+              >
+                <div className="transform -rotate-6 hover:rotate-0 transition-transform duration-500">
+                  <div className="scale-[0.75] md:scale-[0.85] origin-center">
+                    <PhoneMockup src="/appui/app-create-project.webp" alt="Create Project Screen" />
+                  </div>
+                </div>
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5 }}
+                  className="text-center mt-4 text-sm font-medium text-slate-500"
+                >
+                  Create projects
+                </motion.p>
+              </motion.div>
+
+              {/* Center phone - main focus */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative z-10 flex flex-col items-center"
+              >
+                <div className="scale-[0.95] md:scale-100">
+                  <PhoneMockup src="/appui/app-team-management.webp" alt="Team Management Screen" priority />
+                </div>
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 }}
+                  className="text-center mt-4 text-sm font-medium text-slate-700"
+                >
+                  Manage your team
+                </motion.p>
+              </motion.div>
+
+              {/* Right phone */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="hidden sm:flex flex-col items-center"
+              >
+                <div className="transform rotate-6 hover:rotate-0 transition-transform duration-500">
+                  <div className="scale-[0.75] md:scale-[0.85] origin-center">
+                    <PhoneMockup src="/appui/app-stats-team.webp" alt="Team Statistics Screen" />
+                  </div>
+                </div>
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5 }}
+                  className="text-center mt-4 text-sm font-medium text-slate-500"
+                >
+                  Track progress
+                </motion.p>
+              </motion.div>
+            </div>
           </div>
 
           {/* Feature pills */}
@@ -531,7 +583,7 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-wrap justify-center gap-3 mt-8"
+            className="flex flex-wrap justify-center gap-3 mt-12"
           >
             {[
               "Team Management",
