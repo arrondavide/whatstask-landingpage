@@ -113,7 +113,7 @@ export default function LandingPage() {
             color1="#8B5CF6"
             color2="#A78BFA"
             color3="#E9D5FF"
-            grainAmount={0.35}
+            grainAmount={0.20}
             grainScale={0.8}
             grainAnimated={true}
             timeSpeed={0.3}
