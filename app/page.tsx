@@ -106,7 +106,7 @@ export default function LandingPage() {
       </Dialog>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-20 px-4 overflow-hidden">
+      <section className="relative min-h-screen flex items-center pt-24 pb-20 px-4 overflow-hidden">
         {/* Grainient Background - Contained to Hero */}
         <div className="absolute inset-0 z-0">
           <Grainient
@@ -129,140 +129,145 @@ export default function LandingPage() {
         {/* Gradient fade at bottom of hero */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-[1]" />
 
-        <motion.div style={{ opacity: heroOpacity }} className="text-center max-w-5xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            {/* Tagline Badge - Liquid Glass */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              whileHover={{ scale: 1.02 }}
-              className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-md border border-white/50 rounded-full px-5 py-2.5 mb-8 shadow-[0_4px_16px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.8)] cursor-default"
-            >
-              <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>
-              <span className="text-sm text-slate-700 font-medium">Work tools that respect your time</span>
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left side - Text content */}
+            <motion.div style={{ opacity: heroOpacity }} className="text-center lg:text-left">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                {/* Tagline Badge - Liquid Glass */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  whileHover={{ scale: 1.02 }}
+                  className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-md border border-white/50 rounded-full px-5 py-2.5 mb-8 shadow-[0_4px_16px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.8)] cursor-default"
+                >
+                  <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>
+                  <span className="text-sm text-slate-700 font-medium">Work tools that respect your time</span>
+                </motion.div>
+
+                {/* Main Headline */}
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight mb-6">
+                  <GradientText
+                    text="Simple scales."
+                    from="#7C3AED"
+                    via="#8B5CF6"
+                    to="#A78BFA"
+                    animate={true}
+                  />
+                </h1>
+
+                <p className="text-xl md:text-2xl text-slate-600 font-light leading-relaxed max-w-xl mb-4">
+                  <BlurText text="Project management and AI tools for teams of any size who want to work, not manage tools." delay={0.3} />
+                </p>
+
+                <p className="text-lg text-slate-500 font-light mb-10">
+                  Your 500-person company doesn't need 50 features. They need 4 that work.
+                </p>
+              </motion.div>
+
+              {/* CTA Buttons - Liquid Glass with Magnetic Effect */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8 lg:mb-0"
+              >
+                <MagneticButton magneticStrength={0.2}>
+                  <motion.div
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                  >
+                    <Button asChild className="bg-violet-500/90 text-white hover:bg-violet-600 rounded-full px-8 py-6 text-lg backdrop-blur-sm shadow-[0_8px_32px_rgba(139,92,246,0.35),inset_0_1px_0_rgba(255,255,255,0.2)] hover:shadow-[0_12px_40px_rgba(139,92,246,0.45),inset_0_1px_0_rgba(255,255,255,0.3)] transition-all duration-300">
+                      <Link href="/project-management" className="flex items-center gap-2">
+                        <span className="font-medium">Try Project Management</span>
+                        <ArrowRight className="h-5 w-5" />
+                      </Link>
+                    </Button>
+                  </motion.div>
+                </MagneticButton>
+                <MagneticButton magneticStrength={0.2}>
+                  <motion.div
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                  >
+                    <Button
+                      asChild
+                      className="bg-white/70 text-slate-900 hover:bg-white/90 border border-white/50 rounded-full px-8 py-6 text-lg backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-300"
+                    >
+                      <Link href="/geoanalyzer" className="flex items-center gap-2">
+                        <span className="font-medium">Try GEO Analyzer</span>
+                        <ArrowRight className="h-5 w-5" />
+                      </Link>
+                    </Button>
+                  </motion.div>
+                </MagneticButton>
+              </motion.div>
             </motion.div>
 
-            {/* Main Headline */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[1.1] tracking-tight mb-6">
-              <GradientText
-                text="Simple scales."
-                from="#7C3AED"
-                via="#8B5CF6"
-                to="#A78BFA"
-                animate={true}
-              />
-            </h1>
-
-            <p className="text-xl md:text-2xl text-slate-600 font-light leading-relaxed max-w-3xl mx-auto mb-4">
-              <BlurText text="Project management and AI tools for teams of any size who want to work, not manage tools." delay={0.3} />
-            </p>
-
-            <p className="text-lg text-slate-500 font-light mb-10">
-              Your 500-person company doesn't need 50 features. They need 4 that work.
-            </p>
-          </motion.div>
-
-          {/* CTA Buttons - Liquid Glass with Magnetic Effect */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
-          >
-            <MagneticButton magneticStrength={0.2}>
-              <motion.div
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              >
-                <Button asChild className="bg-violet-500/90 text-white hover:bg-violet-600 rounded-full px-8 py-6 text-lg backdrop-blur-sm shadow-[0_8px_32px_rgba(139,92,246,0.35),inset_0_1px_0_rgba(255,255,255,0.2)] hover:shadow-[0_12px_40px_rgba(139,92,246,0.45),inset_0_1px_0_rgba(255,255,255,0.3)] transition-all duration-300">
-                  <Link href="/project-management" className="flex items-center gap-2">
-                    <span className="font-medium">Try Project Management</span>
-                    <ArrowRight className="h-5 w-5" />
-                  </Link>
-                </Button>
-              </motion.div>
-            </MagneticButton>
-            <MagneticButton magneticStrength={0.2}>
-              <motion.div
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              >
-                <Button
-                  asChild
-                  className="bg-white/70 text-slate-900 hover:bg-white/90 border border-white/50 rounded-full px-8 py-6 text-lg backdrop-blur-md shadow-[0_8px_32px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-300"
+            {/* Right side - Phone Mockups */}
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="relative flex justify-center lg:justify-end items-center"
+            >
+              <div className="flex items-end gap-3 md:gap-4">
+                {/* Left phone */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  whileHover={{ scale: 1.05, y: -8 }}
+                  className="hidden sm:block scale-[0.65] md:scale-[0.7] lg:scale-[0.75] origin-bottom cursor-pointer"
                 >
-                  <Link href="/geoanalyzer" className="flex items-center gap-2">
-                    <span className="font-medium">Try GEO Analyzer</span>
-                    <ArrowRight className="h-5 w-5" />
-                  </Link>
-                </Button>
-              </motion.div>
-            </MagneticButton>
-          </motion.div>
+                  <PhoneMockup src="/appui/app-projects.webp" alt="Projects Screen" />
+                </motion.div>
 
-          {/* Scroll indicator */}
+                {/* Center phone - main */}
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  whileHover={{ scale: 1.03, y: -5 }}
+                  className="relative z-10 scale-[0.8] md:scale-[0.85] lg:scale-[0.9] cursor-pointer"
+                >
+                  <PhoneMockup src="/appui/app-onboarding.webp" alt="WhatsTask Onboarding" priority />
+                </motion.div>
+
+                {/* Right phone */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  whileHover={{ scale: 1.05, y: -8 }}
+                  className="hidden sm:block scale-[0.65] md:scale-[0.7] lg:scale-[0.75] origin-bottom cursor-pointer"
+                >
+                  <PhoneMockup src="/appui/app-stats-personal.webp" alt="Statistics Screen" />
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Scroll indicator - centered below */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
-            className="flex flex-col items-center gap-2 text-slate-500 mb-12"
+            className="flex flex-col items-center gap-2 text-slate-500 mt-12 lg:mt-16"
           >
             <span className="text-sm">See what we build</span>
             <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
               <ChevronDown className="h-5 w-5" />
             </motion.div>
           </motion.div>
-        </motion.div>
-
-        {/* Hero Phone Showcase */}
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="relative z-10 w-full max-w-5xl mx-auto mt-8"
-        >
-          <div className="flex items-end justify-center gap-4 md:gap-6">
-            {/* Left phone */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 1 }}
-              whileHover={{ scale: 1.05, y: -8 }}
-              className="hidden md:block scale-[0.7] md:scale-[0.75] origin-bottom cursor-pointer"
-            >
-              <PhoneMockup src="/appui/app-projects.webp" alt="Projects Screen" />
-            </motion.div>
-
-            {/* Center phone - main */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.9 }}
-              whileHover={{ scale: 1.03, y: -5 }}
-              className="relative z-10 scale-[0.85] md:scale-[0.9] cursor-pointer"
-            >
-              <PhoneMockup src="/appui/app-onboarding.webp" alt="WhatsTask Onboarding" priority />
-            </motion.div>
-
-            {/* Right phone */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 1 }}
-              whileHover={{ scale: 1.05, y: -8 }}
-              className="hidden md:block scale-[0.7] md:scale-[0.75] origin-bottom cursor-pointer"
-            >
-              <PhoneMockup src="/appui/app-stats-personal.webp" alt="Statistics Screen" />
-            </motion.div>
-          </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* The Problem Section */}

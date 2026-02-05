@@ -90,7 +90,7 @@ export default function CustomCursor() {
         animate={{
           scale: clicked ? 0.5 : linkHovered ? 2 : 1,
           opacity: hidden ? 0 : 1,
-          backgroundColor: linkHovered ? "rgba(255, 255, 255, 0.5)" : "rgba(255, 255, 255, 1)",
+          backgroundColor: linkHovered ? "rgba(139, 92, 246, 0.5)" : "rgba(15, 23, 42, 1)",
         }}
         transition={{
           type: "spring",
@@ -107,8 +107,8 @@ export default function CustomCursor() {
         }}
         animate={{
           scale: clicked ? 0.8 : linkHovered ? 1.5 : 1,
-          opacity: hidden ? 0 : linkHovered ? 0.4 : 0.2,
-          borderColor: linkHovered ? "rgba(255, 255, 255, 0.8)" : "rgba(255, 255, 255, 0.4)",
+          opacity: hidden ? 0 : linkHovered ? 0.5 : 0.3,
+          borderColor: linkHovered ? "rgba(139, 92, 246, 0.8)" : "rgba(15, 23, 42, 0.4)",
         }}
         transition={{
           type: "spring",
