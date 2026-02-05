@@ -333,7 +333,7 @@ export default function Navigation() {
           </div>
         </div>
 
-        {/* Dropdown Menus - Liquid Glass Effect */}
+        {/* Dropdown Menus */}
         <AnimatePresence>
           {activeDropdown && (
             <motion.div
@@ -341,7 +341,11 @@ export default function Navigation() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
               transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
-              className="absolute top-full left-0 right-0 bg-white/70 backdrop-blur-2xl border-b border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.6)] before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/50 before:to-transparent before:pointer-events-none"
+              className={`absolute top-full left-0 right-0 ${
+                scrolled
+                  ? "bg-white border-b border-slate-200 shadow-lg"
+                  : "bg-white/70 backdrop-blur-2xl border-b border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.6)] before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/50 before:to-transparent before:pointer-events-none"
+              }`}
               onMouseEnter={() => timeoutRef.current && clearTimeout(timeoutRef.current)}
               onMouseLeave={handleMouseLeave}
             >

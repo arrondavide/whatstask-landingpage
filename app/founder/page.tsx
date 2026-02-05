@@ -99,26 +99,26 @@ export default function FounderPage() {
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
+      <div className="min-h-screen bg-white text-slate-900">
         {/* Header */}
-        <header className="border-b border-slate-200 bg-black/50 backdrop-blur-md sticky top-0 z-50">
+        <header className="border-b border-slate-200 bg-white/90 backdrop-blur-md sticky top-0 z-50">
           <div className="container mx-auto px-4 py-4">
             <div className="flex items-center justify-between">
               <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                 <Image src="/logo-black.png" alt="Whatstask" width={40} height={40} className="rounded-lg" />
-                <span className="text-xl font-bold">Whatstask</span>
+                <span className="text-xl font-bold text-slate-900">Whatstask</span>
               </Link>
               <nav className="hidden md:flex items-center gap-6">
-                <Link href="/features" className="hover:text-violet-500 transition-colors">
+                <Link href="/features" className="text-slate-600 hover:text-violet-500 transition-colors">
                   Features
                 </Link>
-                <Link href="/how-it-works" className="hover:text-violet-500 transition-colors">
+                <Link href="/how-it-works" className="text-slate-600 hover:text-violet-500 transition-colors">
                   How It Works
                 </Link>
-                <Link href="/blog" className="hover:text-violet-500 transition-colors">
+                <Link href="/blog" className="text-slate-600 hover:text-violet-500 transition-colors">
                   Blog
                 </Link>
-                <Button asChild className="bg-violet-500 hover:bg-violet-600 rounded-full">
+                <Button asChild className="bg-violet-500 hover:bg-violet-600 text-white rounded-full">
                   <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                     Launch Mini App
                   </a>
@@ -135,10 +135,10 @@ export default function FounderPage() {
               <h1 className="text-5xl lg:text-7xl font-extrabold mb-6 bg-gradient-to-r from-violet-500 to-blue-500 bg-clip-text text-transparent">
                 Charles Aaron David
               </h1>
-              <p className="text-2xl lg:text-3xl text-slate-700 mb-6">
+              <p className="text-2xl lg:text-3xl text-slate-600 mb-6">
                 Founder & Creator of Whatstask
               </p>
-              <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed">
                 AI engineer and entrepreneur building tools that empower teams to work smarter. Creator of 150+
                 applications serving over 10 million users worldwide.
               </p>
@@ -150,28 +150,28 @@ export default function FounderPage() {
                 href="https://charlesaarondavid.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-slate-50 hover:bg-slate-100 rounded-full border border-slate-200 transition-colors"
+                className="p-3 bg-slate-100 hover:bg-slate-200 rounded-full border border-slate-200 transition-colors"
                 aria-label="Website"
               >
-                <Globe className="h-6 w-6" />
+                <Globe className="h-6 w-6 text-slate-700" />
               </a>
               <a
                 href="https://linkedin.com/in/charlesaarondavid"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-slate-50 hover:bg-slate-100 rounded-full border border-slate-200 transition-colors"
+                className="p-3 bg-slate-100 hover:bg-slate-200 rounded-full border border-slate-200 transition-colors"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="h-6 w-6" />
+                <Linkedin className="h-6 w-6 text-slate-700" />
               </a>
               <a
                 href="https://twitter.com/charlesaarond"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-slate-50 hover:bg-slate-100 rounded-full border border-slate-200 transition-colors"
+                className="p-3 bg-slate-100 hover:bg-slate-200 rounded-full border border-slate-200 transition-colors"
                 aria-label="Twitter"
               >
-                <Twitter className="h-6 w-6" />
+                <Twitter className="h-6 w-6 text-slate-700" />
               </a>
             </div>
 
@@ -180,12 +180,12 @@ export default function FounderPage() {
               {achievements.map((achievement, index) => (
                 <div
                   key={index}
-                  className="bg-slate-50 backdrop-blur-lg rounded-2xl p-6 border border-slate-200 text-center hover:border-violet-500/50 transition-colors"
+                  className="bg-white rounded-2xl p-6 border border-slate-200 text-center hover:border-violet-500/50 hover:shadow-lg transition-all"
                 >
                   <div className="flex justify-center mb-4">{achievement.icon}</div>
-                  <div className="text-4xl font-bold mb-2">{achievement.number}</div>
-                  <div className="text-lg font-semibold mb-2">{achievement.label}</div>
-                  <div className="text-sm text-slate-600">{achievement.description}</div>
+                  <div className="text-4xl font-bold mb-2 text-slate-900">{achievement.number}</div>
+                  <div className="text-lg font-semibold mb-2 text-slate-800">{achievement.label}</div>
+                  <div className="text-sm text-slate-500">{achievement.description}</div>
                 </div>
               ))}
             </div>
@@ -193,10 +193,10 @@ export default function FounderPage() {
         </section>
 
         {/* About Section */}
-        <section className="container mx-auto px-4 py-20">
+        <section className="container mx-auto px-4 py-20 border-t border-slate-100">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold mb-8 text-center">About Charles</h2>
-            <div className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 lg:p-12 border border-slate-200 mb-12">
+            <h2 className="text-4xl font-bold mb-8 text-center text-slate-900">About Charles</h2>
+            <div className="bg-slate-50 rounded-2xl p-8 lg:p-12 border border-slate-200 mb-12">
               <p className="text-lg text-slate-700 leading-relaxed mb-6">
                 Charles Aaron David is an AI engineer, entrepreneur, and the founder of{" "}
                 <strong className="text-violet-500">Whatstask</strong> - a comprehensive work management platform built as
@@ -224,22 +224,22 @@ export default function FounderPage() {
         </section>
 
         {/* Journey Timeline */}
-        <section className="container mx-auto px-4 py-20">
+        <section className="container mx-auto px-4 py-20 border-t border-slate-100">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold mb-12 text-center">The Journey</h2>
+            <h2 className="text-4xl font-bold mb-12 text-center text-slate-900">The Journey</h2>
             <div className="space-y-8">
               {journey.map((milestone, index) => (
                 <div
                   key={index}
-                  className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200 hover:border-violet-500/50 transition-colors"
+                  className="bg-white rounded-2xl p-8 border border-slate-200 hover:border-violet-500/50 hover:shadow-lg transition-all"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="bg-violet-500 text-black font-bold px-4 py-2 rounded-full text-sm whitespace-nowrap">
+                    <div className="bg-violet-500 text-white font-bold px-4 py-2 rounded-full text-sm whitespace-nowrap">
                       {milestone.year}
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold mb-3">{milestone.title}</h3>
-                      <p className="text-slate-700 leading-relaxed">{milestone.description}</p>
+                      <h3 className="text-2xl font-bold mb-3 text-slate-900">{milestone.title}</h3>
+                      <p className="text-slate-600 leading-relaxed">{milestone.description}</p>
                     </div>
                   </div>
                 </div>
@@ -249,36 +249,36 @@ export default function FounderPage() {
         </section>
 
         {/* Vision Section */}
-        <section className="container mx-auto px-4 py-20">
+        <section className="container mx-auto px-4 py-20 border-t border-slate-100">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold mb-8 text-center">Vision for Whatstask</h2>
-            <div className="bg-gradient-to-br from-violet-500/10 to-blue-500/10 backdrop-blur-lg rounded-2xl p-8 lg:p-12 border border-violet-500/20">
-              <p className="text-xl text-slate-700 leading-relaxed mb-6">
+            <h2 className="text-4xl font-bold mb-8 text-center text-slate-900">Vision for Whatstask</h2>
+            <div className="bg-gradient-to-br from-violet-500/10 to-blue-500/10 rounded-2xl p-8 lg:p-12 border border-violet-200">
+              <p className="text-xl text-slate-600 leading-relaxed mb-6">
                 "I built Whatstask because I believe work management should be effortless. Teams shouldn't need to
                 juggle multiple apps, pay for expensive tools, or waste time switching contexts. Everything you need -
                 tasks, time tracking, team collaboration - should be right where you already communicate."
               </p>
-              <p className="text-xl text-slate-700 leading-relaxed mb-6">
+              <p className="text-xl text-slate-600 leading-relaxed mb-6">
                 "Telegram Mini Apps unlock incredible potential. With Whatstask, I'm proving that you can build
                 enterprise-grade work management tools that are as easy to use as sending a message, yet powerful
                 enough for serious teams and businesses."
               </p>
-              <p className="text-xl text-slate-700 leading-relaxed">
+              <p className="text-xl text-slate-600 leading-relaxed">
                 "My goal is to help 100,000+ teams worldwide work smarter, faster, and more efficiently - all within
                 an app they already love."
               </p>
               <div className="text-right mt-6">
-                <p className="text-lg font-semibold text-violet-500">- Charles Aaron David</p>
-                <p className="text-sm text-slate-600">Founder, Whatstask</p>
+                <p className="text-lg font-semibold text-violet-600">- Charles Aaron David</p>
+                <p className="text-sm text-slate-500">Founder, Whatstask</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="container mx-auto px-4 py-20">
-          <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-12 border border-violet-500/20">
-            <h2 className="text-3xl font-bold mb-4">Experience What Charles Built</h2>
+        <section className="container mx-auto px-4 py-20 border-t border-slate-100">
+          <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-violet-500/10 to-violet-400/5 rounded-2xl p-12 border border-violet-200">
+            <h2 className="text-3xl font-bold mb-4 text-slate-900">Experience What Charles Built</h2>
             <p className="text-xl text-slate-600 mb-8">
               Try Whatstask and see how powerful work management can be when it's built right into Telegram.
             </p>
@@ -288,7 +288,7 @@ export default function FounderPage() {
                   Launch Whatstask Mini App
                 </a>
               </Button>
-              <Button asChild variant="outline" className="rounded-full px-8 py-6 text-lg border-slate-300">
+              <Button asChild variant="outline" className="rounded-full px-8 py-6 text-lg border-slate-300 text-slate-700 hover:bg-slate-50">
                 <Link href="/features">Explore Features</Link>
               </Button>
             </div>
@@ -296,7 +296,7 @@ export default function FounderPage() {
         </section>
 
         {/* Footer */}
-        <footer className="border-t border-slate-200 bg-black/50 backdrop-blur-md py-12">
+        <footer className="border-t border-slate-200 bg-slate-50 py-12">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-slate-600 mb-4">
@@ -307,13 +307,13 @@ export default function FounderPage() {
                   href="https://charlesaarondavid.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-violet-500 hover:text-violet-400 transition-colors"
+                  className="text-violet-600 hover:text-violet-700 transition-colors"
                 >
                   Visit Personal Website
                 </a>
               </div>
               <p className="text-slate-500 text-sm mt-8">
-                © 2025 Whatstask. Built with passion by Charles Aaron David.
+                © {new Date().getFullYear()} Whatstask. Built with passion by Charles Aaron David.
               </p>
             </div>
           </div>

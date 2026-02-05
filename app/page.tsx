@@ -11,6 +11,15 @@ import {
   X,
   ArrowRight,
   ChevronDown,
+  Code2,
+  Tag,
+  Link2,
+  FileText,
+  FileArchive,
+  Image as ImageIcon,
+  FileImage,
+  Scissors,
+  QrCode,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -565,9 +574,9 @@ export default function LandingPage() {
 
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               {[
-                { title: "Custom Development", desc: "Tailored PM tools for your workflow", icon: "🛠️" },
-                { title: "White-Label", desc: "Your brand, our infrastructure", icon: "🏷️" },
-                { title: "Integrations", desc: "Connect with your existing tools", icon: "🔗" },
+                { title: "Custom Development", desc: "Tailored PM tools for your workflow", Icon: Code2 },
+                { title: "White-Label", desc: "Your brand, our infrastructure", Icon: Tag },
+                { title: "Integrations", desc: "Connect with your existing tools", Icon: Link2 },
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -578,7 +587,9 @@ export default function LandingPage() {
                   transition={{ type: "spring", stiffness: 300, damping: 20, delay: index * 0.1 }}
                   className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/60 shadow-[0_4px_16px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.9)] transition-shadow duration-300 cursor-default"
                 >
-                  <span className="text-2xl mb-3 block">{item.icon}</span>
+                  <div className="w-10 h-10 rounded-xl bg-violet-100 flex items-center justify-center mb-4">
+                    <item.Icon className="w-5 h-5 text-violet-600" />
+                  </div>
                   <h3 className="font-bold mb-2">{item.title}</h3>
                   <p className="text-sm text-slate-500">{item.desc}</p>
                 </motion.div>
@@ -620,12 +631,12 @@ export default function LandingPage() {
             viewport={{ once: true }}
           >
             {[
-              { name: "PDF Merger", href: "/pdf-merger", icon: "📑" },
-              { name: "PDF Compressor", href: "/pdf-compressor", icon: "📦" },
-              { name: "PDF to JPG", href: "/pdf-to-jpg", icon: "🖼️" },
-              { name: "JPG to PDF", href: "/jpg-to-pdf", icon: "📄" },
-              { name: "PDF Splitter", href: "/pdf-splitter", icon: "✂️" },
-              { name: "QR Code", href: "/qr-code-generator", icon: "📱" },
+              { name: "PDF Merger", href: "/pdf-merger", Icon: FileText },
+              { name: "PDF Compressor", href: "/pdf-compressor", Icon: FileArchive },
+              { name: "PDF to JPG", href: "/pdf-to-jpg", Icon: ImageIcon },
+              { name: "JPG to PDF", href: "/jpg-to-pdf", Icon: FileImage },
+              { name: "PDF Splitter", href: "/pdf-splitter", Icon: Scissors },
+              { name: "QR Code", href: "/qr-code-generator", Icon: QrCode },
             ].map((tool, index) => (
               <motion.a
                 key={index}
@@ -637,7 +648,9 @@ export default function LandingPage() {
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 className="bg-white/70 backdrop-blur-sm rounded-xl p-5 border border-slate-200/60 shadow-[0_2px_12px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_8px_24px_rgba(139,92,246,0.1),inset_0_1px_0_rgba(255,255,255,0.9)] transition-shadow duration-300 text-center group"
               >
-                <span className="text-xl mb-2 block group-hover:scale-110 transition-transform duration-300">{tool.icon}</span>
+                <div className="w-10 h-10 rounded-xl bg-violet-100 flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <tool.Icon className="w-5 h-5 text-violet-600" />
+                </div>
                 <span className="text-sm font-medium text-slate-700 group-hover:text-violet-600 transition-colors">{tool.name}</span>
               </motion.a>
             ))}
