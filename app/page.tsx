@@ -21,6 +21,7 @@ import PageLoader from "@/components/page-loader"
 import Grainient from "@/components/grainient"
 import { InteractiveCard, MagneticButton } from "@/components/interactive-card"
 import { BlurText, GradientText } from "@/components/animated-text"
+import { PhoneMockup } from "@/components/phone-mockup"
 
 export default function LandingPage() {
   const [mounted, setMounted] = useState(false)
@@ -432,6 +433,116 @@ export default function LandingPage() {
             </motion.div>
             </InteractiveCard>
           </div>
+        </div>
+      </section>
+
+      {/* App Showcase Section */}
+      <section className="relative py-24 px-4 border-t border-slate-100 overflow-hidden">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">See it in action</h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto font-light">
+              Clean, simple interface. Works right in Telegram. No app download required.
+            </p>
+          </motion.div>
+
+          {/* Phone Showcase */}
+          <div className="relative h-[650px] md:h-[750px]">
+            {/* Center phone - main focus */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
+            >
+              <PhoneMockup src="/appui/app-onboarding.webp" alt="WhatsTask App Onboarding" priority />
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="text-center mt-6 text-sm font-medium text-slate-600"
+              >
+                Quick onboarding
+              </motion.p>
+            </motion.div>
+
+            {/* Left phone */}
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 0.8, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="absolute left-[2%] md:left-[10%] top-1/2 -translate-y-1/2 z-10 scale-[0.85] -rotate-6 hidden sm:block"
+            >
+              <PhoneMockup src="/appui/app-create-project.webp" alt="Create Project Screen" />
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+                className="text-center mt-6 text-sm font-medium text-slate-500"
+              >
+                Create projects
+              </motion.p>
+            </motion.div>
+
+            {/* Right phone */}
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 0.8, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="absolute right-[2%] md:right-[10%] top-1/2 -translate-y-1/2 z-10 scale-[0.85] rotate-6 hidden sm:block"
+            >
+              <PhoneMockup src="/appui/app-stats-personal.webp" alt="Statistics Screen" />
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+                className="text-center mt-6 text-sm font-medium text-slate-500"
+              >
+                Track progress
+              </motion.p>
+            </motion.div>
+
+            {/* Background glow */}
+            <div className="absolute inset-0 bg-gradient-radial from-violet-500/10 via-transparent to-transparent pointer-events-none" />
+          </div>
+
+          {/* Feature pills */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-wrap justify-center gap-3 mt-8"
+          >
+            {[
+              "Team Management",
+              "Project Tracking",
+              "Statistics & Analytics",
+              "Profile & Settings",
+              "Telegram Integration",
+            ].map((feature, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                className="px-4 py-2 bg-white/60 backdrop-blur-sm border border-slate-200/60 rounded-full text-sm text-slate-600 shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
+              >
+                {feature}
+              </motion.span>
+            ))}
+          </motion.div>
         </div>
       </section>
 
