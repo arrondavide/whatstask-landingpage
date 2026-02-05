@@ -346,7 +346,7 @@ export default function Navigation() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
-              className="absolute top-full left-0 right-0 bg-gradient-to-b from-white/98 via-white/95 to-violet-100/60 backdrop-blur-xl shadow-[0_10px_40px_rgba(139,92,246,0.08),0_2px_10px_rgba(0,0,0,0.04)]"
+              className="absolute top-full left-0 right-0 bg-gradient-to-b from-white via-white/[0.98] to-violet-50/95 backdrop-blur-2xl shadow-[0_8px_32px_rgba(139,92,246,0.12),0_4px_12px_rgba(0,0,0,0.06)]"
               onMouseEnter={() => timeoutRef.current && clearTimeout(timeoutRef.current)}
               onMouseLeave={handleMouseLeave}
             >
