@@ -112,9 +112,9 @@ export default function Navigation() {
       </div>
 
       {/* Featured Column */}
-      <div className="relative bg-gradient-to-br from-violet-50 to-violet-100/50 rounded-xl p-6 border-l-2 border-violet-400">
-        <p className="text-sm font-semibold text-violet-700 mb-3">Try Whatstask Free</p>
-        <p className="text-sm text-slate-600 mb-4">
+      <div className="relative bg-gradient-to-br from-violet-50/80 to-violet-100/40 rounded-xl p-4">
+        <p className="text-sm font-semibold text-violet-700 mb-2">Try Whatstask Free</p>
+        <p className="text-sm text-slate-600 mb-3">
           Get started in 30 seconds. No credit card required. Works right in Telegram.
         </p>
         <Button asChild className="w-full bg-violet-500 hover:bg-violet-600 text-white rounded-full transition-all hover:scale-[1.02]">
@@ -122,9 +122,7 @@ export default function Navigation() {
             Launch in Telegram
           </a>
         </Button>
-        <div className="mt-4 pt-4 border-t border-violet-200/50">
-          <p className="text-xs text-slate-500">Trusted by 10,000+ teams</p>
-        </div>
+        <p className="text-xs text-slate-500 mt-3 text-center">Trusted by 10,000+ teams</p>
       </div>
     </div>
   )
@@ -163,9 +161,9 @@ export default function Navigation() {
           <DropdownLink href="/project-management#time-tracking" title="Time Tracking" description="Track billable hours" />
         </div>
 
-        <div className="mt-6 p-4 bg-violet-50 rounded-lg border-l-2 border-violet-400">
-          <p className="text-sm font-medium text-slate-800 mb-2">Not sure which solution?</p>
-          <p className="text-xs text-slate-600 mb-3">Talk to us about your team's needs.</p>
+        <div className="mt-6 p-3 bg-gradient-to-br from-violet-50/80 to-violet-100/40 rounded-lg">
+          <p className="text-sm font-medium text-slate-800 mb-1">Not sure which solution?</p>
+          <p className="text-xs text-slate-600 mb-2">Talk to us about your team's needs.</p>
           <Link href="/contact" className="text-sm text-violet-600 hover:text-violet-700 font-medium transition-colors">
             Contact Sales →
           </Link>
@@ -348,7 +346,7 @@ export default function Navigation() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
-              className="absolute top-full left-0 right-0 bg-white border-b border-slate-200/80 shadow-[0_10px_40px_rgba(0,0,0,0.1),0_2px_10px_rgba(0,0,0,0.06)]"
+              className="absolute top-full left-0 right-0 bg-gradient-to-b from-white/98 via-white/95 to-violet-100/60 backdrop-blur-xl shadow-[0_10px_40px_rgba(139,92,246,0.08),0_2px_10px_rgba(0,0,0,0.04)]"
               onMouseEnter={() => timeoutRef.current && clearTimeout(timeoutRef.current)}
               onMouseLeave={handleMouseLeave}
             >
