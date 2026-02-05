@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import {
   ChevronDown,
@@ -31,8 +31,14 @@ export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [mobileActiveSection, setMobileActiveSection] = useState<string | null>(null)
+  const [scrolled, setScrolled] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const { scrollY } = useScroll()
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setScrolled(latest > 50)
+  })
 
   useEffect(() => {
     setMounted(true)
@@ -221,7 +227,11 @@ export default function Navigation() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/90 border-b border-slate-200"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "backdrop-blur-md bg-white/95 border-b border-slate-200 shadow-sm"
+            : "bg-transparent border-b border-transparent"
+        }`}
         ref={dropdownRef}
       >
         <div className="container mx-auto px-4">
@@ -250,7 +260,11 @@ export default function Navigation() {
                   {item.href ? (
                     <Link
                       href={item.href}
-                      className="flex items-center gap-1 px-4 py-2 text-sm text-slate-700 hover:text-slate-900 transition-colors rounded-lg hover:bg-slate-50"
+                      className={`flex items-center gap-1 px-4 py-2 text-sm transition-colors rounded-lg ${
+                        scrolled
+                          ? "text-slate-700 hover:text-slate-900 hover:bg-slate-50"
+                          : "text-slate-800 hover:text-slate-900 hover:bg-white/20"
+                      }`}
                     >
                       {item.name}
                     </Link>
@@ -258,8 +272,10 @@ export default function Navigation() {
                     <button
                       className={`flex items-center gap-1 px-4 py-2 text-sm transition-colors rounded-lg ${
                         activeDropdown === item.name
-                          ? "text-slate-900 bg-slate-100"
-                          : "text-slate-700 hover:text-slate-900 hover:bg-slate-50"
+                          ? scrolled ? "text-slate-900 bg-slate-100" : "text-slate-900 bg-white/30"
+                          : scrolled
+                            ? "text-slate-700 hover:text-slate-900 hover:bg-slate-50"
+                            : "text-slate-800 hover:text-slate-900 hover:bg-white/20"
                       }`}
                     >
                       {item.name}
@@ -278,7 +294,11 @@ export default function Navigation() {
             <div className="hidden lg:flex items-center gap-3">
               <Link
                 href="/contact"
-                className="text-sm text-slate-700 hover:text-slate-900 transition-colors px-4 py-2"
+                className={`text-sm transition-colors px-4 py-2 ${
+                  scrolled
+                    ? "text-slate-700 hover:text-slate-900"
+                    : "text-slate-800 hover:text-slate-900"
+                }`}
               >
                 Contact Sales
               </Link>

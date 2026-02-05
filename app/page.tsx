@@ -81,16 +81,18 @@ export default function LandingPage() {
           <Grainient
             color1="#8B5CF6"
             color2="#A78BFA"
-            color3="#C4B5FD"
-            grainAmount={0.15}
+            color3="#E9D5FF"
+            grainAmount={0.08}
             grainAnimated={true}
-            timeSpeed={0.15}
-            warpStrength={0.8}
-            warpFrequency={4.0}
-            warpSpeed={1.5}
-            contrast={1.3}
-            saturation={1.2}
-            className="opacity-30"
+            timeSpeed={0.3}
+            warpStrength={1.2}
+            warpFrequency={3.0}
+            warpSpeed={1.0}
+            warpAmplitude={40.0}
+            rotationAmount={360.0}
+            contrast={1.2}
+            saturation={1.3}
+            className="opacity-40"
           />
         </div>
       </div>
