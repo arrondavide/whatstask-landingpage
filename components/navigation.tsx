@@ -233,7 +233,7 @@ export default function Navigation() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
             ? "backdrop-blur-md bg-white/90 border-b border-slate-200/50 shadow-sm"
-            : "bg-transparent"
+            : "backdrop-blur-[2px] border-b border-white/10"
         }`}
         ref={dropdownRef}
       >
@@ -253,7 +253,7 @@ export default function Navigation() {
                   height={32}
                   className="w-8 h-8 transition-all duration-300"
                 />
-                <span className={`font-bold text-xl tracking-tight transition-colors duration-300 ${scrolled ? "text-slate-900" : "text-white"}`}>Whatstask</span>
+                <span className={`font-bold text-xl tracking-tight transition-colors duration-300 ${scrolled ? "text-slate-900" : "text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]"}`}>Whatstask</span>
               </Link>
             </motion.div>
 
@@ -272,19 +272,19 @@ export default function Navigation() {
                       className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
                         scrolled
                           ? "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
-                          : "text-white/90 hover:text-white hover:bg-white/20"
+                          : "text-white hover:text-white hover:bg-white/20 [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
                       }`}
                     >
                       {item.name}
                     </Link>
                   ) : (
                     <button
-                      className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
+                      className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg relative ${
                         activeDropdown === item.name
-                          ? scrolled ? "text-slate-900 bg-slate-100" : "text-white bg-white/30"
+                          ? scrolled ? "text-slate-900 bg-slate-100" : "text-white bg-white/30 [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
                           : scrolled
                             ? "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
-                            : "text-white/90 hover:text-white hover:bg-white/20"
+                            : "text-white hover:text-white hover:bg-white/20 [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
                       }`}
                     >
                       {item.name}
@@ -293,6 +293,10 @@ export default function Navigation() {
                           activeDropdown === item.name ? "rotate-180" : ""
                         }`}
                       />
+                      {/* Active indicator triangle */}
+                      {activeDropdown === item.name && (
+                        <span className="absolute -bottom-[10px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-white" />
+                      )}
                     </button>
                   )}
                 </div>
@@ -306,7 +310,7 @@ export default function Navigation() {
                 className={`text-sm font-medium transition-all duration-300 px-4 py-2 rounded-lg ${
                   scrolled
                     ? "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
-                    : "text-white/90 hover:text-white hover:bg-white/20"
+                    : "text-white hover:text-white hover:bg-white/20 [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
                 }`}
               >
                 Contact Sales
@@ -343,18 +347,20 @@ export default function Navigation() {
         <AnimatePresence>
           {activeDropdown && (
             <motion.div
-              initial={{ opacity: 0, y: -10, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -10, scale: 0.98 }}
-              transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
-              className={`absolute top-full left-0 right-0 ${
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 8 }}
+              transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
+              className={`absolute top-[calc(100%-4px)] left-0 right-0 mt-1 ${
                 scrolled
-                  ? "bg-white border-b border-slate-200 shadow-lg"
-                  : "bg-white/70 backdrop-blur-2xl border-b border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.6)] before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/50 before:to-transparent before:pointer-events-none"
+                  ? "bg-white border-t border-b border-slate-200 shadow-[0_10px_40px_rgba(0,0,0,0.12),0_4px_12px_rgba(0,0,0,0.08)]"
+                  : "bg-white/95 backdrop-blur-xl border-t border-b border-slate-200/50 shadow-[0_10px_40px_rgba(0,0,0,0.15),0_4px_12px_rgba(0,0,0,0.1)]"
               }`}
               onMouseEnter={() => timeoutRef.current && clearTimeout(timeoutRef.current)}
               onMouseLeave={handleMouseLeave}
             >
+              {/* Connecting bridge to navbar */}
+              <div className="absolute -top-1 left-0 right-0 h-2 bg-transparent" />
               <div className="container mx-auto relative z-10">
                 {activeDropdown === "Products" && <ProductsDropdown />}
                 {activeDropdown === "Solutions" && <SolutionsDropdown />}
