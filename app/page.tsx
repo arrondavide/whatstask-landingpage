@@ -200,7 +200,7 @@ export default function LandingPage() {
           </motion.div>
 
           {/* App Screenshots Grid - 1 col mobile, 2 col tablet, 4 col desktop */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-16 sm:gap-12 md:gap-16 lg:gap-20 xl:gap-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-14 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20">
             {[
               { src: "/appui/app-create-project.webp", label: "Create Projects", desc: "Set up new projects with AI assistance" },
               { src: "/appui/app-projects.webp", label: "Manage Tasks", desc: "View and organize all your work" },
@@ -213,13 +213,13 @@ export default function LandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
-                className="flex flex-col items-center"
+                className="flex flex-col items-center text-center"
               >
-                <div className="mb-10 md:mb-12 w-full max-w-[200px] sm:max-w-[180px] md:max-w-[200px] lg:max-w-[220px] mx-auto">
+                <div className="mb-6 md:mb-8 w-[180px] sm:w-[160px] md:w-[180px] lg:w-[200px]">
                   <PhoneMockup src={item.src} alt={item.label} />
                 </div>
-                <h3 className="font-semibold text-slate-900 text-base md:text-lg mb-3">{item.label}</h3>
-                <p className="text-sm text-slate-500 text-center max-w-[200px] leading-relaxed">{item.desc}</p>
+                <h3 className="font-semibold text-slate-900 text-base md:text-lg mb-2 text-center">{item.label}</h3>
+                <p className="text-sm text-slate-500 text-center leading-relaxed w-[180px] sm:w-[160px] md:w-[180px]">{item.desc}</p>
               </motion.div>
             ))}
           </div>
