@@ -562,21 +562,24 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-6"
+            className="mb-8"
           >
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 lg:p-10 hover:border-slate-300 transition-colors">
-              <div className="grid lg:grid-cols-12 gap-10 items-start">
-                <div className="lg:col-span-7">
-                  <p className="text-xs text-slate-400 uppercase tracking-widest mb-3">Core Product</p>
-                  <h3 className="text-2xl font-semibold text-slate-900 mb-5">Project Management</h3>
-                  <p className="text-slate-500 mb-4 leading-relaxed">
+            <div className="bg-white border border-slate-200 rounded-2xl p-10 lg:p-14 hover:border-slate-300 transition-colors overflow-hidden">
+              <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                {/* Text Content - 8 columns */}
+                <div className="lg:col-span-8">
+                  <p className="text-xs text-slate-400 uppercase tracking-widest mb-5">Core Product</p>
+
+                  <h3 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-6">Project Management</h3>
+
+                  <p className="text-slate-500 mb-5 leading-relaxed">
                     Complete task management solution powered by AI. Create projects, assign tasks, track time, and collaborate with your team—all from Telegram.
                   </p>
-                  <p className="text-slate-500 mb-8 leading-relaxed">
+                  <p className="text-slate-500 mb-10 leading-relaxed">
                     Perfect for freelancers, startups, agencies, or enterprise teams needing simplicity without sacrificing power.
                   </p>
 
-                  <ul className="grid grid-cols-2 gap-x-6 gap-y-2 mb-8">
+                  <ul className="grid grid-cols-2 gap-x-8 gap-y-3 mb-10">
                     {[
                       "List, Kanban, Calendar, Timeline",
                       "AI-powered task creation",
@@ -585,15 +588,15 @@ export default function LandingPage() {
                       "Project templates",
                       "Recurring tasks",
                     ].map((feature, index) => (
-                      <li key={index} className="flex items-center gap-2 text-sm text-slate-600">
+                      <li key={index} className="flex items-center gap-3 text-sm text-slate-600">
                         <div className="w-1.5 h-1.5 rounded-full bg-slate-900 flex-shrink-0" />
                         {feature}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="flex flex-wrap items-center gap-4">
-                    <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-6 py-5">
+                  <div className="flex flex-wrap items-center gap-5 pt-2">
+                    <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-5">
                       <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                         Get Started Free
                       </a>
@@ -602,14 +605,10 @@ export default function LandingPage() {
                   </div>
                 </div>
 
-                <div className="lg:col-span-5 flex justify-center lg:justify-end">
-                  <div className="flex items-end">
-                    <div className="hidden lg:block relative" style={{ marginRight: '-32px' }}>
-                      <div className="scale-[0.7] origin-bottom-right opacity-85">
-                        <PhoneMockup src="/appui/app-create-project.webp" alt="Create Project" />
-                      </div>
-                    </div>
-                    <div className="relative z-10 scale-[0.9]">
+                {/* Phone Mockup - 4 columns */}
+                <div className="lg:col-span-4 hidden lg:flex justify-end items-center">
+                  <div className="relative">
+                    <div className="scale-[0.85]">
                       <PhoneMockup src="/appui/app-onboarding.webp" alt="Onboarding" />
                     </div>
                   </div>
@@ -625,44 +624,50 @@ export default function LandingPage() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 lg:p-10 hover:border-slate-300 transition-colors">
-              <div className="grid lg:grid-cols-12 gap-10 items-start">
+            <div className="bg-white border border-slate-200 rounded-2xl p-10 lg:p-14 hover:border-slate-300 transition-colors">
+              <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                {/* Text Content - 8 columns */}
                 <div className="lg:col-span-8">
-                  <p className="text-xs text-slate-400 uppercase tracking-widest mb-3">AI Tool</p>
-                  <h3 className="text-2xl font-semibold text-slate-900 mb-5">GEO Analyzer</h3>
-                  <p className="text-slate-500 mb-4 leading-relaxed">
+                  <p className="text-xs text-slate-400 uppercase tracking-widest mb-5">AI Tool</p>
+
+                  <h3 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-6">GEO Analyzer</h3>
+
+                  <p className="text-slate-500 mb-5 leading-relaxed">
                     AI search optimization for the new era. As ChatGPT, Perplexity, and Google SGE become primary discovery channels, your content needs to be AI-readable.
                   </p>
-                  <p className="text-slate-500 mb-8 leading-relaxed">
+                  <p className="text-slate-500 mb-10 leading-relaxed">
                     Analyze any URL, get an AI readability score, and receive specific recommendations to improve visibility.
                   </p>
 
-                  <ul className="grid grid-cols-2 gap-x-6 gap-y-2 mb-8">
+                  <ul className="grid grid-cols-2 gap-x-8 gap-y-3 mb-10">
                     {[
                       "Analyze AI readability score",
                       "Optimize for all AI engines",
                       "Track AI search performance",
                       "3 free analyses daily",
                     ].map((feature, index) => (
-                      <li key={index} className="flex items-center gap-2 text-sm text-slate-600">
+                      <li key={index} className="flex items-center gap-3 text-sm text-slate-600">
                         <div className="w-1.5 h-1.5 rounded-full bg-slate-900 flex-shrink-0" />
                         {feature}
                       </li>
                     ))}
                   </ul>
 
-                  <Button asChild variant="outline" className="border-slate-300 hover:bg-slate-50 rounded-lg px-6 py-5">
-                    <a href="https://geoanalyzer.whatstask.com" target="_blank" rel="noopener noreferrer">
-                      Try Analyzer Free
-                    </a>
-                  </Button>
+                  <div className="pt-2">
+                    <Button asChild variant="outline" className="border-slate-300 hover:bg-slate-50 rounded-lg px-8 py-5">
+                      <a href="https://geoanalyzer.whatstask.com" target="_blank" rel="noopener noreferrer">
+                        Try Analyzer Free
+                      </a>
+                    </Button>
+                  </div>
                 </div>
 
+                {/* Visual - 4 columns */}
                 <div className="hidden lg:flex lg:col-span-4 justify-center items-center">
-                  <div className="w-full max-w-[180px] aspect-[3/4] bg-gradient-to-br from-slate-100 to-slate-50 rounded-xl flex items-center justify-center border border-slate-200">
+                  <div className="w-full max-w-[200px] aspect-[3/4] bg-gradient-to-br from-slate-100 to-slate-50 rounded-2xl flex items-center justify-center border border-slate-200">
                     <div className="text-center">
-                      <div className="text-3xl font-light text-slate-400 mb-1">GEO</div>
-                      <div className="text-xs text-slate-500">AI Search</div>
+                      <div className="text-4xl font-light text-slate-400 mb-2">GEO</div>
+                      <div className="text-sm text-slate-500">AI Search</div>
                     </div>
                   </div>
                 </div>
