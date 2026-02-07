@@ -20,6 +20,18 @@ import {
   FileImage,
   Scissors,
   QrCode,
+  Layers,
+  DollarSign,
+  Clock,
+  Zap,
+  Users,
+  Sparkles,
+  Timer,
+  LayoutGrid,
+  Brain,
+  BarChart3,
+  Target,
+  MessageSquare,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -312,7 +324,7 @@ export default function LandingPage() {
             </p>
           </motion.div>
 
-          {/* Comparison Grid - Interactive Cards */}
+          {/* Comparison Grid - Enhanced Gradient Cards */}
           <motion.div
             className="grid md:grid-cols-3 gap-6 mb-12"
             variants={staggerContainer}
@@ -321,9 +333,9 @@ export default function LandingPage() {
             viewport={{ once: true }}
           >
             {[
-              { label: "ClickUp", stat: "15+", desc: "views to learn" },
-              { label: "Monday", stat: "$12", desc: "per seat for AI" },
-              { label: "Asana", stat: "Weeks", desc: "to set up" },
+              { label: "ClickUp", stat: "15+", desc: "views to learn", Icon: Layers, gradient: "from-red-500/10 to-orange-500/5", iconBg: "bg-red-100", iconColor: "text-red-500" },
+              { label: "Monday", stat: "$12", desc: "per seat for AI", Icon: DollarSign, gradient: "from-amber-500/10 to-yellow-500/5", iconBg: "bg-amber-100", iconColor: "text-amber-500" },
+              { label: "Asana", stat: "Weeks", desc: "to set up", Icon: Clock, gradient: "from-slate-500/10 to-gray-500/5", iconBg: "bg-slate-100", iconColor: "text-slate-500" },
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -331,10 +343,14 @@ export default function LandingPage() {
                 custom={index}
                 whileHover={{ y: -8, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/60 text-center shadow-[0_4px_24px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.9)] transition-shadow duration-300 cursor-default"
+                className={`relative bg-gradient-to-br ${item.gradient} backdrop-blur-sm rounded-2xl p-8 border border-slate-200/40 text-center shadow-[0_4px_24px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-300 cursor-default overflow-hidden`}
               >
-                <p className="text-sm text-slate-500 mb-2">{item.label}</p>
-                <p className="text-4xl font-bold mb-2 bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/40 to-transparent rounded-bl-full pointer-events-none" />
+                <div className={`w-12 h-12 ${item.iconBg} rounded-xl flex items-center justify-center mx-auto mb-4`}>
+                  <item.Icon className={`w-6 h-6 ${item.iconColor}`} />
+                </div>
+                <p className="text-sm text-slate-500 font-medium mb-2">{item.label}</p>
+                <p className="text-5xl font-extrabold mb-2 bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
                   <AnimatedTextCounter target={item.stat} />
                 </p>
                 <p className="text-slate-600">{item.desc}</p>
@@ -342,33 +358,41 @@ export default function LandingPage() {
             ))}
           </motion.div>
 
-          {/* WhatsTask difference - Liquid Glass */}
+          {/* WhatsTask difference - Enhanced Colorful Cards */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative bg-gradient-to-br from-violet-500/15 to-violet-400/5 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-violet-300/30 text-center shadow-[0_8px_32px_rgba(139,92,246,0.12),inset_0_1px_0_rgba(255,255,255,0.6)] overflow-hidden"
+            className="relative bg-gradient-to-br from-violet-500/15 to-violet-400/5 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-violet-300/30 shadow-[0_8px_32px_rgba(139,92,246,0.12),inset_0_1px_0_rgba(255,255,255,0.6)] overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent pointer-events-none" />
             <div className="relative z-10">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">WhatsTask is different</h3>
-              <div className="grid md:grid-cols-4 gap-8 mt-8">
+              <div className="text-center mb-8">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-violet-500/10 rounded-full text-violet-600 text-sm font-medium mb-4">
+                  <Sparkles className="w-4 h-4" />
+                  The WhatsTask Way
+                </span>
+                <h3 className="text-2xl md:text-3xl font-bold">Built different. Works better.</h3>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                 {[
-                  { stat: "4", desc: "views that matter" },
-                  { stat: "Free", desc: "AI features included" },
-                  { stat: "30s", desc: "to get started" },
-                  { stat: "Any", desc: "team size" },
+                  { stat: "4", desc: "views that matter", Icon: LayoutGrid, gradient: "from-violet-500/20 to-purple-500/10", iconColor: "text-violet-500" },
+                  { stat: "Free", desc: "AI features included", Icon: Brain, gradient: "from-pink-500/20 to-rose-500/10", iconColor: "text-pink-500" },
+                  { stat: "30s", desc: "to get started", Icon: Zap, gradient: "from-amber-500/20 to-yellow-500/10", iconColor: "text-amber-500" },
+                  { stat: "Any", desc: "team size works", Icon: Users, gradient: "from-emerald-500/20 to-green-500/10", iconColor: "text-emerald-500" },
                 ].map((item, index) => (
                   <motion.div
                     key={index}
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.05, y: -4 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                    className="p-4 rounded-2xl bg-white/40 backdrop-blur-sm border border-white/30 shadow-[inset_0_1px_0_rgba(255,255,255,0.5)] hover:shadow-[0_8px_24px_rgba(139,92,246,0.15),inset_0_1px_0_rgba(255,255,255,0.6)] transition-shadow duration-300"
+                    className={`relative p-6 rounded-2xl bg-gradient-to-br ${item.gradient} backdrop-blur-sm border border-white/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] hover:shadow-[0_12px_32px_rgba(139,92,246,0.2),inset_0_1px_0_rgba(255,255,255,0.8)] transition-all duration-300 text-center overflow-hidden`}
                   >
-                    <p className="text-3xl md:text-4xl font-bold text-violet-500 mb-2">
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-white/30 to-transparent rounded-bl-full pointer-events-none" />
+                    <item.Icon className={`w-8 h-8 ${item.iconColor} mx-auto mb-3`} />
+                    <p className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-1">
                       <AnimatedTextCounter target={item.stat} />
                     </p>
-                    <p className="text-slate-600">{item.desc}</p>
+                    <p className="text-slate-600 text-sm">{item.desc}</p>
                   </motion.div>
                 ))}
               </div>
@@ -407,8 +431,23 @@ export default function LandingPage() {
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
                 className="relative bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-slate-200/60 shadow-[0_4px_24px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_20px_50px_rgba(139,92,246,0.12),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-500 overflow-hidden group"
               >
+                {/* Accent bar */}
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-violet-500 to-purple-500 rounded-l-3xl" />
                 <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                <h3 className="text-2xl font-bold mb-6">Project Management</h3>
+
+                {/* Header with icon */}
+                <div className="flex items-start justify-between mb-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow-lg shadow-violet-500/25">
+                      <LayoutGrid className="w-7 h-7 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold">Project Management</h3>
+                      <p className="text-sm text-slate-500">Telegram Mini App</p>
+                    </div>
+                  </div>
+                  <span className="px-3 py-1 bg-violet-100 text-violet-600 text-xs font-semibold rounded-full">Popular</span>
+                </div>
 
                 <p className="text-slate-600 mb-6 leading-relaxed">
                   Full-featured project management with AI built-in. Tasks, time tracking, team collaboration. Works
@@ -430,8 +469,8 @@ export default function LandingPage() {
                       transition={{ delay: index * 0.05 }}
                       className="flex items-center gap-3"
                     >
-                      <div className="w-6 h-6 rounded-full bg-violet-100 flex items-center justify-center">
-                        <Check className="h-4 w-4 text-violet-500 flex-shrink-0" />
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-violet-100 to-purple-100 flex items-center justify-center">
+                        <Check className="h-4 w-4 text-violet-600 flex-shrink-0" />
                       </div>
                       <span className="text-slate-700">{feature}</span>
                     </motion.div>
@@ -439,7 +478,7 @@ export default function LandingPage() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Button asChild className="bg-violet-500/90 text-white hover:bg-violet-600 rounded-full px-6 shadow-lg shadow-violet-500/20 hover:shadow-xl hover:shadow-violet-500/30 transition-all">
+                  <Button asChild className="bg-gradient-to-r from-violet-500 to-purple-600 text-white hover:from-violet-600 hover:to-purple-700 rounded-full px-6 shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/35 transition-all">
                     <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                       <Send className="h-4 w-4 mr-2" />
                       Launch in Telegram
@@ -466,11 +505,23 @@ export default function LandingPage() {
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
               className="relative bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-slate-200/60 shadow-[0_4px_24px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_20px_50px_rgba(139,92,246,0.12),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-500 overflow-hidden group"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              {/* Accent bar */}
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-pink-500 to-violet-500 rounded-l-3xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
               <div className="relative z-10">
-                <div className="mb-6">
-                  <h3 className="text-2xl font-bold">GEO Analyzer</h3>
-                  <span className="text-xs text-violet-600 font-medium bg-violet-50 px-2 py-0.5 rounded-full">Future of Marketing</span>
+                {/* Header with icon */}
+                <div className="flex items-start justify-between mb-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500 to-violet-600 flex items-center justify-center shadow-lg shadow-pink-500/25">
+                      <Brain className="w-7 h-7 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold">GEO Analyzer</h3>
+                      <p className="text-sm text-slate-500">AI Content Optimization</p>
+                    </div>
+                  </div>
+                  <span className="px-3 py-1 bg-gradient-to-r from-pink-100 to-violet-100 text-pink-600 text-xs font-semibold rounded-full">New</span>
                 </div>
 
                 <p className="text-slate-600 mb-6 leading-relaxed">
@@ -493,8 +544,8 @@ export default function LandingPage() {
                       transition={{ delay: index * 0.05 }}
                       className="flex items-center gap-3"
                     >
-                      <div className="w-6 h-6 rounded-full bg-violet-100 flex items-center justify-center">
-                        <Check className="h-4 w-4 text-violet-500 flex-shrink-0" />
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-pink-100 to-violet-100 flex items-center justify-center">
+                        <Check className="h-4 w-4 text-pink-600 flex-shrink-0" />
                       </div>
                       <span className="text-slate-700">{feature}</span>
                     </motion.div>
@@ -504,9 +555,10 @@ export default function LandingPage() {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button
                     asChild
-                    className="bg-violet-500/90 text-white hover:bg-violet-600 rounded-full px-6 shadow-lg shadow-violet-500/20 hover:shadow-xl hover:shadow-violet-500/30 transition-all"
+                    className="bg-gradient-to-r from-pink-500 to-violet-600 text-white hover:from-pink-600 hover:to-violet-700 rounded-full px-6 shadow-lg shadow-pink-500/25 hover:shadow-xl hover:shadow-pink-500/35 transition-all"
                   >
                     <a href="https://geoanalyzer.whatstask.com" target="_blank" rel="noopener noreferrer">
+                      <Sparkles className="h-4 w-4 mr-2" />
                       Launch GEO Analyzer
                     </a>
                   </Button>
@@ -653,24 +705,52 @@ export default function LandingPage() {
 
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               {[
-                { title: "Custom Development", desc: "Tailored PM tools for your workflow", Icon: Code2 },
-                { title: "White-Label", desc: "Your brand, our infrastructure", Icon: Tag },
-                { title: "Integrations", desc: "Connect with your existing tools", Icon: Link2 },
+                {
+                  title: "Custom Development",
+                  subtitle: "Built for your workflow",
+                  desc: "We design and build project management tools tailored exactly to how your team works. No compromises.",
+                  Icon: Code2,
+                  gradient: "from-violet-500 to-purple-600",
+                  shadowColor: "shadow-violet-500/25"
+                },
+                {
+                  title: "White-Label",
+                  subtitle: "Your brand, our tech",
+                  desc: "Deploy WhatsTask under your own brand. Full customization, same powerful infrastructure.",
+                  Icon: Tag,
+                  gradient: "from-pink-500 to-rose-600",
+                  shadowColor: "shadow-pink-500/25"
+                },
+                {
+                  title: "Integrations",
+                  subtitle: "Connect everything",
+                  desc: "Seamlessly integrate with your existing tools—CRM, ERP, communication platforms, and more.",
+                  Icon: Link2,
+                  gradient: "from-amber-500 to-orange-600",
+                  shadowColor: "shadow-amber-500/25"
+                },
               ].map((item, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={{ y: -6, scale: 1.02 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
                   viewport={{ once: true }}
                   transition={{ type: "spring", stiffness: 300, damping: 20, delay: index * 0.1 }}
-                  className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/60 shadow-[0_4px_16px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.9)] transition-shadow duration-300 cursor-default"
+                  className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/60 shadow-[0_4px_16px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_16px_40px_rgba(139,92,246,0.12),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-300 cursor-default overflow-hidden group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-violet-100 flex items-center justify-center mb-4">
-                    <item.Icon className="w-5 h-5 text-violet-600" />
+                  {/* Decorative corner gradient */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-violet-500/5 to-transparent rounded-bl-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                  {/* Large icon */}
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-5 shadow-lg ${item.shadowColor} group-hover:scale-110 transition-transform duration-300`}>
+                    <item.Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-bold mb-2">{item.title}</h3>
-                  <p className="text-sm text-slate-500">{item.desc}</p>
+
+                  {/* Content */}
+                  <h3 className="text-xl font-bold mb-1">{item.title}</h3>
+                  <p className="text-sm text-violet-600 font-medium mb-3">{item.subtitle}</p>
+                  <p className="text-slate-600 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -703,34 +783,39 @@ export default function LandingPage() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
             {[
-              { name: "PDF Merger", href: "/pdf-merger", Icon: FileText },
-              { name: "PDF Compressor", href: "/pdf-compressor", Icon: FileArchive },
-              { name: "PDF to JPG", href: "/pdf-to-jpg", Icon: ImageIcon },
-              { name: "JPG to PDF", href: "/jpg-to-pdf", Icon: FileImage },
-              { name: "PDF Splitter", href: "/pdf-splitter", Icon: Scissors },
-              { name: "QR Code", href: "/qr-code-generator", Icon: QrCode },
+              { name: "PDF Merger", href: "/pdf-merger", Icon: FileText, gradient: "from-violet-500 to-purple-600" },
+              { name: "PDF Compressor", href: "/pdf-compressor", Icon: FileArchive, gradient: "from-pink-500 to-rose-600" },
+              { name: "PDF to JPG", href: "/pdf-to-jpg", Icon: ImageIcon, gradient: "from-amber-500 to-orange-600" },
+              { name: "JPG to PDF", href: "/jpg-to-pdf", Icon: FileImage, gradient: "from-emerald-500 to-teal-600" },
+              { name: "PDF Splitter", href: "/pdf-splitter", Icon: Scissors, gradient: "from-blue-500 to-indigo-600" },
+              { name: "QR Code", href: "/qr-code-generator", Icon: QrCode, gradient: "from-fuchsia-500 to-purple-600" },
             ].map((tool, index) => (
               <motion.a
                 key={index}
                 href={tool.href}
                 variants={fadeInUp}
                 custom={index}
-                whileHover={{ y: -6, scale: 1.03 }}
+                whileHover={{ y: -8, scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                className="bg-white/70 backdrop-blur-sm rounded-xl p-5 border border-slate-200/60 shadow-[0_2px_12px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_8px_24px_rgba(139,92,246,0.1),inset_0_1px_0_rgba(255,255,255,0.9)] transition-shadow duration-300 text-center group"
+                className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/60 shadow-[0_2px_12px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_12px_32px_rgba(139,92,246,0.15),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-300 text-center group overflow-hidden"
               >
-                <div className="w-10 h-10 rounded-xl bg-violet-100 flex items-center justify-center mb-3 mx-auto group-hover:scale-110 transition-transform duration-300">
-                  <tool.Icon className="w-5 h-5 text-violet-600" />
+                {/* Hover background effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+                {/* Large gradient icon */}
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${tool.gradient} flex items-center justify-center mb-4 mx-auto shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                  <tool.Icon className="w-7 h-7 text-white" />
                 </div>
-                <span className="text-sm font-medium text-slate-700 group-hover:text-violet-600 transition-colors">{tool.name}</span>
+
+                <span className="text-sm font-semibold text-slate-700 group-hover:text-violet-600 transition-colors relative z-10">{tool.name}</span>
               </motion.a>
             ))}
           </motion.div>
@@ -743,62 +828,107 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Social Proof / Stats - Liquid Glass */}
-      <section className="relative py-24 px-4 border-t border-slate-100">
-        <div className="container mx-auto max-w-4xl">
+      {/* Social Proof / Stats - Enhanced Visual Hierarchy */}
+      <section className="relative py-24 px-4 border-t border-slate-100 overflow-hidden">
+        {/* Subtle floating particles background */}
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(15)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1.5 h-1.5 rounded-full bg-violet-400/20"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                y: [0, -40, 0],
+                opacity: [0.2, 0.5, 0.2],
+              }}
+              transition={{
+                duration: 5 + Math.random() * 5,
+                repeat: Number.POSITIVE_INFINITY,
+                delay: Math.random() * 3,
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="container mx-auto max-w-5xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative bg-gradient-to-br from-violet-500/10 to-violet-400/5 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-violet-300/30 shadow-[0_8px_32px_rgba(139,92,246,0.08),inset_0_1px_0_rgba(255,255,255,0.5)] overflow-hidden"
+            className="relative bg-gradient-to-br from-violet-500/10 via-purple-500/5 to-pink-500/5 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-violet-300/30 shadow-[0_8px_32px_rgba(139,92,246,0.12),inset_0_1px_0_rgba(255,255,255,0.5)] overflow-hidden"
           >
+            {/* Decorative gradient orbs */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-violet-500/10 to-transparent rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-pink-500/10 to-transparent rounded-full blur-3xl pointer-events-none" />
+
             <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent pointer-events-none" />
             <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-4">Built for how you actually work</h2>
-                <p className="text-slate-600 leading-relaxed mb-6">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-violet-500/10 rounded-full text-violet-600 text-sm font-medium mb-4">
+                  <Target className="w-4 h-4" />
+                  Our Philosophy
+                </span>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Built for how you actually work</h2>
+                <p className="text-slate-600 leading-relaxed mb-6 text-lg">
                   We're not trying to be everything to everyone. We're building simple tools that scale - from
                   freelancers to enterprises.
                 </p>
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {[
-                    "No learning curve",
-                    "No feature bloat",
-                    "No enterprise complexity",
-                    "Just tools that work",
+                    { text: "No learning curve", desc: "Start in seconds" },
+                    { text: "No feature bloat", desc: "Only what you need" },
+                    { text: "No enterprise complexity", desc: "Simple pricing, simple tools" },
+                    { text: "Just tools that work", desc: "Built for real work" },
                   ].map((item, index) => (
                     <motion.li
                       key={index}
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="flex items-center gap-3"
+                      className="flex items-start gap-3"
                     >
-                      <div className="w-6 h-6 rounded-full bg-violet-100 flex items-center justify-center">
-                        <Check className="h-4 w-4 text-violet-500" />
+                      <div className="w-7 h-7 rounded-full bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-md shadow-violet-500/25">
+                        <Check className="h-4 w-4 text-white" />
                       </div>
-                      <span>{item}</span>
+                      <div>
+                        <span className="font-semibold text-slate-800">{item.text}</span>
+                        <span className="text-slate-500 ml-2 text-sm">{item.desc}</span>
+                      </div>
                     </motion.li>
                   ))}
                 </ul>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { stat: "800M+", label: "Telegram users" },
-                  { stat: "Free", label: "to start" },
-                  { stat: "30s", label: "setup time" },
-                  { stat: "24/7", label: "availability" },
+                  { stat: "800M+", label: "Telegram users", Icon: MessageSquare, gradient: "from-violet-500 to-purple-600" },
+                  { stat: "Free", label: "to start", Icon: Sparkles, gradient: "from-pink-500 to-rose-600" },
+                  { stat: "30s", label: "setup time", Icon: Timer, gradient: "from-amber-500 to-orange-600" },
+                  { stat: "24/7", label: "availability", Icon: Zap, gradient: "from-emerald-500 to-teal-600" },
                 ].map((item, index) => (
                   <motion.div
                     key={index}
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                    className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.6),0_4px_16px_rgba(139,92,246,0.08)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_8px_24px_rgba(139,92,246,0.15)] transition-shadow duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ scale: 1.05, y: -4 }}
+                    className="relative bg-white/70 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/50 shadow-[inset_0_1px_0_rgba(255,255,255,0.6),0_4px_16px_rgba(139,92,246,0.08)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_12px_32px_rgba(139,92,246,0.18)] transition-all duration-300 overflow-hidden group"
                   >
-                    <p className="text-2xl md:text-3xl font-bold text-violet-500 mb-1">
+                    {/* Hover gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+                    {/* Small icon indicator */}
+                    <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mx-auto mb-3 shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                      <item.Icon className="w-5 h-5 text-white" />
+                    </div>
+
+                    <p className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent mb-1">
                       <AnimatedTextCounter target={item.stat} />
                     </p>
-                    <p className="text-sm text-slate-500">{item.label}</p>
+                    <p className="text-sm text-slate-500 font-medium">{item.label}</p>
                   </motion.div>
                 ))}
               </div>
