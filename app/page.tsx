@@ -182,13 +182,13 @@ export default function LandingPage() {
       </section>
 
       {/* App Showcase Section */}
-      <section className="relative py-20 md:py-32 lg:py-40 px-6 md:px-8 bg-white overflow-hidden">
-        <div className="container mx-auto max-w-6xl">
+      <section className="relative py-24 md:py-36 lg:py-48 px-6 md:px-8 bg-white overflow-hidden">
+        <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16 md:mb-20 lg:mb-28"
+            className="text-center mb-20 md:mb-28 lg:mb-36"
           >
             <p className="text-sm text-slate-500 uppercase tracking-widest mb-4">See It In Action</p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 tracking-tight text-slate-900">
@@ -200,7 +200,7 @@ export default function LandingPage() {
           </motion.div>
 
           {/* App Screenshots Grid - 1 col mobile, 2 col tablet, 4 col desktop */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-12 sm:gap-10 md:gap-12 lg:gap-14">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-16 sm:gap-12 md:gap-16 lg:gap-20 xl:gap-24">
             {[
               { src: "/appui/app-create-project.webp", label: "Create Projects", desc: "Set up new projects with AI assistance" },
               { src: "/appui/app-projects.webp", label: "Manage Tasks", desc: "View and organize all your work" },
@@ -215,11 +215,11 @@ export default function LandingPage() {
                 transition={{ delay: index * 0.08 }}
                 className="flex flex-col items-center"
               >
-                <div className="mb-6 md:mb-8 w-full max-w-[220px] sm:max-w-[200px] md:max-w-[220px] mx-auto">
+                <div className="mb-10 md:mb-12 w-full max-w-[200px] sm:max-w-[180px] md:max-w-[200px] lg:max-w-[220px] mx-auto">
                   <PhoneMockup src={item.src} alt={item.label} />
                 </div>
-                <h3 className="font-semibold text-slate-900 text-base md:text-lg mb-2">{item.label}</h3>
-                <p className="text-sm text-slate-500 text-center max-w-[220px] leading-relaxed">{item.desc}</p>
+                <h3 className="font-semibold text-slate-900 text-base md:text-lg mb-3">{item.label}</h3>
+                <p className="text-sm text-slate-500 text-center max-w-[200px] leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
