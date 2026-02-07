@@ -93,37 +93,37 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
     <div className="grid grid-cols-3 gap-8 p-8">
       {/* Work Management Column */}
       <div>
-        <h3 className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-4">Work Management</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>Work Management</h3>
         <div className="space-y-1">
-          <DropdownLink href="/project-management" title="Project Management" description="Tasks, boards, and timelines" />
-          <DropdownLink href="/features" title="All Features" description="Everything Whatstask offers" />
-          <DropdownLink href="/project-management#time-tracking" title="Time Tracking" description="Track hours and productivity" />
-          <DropdownLink href="/project-management#collaboration" title="Team Collaboration" description="Work together seamlessly" />
-          <DropdownLink href="/project-management#views" title="Multiple Views" description="List, Kanban, Calendar, Timeline" />
+          <DropdownLink href="/project-management" title="Project Management" description="Tasks, boards, and timelines" dark={!scrolled} />
+          <DropdownLink href="/features" title="All Features" description="Everything Whatstask offers" dark={!scrolled} />
+          <DropdownLink href="/project-management#time-tracking" title="Time Tracking" description="Track hours and productivity" dark={!scrolled} />
+          <DropdownLink href="/project-management#collaboration" title="Team Collaboration" description="Work together seamlessly" dark={!scrolled} />
+          <DropdownLink href="/project-management#views" title="Multiple Views" description="List, Kanban, Calendar, Timeline" dark={!scrolled} />
         </div>
       </div>
 
       {/* AI Tools Column */}
       <div>
-        <h3 className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-4">AI Tools</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>AI Tools</h3>
         <div className="space-y-1">
-          <DropdownLink href="/project-management#ai" title="AI Task Creation" description="Create tasks with natural language" highlight />
-          <DropdownLink href="/geoanalyzer" title="GEO Analyzer" description="AI search optimization tool" highlight />
-          <DropdownLink href="/geoanalyzer/guide" title="GEO Guide" description="Learn about AI search" />
+          <DropdownLink href="/project-management#ai" title="AI Task Creation" description="Create tasks with natural language" highlight dark={!scrolled} />
+          <DropdownLink href="/geoanalyzer" title="GEO Analyzer" description="AI search optimization tool" highlight dark={!scrolled} />
+          <DropdownLink href="/geoanalyzer/guide" title="GEO Guide" description="Learn about AI search" dark={!scrolled} />
         </div>
 
-        <h3 className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-4 mt-8">Free PDF Tools</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 mt-8 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>Free PDF Tools</h3>
         <div className="space-y-1">
-          <DropdownLink href="/tools" title="All Tools" description="PDF & QR utilities" />
-          <DropdownLink href="/pdf-merger" title="PDF Merger" description="Combine PDFs" />
-          <DropdownLink href="/pdf-compressor" title="PDF Compressor" description="Reduce file size" />
+          <DropdownLink href="/tools" title="All Tools" description="PDF & QR utilities" dark={!scrolled} />
+          <DropdownLink href="/pdf-merger" title="PDF Merger" description="Combine PDFs" dark={!scrolled} />
+          <DropdownLink href="/pdf-compressor" title="PDF Compressor" description="Reduce file size" dark={!scrolled} />
         </div>
       </div>
 
       {/* Featured Column */}
-      <div className="relative bg-gradient-to-br from-violet-50/80 to-violet-100/40 rounded-xl p-4">
-        <p className="text-sm font-semibold text-violet-700 mb-2">Try Whatstask Free</p>
-        <p className="text-sm text-slate-600 mb-3">
+      <div className={`relative rounded-xl p-4 ${scrolled ? 'bg-gradient-to-br from-violet-50/80 to-violet-100/40' : 'bg-slate-800/50 border border-slate-700/50'}`}>
+        <p className={`text-sm font-semibold mb-2 ${scrolled ? 'text-violet-700' : 'text-violet-400'}`}>Try Whatstask Free</p>
+        <p className={`text-sm mb-3 ${scrolled ? 'text-slate-600' : 'text-slate-300'}`}>
           Get started in 30 seconds. No credit card required. Works right in Telegram.
         </p>
         <Button asChild className="w-full bg-violet-500 hover:bg-violet-600 text-white rounded-full transition-all hover:scale-[1.02]">
@@ -131,7 +131,7 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
             Launch in Telegram
           </a>
         </Button>
-        <p className="text-xs text-slate-500 mt-3 text-center">Free forever · No credit card</p>
+        <p className={`text-xs mt-3 text-center ${scrolled ? 'text-slate-500' : 'text-slate-400'}`}>Free forever · No credit card</p>
       </div>
     </div>
   )
@@ -140,40 +140,40 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
     <div className="grid grid-cols-3 gap-8 p-8">
       {/* By Team Column */}
       <div>
-        <h3 className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-4">By Team</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>By Team</h3>
         <div className="space-y-1">
-          <DropdownLink href="/solutions/marketing" title="Marketing Teams" description="Campaigns, content, launches" />
-          <DropdownLink href="/solutions/development" title="Development Teams" description="Sprints, bugs, roadmaps" />
-          <DropdownLink href="/solutions/remote" title="Remote Teams" description="Async collaboration" />
-          <DropdownLink href="/solutions/operations" title="Operations" description="Process management" />
+          <DropdownLink href="/solutions/marketing" title="Marketing Teams" description="Campaigns, content, launches" dark={!scrolled} />
+          <DropdownLink href="/solutions/development" title="Development Teams" description="Sprints, bugs, roadmaps" dark={!scrolled} />
+          <DropdownLink href="/solutions/remote" title="Remote Teams" description="Async collaboration" dark={!scrolled} />
+          <DropdownLink href="/solutions/operations" title="Operations" description="Process management" dark={!scrolled} />
         </div>
       </div>
 
       {/* By Company Size Column */}
       <div>
-        <h3 className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-4">By Company Size</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>By Company Size</h3>
         <div className="space-y-1">
-          <DropdownLink href="/use-cases/freelancers" title="Freelancers" description="Solo productivity" />
-          <DropdownLink href="/solutions/small-teams" title="Small Teams" description="2-10 people" />
-          <DropdownLink href="/use-cases/startups" title="Startups" description="Move fast, stay organized" />
-          <DropdownLink href="/use-cases/agencies" title="Agencies" description="Client work management" />
-          <DropdownLink href="/enterprise" title="Enterprise" description="Custom solutions" />
+          <DropdownLink href="/use-cases/freelancers" title="Freelancers" description="Solo productivity" dark={!scrolled} />
+          <DropdownLink href="/solutions/small-teams" title="Small Teams" description="2-10 people" dark={!scrolled} />
+          <DropdownLink href="/use-cases/startups" title="Startups" description="Move fast, stay organized" dark={!scrolled} />
+          <DropdownLink href="/use-cases/agencies" title="Agencies" description="Client work management" dark={!scrolled} />
+          <DropdownLink href="/enterprise" title="Enterprise" description="Custom solutions" dark={!scrolled} />
         </div>
       </div>
 
       {/* Use Cases Column */}
       <div>
-        <h3 className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-4">Use Cases</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>Use Cases</h3>
         <div className="space-y-1">
-          <DropdownLink href="/how-it-works" title="How It Works" description="See Whatstask in action" />
-          <DropdownLink href="/project-management" title="Project Management" description="Plan and execute projects" />
-          <DropdownLink href="/project-management#time-tracking" title="Time Tracking" description="Track billable hours" />
+          <DropdownLink href="/how-it-works" title="How It Works" description="See Whatstask in action" dark={!scrolled} />
+          <DropdownLink href="/project-management" title="Project Management" description="Plan and execute projects" dark={!scrolled} />
+          <DropdownLink href="/project-management#time-tracking" title="Time Tracking" description="Track billable hours" dark={!scrolled} />
         </div>
 
-        <div className="mt-6 p-3 bg-gradient-to-br from-violet-50/80 to-violet-100/40 rounded-lg">
-          <p className="text-sm font-medium text-slate-800 mb-1">Not sure which solution?</p>
-          <p className="text-xs text-slate-600 mb-2">Talk to us about your team's needs.</p>
-          <Link href="/contact" className="text-sm text-violet-600 hover:text-violet-700 font-medium transition-colors">
+        <div className={`mt-6 p-3 rounded-lg ${scrolled ? 'bg-gradient-to-br from-violet-50/80 to-violet-100/40' : 'bg-slate-800/50 border border-slate-700/50'}`}>
+          <p className={`text-sm font-medium mb-1 ${scrolled ? 'text-slate-800' : 'text-white'}`}>Not sure which solution?</p>
+          <p className={`text-xs mb-2 ${scrolled ? 'text-slate-600' : 'text-slate-300'}`}>Talk to us about your team's needs.</p>
+          <Link href="/contact" className={`text-sm font-medium transition-colors ${scrolled ? 'text-violet-600 hover:text-violet-700' : 'text-violet-400 hover:text-violet-300'}`}>
             Contact Sales →
           </Link>
         </div>
@@ -185,42 +185,42 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
     <div className="grid grid-cols-3 gap-8 p-8">
       {/* Learn Column */}
       <div>
-        <h3 className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-4">Learn</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>Learn</h3>
         <div className="space-y-1">
-          <DropdownLink href="/blog" title="Blog" description="Tips, guides, and updates" />
-          <DropdownLink href="/templates" title="Templates" description="Ready-to-use project templates" />
-          <DropdownLink href="/geoanalyzer/guide" title="GEO Guide" description="Master AI search optimization" />
-          <DropdownLink href="/how-it-works" title="Getting Started" description="Quick start guide" />
+          <DropdownLink href="/blog" title="Blog" description="Tips, guides, and updates" dark={!scrolled} />
+          <DropdownLink href="/templates" title="Templates" description="Ready-to-use project templates" dark={!scrolled} />
+          <DropdownLink href="/geoanalyzer/guide" title="GEO Guide" description="Master AI search optimization" dark={!scrolled} />
+          <DropdownLink href="/how-it-works" title="Getting Started" description="Quick start guide" dark={!scrolled} />
         </div>
       </div>
 
       {/* Support Column */}
       <div>
-        <h3 className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-4">Support</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>Support</h3>
         <div className="space-y-1">
-          <DropdownLink href="/help" title="Help Center" description="FAQs and documentation" />
-          <DropdownLink href="/contact" title="Contact Support" description="Get help from our team" />
-          <DropdownLink href="/security" title="Security" description="How we protect your data" />
+          <DropdownLink href="/help" title="Help Center" description="FAQs and documentation" dark={!scrolled} />
+          <DropdownLink href="/contact" title="Contact Support" description="Get help from our team" dark={!scrolled} />
+          <DropdownLink href="/security" title="Security" description="How we protect your data" dark={!scrolled} />
         </div>
 
-        <h3 className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-4 mt-8">Company</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 mt-8 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>Company</h3>
         <div className="space-y-1">
-          <DropdownLink href="/about" title="About Us" description="Our mission and values" />
-          <DropdownLink href="/founder" title="Founder Story" description="Why we built Whatstask" />
+          <DropdownLink href="/about" title="About Us" description="Our mission and values" dark={!scrolled} />
+          <DropdownLink href="/founder" title="Founder Story" description="Why we built Whatstask" dark={!scrolled} />
         </div>
       </div>
 
       {/* Compare Column */}
       <div>
-        <h3 className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-4">Compare</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>Compare</h3>
         <div className="space-y-1">
-          <DropdownLink href="/compare/clickup" title="vs ClickUp" description="Simpler alternative" />
-          <DropdownLink href="/compare/monday" title="vs Monday.com" description="More affordable" />
-          <DropdownLink href="/compare/asana" title="vs Asana" description="Less complexity" />
-          <DropdownLink href="/compare/notion" title="vs Notion" description="Task-focused" />
-          <DropdownLink href="/compare/todoist" title="vs Todoist" description="Team features included" />
+          <DropdownLink href="/compare/clickup" title="vs ClickUp" description="Simpler alternative" dark={!scrolled} />
+          <DropdownLink href="/compare/monday" title="vs Monday.com" description="More affordable" dark={!scrolled} />
+          <DropdownLink href="/compare/asana" title="vs Asana" description="Less complexity" dark={!scrolled} />
+          <DropdownLink href="/compare/notion" title="vs Notion" description="Task-focused" dark={!scrolled} />
+          <DropdownLink href="/compare/todoist" title="vs Todoist" description="Team features included" dark={!scrolled} />
         </div>
-        <Link href="/compare/clickup" className="inline-block mt-4 text-sm text-violet-600 hover:text-violet-700 font-medium transition-colors">
+        <Link href="/compare/clickup" className={`inline-block mt-4 text-sm font-medium transition-colors ${scrolled ? 'text-violet-600 hover:text-violet-700' : 'text-violet-400 hover:text-violet-300'}`}>
           See all comparisons →
         </Link>
       </div>
@@ -299,7 +299,7 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
                       />
                       {/* Active indicator triangle */}
                       {activeDropdown === item.name && (
-                        <span className="absolute -bottom-[10px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] border-b-white" />
+                        <span className={`absolute -bottom-[10px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-b-[8px] ${scrolled ? 'border-b-white' : 'border-b-slate-950'}`} />
                       )}
                     </button>
                   )}
@@ -355,7 +355,11 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
-              className="absolute top-full left-0 right-0 bg-gradient-to-b from-white via-white/[0.98] to-violet-50/95 backdrop-blur-2xl shadow-[0_8px_32px_rgba(139,92,246,0.12),0_4px_12px_rgba(0,0,0,0.06)]"
+              className={`absolute top-full left-0 right-0 backdrop-blur-2xl ${
+                scrolled
+                  ? 'bg-gradient-to-b from-white via-white/[0.98] to-violet-50/95 shadow-[0_8px_32px_rgba(139,92,246,0.12),0_4px_12px_rgba(0,0,0,0.06)]'
+                  : 'bg-slate-950/95 border-t border-slate-800/50 shadow-[0_8px_32px_rgba(0,0,0,0.3)]'
+              }`}
               onMouseEnter={() => timeoutRef.current && clearTimeout(timeoutRef.current)}
               onMouseLeave={handleMouseLeave}
             >
@@ -502,19 +506,37 @@ function DropdownLink({
   title,
   description,
   highlight,
+  dark,
 }: {
   href: string
   title: string
   description: string
   highlight?: boolean
+  dark?: boolean
 }) {
   return (
     <Link
       href={href}
-      className="block p-3 rounded-lg transition-all duration-200 group relative hover:bg-violet-500/[0.08] hover:translate-x-1 border-l-2 border-transparent hover:border-violet-500"
+      className={`block p-3 rounded-lg transition-all duration-200 group relative hover:translate-x-1 border-l-2 border-transparent ${
+        dark
+          ? 'hover:bg-white/10 hover:border-violet-400'
+          : 'hover:bg-violet-500/[0.08] hover:border-violet-500'
+      }`}
     >
-      <p className={`text-sm font-medium transition-colors ${highlight ? "text-violet-600 group-hover:text-violet-700" : "text-slate-800 group-hover:text-slate-900"}`}>{title}</p>
-      <p className="text-xs text-slate-500 mt-0.5 group-hover:text-slate-600 transition-colors">{description}</p>
+      <p className={`text-sm font-medium transition-colors ${
+        dark
+          ? highlight
+            ? "text-violet-400 group-hover:text-violet-300"
+            : "text-white group-hover:text-slate-200"
+          : highlight
+            ? "text-violet-600 group-hover:text-violet-700"
+            : "text-slate-800 group-hover:text-slate-900"
+      }`}>{title}</p>
+      <p className={`text-xs mt-0.5 transition-colors ${
+        dark
+          ? 'text-slate-400 group-hover:text-slate-300'
+          : 'text-slate-500 group-hover:text-slate-600'
+      }`}>{description}</p>
     </Link>
   )
 }

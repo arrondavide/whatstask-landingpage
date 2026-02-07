@@ -182,13 +182,13 @@ export default function LandingPage() {
       </section>
 
       {/* App Showcase Section */}
-      <section className="relative py-24 md:py-32 px-4 bg-white">
-        <div className="container mx-auto max-w-6xl">
+      <section className="relative py-32 md:py-40 px-4 bg-white">
+        <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20 md:mb-24"
           >
             <p className="text-sm text-slate-500 uppercase tracking-widest mb-4">See It In Action</p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 tracking-tight text-slate-900">
@@ -200,7 +200,7 @@ export default function LandingPage() {
           </motion.div>
 
           {/* App Screenshots Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16">
             {[
               { src: "/appui/app-create-project.webp", label: "Create Projects", desc: "Set up new projects with AI assistance" },
               { src: "/appui/app-projects.webp", label: "Manage Tasks", desc: "View and organize all your work" },
@@ -215,11 +215,11 @@ export default function LandingPage() {
                 transition={{ delay: index * 0.1 }}
                 className="flex flex-col items-center"
               >
-                <div className="scale-[0.85] md:scale-[0.9] mb-4">
+                <div className="mb-8">
                   <PhoneMockup src={item.src} alt={item.label} />
                 </div>
-                <h3 className="font-medium text-slate-900 text-sm mb-1">{item.label}</h3>
-                <p className="text-xs text-slate-500 text-center">{item.desc}</p>
+                <h3 className="font-semibold text-slate-900 text-base mb-2">{item.label}</h3>
+                <p className="text-sm text-slate-500 text-center max-w-[200px]">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -306,40 +306,42 @@ export default function LandingPage() {
 
       {/* Product Showcase */}
       <section className="relative py-24 md:py-32 px-4 bg-white">
-        <div className="container mx-auto max-w-5xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-24">
+        <div className="container mx-auto max-w-6xl">
+          {/* First Row */}
+          <div className="grid md:grid-cols-12 gap-8 lg:gap-16 items-start mb-32">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="md:col-span-5 pt-8"
             >
-              <p className="text-sm text-slate-500 uppercase tracking-widest mb-4">The Product</p>
-              <h2 className="text-3xl md:text-4xl font-semibold mb-6 tracking-tight text-slate-900">
+              <p className="text-sm text-slate-500 uppercase tracking-widest mb-6">The Product</p>
+              <h2 className="text-3xl md:text-4xl font-semibold mb-8 tracking-tight text-slate-900">
                 Simple by design
               </h2>
-              <p className="text-slate-500 mb-6 leading-relaxed">
+              <p className="text-slate-500 mb-5 leading-relaxed">
                 Other tools give you 15 views and 50 features you'll never use. We give you 4 views that cover everything,
-                with AI that handles the rest. WhatsTask is built for teams who want to get work done, not spend hours learning software.
+                with AI that handles the rest.
               </p>
-              <p className="text-slate-500 mb-8 leading-relaxed">
+              <p className="text-slate-500 mb-10 leading-relaxed">
                 Everything runs inside Telegram. No browser tabs to manage, no desktop apps to install. Just open your messenger and start working.
               </p>
 
-              <div className="space-y-4 mb-8">
+              <ul className="space-y-3 mb-10">
                 {[
                   "4 views: List, Kanban, Calendar, Timeline",
                   "AI-powered task creation from natural language",
                   "Works entirely within Telegram",
                   "Free tier with no artificial limits",
                 ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-3 text-sm text-slate-600">
-                    <div className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                  <li key={index} className="flex items-center gap-3 text-sm text-slate-600">
+                    <div className="w-1.5 h-1.5 rounded-full bg-slate-900 flex-shrink-0" />
                     {item}
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
 
-              <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-6 py-5">
+              <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-5">
                 <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   Try It Free
                   <ArrowRight className="w-4 h-4" />
@@ -351,46 +353,38 @@ export default function LandingPage() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex justify-center"
+              className="md:col-span-7 flex justify-center md:justify-end"
             >
-              <div className="flex items-end">
-                <motion.div
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                  className="hidden md:block scale-[0.65] origin-bottom -mr-8"
-                >
-                  <PhoneMockup src="/appui/app-profile.webp" alt="Profile" />
-                </motion.div>
-                <div className="scale-[0.85] md:scale-[0.9] relative z-10">
+              <div className="flex items-end gap-[-20px]">
+                <div className="hidden md:block relative" style={{ marginRight: '-40px' }}>
+                  <div className="scale-[0.75] origin-bottom-right opacity-90">
+                    <PhoneMockup src="/appui/app-profile.webp" alt="Profile" />
+                  </div>
+                </div>
+                <div className="relative z-10">
                   <PhoneMockup src="/appui/app-projects.webp" alt="Projects" priority />
                 </div>
               </div>
             </motion.div>
           </div>
 
-          {/* Second Product Row - Reversed */}
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Second Row - Reversed */}
+          <div className="grid md:grid-cols-12 gap-8 lg:gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex justify-center order-2 md:order-1"
+              className="md:col-span-7 flex justify-center md:justify-start order-2 md:order-1"
             >
               <div className="flex items-end">
-                <div className="scale-[0.85] md:scale-[0.9] relative z-10">
+                <div className="relative z-10">
                   <PhoneMockup src="/appui/app-stats-team.webp" alt="Team Stats" />
                 </div>
-                <motion.div
-                  initial={{ opacity: 0, x: 10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                  className="hidden md:block scale-[0.65] origin-bottom -ml-8"
-                >
-                  <PhoneMockup src="/appui/app-stats-personal.webp" alt="Personal Stats" />
-                </motion.div>
+                <div className="hidden md:block relative" style={{ marginLeft: '-40px' }}>
+                  <div className="scale-[0.75] origin-bottom-left opacity-90">
+                    <PhoneMockup src="/appui/app-stats-personal.webp" alt="Personal Stats" />
+                  </div>
+                </div>
               </div>
             </motion.div>
 
@@ -398,32 +392,32 @@ export default function LandingPage() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="order-1 md:order-2"
+              className="md:col-span-5 order-1 md:order-2 pt-8"
             >
-              <p className="text-sm text-slate-500 uppercase tracking-widest mb-4">Analytics</p>
-              <h2 className="text-3xl md:text-4xl font-semibold mb-6 tracking-tight text-slate-900">
+              <p className="text-sm text-slate-500 uppercase tracking-widest mb-6">Analytics</p>
+              <h2 className="text-3xl md:text-4xl font-semibold mb-8 tracking-tight text-slate-900">
                 Data that drives decisions
               </h2>
-              <p className="text-slate-500 mb-6 leading-relaxed">
+              <p className="text-slate-500 mb-5 leading-relaxed">
                 Understand how your team works with built-in analytics. See who's working on what, how long tasks take, and where bottlenecks occur.
               </p>
-              <p className="text-slate-500 mb-8 leading-relaxed">
-                Generate reports for clients, track billable hours, and make informed decisions about resource allocation. All without leaving Telegram.
+              <p className="text-slate-500 mb-10 leading-relaxed">
+                Generate reports for clients, track billable hours, and make informed decisions about resource allocation.
               </p>
 
-              <div className="space-y-4">
+              <ul className="space-y-3">
                 {[
                   "Personal productivity dashboards",
                   "Team-wide performance insights",
                   "Time tracking with automatic reports",
                   "Project progress visualization",
                 ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-3 text-sm text-slate-600">
-                    <div className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                  <li key={index} className="flex items-center gap-3 text-sm text-slate-600">
+                    <div className="w-1.5 h-1.5 rounded-full bg-slate-900 flex-shrink-0" />
                     {item}
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </motion.div>
           </div>
         </div>
@@ -547,7 +541,7 @@ export default function LandingPage() {
 
       {/* Products Section */}
       <section id="products" className="relative py-24 md:py-32 px-4 bg-slate-50">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -559,30 +553,30 @@ export default function LandingPage() {
               Two products, one philosophy
             </h2>
             <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-              Powerful yet simple. We believe work tools should get out of your way and let you focus on what matters. Both products embody this principle.
+              Powerful yet simple. Work tools that get out of your way.
             </p>
           </motion.div>
 
-          {/* Project Management - Full Width with Mockup */}
+          {/* Project Management */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-8"
+            className="mb-6"
           >
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 md:p-12 hover:border-slate-300 transition-colors">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <p className="text-xs text-slate-400 uppercase tracking-widest mb-4">Core Product</p>
-                  <h3 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-4">Project Management</h3>
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 lg:p-10 hover:border-slate-300 transition-colors">
+              <div className="grid lg:grid-cols-12 gap-10 items-start">
+                <div className="lg:col-span-7">
+                  <p className="text-xs text-slate-400 uppercase tracking-widest mb-3">Core Product</p>
+                  <h3 className="text-2xl font-semibold text-slate-900 mb-5">Project Management</h3>
                   <p className="text-slate-500 mb-4 leading-relaxed">
                     Complete task management solution powered by AI. Create projects, assign tasks, track time, and collaborate with your team—all from Telegram.
                   </p>
-                  <p className="text-slate-500 mb-6 leading-relaxed">
-                    Perfect for freelancers managing multiple clients, startups coordinating sprints, agencies juggling projects, or enterprise teams needing a simple yet powerful solution.
+                  <p className="text-slate-500 mb-8 leading-relaxed">
+                    Perfect for freelancers, startups, agencies, or enterprise teams needing simplicity without sacrificing power.
                   </p>
 
-                  <div className="grid grid-cols-2 gap-3 mb-8">
+                  <ul className="grid grid-cols-2 gap-x-6 gap-y-2 mb-8">
                     {[
                       "List, Kanban, Calendar, Timeline",
                       "AI-powered task creation",
@@ -591,14 +585,14 @@ export default function LandingPage() {
                       "Project templates",
                       "Recurring tasks",
                     ].map((feature, index) => (
-                      <div key={index} className="flex items-start gap-2 text-sm text-slate-600">
-                        <div className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                      <li key={index} className="flex items-center gap-2 text-sm text-slate-600">
+                        <div className="w-1.5 h-1.5 rounded-full bg-slate-900 flex-shrink-0" />
                         {feature}
-                      </div>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
 
-                  <div className="flex items-center gap-4">
+                  <div className="flex flex-wrap items-center gap-4">
                     <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-6 py-5">
                       <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                         Get Started Free
@@ -608,18 +602,14 @@ export default function LandingPage() {
                   </div>
                 </div>
 
-                <div className="flex justify-center">
+                <div className="lg:col-span-5 flex justify-center lg:justify-end">
                   <div className="flex items-end">
-                    <motion.div
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.2 }}
-                      className="hidden lg:block scale-[0.6] origin-bottom -mr-6"
-                    >
-                      <PhoneMockup src="/appui/app-create-project.webp" alt="Create Project" />
-                    </motion.div>
-                    <div className="scale-[0.8] md:scale-[0.85] relative z-10">
+                    <div className="hidden lg:block relative" style={{ marginRight: '-32px' }}>
+                      <div className="scale-[0.7] origin-bottom-right opacity-85">
+                        <PhoneMockup src="/appui/app-create-project.webp" alt="Create Project" />
+                      </div>
+                    </div>
+                    <div className="relative z-10 scale-[0.9]">
                       <PhoneMockup src="/appui/app-onboarding.webp" alt="Onboarding" />
                     </div>
                   </div>
@@ -635,31 +625,31 @@ export default function LandingPage() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 hover:border-slate-300 transition-colors">
-              <div className="grid md:grid-cols-3 gap-8 items-center">
-                <div className="md:col-span-2">
-                  <p className="text-xs text-slate-400 uppercase tracking-widest mb-4">AI Tool</p>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-4">GEO Analyzer</h3>
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 lg:p-10 hover:border-slate-300 transition-colors">
+              <div className="grid lg:grid-cols-12 gap-10 items-start">
+                <div className="lg:col-span-8">
+                  <p className="text-xs text-slate-400 uppercase tracking-widest mb-3">AI Tool</p>
+                  <h3 className="text-2xl font-semibold text-slate-900 mb-5">GEO Analyzer</h3>
                   <p className="text-slate-500 mb-4 leading-relaxed">
-                    AI search optimization tool for the new era of search. As ChatGPT, Perplexity, and Google SGE become primary discovery channels, your content needs to be AI-readable.
+                    AI search optimization for the new era. As ChatGPT, Perplexity, and Google SGE become primary discovery channels, your content needs to be AI-readable.
                   </p>
-                  <p className="text-slate-500 mb-6 leading-relaxed">
-                    Analyze any URL, get an AI readability score, and receive specific recommendations to improve your content's visibility in AI-powered search results.
+                  <p className="text-slate-500 mb-8 leading-relaxed">
+                    Analyze any URL, get an AI readability score, and receive specific recommendations to improve visibility.
                   </p>
 
-                  <div className="grid grid-cols-2 gap-3 mb-6">
+                  <ul className="grid grid-cols-2 gap-x-6 gap-y-2 mb-8">
                     {[
                       "Analyze AI readability score",
                       "Optimize for all AI engines",
                       "Track AI search performance",
                       "3 free analyses daily",
                     ].map((feature, index) => (
-                      <div key={index} className="flex items-start gap-2 text-sm text-slate-600">
-                        <div className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                      <li key={index} className="flex items-center gap-2 text-sm text-slate-600">
+                        <div className="w-1.5 h-1.5 rounded-full bg-slate-900 flex-shrink-0" />
                         {feature}
-                      </div>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
 
                   <Button asChild variant="outline" className="border-slate-300 hover:bg-slate-50 rounded-lg px-6 py-5">
                     <a href="https://geoanalyzer.whatstask.com" target="_blank" rel="noopener noreferrer">
@@ -668,11 +658,11 @@ export default function LandingPage() {
                   </Button>
                 </div>
 
-                <div className="hidden md:flex justify-center">
-                  <div className="w-full max-w-[200px] h-[280px] bg-slate-100 rounded-xl flex items-center justify-center">
-                    <div className="text-center p-6">
-                      <div className="text-4xl font-light text-slate-400 mb-2">GEO</div>
-                      <div className="text-sm text-slate-500">AI Search Optimization</div>
+                <div className="hidden lg:flex lg:col-span-4 justify-center items-center">
+                  <div className="w-full max-w-[180px] aspect-[3/4] bg-gradient-to-br from-slate-100 to-slate-50 rounded-xl flex items-center justify-center border border-slate-200">
+                    <div className="text-center">
+                      <div className="text-3xl font-light text-slate-400 mb-1">GEO</div>
+                      <div className="text-xs text-slate-500">AI Search</div>
                     </div>
                   </div>
                 </div>
