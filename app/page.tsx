@@ -5,27 +5,13 @@ import { useState, useEffect } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog"
-import {
-  X,
-  ArrowRight,
-  ChevronDown,
-  Zap,
-  Clock,
-  Users,
-  BarChart3,
-  MessageSquare,
-  Sparkles,
-  Check,
-} from "lucide-react"
+import { X, ArrowRight, ChevronDown } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import PrivacyPolicy from "@/components/privacy-policy"
-import CustomCursor from "@/components/custom-cursor"
 import Navigation from "@/components/navigation"
 import PageLoader from "@/components/page-loader"
-import { MagneticButton } from "@/components/interactive-card"
 import { PhoneMockup } from "@/components/phone-mockup"
-import { AnimatedTextCounter } from "@/components/animated-counter"
 
 export default function LandingPage() {
   const [mounted, setMounted] = useState(false)
@@ -48,29 +34,6 @@ export default function LandingPage() {
 
   if (!mounted) return null
 
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.7,
-        ease: [0.25, 0.46, 0.45, 0.94] as const,
-      },
-    }),
-  }
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  }
-
   const handlePrivacyClick = (e: React.MouseEvent) => {
     e.preventDefault()
     e.stopPropagation()
@@ -80,7 +43,6 @@ export default function LandingPage() {
   return (
     <div className="relative min-h-screen bg-white text-slate-900 overflow-hidden">
       <PageLoader />
-      <CustomCursor />
 
       {/* Header */}
       <Navigation />
@@ -100,137 +62,104 @@ export default function LandingPage() {
         </DialogContent>
       </Dialog>
 
-      {/* Hero Section - Dark */}
-      <section className="relative min-h-screen flex items-center pt-24 pb-20 w-full bg-[#0D0D0D] overflow-hidden">
-        {/* Gradient orbs */}
-        <div className="absolute top-20 left-1/4 w-[600px] h-[600px] bg-violet-600/30 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-fuchsia-500/20 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute top-1/2 right-1/3 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[80px] pointer-events-none" />
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center pt-24 pb-20 w-full bg-slate-950 overflow-hidden">
+        {/* Subtle gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
 
-        <div className="container mx-auto max-w-7xl relative z-10 px-4">
+        <div className="container mx-auto max-w-6xl relative z-10 px-4">
           <div className="flex flex-col items-center">
-            {/* Text content - centered */}
-            <motion.div style={{ opacity: heroOpacity }} className="text-center max-w-5xl">
+            <motion.div style={{ opacity: heroOpacity }} className="text-center max-w-4xl">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
+                {/* Tagline */}
+                <p className="text-slate-400 text-sm tracking-widest uppercase mb-6">
+                  Project Management for Modern Teams
+                </p>
+
                 {/* Main Headline */}
-                <h1 className="text-5xl md:text-6xl lg:text-8xl font-extrabold leading-[1.05] tracking-tight mb-8 text-white">
-                  Task management
+                <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold leading-[1.1] tracking-tight mb-8 text-white">
+                  Task management that
                   <br />
-                  <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">
-                    that just works
-                  </span>
+                  <span className="text-slate-400">actually works</span>
                 </h1>
 
-                {/* Feature badges */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  className="flex flex-wrap justify-center gap-4 md:gap-8 mb-12"
-                >
-                  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2">
-                    <span className="text-violet-400 text-sm font-medium">Free AI</span>
-                    <span className="text-white/60 text-sm">task creation</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2">
-                    <span className="text-fuchsia-400 text-sm font-medium">Works in</span>
-                    <span className="text-white/60 text-sm">Telegram</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2">
-                    <span className="text-pink-400 text-sm font-medium">Free</span>
-                    <span className="text-white/60 text-sm">to start</span>
-                  </div>
-                </motion.div>
-
-                <p className="text-xl md:text-2xl text-white/60 font-light leading-relaxed max-w-3xl mx-auto mb-12">
-                  Project management, AI tools, and free utilities in one ecosystem.
-                  <br className="hidden md:block" />
-                  <span className="text-white/80">Simple scales. Complex doesn't.</span>
+                <p className="text-lg md:text-xl text-slate-400 font-light leading-relaxed max-w-2xl mx-auto mb-12">
+                  Project management, AI-powered task creation, and free productivity tools.
+                  Built for teams who want to work, not manage software.
                 </p>
               </motion.div>
 
               {/* CTA Buttons */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
                 className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
               >
-                <MagneticButton magneticStrength={0.2}>
-                  <motion.div
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                  >
-                    <Button asChild className="bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white hover:from-violet-600 hover:to-fuchsia-600 rounded-full px-8 py-6 text-lg shadow-[0_0_40px_rgba(139,92,246,0.4)] hover:shadow-[0_0_60px_rgba(139,92,246,0.6)] transition-all duration-300 border-0">
-                      <Link href="/project-management" className="flex items-center gap-2">
-                        <span className="font-semibold">Get Started Free</span>
-                        <ArrowRight className="h-5 w-5" />
-                      </Link>
-                    </Button>
-                  </motion.div>
-                </MagneticButton>
-                <MagneticButton magneticStrength={0.2}>
-                  <motion.div
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                  >
-                    <Button
-                      asChild
-                      className="bg-white/10 text-white hover:bg-white/20 border border-white/20 rounded-full px-8 py-6 text-lg backdrop-blur-md transition-all duration-300"
-                    >
-                      <Link href="/geoanalyzer" className="flex items-center gap-2">
-                        <span className="font-medium">Try GEO Analyzer</span>
-                        <Sparkles className="h-5 w-5" />
-                      </Link>
-                    </Button>
-                  </motion.div>
-                </MagneticButton>
+                <Button asChild className="bg-white text-slate-900 hover:bg-slate-100 rounded-lg px-8 py-6 text-base font-medium transition-colors">
+                  <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                    Get Started Free
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                </Button>
+                <Button asChild variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white rounded-lg px-8 py-6 text-base font-medium bg-transparent transition-colors">
+                  <Link href="/how-it-works">
+                    See How It Works
+                  </Link>
+                </Button>
+              </motion.div>
+
+              {/* Trust indicators */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="flex flex-wrap justify-center gap-8 text-sm text-slate-500"
+              >
+                <span>Free to start</span>
+                <span className="hidden sm:inline">·</span>
+                <span>No credit card required</span>
+                <span className="hidden sm:inline">·</span>
+                <span>Works in Telegram</span>
               </motion.div>
             </motion.div>
 
             {/* Phone Mockups */}
             <motion.div
-              initial={{ opacity: 0, y: 60 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="relative flex justify-center items-end"
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="relative flex justify-center items-end mt-16"
             >
-              <div className="flex items-end gap-[-20px] md:gap-[-30px]">
-                {/* Left phone - slanted left */}
+              <div className="flex items-end">
                 <motion.div
-                  initial={{ opacity: 0, y: 40, rotate: -12 }}
-                  animate={{ opacity: 1, y: 0, rotate: -12 }}
-                  transition={{ duration: 0.6, delay: 0.9 }}
-                  whileHover={{ scale: 1.08, rotate: -6, y: -10 }}
-                  className="hidden sm:block scale-[0.6] md:scale-[0.65] lg:scale-[0.7] origin-bottom -mr-8 md:-mr-12 cursor-pointer"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                  className="hidden sm:block scale-[0.6] md:scale-[0.7] origin-bottom -mr-6 md:-mr-10"
                 >
                   <PhoneMockup src="/appui/app-projects.webp" alt="Projects Screen" />
                 </motion.div>
 
-                {/* Center phone - main, upright */}
                 <motion.div
-                  initial={{ opacity: 0, y: 50 }}
+                  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                  whileHover={{ scale: 1.05, y: -8 }}
-                  className="relative z-10 scale-[0.75] md:scale-[0.8] lg:scale-[0.85] cursor-pointer"
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  className="relative z-10 scale-[0.75] md:scale-[0.85]"
                 >
                   <PhoneMockup src="/appui/app-onboarding.webp" alt="WhatsTask Onboarding" priority />
                 </motion.div>
 
-                {/* Right phone - slanted right */}
                 <motion.div
-                  initial={{ opacity: 0, y: 40, rotate: 12 }}
-                  animate={{ opacity: 1, y: 0, rotate: 12 }}
-                  transition={{ duration: 0.6, delay: 0.9 }}
-                  whileHover={{ scale: 1.08, rotate: 6, y: -10 }}
-                  className="hidden sm:block scale-[0.6] md:scale-[0.65] lg:scale-[0.7] origin-bottom -ml-8 md:-ml-12 cursor-pointer"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                  className="hidden sm:block scale-[0.6] md:scale-[0.7] origin-bottom -ml-6 md:-ml-10"
                 >
                   <PhoneMockup src="/appui/app-stats-personal.webp" alt="Statistics Screen" />
                 </motion.div>
@@ -242,198 +171,18 @@ export default function LandingPage() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.2 }}
-            className="flex flex-col items-center gap-2 text-white/40 mt-12"
+            transition={{ delay: 1 }}
+            className="flex flex-col items-center gap-2 text-slate-600 mt-12"
           >
-            <span className="text-sm">Scroll to explore</span>
-            <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
+            <motion.div animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 2 }}>
               <ChevronDown className="h-5 w-5" />
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* A New Era Section - Dark */}
-      <section className="relative py-32 px-4 bg-[#0D0D0D] overflow-hidden">
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0D0D0D] via-violet-950/20 to-[#0D0D0D]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-violet-600/20 via-fuchsia-500/20 to-pink-500/20 rounded-full blur-[150px] pointer-events-none" />
-
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-20"
-          >
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
-              <span className="text-white">Work smarter </span>
-              <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">not harder.</span>
-              <br />
-              <span className="text-white">with </span>
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">AI assistance</span>
-            </h2>
-          </motion.div>
-
-          {/* AI Feature Cards */}
-          <div className="grid md:grid-cols-3 gap-6 mb-20">
-            {[
-              {
-                icon: <Zap className="w-6 h-6" />,
-                title: "AI Task Creation",
-                desc: "Describe what you need. AI creates the tasks.",
-                gradient: "from-violet-500 to-fuchsia-500",
-              },
-              {
-                icon: <MessageSquare className="w-6 h-6" />,
-                title: "Works in Telegram",
-                desc: "No new app to learn. Works where you already are.",
-                gradient: "from-fuchsia-500 to-pink-500",
-              },
-              {
-                icon: <BarChart3 className="w-6 h-6" />,
-                title: "AI Analytics",
-                desc: "Insights that actually help you work better.",
-                gradient: "from-cyan-500 to-blue-500",
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group"
-              >
-                <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 h-full hover:bg-white/10 hover:border-white/20 transition-all duration-300">
-                  <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${item.gradient} mb-6`}>
-                    <span className="text-white">{item.icon}</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{item.title}</h3>
-                  <p className="text-white/60">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Big Product Screenshot */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-violet-500/30 via-fuchsia-500/30 to-pink-500/30 rounded-3xl blur-3xl" />
-            <div className="relative bg-gradient-to-r from-violet-500/20 via-fuchsia-500/20 to-pink-500/20 border border-white/10 rounded-3xl p-8 md:p-12">
-              <div className="text-center mb-8">
-                <p className="text-sm text-white/40 uppercase tracking-widest mb-2">The only AI that works</p>
-                <h3 className="text-3xl md:text-4xl font-bold text-white">where you work</h3>
-              </div>
-
-              {/* Phone showcase in dark section */}
-              <div className="flex justify-center gap-4 md:gap-8 overflow-x-auto pb-4">
-                {[
-                  { src: "/appui/app-team-management.webp", alt: "Team Management" },
-                  { src: "/appui/app-create-project.webp", alt: "Create Project" },
-                  { src: "/appui/app-stats-team.webp", alt: "Team Stats" },
-                ].map((phone, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    className="flex-shrink-0 scale-[0.7] md:scale-[0.8]"
-                  >
-                    <PhoneMockup src={phone.src} alt={phone.alt} />
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Solution for Every Team - Light */}
-      <section className="relative py-32 px-4 bg-white">
-        <div className="container mx-auto max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-20"
-          >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-slate-900">
-              A solution for <span className="bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">every team.</span>
-            </h2>
-            <p className="text-xl text-slate-500 max-w-2xl mx-auto">
-              From solo freelancers to enterprise teams. One platform that scales.
-            </p>
-          </motion.div>
-
-          {/* Team type cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {[
-              { icon: <Users className="w-6 h-6" />, title: "Freelancers", desc: "Personal task management" },
-              { icon: <Zap className="w-6 h-6" />, title: "Startups", desc: "Fast, agile workflows" },
-              { icon: <BarChart3 className="w-6 h-6" />, title: "Agencies", desc: "Client project tracking" },
-              { icon: <Clock className="w-6 h-6" />, title: "Enterprise", desc: "Scale without complexity" },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Link href={`/use-cases/${item.title.toLowerCase()}`} className="block group">
-                  <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 h-full hover:border-violet-300 hover:shadow-lg hover:shadow-violet-100/50 transition-all duration-300">
-                    <div className="inline-flex p-3 rounded-xl bg-violet-100 text-violet-600 mb-4 group-hover:bg-violet-600 group-hover:text-white transition-colors">
-                      {item.icon}
-                    </div>
-                    <h3 className="text-lg font-semibold text-slate-900 mb-2">{item.title}</h3>
-                    <p className="text-slate-500 text-sm">{item.desc}</p>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Feature pills */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-wrap justify-center gap-3"
-          >
-            {[
-              "Project Management",
-              "Task Tracking",
-              "Time Tracking",
-              "AI Assistance",
-              "Team Collaboration",
-              "Analytics",
-              "Telegram Integration",
-              "Free Tools",
-            ].map((feature, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="px-4 py-2 bg-white border border-slate-200 rounded-full text-sm text-slate-600 hover:border-violet-300 hover:text-violet-600 transition-colors cursor-default"
-              >
-                {feature}
-              </motion.span>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Why WhatsTask Section */}
-      <section className="relative py-24 px-4 bg-slate-50">
+      {/* App Showcase Section */}
+      <section className="relative py-24 md:py-32 px-4 bg-white">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -441,224 +190,159 @@ export default function LandingPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <p className="text-sm text-slate-500 uppercase tracking-widest mb-4">Why WhatsTask</p>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-slate-900">
-              <span className="bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">Simple</span> by design
+            <p className="text-sm text-slate-500 uppercase tracking-widest mb-4">See It In Action</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 tracking-tight text-slate-900">
+              A complete workspace in Telegram
             </h2>
-            <p className="text-xl text-slate-500">No bloat. No learning curve. Just productivity.</p>
+            <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+              From project creation to team analytics, everything you need is accessible right from your chat app.
+            </p>
           </motion.div>
 
-          {/* Features grid */}
-          <motion.div
-            className="grid md:grid-cols-4 gap-6 mb-16"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
+          {/* App Screenshots Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {[
-              { stat: "4", suffix: "", desc: "views (all you need)" },
-              { stat: "Free", suffix: "", desc: "AI task creation" },
-              { stat: "30", suffix: "s", desc: "to get started" },
-              { stat: "100", suffix: "%", desc: "free tier available" },
+              { src: "/appui/app-create-project.webp", label: "Create Projects", desc: "Set up new projects with AI assistance" },
+              { src: "/appui/app-projects.webp", label: "Manage Tasks", desc: "View and organize all your work" },
+              { src: "/appui/app-team-management.webp", label: "Team Management", desc: "Invite members and assign roles" },
+              { src: "/appui/app-stats-team.webp", label: "Team Analytics", desc: "Track productivity across your team" },
             ].map((item, index) => (
               <motion.div
                 key={index}
-                variants={fadeInUp}
-                custom={index}
-                className="bg-white border border-slate-200 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="flex flex-col items-center"
               >
-                <p className="text-5xl font-bold text-slate-900 mb-2">
-                  <AnimatedTextCounter target={item.stat} />
-                  <span className="text-violet-600">{item.suffix}</span>
-                </p>
-                <p className="text-slate-500">{item.desc}</p>
+                <div className="scale-[0.85] md:scale-[0.9] mb-4">
+                  <PhoneMockup src={item.src} alt={item.label} />
+                </div>
+                <h3 className="font-medium text-slate-900 text-sm mb-1">{item.label}</h3>
+                <p className="text-xs text-slate-500 text-center">{item.desc}</p>
               </motion.div>
             ))}
-          </motion.div>
-
-          {/* Platform info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col items-center"
-          >
-            <p className="text-slate-600 text-center">
-              Works directly in Telegram · No app download required
-            </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Products Section - Updated */}
-      <section id="products" className="relative py-32 px-4 bg-white">
+      {/* Features Section */}
+      <section className="relative py-24 md:py-32 px-4 bg-slate-50">
         <div className="container mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-slate-900">
-              Two products. <span className="bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">One philosophy.</span>
+            <p className="text-sm text-slate-500 uppercase tracking-widest mb-4">Features</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 tracking-tight text-slate-900">
+              Everything you need, nothing you don't
             </h2>
-            <p className="text-xl text-slate-500 max-w-xl mx-auto font-light">
-              Powerful yet simple. Choose one, use both.
+            <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+              Built for simplicity. Designed for productivity. WhatsTask gives you the essential tools without the bloat of traditional project management software.
             </p>
           </motion.div>
 
-          {/* Product Cards */}
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Project Management */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="group"
-            >
-              <div className="relative bg-gradient-to-br from-violet-50 to-fuchsia-50 border border-slate-200 rounded-3xl p-8 md:p-10 h-full hover:border-violet-300 hover:shadow-xl hover:shadow-violet-100/50 transition-all duration-300 overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20 rounded-full blur-3xl" />
-                <div className="relative">
-                  <div className="inline-flex p-3 rounded-xl bg-gradient-to-r from-violet-500 to-fuchsia-500 mb-6">
-                    <Zap className="w-6 h-6 text-white" />
-                  </div>
-
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4">Project Management</h3>
-
-                  <p className="text-slate-500 mb-8 leading-relaxed">
-                    The complete task solution. Everything you need to manage projects and teams.
-                  </p>
-
-                  <div className="space-y-3 mb-10">
-                    {[
-                      "List, Kanban, Calendar, Timeline views",
-                      "Free AI task creation",
-                      "Built-in time tracking",
-                      "Team roles & permissions",
-                    ].map((feature, index) => (
-                      <div key={index} className="flex items-center gap-3 text-sm text-slate-600">
-                        <Check className="w-4 h-4 text-violet-500" />
-                        {feature}
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="flex items-baseline gap-2 mb-8">
-                    <span className="text-4xl font-bold text-slate-900">Free</span>
-                    <span className="text-slate-400 text-sm">forever</span>
-                  </div>
-
-                  <Button asChild className="w-full bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white hover:from-violet-600 hover:to-fuchsia-600 rounded-xl py-6 shadow-lg shadow-violet-500/25">
-                    <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                      Get Started <ArrowRight className="w-4 h-4" />
-                    </a>
-                  </Button>
+          {/* Feature Grid */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {[
+              {
+                title: "AI Task Creation",
+                desc: "Simply describe your project or task in plain language. Our AI understands context, breaks down complex work into actionable items, sets priorities, and creates subtasks automatically. No more manual data entry.",
+              },
+              {
+                title: "Works in Telegram",
+                desc: "No new apps to download, no new accounts to create. WhatsTask runs entirely inside Telegram, the messenger you already use daily. Start a conversation with our bot and you're ready to go.",
+              },
+              {
+                title: "Built-in Analytics",
+                desc: "Understand how your team works with detailed productivity insights. See time spent on tasks, identify bottlenecks, track project progress, and make data-driven decisions to improve workflow.",
+              },
+              {
+                title: "Multiple Views",
+                desc: "Work the way you prefer. Switch between List view for quick scanning, Kanban for visual workflows, Calendar for time-based planning, and Timeline for project scheduling. All your data, multiple perspectives.",
+              },
+              {
+                title: "Time Tracking",
+                desc: "Track time spent on tasks with a single tap. Clock in when you start, clock out when you're done. WhatsTask automatically calculates durations and generates reports ready for client billing.",
+              },
+              {
+                title: "Team Collaboration",
+                desc: "Add unlimited team members at no extra cost. Assign roles with different permissions, track who's working on what, and keep everyone aligned. Real-time updates keep your whole team in sync.",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+              >
+                <div className="h-full p-6 bg-white rounded-xl border border-slate-200 hover:border-slate-300 transition-colors">
+                  <h3 className="text-lg font-medium text-slate-900 mb-3">{item.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
                 </div>
-              </div>
-            </motion.div>
-
-            {/* GEO Analyzer */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="group"
-            >
-              <div className="relative bg-gradient-to-br from-cyan-50 to-blue-50 border border-slate-200 rounded-3xl p-8 md:p-10 h-full hover:border-cyan-300 hover:shadow-xl hover:shadow-cyan-100/50 transition-all duration-300 overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl" />
-                <div className="relative">
-                  <div className="inline-flex p-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 mb-6">
-                    <Sparkles className="w-6 h-6 text-white" />
-                  </div>
-
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4">GEO Analyzer</h3>
-
-                  <p className="text-slate-500 mb-8 leading-relaxed">
-                    AI search optimization. Get cited in ChatGPT, Perplexity, and Google SGE.
-                  </p>
-
-                  <div className="space-y-3 mb-10">
-                    {[
-                      "Analyze AI readability",
-                      "Optimize for all AI engines",
-                      "Track AI search performance",
-                      "3 free analyses daily",
-                    ].map((feature, index) => (
-                      <div key={index} className="flex items-center gap-3 text-sm text-slate-600">
-                        <Check className="w-4 h-4 text-cyan-500" />
-                        {feature}
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="flex items-baseline gap-2 mb-8">
-                    <span className="text-4xl font-bold text-slate-900">Free</span>
-                    <span className="text-slate-400 text-sm">forever</span>
-                  </div>
-
-                  <Button asChild className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600 rounded-xl py-6 shadow-lg shadow-cyan-500/25">
-                    <a href="https://geoanalyzer.whatstask.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                      Try Analyzer <ArrowRight className="w-4 h-4" />
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <Link
+              href="/features"
+              className="inline-flex items-center gap-2 text-slate-600 text-sm hover:text-slate-900 transition-colors"
+            >
+              View all features
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
-      {/* Save Time Section - Dark with gradient */}
-      <section className="relative py-32 px-4 bg-[#0D0D0D] overflow-hidden">
-        {/* Background effects */}
-        <div className="absolute inset-0 bg-gradient-to-r from-violet-950/50 via-fuchsia-950/50 to-violet-950/50" />
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-violet-600/20 rounded-full blur-[150px] pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-fuchsia-500/20 rounded-full blur-[120px] pointer-events-none" />
-
-        <div className="container mx-auto max-w-5xl relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+      {/* Product Showcase */}
+      <section className="relative py-24 md:py-32 px-4 bg-white">
+        <div className="container mx-auto max-w-5xl">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-24">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <p className="text-sm text-violet-400 uppercase tracking-widest mb-4">Why switch</p>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-white">
-                Less <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">complexity</span>
-                <br />more work done.
+              <p className="text-sm text-slate-500 uppercase tracking-widest mb-4">The Product</p>
+              <h2 className="text-3xl md:text-4xl font-semibold mb-6 tracking-tight text-slate-900">
+                Simple by design
               </h2>
-              <p className="text-xl text-white/60 mb-8">
-                Stop managing tools. Start doing work.
+              <p className="text-slate-500 mb-6 leading-relaxed">
+                Other tools give you 15 views and 50 features you'll never use. We give you 4 views that cover everything,
+                with AI that handles the rest. WhatsTask is built for teams who want to get work done, not spend hours learning software.
+              </p>
+              <p className="text-slate-500 mb-8 leading-relaxed">
+                Everything runs inside Telegram. No browser tabs to manage, no desktop apps to install. Just open your messenger and start working.
               </p>
 
-              <div className="space-y-4 mb-10">
+              <div className="space-y-4 mb-8">
                 {[
-                  "No learning curve - works in Telegram",
-                  "AI helps create tasks from text",
-                  "4 views, not 15 (all you need)",
-                  "Free AI included, no extra cost",
+                  "4 views: List, Kanban, Calendar, Timeline",
+                  "AI-powered task creation from natural language",
+                  "Works entirely within Telegram",
+                  "Free tier with no artificial limits",
                 ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-center gap-3"
-                  >
-                    <div className="w-5 h-5 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 flex items-center justify-center">
-                      <Check className="w-3 h-3 text-white" />
-                    </div>
-                    <span className="text-white/80">{item}</span>
-                  </motion.div>
+                  <div key={index} className="flex items-start gap-3 text-sm text-slate-600">
+                    <div className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                    {item}
+                  </div>
                 ))}
               </div>
 
-              <Button asChild className="bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white hover:from-violet-600 hover:to-fuchsia-600 rounded-full px-8 py-6 text-lg shadow-[0_0_40px_rgba(139,92,246,0.4)]">
+              <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-6 py-5">
                 <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                  Try It Free <ArrowRight className="w-5 h-5" />
+                  Try It Free
+                  <ArrowRight className="w-4 h-4" />
                 </a>
               </Button>
             </motion.div>
@@ -669,19 +353,84 @@ export default function LandingPage() {
               viewport={{ once: true }}
               className="flex justify-center"
             >
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-violet-500/30 to-fuchsia-500/30 rounded-3xl blur-2xl" />
-                <div className="relative scale-[0.9]">
+              <div className="flex items-end">
+                <motion.div
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="hidden md:block scale-[0.65] origin-bottom -mr-8"
+                >
+                  <PhoneMockup src="/appui/app-profile.webp" alt="Profile" />
+                </motion.div>
+                <div className="scale-[0.85] md:scale-[0.9] relative z-10">
                   <PhoneMockup src="/appui/app-projects.webp" alt="Projects" priority />
                 </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Second Product Row - Reversed */}
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex justify-center order-2 md:order-1"
+            >
+              <div className="flex items-end">
+                <div className="scale-[0.85] md:scale-[0.9] relative z-10">
+                  <PhoneMockup src="/appui/app-stats-team.webp" alt="Team Stats" />
+                </div>
+                <motion.div
+                  initial={{ opacity: 0, x: 10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="hidden md:block scale-[0.65] origin-bottom -ml-8"
+                >
+                  <PhoneMockup src="/appui/app-stats-personal.webp" alt="Personal Stats" />
+                </motion.div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-1 md:order-2"
+            >
+              <p className="text-sm text-slate-500 uppercase tracking-widest mb-4">Analytics</p>
+              <h2 className="text-3xl md:text-4xl font-semibold mb-6 tracking-tight text-slate-900">
+                Data that drives decisions
+              </h2>
+              <p className="text-slate-500 mb-6 leading-relaxed">
+                Understand how your team works with built-in analytics. See who's working on what, how long tasks take, and where bottlenecks occur.
+              </p>
+              <p className="text-slate-500 mb-8 leading-relaxed">
+                Generate reports for clients, track billable hours, and make informed decisions about resource allocation. All without leaving Telegram.
+              </p>
+
+              <div className="space-y-4">
+                {[
+                  "Personal productivity dashboards",
+                  "Team-wide performance insights",
+                  "Time tracking with automatic reports",
+                  "Project progress visualization",
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start gap-3 text-sm text-slate-600">
+                    <div className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                    {item}
+                  </div>
+                ))}
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Free Tools Section */}
-      <section className="relative py-32 px-4 bg-white">
+      {/* How It Works Section */}
+      <section className="relative py-24 md:py-32 px-4 bg-slate-50">
         <div className="container mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -689,16 +438,311 @@ export default function LandingPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <p className="text-sm text-violet-600 uppercase tracking-widest mb-4">Bonus</p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-slate-900">
-              Free tools. <span className="bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">No limits.</span>
+            <p className="text-sm text-slate-500 uppercase tracking-widest mb-4">How It Works</p>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-6 tracking-tight text-slate-900">
+              From zero to productive in three steps
             </h2>
-            <p className="text-xl text-slate-500 max-w-xl mx-auto font-light">
-              PDF tools, QR codes, and more. Forever free.
+            <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+              No lengthy onboarding. No complex setup. Just open Telegram and start.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto">
+          <div className="space-y-16">
+            {[
+              {
+                step: "01",
+                title: "Open Telegram and find WhatsTask",
+                desc: "Search for @whatstaskbot in Telegram and tap Start. That's it—no accounts to create, no apps to download. The bot guides you through a quick onboarding to understand your needs.",
+                image: "/appui/app-onboarding.webp",
+              },
+              {
+                step: "02",
+                title: "Describe your project to the AI",
+                desc: "Just tell the AI what you're working on in plain language. 'I'm launching a marketing campaign next month' or 'We need to redesign our website.' The AI creates structured projects with tasks, deadlines, and priorities.",
+                image: "/appui/app-create-project.webp",
+              },
+              {
+                step: "03",
+                title: "Manage, track, and collaborate",
+                desc: "Switch between views, assign tasks to team members, track time, and monitor progress. Get daily summaries and reminders. Generate reports when you need them. All without leaving your messenger.",
+                image: "/appui/app-team-management.webp",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className={`grid md:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+              >
+                <div className={index % 2 === 1 ? 'md:order-2' : ''}>
+                  <div className="flex items-center gap-4 mb-4">
+                    <span className="text-4xl font-light text-slate-300">{item.step}</span>
+                    <h3 className="text-xl font-semibold text-slate-900">{item.title}</h3>
+                  </div>
+                  <p className="text-slate-500 leading-relaxed">{item.desc}</p>
+                </div>
+                <div className={`flex justify-center ${index % 2 === 1 ? 'md:order-1' : ''}`}>
+                  <div className="scale-[0.8]">
+                    <PhoneMockup src={item.image} alt={item.title} />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-16"
+          >
+            <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6 text-base">
+              <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                Start Now
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="relative py-24 px-4 bg-white">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4 tracking-tight text-slate-900">
+              Built different
+            </h2>
+            <p className="text-slate-500">No bloat. No learning curve. Just the tools you need.</p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { stat: "4", desc: "views (all you need)" },
+              { stat: "Free", desc: "AI task creation" },
+              { stat: "30s", desc: "to get started" },
+              { stat: "100%", desc: "free tier available" },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center"
+              >
+                <p className="text-4xl md:text-5xl font-light text-slate-900 mb-2">{item.stat}</p>
+                <p className="text-sm text-slate-500">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Products Section */}
+      <section id="products" className="relative py-24 md:py-32 px-4 bg-slate-50">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <p className="text-sm text-slate-500 uppercase tracking-widest mb-4">Products</p>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-6 tracking-tight text-slate-900">
+              Two products, one philosophy
+            </h2>
+            <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+              Powerful yet simple. We believe work tools should get out of your way and let you focus on what matters. Both products embody this principle.
+            </p>
+          </motion.div>
+
+          {/* Project Management - Full Width with Mockup */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-8"
+          >
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 md:p-12 hover:border-slate-300 transition-colors">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <p className="text-xs text-slate-400 uppercase tracking-widest mb-4">Core Product</p>
+                  <h3 className="text-2xl md:text-3xl font-semibold text-slate-900 mb-4">Project Management</h3>
+                  <p className="text-slate-500 mb-4 leading-relaxed">
+                    Complete task management solution powered by AI. Create projects, assign tasks, track time, and collaborate with your team—all from Telegram.
+                  </p>
+                  <p className="text-slate-500 mb-6 leading-relaxed">
+                    Perfect for freelancers managing multiple clients, startups coordinating sprints, agencies juggling projects, or enterprise teams needing a simple yet powerful solution.
+                  </p>
+
+                  <div className="grid grid-cols-2 gap-3 mb-8">
+                    {[
+                      "List, Kanban, Calendar, Timeline",
+                      "AI-powered task creation",
+                      "Built-in time tracking",
+                      "Team roles and permissions",
+                      "Project templates",
+                      "Recurring tasks",
+                    ].map((feature, index) => (
+                      <div key={index} className="flex items-start gap-2 text-sm text-slate-600">
+                        <div className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-6 py-5">
+                      <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
+                        Get Started Free
+                      </a>
+                    </Button>
+                    <span className="text-sm text-slate-400">No credit card required</span>
+                  </div>
+                </div>
+
+                <div className="flex justify-center">
+                  <div className="flex items-end">
+                    <motion.div
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2 }}
+                      className="hidden lg:block scale-[0.6] origin-bottom -mr-6"
+                    >
+                      <PhoneMockup src="/appui/app-create-project.webp" alt="Create Project" />
+                    </motion.div>
+                    <div className="scale-[0.8] md:scale-[0.85] relative z-10">
+                      <PhoneMockup src="/appui/app-onboarding.webp" alt="Onboarding" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* GEO Analyzer */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 hover:border-slate-300 transition-colors">
+              <div className="grid md:grid-cols-3 gap-8 items-center">
+                <div className="md:col-span-2">
+                  <p className="text-xs text-slate-400 uppercase tracking-widest mb-4">AI Tool</p>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-4">GEO Analyzer</h3>
+                  <p className="text-slate-500 mb-4 leading-relaxed">
+                    AI search optimization tool for the new era of search. As ChatGPT, Perplexity, and Google SGE become primary discovery channels, your content needs to be AI-readable.
+                  </p>
+                  <p className="text-slate-500 mb-6 leading-relaxed">
+                    Analyze any URL, get an AI readability score, and receive specific recommendations to improve your content's visibility in AI-powered search results.
+                  </p>
+
+                  <div className="grid grid-cols-2 gap-3 mb-6">
+                    {[
+                      "Analyze AI readability score",
+                      "Optimize for all AI engines",
+                      "Track AI search performance",
+                      "3 free analyses daily",
+                    ].map((feature, index) => (
+                      <div key={index} className="flex items-start gap-2 text-sm text-slate-600">
+                        <div className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+
+                  <Button asChild variant="outline" className="border-slate-300 hover:bg-slate-50 rounded-lg px-6 py-5">
+                    <a href="https://geoanalyzer.whatstask.com" target="_blank" rel="noopener noreferrer">
+                      Try Analyzer Free
+                    </a>
+                  </Button>
+                </div>
+
+                <div className="hidden md:flex justify-center">
+                  <div className="w-full max-w-[200px] h-[280px] bg-slate-100 rounded-xl flex items-center justify-center">
+                    <div className="text-center p-6">
+                      <div className="text-4xl font-light text-slate-400 mb-2">GEO</div>
+                      <div className="text-sm text-slate-500">AI Search Optimization</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Solutions Section */}
+      <section className="relative py-24 md:py-32 px-4 bg-white">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <p className="text-sm text-slate-500 uppercase tracking-widest mb-4">Solutions</p>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-6 tracking-tight text-slate-900">
+              Built for teams of any size
+            </h2>
+            <p className="text-lg text-slate-500 max-w-xl mx-auto">
+              From solo freelancers to enterprise teams.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { title: "Freelancers", desc: "Personal productivity", href: "/use-cases/freelancers" },
+              { title: "Startups", desc: "Agile workflows", href: "/use-cases/startups" },
+              { title: "Agencies", desc: "Client management", href: "/use-cases/agencies" },
+              { title: "Enterprise", desc: "Scale with control", href: "/enterprise" },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+              >
+                <Link href={item.href} className="block group">
+                  <div className="border border-slate-200 rounded-xl p-6 h-full hover:border-slate-300 transition-colors">
+                    <h3 className="font-medium text-slate-900 mb-1 group-hover:text-slate-700">{item.title}</h3>
+                    <p className="text-sm text-slate-500">{item.desc}</p>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Free Tools Section */}
+      <section className="relative py-24 px-4 bg-slate-50">
+        <div className="container mx-auto max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <p className="text-sm text-slate-500 uppercase tracking-widest mb-4">Free Tools</p>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4 tracking-tight text-slate-900">
+              Productivity utilities
+            </h2>
+            <p className="text-slate-500">PDF tools, QR codes, and more. Forever free.</p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 max-w-4xl mx-auto">
             {[
               { name: "PDF Merger", href: "/pdf-merger" },
               { name: "PDF Compressor", href: "/pdf-compressor" },
@@ -713,13 +757,10 @@ export default function LandingPage() {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="group"
+                transition={{ delay: index * 0.03 }}
               >
-                <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center hover:border-violet-300 hover:bg-violet-50 hover:shadow-md transition-all duration-300">
-                  <p className="text-sm font-medium text-slate-700 group-hover:text-violet-600 transition-colors">
-                    {tool.name}
-                  </p>
+                <div className="bg-white border border-slate-200 rounded-lg p-4 text-center hover:border-slate-300 transition-colors">
+                  <p className="text-sm text-slate-600">{tool.name}</p>
                 </div>
               </motion.a>
             ))}
@@ -729,11 +770,11 @@ export default function LandingPage() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center mt-10"
+            className="text-center mt-8"
           >
             <Link
               href="/tools"
-              className="inline-flex items-center gap-2 text-violet-600 text-sm hover:text-violet-700 transition-colors font-medium"
+              className="inline-flex items-center gap-2 text-slate-600 text-sm hover:text-slate-900 transition-colors"
             >
               View all tools
               <ArrowRight className="w-4 h-4" />
@@ -743,106 +784,86 @@ export default function LandingPage() {
       </section>
 
       {/* Enterprise Section */}
-      <section className="relative py-32 px-4 bg-slate-50">
+      <section className="relative py-24 md:py-32 px-4 bg-white">
         <div className="container mx-auto max-w-5xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <p className="text-sm text-violet-600 uppercase tracking-widest mb-4">Enterprise</p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-slate-900">
-              Need something <span className="bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">custom?</span>
-            </h2>
-            <p className="text-xl text-slate-500 max-w-xl mx-auto font-light">
-              White-label solutions and enterprise features
-            </p>
-          </motion.div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <p className="text-sm text-slate-500 uppercase tracking-widest mb-4">Enterprise</p>
+              <h2 className="text-3xl md:text-4xl font-semibold mb-6 tracking-tight text-slate-900">
+                Need something custom?
+              </h2>
+              <p className="text-slate-500 mb-8 leading-relaxed">
+                White-label solutions, custom integrations, and dedicated support for organizations with specific requirements.
+              </p>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
-            {[
-              { title: "Custom Integrations", desc: "Connect your existing tools" },
-              { title: "White-label", desc: "Your brand, our platform" },
-              { title: "Video calls", desc: "Built-in communication" },
-              { title: "Migration", desc: "Move from any tool" },
-              { title: "Team training", desc: "Onboarding support" },
-              { title: "Unlimited users", desc: "No per-seat pricing" },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="group"
-              >
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 h-full hover:border-violet-300 hover:shadow-lg transition-all duration-300">
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">{item.title}</h3>
-                  <p className="text-slate-500 text-sm">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-6 py-5">
+                  <Link href="/enterprise">Learn More</Link>
+                </Button>
+                <Button asChild variant="outline" className="border-slate-300 hover:bg-slate-50 rounded-lg px-6 py-5">
+                  <a href="mailto:charlesaarondavid@gmail.com">Contact Sales</a>
+                </Button>
+              </div>
+            </motion.div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-xl px-8 py-6">
-              <Link href="/enterprise">Explore Enterprise</Link>
-            </Button>
-            <Button asChild variant="outline" className="rounded-xl px-8 py-6 border-slate-300 hover:bg-white">
-              <a href="mailto:charlesaarondavid@gmail.com">Contact Us</a>
-            </Button>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { title: "Custom Integrations", desc: "Connect your tools" },
+                  { title: "White-label", desc: "Your brand" },
+                  { title: "Migration Support", desc: "Move from any tool" },
+                  { title: "Team Training", desc: "Onboarding help" },
+                ].map((item, index) => (
+                  <div key={index} className="border border-slate-200 rounded-xl p-5">
+                    <h3 className="font-medium text-slate-900 mb-1">{item.title}</h3>
+                    <p className="text-sm text-slate-500">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="relative py-32 px-4 bg-[#0D0D0D] overflow-hidden">
-        {/* Background effects */}
-        <div className="absolute inset-0 bg-gradient-to-b from-violet-950/30 to-[#0D0D0D]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-violet-600/20 via-fuchsia-500/20 to-pink-500/20 rounded-full blur-[150px] pointer-events-none" />
-
-        <div className="container mx-auto max-w-4xl relative z-10 text-center">
+      <section className="relative py-24 md:py-32 px-4 bg-slate-950">
+        <div className="container mx-auto max-w-3xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-white">
-              Ready to <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">simplify?</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 tracking-tight text-white">
+              Ready to simplify your workflow?
             </h2>
-            <p className="text-xl text-white/60 mb-12 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-400 mb-10 max-w-xl mx-auto">
               Join teams who've chosen simplicity over complexity.
             </p>
 
-            {/* Trust Badges */}
-            <div className="flex flex-wrap justify-center gap-6 mb-12">
-              {[
-                "No credit card required",
-                "Free forever tier",
-                "Cancel anytime",
-              ].map((text, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex items-center gap-2 text-sm text-white/40"
-                >
-                  <Check className="w-4 h-4 text-violet-400" />
-                  {text}
-                </motion.div>
-              ))}
+            <div className="flex flex-wrap justify-center gap-6 mb-10 text-sm text-slate-500">
+              <span>No credit card required</span>
+              <span className="hidden sm:inline">·</span>
+              <span>Free tier available</span>
+              <span className="hidden sm:inline">·</span>
+              <span>Cancel anytime</span>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white hover:from-violet-600 hover:to-fuchsia-600 rounded-full px-10 py-7 text-lg shadow-[0_0_60px_rgba(139,92,246,0.4)]">
+              <Button asChild className="bg-white text-slate-900 hover:bg-slate-100 rounded-lg px-8 py-6 text-base font-medium">
                 <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                  Get Started Free <ArrowRight className="w-5 h-5" />
+                  Get Started Free
+                  <ArrowRight className="w-4 h-4" />
                 </a>
               </Button>
-              <Button asChild variant="outline" className="rounded-full px-10 py-7 text-lg border-white/20 text-white hover:bg-white/10 bg-transparent">
+              <Button asChild variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white rounded-lg px-8 py-6 text-base bg-transparent">
                 <Link href="/contact">Talk to Us</Link>
               </Button>
             </div>
@@ -851,26 +872,28 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="relative py-16 px-4 bg-[#0D0D0D] border-t border-white/10">
-        <div className="container mx-auto max-w-6xl">
+      <footer className="relative py-16 px-4 bg-slate-950 border-t border-slate-800">
+        <div className="container mx-auto max-w-5xl">
           <div className="grid md:grid-cols-5 gap-8 mb-12">
             {/* Brand */}
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-4">
                 <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} />
-                <span className="font-bold text-lg text-white">Whatstask</span>
+                <span className="font-semibold text-white">Whatstask</span>
               </div>
-              <p className="text-sm text-white/40 mb-4 max-w-xs">
-                Simple scales. Work tools for teams of any size who want to work, not manage tools.
+              <p className="text-sm text-slate-500 mb-4 max-w-xs">
+                Work tools for teams who want to work, not manage software.
               </p>
-              <p className="text-sm text-white/40">
-                Contact: <a href="mailto:charlesaarondavid@gmail.com" className="text-white/60 hover:text-white">charlesaarondavid@gmail.com</a>
+              <p className="text-sm text-slate-500">
+                <a href="mailto:charlesaarondavid@gmail.com" className="hover:text-slate-300 transition-colors">
+                  charlesaarondavid@gmail.com
+                </a>
               </p>
             </div>
 
             {/* Products */}
             <div>
-              <h4 className="font-semibold mb-4 text-sm text-white">Products</h4>
+              <h4 className="font-medium mb-4 text-sm text-white">Products</h4>
               <ul className="space-y-2">
                 {[
                   { name: "Project Management", href: "/project-management" },
@@ -879,7 +902,7 @@ export default function LandingPage() {
                   { name: "Pricing", href: "/pricing" },
                 ].map((link, index) => (
                   <li key={index}>
-                    <Link href={link.href} className="text-sm text-white/40 hover:text-white transition-colors">
+                    <Link href={link.href} className="text-sm text-slate-500 hover:text-slate-300 transition-colors">
                       {link.name}
                     </Link>
                   </li>
@@ -889,16 +912,16 @@ export default function LandingPage() {
 
             {/* Solutions */}
             <div>
-              <h4 className="font-semibold mb-4 text-sm text-white">Solutions</h4>
+              <h4 className="font-medium mb-4 text-sm text-white">Solutions</h4>
               <ul className="space-y-2">
                 {[
-                  { name: "For Freelancers", href: "/use-cases/freelancers" },
-                  { name: "For Agencies", href: "/use-cases/agencies" },
-                  { name: "For Startups", href: "/use-cases/startups" },
+                  { name: "Freelancers", href: "/use-cases/freelancers" },
+                  { name: "Agencies", href: "/use-cases/agencies" },
+                  { name: "Startups", href: "/use-cases/startups" },
                   { name: "Enterprise", href: "/enterprise" },
                 ].map((link, index) => (
                   <li key={index}>
-                    <Link href={link.href} className="text-sm text-white/40 hover:text-white transition-colors">
+                    <Link href={link.href} className="text-sm text-slate-500 hover:text-slate-300 transition-colors">
                       {link.name}
                     </Link>
                   </li>
@@ -908,22 +931,21 @@ export default function LandingPage() {
 
             {/* Company */}
             <div>
-              <h4 className="font-semibold mb-4 text-sm text-white">Company</h4>
+              <h4 className="font-medium mb-4 text-sm text-white">Company</h4>
               <ul className="space-y-2">
                 {[
                   { name: "About", href: "/about" },
-                  { name: "Founder", href: "/founder" },
-                  { name: "Contact", href: "/contact" },
                   { name: "Blog", href: "/blog" },
+                  { name: "Contact", href: "/contact" },
                 ].map((link, index) => (
                   <li key={index}>
-                    <Link href={link.href} className="text-sm text-white/40 hover:text-white transition-colors">
+                    <Link href={link.href} className="text-sm text-slate-500 hover:text-slate-300 transition-colors">
                       {link.name}
                     </Link>
                   </li>
                 ))}
                 <li>
-                  <button onClick={handlePrivacyClick} className="text-sm text-white/40 hover:text-white transition-colors">
+                  <button onClick={handlePrivacyClick} className="text-sm text-slate-500 hover:text-slate-300 transition-colors">
                     Privacy Policy
                   </button>
                 </li>
@@ -932,9 +954,8 @@ export default function LandingPage() {
           </div>
 
           {/* Compare Links */}
-          <div className="border-t border-white/10 pt-8 mb-8">
-            <p className="text-xs text-white/30 mb-3">Compare WhatsTask:</p>
-            <div className="flex flex-wrap gap-4">
+          <div className="border-t border-slate-800 pt-8 mb-8">
+            <div className="flex flex-wrap gap-6 text-xs text-slate-600">
               {[
                 { name: "vs ClickUp", href: "/compare/clickup" },
                 { name: "vs Monday", href: "/compare/monday" },
@@ -942,7 +963,7 @@ export default function LandingPage() {
                 { name: "vs Todoist", href: "/compare/todoist" },
                 { name: "vs Notion", href: "/compare/notion" },
               ].map((link, index) => (
-                <Link key={index} href={link.href} className="text-xs text-white/30 hover:text-white transition-colors">
+                <Link key={index} href={link.href} className="hover:text-slate-400 transition-colors">
                   {link.name}
                 </Link>
               ))}
@@ -950,7 +971,7 @@ export default function LandingPage() {
           </div>
 
           {/* Copyright */}
-          <div className="text-center text-sm text-white/30">
+          <div className="text-center text-sm text-slate-600">
             © {new Date().getFullYear()} Whatstask. All rights reserved.
           </div>
         </div>
