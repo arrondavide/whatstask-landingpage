@@ -31,6 +31,7 @@ import Grainient from "@/components/grainient"
 import { InteractiveCard, MagneticButton } from "@/components/interactive-card"
 import { BlurText, GradientText } from "@/components/animated-text"
 import { PhoneMockup } from "@/components/phone-mockup"
+import { AnimatedTextCounter } from "@/components/animated-counter"
 
 export default function LandingPage() {
   const [mounted, setMounted] = useState(false)
@@ -272,8 +273,30 @@ export default function LandingPage() {
       </section>
 
       {/* The Problem Section */}
-      <section className="relative py-24 px-4 border-t border-slate-100">
-        <div className="container mx-auto max-w-6xl">
+      <section className="relative py-24 px-4 border-t border-slate-100 overflow-hidden">
+        {/* Subtle floating dots background */}
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 rounded-full bg-violet-300/30"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                y: [0, -30, 0],
+                opacity: [0.3, 0.6, 0.3],
+              }}
+              transition={{
+                duration: 4 + Math.random() * 4,
+                repeat: Infinity,
+                delay: Math.random() * 2,
+              }}
+            />
+          ))}
+        </div>
+        <div className="container mx-auto max-w-6xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -311,7 +334,9 @@ export default function LandingPage() {
                 className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/60 text-center shadow-[0_4px_24px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.9)] transition-shadow duration-300 cursor-default"
               >
                 <p className="text-sm text-slate-500 mb-2">{item.label}</p>
-                <p className="text-4xl font-bold mb-2 bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">{item.stat}</p>
+                <p className="text-4xl font-bold mb-2 bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
+                  <AnimatedTextCounter target={item.stat} />
+                </p>
                 <p className="text-slate-600">{item.desc}</p>
               </motion.div>
             ))}
@@ -340,7 +365,9 @@ export default function LandingPage() {
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
                     className="p-4 rounded-2xl bg-white/40 backdrop-blur-sm border border-white/30 shadow-[inset_0_1px_0_rgba(255,255,255,0.5)] hover:shadow-[0_8px_24px_rgba(139,92,246,0.15),inset_0_1px_0_rgba(255,255,255,0.6)] transition-shadow duration-300"
                   >
-                    <p className="text-3xl md:text-4xl font-bold text-violet-500 mb-2">{item.stat}</p>
+                    <p className="text-3xl md:text-4xl font-bold text-violet-500 mb-2">
+                      <AnimatedTextCounter target={item.stat} />
+                    </p>
                     <p className="text-slate-600">{item.desc}</p>
                   </motion.div>
                 ))}
@@ -427,7 +454,7 @@ export default function LandingPage() {
 
             {/* GEO Analyzer */}
             <InteractiveCard
-              spotlightColor="rgba(6, 182, 212, 0.12)"
+              spotlightColor="rgba(139, 92, 246, 0.12)"
               tiltAmount={5}
               className="rounded-3xl"
             >
@@ -437,13 +464,13 @@ export default function LandingPage() {
               whileHover={{ y: -4 }}
               viewport={{ once: true }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              className="relative bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-slate-200/60 shadow-[0_4px_24px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_20px_50px_rgba(6,182,212,0.12),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-500 overflow-hidden group"
+              className="relative bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-slate-200/60 shadow-[0_4px_24px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_20px_50px_rgba(139,92,246,0.12),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-500 overflow-hidden group"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               <div className="relative z-10">
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold">GEO Analyzer</h3>
-                  <span className="text-xs text-cyan-600 font-medium bg-cyan-50 px-2 py-0.5 rounded-full">Future of Marketing</span>
+                  <span className="text-xs text-violet-600 font-medium bg-violet-50 px-2 py-0.5 rounded-full">Future of Marketing</span>
                 </div>
 
                 <p className="text-slate-600 mb-6 leading-relaxed">
@@ -466,8 +493,8 @@ export default function LandingPage() {
                       transition={{ delay: index * 0.05 }}
                       className="flex items-center gap-3"
                     >
-                      <div className="w-6 h-6 rounded-full bg-cyan-100 flex items-center justify-center">
-                        <Check className="h-4 w-4 text-cyan-500 flex-shrink-0" />
+                      <div className="w-6 h-6 rounded-full bg-violet-100 flex items-center justify-center">
+                        <Check className="h-4 w-4 text-violet-500 flex-shrink-0" />
                       </div>
                       <span className="text-slate-700">{feature}</span>
                     </motion.div>
@@ -477,7 +504,7 @@ export default function LandingPage() {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button
                     asChild
-                    className="bg-gradient-to-r from-violet-500 to-cyan-500 text-white hover:from-violet-600 hover:to-cyan-600 rounded-full px-6 shadow-lg shadow-violet-500/20 hover:shadow-xl hover:shadow-cyan-500/30 transition-all"
+                    className="bg-violet-500/90 text-white hover:bg-violet-600 rounded-full px-6 shadow-lg shadow-violet-500/20 hover:shadow-xl hover:shadow-violet-500/30 transition-all"
                   >
                     <a href="https://geoanalyzer.whatstask.com" target="_blank" rel="noopener noreferrer">
                       Launch GEO Analyzer
@@ -496,7 +523,27 @@ export default function LandingPage() {
 
       {/* App Showcase Section */}
       <section className="relative py-24 px-4 border-t border-slate-100 overflow-hidden">
-        <div className="container mx-auto max-w-7xl">
+        {/* Subtle Grainient background */}
+        <div className="absolute inset-0 z-0">
+          <Grainient
+            color1="#F5F3FF"
+            color2="#EDE9FE"
+            color3="#DDD6FE"
+            grainAmount={0.15}
+            grainScale={1.0}
+            grainAnimated={false}
+            timeSpeed={0.1}
+            warpStrength={0.5}
+            warpFrequency={2.0}
+            warpSpeed={0.3}
+            warpAmplitude={20.0}
+            rotationAmount={180.0}
+            contrast={1.1}
+            saturation={1.0}
+            className="opacity-40"
+          />
+        </div>
+        <div className="container mx-auto max-w-7xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -588,7 +635,7 @@ export default function LandingPage() {
       </section>
 
       {/* Enterprise Section */}
-      <section className="relative py-24 px-4 border-t border-slate-100 bg-gradient-to-b from-white/[0.02] to-transparent">
+      <section className="relative py-24 px-4 border-t border-slate-100 bg-gradient-to-b from-slate-50/80 via-slate-50/40 to-transparent">
         <div className="container mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -748,7 +795,9 @@ export default function LandingPage() {
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
                     className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.6),0_4px_16px_rgba(139,92,246,0.08)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_8px_24px_rgba(139,92,246,0.15)] transition-shadow duration-300"
                   >
-                    <p className="text-2xl md:text-3xl font-bold text-violet-500 mb-1">{item.stat}</p>
+                    <p className="text-2xl md:text-3xl font-bold text-violet-500 mb-1">
+                      <AnimatedTextCounter target={item.stat} />
+                    </p>
                     <p className="text-sm text-slate-500">{item.label}</p>
                   </motion.div>
                 ))}
@@ -758,21 +807,64 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Final CTA - Liquid Glass */}
-      <section className="relative py-24 px-4 border-t border-slate-100">
-        <div className="container mx-auto max-w-3xl text-center">
+      {/* Final CTA - Liquid Glass with Grainient */}
+      <section className="relative py-24 px-4 border-t border-slate-100 overflow-hidden">
+        {/* Subtle Grainient background */}
+        <div className="absolute inset-0 z-0">
+          <Grainient
+            color1="#8B5CF6"
+            color2="#A78BFA"
+            color3="#E9D5FF"
+            grainAmount={0.12}
+            grainScale={0.9}
+            grainAnimated={true}
+            timeSpeed={0.2}
+            warpStrength={0.8}
+            warpFrequency={2.5}
+            warpSpeed={0.5}
+            warpAmplitude={30.0}
+            rotationAmount={270.0}
+            contrast={1.2}
+            saturation={1.2}
+            className="opacity-30"
+          />
+        </div>
+        <div className="container mx-auto max-w-3xl text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative bg-gradient-to-br from-violet-500/10 to-violet-400/5 backdrop-blur-sm rounded-3xl p-10 md:p-16 border border-violet-300/30 shadow-[0_8px_32px_rgba(139,92,246,0.1),inset_0_1px_0_rgba(255,255,255,0.5)] overflow-hidden"
+            className="relative bg-white/80 backdrop-blur-md rounded-3xl p-10 md:p-16 border border-violet-200/50 shadow-[0_8px_32px_rgba(139,92,246,0.15),inset_0_1px_0_rgba(255,255,255,0.8)] overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-transparent pointer-events-none" />
             <div className="relative z-10">
               <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">Ready to simplify?</h2>
-              <p className="text-xl text-slate-600 mb-10 font-light">
+              <p className="text-xl text-slate-600 mb-8 font-light">
                 Join teams who've chosen simplicity over complexity.
               </p>
+
+              {/* Trust Badges */}
+              <div className="flex flex-wrap justify-center gap-4 mb-10">
+                {[
+                  { text: "No credit card required", icon: "✓" },
+                  { text: "Free forever tier", icon: "✓" },
+                  { text: "Cancel anytime", icon: "✓" },
+                ].map((badge, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex items-center gap-2 px-4 py-2 bg-violet-50/80 rounded-full border border-violet-100"
+                  >
+                    <span className="w-5 h-5 rounded-full bg-violet-500 text-white text-xs flex items-center justify-center font-bold">
+                      {badge.icon}
+                    </span>
+                    <span className="text-sm text-slate-700 font-medium">{badge.text}</span>
+                  </motion.div>
+                ))}
+              </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.div
@@ -792,7 +884,7 @@ export default function LandingPage() {
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
-                  <Button asChild className="bg-white/70 text-slate-900 hover:bg-white/90 border border-white/50 rounded-full px-8 py-6 text-lg backdrop-blur-sm shadow-[0_4px_16px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)] transition-all">
+                  <Button asChild className="bg-white/70 text-slate-900 hover:bg-white/90 border border-slate-200 rounded-full px-8 py-6 text-lg backdrop-blur-sm shadow-[0_4px_16px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)] transition-all">
                     <Link href="/contact">Talk to Us</Link>
                   </Button>
                 </motion.div>
