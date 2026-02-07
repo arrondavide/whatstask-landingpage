@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Calendar, Clock, ArrowRight } from "lucide-react"
 import PageLoader from "@/components/page-loader"
 import Navigation from "@/components/navigation"
 import Script from "next/script"
@@ -33,7 +32,6 @@ export const metadata: Metadata = {
   },
 }
 
-// Blog posts data - will be dynamic in production
 const blogPosts = [
   {
     slug: "ultimate-guide-telegram-bots-productivity",
@@ -63,87 +61,93 @@ export default function BlogPage() {
       <PageLoader />
       <Navigation variant="solid" />
       <div className="min-h-screen bg-white text-slate-900 pt-16">
-        {/* Hero Section */}
-        <section className="container mx-auto px-4 py-16">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-6">Whatstask Blog</h1>
-            <p className="text-xl text-slate-600 leading-relaxed">
-              Productivity tips, Telegram tutorials, and task management strategies to help you work smarter, not
-              harder.
+        <main className="container mx-auto px-4 py-16 max-w-5xl">
+          {/* Hero */}
+          <section className="text-center mb-20">
+            <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Blog</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-slate-900">
+              Insights & Guides
+            </h1>
+            <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light">
+              Productivity tips, Telegram tutorials, and task management strategies.
             </p>
-          </div>
+          </section>
 
           {/* Featured Posts */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-8">Featured Articles</h2>
-            <div className="grid md:grid-cols-2 gap-8">
+          <section className="mb-20">
+            <div className="text-center mb-12">
+              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Featured</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Latest Articles</h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
               {blogPosts
                 .filter((post) => post.featured)
                 .map((post, idx) => (
                   <Link
                     key={idx}
                     href={`/blog/${post.slug}`}
-                    className="group bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200 hover:border-slate-300 transition-all"
+                    className="group border border-slate-200 rounded-2xl p-8 hover:border-slate-300 hover:shadow-md transition-all duration-300"
                   >
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="bg-violet-500/10 border border-violet-500/20 text-violet-400 text-xs px-3 py-1 rounded-full font-medium">
+                    <div className="flex items-center gap-4 mb-4 text-sm text-slate-500">
+                      <span className="bg-slate-100 px-3 py-1 rounded-full text-xs font-medium text-slate-600">
                         {post.category}
                       </span>
-                      <div className="flex items-center gap-2 text-slate-500 text-sm">
-                        <Calendar className="h-4 w-4" />
-                        <span>{new Date(post.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-slate-500 text-sm">
-                        <Clock className="h-4 w-4" />
-                        <span>{post.readTime}</span>
-                      </div>
+                      <span>{new Date(post.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
+                      <span>{post.readTime}</span>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3 group-hover:text-violet-400 transition-colors">
+                    <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-slate-700 transition-colors">
                       {post.title}
                     </h3>
-                    <p className="text-slate-600 mb-4 leading-relaxed">{post.excerpt}</p>
-                    <div className="flex items-center gap-2 text-violet-400 font-medium group-hover:gap-3 transition-all">
-                      Read Article
-                      <ArrowRight className="h-4 w-4" />
-                    </div>
+                    <p className="text-slate-500 text-sm leading-relaxed mb-4">{post.excerpt}</p>
+                    <span className="text-sm font-medium text-slate-900">
+                      Read Article →
+                    </span>
                   </Link>
                 ))}
             </div>
-          </div>
+          </section>
 
           {/* Categories */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-bold mb-8">Browse by Category</h2>
+          <section className="mb-20">
+            <div className="text-center mb-12">
+              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Categories</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Browse by Topic</h2>
+            </div>
             <div className="grid md:grid-cols-4 gap-4">
               {["Guides", "Tutorials", "Productivity", "Case Studies"].map((category, idx) => (
                 <div
                   key={idx}
-                  className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200 hover:border-slate-300 transition-all cursor-pointer text-center"
+                  className="border border-slate-200 rounded-xl p-6 hover:border-slate-300 hover:shadow-md transition-all duration-300 text-center"
                 >
-                  <h3 className="font-bold">{category}</h3>
-                  <p className="text-sm text-slate-600 mt-2">Coming soon</p>
+                  <h3 className="font-semibold text-slate-900">{category}</h3>
+                  <p className="text-sm text-slate-400 mt-2">Coming soon</p>
                 </div>
               ))}
             </div>
-          </div>
+          </section>
 
-          {/* Newsletter CTA */}
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-12 border border-violet-500/20 text-center">
-              <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
-              <p className="text-xl text-slate-600 mb-8">
-                New productivity tips and Telegram guides delivered weekly. Join our community.
+          {/* CTA */}
+          <section>
+            <div className="border border-slate-200 rounded-2xl p-10 md:p-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Stay Updated</h2>
+              <p className="text-slate-500 mb-10 text-lg font-light">
+                New productivity tips and Telegram guides delivered weekly.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-                <Button asChild className="bg-violet-500 text-white hover:bg-violet-700 rounded-full px-8 py-6">
-                  <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                    Follow on Telegram
-                  </a>
-                </Button>
-              </div>
+              <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
+                <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
+                  Follow on Telegram
+                </a>
+              </Button>
             </div>
+          </section>
+        </main>
+
+        {/* Footer */}
+        <footer className="border-t border-slate-100 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
+            <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
-        </section>
+        </footer>
 
         {/* Breadcrumb Schema */}
         <Script

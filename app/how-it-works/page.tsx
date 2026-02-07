@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Send, MessageSquare, Bell, Check, Calendar, ArrowRight } from "lucide-react"
 import PageLoader from "@/components/page-loader"
 import Navigation from "@/components/navigation"
 import Script from "next/script"
@@ -45,7 +44,6 @@ export default function HowItWorksPage() {
         "One-tap authentication with Telegram",
         "Free to start - no credit card needed",
       ],
-      icon: <Send className="h-12 w-12" />,
     },
     {
       number: "02",
@@ -57,7 +55,6 @@ export default function HowItWorksPage() {
         "Switch between workspaces easily",
         "Choose your role: Admin, Manager, or Employee",
       ],
-      icon: <MessageSquare className="h-12 w-12" />,
     },
     {
       number: "03",
@@ -70,11 +67,10 @@ export default function HowItWorksPage() {
         "Add subtasks and recurring schedules",
         "View productivity statistics and reports",
       ],
-      icon: <Check className="h-12 w-12" />,
     },
     {
       number: "04",
-      title: "Invite & Collaborate with Your Team",
+      title: "Invite & Collaborate",
       description:
         "Invite team members, assign tasks, add comments, and track progress together. Real-time collaboration built-in.",
       details: [
@@ -83,7 +79,6 @@ export default function HowItWorksPage() {
         "Comment and mention teammates",
         "Track team time and productivity",
       ],
-      icon: <Bell className="h-12 w-12" />,
     },
   ]
 
@@ -111,189 +106,211 @@ export default function HowItWorksPage() {
     { command: "/help", description: "Get help and see all available commands" },
   ]
 
+  const advancedFeatures = [
+    {
+      title: "Recurring Tasks",
+      description: "Set tasks to repeat daily, weekly, monthly, or on custom schedules. Perfect for habits and regular meetings.",
+    },
+    {
+      title: "Categories & Tags",
+      description: "Organize tasks into work, personal, or custom categories. Add tags for easy filtering and search.",
+    },
+    {
+      title: "Completion Tracking",
+      description: "View your productivity stats, completion rates, and streaks. Stay motivated with visual progress.",
+    },
+  ]
+
+  const faqs = [
+    {
+      q: "Do I need to install an app?",
+      a: "No. Whatstask works entirely within Telegram. Just add the bot and start chatting.",
+    },
+    {
+      q: "Can I use Whatstask on multiple devices?",
+      a: "Yes. Since it's a Telegram bot, your tasks sync automatically across all your devices - phone, tablet, and desktop.",
+    },
+    {
+      q: "What if I make a mistake?",
+      a: "You can edit or delete tasks anytime. Just type /list to see all tasks and manage them easily.",
+    },
+    {
+      q: "Does it work offline?",
+      a: "You need an internet connection to create and sync tasks, but you can view your task list offline in Telegram.",
+    },
+  ]
+
   return (
     <>
       <PageLoader />
       <Navigation variant="solid" />
       <div className="min-h-screen bg-white text-slate-900 pt-16">
-
-        {/* Hero Section */}
-        <section className="container mx-auto px-4 py-20">
-          <div className="text-center max-w-4xl mx-auto mb-20">
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-6">Get Started in 4 Simple Steps</h1>
-            <p className="text-xl text-slate-600 leading-relaxed">
-              Launch the Mini App, create your workspace, manage tasks & time, and invite your team. Complete work management in Telegram - ready in minutes.
+        <main className="container mx-auto px-4 py-16 max-w-5xl">
+          {/* Hero */}
+          <section className="text-center mb-20">
+            <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">How It Works</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-slate-900">
+              Get started in minutes
+            </h1>
+            <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light">
+              Launch the Mini App, create your workspace, manage tasks & time, and invite your team.
             </p>
-          </div>
+          </section>
 
           {/* Main Steps */}
-          <div className="space-y-16 max-w-5xl mx-auto mb-20">
-            {steps.map((step, idx) => (
-              <div
-                key={idx}
-                className="grid md:grid-cols-2 gap-8 items-center bg-slate-50 backdrop-blur-lg rounded-2xl p-8 md:p-12 border border-slate-200"
-              >
-                <div className={idx % 2 === 1 ? "md:order-2" : ""}>
-                  <div className="text-6xl font-black text-white/10 mb-4">{step.number}</div>
-                  <div className="text-violet-500 mb-4">{step.icon}</div>
-                  <h2 className="text-3xl font-bold mb-4">{step.title}</h2>
-                  <p className="text-lg text-slate-600 leading-relaxed mb-6">{step.description}</p>
-                  <ul className="space-y-3">
-                    {step.details.map((detail, detailIdx) => (
-                      <li key={detailIdx} className="flex items-start gap-3">
-                        <Check className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-slate-700">{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className={idx % 2 === 1 ? "md:order-1" : ""}>
-                  <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-8 border border-slate-200 flex items-center justify-center min-h-[300px]">
-                    <div className="text-center">
-                      <div className="text-6xl mb-4">
-                        {idx === 0 && ""}
-                        {idx === 1 && "✍️"}
-                        {idx === 2 && "🔔"}
-                      </div>
-                      <p className="text-slate-600 text-sm">Visual coming soon</p>
+          <section className="mb-24">
+            <div className="space-y-8">
+              {steps.map((step, idx) => (
+                <div
+                  key={idx}
+                  className="border border-slate-200 rounded-2xl p-8 md:p-12 hover:border-slate-300 hover:shadow-md transition-all duration-300"
+                >
+                  <div className="grid md:grid-cols-2 gap-8 items-start">
+                    <div>
+                      <span className="text-6xl font-light text-slate-200 block mb-4">{step.number}</span>
+                      <h2 className="text-2xl font-bold text-slate-900 mb-4">{step.title}</h2>
+                      <p className="text-slate-500 leading-relaxed mb-6">{step.description}</p>
+                    </div>
+                    <div>
+                      <ul className="space-y-3">
+                        {step.details.map((detail, detailIdx) => (
+                          <li key={detailIdx} className="flex items-start gap-3 text-sm text-slate-600">
+                            <div className="w-1 h-1 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                            <span>{detail}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </section>
 
           {/* Natural Language Examples */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold mb-8 text-center">Natural Language in Action</h2>
-            <p className="text-xl text-slate-600 text-center mb-12 max-w-3xl mx-auto">
-              Whatstask understands how you naturally speak. No need to learn complex syntax or commands - just type
-              what you're thinking.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <section className="mb-24">
+            <div className="text-center mb-12">
+              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Natural Language</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Just type what you're thinking</h2>
+              <p className="text-slate-500 text-lg font-light max-w-2xl mx-auto">
+                No need to learn complex syntax or commands. Whatstask understands how you naturally speak.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
               {examples.map((example, idx) => (
                 <div
                   key={idx}
-                  className="bg-slate-50 backdrop-blur-lg rounded-2xl p-6 border border-slate-200 hover:border-slate-300 transition-all"
+                  className="border border-slate-200 rounded-2xl p-6 hover:border-slate-300 hover:shadow-md transition-all duration-300"
                 >
-                  <div className="mb-4">
-                    <div className="text-xs text-slate-500 mb-2 uppercase tracking-wide">You type:</div>
-                    <div className="bg-black/40 rounded-lg p-3 font-mono text-sm text-slate-700">
+                  <div className="mb-6">
+                    <p className="text-xs uppercase tracking-widest text-slate-400 mb-2">You type</p>
+                    <div className="bg-slate-50 rounded-lg p-4 font-mono text-sm text-slate-700">
                       {example.input}
                     </div>
                   </div>
-                  <ArrowRight className="h-5 w-5 text-violet-500 mx-auto mb-4" />
                   <div>
-                    <div className="text-xs text-slate-500 mb-2 uppercase tracking-wide">Whatstask creates:</div>
-                    <div className="bg-violet-500/10 border border-violet-500/20 rounded-lg p-3 text-sm whitespace-pre-line">
+                    <p className="text-xs uppercase tracking-widest text-slate-400 mb-2">Whatstask creates</p>
+                    <div className="bg-slate-50 rounded-lg p-4 text-sm text-slate-600 whitespace-pre-line">
                       {example.output}
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
+          </section>
 
           {/* Quick Commands */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold mb-8 text-center">Quick Commands</h2>
-            <p className="text-xl text-slate-600 text-center mb-12 max-w-3xl mx-auto">
-              Speed up your workflow with these optional shortcuts. Natural language always works too!
-            </p>
+          <section className="mb-24">
+            <div className="text-center mb-12">
+              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Shortcuts</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Quick Commands</h2>
+              <p className="text-slate-500 text-lg font-light max-w-2xl mx-auto">
+                Speed up your workflow with optional shortcuts. Natural language always works too.
+              </p>
+            </div>
             <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               {commands.map((cmd, idx) => (
                 <div
                   key={idx}
-                  className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200 hover:border-slate-300 transition-all"
+                  className="border border-slate-200 rounded-xl p-5 hover:border-slate-300 hover:shadow-md transition-all duration-300"
                 >
                   <div className="flex items-start gap-4">
-                    <code className="bg-black/40 px-3 py-1 rounded text-violet-400 font-mono text-sm whitespace-nowrap flex-shrink-0">
+                    <code className="bg-slate-100 px-3 py-1 rounded text-slate-700 font-mono text-sm whitespace-nowrap flex-shrink-0">
                       {cmd.command}
                     </code>
-                    <p className="text-slate-600 text-sm leading-relaxed">{cmd.description}</p>
+                    <p className="text-slate-500 text-sm">{cmd.description}</p>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
+          </section>
 
           {/* Advanced Features */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold mb-8 text-center">Advanced Features</h2>
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <div className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
-                <Calendar className="h-8 w-8 text-violet-500 mb-4" />
-                <h3 className="text-xl font-bold mb-3">Recurring Tasks</h3>
-                <p className="text-slate-600 leading-relaxed">
-                  Set tasks to repeat daily, weekly, monthly, or on custom schedules. Perfect for habits and regular
-                  meetings.
-                </p>
-              </div>
-              <div className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
-                <MessageSquare className="h-8 w-8 text-violet-500 mb-4" />
-                <h3 className="text-xl font-bold mb-3">Categories & Tags</h3>
-                <p className="text-slate-600 leading-relaxed">
-                  Organize tasks into work, personal, or custom categories. Add tags for easy filtering and search.
-                </p>
-              </div>
-              <div className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
-                <Check className="h-8 w-8 text-violet-500 mb-4" />
-                <h3 className="text-xl font-bold mb-3">Completion Tracking</h3>
-                <p className="text-slate-600 leading-relaxed">
-                  View your productivity stats, completion rates, and streaks. Stay motivated with visual progress.
-                </p>
-              </div>
+          <section className="mb-24">
+            <div className="text-center mb-12">
+              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Capabilities</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Advanced Features</h2>
             </div>
-          </div>
-
-          {/* FAQ Section */}
-          <div className="mb-20 max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">Common Questions</h2>
-            <div className="space-y-4">
-              {[
-                {
-                  q: "Do I need to install an app?",
-                  a: "No! Whatstask works entirely within Telegram. Just add the bot and start chatting.",
-                },
-                {
-                  q: "Can I use Whatstask on multiple devices?",
-                  a: "Yes. Since it's a Telegram bot, your tasks sync automatically across all your devices - phone, tablet, and desktop.",
-                },
-                {
-                  q: "What if I make a mistake?",
-                  a: "You can edit or delete tasks anytime. Just type /list to see all tasks and manage them easily.",
-                },
-                {
-                  q: "Does it work offline?",
-                  a: "You need an internet connection to create and sync tasks, but you can view your task list offline in Telegram.",
-                },
-              ].map((faq, idx) => (
+            <div className="grid md:grid-cols-3 gap-6">
+              {advancedFeatures.map((feature, idx) => (
                 <div
                   key={idx}
-                  className="bg-slate-50 backdrop-blur-lg rounded-xl p-6 border border-slate-200 hover:border-slate-300 transition-all"
+                  className="border border-slate-200 rounded-2xl p-8 hover:border-slate-300 hover:shadow-md transition-all duration-300"
                 >
-                  <h3 className="font-bold mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 leading-relaxed">{faq.a}</p>
+                  <h3 className="text-lg font-semibold text-slate-900 mb-3">{feature.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">{feature.description}</p>
                 </div>
               ))}
             </div>
-          </div>
+          </section>
 
-          {/* Final CTA */}
-          <div className="text-center bg-gradient-to-br from-violet-500/10 to-white/5 backdrop-blur-lg rounded-2xl p-12 border border-violet-500/20">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Organized?</h2>
-            <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
-              Join 10,000+ users who manage tasks smarter. No signup, no complexity - just results.
-            </p>
-            <Button asChild className="bg-violet-500 text-white hover:bg-violet-700 rounded-full px-8 py-6 text-lg">
-              <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                <Send className="h-5 w-5 mr-2" />
-                Start on Telegram
-              </a>
-            </Button>
-            <p className="text-sm text-slate-500 mt-4">Takes less than 60 seconds to set up</p>
+          {/* FAQ Section */}
+          <section className="mb-24">
+            <div className="text-center mb-12">
+              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">FAQ</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Common Questions</h2>
+            </div>
+            <div className="space-y-4 max-w-3xl mx-auto">
+              {faqs.map((faq, idx) => (
+                <div
+                  key={idx}
+                  className="border border-slate-200 rounded-xl p-6 hover:border-slate-300 hover:shadow-md transition-all duration-300"
+                >
+                  <h3 className="font-semibold text-slate-900 mb-2">{faq.q}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* CTA */}
+          <section>
+            <div className="border border-slate-200 rounded-2xl p-10 md:p-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Ready to get organized?</h2>
+              <p className="text-slate-500 mb-10 text-lg font-light">
+                No signup required, no complexity - just results. Free to start.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
+                  <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
+                    Start on Telegram
+                  </a>
+                </Button>
+                <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-slate-300 hover:bg-slate-50">
+                  <Link href="/features">View Features</Link>
+                </Button>
+              </div>
+              <p className="text-sm text-slate-400 mt-6">Takes less than 60 seconds to set up</p>
+            </div>
+          </section>
+        </main>
+
+        {/* Footer */}
+        <footer className="border-t border-slate-100 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
+            <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
-        </section>
+        </footer>
 
         {/* HowTo Schema */}
         <Script
@@ -305,26 +322,32 @@ export default function HowItWorksPage() {
               "@type": "HowTo",
               name: "How to Use Whatstask Telegram Task Bot",
               description:
-                "Learn how to manage tasks in Telegram using Whatstask bot in 3 simple steps.",
+                "Learn how to manage tasks in Telegram using Whatstask bot in 4 simple steps.",
               totalTime: "PT1M",
               step: [
                 {
                   "@type": "HowToStep",
-                  name: "Add Whatstask to Telegram",
-                  text: "Open Telegram and search for @whatstaskbot to start the bot.",
+                  name: "Launch the Mini App",
+                  text: "Open Telegram and search for @whatstaskbot to launch the Mini App.",
                   position: 1,
                 },
                 {
                   "@type": "HowToStep",
-                  name: "Create Your First Task",
-                  text: "Type your task in natural language, like 'Meeting with Sarah tomorrow at 3pm'.",
+                  name: "Create Your Workspace",
+                  text: "Set up your first company workspace or join an existing team.",
                   position: 2,
                 },
                 {
                   "@type": "HowToStep",
-                  name: "Get Smart Reminders",
-                  text: "Receive automatic notifications at the right time based on your task schedule.",
+                  name: "Manage Tasks & Track Time",
+                  text: "Create tasks, track time, and view analytics.",
                   position: 3,
+                },
+                {
+                  "@type": "HowToStep",
+                  name: "Invite & Collaborate",
+                  text: "Invite team members and collaborate in real-time.",
+                  position: 4,
                 },
               ],
             }),

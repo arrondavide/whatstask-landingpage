@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Send } from "lucide-react"
 import PageLoader from "@/components/page-loader"
+import Navigation from "@/components/navigation"
+
 export const metadata: Metadata = {
   title: "Project Management for Agencies | Whatstask",
   description:
@@ -67,69 +67,77 @@ export default function AgenciesPage() {
     },
   ]
 
+  const reasons = [
+    "Manage unlimited clients in one place",
+    "Track billable hours automatically",
+    "AI helps create and organize tasks",
+    "Team members see only what they need",
+    "Works in Telegram - no new app to learn",
+    "Free AI features (competitors charge $12-28/user)",
+    "Simple pricing, no per-seat surprises",
+    "Start in 30 seconds, not 30 days",
+  ]
+
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-white text-slate-900">
-        <header className="border-b border-slate-200">
-          <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-            <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
-              <span className="text-xl font-bold">Whatstask</span>
-            </Link>
-            <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
-              <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                Try Free
-              </a>
-            </Button>
-          </div>
-        </header>
-
-        <main className="container mx-auto px-4 py-12">
-          <section className="text-center max-w-4xl mx-auto mb-16">
-            <p className="text-sm text-slate-500 mb-6">For Agencies</p>
-
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
+      <Navigation variant="solid" />
+      <div className="min-h-screen bg-white text-slate-900 pt-16">
+        <main className="container mx-auto px-4 py-16 max-w-5xl">
+          {/* Hero */}
+          <section className="text-center mb-20">
+            <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">For Agencies</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-slate-900">
               Project management that agencies actually use
             </h1>
-
-            <p className="text-xl text-slate-600 leading-relaxed mb-8">
+            <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light mb-10">
               Manage multiple clients without the chaos. Track billable hours without the headache.
-              Collaborate without complex tools getting in the way.
             </p>
-
-            <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6 text-lg">
+            <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
               <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                <Send className="h-5 w-5 mr-2" />
                 Start Free
               </a>
             </Button>
           </section>
 
-          <section className="max-w-5xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center">Built for agency workflows</h2>
+          {/* Benefits */}
+          <section className="mb-24">
+            <div className="text-center mb-12">
+              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Features</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Built for agency workflows</h2>
+            </div>
             <div className="grid md:grid-cols-2 gap-6">
               {benefits.map((benefit, index) => (
-                <div key={index} className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                  <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
-                  <p className="text-slate-600">{benefit.description}</p>
+                <div
+                  key={index}
+                  className="border border-slate-200 rounded-2xl p-8 hover:border-slate-300 hover:shadow-md transition-all duration-300"
+                >
+                  <h3 className="text-lg font-semibold text-slate-900 mb-3">{benefit.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">{benefit.description}</p>
                 </div>
               ))}
             </div>
           </section>
 
-          <section className="max-w-4xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center">Agency problems, solved</h2>
+          {/* Pain Points */}
+          <section className="mb-24">
+            <div className="text-center mb-12">
+              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Solutions</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Agency problems, solved</h2>
+            </div>
             <div className="space-y-4">
               {painPoints.map((item, index) => (
-                <div key={index} className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-                  <div className="grid md:grid-cols-2 gap-4">
+                <div
+                  key={index}
+                  className="border border-slate-200 rounded-xl p-6 hover:border-slate-300 hover:shadow-md transition-all duration-300"
+                >
+                  <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <p className="text-sm text-red-400 mb-1">The problem:</p>
+                      <p className="text-xs uppercase tracking-widest text-slate-400 mb-2">The problem</p>
                       <p className="text-slate-700">{item.problem}</p>
                     </div>
                     <div>
-                      <p className="text-sm text-violet-400 mb-1">Our solution:</p>
+                      <p className="text-xs uppercase tracking-widest text-violet-600 mb-2">Our solution</p>
                       <p className="text-slate-700">{item.solution}</p>
                     </div>
                   </div>
@@ -138,48 +146,38 @@ export default function AgenciesPage() {
             </div>
           </section>
 
-          <section className="max-w-4xl mx-auto mb-16">
-            <div className="bg-gradient-to-br from-violet-500/10 to-white/5 rounded-3xl p-8 border border-violet-500/20">
-              <h2 className="text-2xl font-bold mb-6">Why agencies choose Whatstask</h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <ul className="space-y-3">
-                  {[
-                    "Manage unlimited clients in one place",
-                    "Track billable hours automatically",
-                    "AI helps create and organize tasks",
-                    "Team members see only what they need",
-                  ].map((item, index) => (
-                    <li key={index}>• {item}</li>
-                  ))}
-                </ul>
-                <ul className="space-y-3">
-                  {[
-                    "Works in Telegram - no new app to learn",
-                    "Free AI features (competitors charge $12-28/user)",
-                    "Simple pricing, no per-seat surprises",
-                    "Start in 30 seconds, not 30 days",
-                  ].map((item, index) => (
-                    <li key={index}>• {item}</li>
-                  ))}
-                </ul>
+          {/* Why Choose */}
+          <section className="mb-24">
+            <div className="border border-slate-200 rounded-2xl p-10 md:p-12">
+              <div className="text-center mb-10">
+                <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Benefits</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Why agencies choose Whatstask</h2>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4">
+                {reasons.map((item, index) => (
+                  <div key={index} className="flex items-start gap-3 text-sm text-slate-600">
+                    <div className="w-1 h-1 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
 
-          <section className="max-w-3xl mx-auto text-center">
-            <div className="bg-slate-50 rounded-3xl p-8 md:p-12 border border-slate-200">
-              <h2 className="text-3xl font-bold mb-4">Ready to simplify your agency?</h2>
-              <p className="text-slate-600 mb-8">
+          {/* CTA */}
+          <section>
+            <div className="border border-slate-200 rounded-2xl p-10 md:p-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Ready to simplify your agency?</h2>
+              <p className="text-slate-500 mb-10 text-lg font-light">
                 Join agencies who've ditched complex tools for something that actually works.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6">
+                <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
                   <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                    <Send className="h-5 w-5 mr-2" />
                     Start Free
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
+                <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-slate-300 hover:bg-slate-50">
                   <Link href="/enterprise">Need Custom Solution?</Link>
                 </Button>
               </div>
@@ -187,6 +185,7 @@ export default function AgenciesPage() {
           </section>
         </main>
 
+        {/* Footer */}
         <footer className="border-t border-slate-100 mt-20 py-8">
           <div className="container mx-auto px-4 text-center text-sm text-slate-500">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>

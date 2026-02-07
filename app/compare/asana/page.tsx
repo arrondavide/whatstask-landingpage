@@ -1,9 +1,8 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Check, Send, Zap, DollarSign, Clock } from "lucide-react"
 import PageLoader from "@/components/page-loader"
+import Navigation from "@/components/navigation"
 import Script from "next/script"
 
 export const metadata: Metadata = {
@@ -45,112 +44,137 @@ export default function AsanaComparisonPage() {
     { feature: "Team Collaboration", whatstask: "Full support", asana: "Full support", winner: "tie" },
   ]
 
+  const keyDifferences = [
+    { title: "AI Access", asana: "Enterprise tier only", whatstask: "Free for everyone" },
+    { title: "Setup Time", asana: "Weeks of configuration", whatstask: "30 seconds" },
+    { title: "Complexity", asana: "Steep learning curve", whatstask: "Start instantly" },
+  ]
+
+  const switchReasons = [
+    {
+      title: '"AI features are locked behind Enterprise"',
+      description: "Asana's AI requires Enterprise pricing. Whatstask includes AI free for everyone.",
+    },
+    {
+      title: '"Setup took way too long"',
+      description: "Asana projects can take weeks to configure properly. Whatstask works in 30 seconds.",
+    },
+    {
+      title: '"We needed time tracking without extra tools"',
+      description: "Asana requires third-party integrations for time tracking. Whatstask has it built-in.",
+    },
+    {
+      title: '"It was overkill for our team"',
+      description: "Asana's features are great for enterprises but overwhelming for smaller teams.",
+    },
+  ]
+
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-white text-slate-900">
-        <header className="border-b border-slate-200">
-          <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-            <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
-              <span className="text-xl font-bold">Whatstask</span>
-            </Link>
-            <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
-              <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                Try Free
-              </a>
-            </Button>
-          </div>
-        </header>
-
-        <main className="container mx-auto px-4 py-12">
-          <section className="text-center max-w-4xl mx-auto mb-16">
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
+      <Navigation variant="solid" />
+      <div className="min-h-screen bg-white text-slate-900 pt-16">
+        <main className="container mx-auto px-4 py-16 max-w-5xl">
+          {/* Hero */}
+          <section className="text-center mb-20">
+            <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Comparison</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-slate-900">
               Whatstask vs Asana
             </h1>
-            <p className="text-xl text-slate-600 leading-relaxed">
-              Asana is enterprise-focused and complex. Whatstask is simple and works for everyone.
-              Here's an honest comparison.
+            <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light">
+              Asana is enterprise-focused and complex. Whatstask is simple and works for everyone. Here's an honest comparison.
             </p>
           </section>
 
-          <section className="max-w-4xl mx-auto mb-16">
-            <div className="bg-gradient-to-br from-violet-500/10 to-white/5 rounded-3xl p-8 border border-violet-500/20">
-              <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                <Zap className="h-6 w-6 text-violet-400" />
-                Quick Verdict
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
+          {/* Quick Verdict */}
+          <section className="mb-24">
+            <div className="border border-slate-200 rounded-2xl p-10 md:p-12">
+              <div className="text-center mb-10">
+                <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Quick Verdict</p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-10">
                 <div>
-                  <h3 className="font-bold text-violet-400 mb-2">Choose Whatstask if:</h3>
-                  <ul className="space-y-2 text-slate-700">
-                    <li>• You want AI features without Enterprise pricing</li>
-                    <li>• You need to start immediately</li>
-                    <li>• You want built-in time tracking</li>
-                    <li>• You prefer simplicity</li>
-                    <li>• You're a small to medium team</li>
+                  <h3 className="font-semibold text-slate-900 mb-4">Choose Whatstask if:</h3>
+                  <ul className="space-y-2">
+                    {[
+                      "You want AI features without Enterprise pricing",
+                      "You need to start immediately",
+                      "You want built-in time tracking",
+                      "You prefer simplicity",
+                      "You're a small to medium team",
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-sm text-slate-600">
+                        <div className="w-1 h-1 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-600 mb-2">Choose Asana if:</h3>
-                  <ul className="space-y-2 text-slate-600">
-                    <li>• You need portfolio management</li>
-                    <li>• You want workload balancing</li>
-                    <li>• You need goals & OKR tracking</li>
-                    <li>• You're an enterprise with budget</li>
-                    <li>• You need advanced forms</li>
+                  <h3 className="font-semibold text-slate-500 mb-4">Choose Asana if:</h3>
+                  <ul className="space-y-2">
+                    {[
+                      "You need portfolio management",
+                      "You want workload balancing",
+                      "You need goals & OKR tracking",
+                      "You're an enterprise with budget",
+                      "You need advanced forms",
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-sm text-slate-500">
+                        <div className="w-1 h-1 rounded-full bg-slate-300 mt-2 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
             </div>
           </section>
 
-          <section className="max-w-5xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center">The key differences</h2>
+          {/* Key Differences */}
+          <section className="mb-24">
+            <div className="text-center mb-12">
+              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Overview</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">The key differences</h2>
+            </div>
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center">
-                <DollarSign className="h-10 w-10 text-violet-400 mx-auto mb-4" />
-                <h3 className="text-lg font-bold mb-2">AI Access</h3>
-                <p className="text-slate-600 text-sm mb-4">Asana: Enterprise tier only</p>
-                <p className="text-violet-400 font-medium">Whatstask: Free for everyone</p>
-              </div>
-              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center">
-                <Clock className="h-10 w-10 text-violet-400 mx-auto mb-4" />
-                <h3 className="text-lg font-bold mb-2">Setup Time</h3>
-                <p className="text-slate-600 text-sm mb-4">Asana: Weeks of configuration</p>
-                <p className="text-violet-400 font-medium">Whatstask: 30 seconds</p>
-              </div>
-              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center">
-                <Zap className="h-10 w-10 text-violet-400 mx-auto mb-4" />
-                <h3 className="text-lg font-bold mb-2">Complexity</h3>
-                <p className="text-slate-600 text-sm mb-4">Asana: Steep learning curve</p>
-                <p className="text-violet-400 font-medium">Whatstask: Start instantly</p>
-              </div>
+              {keyDifferences.map((item, index) => (
+                <div
+                  key={index}
+                  className="border border-slate-200 rounded-2xl p-8 hover:border-slate-300 hover:shadow-md transition-all duration-300 text-center"
+                >
+                  <h3 className="text-lg font-semibold text-slate-900 mb-4">{item.title}</h3>
+                  <p className="text-slate-500 text-sm mb-2">Asana: {item.asana}</p>
+                  <p className="text-slate-900 text-sm font-medium">Whatstask: {item.whatstask}</p>
+                </div>
+              ))}
             </div>
           </section>
 
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center">Feature comparison</h2>
-            <div className="bg-slate-50 rounded-3xl border border-slate-200 overflow-hidden overflow-x-auto">
-              <table className="w-full min-w-[500px]">
+          {/* Feature Comparison Table */}
+          <section className="mb-24">
+            <div className="text-center mb-12">
+              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Details</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Feature comparison</h2>
+            </div>
+            <div className="border border-slate-200 rounded-2xl overflow-hidden">
+              <table className="w-full">
                 <thead>
                   <tr className="border-b border-slate-200 bg-slate-50">
-                    <th className="text-left p-4 font-bold">Feature</th>
-                    <th className="text-center p-4 font-bold text-violet-400">Whatstask</th>
-                    <th className="text-center p-4 font-bold text-slate-500">Asana</th>
+                    <th className="text-left p-6 font-semibold text-slate-900">Feature</th>
+                    <th className="text-center p-6 font-semibold text-slate-900">Whatstask</th>
+                    <th className="text-center p-6 font-medium text-slate-500">Asana</th>
                   </tr>
                 </thead>
                 <tbody>
                   {comparison.map((row, index) => (
-                    <tr key={index} className="border-b border-slate-100 hover:bg-slate-50">
-                      <td className="p-4 font-medium">{row.feature}</td>
-                      <td className={`p-4 text-center ${row.winner === "whatstask" ? "text-violet-400" : ""}`}>
+                    <tr key={index} className="border-b border-slate-100 last:border-0">
+                      <td className="p-6 text-slate-900">{row.feature}</td>
+                      <td className={`p-6 text-center ${row.winner === "whatstask" ? "text-slate-900 font-medium" : "text-slate-500"}`}>
                         {row.whatstask}
-                        {row.winner === "whatstask" && <Check className="h-4 w-4 inline ml-2" />}
                       </td>
-                      <td className={`p-4 text-center ${row.winner === "asana" ? "text-slate-700" : "text-slate-500"}`}>
+                      <td className={`p-6 text-center ${row.winner === "asana" ? "text-slate-900 font-medium" : "text-slate-500"}`}>
                         {row.asana}
-                        {row.winner === "asana" && <Check className="h-4 w-4 inline ml-2" />}
                       </td>
                     </tr>
                   ))}
@@ -159,49 +183,39 @@ export default function AsanaComparisonPage() {
             </div>
           </section>
 
-          <section className="max-w-4xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center">Why teams switch from Asana</h2>
+          {/* Switch Reasons */}
+          <section className="mb-24">
+            <div className="text-center mb-12">
+              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Feedback</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Why teams switch from Asana</h2>
+            </div>
             <div className="space-y-4">
-              {[
-                {
-                  title: '"AI features are locked behind Enterprise"',
-                  description: "Asana's AI requires Enterprise pricing. Whatstask includes AI free for everyone.",
-                },
-                {
-                  title: '"Setup took way too long"',
-                  description: "Asana projects can take weeks to configure properly. Whatstask works in 30 seconds.",
-                },
-                {
-                  title: '"We needed time tracking without extra tools"',
-                  description: "Asana requires third-party integrations for time tracking. Whatstask has it built-in.",
-                },
-                {
-                  title: '"It was overkill for our team"',
-                  description: "Asana's features are great for enterprises but overwhelming for smaller teams.",
-                },
-              ].map((item, index) => (
-                <div key={index} className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-                  <h3 className="font-bold mb-2">{item.title}</h3>
-                  <p className="text-slate-600">{item.description}</p>
+              {switchReasons.map((item, index) => (
+                <div
+                  key={index}
+                  className="border border-slate-200 rounded-xl p-6 hover:border-slate-300 hover:shadow-md transition-all duration-300"
+                >
+                  <h3 className="font-semibold text-slate-900 mb-2">{item.title}</h3>
+                  <p className="text-slate-500 text-sm">{item.description}</p>
                 </div>
               ))}
             </div>
           </section>
 
-          <section className="max-w-3xl mx-auto text-center">
-            <div className="bg-gradient-to-br from-violet-500/10 to-white/5 rounded-3xl p-8 md:p-12 border border-violet-500/20">
-              <h2 className="text-3xl font-bold mb-4">Try the simpler alternative</h2>
-              <p className="text-slate-600 mb-8">
+          {/* CTA */}
+          <section>
+            <div className="border border-slate-200 rounded-2xl p-10 md:p-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Try the simpler alternative</h2>
+              <p className="text-slate-500 mb-10 text-lg font-light">
                 AI included. Time tracking built-in. Ready in 30 seconds.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6">
+                <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
                   <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                    <Send className="h-5 w-5 mr-2" />
                     Try Whatstask Free
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
+                <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-slate-300 hover:bg-slate-50">
                   <Link href="/project-management">See All Features</Link>
                 </Button>
               </div>
@@ -209,6 +223,7 @@ export default function AsanaComparisonPage() {
           </section>
         </main>
 
+        {/* Footer */}
         <footer className="border-t border-slate-100 mt-20 py-8">
           <div className="container mx-auto px-4 text-center text-sm text-slate-500">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>

@@ -1,20 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import {
-  MessageSquare,
-  Calendar,
-  Clock,
-  List,
-  Check,
-  Bell,
-  Users,
-  Zap,
-  FileText,
-  BarChart3,
-  Shield,
-  Smartphone,
-} from "lucide-react"
 import PageLoader from "@/components/page-loader"
 import Navigation from "@/components/navigation"
 import Script from "next/script"
@@ -50,94 +36,63 @@ export const metadata: Metadata = {
 export default function FeaturesPage() {
   const features = [
     {
-      icon: <List className="h-8 w-8" />,
       title: "Complete Task Management",
-      description:
-        "Create tasks with full details: subtasks, priorities, due dates, file attachments, and recurring schedules (daily/weekly/monthly). Organize with categories and tags. Complete project management in Telegram.",
+      description: "Create tasks with subtasks, priorities, due dates, file attachments, and recurring schedules.",
       category: "Task Management",
     },
     {
-      icon: <Check className="h-8 w-8" />,
       title: "Subtasks & Checklists",
-      description:
-        "Break down complex tasks into manageable subtasks. Create checklists for step-by-step workflows. Track progress as you complete each item. Perfect for project planning and execution.",
+      description: "Break down complex tasks into manageable subtasks. Track progress as you complete each item.",
       category: "Task Management",
     },
     {
-      icon: <Calendar className="h-8 w-8" />,
       title: "Recurring Tasks",
-      description:
-        "Set up daily, weekly, or monthly recurring tasks for habits and regular responsibilities. Automatic creation based on your schedule. Never forget routine tasks again.",
+      description: "Set up daily, weekly, or monthly recurring tasks. Automatic creation based on your schedule.",
       category: "Task Management",
     },
     {
-      icon: <Clock className="h-8 w-8" />,
-      title: "Time Tracking with Clock In/Out",
-      description:
-        "Track time spent on tasks with one-tap clock in/out. Automatic duration calculation with millisecond precision. Generate daily, weekly, and monthly time reports. Bill clients accurately.",
+      title: "Time Tracking",
+      description: "Track time with one-tap clock in/out. Automatic duration calculation. Generate time reports.",
       category: "Time Tracking",
     },
     {
-      icon: <BarChart3 className="h-8 w-8" />,
       title: "Time Reports & Analytics",
-      description:
-        "View detailed time logs per task and project. Generate reports for invoicing. See where your time goes with visual analytics. Export data for billing systems.",
+      description: "View detailed time logs per task. Generate reports for invoicing. Export data for billing.",
       category: "Time Tracking",
     },
     {
-      icon: <Users className="h-8 w-8" />,
-      title: "Team Collaboration & Roles",
-      description:
-        "Invite unlimited team members. Assign 3-tier roles: Admin (full control), Manager (team oversight), Employee (task execution). Role-based permissions for security.",
+      title: "Team Collaboration",
+      description: "Invite unlimited team members. 3-tier roles: Admin, Manager, Employee. Role-based permissions.",
       category: "Team Features",
     },
     {
-      icon: <MessageSquare className="h-8 w-8" />,
-      title: "Task Comments & Activity Feed",
-      description:
-        "Comment on tasks for collaboration. Mention team members with @username. Track all activity with complete audit trail. Real-time updates for everyone.",
+      title: "Comments & Activity",
+      description: "Comment on tasks. Mention team members. Track all activity with complete audit trail.",
       category: "Team Features",
     },
     {
-      icon: <FileText className="h-8 w-8" />,
       title: "Multi-Company Workspaces",
-      description:
-        "Create and switch between multiple companies or projects. Perfect for freelancers managing multiple clients or agencies handling different accounts. Separate workspace for each context.",
+      description: "Switch between multiple companies or projects. Perfect for freelancers and agencies.",
       category: "Company Management",
     },
     {
-      icon: <Zap className="h-8 w-8" />,
-      title: "8-Character Invitation Codes",
-      description:
-        "Invite team members with simple 8-character hex codes. Secure, easy to share, and instantly join teams. No email verification needed. Just share the code and start collaborating.",
+      title: "Simple Invitation Codes",
+      description: "Invite team members with simple codes. No email verification needed. Start collaborating instantly.",
       category: "Company Management",
     },
     {
-      icon: <BarChart3 className="h-8 w-8" />,
-      title: "Statistics & Analytics Dashboard",
-      description:
-        "Personal and team productivity metrics. Task completion rates, time spent analysis, busiest days tracking. Visual charts and graphs. Make data-driven decisions.",
+      title: "Analytics Dashboard",
+      description: "Personal and team productivity metrics. Task completion rates, time analysis, visual charts.",
       category: "Analytics",
     },
     {
-      icon: <Bell className="h-8 w-8" />,
-      title: "Dual Notification System",
-      description:
-        "In-app notifications within the Mini App plus Telegram push notifications. Never miss task updates, comments, assignments, or deadlines. 6 notification types for different events.",
+      title: "Notifications",
+      description: "In-app and Telegram push notifications. Never miss task updates, comments, or deadlines.",
       category: "Notifications",
     },
     {
-      icon: <Smartphone className="h-8 w-8" />,
-      title: "Offline Mode with Auto-Sync",
-      description:
-        "Work offline and changes sync automatically when back online. Optimistic UI updates for instant feel. LocalStorage persistence. Never lose your work due to connection issues.",
-      category: "Advanced Features",
-    },
-    {
-      icon: <Shield className="h-8 w-8" />,
-      title: "Security & Access Control",
-      description:
-        "Telegram OAuth authentication. HMAC-SHA256 validation. Role-based access control. Secure API endpoints. Your data is protected with enterprise-grade security.",
+      title: "Offline Mode",
+      description: "Work offline and changes sync automatically. Never lose your work due to connection issues.",
       category: "Advanced Features",
     },
   ]
@@ -149,66 +104,72 @@ export default function FeaturesPage() {
       <PageLoader />
       <Navigation variant="solid" />
       <div className="min-h-screen bg-white text-slate-900 pt-16">
-        {/* Hero Section */}
-        <section className="container mx-auto px-4 py-20">
-          <div className="text-center max-w-4xl mx-auto mb-16">
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
-              Complete Work Management Platform
+        <main className="container mx-auto px-4 py-16 max-w-5xl">
+          {/* Hero */}
+          <section className="text-center mb-20">
+            <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Features</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-slate-900">
+              Complete work management
             </h1>
-            <p className="text-xl text-slate-600 leading-relaxed">
-              Full-featured Telegram Mini App with task management, time tracking, team collaboration, and analytics. Everything you need to manage work - built right into Telegram.
+            <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light">
+              Task management, time tracking, team collaboration, and analytics. Everything you need, nothing you don't.
             </p>
-          </div>
+          </section>
 
           {/* Quick Stats */}
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-20">
-            <div className="text-center bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
-              <div className="text-4xl font-extrabold mb-2">10,000+</div>
-              <div className="text-slate-600">Active Users</div>
+          <section className="mb-24">
+            <div className="grid md:grid-cols-3 gap-px bg-slate-200 rounded-2xl overflow-hidden">
+              {[
+                { stat: "4", label: "Views (all you need)" },
+                { stat: "Free", label: "AI task creation" },
+                { stat: "30s", label: "To get started" },
+              ].map((item, index) => (
+                <div key={index} className="bg-white p-10 text-center">
+                  <p className="text-4xl font-light text-slate-900 mb-2">{item.stat}</p>
+                  <p className="text-sm text-slate-500">{item.label}</p>
+                </div>
+              ))}
             </div>
-            <div className="text-center bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
-              <div className="text-4xl font-extrabold mb-2">500K+</div>
-              <div className="text-slate-600">Tasks Completed</div>
-            </div>
-            <div className="text-center bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
-              <div className="text-4xl font-extrabold mb-2">4.8/5</div>
-              <div className="text-slate-600">User Rating</div>
-            </div>
-          </div>
+          </section>
 
           {/* Features by Category */}
-          <div className="space-y-16">
+          <section className="space-y-20">
             {categories.map((category) => (
               <div key={category}>
-                <h2 className="text-3xl font-bold mb-8 text-center">{category}</h2>
+                <div className="text-center mb-12">
+                  <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">{category}</p>
+                </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {features
                     .filter((f) => f.category === category)
                     .map((feature, idx) => (
                       <div
                         key={idx}
-                        className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200 hover:border-slate-300 transition-all duration-300"
+                        className="border border-slate-200 rounded-2xl p-8 hover:border-slate-300 hover:shadow-md transition-all duration-300"
                       >
-                        <div className="mb-4 text-violet-500">{feature.icon}</div>
-                        <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                        <p className="text-slate-600 leading-relaxed">{feature.description}</p>
+                        <h3 className="text-lg font-semibold text-slate-900 mb-3">{feature.title}</h3>
+                        <p className="text-slate-500 text-sm leading-relaxed">{feature.description}</p>
                       </div>
                     ))}
                 </div>
               </div>
             ))}
-          </div>
+          </section>
 
           {/* Comparison Table */}
-          <div className="mt-20">
-            <h2 className="text-3xl font-bold mb-8 text-center">Whatstask vs Traditional Task Apps</h2>
-            <div className="bg-slate-50 backdrop-blur-lg rounded-2xl border border-slate-200 overflow-hidden">
+          <section className="mt-24 mb-24">
+            <div className="text-center mb-12">
+              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Comparison</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Whatstask vs Traditional Apps</h2>
+            </div>
+
+            <div className="border border-slate-200 rounded-2xl overflow-hidden">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-slate-200">
-                    <th className="text-left p-6 font-bold">Feature</th>
-                    <th className="text-center p-6 font-bold">Whatstask</th>
-                    <th className="text-center p-6 font-bold">Traditional Apps</th>
+                  <tr className="border-b border-slate-200 bg-slate-50">
+                    <th className="text-left p-6 font-semibold text-slate-900">Feature</th>
+                    <th className="text-center p-6 font-semibold text-slate-900">Whatstask</th>
+                    <th className="text-center p-6 font-medium text-slate-500">Traditional</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -221,47 +182,44 @@ export default function FeaturesPage() {
                     { feature: "Cross-Platform Sync", whatstask: true, traditional: true },
                     { feature: "Team Collaboration", whatstask: true, traditional: true },
                   ].map((row, idx) => (
-                    <tr key={idx} className="border-b border-slate-200 last:border-0">
-                      <td className="p-6">{row.feature}</td>
-                      <td className="p-6 text-center">
-                        {row.whatstask ? (
-                          <Check className="h-6 w-6 text-green-500 inline" />
-                        ) : (
-                          <span className="text-slate-500">—</span>
-                        )}
-                      </td>
-                      <td className="p-6 text-center">
-                        {row.traditional ? (
-                          <Check className="h-6 w-6 text-green-500 inline" />
-                        ) : (
-                          <span className="text-slate-500">—</span>
-                        )}
-                      </td>
+                    <tr key={idx} className="border-b border-slate-100 last:border-0">
+                      <td className="p-6 text-slate-900">{row.feature}</td>
+                      <td className="p-6 text-center text-slate-900">{row.whatstask ? "Yes" : "—"}</td>
+                      <td className="p-6 text-center text-slate-500">{row.traditional ? "Yes" : "—"}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-          </div>
+          </section>
 
           {/* CTA */}
-          <div className="mt-20 text-center bg-slate-50 backdrop-blur-lg rounded-2xl p-12 border border-slate-200">
-            <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-            <p className="text-xl text-slate-600 mb-8">
-              Join 10,000+ users who manage tasks without switching apps.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-violet-500 text-white hover:bg-violet-700 rounded-full px-8 py-6">
-                <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                  Start on Telegram
-                </a>
-              </Button>
-              <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
-                <Link href="/pricing">View Pricing</Link>
-              </Button>
+          <section>
+            <div className="border border-slate-200 rounded-2xl p-10 md:p-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Ready to get started?</h2>
+              <p className="text-slate-500 mb-10 text-lg font-light">
+                Manage tasks without switching apps. Free to start.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
+                  <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
+                    Start on Telegram
+                  </a>
+                </Button>
+                <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-slate-300 hover:bg-slate-50">
+                  <Link href="/pricing">View Pricing</Link>
+                </Button>
+              </div>
             </div>
+          </section>
+        </main>
+
+        {/* Footer */}
+        <footer className="border-t border-slate-100 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
+            <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
-        </section>
+        </footer>
 
         {/* FAQ Schema */}
         <Script
@@ -277,7 +235,7 @@ export default function FeaturesPage() {
                   name: "What features does Whatstask offer?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Whatstask offers natural language task creation, smart scheduling, intelligent reminders, team collaboration, PDF tools (merge, compress, convert), progress analytics, and cross-platform sync - all within Telegram.",
+                    text: "Whatstask offers natural language task creation, smart scheduling, intelligent reminders, team collaboration, PDF tools, progress analytics, and cross-platform sync - all within Telegram.",
                   },
                 },
                 {
@@ -285,15 +243,7 @@ export default function FeaturesPage() {
                   name: "Can I collaborate with my team on Whatstask?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Yes! You can share tasks with colleagues, assign deadlines, and track team progress directly in Telegram. Perfect for remote teams and group projects.",
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: "Does Whatstask work across different time zones?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Absolutely. Whatstask automatically adjusts reminders to your local time zone and handles timezone conversions for remote teams seamlessly.",
+                    text: "Yes! You can share tasks with colleagues, assign deadlines, and track team progress directly in Telegram.",
                   },
                 },
               ],
@@ -310,18 +260,8 @@ export default function FeaturesPage() {
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Home",
-                  item: "https://www.whatstask.com",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Features",
-                  item: "https://www.whatstask.com/features",
-                },
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://www.whatstask.com" },
+                { "@type": "ListItem", position: 2, name: "Features", item: "https://www.whatstask.com/features" },
               ],
             }),
           }}

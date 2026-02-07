@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Check, Send } from "lucide-react"
 import PageLoader from "@/components/page-loader"
+import Navigation from "@/components/navigation"
+
 export const metadata: Metadata = {
   title: "Project Management for Startups | Whatstask",
   description:
@@ -48,136 +48,143 @@ export default function StartupsPage() {
     },
   ]
 
+  const features = [
+    "List, Kanban, Calendar, Timeline views",
+    "AI task creation and suggestions",
+    "Built-in time tracking",
+    "Team collaboration with roles",
+    "Works in Telegram (your team's already there)",
+    "Multi-project workspaces",
+    "Mobile-first experience",
+    "Free to start, affordable to scale",
+  ]
+
+  const stages = [
+    { name: "Seed Stage", description: "2-5 people, free tier" },
+    { name: "Growth Stage", description: "10-50 people, same simplicity" },
+    { name: "Scale Stage", description: "100+ people, enterprise options" },
+  ]
+
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen bg-white text-slate-900">
-        <header className="border-b border-slate-200">
-          <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-            <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
-              <span className="text-xl font-bold">Whatstask</span>
-            </Link>
-            <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
-              <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                Try Free
-              </a>
-            </Button>
-          </div>
-        </header>
-
-        <main className="container mx-auto px-4 py-12">
-          <section className="text-center max-w-4xl mx-auto mb-16">
-            <p className="text-sm text-slate-500 mb-6">For Startups</p>
-
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
+      <Navigation variant="solid" />
+      <div className="min-h-screen bg-white text-slate-900 pt-16">
+        <main className="container mx-auto px-4 py-16 max-w-5xl">
+          {/* Hero */}
+          <section className="text-center mb-20">
+            <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">For Startups</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-slate-900">
               Move fast. Stay organized.
             </h1>
-
-            <p className="text-xl text-slate-600 leading-relaxed mb-8">
+            <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light mb-10">
               You're building something new. Your tools should help, not slow you down.
-              Simple project management with AI built-in. Free to start.
             </p>
-
-            <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6 text-lg">
+            <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
               <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                <Send className="h-5 w-5 mr-2" />
                 Start Free
               </a>
             </Button>
           </section>
 
-          <section className="max-w-5xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center">Built for startup speed</h2>
+          {/* Benefits */}
+          <section className="mb-24">
+            <div className="text-center mb-12">
+              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Features</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Built for startup speed</h2>
+            </div>
             <div className="grid md:grid-cols-2 gap-6">
               {benefits.map((benefit, index) => (
-                <div key={index} className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                  <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
-                  <p className="text-slate-600">{benefit.description}</p>
+                <div
+                  key={index}
+                  className="border border-slate-200 rounded-2xl p-8 hover:border-slate-300 hover:shadow-md transition-all duration-300"
+                >
+                  <h3 className="text-lg font-semibold text-slate-900 mb-3">{benefit.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">{benefit.description}</p>
                 </div>
               ))}
             </div>
           </section>
 
-          <section className="max-w-4xl mx-auto mb-16">
-            <div className="bg-gradient-to-br from-violet-500/10 to-white/5 rounded-3xl p-8 border border-violet-500/20">
-              <h2 className="text-2xl font-bold mb-4 text-center">Why startups choose Whatstask over ClickUp/Monday/Asana</h2>
-              <div className="grid md:grid-cols-3 gap-6 mt-8">
-                <div className="text-center">
-                  <p className="text-3xl font-bold text-slate-900 mb-2">30s</p>
-                  <p className="text-slate-600">to first task (not 30 days)</p>
+          {/* Why Choose */}
+          <section className="mb-24">
+            <div className="border border-slate-200 rounded-2xl p-10 md:p-12">
+              <div className="text-center mb-10">
+                <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Comparison</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Why startups choose Whatstask</h2>
+              </div>
+              <div className="grid md:grid-cols-3 gap-8 text-center">
+                <div>
+                  <p className="text-4xl font-light text-slate-900 mb-2">30s</p>
+                  <p className="text-sm text-slate-500">to first task (not 30 days)</p>
                 </div>
-                <div className="text-center">
-                  <p className="text-3xl font-bold text-slate-900 mb-2">$0</p>
-                  <p className="text-slate-600">for AI features (not $28/user)</p>
+                <div>
+                  <p className="text-4xl font-light text-slate-900 mb-2">$0</p>
+                  <p className="text-sm text-slate-500">for AI features (not $28/user)</p>
                 </div>
-                <div className="text-center">
-                  <p className="text-3xl font-bold text-slate-900 mb-2">4</p>
-                  <p className="text-slate-600">views that matter (not 15+)</p>
+                <div>
+                  <p className="text-4xl font-light text-slate-900 mb-2">4</p>
+                  <p className="text-sm text-slate-500">views that matter (not 15+)</p>
                 </div>
               </div>
             </div>
           </section>
 
-          <section className="max-w-4xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center">What you get</h2>
+          {/* Features */}
+          <section className="mb-24">
+            <div className="text-center mb-12">
+              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Included</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">What you get</h2>
+            </div>
             <div className="grid md:grid-cols-2 gap-4">
-              {[
-                "List, Kanban, Calendar, Timeline views",
-                "AI task creation and suggestions",
-                "Built-in time tracking",
-                "Team collaboration with roles",
-                "Works in Telegram (your team's already there)",
-                "Multi-project workspaces",
-                "Mobile-first experience",
-                "Free to start, affordable to scale",
-              ].map((feature, index) => (
-                <div key={index} className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl border border-slate-200">
-                  <Check className="h-5 w-5 text-violet-400 flex-shrink-0" />
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-3 text-sm text-slate-600 border border-slate-200 rounded-xl p-4 hover:border-slate-300 transition-all duration-300"
+                >
+                  <div className="w-1 h-1 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
                   <span>{feature}</span>
                 </div>
               ))}
             </div>
           </section>
 
-          <section className="max-w-4xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center">From seed to scale</h2>
-            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
-              <p className="text-slate-600 text-center mb-8">
+          {/* Scale */}
+          <section className="mb-24">
+            <div className="text-center mb-12">
+              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Growth</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">From seed to scale</h2>
+            </div>
+            <div className="border border-slate-200 rounded-2xl p-10 md:p-12">
+              <p className="text-slate-500 text-center mb-8 font-light">
                 The same tool works whether you're 2 co-founders or a 200-person company.
                 No migrations. No retraining. Just keep shipping.
               </p>
               <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center p-4">
-                  <p className="font-bold mb-2">Seed Stage</p>
-                  <p className="text-sm text-slate-500">2-5 people, free tier</p>
-                </div>
-                <div className="text-center p-4">
-                  <p className="font-bold mb-2">Growth Stage</p>
-                  <p className="text-sm text-slate-500">10-50 people, same simplicity</p>
-                </div>
-                <div className="text-center p-4">
-                  <p className="font-bold mb-2">Scale Stage</p>
-                  <p className="text-sm text-slate-500">100+ people, enterprise options</p>
-                </div>
+                {stages.map((stage, index) => (
+                  <div key={index} className="text-center p-4">
+                    <p className="font-semibold text-slate-900 mb-2">{stage.name}</p>
+                    <p className="text-sm text-slate-500">{stage.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
 
-          <section className="max-w-3xl mx-auto text-center">
-            <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-3xl p-8 md:p-12 border border-slate-200">
-              <h2 className="text-3xl font-bold mb-4">Ready to move faster?</h2>
-              <p className="text-slate-600 mb-8">
+          {/* CTA */}
+          <section>
+            <div className="border border-slate-200 rounded-2xl p-10 md:p-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Ready to move faster?</h2>
+              <p className="text-slate-500 mb-10 text-lg font-light">
                 Join startups who've chosen simplicity over complexity.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6">
+                <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
                   <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                    <Send className="h-5 w-5 mr-2" />
                     Start Free
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
+                <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-slate-300 hover:bg-slate-50">
                   <Link href="/pricing">See Pricing</Link>
                 </Button>
               </div>
@@ -185,6 +192,7 @@ export default function StartupsPage() {
           </section>
         </main>
 
+        {/* Footer */}
         <footer className="border-t border-slate-100 mt-20 py-8">
           <div className="container mx-auto px-4 text-center text-sm text-slate-500">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>

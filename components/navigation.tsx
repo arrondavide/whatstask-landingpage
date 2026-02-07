@@ -131,7 +131,7 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
             Launch in Telegram
           </a>
         </Button>
-        <p className="text-xs text-slate-500 mt-3 text-center">Trusted by 10,000+ teams</p>
+        <p className="text-xs text-slate-500 mt-3 text-center">Free forever · No credit card</p>
       </div>
     </div>
   )

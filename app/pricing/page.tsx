@@ -1,9 +1,10 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Check, X, Send, Zap, Brain, ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import PageLoader from "@/components/page-loader"
 import Navigation from "@/components/navigation"
+
 export const metadata: Metadata = {
   title: "Pricing - Simple, Transparent Plans | Whatstask",
   description:
@@ -33,7 +34,7 @@ export default function PricingPage() {
       name: "Free",
       price: "$0",
       period: "forever",
-      description: "For individuals and small teams getting started",
+      description: "For individuals and small teams",
       features: [
         "Unlimited tasks",
         "4 views (List, Kanban, Calendar, Timeline)",
@@ -52,7 +53,7 @@ export default function PricingPage() {
       name: "Pro",
       price: "$4.99",
       period: "per month",
-      description: "For growing teams who need more power",
+      description: "For growing teams",
       features: [
         "Everything in Free",
         "Unlimited team members",
@@ -72,7 +73,7 @@ export default function PricingPage() {
       name: "Enterprise",
       price: "Custom",
       period: "contact us",
-      description: "For organizations with specific needs",
+      description: "For specific needs",
       features: [
         "Everything in Pro",
         "Custom development",
@@ -121,62 +122,60 @@ export default function PricingPage() {
       <PageLoader />
       <Navigation variant="solid" />
       <div className="min-h-screen bg-white text-slate-900 pt-16">
-        <main className="container mx-auto px-4 py-12">
+        <main className="container mx-auto px-4 py-16 max-w-5xl">
           {/* Hero */}
-          <section className="text-center max-w-4xl mx-auto mb-16">
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+          <section className="text-center mb-20">
+            <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Pricing</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-slate-900">
               Simple pricing. No surprises.
             </h1>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Free forever tier with AI included. No per-seat pricing games. No feature-gating tricks.
+            <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light">
+              Free forever tier with AI included. No per-seat pricing games.
             </p>
           </section>
 
           {/* Project Management Pricing */}
-          <section className="mb-20">
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <Zap className="h-6 w-6 text-violet-400" />
-              <h2 className="text-2xl font-bold">Project Management</h2>
+          <section className="mb-24">
+            <div className="text-center mb-12">
+              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Project Management</p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-6">
               {pmPlans.map((plan, index) => (
                 <div
                   key={index}
-                  className={`rounded-2xl p-6 border ${
+                  className={`rounded-2xl p-8 border transition-all duration-300 ${
                     plan.highlight
-                      ? "bg-gradient-to-br from-violet-500/10 to-white/5 border-violet-500/30 relative"
-                      : "bg-slate-50 border-slate-200"
+                      ? "border-slate-900 bg-white shadow-lg"
+                      : "border-slate-200 bg-white hover:border-slate-300 hover:shadow-md"
                   }`}
                 >
                   {plan.highlight && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-violet-500 text-white px-3 py-1 rounded-full text-xs font-bold">
-                      Most Popular
-                    </div>
+                    <div className="text-xs uppercase tracking-widest text-violet-600 mb-4">Most Popular</div>
                   )}
 
-                  <h3 className="text-xl font-bold mb-1">{plan.name}</h3>
-                  <div className="mb-2">
-                    <span className="text-4xl font-extrabold">{plan.price}</span>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-1">{plan.name}</h3>
+                  <div className="mb-4">
+                    <span className="text-4xl font-light text-slate-900">{plan.price}</span>
                     {plan.period !== "contact us" && (
-                      <span className="text-slate-600 ml-2">{plan.period}</span>
+                      <span className="text-slate-500 ml-2 text-sm">{plan.period}</span>
                     )}
                     {plan.period === "contact us" && (
-                      <span className="text-slate-600 ml-2 text-sm">{plan.period}</span>
+                      <span className="text-slate-500 ml-2 text-sm">{plan.period}</span>
                     )}
                   </div>
-                  <p className="text-sm text-slate-500 mb-6">{plan.description}</p>
+                  <p className="text-sm text-slate-500 mb-8">{plan.description}</p>
 
-                  <ul className="space-y-3 mb-6">
+                  <ul className="space-y-3 mb-8">
                     {plan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm">
-                        <Check className="h-4 w-4 text-violet-400 flex-shrink-0 mt-0.5" />
+                      <li key={idx} className="flex items-start gap-3 text-sm text-slate-600">
+                        <div className="w-1 h-1 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
                         <span>{feature}</span>
                       </li>
                     ))}
                     {plan.limitations.map((limitation, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-slate-500">
-                        <X className="h-4 w-4 flex-shrink-0 mt-0.5" />
+                      <li key={idx} className="flex items-start gap-3 text-sm text-slate-400">
+                        <div className="w-1 h-1 rounded-full bg-slate-300 mt-2 flex-shrink-0" />
                         <span>{limitation}</span>
                       </li>
                     ))}
@@ -184,10 +183,10 @@ export default function PricingPage() {
 
                   <Button
                     asChild
-                    className={`w-full rounded-full py-5 ${
+                    className={`w-full rounded-lg py-6 ${
                       plan.highlight
-                        ? "bg-violet-500 text-white hover:bg-violet-600"
-                        : "bg-slate-200 text-slate-900 hover:bg-slate-300"
+                        ? "bg-slate-900 text-white hover:bg-slate-800"
+                        : "bg-white text-slate-900 border border-slate-300 hover:bg-slate-50"
                     }`}
                   >
                     <a
@@ -204,61 +203,66 @@ export default function PricingPage() {
           </section>
 
           {/* GEO Analyzer Pricing */}
-          <section className="mb-20">
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <Brain className="h-6 w-6 text-cyan-400" />
-              <h2 className="text-2xl font-bold">GEO Analyzer</h2>
-            </div>
+          <section className="mb-24 bg-slate-50 -mx-4 px-4 py-16 md:-mx-8 md:px-8">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-12">
+                <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">GEO Analyzer</p>
+              </div>
 
-            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-              {geoPlans.map((plan, index) => (
-                <div key={index} className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                  <h3 className="text-xl font-bold mb-1">{plan.name}</h3>
-                  <p className="text-2xl font-extrabold mb-2">{plan.price}</p>
-                  <p className="text-sm text-slate-500 mb-4">{plan.description}</p>
+              <div className="grid md:grid-cols-2 gap-6">
+                {geoPlans.map((plan, index) => (
+                  <div key={index} className="bg-white border border-slate-200 rounded-2xl p-8 hover:border-slate-300 hover:shadow-md transition-all duration-300">
+                    <h3 className="text-xl font-semibold text-slate-900 mb-1">{plan.name}</h3>
+                    <p className="text-3xl font-light text-slate-900 mb-2">{plan.price}</p>
+                    <p className="text-sm text-slate-500 mb-6">{plan.description}</p>
 
-                  <ul className="space-y-2 mb-6">
-                    {plan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-sm">
-                        <Check className="h-4 w-4 text-cyan-400 flex-shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                    <ul className="space-y-3 mb-8">
+                      {plan.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-3 text-sm text-slate-600">
+                          <div className="w-1 h-1 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
 
-                  <Button asChild className="w-full rounded-full py-5 bg-slate-200 text-slate-900 hover:bg-slate-300">
-                    <a
-                      href={plan.ctaLink}
-                      target={plan.ctaLink.startsWith("http") ? "_blank" : undefined}
-                      rel={plan.ctaLink.startsWith("http") ? "noopener noreferrer" : undefined}
-                    >
-                      {plan.cta}
-                    </a>
-                  </Button>
-                </div>
-              ))}
+                    <Button asChild className="w-full rounded-lg py-6 bg-white text-slate-900 border border-slate-300 hover:bg-slate-50">
+                      <a
+                        href={plan.ctaLink}
+                        target={plan.ctaLink.startsWith("http") ? "_blank" : undefined}
+                        rel={plan.ctaLink.startsWith("http") ? "noopener noreferrer" : undefined}
+                      >
+                        {plan.cta}
+                      </a>
+                    </Button>
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
 
-          {/* Comparison with competitors */}
-          <section className="mb-20">
-            <h2 className="text-3xl font-bold mb-8 text-center">How we compare</h2>
-            <div className="bg-slate-50 rounded-3xl border border-slate-200 overflow-hidden overflow-x-auto max-w-5xl mx-auto">
+          {/* Comparison */}
+          <section className="mb-24">
+            <div className="text-center mb-12">
+              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Comparison</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">How we compare</h2>
+            </div>
+
+            <div className="border border-slate-200 rounded-2xl overflow-hidden overflow-x-auto">
               <table className="w-full min-w-[500px]">
                 <thead>
                   <tr className="border-b border-slate-200 bg-slate-50">
-                    <th className="text-left p-4 font-bold">Feature</th>
-                    <th className="text-center p-4 font-bold text-violet-400">Whatstask</th>
-                    <th className="text-center p-4 font-bold text-slate-500">ClickUp</th>
-                    <th className="text-center p-4 font-bold text-slate-500">Monday</th>
-                    <th className="text-center p-4 font-bold text-slate-500">Asana</th>
+                    <th className="text-left p-4 font-semibold text-slate-900">Feature</th>
+                    <th className="text-center p-4 font-semibold text-slate-900">Whatstask</th>
+                    <th className="text-center p-4 font-medium text-slate-500">ClickUp</th>
+                    <th className="text-center p-4 font-medium text-slate-500">Monday</th>
+                    <th className="text-center p-4 font-medium text-slate-500">Asana</th>
                   </tr>
                 </thead>
                 <tbody>
                   {comparison.map((row, index) => (
-                    <tr key={index} className="border-b border-slate-100">
-                      <td className="p-4 font-medium">{row.feature}</td>
-                      <td className="p-4 text-center text-violet-400">{row.whatstask}</td>
+                    <tr key={index} className="border-b border-slate-100 last:border-0">
+                      <td className="p-4 font-medium text-slate-900">{row.feature}</td>
+                      <td className="p-4 text-center text-slate-900">{row.whatstask}</td>
                       <td className="p-4 text-center text-slate-500">{row.clickup}</td>
                       <td className="p-4 text-center text-slate-500">{row.monday}</td>
                       <td className="p-4 text-center text-slate-500">{row.asana}</td>
@@ -267,17 +271,23 @@ export default function PricingPage() {
                 </tbody>
               </table>
             </div>
-            <div className="text-center mt-6">
-              <Link href="/compare/clickup" className="text-violet-400 hover:text-violet-300 inline-flex items-center gap-2">
-                See full comparisons <ArrowRight className="h-4 w-4" />
+
+            <div className="text-center mt-8">
+              <Link href="/compare/clickup" className="inline-flex items-center gap-2 text-slate-500 text-sm hover:text-slate-900 transition-colors">
+                See full comparisons
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </section>
 
           {/* FAQ */}
-          <section className="max-w-3xl mx-auto mb-20">
-            <h2 className="text-3xl font-bold mb-8 text-center">Frequently asked</h2>
-            <div className="space-y-4">
+          <section className="mb-24">
+            <div className="text-center mb-12">
+              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">FAQ</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Frequently asked</h2>
+            </div>
+
+            <div className="space-y-4 max-w-3xl mx-auto">
               {[
                 {
                   q: "Is the free tier really free?",
@@ -300,24 +310,23 @@ export default function PricingPage() {
                   a: "Contact us about Enterprise plans. We build custom solutions for teams with specific needs.",
                 },
               ].map((faq, index) => (
-                <div key={index} className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-                  <h3 className="font-bold mb-2">{faq.q}</h3>
-                  <p className="text-slate-600">{faq.a}</p>
+                <div key={index} className="border border-slate-200 rounded-2xl p-6 hover:border-slate-300 transition-all duration-300">
+                  <h3 className="font-semibold text-slate-900 mb-2">{faq.q}</h3>
+                  <p className="text-slate-500">{faq.a}</p>
                 </div>
               ))}
             </div>
           </section>
 
           {/* CTA */}
-          <section className="max-w-3xl mx-auto text-center">
-            <div className="bg-gradient-to-br from-violet-500/10 to-white/5 rounded-3xl p-8 md:p-12 border border-violet-500/20">
-              <h2 className="text-3xl font-bold mb-4">Start free today</h2>
-              <p className="text-slate-600 mb-8">
+          <section>
+            <div className="border border-slate-200 rounded-2xl p-10 md:p-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Start free today</h2>
+              <p className="text-slate-500 mb-10 text-lg font-light">
                 No credit card required. No time limits. Just start working.
               </p>
-              <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6 text-lg">
+              <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6 text-lg">
                 <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                  <Send className="h-5 w-5 mr-2" />
                   Get Started Free
                 </a>
               </Button>
