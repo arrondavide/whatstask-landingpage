@@ -182,25 +182,25 @@ export default function LandingPage() {
       </section>
 
       {/* App Showcase Section */}
-      <section className="relative py-32 md:py-40 px-4 bg-white">
-        <div className="container mx-auto max-w-7xl">
+      <section className="relative py-20 md:py-32 lg:py-40 px-6 md:px-8 bg-white overflow-hidden">
+        <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-20 md:mb-24"
+            className="text-center mb-16 md:mb-20 lg:mb-28"
           >
             <p className="text-sm text-slate-500 uppercase tracking-widest mb-4">See It In Action</p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 tracking-tight text-slate-900">
               A complete workspace in Telegram
             </h2>
-            <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-slate-500 max-w-xl mx-auto px-4">
               From project creation to team analytics, everything you need is accessible right from your chat app.
             </p>
           </motion.div>
 
-          {/* App Screenshots Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16">
+          {/* App Screenshots Grid - 1 col mobile, 2 col tablet, 4 col desktop */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-12 sm:gap-10 md:gap-12 lg:gap-14">
             {[
               { src: "/appui/app-create-project.webp", label: "Create Projects", desc: "Set up new projects with AI assistance" },
               { src: "/appui/app-projects.webp", label: "Manage Tasks", desc: "View and organize all your work" },
@@ -212,14 +212,14 @@ export default function LandingPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.08 }}
                 className="flex flex-col items-center"
               >
-                <div className="mb-8">
+                <div className="mb-6 md:mb-8 w-full max-w-[220px] sm:max-w-[200px] md:max-w-[220px] mx-auto">
                   <PhoneMockup src={item.src} alt={item.label} />
                 </div>
-                <h3 className="font-semibold text-slate-900 text-base mb-2">{item.label}</h3>
-                <p className="text-sm text-slate-500 text-center max-w-[200px]">{item.desc}</p>
+                <h3 className="font-semibold text-slate-900 text-base md:text-lg mb-2">{item.label}</h3>
+                <p className="text-sm text-slate-500 text-center max-w-[220px] leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
