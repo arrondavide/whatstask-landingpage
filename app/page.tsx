@@ -11,25 +11,9 @@ import {
   X,
   ArrowRight,
   ChevronDown,
-  Code2,
-  Tag,
-  Link2,
-  FileText,
-  FileArchive,
-  Image as ImageIcon,
-  FileImage,
-  Scissors,
-  QrCode,
-  Layers,
-  DollarSign,
-  Clock,
   Zap,
-  Users,
   Sparkles,
   Timer,
-  LayoutGrid,
-  Brain,
-  BarChart3,
   Target,
   MessageSquare,
 } from "lucide-react"
@@ -40,7 +24,7 @@ import CustomCursor from "@/components/custom-cursor"
 import Navigation from "@/components/navigation"
 import PageLoader from "@/components/page-loader"
 import Grainient from "@/components/grainient"
-import { InteractiveCard, MagneticButton } from "@/components/interactive-card"
+import { MagneticButton } from "@/components/interactive-card"
 import { BlurText, GradientText } from "@/components/animated-text"
 import { PhoneMockup } from "@/components/phone-mockup"
 import { AnimatedTextCounter } from "@/components/animated-counter"
@@ -285,29 +269,12 @@ export default function LandingPage() {
       </section>
 
       {/* The Problem Section */}
-      <section className="relative py-24 px-4 border-t border-slate-100 overflow-hidden">
-        {/* Subtle floating dots background */}
-        <div className="absolute inset-0 pointer-events-none">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 rounded-full bg-violet-300/30"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                y: [0, -30, 0],
-                opacity: [0.3, 0.6, 0.3],
-              }}
-              transition={{
-                duration: 4 + Math.random() * 4,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
-        </div>
+      <section className="relative py-24 px-4 border-t border-slate-100 overflow-hidden bg-gradient-to-b from-violet-50/50 via-white to-purple-50/30">
+        {/* Decorative blob backgrounds */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" />
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000" />
+        <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-violet-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000" />
+
         <div className="container mx-auto max-w-6xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -316,7 +283,11 @@ export default function LandingPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">The industry got it wrong</h2>
+            <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+              <span className="bg-gradient-to-r from-slate-900 via-purple-900 to-violet-600 bg-clip-text text-transparent">
+                The industry got it wrong
+              </span>
+            </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light">
               ClickUp has 15+ views. Monday needs a consultant. Asana charges enterprise prices for basic AI.
               <br className="hidden md:block" />
@@ -324,7 +295,7 @@ export default function LandingPage() {
             </p>
           </motion.div>
 
-          {/* Comparison Grid - Enhanced Gradient Cards */}
+          {/* Comparison Grid - Dramatic Gradient Cards with Emojis */}
           <motion.div
             className="grid md:grid-cols-3 gap-6 mb-12"
             variants={staggerContainer}
@@ -333,66 +304,117 @@ export default function LandingPage() {
             viewport={{ once: true }}
           >
             {[
-              { label: "ClickUp", stat: "15+", desc: "views to learn", Icon: Layers, gradient: "from-red-500/10 to-orange-500/5", iconBg: "bg-red-100", iconColor: "text-red-500" },
-              { label: "Monday", stat: "$12", desc: "per seat for AI", Icon: DollarSign, gradient: "from-amber-500/10 to-yellow-500/5", iconBg: "bg-amber-100", iconColor: "text-amber-500" },
-              { label: "Asana", stat: "Weeks", desc: "to set up", Icon: Clock, gradient: "from-slate-500/10 to-gray-500/5", iconBg: "bg-slate-100", iconColor: "text-slate-500" },
+              { label: "ClickUp", stat: "15+", desc: "views to learn", emoji: "👥", gradient: "from-purple-500 via-pink-500 to-purple-600" },
+              { label: "Monday", stat: "$12", desc: "per seat for AI", emoji: "💰", gradient: "from-blue-500 via-purple-500 to-pink-500" },
+              { label: "Asana", stat: "Weeks", desc: "to set up", emoji: "⏳", gradient: "from-pink-500 via-purple-500 to-blue-500" },
             ].map((item, index) => (
               <motion.div
                 key={index}
                 variants={fadeInUp}
                 custom={index}
-                whileHover={{ y: -8, scale: 1.02 }}
+                whileHover={{ y: -12, scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className={`relative bg-gradient-to-br ${item.gradient} backdrop-blur-sm rounded-2xl p-8 border border-slate-200/40 text-center shadow-[0_4px_24px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-300 cursor-default overflow-hidden`}
+                className="relative group"
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/40 to-transparent rounded-bl-full pointer-events-none" />
-                <div className={`w-12 h-12 ${item.iconBg} rounded-xl flex items-center justify-center mx-auto mb-4`}>
-                  <item.Icon className={`w-6 h-6 ${item.iconColor}`} />
+                {/* Gradient glow on hover */}
+                <div className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${item.gradient} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500`} />
+
+                <div className="relative bg-white rounded-3xl p-8 border border-slate-200/60 text-center shadow-xl hover:shadow-2xl transition-all duration-300 cursor-default overflow-hidden">
+                  {/* Gradient border effect on hover */}
+                  <div className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${item.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+
+                  {/* Decorative corner gradient */}
+                  <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${item.gradient} opacity-10 rounded-bl-full blur-2xl`} />
+
+                  <div className="relative z-10">
+                    {/* Emoji with glow */}
+                    <div className="relative inline-block mb-4">
+                      <div className={`absolute inset-0 bg-gradient-to-r ${item.gradient} blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-300`} />
+                      <div className="relative text-6xl transform group-hover:scale-110 transition-transform duration-300">
+                        {item.emoji}
+                      </div>
+                    </div>
+
+                    <p className="text-sm text-slate-500 font-medium mb-2">{item.label}</p>
+                    <p className={`text-5xl md:text-6xl font-black mb-2 bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}>
+                      <AnimatedTextCounter target={item.stat} />
+                    </p>
+                    <p className="text-slate-600 font-medium">{item.desc}</p>
+                  </div>
                 </div>
-                <p className="text-sm text-slate-500 font-medium mb-2">{item.label}</p>
-                <p className="text-5xl font-extrabold mb-2 bg-gradient-to-r from-slate-700 to-slate-900 bg-clip-text text-transparent">
-                  <AnimatedTextCounter target={item.stat} />
-                </p>
-                <p className="text-slate-600">{item.desc}</p>
               </motion.div>
             ))}
           </motion.div>
 
-          {/* WhatsTask difference - Enhanced Colorful Cards */}
+          {/* WhatsTask difference - Bento Box Grid with Glassmorphism */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative bg-gradient-to-br from-violet-500/15 to-violet-400/5 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-violet-300/30 shadow-[0_8px_32px_rgba(139,92,246,0.12),inset_0_1px_0_rgba(255,255,255,0.6)] overflow-hidden"
+            className="relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent pointer-events-none" />
+            {/* Background gradient mesh */}
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-100/50 via-transparent to-pink-100/50 rounded-3xl opacity-50" />
+
             <div className="relative z-10">
-              <div className="text-center mb-8">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-violet-500/10 rounded-full text-violet-600 text-sm font-medium mb-4">
+              <div className="text-center mb-10">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  className="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white text-sm font-bold mb-4 shadow-lg"
+                >
                   <Sparkles className="w-4 h-4" />
                   The WhatsTask Way
-                </span>
-                <h3 className="text-2xl md:text-3xl font-bold">Built different. Works better.</h3>
+                </motion.div>
+                <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  Built different. Works better.
+                </h3>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+
+              {/* Bento Grid Layout */}
+              <div className="grid grid-cols-2 md:grid-cols-4 md:grid-rows-2 gap-4 md:gap-5">
                 {[
-                  { stat: "4", desc: "views that matter", Icon: LayoutGrid, gradient: "from-violet-500/20 to-purple-500/10", iconColor: "text-violet-500" },
-                  { stat: "Free", desc: "AI features included", Icon: Brain, gradient: "from-pink-500/20 to-rose-500/10", iconColor: "text-pink-500" },
-                  { stat: "30s", desc: "to get started", Icon: Zap, gradient: "from-amber-500/20 to-yellow-500/10", iconColor: "text-amber-500" },
-                  { stat: "Any", desc: "team size works", Icon: Users, gradient: "from-emerald-500/20 to-green-500/10", iconColor: "text-emerald-500" },
+                  { stat: "4", title: "Simple views", desc: "Core principles that guide everything", emoji: "🎯", gradient: "from-purple-500 to-pink-500", bgGradient: "from-purple-100 to-pink-50", position: "md:col-span-2 md:row-span-2" },
+                  { stat: "Free", title: "Forever free", desc: "No credit card, no surprises", emoji: "💎", gradient: "from-blue-500 to-purple-500", bgGradient: "from-blue-50 to-purple-50", position: "col-span-1 row-span-1" },
+                  { stat: "30s", title: "To get started", desc: "Setup in seconds, not days", emoji: "⚡", gradient: "from-pink-500 to-orange-500", bgGradient: "from-pink-50 to-orange-50", position: "col-span-1 row-span-1" },
+                  { stat: "Any", title: "Team size", desc: "From solo to enterprise", emoji: "🌍", gradient: "from-emerald-500 to-teal-500", bgGradient: "from-emerald-50 to-teal-50", position: "col-span-2 row-span-1" },
                 ].map((item, index) => (
                   <motion.div
                     key={index}
-                    whileHover={{ scale: 1.05, y: -4 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                    className={`relative p-6 rounded-2xl bg-gradient-to-br ${item.gradient} backdrop-blur-sm border border-white/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] hover:shadow-[0_12px_32px_rgba(139,92,246,0.2),inset_0_1px_0_rgba(255,255,255,0.8)] transition-all duration-300 text-center overflow-hidden`}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ scale: 1.03, y: -4 }}
+                    className={`${item.position} group relative`}
                   >
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-white/30 to-transparent rounded-bl-full pointer-events-none" />
-                    <item.Icon className={`w-8 h-8 ${item.iconColor} mx-auto mb-3`} />
-                    <p className="text-3xl md:text-4xl font-extrabold text-slate-800 mb-1">
-                      <AnimatedTextCounter target={item.stat} />
-                    </p>
-                    <p className="text-slate-600 text-sm">{item.desc}</p>
+                    {/* Glassmorphism card */}
+                    <div className={`h-full p-6 md:p-8 rounded-3xl bg-gradient-to-br ${item.bgGradient} backdrop-blur-lg border border-white/30 shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden`}>
+                      {/* Animated gradient overlay on hover */}
+                      <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-3xl`} />
+
+                      <div className="relative z-10">
+                        {/* Emoji with glow */}
+                        <div className="relative inline-block mb-4">
+                          <div className={`absolute inset-0 bg-gradient-to-r ${item.gradient} blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-300`} />
+                          <div className="relative text-5xl md:text-6xl transform group-hover:scale-110 transition-transform duration-300">
+                            {item.emoji}
+                          </div>
+                        </div>
+
+                        {/* Gradient badge */}
+                        <div className={`inline-block px-4 py-2 rounded-full bg-gradient-to-r ${item.gradient} text-white font-bold text-xl md:text-2xl mb-3 shadow-lg`}>
+                          <AnimatedTextCounter target={item.stat} />
+                        </div>
+
+                        <h4 className="text-xl md:text-2xl font-bold text-slate-900 mb-2">{item.title}</h4>
+                        <p className="text-slate-600">{item.desc}</p>
+                      </div>
+
+                      {/* Decorative circles */}
+                      <div className={`absolute -bottom-12 -right-12 w-32 h-32 bg-gradient-to-br ${item.gradient} opacity-20 rounded-full blur-2xl`} />
+                    </div>
                   </motion.div>
                 ))}
               </div>
@@ -402,173 +424,198 @@ export default function LandingPage() {
       </section>
 
       {/* Products Section */}
-      <section id="products" className="relative py-24 px-4 border-t border-slate-100">
-        <div className="container mx-auto max-w-6xl">
+      <section id="products" className="relative py-24 px-4 border-t border-slate-100 overflow-hidden bg-gradient-to-b from-white via-slate-50/50 to-white">
+        {/* Decorative gradient orbs */}
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" />
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '2s' }} />
+
+        <div className="container mx-auto max-w-6xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">Two products. One philosophy.</h2>
+            <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+              <span className="bg-gradient-to-r from-slate-900 to-purple-600 bg-clip-text text-transparent">
+                Two products. One philosophy.
+              </span>
+            </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto font-light">
-              Everything we build follows one rule: if it doesn't help you finish work faster, it doesn't exist.
+              Powerful yet simple. Choose one, use both. No limits.
             </p>
           </motion.div>
 
-          {/* Product Cards - Interactive Liquid Glass */}
+          {/* Product Cards - 3D Gradient Border Effects */}
           <div className="grid md:grid-cols-2 gap-8">
             {/* Project Management */}
-            <InteractiveCard
-              spotlightColor="rgba(139, 92, 246, 0.12)"
-              tiltAmount={5}
-              className="rounded-3xl"
-            >
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                className="relative bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-slate-200/60 shadow-[0_4px_24px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_20px_50px_rgba(139,92,246,0.12),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-500 overflow-hidden group"
-              >
-                {/* Accent bar */}
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-violet-500 to-purple-500 rounded-l-3xl" />
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-                {/* Header with icon */}
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow-lg shadow-violet-500/25">
-                      <LayoutGrid className="w-7 h-7 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold">Project Management</h3>
-                      <p className="text-sm text-slate-500">Telegram Mini App</p>
-                    </div>
-                  </div>
-                  <span className="px-3 py-1 bg-violet-100 text-violet-600 text-xs font-semibold rounded-full">Popular</span>
-                </div>
-
-                <p className="text-slate-600 mb-6 leading-relaxed">
-                  Full-featured project management with AI built-in. Tasks, time tracking, team collaboration. Works
-                  instantly in Telegram or web.
-                </p>
-
-                <div className="space-y-3 mb-8">
-                  {[
-                    "4 views: List, Kanban, Calendar, Timeline",
-                    "Free AI task creation & suggestions",
-                    "Built-in time tracking",
-                    "Team roles & permissions",
-                    "Works for 2 or 2000 people",
-                  ].map((feature, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.05 }}
-                      className="flex items-center gap-3"
-                    >
-                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-violet-100 to-purple-100 flex items-center justify-center">
-                        <Check className="h-4 w-4 text-violet-600 flex-shrink-0" />
-                      </div>
-                      <span className="text-slate-700">{feature}</span>
-                    </motion.div>
-                  ))}
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Button asChild className="bg-gradient-to-r from-violet-500 to-purple-600 text-white hover:from-violet-600 hover:to-purple-700 rounded-full px-6 shadow-lg shadow-violet-500/25 hover:shadow-xl hover:shadow-violet-500/35 transition-all">
-                    <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                      <Send className="h-4 w-4 mr-2" />
-                      Launch in Telegram
-                    </a>
-                  </Button>
-                  <Button asChild variant="outline" className="rounded-full px-6 border-slate-300 hover:bg-white/80 hover:border-slate-400 transition-all">
-                    <Link href="/project-management">Learn More</Link>
-                  </Button>
-                </div>
-              </motion.div>
-            </InteractiveCard>
-
-            {/* GEO Analyzer */}
-            <InteractiveCard
-              spotlightColor="rgba(139, 92, 246, 0.12)"
-              tiltAmount={5}
-              className="rounded-3xl"
-            >
-              <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              whileHover={{ y: -4 }}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              whileHover={{ y: -12 }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              className="relative bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-10 border border-slate-200/60 shadow-[0_4px_24px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_20px_50px_rgba(139,92,246,0.12),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-500 overflow-hidden group"
+              className="group relative"
             >
-              {/* Accent bar */}
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-pink-500 to-violet-500 rounded-l-3xl" />
-              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              {/* Outer glow on hover */}
+              <div className="absolute inset-0 -z-10 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-500 rounded-3xl" />
 
-              <div className="relative z-10">
-                {/* Header with icon */}
-                <div className="flex items-start justify-between mb-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500 to-violet-600 flex items-center justify-center shadow-lg shadow-pink-500/25">
-                      <Brain className="w-7 h-7 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold">GEO Analyzer</h3>
-                      <p className="text-sm text-slate-500">AI Content Optimization</p>
+              {/* Card with gradient border */}
+              <div className="relative p-[2px] rounded-3xl bg-gradient-to-br from-slate-200 to-slate-100 group-hover:from-purple-500 group-hover:to-pink-500 transition-all duration-500">
+                <div className="relative bg-white rounded-3xl p-8 md:p-10 overflow-hidden">
+                  {/* Badge */}
+                  <div className="absolute top-6 right-6 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold tracking-wider shadow-lg flex items-center gap-2">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    MOST POPULAR
+                  </div>
+
+                  {/* Icon container with glow */}
+                  <div className="relative w-20 h-20 mb-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 opacity-20 rounded-3xl blur-2xl group-hover:opacity-40 transition-opacity duration-300" />
+                    <div className="relative w-full h-full bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl flex items-center justify-center text-4xl transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-xl">
+                      📊
                     </div>
                   </div>
-                  <span className="px-3 py-1 bg-gradient-to-r from-pink-100 to-violet-100 text-pink-600 text-xs font-semibold rounded-full">New</span>
-                </div>
 
-                <p className="text-slate-600 mb-6 leading-relaxed">
-                  Generative Engine Optimization. Optimize your content for AI-powered search. Get cited by ChatGPT,
-                  Perplexity, and Google SGE.
-                </p>
+                  <h3 className="text-3xl font-bold text-slate-900 mb-2">Project Management</h3>
+                  <p className="text-xl font-semibold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
+                    The complete task solution
+                  </p>
 
-                <div className="space-y-3 mb-8">
-                  {[
-                    "Analyze content for AI readability",
-                    "Optimize for ChatGPT & Perplexity",
-                    "Track AI search performance",
-                    "Get cited in AI responses",
-                    "3 free analyses per day",
-                  ].map((feature, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.05 }}
-                      className="flex items-center gap-3"
-                    >
-                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-pink-100 to-violet-100 flex items-center justify-center">
-                        <Check className="h-4 w-4 text-pink-600 flex-shrink-0" />
-                      </div>
-                      <span className="text-slate-700">{feature}</span>
-                    </motion.div>
-                  ))}
-                </div>
+                  <p className="text-slate-600 mb-6 leading-relaxed">
+                    Everything you need to manage projects and teams in one beautiful, simple interface.
+                  </p>
 
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Button
-                    asChild
-                    className="bg-gradient-to-r from-pink-500 to-violet-600 text-white hover:from-pink-600 hover:to-violet-700 rounded-full px-6 shadow-lg shadow-pink-500/25 hover:shadow-xl hover:shadow-pink-500/35 transition-all"
-                  >
-                    <a href="https://geoanalyzer.whatstask.com" target="_blank" rel="noopener noreferrer">
-                      <Sparkles className="h-4 w-4 mr-2" />
-                      Launch GEO Analyzer
+                  <div className="space-y-3 mb-8">
+                    {[
+                      "4 views: List, Kanban, Calendar, Timeline",
+                      "Free AI task creation & suggestions",
+                      "Built-in time tracking",
+                      "Team roles & permissions",
+                      "Works for 2 or 2000 people",
+                    ].map((feature, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.05 }}
+                        className="flex items-center gap-3"
+                      >
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
+                          <Check className="h-4 w-4 text-white" />
+                        </div>
+                        <span className="text-slate-700">{feature}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Price */}
+                  <div className="flex items-baseline gap-2 mb-6">
+                    <span className="text-5xl font-black text-slate-900">Free</span>
+                    <span className="text-slate-500">forever</span>
+                  </div>
+
+                  {/* CTA Button */}
+                  <Button asChild className="w-full py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold text-lg shadow-lg hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 rounded-2xl relative overflow-hidden group/btn">
+                    <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
+                      <span className="relative z-10 flex items-center justify-center gap-2">
+                        <Send className="h-5 w-5" />
+                        Try Project Management
+                      </span>
+                      <div className="absolute inset-0 bg-white opacity-0 group-hover/btn:opacity-20 transition-opacity duration-300" />
                     </a>
                   </Button>
-                  <Button asChild variant="outline" className="rounded-full px-6 border-slate-300 hover:bg-white/80 hover:border-slate-400 transition-all">
-                    <Link href="/geoanalyzer">Learn More</Link>
-                  </Button>
+
+                  {/* Decorative gradient corner */}
+                  <div className="absolute -bottom-16 -right-16 w-48 h-48 bg-gradient-to-br from-purple-500 to-pink-500 opacity-5 group-hover:opacity-10 rounded-full blur-3xl transition-opacity duration-500" />
                 </div>
               </div>
             </motion.div>
-            </InteractiveCard>
+
+            {/* GEO Analyzer */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -12 }}
+              transition={{ type: "spring", stiffness: 300, damping: 25, delay: 0.1 }}
+              className="group relative"
+            >
+              {/* Outer glow on hover */}
+              <div className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-600 opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-500 rounded-3xl" />
+
+              {/* Card with gradient border */}
+              <div className="relative p-[2px] rounded-3xl bg-gradient-to-br from-slate-200 to-slate-100 group-hover:from-blue-500 group-hover:to-cyan-500 transition-all duration-500">
+                <div className="relative bg-white rounded-3xl p-8 md:p-10 overflow-hidden">
+                  {/* Badge */}
+                  <div className="absolute top-6 right-6 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-xs font-bold tracking-wider shadow-lg">
+                    NEW
+                  </div>
+
+                  {/* Icon container with glow */}
+                  <div className="relative w-20 h-20 mb-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 opacity-20 rounded-3xl blur-2xl group-hover:opacity-40 transition-opacity duration-300" />
+                    <div className="relative w-full h-full bg-gradient-to-br from-blue-500 to-cyan-500 rounded-3xl flex items-center justify-center text-4xl transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-xl">
+                      🎯
+                    </div>
+                  </div>
+
+                  <h3 className="text-3xl font-bold text-slate-900 mb-2">GEO Analyzer</h3>
+                  <p className="text-xl font-semibold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4">
+                    Goals that actually get done
+                  </p>
+
+                  <p className="text-slate-600 mb-6 leading-relaxed">
+                    Generative Engine Optimization. Optimize your content for AI-powered search. Get cited by ChatGPT, Perplexity, and Google SGE.
+                  </p>
+
+                  <div className="space-y-3 mb-8">
+                    {[
+                      "Analyze content for AI readability",
+                      "Optimize for ChatGPT & Perplexity",
+                      "Track AI search performance",
+                      "Get cited in AI responses",
+                      "3 free analyses per day",
+                    ].map((feature, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.05 }}
+                        className="flex items-center gap-3"
+                      >
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
+                          <Check className="h-4 w-4 text-white" />
+                        </div>
+                        <span className="text-slate-700">{feature}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Price */}
+                  <div className="flex items-baseline gap-2 mb-6">
+                    <span className="text-5xl font-black text-slate-900">Free</span>
+                    <span className="text-slate-500">forever</span>
+                  </div>
+
+                  {/* CTA Button */}
+                  <Button asChild className="w-full py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold text-lg shadow-lg hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 rounded-2xl relative overflow-hidden group/btn">
+                    <a href="https://geoanalyzer.whatstask.com" target="_blank" rel="noopener noreferrer">
+                      <span className="relative z-10 flex items-center justify-center gap-2">
+                        <Sparkles className="h-5 w-5" />
+                        Try GEO Analyzer
+                      </span>
+                      <div className="absolute inset-0 bg-white opacity-0 group-hover/btn:opacity-20 transition-opacity duration-300" />
+                    </a>
+                  </Button>
+
+                  {/* Decorative gradient corner */}
+                  <div className="absolute -bottom-16 -right-16 w-48 h-48 bg-gradient-to-br from-blue-500 to-cyan-500 opacity-5 group-hover:opacity-10 rounded-full blur-3xl transition-opacity duration-500" />
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -687,8 +734,12 @@ export default function LandingPage() {
       </section>
 
       {/* Enterprise Section */}
-      <section className="relative py-24 px-4 border-t border-slate-100 bg-gradient-to-b from-slate-50/80 via-slate-50/40 to-transparent">
-        <div className="container mx-auto max-w-5xl">
+      <section className="relative py-24 px-4 border-t border-slate-100 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
+        {/* Animated gradient background */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" />
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000" />
+
+        <div className="container mx-auto max-w-5xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -697,69 +748,96 @@ export default function LandingPage() {
           >
             <p className="text-sm text-slate-500 mb-6">B2B Custom Solutions</p>
 
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">Need something custom?</h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto font-light mb-8">
-              We build custom project management solutions for teams with specific needs. Same philosophy: simple, fast,
-              no bloat.
+            <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+              <span className="bg-gradient-to-r from-slate-900 to-purple-600 bg-clip-text text-transparent">
+                Need something custom?
+              </span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto font-light mb-12">
+              We offer custom integrations, white-label solutions, and enterprise features
             </p>
 
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               {[
                 {
-                  title: "Custom Development",
-                  subtitle: "Built for your workflow",
-                  desc: "We design and build project management tools tailored exactly to how your team works. No compromises.",
-                  Icon: Code2,
-                  gradient: "from-violet-500 to-purple-600",
-                  shadowColor: "shadow-violet-500/25"
+                  title: "Custom Integrations",
+                  desc: "Connect your existing tools",
+                  emoji: "🔗",
+                  gradient: "from-purple-500 to-pink-500"
                 },
                 {
-                  title: "White-Label",
-                  subtitle: "Your brand, our tech",
-                  desc: "Deploy WhatsTask under your own brand. Full customization, same powerful infrastructure.",
-                  Icon: Tag,
-                  gradient: "from-pink-500 to-rose-600",
-                  shadowColor: "shadow-pink-500/25"
+                  title: "White-label",
+                  desc: "Your brand, our platform",
+                  emoji: "🎨",
+                  gradient: "from-blue-500 to-cyan-500"
                 },
                 {
-                  title: "Integrations",
-                  subtitle: "Connect everything",
-                  desc: "Seamlessly integrate with your existing tools—CRM, ERP, communication platforms, and more.",
-                  Icon: Link2,
-                  gradient: "from-amber-500 to-orange-600",
-                  shadowColor: "shadow-amber-500/25"
+                  title: "Video calls",
+                  desc: "Built-in communication",
+                  emoji: "📹",
+                  gradient: "from-pink-500 to-orange-500"
+                },
+                {
+                  title: "Migration",
+                  desc: "Move from any tool",
+                  emoji: "🚀",
+                  gradient: "from-green-500 to-teal-500"
+                },
+                {
+                  title: "Team training",
+                  desc: "Onboarding support",
+                  emoji: "👥",
+                  gradient: "from-indigo-500 to-purple-500"
+                },
+                {
+                  title: "Unlimited users",
+                  desc: "No per-seat pricing",
+                  emoji: "♾️",
+                  gradient: "from-pink-500 to-rose-500"
                 },
               ].map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={{ y: -8, scale: 1.02 }}
+                  whileHover={{ y: -8, scale: 1.05 }}
                   viewport={{ once: true }}
                   transition={{ type: "spring", stiffness: 300, damping: 20, delay: index * 0.1 }}
-                  className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/60 shadow-[0_4px_16px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_16px_40px_rgba(139,92,246,0.12),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-300 cursor-default overflow-hidden group"
+                  className="relative group"
                 >
-                  {/* Decorative corner gradient */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-violet-500/5 to-transparent rounded-bl-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="relative p-8 rounded-3xl bg-white border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                    {/* Gradient glow on hover */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-3xl`} />
 
-                  {/* Large icon */}
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-5 shadow-lg ${item.shadowColor} group-hover:scale-110 transition-transform duration-300`}>
-                    <item.Icon className="w-8 h-8 text-white" />
+                    {/* Emoji with gradient background */}
+                    <div className="relative mb-6">
+                      <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-300`} />
+                      <div className={`relative w-20 h-20 bg-gradient-to-br ${item.gradient} rounded-2xl flex items-center justify-center text-4xl shadow-xl transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                        {item.emoji}
+                      </div>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
+
+                    {/* Description */}
+                    <p className="text-slate-600">{item.desc}</p>
+
+                    {/* Arrow indicator on hover */}
+                    <div className={`mt-4 flex items-center gap-2 text-sm font-semibold bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
+                      Learn more
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
                   </div>
-
-                  {/* Content */}
-                  <h3 className="text-xl font-bold mb-1">{item.title}</h3>
-                  <p className="text-sm text-violet-600 font-medium mb-3">{item.subtitle}</p>
-                  <p className="text-slate-600 leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-6">
+              <Button asChild className="bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 rounded-full px-8 py-6 shadow-lg hover:shadow-xl transition-all">
                 <Link href="/enterprise">Explore Enterprise</Link>
               </Button>
-              <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
+              <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300 hover:bg-slate-50">
                 <a href="mailto:charlesaarondavid@gmail.com">Contact Us</a>
               </Button>
             </div>
@@ -768,63 +846,74 @@ export default function LandingPage() {
       </section>
 
       {/* Free Tools Section */}
-      <section className="relative py-24 px-4 border-t border-slate-100">
-        <div className="container mx-auto max-w-6xl">
+      <section className="relative py-24 px-4 border-t border-slate-100 overflow-hidden">
+        <div className="container mx-auto max-w-6xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">Free tools that just work</h2>
+            <h2 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+              <span className="bg-gradient-to-r from-slate-900 to-purple-600 bg-clip-text text-transparent">
+                Free tools that just work
+              </span>
+            </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto font-light">
-              No signup. No limits. No catch. Just use them.
+              All features. No limits. Forever free.
             </p>
           </motion.div>
 
-          <motion.div
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
             {[
-              { name: "PDF Merger", href: "/pdf-merger", Icon: FileText, gradient: "from-violet-500 to-purple-600" },
-              { name: "PDF Compressor", href: "/pdf-compressor", Icon: FileArchive, gradient: "from-pink-500 to-rose-600" },
-              { name: "PDF to JPG", href: "/pdf-to-jpg", Icon: ImageIcon, gradient: "from-amber-500 to-orange-600" },
-              { name: "JPG to PDF", href: "/jpg-to-pdf", Icon: FileImage, gradient: "from-emerald-500 to-teal-600" },
-              { name: "PDF Splitter", href: "/pdf-splitter", Icon: Scissors, gradient: "from-blue-500 to-indigo-600" },
-              { name: "QR Code", href: "/qr-code-generator", Icon: QrCode, gradient: "from-fuchsia-500 to-purple-600" },
+              { name: "PDF Merger", href: "/pdf-merger", emoji: "📄", gradient: "from-purple-500 to-pink-500" },
+              { name: "PDF Compressor", href: "/pdf-compressor", emoji: "🗜️", gradient: "from-blue-500 to-cyan-500" },
+              { name: "PDF to JPG", href: "/pdf-to-jpg", emoji: "🖼️", gradient: "from-pink-500 to-orange-500" },
+              { name: "JPG to PDF", href: "/jpg-to-pdf", emoji: "📑", gradient: "from-green-500 to-teal-500" },
+              { name: "PDF Splitter", href: "/pdf-splitter", emoji: "✂️", gradient: "from-indigo-500 to-purple-500" },
+              { name: "QR Code", href: "/qr-code-generator", emoji: "📱", gradient: "from-rose-500 to-pink-500" },
             ].map((tool, index) => (
               <motion.a
                 key={index}
                 href={tool.href}
-                variants={fadeInUp}
-                custom={index}
-                whileHover={{ y: -8, scale: 1.05 }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/60 shadow-[0_2px_12px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)] hover:shadow-[0_12px_32px_rgba(139,92,246,0.15),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-300 text-center group overflow-hidden"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                className="group flex flex-col items-center"
               >
-                {/* Hover background effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-
-                {/* Large gradient icon */}
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${tool.gradient} flex items-center justify-center mb-4 mx-auto shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
-                  <tool.Icon className="w-7 h-7 text-white" />
+                {/* Gradient emoji container */}
+                <div className="relative mb-4">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${tool.gradient} blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-300`} />
+                  <div className={`relative w-24 h-24 bg-gradient-to-br ${tool.gradient} rounded-3xl flex items-center justify-center text-5xl shadow-xl transform group-hover:shadow-2xl transition-all duration-300`}>
+                    {tool.emoji}
+                  </div>
                 </div>
 
-                <span className="text-sm font-semibold text-slate-700 group-hover:text-violet-600 transition-colors relative z-10">{tool.name}</span>
+                {/* Tool name */}
+                <p className="text-sm font-semibold text-slate-700 text-center group-hover:text-purple-600 transition-colors">
+                  {tool.name}
+                </p>
               </motion.a>
             ))}
-          </motion.div>
-
-          <div className="text-center mt-8">
-            <Link href="/tools" className="text-slate-600 hover:text-slate-900 transition-colors inline-flex items-center gap-2">
-              View all tools <ArrowRight className="h-4 w-4" />
-            </Link>
           </div>
+
+          {/* View all link */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <Link
+              href="/tools"
+              className="inline-flex items-center gap-2 text-purple-600 font-semibold hover:gap-4 transition-all duration-300"
+            >
+              View all 30+ integrations
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
