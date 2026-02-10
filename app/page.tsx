@@ -182,8 +182,8 @@ export default function LandingPage() {
       </section>
 
       {/* App Showcase Section */}
-      <section className="relative py-24 md:py-36 lg:py-48 px-6 md:px-8 bg-white overflow-hidden">
-        <div className="container mx-auto max-w-7xl">
+      <section className="relative py-24 md:py-36 lg:py-48 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -194,13 +194,13 @@ export default function LandingPage() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 tracking-tight text-slate-900">
               A complete workspace in Telegram
             </h2>
-            <p className="text-base md:text-lg text-slate-500 max-w-xl mx-auto px-4">
+            <p className="text-base md:text-lg text-slate-500 max-w-xl mx-auto">
               From project creation to team analytics, everything you need is accessible right from your chat app.
             </p>
           </motion.div>
 
-          {/* App Screenshots Grid - 1 col mobile, 2 col tablet, 4 col desktop */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-14 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 justify-items-center mx-auto">
+          {/* App Screenshots - Flexbox for perfect centering */}
+          <div className="flex flex-wrap justify-center gap-10 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20">
             {[
               { src: "/appui/app-create-project.webp", label: "Create Projects", desc: "Set up new projects with AI assistance" },
               { src: "/appui/app-projects.webp", label: "Manage Tasks", desc: "View and organize all your work" },
@@ -213,13 +213,14 @@ export default function LandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
-                className="flex flex-col items-center justify-center text-center w-full max-w-[220px]"
+                className="flex flex-col items-center text-center"
+                style={{ width: '200px' }}
               >
-                <div className="mb-6 md:mb-8 w-[180px] sm:w-[160px] md:w-[180px] lg:w-[200px] mx-auto">
+                <div className="mb-8">
                   <PhoneMockup src={item.src} alt={item.label} />
                 </div>
-                <h3 className="font-semibold text-slate-900 text-base md:text-lg mb-2 w-full">{item.label}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed w-full max-w-[200px] mx-auto">{item.desc}</p>
+                <h3 className="font-semibold text-slate-900 text-base md:text-lg mb-2">{item.label}</h3>
+                <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
