@@ -93,7 +93,7 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
     <div className="grid grid-cols-3 gap-8 p-8">
       {/* Work Management Column */}
       <div>
-        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>Work Management</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-[0.15em] mb-4 ${scrolled ? 'text-neutral-400' : 'text-neutral-500'}`}>Work Management</h3>
         <div className="space-y-1">
           <DropdownLink href="/project-management" title="Project Management" description="Tasks, boards, and timelines" dark={!scrolled} />
           <DropdownLink href="/features" title="All Features" description="Everything Whatstask offers" dark={!scrolled} />
@@ -105,7 +105,7 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
 
       {/* AI Tools Column */}
       <div>
-        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>AI Tools</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-[0.15em] mb-4 ${scrolled ? 'text-neutral-400' : 'text-neutral-500'}`}>AI Tools</h3>
         <div className="space-y-1">
           <DropdownLink href="/project-management#ai" title="AI Task Creation" description="Create tasks with natural language" highlight dark={!scrolled} />
           <DropdownLink href="/geoanalyzer" title="GEO Analyzer" description="AI search optimization tool" highlight dark={!scrolled} />
@@ -121,17 +121,17 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
       </div>
 
       {/* Featured Column */}
-      <div className={`relative rounded-xl p-4 ${scrolled ? 'bg-gradient-to-br from-violet-50/80 to-violet-100/40' : 'bg-slate-800/50 border border-slate-700/50'}`}>
-        <p className={`text-sm font-semibold mb-2 ${scrolled ? 'text-violet-700' : 'text-violet-400'}`}>Try Whatstask Free</p>
-        <p className={`text-sm mb-3 ${scrolled ? 'text-slate-600' : 'text-slate-300'}`}>
-          Get started in 30 seconds. No credit card required. Works right in Telegram.
+      <div className={`relative rounded-2xl p-5 ${scrolled ? 'bg-neutral-50 border border-neutral-100' : 'bg-white/5 border border-white/10'}`}>
+        <p className={`text-sm font-semibold mb-2 ${scrolled ? 'text-neutral-900' : 'text-white'}`}>Try Whatstask Free</p>
+        <p className={`text-sm mb-4 ${scrolled ? 'text-neutral-500' : 'text-neutral-400'}`}>
+          Get started in 30 seconds. No credit card required.
         </p>
-        <Button asChild className="w-full bg-violet-500 hover:bg-violet-600 text-white rounded-full transition-all hover:scale-[1.02]">
+        <Button asChild className="w-full bg-neutral-900 hover:bg-neutral-800 text-white rounded-full transition-all hover:shadow-lg">
           <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
             Launch in Telegram
           </a>
         </Button>
-        <p className={`text-xs mt-3 text-center ${scrolled ? 'text-slate-500' : 'text-slate-400'}`}>Free forever · No credit card</p>
+        <p className={`text-xs mt-3 text-center ${scrolled ? 'text-neutral-400' : 'text-neutral-500'}`}>Free forever · No credit card</p>
       </div>
     </div>
   )
@@ -140,7 +140,7 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
     <div className="grid grid-cols-3 gap-8 p-8">
       {/* By Team Column */}
       <div>
-        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>By Team</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-[0.15em] mb-4 ${scrolled ? 'text-neutral-400' : 'text-neutral-500'}`}>By Team</h3>
         <div className="space-y-1">
           <DropdownLink href="/solutions/marketing" title="Marketing Teams" description="Campaigns, content, launches" dark={!scrolled} />
           <DropdownLink href="/solutions/development" title="Development Teams" description="Sprints, bugs, roadmaps" dark={!scrolled} />
@@ -151,7 +151,7 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
 
       {/* By Company Size Column */}
       <div>
-        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>By Company Size</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-[0.15em] mb-4 ${scrolled ? 'text-neutral-400' : 'text-neutral-500'}`}>By Company Size</h3>
         <div className="space-y-1">
           <DropdownLink href="/use-cases/freelancers" title="Freelancers" description="Solo productivity" dark={!scrolled} />
           <DropdownLink href="/solutions/small-teams" title="Small Teams" description="2-10 people" dark={!scrolled} />
@@ -163,7 +163,7 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
 
       {/* Use Cases Column */}
       <div>
-        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>Use Cases</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-[0.15em] mb-4 ${scrolled ? 'text-neutral-400' : 'text-neutral-500'}`}>Use Cases</h3>
         <div className="space-y-1">
           <DropdownLink href="/how-it-works" title="How It Works" description="See Whatstask in action" dark={!scrolled} />
           <DropdownLink href="/project-management" title="Project Management" description="Plan and execute projects" dark={!scrolled} />
@@ -185,7 +185,7 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
     <div className="grid grid-cols-3 gap-8 p-8">
       {/* Learn Column */}
       <div>
-        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>Learn</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-[0.15em] mb-4 ${scrolled ? 'text-neutral-400' : 'text-neutral-500'}`}>Learn</h3>
         <div className="space-y-1">
           <DropdownLink href="/blog" title="Blog" description="Tips, guides, and updates" dark={!scrolled} />
           <DropdownLink href="/templates" title="Templates" description="Ready-to-use project templates" dark={!scrolled} />
@@ -196,7 +196,7 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
 
       {/* Support Column */}
       <div>
-        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>Support</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-[0.15em] mb-4 ${scrolled ? 'text-neutral-400' : 'text-neutral-500'}`}>Support</h3>
         <div className="space-y-1">
           <DropdownLink href="/help" title="Help Center" description="FAQs and documentation" dark={!scrolled} />
           <DropdownLink href="/contact" title="Contact Support" description="Get help from our team" dark={!scrolled} />
@@ -212,7 +212,7 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
 
       {/* Compare Column */}
       <div>
-        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>Compare</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-[0.15em] mb-4 ${scrolled ? 'text-neutral-400' : 'text-neutral-500'}`}>Compare</h3>
         <div className="space-y-1">
           <DropdownLink href="/compare/clickup" title="vs ClickUp" description="Simpler alternative" dark={!scrolled} />
           <DropdownLink href="/compare/monday" title="vs Monday.com" description="More affordable" dark={!scrolled} />
@@ -229,15 +229,15 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
 
   return (
     <>
-      {/* Desktop Header */}
+      {/* Desktop Header - Premium */}
       <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "backdrop-blur-md bg-white/90 border-b border-slate-200/50 shadow-sm"
-            : "backdrop-blur-[2px] border-b border-white/10"
+            ? "backdrop-blur-xl bg-white/95 border-b border-neutral-200/50 shadow-[0_1px_3px_rgba(0,0,0,0.05)]"
+            : "backdrop-blur-sm border-b border-white/10"
         }`}
         ref={dropdownRef}
       >
@@ -257,7 +257,7 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
                   height={32}
                   className="w-8 h-8 transition-all duration-300"
                 />
-                <span className={`font-bold text-xl tracking-tight transition-colors duration-300 ${scrolled ? "text-slate-900" : "text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]"}`}>Whatstask</span>
+                <span className={`font-bold text-xl tracking-tight transition-colors duration-300 ${scrolled ? "text-neutral-900" : "text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]"}`}>Whatstask</span>
               </Link>
             </motion.div>
 
@@ -273,22 +273,22 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
                   {item.href ? (
                     <Link
                       href={item.href}
-                      className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
+                      className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
                         scrolled
-                          ? "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
-                          : "text-white hover:text-white hover:bg-white/20 [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
+                          ? "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
+                          : "text-white/90 hover:text-white hover:bg-white/10 [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
                       }`}
                     >
                       {item.name}
                     </Link>
                   ) : (
                     <button
-                      className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg relative ${
+                      className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full relative ${
                         activeDropdown === item.name
-                          ? scrolled ? "text-slate-900 bg-slate-100" : "text-white bg-white/30 [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
+                          ? scrolled ? "text-neutral-900 bg-neutral-100" : "text-white bg-white/20 [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
                           : scrolled
-                            ? "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
-                            : "text-white hover:text-white hover:bg-white/20 [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
+                            ? "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
+                            : "text-white/90 hover:text-white hover:bg-white/10 [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
                       }`}
                     >
                       {item.name}
@@ -307,19 +307,19 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
               ))}
             </nav>
 
-            {/* Desktop CTAs */}
+            {/* Desktop CTAs - Premium */}
             <div className="hidden lg:flex items-center gap-3">
               <Link
                 href="/contact"
-                className={`text-sm font-medium transition-all duration-300 px-4 py-2 rounded-lg ${
+                className={`text-sm font-medium transition-all duration-300 px-4 py-2 rounded-full ${
                   scrolled
-                    ? "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
-                    : "text-white hover:text-white hover:bg-white/20 [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
+                    ? "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
+                    : "text-white/90 hover:text-white hover:bg-white/10 [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
                 }`}
               >
                 Contact Sales
               </Link>
-              <Button asChild className="bg-violet-500 hover:bg-violet-600 text-white rounded-full px-6">
+              <Button asChild className="bg-neutral-900 hover:bg-neutral-800 text-white rounded-full px-6 transition-all hover:shadow-lg">
                 <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <span className="font-medium">Start Free</span>
                   <ArrowRight className="h-4 w-4" />
@@ -347,7 +347,7 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
           </div>
         </div>
 
-        {/* Dropdown Menus */}
+        {/* Dropdown Menus - Premium */}
         <AnimatePresence>
           {activeDropdown && (
             <motion.div
@@ -357,8 +357,8 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
               transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
               className={`absolute top-full left-0 right-0 backdrop-blur-2xl ${
                 scrolled
-                  ? 'bg-gradient-to-b from-white via-white/[0.98] to-violet-50/95 shadow-[0_8px_32px_rgba(139,92,246,0.12),0_4px_12px_rgba(0,0,0,0.06)]'
-                  : 'bg-slate-950/95 border-t border-slate-800/50 shadow-[0_8px_32px_rgba(0,0,0,0.3)]'
+                  ? 'bg-white/98 shadow-[0_8px_32px_rgba(0,0,0,0.08)] border-t border-neutral-100'
+                  : 'bg-[#0a0a0a]/98 border-t border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.4)]'
               }`}
               onMouseEnter={() => timeoutRef.current && clearTimeout(timeoutRef.current)}
               onMouseLeave={handleMouseLeave}
@@ -479,14 +479,14 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
                 </MobileNavSection>
               </div>
 
-              {/* Mobile CTAs */}
-              <div className="p-4 border-t border-slate-200 space-y-3">
-                <Button asChild className="w-full bg-violet-500 hover:bg-violet-600 text-white rounded-full py-6">
+              {/* Mobile CTAs - Premium */}
+              <div className="p-4 border-t border-neutral-200 space-y-3">
+                <Button asChild className="w-full bg-neutral-900 hover:bg-neutral-800 text-white rounded-full py-6 transition-all">
                   <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                     Start Free in Telegram
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="w-full rounded-full py-6 border-slate-300">
+                <Button asChild variant="outline" className="w-full rounded-full py-6 border-neutral-300 hover:border-neutral-400 transition-all">
                   <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
                     Contact Sales
                   </Link>
