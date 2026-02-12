@@ -20,7 +20,7 @@ export default function PageLoader() {
     <AnimatePresence>
       {loading && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-white"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0a0a0a]"
           initial={{ opacity: 1 }}
           exit={{
             opacity: 0,
@@ -40,10 +40,10 @@ export default function PageLoader() {
             >
               {/* Glow effect */}
               <motion.div
-                className="absolute inset-0 bg-violet-200 rounded-full blur-xl"
+                className="absolute inset-0 bg-violet-500/30 rounded-full blur-xl"
                 animate={{
                   scale: [1, 1.2, 1],
-                  opacity: [0.5, 1, 0.5],
+                  opacity: [0.3, 0.6, 0.3],
                 }}
                 transition={{
                   duration: 2,
@@ -54,7 +54,7 @@ export default function PageLoader() {
 
               {/* Logo */}
               <motion.div
-                className="absolute inset-0 flex items-center justify-center rounded-full bg-white border border-slate-300"
+                className="absolute inset-0 flex items-center justify-center rounded-full bg-[#0a0a0a] border border-white/10"
                 animate={{
                   rotate: [0, 360],
                 }}
@@ -64,7 +64,7 @@ export default function PageLoader() {
                   repeat: Number.POSITIVE_INFINITY,
                 }}
               >
-                <Image src="/logo-black.png" alt="Whatstask Logo" width={48} height={48} className="w-12 h-12" />
+                <Image src="/logo.png" alt="Whatstask Logo" width={48} height={48} className="w-12 h-12" />
               </motion.div>
             </motion.div>
 
@@ -75,12 +75,12 @@ export default function PageLoader() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
             >
-              <span className="text-slate-900 text-sm font-medium tracking-wider">WHATSTASK</span>
+              <span className="text-white text-sm font-medium tracking-wider">WHATSTASK</span>
             </motion.div>
 
             {/* Loading bar */}
             <motion.div
-              className="w-48 h-[2px] bg-slate-200 mt-4 rounded-full overflow-hidden"
+              className="w-48 h-[2px] bg-white/10 mt-4 rounded-full overflow-hidden"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.5 }}

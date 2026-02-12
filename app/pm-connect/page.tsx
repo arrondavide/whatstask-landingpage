@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import PageLoader from "@/components/page-loader"
 import Navigation from "@/components/navigation"
 import Script from "next/script"
-import { ArrowRight, Check, Globe, Users, Zap, MessageSquare, Camera, Clock, ChevronDown, Settings, Bell, CheckCircle } from "lucide-react"
+import { ArrowRight, Check, Globe, Users, Zap, MessageSquare, Camera, ChevronDown, Settings, Bell, CheckCircle } from "lucide-react"
 import Image from "next/image"
 
 export const metadata: Metadata = {
@@ -39,29 +39,29 @@ export default function PMConnectPage() {
   return (
     <>
       <PageLoader />
-      <Navigation variant="solid" />
-      <div className="min-h-screen bg-white text-slate-900 pt-16">
+      <Navigation variant="dark" />
+      <div className="min-h-screen bg-[#0a0a0a] text-white pt-16">
         <main className="container mx-auto px-4 py-16 max-w-5xl">
           {/* Hero */}
           <section className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-200 bg-blue-50 mb-6">
-              <Globe className="w-4 h-4 text-blue-600" />
-              <span className="text-blue-700 text-sm font-medium">PM Connect</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/30 bg-blue-500/10 mb-6">
+              <Globe className="w-4 h-4 text-blue-400" />
+              <span className="text-blue-400 text-sm font-medium">PM Connect</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-slate-900">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white">
               Don't replace your tools.
               <br />Extend them to Telegram.
             </h1>
-            <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light mb-10">
+            <p className="text-xl text-neutral-400 max-w-2xl mx-auto font-light mb-10">
               Your managers use Monday.com. Your field workers live in Telegram. PM Connect bridges the gap without forcing anyone to switch.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
+              <Button asChild className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6">
                 <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                   Set Up PM Connect
                 </a>
               </Button>
-              <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-slate-300 hover:bg-slate-50">
+              <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20 text-white hover:bg-white/10 bg-transparent">
                 <a href="#how-it-works">See How It Works</a>
               </Button>
             </div>
@@ -70,35 +70,35 @@ export default function PMConnectPage() {
           {/* The Problem */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-blue-600 mb-4">The Problem</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Two worlds that don't connect</h2>
+              <p className="text-xs uppercase tracking-widest text-blue-400 mb-4 font-medium">The Problem</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Two worlds that don't connect</h2>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="border border-slate-200 rounded-2xl p-8 bg-slate-50">
-                <div className="w-12 h-12 rounded-xl bg-slate-200 flex items-center justify-center mb-6">
-                  <Settings className="w-6 h-6 text-slate-600" />
+              <div className="border border-white/10 rounded-2xl p-8 bg-white/5">
+                <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6">
+                  <Settings className="w-6 h-6 text-neutral-400" />
                 </div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-3">Office managers use PM tools</h3>
-                <p className="text-slate-500 leading-relaxed">
+                <h3 className="text-lg font-semibold text-white mb-3">Office managers use PM tools</h3>
+                <p className="text-neutral-400 leading-relaxed">
                   Monday.com, ClickUp, Asana, Trello. Great for planning, tracking, and reporting. But your field workers don't use these tools.
                 </p>
               </div>
 
-              <div className="border border-slate-200 rounded-2xl p-8 bg-slate-50">
-                <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mb-6">
-                  <MessageSquare className="w-6 h-6 text-blue-600" />
+              <div className="border border-white/10 rounded-2xl p-8 bg-white/5">
+                <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-6">
+                  <MessageSquare className="w-6 h-6 text-blue-400" />
                 </div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-3">Field workers live in Telegram</h3>
-                <p className="text-slate-500 leading-relaxed">
+                <h3 className="text-lg font-semibold text-white mb-3">Field workers live in Telegram</h3>
+                <p className="text-neutral-400 leading-relaxed">
                   Technicians, drivers, cleaners, contractors. They're on their phones, in Telegram. They won't download another app.
                 </p>
               </div>
             </div>
 
             <div className="mt-8 text-center">
-              <p className="text-slate-500">
-                <strong className="text-slate-900">The result?</strong> Manual task dispatch. Phone calls. WhatsApp messages. No tracking. No visibility.
+              <p className="text-neutral-500">
+                <strong className="text-white">The result?</strong> Manual task dispatch. Phone calls. WhatsApp messages. No tracking. No visibility.
               </p>
             </div>
           </section>
@@ -106,54 +106,54 @@ export default function PMConnectPage() {
           {/* The Solution */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-blue-600 mb-4">The Solution</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">PM Connect bridges both worlds</h2>
+              <p className="text-xs uppercase tracking-widest text-blue-400 mb-4 font-medium">The Solution</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">PM Connect bridges both worlds</h2>
             </div>
 
-            <div className="border border-blue-200 bg-blue-50 rounded-2xl p-8 md:p-12">
+            <div className="border border-blue-500/30 bg-blue-500/10 rounded-2xl p-8 md:p-12">
               <div className="grid md:grid-cols-3 gap-8 items-center">
                 {/* PM Tool */}
                 <div className="text-center">
-                  <div className="w-16 h-16 rounded-2xl bg-white border border-slate-200 flex items-center justify-center mx-auto mb-4 shadow-sm">
-                    <span className="text-2xl font-bold text-slate-400">PM</span>
+                  <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl font-bold text-neutral-400">PM</span>
                   </div>
-                  <p className="font-semibold text-slate-900">Your PM Tool</p>
-                  <p className="text-sm text-slate-500">Monday, ClickUp, Asana...</p>
+                  <p className="font-semibold text-white">Your PM Tool</p>
+                  <p className="text-sm text-neutral-400">Monday, ClickUp, Asana...</p>
                 </div>
 
                 {/* Arrow */}
                 <div className="flex flex-col items-center">
                   <div className="hidden md:flex items-center gap-2">
-                    <div className="w-20 h-px bg-blue-300" />
+                    <div className="w-20 h-px bg-blue-500/50" />
                     <ArrowRight className="w-5 h-5 text-blue-400" />
                   </div>
                   <div className="md:hidden flex flex-col items-center gap-2">
-                    <div className="h-8 w-px bg-blue-300" />
+                    <div className="h-8 w-px bg-blue-500/50" />
                     <ChevronDown className="w-5 h-5 text-blue-400" />
                   </div>
-                  <div className="w-12 h-12 rounded-full bg-white border-2 border-blue-300 flex items-center justify-center my-2">
+                  <div className="w-12 h-12 rounded-full bg-white/10 border-2 border-blue-500/50 flex items-center justify-center my-2">
                     <Image src="/logo.png" alt="WhatsTask" width={24} height={24} />
                   </div>
-                  <p className="text-xs text-blue-600 font-medium">PM Connect</p>
+                  <p className="text-xs text-blue-400 font-medium">PM Connect</p>
                   <div className="hidden md:flex items-center gap-2 mt-2">
-                    <div className="w-20 h-px bg-blue-300" />
+                    <div className="w-20 h-px bg-blue-500/50" />
                     <ArrowRight className="w-5 h-5 text-blue-400" />
                   </div>
                   <div className="md:hidden flex flex-col items-center gap-2 mt-2">
-                    <div className="h-8 w-px bg-blue-300" />
+                    <div className="h-8 w-px bg-blue-500/50" />
                     <ChevronDown className="w-5 h-5 text-blue-400" />
                   </div>
                 </div>
 
                 {/* Telegram */}
                 <div className="text-center">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-500 flex items-center justify-center mx-auto mb-4 shadow-sm">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-500 flex items-center justify-center mx-auto mb-4">
                     <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
                     </svg>
                   </div>
-                  <p className="font-semibold text-slate-900">Field Workers</p>
-                  <p className="text-sm text-slate-500">Receive, complete, report</p>
+                  <p className="font-semibold text-white">Field Workers</p>
+                  <p className="text-sm text-neutral-400">Receive, complete, report</p>
                 </div>
               </div>
             </div>
@@ -162,45 +162,45 @@ export default function PMConnectPage() {
           {/* How It Works */}
           <section id="how-it-works" className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-blue-600 mb-4">How It Works</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Set up in 5 minutes</h2>
+              <p className="text-xs uppercase tracking-widest text-blue-400 mb-4 font-medium">How It Works</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Set up in 5 minutes</h2>
             </div>
 
             <div className="space-y-8">
               {/* Step 1 */}
-              <div className="border border-slate-200 rounded-2xl p-8">
+              <div className="border border-white/10 rounded-2xl p-8 bg-white/5">
                 <div className="flex items-start gap-6">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold flex-shrink-0">1</div>
+                  <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold flex-shrink-0">1</div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3">Create an integration in WhatsTask</h3>
-                    <p className="text-slate-500 mb-4">
-                      Open WhatsTask in Telegram. Go to <strong>Profile → PM Connect → Create Integration</strong>. Select your PM tool (Monday, ClickUp, Asana, Trello, or Generic).
+                    <h3 className="text-xl font-semibold text-white mb-3">Create an integration in WhatsTask</h3>
+                    <p className="text-neutral-400 mb-4">
+                      Open WhatsTask in Telegram. Go to <strong className="text-white">Profile → PM Connect → Create Integration</strong>. Select your PM tool (Monday, ClickUp, Asana, Trello, or Generic).
                     </p>
-                    <div className="bg-slate-50 rounded-xl p-4">
-                      <p className="text-sm text-slate-600">You'll receive a unique webhook URL like:</p>
-                      <code className="text-sm text-blue-600 block mt-2">https://whatstask.com/api/webhook/int_abc123xyz</code>
+                    <div className="bg-black/50 rounded-xl p-4 border border-white/10">
+                      <p className="text-sm text-neutral-400">You'll receive a unique webhook URL like:</p>
+                      <code className="text-sm text-blue-400 block mt-2">https://whatstask.com/api/webhook/int_abc123xyz</code>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Step 2 */}
-              <div className="border border-slate-200 rounded-2xl p-8">
+              <div className="border border-white/10 rounded-2xl p-8 bg-white/5">
                 <div className="flex items-start gap-6">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold flex-shrink-0">2</div>
+                  <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold flex-shrink-0">2</div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3">Add workers to the integration</h3>
-                    <p className="text-slate-500 mb-4">
-                      Add your field workers by their Telegram ID. Workers need to start the WhatsTask bot first (<strong>@whatstaskbot</strong>) to get their ID.
+                    <h3 className="text-xl font-semibold text-white mb-3">Add workers to the integration</h3>
+                    <p className="text-neutral-400 mb-4">
+                      Add your field workers by their Telegram ID. Workers need to start the WhatsTask bot first (<strong className="text-white">@whatstaskbot</strong>) to get their ID.
                     </p>
                     <div className="grid md:grid-cols-2 gap-4">
-                      <div className="bg-slate-50 rounded-xl p-4">
-                        <p className="text-sm font-medium text-slate-900 mb-1">Worker gets their ID</p>
-                        <p className="text-sm text-slate-500">Send /start to @whatstaskbot → See Telegram ID</p>
+                      <div className="bg-black/50 rounded-xl p-4 border border-white/10">
+                        <p className="text-sm font-medium text-white mb-1">Worker gets their ID</p>
+                        <p className="text-sm text-neutral-500">Send /start to @whatstaskbot → See Telegram ID</p>
                       </div>
-                      <div className="bg-slate-50 rounded-xl p-4">
-                        <p className="text-sm font-medium text-slate-900 mb-1">You add them</p>
-                        <p className="text-sm text-slate-500">PM Connect → Add Worker → Enter their ID</p>
+                      <div className="bg-black/50 rounded-xl p-4 border border-white/10">
+                        <p className="text-sm font-medium text-white mb-1">You add them</p>
+                        <p className="text-sm text-neutral-500">PM Connect → Add Worker → Enter their ID</p>
                       </div>
                     </div>
                   </div>
@@ -208,30 +208,30 @@ export default function PMConnectPage() {
               </div>
 
               {/* Step 3 */}
-              <div className="border border-slate-200 rounded-2xl p-8">
+              <div className="border border-white/10 rounded-2xl p-8 bg-white/5">
                 <div className="flex items-start gap-6">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold flex-shrink-0">3</div>
+                  <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold flex-shrink-0">3</div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3">Configure your PM tool webhook</h3>
-                    <p className="text-slate-500 mb-4">
+                    <h3 className="text-xl font-semibold text-white mb-3">Configure your PM tool webhook</h3>
+                    <p className="text-neutral-400 mb-4">
                       Paste your WhatsTask webhook URL into your PM tool. Each platform has different settings:
                     </p>
                     <div className="grid md:grid-cols-2 gap-4">
-                      <div className="border border-slate-200 rounded-xl p-4">
-                        <p className="font-medium text-slate-900 mb-2">Monday.com</p>
-                        <p className="text-sm text-slate-500">Board → Integrations → Webhooks → Add webhook URL</p>
+                      <div className="border border-white/10 rounded-xl p-4 bg-black/30">
+                        <p className="font-medium text-white mb-2">Monday.com</p>
+                        <p className="text-sm text-neutral-500">Board → Integrations → Webhooks → Add webhook URL</p>
                       </div>
-                      <div className="border border-slate-200 rounded-xl p-4">
-                        <p className="font-medium text-slate-900 mb-2">ClickUp</p>
-                        <p className="text-sm text-slate-500">Space Settings → Webhooks → Create webhook</p>
+                      <div className="border border-white/10 rounded-xl p-4 bg-black/30">
+                        <p className="font-medium text-white mb-2">ClickUp</p>
+                        <p className="text-sm text-neutral-500">Space Settings → Webhooks → Create webhook</p>
                       </div>
-                      <div className="border border-slate-200 rounded-xl p-4">
-                        <p className="font-medium text-slate-900 mb-2">Asana</p>
-                        <p className="text-sm text-slate-500">Project → Apps → Add app → Webhook</p>
+                      <div className="border border-white/10 rounded-xl p-4 bg-black/30">
+                        <p className="font-medium text-white mb-2">Asana</p>
+                        <p className="text-sm text-neutral-500">Project → Apps → Add app → Webhook</p>
                       </div>
-                      <div className="border border-slate-200 rounded-xl p-4">
-                        <p className="font-medium text-slate-900 mb-2">Trello</p>
-                        <p className="text-sm text-slate-500">Power-Ups → Webhooks → Add endpoint</p>
+                      <div className="border border-white/10 rounded-xl p-4 bg-black/30">
+                        <p className="font-medium text-white mb-2">Trello</p>
+                        <p className="text-sm text-neutral-500">Power-Ups → Webhooks → Add endpoint</p>
                       </div>
                     </div>
                   </div>
@@ -239,12 +239,12 @@ export default function PMConnectPage() {
               </div>
 
               {/* Step 4 */}
-              <div className="border border-slate-200 rounded-2xl p-8">
+              <div className="border border-white/10 rounded-2xl p-8 bg-white/5">
                 <div className="flex items-start gap-6">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold flex-shrink-0">4</div>
+                  <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold flex-shrink-0">4</div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3">Tasks flow automatically</h3>
-                    <p className="text-slate-500">
+                    <h3 className="text-xl font-semibold text-white mb-3">Tasks flow automatically</h3>
+                    <p className="text-neutral-400">
                       When a task is created or assigned in your PM tool, the assigned worker receives it instantly in Telegram. They can start, complete, or report problems—all synced back.
                     </p>
                   </div>
@@ -256,35 +256,35 @@ export default function PMConnectPage() {
           {/* Worker Experience */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-blue-600 mb-4">Worker Experience</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">What workers see in Telegram</h2>
+              <p className="text-xs uppercase tracking-widest text-blue-400 mb-4 font-medium">Worker Experience</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">What workers see in Telegram</h2>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
               {/* Task Notification */}
-              <div className="border border-slate-200 rounded-2xl overflow-hidden">
-                <div className="bg-slate-50 px-6 py-4 border-b border-slate-200">
-                  <p className="font-semibold text-slate-900">Task Notification</p>
+              <div className="border border-white/10 rounded-2xl overflow-hidden">
+                <div className="bg-white/5 px-6 py-4 border-b border-white/10">
+                  <p className="font-semibold text-white">Task Notification</p>
                 </div>
                 <div className="p-6">
-                  <div className="bg-blue-50 rounded-xl p-4 mb-4">
-                    <p className="font-semibold text-slate-900 mb-2">🔔 New Task Assigned</p>
-                    <p className="text-slate-700 mb-3"><strong>Fix AC unit at Building A</strong></p>
-                    <p className="text-sm text-slate-500 mb-1">📍 123 Main St, Suite 400</p>
-                    <p className="text-sm text-slate-500 mb-1">📅 Due: Today, 3:00 PM</p>
-                    <p className="text-sm text-slate-500">⚡ Priority: High</p>
+                  <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-4 mb-4">
+                    <p className="font-semibold text-white mb-2">🔔 New Task Assigned</p>
+                    <p className="text-neutral-300 mb-3"><strong>Fix AC unit at Building A</strong></p>
+                    <p className="text-sm text-neutral-400 mb-1">📍 123 Main St, Suite 400</p>
+                    <p className="text-sm text-neutral-400 mb-1">📅 Due: Today, 3:00 PM</p>
+                    <p className="text-sm text-neutral-400">⚡ Priority: High</p>
                   </div>
                   <div className="flex gap-2">
                     <button className="flex-1 bg-green-500 text-white rounded-lg py-2 text-sm font-medium">▶️ Start</button>
-                    <button className="flex-1 bg-slate-200 text-slate-700 rounded-lg py-2 text-sm font-medium">❌ Problem</button>
+                    <button className="flex-1 bg-white/10 text-white rounded-lg py-2 text-sm font-medium">❌ Problem</button>
                   </div>
                 </div>
               </div>
 
               {/* Worker Actions */}
-              <div className="border border-slate-200 rounded-2xl overflow-hidden">
-                <div className="bg-slate-50 px-6 py-4 border-b border-slate-200">
-                  <p className="font-semibold text-slate-900">Worker Actions</p>
+              <div className="border border-white/10 rounded-2xl overflow-hidden">
+                <div className="bg-white/5 px-6 py-4 border-b border-white/10">
+                  <p className="font-semibold text-white">Worker Actions</p>
                 </div>
                 <div className="p-6">
                   <div className="space-y-4">
@@ -296,12 +296,12 @@ export default function PMConnectPage() {
                       { icon: Bell, action: "Report problem", desc: "Tap button or type 'problem'" },
                     ].map((item, index) => (
                       <div key={index} className="flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center">
-                          <item.icon className="w-5 h-5 text-blue-600" />
+                        <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                          <item.icon className="w-5 h-5 text-blue-400" />
                         </div>
                         <div>
-                          <p className="font-medium text-slate-900">{item.action}</p>
-                          <p className="text-sm text-slate-500">{item.desc}</p>
+                          <p className="font-medium text-white">{item.action}</p>
+                          <p className="text-sm text-neutral-500">{item.desc}</p>
                         </div>
                       </div>
                     ))}
@@ -314,16 +314,16 @@ export default function PMConnectPage() {
           {/* What Syncs Back */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-blue-600 mb-4">Two-Way Sync</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Everything syncs back to your PM tool</h2>
+              <p className="text-xs uppercase tracking-widest text-blue-400 mb-4 font-medium">Two-Way Sync</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Everything syncs back to your PM tool</h2>
             </div>
 
-            <div className="border border-slate-200 rounded-2xl overflow-hidden">
+            <div className="border border-white/10 rounded-2xl overflow-hidden">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-slate-200 bg-slate-50">
-                    <th className="text-left p-6 font-semibold text-slate-900">Worker Action</th>
-                    <th className="text-left p-6 font-semibold text-slate-900">What You See in PM Tool</th>
+                  <tr className="border-b border-white/10 bg-white/5">
+                    <th className="text-left p-6 font-semibold text-white">Worker Action</th>
+                    <th className="text-left p-6 font-semibold text-white">What You See in PM Tool</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -334,13 +334,13 @@ export default function PMConnectPage() {
                     { action: "Taps 'Done'", result: "Task marked complete, completion time recorded" },
                     { action: "Reports problem", result: "Task flagged, manager notified, notes attached" },
                   ].map((row, index) => (
-                    <tr key={index} className="border-b border-slate-100 last:border-0">
+                    <tr key={index} className="border-b border-white/5 last:border-0">
                       <td className="p-6">
-                        <span className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
+                        <span className="inline-flex items-center gap-2 bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm font-medium">
                           {row.action}
                         </span>
                       </td>
-                      <td className="p-6 text-slate-600">{row.result}</td>
+                      <td className="p-6 text-neutral-400">{row.result}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -351,8 +351,8 @@ export default function PMConnectPage() {
           {/* Supported Platforms */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-blue-600 mb-4">Supported Platforms</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Works with your tools</h2>
+              <p className="text-xs uppercase tracking-widest text-blue-400 mb-4 font-medium">Supported Platforms</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Works with your tools</h2>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -362,13 +362,13 @@ export default function PMConnectPage() {
                 { name: "Asana", status: "Full support", features: ["Tasks", "Projects", "Assignees", "Due dates"] },
                 { name: "Trello", status: "Full support", features: ["Cards", "Checklists", "Labels", "Due dates"] },
               ].map((platform, index) => (
-                <div key={index} className="border border-slate-200 rounded-2xl p-6 hover:border-blue-300 transition-colors">
-                  <h3 className="text-lg font-semibold text-slate-900 mb-1">{platform.name}</h3>
-                  <p className="text-sm text-green-600 mb-4">{platform.status}</p>
+                <div key={index} className="border border-white/10 rounded-2xl p-6 hover:border-blue-500/30 hover:bg-white/5 transition-colors">
+                  <h3 className="text-lg font-semibold text-white mb-1">{platform.name}</h3>
+                  <p className="text-sm text-green-400 mb-4">{platform.status}</p>
                   <ul className="space-y-2">
                     {platform.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-sm text-slate-600">
-                        <Check className="w-4 h-4 text-green-500" />
+                      <li key={idx} className="flex items-center gap-2 text-sm text-neutral-400">
+                        <Check className="w-4 h-4 text-green-400" />
                         {feature}
                       </li>
                     ))}
@@ -378,9 +378,9 @@ export default function PMConnectPage() {
             </div>
 
             <div className="mt-8 text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-600 text-sm">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 text-neutral-400 text-sm border border-white/10">
                 <span>Don't see your tool?</span>
-                <span className="font-medium text-slate-900">Generic webhook works with any JSON payload</span>
+                <span className="font-medium text-white">Generic webhook works with any JSON payload</span>
               </div>
             </div>
           </section>
@@ -388,8 +388,8 @@ export default function PMConnectPage() {
           {/* Use Cases */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-blue-600 mb-4">Use Cases</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Who uses PM Connect?</h2>
+              <p className="text-xs uppercase tracking-widest text-blue-400 mb-4 font-medium">Use Cases</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Who uses PM Connect?</h2>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -425,10 +425,10 @@ export default function PMConnectPage() {
                   workers: "Freelancers",
                 },
               ].map((useCase, index) => (
-                <div key={index} className="border border-slate-200 rounded-2xl p-6 hover:border-slate-300 transition-colors">
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">{useCase.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-4">{useCase.desc}</p>
-                  <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">
+                <div key={index} className="border border-white/10 rounded-2xl p-6 hover:border-white/20 hover:bg-white/5 transition-colors">
+                  <h3 className="text-lg font-semibold text-white mb-2">{useCase.title}</h3>
+                  <p className="text-neutral-400 text-sm leading-relaxed mb-4">{useCase.desc}</p>
+                  <div className="inline-flex items-center gap-2 bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs font-medium">
                     <Users className="w-3 h-3" />
                     {useCase.workers}
                   </div>
@@ -440,18 +440,18 @@ export default function PMConnectPage() {
           {/* Webhook Payload Examples */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-blue-600 mb-4">Technical Details</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Webhook payload formats</h2>
-              <p className="text-slate-500 mt-4">We auto-parse these formats. Or use the generic format for custom integrations.</p>
+              <p className="text-xs uppercase tracking-widest text-blue-400 mb-4 font-medium">Technical Details</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Webhook payload formats</h2>
+              <p className="text-neutral-400 mt-4">We auto-parse these formats. Or use the generic format for custom integrations.</p>
             </div>
 
             <div className="space-y-6">
               {/* Monday.com */}
-              <div className="border border-slate-200 rounded-2xl overflow-hidden">
-                <div className="px-6 py-4 border-b border-slate-200 bg-slate-50">
-                  <span className="font-semibold text-slate-900">Monday.com</span>
+              <div className="border border-white/10 rounded-2xl overflow-hidden">
+                <div className="px-6 py-4 border-b border-white/10 bg-white/5">
+                  <span className="font-semibold text-white">Monday.com</span>
                 </div>
-                <pre className="p-6 text-sm overflow-x-auto bg-[#1a1a1a]">
+                <pre className="p-6 text-sm overflow-x-auto bg-black">
                   <code className="text-neutral-300">
 {`{
   "event": {
@@ -471,11 +471,11 @@ export default function PMConnectPage() {
               </div>
 
               {/* Generic */}
-              <div className="border border-slate-200 rounded-2xl overflow-hidden">
-                <div className="px-6 py-4 border-b border-slate-200 bg-slate-50">
-                  <span className="font-semibold text-slate-900">Generic (works with any system)</span>
+              <div className="border border-white/10 rounded-2xl overflow-hidden">
+                <div className="px-6 py-4 border-b border-white/10 bg-white/5">
+                  <span className="font-semibold text-white">Generic (works with any system)</span>
                 </div>
-                <pre className="p-6 text-sm overflow-x-auto bg-[#1a1a1a]">
+                <pre className="p-6 text-sm overflow-x-auto bg-black">
                   <code className="text-neutral-300">
 {`{
   "title": "Fix AC unit at Building A",
@@ -494,8 +494,8 @@ export default function PMConnectPage() {
           {/* FAQ */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-blue-600 mb-4">FAQ</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Common questions</h2>
+              <p className="text-xs uppercase tracking-widest text-blue-400 mb-4 font-medium">FAQ</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Common questions</h2>
             </div>
 
             <div className="space-y-4">
@@ -525,9 +525,9 @@ export default function PMConnectPage() {
                   a: "Yes. When workers start, complete, or report problems, the status syncs back to your PM tool instantly.",
                 },
               ].map((item, index) => (
-                <div key={index} className="border border-slate-200 rounded-xl p-6 hover:border-slate-300 transition-colors">
-                  <h3 className="font-semibold text-slate-900 mb-2">{item.q}</h3>
-                  <p className="text-slate-500">{item.a}</p>
+                <div key={index} className="border border-white/10 rounded-xl p-6 hover:border-white/20 hover:bg-white/5 transition-colors">
+                  <h3 className="font-semibold text-white mb-2">{item.q}</h3>
+                  <p className="text-neutral-400">{item.a}</p>
                 </div>
               ))}
             </div>
@@ -535,18 +535,18 @@ export default function PMConnectPage() {
 
           {/* CTA */}
           <section>
-            <div className="border border-blue-200 bg-blue-50 rounded-2xl p-10 md:p-16 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Ready to connect your teams?</h2>
-              <p className="text-slate-600 mb-10 text-lg font-light">
+            <div className="border border-blue-500/30 bg-blue-500/10 rounded-2xl p-10 md:p-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to connect your teams?</h2>
+              <p className="text-neutral-300 mb-10 text-lg font-light">
                 Set up PM Connect in 5 minutes. Bridge your PM tools to Telegram workers.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
+                <Button asChild className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6">
                   <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                     Set Up PM Connect
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-slate-300 hover:bg-white">
+                <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20 text-white hover:bg-white/10 bg-transparent">
                   <a href="mailto:charlesaarondavid@gmail.com">Talk to Sales</a>
                 </Button>
               </div>
@@ -555,8 +555,8 @@ export default function PMConnectPage() {
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-slate-100 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
+        <footer className="border-t border-white/5 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-neutral-500">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

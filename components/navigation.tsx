@@ -27,7 +27,7 @@ const navItems: NavItem[] = [
 ]
 
 interface NavigationProps {
-  variant?: 'default' | 'solid'  // 'solid' always shows black logo/text for non-hero pages
+  variant?: 'default' | 'solid' | 'dark'  // 'solid' for white bg pages, 'dark' for dark bg pages
 }
 
 export default function Navigation({ variant = 'default' }: NavigationProps) {
@@ -36,14 +36,18 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [mobileActiveSection, setMobileActiveSection] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(variant === 'solid')
+  const isDark = variant === 'dark'
   const dropdownRef = useRef<HTMLDivElement>(null)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const { scrollY } = useScroll()
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     // For solid variant, always keep scrolled appearance
+    // For dark variant, never show scrolled (keep dark)
     if (variant === 'solid') {
       setScrolled(true)
+    } else if (variant === 'dark') {
+      setScrolled(false)
     } else {
       setScrolled(latest > 50)
     }
@@ -235,9 +239,11 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "backdrop-blur-xl bg-white/95 border-b border-neutral-200/50 shadow-[0_1px_3px_rgba(0,0,0,0.05)]"
-            : "backdrop-blur-sm border-b border-white/10"
+          isDark
+            ? "backdrop-blur-xl bg-[#0a0a0a]/95 border-b border-white/5"
+            : scrolled
+              ? "backdrop-blur-xl bg-white/95 border-b border-neutral-200/50 shadow-[0_1px_3px_rgba(0,0,0,0.05)]"
+              : "backdrop-blur-sm border-b border-white/10"
         }`}
         ref={dropdownRef}
       >
@@ -251,13 +257,13 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
             >
               <Link href="/" className="flex items-center gap-2">
                 <Image
-                  src={scrolled ? "/logo-black.png" : "/logo.png"}
+                  src={isDark ? "/logo.png" : scrolled ? "/logo-black.png" : "/logo.png"}
                   alt="Whatstask Logo"
                   width={32}
                   height={32}
                   className="w-8 h-8 transition-all duration-300"
                 />
-                <span className={`font-bold text-xl tracking-tight transition-colors duration-300 ${scrolled ? "text-neutral-900" : "text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]"}`}>Whatstask</span>
+                <span className={`font-bold text-xl tracking-tight transition-colors duration-300 ${isDark ? "text-white" : scrolled ? "text-neutral-900" : "text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.3)]"}`}>Whatstask</span>
               </Link>
             </motion.div>
 
@@ -274,9 +280,11 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
                     <Link
                       href={item.href}
                       className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
-                        scrolled
-                          ? "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
-                          : "text-white/90 hover:text-white hover:bg-white/10 [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
+                        isDark
+                          ? "text-white/80 hover:text-white hover:bg-white/10"
+                          : scrolled
+                            ? "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
+                            : "text-white/90 hover:text-white hover:bg-white/10 [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
                       }`}
                     >
                       {item.name}
@@ -285,10 +293,12 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
                     <button
                       className={`flex items-center gap-1 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full relative ${
                         activeDropdown === item.name
-                          ? scrolled ? "text-neutral-900 bg-neutral-100" : "text-white bg-white/20 [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
-                          : scrolled
-                            ? "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
-                            : "text-white/90 hover:text-white hover:bg-white/10 [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
+                          ? isDark ? "text-white bg-white/20" : scrolled ? "text-neutral-900 bg-neutral-100" : "text-white bg-white/20 [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
+                          : isDark
+                            ? "text-white/80 hover:text-white hover:bg-white/10"
+                            : scrolled
+                              ? "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
+                              : "text-white/90 hover:text-white hover:bg-white/10 [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
                       }`}
                     >
                       {item.name}
@@ -312,9 +322,11 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
               <Link
                 href="/contact"
                 className={`text-sm font-medium transition-all duration-300 px-4 py-2 rounded-full ${
-                  scrolled
-                    ? "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
-                    : "text-white/90 hover:text-white hover:bg-white/10 [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
+                  isDark
+                    ? "text-white/80 hover:text-white hover:bg-white/10"
+                    : scrolled
+                      ? "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
+                      : "text-white/90 hover:text-white hover:bg-white/10 [text-shadow:0_1px_2px_rgba(0,0,0,0.2)]"
                 }`}
               >
                 Contact Sales
@@ -356,9 +368,11 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
               className={`absolute top-full left-0 right-0 backdrop-blur-2xl ${
-                scrolled
-                  ? 'bg-white/98 shadow-[0_8px_32px_rgba(0,0,0,0.08)] border-t border-neutral-100'
-                  : 'bg-[#0a0a0a]/98 border-t border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.4)]'
+                isDark
+                  ? 'bg-[#0a0a0a]/98 border-t border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.4)]'
+                  : scrolled
+                    ? 'bg-white/98 shadow-[0_8px_32px_rgba(0,0,0,0.08)] border-t border-neutral-100'
+                    : 'bg-[#0a0a0a]/98 border-t border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.4)]'
               }`}
               onMouseEnter={() => timeoutRef.current && clearTimeout(timeoutRef.current)}
               onMouseLeave={handleMouseLeave}
