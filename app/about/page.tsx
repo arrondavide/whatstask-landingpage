@@ -2,16 +2,15 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
-import PageLoader from "@/components/page-loader"
 import Navigation from "@/components/navigation"
 
 export const metadata: Metadata = {
-  title: "About Whatstask - Simple Scales | Our Mission & Philosophy",
+  title: "About Whatstask - Simple Scales | Our Story",
   description:
-    "Whatstask builds simple work tools for teams of any size. Our philosophy: if it doesn't help you finish work faster, it doesn't exist. Learn about our mission.",
+    "Whatstask bridges PM tools to Telegram workers. Built by a founder who watched field workers struggle with enterprise software. Our philosophy: meet workers where they are.",
   openGraph: {
     title: "About Whatstask - Simple Scales",
-    description: "Work tools for teams who want to work, not manage tools. Our story and philosophy.",
+    description: "We bridge PM tools to Telegram workers. Our story and philosophy.",
     url: "https://www.whatstask.com/about",
     siteName: "Whatstask",
     type: "website",
@@ -28,7 +27,6 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageLoader />
       <Navigation variant="dark" />
       <div className="min-h-screen bg-[#0a0a0a] text-white pt-16">
         <main className="container mx-auto px-4 py-16 max-w-4xl">
@@ -39,57 +37,63 @@ export default function AboutPage() {
               Simple scales.
             </h1>
             <p className="text-xl text-neutral-400 max-w-2xl mx-auto font-light">
-              We build work tools for teams of any size who want to work, not manage tools.
+              We bridge PM tools to workers on Telegram. Because the best software meets people where they already are.
             </p>
           </section>
 
-          {/* The Belief */}
+          {/* The Origin Story */}
           <section className="mb-20">
             <div className="border border-white/10 rounded-2xl p-10 md:p-16 bg-white/5">
-              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Philosophy</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">What we believe</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Origin Story</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Why we built this</h2>
               <div className="space-y-6 text-lg text-neutral-400 leading-relaxed">
                 <p>
-                  The software industry got it wrong. Somewhere along the way, "powerful" became
-                  "impossible to use without training." ClickUp has 15+ views. Monday needs a
-                  consultant to configure. Asana charges enterprise prices for basic AI.
-                </p>
-                <p className="text-white font-medium">
-                  We believe simple scales.
+                  I watched field service companies struggle with a simple problem: their office managers
+                  loved Monday.com, but their technicians wouldn't use it. The technicians weren't being
+                  difficult—they were busy doing actual work, on the road, with their phones.
                 </p>
                 <p>
-                  A 5-person startup and a 500-person enterprise have the same core need: get work done.
-                  They don't need different tools. They need the same tool—one that works.
+                  The solution wasn't to force workers into another app. It was to bring work to
+                  where workers already are: <span className="text-white font-medium">Telegram</span>.
+                </p>
+                <p>
+                  Whatstask started as a simple bridge. PM tools on one side. Telegram workers on the other.
+                  Tasks flow down. Updates sync back. No one has to change how they work.
                 </p>
                 <p className="text-white font-medium">
-                  Simple isn't "less than." Simple is "exactly enough."
+                  The best software doesn't ask people to change. It adapts to them.
                 </p>
               </div>
             </div>
           </section>
 
-          {/* Our Values */}
+          {/* What We Believe */}
           <section className="mb-20">
             <div className="text-center mb-16">
-              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Values</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">What guides us</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Philosophy</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">What we believe</h2>
             </div>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
-                  title: "No Complexity",
+                  title: "Bridge, don't replace",
                   description:
-                    "Every feature earns its place. If it doesn't help you finish work faster, it doesn't exist.",
+                    "Your managers love their PM tools. Don't make them switch. Connect those tools to workers where they already are.",
                 },
                 {
-                  title: "Respect Your Time",
+                  title: "Meet workers where they are",
                   description:
-                    "30-second setup, not 30-day onboarding. Tools should serve you, not the other way around.",
+                    "Field workers live in Telegram. They won't download another app. Bring work to them.",
                 },
                 {
-                  title: "Honest & Accessible",
+                  title: "Simple is powerful",
                   description:
-                    "Core features remain free. No artificial limitations. No dark patterns.",
+                    "One tap to start. One tap to complete. One tap to report a problem. That's all workers need.",
+                },
+                {
+                  title: "Free during early access",
+                  description:
+                    "We're building in public. Use it free while we refine. No credit card, no tricks.",
                 },
               ].map((value, index) => (
                 <div key={index} className="border border-white/10 rounded-2xl p-8 hover:border-white/20 hover:bg-white/5 transition-all duration-300">
@@ -110,27 +114,32 @@ export default function AboutPage() {
               <div className="space-y-6">
                 {[
                   {
-                    title: "Project Management",
-                    description: "Full-featured task management with 4 views, free AI, and built-in time tracking. Works instantly in Telegram or web.",
-                    href: "/project-management",
+                    title: "PM Connect",
+                    description: "Bridge Monday.com, Asana, ClickUp, or Trello to your Telegram workers. Tasks flow to workers, updates sync back. Two-way, automatic.",
+                    href: "/pm-connect",
+                    highlight: true,
                   },
                   {
-                    title: "GEO Analyzer",
-                    description: "Generative Engine Optimization for the future of search. Optimize your content for AI-powered search engines.",
-                    href: "/geoanalyzer",
+                    title: "Developer API",
+                    description: "Send Telegram notifications from any app. 3 lines of code. GitHub, Stripe, CI/CD pipelines—anything with a webhook.",
+                    href: "/developers",
                   },
                   {
-                    title: "Enterprise Solutions",
-                    description: "For teams with specific needs, we build custom project management solutions. Same philosophy: simple, fast, no bloat.",
-                    href: "/enterprise",
+                    title: "Full Workspace",
+                    description: "Don't use another PM tool? Whatstask is a complete workspace inside Telegram. Kanban boards, time tracking, AI tasks, team analytics.",
+                    href: "/workspace",
                   },
                   {
                     title: "Free Tools",
-                    description: "PDF merger, compressor, converter. QR code generator. No signup, no limits, no catch.",
+                    description: "PDF tools, QR generator, GEO analyzer. No signup, no limits. Just free tools that work.",
                     href: "/tools",
                   },
                 ].map((product, index) => (
-                  <div key={index} className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-300">
+                  <div key={index} className={`border rounded-2xl p-8 transition-all duration-300 ${
+                    product.highlight
+                      ? "bg-blue-500/10 border-blue-500/30 hover:border-blue-500/50"
+                      : "bg-white/5 border-white/10 hover:border-white/20 hover:bg-white/[0.07]"
+                  }`}>
                     <h3 className="text-xl font-semibold text-white mb-3">{product.title}</h3>
                     <p className="text-neutral-400 mb-4">{product.description}</p>
                     <Link href={product.href} className="inline-flex items-center gap-2 text-neutral-400 text-sm hover:text-white transition-colors">
@@ -149,14 +158,13 @@ export default function AboutPage() {
               <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Team</p>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Built by a small team</h2>
               <p className="text-lg text-neutral-400 leading-relaxed mb-6">
-                Whatstask is developed by a lean team passionate about productivity tools.
-                We ship fast, listen to feedback, and believe that the best software
-                comes from people who actually use what they build.
+                Whatstask is built by a lean team who believe the best software comes from people who
+                actually use what they build. We ship fast, listen to feedback, and iterate constantly.
               </p>
-              <Link href="/founder" className="inline-flex items-center gap-2 text-neutral-400 text-sm hover:text-white transition-colors">
-                Read about our founder
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+              <p className="text-lg text-neutral-400 leading-relaxed">
+                We're not trying to be the next unicorn. We're trying to solve a real problem for
+                teams who have workers in the field and managers in the office.
+              </p>
             </div>
           </section>
 
@@ -181,18 +189,25 @@ export default function AboutPage() {
 
           {/* CTA */}
           <section>
-            <div className="border border-violet-500/30 bg-violet-500/10 rounded-2xl p-10 md:p-16 text-center">
+            <div className="border border-blue-500/30 bg-blue-500/10 rounded-2xl p-10 md:p-16 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Ready to simplify your work?
+                Ready to connect your team?
               </h2>
               <p className="text-neutral-300 mb-10 text-lg font-light">
-                Join teams who've chosen simplicity over complexity.
+                Bridge your PM tools to Telegram workers. Free during early access.
               </p>
-              <Button asChild className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6 text-lg">
-                <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-                  Start Free
-                </a>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6 text-lg">
+                  <Link href="/pm-connect">
+                    Set Up PM Connect
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20 text-white hover:bg-white/10 bg-transparent">
+                  <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
+                    Try on Telegram
+                  </a>
+                </Button>
+              </div>
             </div>
           </section>
         </main>

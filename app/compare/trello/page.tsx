@@ -7,78 +7,78 @@ import { ArrowRight, ChevronDown } from "lucide-react"
 import Image from "next/image"
 
 export const metadata: Metadata = {
-  title: "ClickUp + Telegram Integration | Connect Field Workers | Whatstask",
+  title: "Trello + Telegram Integration | Connect Field Workers | Whatstask",
   description:
-    "Bridge ClickUp to your Telegram workers. Keep using ClickUp for planning. Let field workers receive and complete tasks in Telegram. Two-way sync.",
+    "Bridge Trello to your Telegram workers. Keep using Trello for planning. Let field workers receive and complete tasks in Telegram. Two-way sync.",
   keywords: [
-    "clickup telegram integration",
-    "clickup telegram",
-    "clickup field workers",
-    "clickup worker app",
-    "clickup dispatch workers",
-    "clickup mobile workers",
+    "trello telegram integration",
+    "trello telegram",
+    "trello field workers",
+    "trello worker app",
+    "trello dispatch workers",
+    "trello mobile workers",
   ],
   openGraph: {
-    title: "ClickUp + Telegram Integration | Whatstask PM Connect",
-    description: "Bridge ClickUp to Telegram workers. Managers keep ClickUp. Workers get tasks in Telegram.",
-    url: "https://www.whatstask.com/compare/clickup",
+    title: "Trello + Telegram Integration | Whatstask PM Connect",
+    description: "Bridge Trello to Telegram workers. Managers keep Trello. Workers get tasks in Telegram.",
+    url: "https://www.whatstask.com/compare/trello",
     siteName: "Whatstask",
     type: "website",
   },
   alternates: {
-    canonical: "https://www.whatstask.com/compare/clickup",
+    canonical: "https://www.whatstask.com/compare/trello",
   },
 }
 
-export default function ClickUpIntegrationPage() {
+export default function TrelloIntegrationPage() {
   const benefits = [
     {
-      title: "Managers stay in ClickUp",
-      description: "No workflow changes. Keep using all those powerful features your team already knows.",
+      title: "Managers stay in Trello",
+      description: "No workflow changes. Keep using the simple boards your team already knows.",
     },
     {
       title: "Workers get tasks in Telegram",
-      description: "Field workers receive tasks instantly. No app to download. No login to remember.",
+      description: "Field workers receive cards instantly. No app to download. No login to remember.",
     },
     {
       title: "Two-way sync",
-      description: "When workers complete tasks in Telegram, ClickUp updates automatically.",
+      description: "When workers complete tasks in Telegram, Trello cards move automatically.",
     },
     {
       title: "Photos & notes sync back",
-      description: "Workers can attach photos and notes. Everything appears in your ClickUp tasks.",
+      description: "Workers can attach photos and notes. Everything appears on your Trello cards.",
     },
   ]
 
   const useCases = [
     {
-      title: "Field Service",
-      description: "Manage service calls in ClickUp's powerful system. Technicians get simple task cards in Telegram.",
-      workers: "HVAC, Plumbing, Electrical",
+      title: "Small Service Teams",
+      description: "Manage jobs on simple Trello boards. Workers get cards in Telegram with all the details.",
+      workers: "Handymen, Repair Services",
     },
     {
-      title: "IT Support",
-      description: "Track tickets in ClickUp. Field technicians receive on-site assignments in Telegram.",
-      workers: "IT Technicians",
+      title: "Cleaning Companies",
+      description: "Schedule cleanings on Trello. Cleaners receive job cards in Telegram automatically.",
+      workers: "Cleaners, Housekeeping",
     },
     {
-      title: "Delivery Operations",
-      description: "Plan routes in ClickUp. Drivers get delivery tasks with addresses in Telegram.",
-      workers: "Drivers, Couriers",
+      title: "Local Delivery",
+      description: "Track deliveries on Trello boards. Drivers get delivery cards with addresses.",
+      workers: "Local Couriers",
     },
     {
-      title: "Facility Management",
-      description: "Coordinate maintenance in ClickUp. Workers receive jobs in Telegram with all details.",
-      workers: "Maintenance Staff",
+      title: "Small Agencies",
+      description: "Manage projects in Trello. Freelancers get task cards in Telegram without board access.",
+      workers: "Freelancers, Contractors",
     },
   ]
 
   const howItWorks = [
-    "Create tasks in ClickUp as usual",
+    "Create cards in Trello as usual",
     "Assign to a worker (mapped to their Telegram ID)",
-    "Worker receives task instantly in Telegram",
+    "Worker receives card instantly in Telegram",
     "Worker taps Start, Complete, or Problem",
-    "Status syncs back to ClickUp",
+    "Card moves to the right column in Trello",
   ]
 
   return (
@@ -92,10 +92,10 @@ export default function ClickUpIntegrationPage() {
               <span className="text-blue-400 text-sm font-medium">PM Connect</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white">
-              ClickUp + Telegram
+              Trello + Telegram
             </h1>
             <p className="text-xl text-neutral-400 max-w-2xl mx-auto font-light mb-10">
-              Keep using ClickUp's powerful features. Connect your field workers through Telegram.
+              Keep using Trello's simple boards. Connect your field workers through Telegram.
               No one has to switch tools.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -115,12 +115,12 @@ export default function ClickUpIntegrationPage() {
           <section className="mb-24">
             <div className="border border-blue-500/30 bg-blue-500/10 rounded-2xl p-8 md:p-12">
               <div className="grid md:grid-cols-3 gap-8 items-center">
-                {/* ClickUp */}
+                {/* Trello */}
                 <div className="text-center">
-                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#7b68ee] to-[#49ccf9] flex items-center justify-center mx-auto mb-4">
-                    <span className="text-3xl font-bold text-white">C</span>
+                  <div className="w-20 h-20 rounded-2xl bg-[#0079bf]/20 border border-[#0079bf]/30 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-3xl font-bold text-[#0079bf]">T</span>
                   </div>
-                  <p className="font-semibold text-white text-lg">ClickUp</p>
+                  <p className="font-semibold text-white text-lg">Trello</p>
                   <p className="text-sm text-neutral-400">Your managers plan here</p>
                 </div>
 
@@ -207,7 +207,7 @@ export default function ClickUpIntegrationPage() {
           <section className="mb-24">
             <div className="text-center mb-12">
               <p className="text-xs uppercase tracking-widest text-blue-400 mb-4">Use Cases</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">Who uses ClickUp + Telegram?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Who uses Trello + Telegram?</h2>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -230,28 +230,28 @@ export default function ClickUpIntegrationPage() {
           <section className="mb-24">
             <div className="text-center mb-12">
               <p className="text-xs uppercase tracking-widest text-blue-400 mb-4">Sync Details</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">What syncs between ClickUp & Telegram</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">What syncs between Trello & Telegram</h2>
             </div>
 
             <div className="border border-white/10 rounded-2xl overflow-hidden">
               <table className="w-full">
                 <thead>
                   <tr className="border-b border-white/10 bg-white/5">
-                    <th className="text-left p-6 font-semibold text-white">From ClickUp</th>
+                    <th className="text-left p-6 font-semibold text-white">From Trello</th>
                     <th className="text-left p-6 font-semibold text-white">Worker sees in Telegram</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    { clickup: "Task name", telegram: "Task notification with title" },
-                    { clickup: "Task description", telegram: "Full details in message" },
-                    { clickup: "Due date", telegram: "Due date with reminder" },
-                    { clickup: "Priority", telegram: "Priority indicator" },
-                    { clickup: "Custom fields", telegram: "Location, notes, etc." },
-                    { clickup: "Assignee", telegram: "Routes to correct worker" },
+                    { trello: "Card title", telegram: "Task notification with title" },
+                    { trello: "Card description", telegram: "Full details in message" },
+                    { trello: "Due date", telegram: "Due date with reminder" },
+                    { trello: "Labels", telegram: "Priority/category indicators" },
+                    { trello: "Checklist items", telegram: "Step-by-step instructions" },
+                    { trello: "Member", telegram: "Routes to correct worker" },
                   ].map((row, index) => (
                     <tr key={index} className="border-b border-white/5 last:border-0">
-                      <td className="p-6 text-neutral-400">{row.clickup}</td>
+                      <td className="p-6 text-neutral-400">{row.trello}</td>
                       <td className="p-6 text-neutral-300">{row.telegram}</td>
                     </tr>
                   ))}
@@ -264,20 +264,20 @@ export default function ClickUpIntegrationPage() {
                 <thead>
                   <tr className="border-b border-white/10 bg-white/5">
                     <th className="text-left p-6 font-semibold text-white">Worker action in Telegram</th>
-                    <th className="text-left p-6 font-semibold text-white">ClickUp update</th>
+                    <th className="text-left p-6 font-semibold text-white">Trello update</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    { telegram: "Taps 'Start'", clickup: "Status → In Progress" },
-                    { telegram: "Sends photo", clickup: "Attachment added to task" },
-                    { telegram: "Types note", clickup: "Comment added to task" },
-                    { telegram: "Taps 'Done'", clickup: "Status → Complete" },
-                    { telegram: "Reports problem", clickup: "Task flagged, comment added" },
+                    { telegram: "Taps 'Start'", trello: "Card moves to 'In Progress'" },
+                    { telegram: "Sends photo", trello: "Attachment added to card" },
+                    { telegram: "Types note", trello: "Comment added to card" },
+                    { telegram: "Taps 'Done'", trello: "Card moves to 'Done'" },
+                    { telegram: "Reports problem", trello: "Card labeled, comment added" },
                   ].map((row, index) => (
                     <tr key={index} className="border-b border-white/5 last:border-0">
                       <td className="p-6 text-neutral-400">{row.telegram}</td>
-                      <td className="p-6 text-neutral-300">{row.clickup}</td>
+                      <td className="p-6 text-neutral-300">{row.trello}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -295,24 +295,24 @@ export default function ClickUpIntegrationPage() {
             <div className="space-y-4">
               {[
                 {
-                  q: "Do I need to change how I use ClickUp?",
-                  a: "No. Keep using ClickUp exactly as you do now. PM Connect just routes tasks to workers in Telegram and syncs updates back.",
+                  q: "Do I need to change how I use Trello?",
+                  a: "No. Keep using Trello exactly as you do now. PM Connect just routes cards to workers in Telegram and syncs updates back.",
                 },
                 {
-                  q: "Do workers need ClickUp licenses?",
-                  a: "No. Workers only need Telegram (free). They never need to log into ClickUp or have a seat.",
+                  q: "Do workers need Trello accounts?",
+                  a: "No. Workers only need Telegram (free). They never need to log into Trello or be board members.",
                 },
                 {
-                  q: "How do I map ClickUp users to Telegram?",
-                  a: "In PM Connect settings, you map each ClickUp assignee to their Telegram ID. Workers get their ID by starting @whatstaskbot.",
+                  q: "How do I map Trello members to Telegram?",
+                  a: "In PM Connect settings, you map each Trello member to their Telegram ID. Workers get their ID by starting @whatstaskbot.",
                 },
                 {
-                  q: "What ClickUp fields are supported?",
-                  a: "Task name, description, status, due date, priority, assignee, and common custom fields. More coming soon.",
+                  q: "What Trello fields are supported?",
+                  a: "Card title, description, due date, labels, checklists, and members. Attachments and comments sync both ways.",
                 },
                 {
-                  q: "Is this official ClickUp integration?",
-                  a: "PM Connect uses ClickUp's webhook API. It's a third-party integration built specifically for field worker use cases.",
+                  q: "Is this official Trello integration?",
+                  a: "PM Connect uses Trello's webhook API. It's a third-party integration built specifically for field worker use cases.",
                 },
               ].map((item, index) => (
                 <div key={index} className="border border-white/10 rounded-xl p-6 hover:border-white/20 hover:bg-white/5 transition-colors">
@@ -327,7 +327,7 @@ export default function ClickUpIntegrationPage() {
           <section>
             <div className="border border-blue-500/30 bg-blue-500/10 rounded-2xl p-10 md:p-16 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Connect ClickUp to your Telegram workers
+                Connect Trello to your Telegram workers
               </h2>
               <p className="text-neutral-300 mb-10 text-lg font-light">
                 Set up in 5 minutes. No workflow changes. Free during early access.
@@ -356,14 +356,14 @@ export default function ClickUpIntegrationPage() {
       </div>
 
       <Script
-        id="schema-clickup-integration"
+        id="schema-trello-integration"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            name: "Whatstask PM Connect for ClickUp",
-            description: "Bridge ClickUp to Telegram workers. Two-way sync for field service teams.",
+            name: "Whatstask PM Connect for Trello",
+            description: "Bridge Trello to Telegram workers. Two-way sync for field service teams.",
             applicationCategory: "BusinessApplication",
             operatingSystem: "Telegram",
             offers: {
