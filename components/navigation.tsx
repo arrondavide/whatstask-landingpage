@@ -367,12 +367,12 @@ export default function Navigation({ variant = 'default' }: NavigationProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
-              className={`absolute top-full left-0 right-0 backdrop-blur-2xl ${
+              className={`absolute top-full left-0 right-0 ${
                 isDark
-                  ? 'bg-[#0a0a0a]/98 border-t border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.4)]'
+                  ? 'bg-[#0a0a0a] border-t border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.4)]'
                   : scrolled
-                    ? 'bg-white/98 shadow-[0_8px_32px_rgba(0,0,0,0.08)] border-t border-neutral-100'
-                    : 'bg-[#0a0a0a]/98 border-t border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.4)]'
+                    ? 'bg-white border-t border-neutral-100 shadow-[0_8px_32px_rgba(0,0,0,0.08)]'
+                    : 'bg-[#0a0a0a] border-t border-white/5 shadow-[0_8px_32px_rgba(0,0,0,0.4)]'
               }`}
               onMouseEnter={() => timeoutRef.current && clearTimeout(timeoutRef.current)}
               onMouseLeave={handleMouseLeave}
