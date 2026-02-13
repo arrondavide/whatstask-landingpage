@@ -9,6 +9,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '', priority: 1.0, changeFrequency: 'weekly' as const },
     { url: '/project-management', priority: 0.9, changeFrequency: 'weekly' as const },
     { url: '/geoanalyzer', priority: 0.9, changeFrequency: 'weekly' as const },
+    { url: '/pm-connect', priority: 0.9, changeFrequency: 'weekly' as const },
+    { url: '/developers', priority: 0.9, changeFrequency: 'weekly' as const },
     { url: '/pricing', priority: 0.8, changeFrequency: 'weekly' as const },
     { url: '/enterprise', priority: 0.8, changeFrequency: 'monthly' as const },
     { url: '/contact', priority: 0.7, changeFrequency: 'monthly' as const },
@@ -78,7 +80,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const otherPages = [
     { url: '/features', priority: 0.6, changeFrequency: 'monthly' as const },
     { url: '/how-it-works', priority: 0.6, changeFrequency: 'monthly' as const },
-    { url: '/founder', priority: 0.5, changeFrequency: 'monthly' as const },
+    { url: '/founder', priority: 0.8, changeFrequency: 'monthly' as const },
     { url: '/consulting', priority: 0.5, changeFrequency: 'monthly' as const },
     { url: '/privacy', priority: 0.3, changeFrequency: 'yearly' as const },
     { url: '/terms', priority: 0.3, changeFrequency: 'yearly' as const },
