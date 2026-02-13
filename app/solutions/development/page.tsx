@@ -118,12 +118,12 @@ export default function DevelopmentSolutionPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-[#0a0a0a] text-white">
       {/* Header */}
-      <header className="border-b border-slate-200">
+      <header className="border-b border-white/10">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
+            <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
             <span className="text-xl font-bold">Whatstask</span>
           </Link>
           <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
@@ -138,11 +138,11 @@ export default function DevelopmentSolutionPage() {
       {/* Hero */}
       <section className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <p className="text-sm text-slate-500 mb-6">For Development Teams</p>
+          <p className="text-sm text-neutral-400 mb-6">For Development Teams</p>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             Ship Faster Without the Overhead
           </h1>
-          <p className="text-xl text-slate-600 leading-relaxed mb-8">
+          <p className="text-xl text-neutral-300 leading-relaxed mb-8">
             You don't need another heavyweight tool. Whatstask gives dev teams sprint planning, bug
             tracking, and collaboration—right in Telegram where you're already working.
           </p>
@@ -152,7 +152,7 @@ export default function DevelopmentSolutionPage() {
                 Start Free on Telegram
               </a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
+            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
               <Link href="/templates">View Dev Templates</Link>
             </Button>
           </div>
@@ -162,17 +162,17 @@ export default function DevelopmentSolutionPage() {
       {/* Features Grid */}
       <section className="container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold text-center mb-4">Everything Dev Teams Need</h2>
-        <p className="text-slate-600 text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-neutral-300 text-center mb-12 max-w-2xl mx-auto">
           Sprint planning, bug tracking, and team coordination without the enterprise bloat.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-violet-500/30 transition-colors"
+              className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-violet-500/30 transition-colors"
             >
               <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-slate-600">{feature.description}</p>
+              <p className="text-neutral-300">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -183,11 +183,11 @@ export default function DevelopmentSolutionPage() {
         <h2 className="text-3xl font-bold text-center mb-12">Development Workflows</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {workflows.map((workflow, index) => (
-            <div key={index} className="bg-slate-50 border border-slate-200 rounded-2xl p-8">
+            <div key={index} className="bg-white/5 border border-white/10 rounded-2xl p-8">
               <h3 className="text-xl font-semibold mb-6">{workflow.title}</h3>
               <ol className="space-y-3 list-decimal list-inside">
                 {workflow.steps.map((step, i) => (
-                  <li key={i} className="text-slate-700 text-sm">{step}</li>
+                  <li key={i} className="text-neutral-300 text-sm">{step}</li>
                 ))}
               </ol>
             </div>
@@ -201,9 +201,9 @@ export default function DevelopmentSolutionPage() {
           <h2 className="text-3xl font-bold text-center mb-12">Why Dev Teams Switch to Whatstask</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {whySwitch.map((item, index) => (
-              <div key={index} className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-                <p className="text-slate-500 line-through mb-2">{item.problem}</p>
-                <p className="text-slate-900 font-medium">{item.solution}</p>
+              <div key={index} className="bg-white/5 rounded-xl p-6 border border-white/10">
+                <p className="text-neutral-400 line-through mb-2">{item.problem}</p>
+                <p className="text-white font-medium">{item.solution}</p>
               </div>
             ))}
           </div>
@@ -214,8 +214,8 @@ export default function DevelopmentSolutionPage() {
       <section className="container mx-auto px-4 py-16">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8">Start a Sprint in Seconds</h2>
-          <div className="bg-gray-900 rounded-2xl p-6 font-mono text-sm border border-slate-200">
-            <div className="flex items-center gap-2 mb-4 text-slate-500">
+          <div className="bg-gray-900 rounded-2xl p-6 font-mono text-sm border border-white/10">
+            <div className="flex items-center gap-2 mb-4 text-neutral-400">
               <span className="w-3 h-3 rounded-full bg-red-500"></span>
               <span className="w-3 h-3 rounded-full bg-yellow-500"></span>
               <span className="w-3 h-3 rounded-full bg-green-500"></span>
@@ -237,7 +237,7 @@ export default function DevelopmentSolutionPage() {
       <section className="container mx-auto px-4 py-16">
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Ship Faster?</h2>
-          <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-neutral-300 mb-8 max-w-2xl mx-auto">
             Join dev teams who've ditched heavyweight tools for Whatstask's simple approach.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -247,7 +247,7 @@ export default function DevelopmentSolutionPage() {
                 Start Free in Telegram
               </a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
+            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
               <Link href="/compare/clickup" className="flex items-center gap-2">
                 Compare to ClickUp
                 <ArrowRight className="h-4 w-4" />
@@ -258,19 +258,19 @@ export default function DevelopmentSolutionPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 py-12">
+      <footer className="border-t border-white/10 py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo-black.png" alt="Whatstask Logo" width={24} height={24} />
+              <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} />
               <span className="font-bold">Whatstask</span>
             </Link>
-            <div className="flex flex-wrap gap-6 text-sm text-slate-600">
-              <Link href="/solutions/marketing" className="hover:text-slate-900 transition-colors">Marketing Teams</Link>
-              <Link href="/solutions/remote" className="hover:text-slate-900 transition-colors">Remote Teams</Link>
-              <Link href="/pricing" className="hover:text-slate-900 transition-colors">Pricing</Link>
+            <div className="flex flex-wrap gap-6 text-sm text-neutral-300">
+              <Link href="/solutions/marketing" className="hover:text-white transition-colors">Marketing Teams</Link>
+              <Link href="/solutions/remote" className="hover:text-white transition-colors">Remote Teams</Link>
+              <Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link>
             </div>
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-neutral-400">
               © {new Date().getFullYear()} Whatstask. All rights reserved.
             </p>
           </div>

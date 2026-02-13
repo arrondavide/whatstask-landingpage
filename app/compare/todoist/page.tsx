@@ -78,37 +78,37 @@ export default function WhatstaskVsTodoistPage() {
   return (
     <>
       <PageLoader />
-      <Navigation variant="solid" />
-      <div className="min-h-screen bg-white text-slate-900 pt-16">
+      <Navigation variant="dark" />
+      <div className="min-h-screen bg-[#0a0a0a] text-white pt-16">
         <main className="container mx-auto px-4 py-16 max-w-5xl">
           {/* Hero */}
           <section className="text-center mb-20">
-            <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Comparison</p>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-slate-900">
+            <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Comparison</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white">
               Whatstask vs Todoist
             </h1>
-            <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light">
+            <p className="text-xl text-neutral-400 max-w-2xl mx-auto font-light">
               Honest comparison between Whatstask (Telegram-based) and Todoist (standalone app). Which is better for your workflow?
             </p>
           </section>
 
           {/* Quick Verdict */}
           <section className="mb-24">
-            <div className="border border-slate-200 rounded-2xl p-10 md:p-12">
+            <div className="border border-white/10 rounded-2xl p-10 md:p-12">
               <div className="text-center mb-10">
-                <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Quick Verdict</p>
+                <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Quick Verdict</p>
               </div>
               <div className="grid md:grid-cols-2 gap-10">
                 <div>
-                  <h3 className="font-semibold text-slate-900 mb-4">Choose Whatstask if:</h3>
-                  <p className="text-slate-500 leading-relaxed">
+                  <h3 className="font-semibold text-white mb-4">Choose Whatstask if:</h3>
+                  <p className="text-neutral-400 leading-relaxed">
                     You live in Telegram and want task management without app switching. It's faster to set up,
                     includes free PDF tools, and has better natural language understanding. Perfect for individuals and small teams.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-500 mb-4">Choose Todoist if:</h3>
-                  <p className="text-slate-500 leading-relaxed">
+                  <h3 className="font-semibold text-neutral-400 mb-4">Choose Todoist if:</h3>
+                  <p className="text-neutral-400 leading-relaxed">
                     You need deep integrations with other productivity tools, advanced project organization,
                     or prefer a dedicated app experience. It's more mature with better analytics and gamification features.
                   </p>
@@ -120,18 +120,18 @@ export default function WhatstaskVsTodoistPage() {
           {/* Key Differences */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Overview</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Key differences</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Overview</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Key differences</h2>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {keyDifferences.map((item, index) => (
                 <div
                   key={index}
-                  className="border border-slate-200 rounded-2xl p-8 hover:border-slate-300 hover:shadow-md transition-all duration-300 text-center"
+                  className="border border-white/10 rounded-2xl p-8 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-300 text-center"
                 >
-                  <h3 className="text-lg font-semibold text-slate-900 mb-4">{item.title}</h3>
-                  <p className="text-slate-500 text-sm mb-2">Todoist: {item.todoist}</p>
-                  <p className="text-slate-900 text-sm font-medium">Whatstask: {item.whatstask}</p>
+                  <h3 className="text-lg font-semibold text-white mb-4">{item.title}</h3>
+                  <p className="text-neutral-400 text-sm mb-2">Todoist: {item.todoist}</p>
+                  <p className="text-white text-sm font-medium">Whatstask: {item.whatstask}</p>
                 </div>
               ))}
             </div>
@@ -140,26 +140,26 @@ export default function WhatstaskVsTodoistPage() {
           {/* Feature Comparison Table */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Details</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Head-to-head comparison</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Details</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Head-to-head comparison</h2>
             </div>
-            <div className="border border-slate-200 rounded-2xl overflow-hidden">
+            <div className="border border-white/10 rounded-2xl overflow-hidden">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-slate-200 bg-slate-50">
-                    <th className="text-left p-6 font-semibold text-slate-900">Feature</th>
-                    <th className="text-center p-6 font-semibold text-slate-900">Whatstask</th>
-                    <th className="text-center p-6 font-medium text-slate-500">Todoist</th>
+                  <tr className="border-b border-white/10 bg-white/5">
+                    <th className="text-left p-6 font-semibold text-white">Feature</th>
+                    <th className="text-center p-6 font-semibold text-white">Whatstask</th>
+                    <th className="text-center p-6 font-medium text-neutral-400">Todoist</th>
                   </tr>
                 </thead>
                 <tbody>
                   {comparison.map((row, index) => (
-                    <tr key={index} className="border-b border-slate-100 last:border-0">
-                      <td className="p-6 text-slate-900">{row.category}</td>
-                      <td className={`p-6 text-center ${row.winner === "whatstask" ? "text-slate-900 font-medium" : "text-slate-500"}`}>
+                    <tr key={index} className="border-b border-white/5 last:border-0">
+                      <td className="p-6 text-white">{row.category}</td>
+                      <td className={`p-6 text-center ${row.winner === "whatstask" ? "text-white font-medium" : "text-neutral-400"}`}>
                         {row.whatstask}
                       </td>
-                      <td className={`p-6 text-center ${row.winner === "todoist" ? "text-slate-900 font-medium" : "text-slate-500"}`}>
+                      <td className={`p-6 text-center ${row.winner === "todoist" ? "text-white font-medium" : "text-neutral-400"}`}>
                         {row.todoist}
                       </td>
                     </tr>
@@ -172,25 +172,25 @@ export default function WhatstaskVsTodoistPage() {
           {/* Real-World Scenarios */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Scenarios</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Real-world scenarios</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Scenarios</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Real-world scenarios</h2>
             </div>
             <div className="space-y-4">
               {scenarios.map((scenario, index) => (
                 <div
                   key={index}
-                  className="border border-slate-200 rounded-xl p-6 hover:border-slate-300 hover:shadow-md transition-all duration-300"
+                  className="border border-white/10 rounded-xl p-6 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-300"
                 >
-                  <h3 className="font-semibold text-slate-900 mb-4">{scenario.title}</h3>
+                  <h3 className="font-semibold text-white mb-4">{scenario.title}</h3>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <p className="text-sm text-slate-500">
-                        <span className={scenario.winner === "whatstask" ? "text-slate-900 font-medium" : ""}>Whatstask:</span> {scenario.whatstask}
+                      <p className="text-sm text-neutral-400">
+                        <span className={scenario.winner === "whatstask" ? "text-white font-medium" : ""}>Whatstask:</span> {scenario.whatstask}
                       </p>
                     </div>
                     <div>
-                      <p className="text-sm text-slate-500">
-                        <span className={scenario.winner === "todoist" ? "text-slate-900 font-medium" : ""}>Todoist:</span> {scenario.todoist}
+                      <p className="text-sm text-neutral-400">
+                        <span className={scenario.winner === "todoist" ? "text-white font-medium" : ""}>Todoist:</span> {scenario.todoist}
                       </p>
                     </div>
                   </div>
@@ -202,12 +202,12 @@ export default function WhatstaskVsTodoistPage() {
           {/* Choose Whatstask / Choose Todoist */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Decision</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Which should you choose?</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Decision</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Which should you choose?</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="border border-slate-200 rounded-2xl p-8 hover:border-slate-300 hover:shadow-md transition-all duration-300">
-                <h3 className="font-semibold text-slate-900 mb-4">Choose Whatstask if:</h3>
+              <div className="border border-white/10 rounded-2xl p-8 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-300">
+                <h3 className="font-semibold text-white mb-4">Choose Whatstask if:</h3>
                 <ul className="space-y-2">
                   {[
                     "You need built-in time tracking for billing clients",
@@ -217,15 +217,15 @@ export default function WhatstaskVsTodoistPage() {
                     "You want zero setup time (no app installation needed)",
                     "You need unlimited team members on the free tier",
                   ].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm text-slate-600">
-                      <div className="w-1 h-1 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                    <li key={idx} className="flex items-start gap-3 text-sm text-neutral-300">
+                      <div className="w-1 h-1 rounded-full bg-neutral-500 mt-2 flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="border border-slate-200 rounded-2xl p-8 hover:border-slate-300 hover:shadow-md transition-all duration-300">
-                <h3 className="font-semibold text-slate-500 mb-4">Choose Todoist if:</h3>
+              <div className="border border-white/10 rounded-2xl p-8 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-300">
+                <h3 className="font-semibold text-neutral-400 mb-4">Choose Todoist if:</h3>
                 <ul className="space-y-2">
                   {[
                     "You need 1000+ app integrations",
@@ -235,8 +235,8 @@ export default function WhatstaskVsTodoistPage() {
                     "You love the Karma points system",
                     "You work in a large team",
                   ].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm text-slate-500">
-                      <div className="w-1 h-1 rounded-full bg-slate-300 mt-2 flex-shrink-0" />
+                    <li key={idx} className="flex items-start gap-3 text-sm text-neutral-400">
+                      <div className="w-1 h-1 rounded-full bg-neutral-600 mt-2 flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -248,16 +248,16 @@ export default function WhatstaskVsTodoistPage() {
           {/* Can I Use Both? */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Compatibility</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Can I use both?</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Compatibility</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Can I use both?</h2>
             </div>
-            <div className="border border-slate-200 rounded-2xl p-10 md:p-12 text-center">
-              <p className="text-slate-500 leading-relaxed text-lg font-light mb-4">
+            <div className="border border-white/10 rounded-2xl p-10 md:p-12 text-center">
+              <p className="text-neutral-400 leading-relaxed text-lg font-light mb-4">
                 Yes! Many users keep Todoist for long-term project planning and use Whatstask for quick daily tasks
                 and Telegram-based workflows.
               </p>
-              <p className="text-slate-500 leading-relaxed font-light">
-                <span className="text-slate-900 font-medium">Pro tip:</span> Start with Whatstask (it's instant to set up). If you find yourself needing
+              <p className="text-neutral-400 leading-relaxed font-light">
+                <span className="text-white font-medium">Pro tip:</span> Start with Whatstask (it's instant to set up). If you find yourself needing
                 more advanced features after a few weeks, add Todoist to your toolkit. There's no lock-in with either platform.
               </p>
             </div>
@@ -265,18 +265,18 @@ export default function WhatstaskVsTodoistPage() {
 
           {/* CTA */}
           <section>
-            <div className="border border-slate-200 rounded-2xl p-10 md:p-16 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Try Whatstask free today</h2>
-              <p className="text-slate-500 mb-10 text-lg font-light">
+            <div className="border border-white/10 rounded-2xl p-10 md:p-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Try Whatstask free today</h2>
+              <p className="text-neutral-400 mb-10 text-lg font-light">
                 Start in 30 seconds. No app download, no signup forms.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
+                <Button asChild className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6">
                   <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                     Start Free
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-slate-300 hover:bg-slate-50">
+                <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-white/20 hover:bg-white/5">
                   <Link href="/project-management">Learn More</Link>
                 </Button>
               </div>
@@ -285,8 +285,8 @@ export default function WhatstaskVsTodoistPage() {
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-slate-100 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
+        <footer className="border-t border-white/5 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-neutral-400">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

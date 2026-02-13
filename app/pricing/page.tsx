@@ -120,16 +120,16 @@ export default function PricingPage() {
   return (
     <>
       <PageLoader />
-      <Navigation variant="solid" />
-      <div className="min-h-screen bg-white text-slate-900 pt-16">
+      <Navigation variant="dark" />
+      <div className="min-h-screen bg-[#0a0a0a] text-white pt-16">
         <main className="container mx-auto px-4 py-16 max-w-5xl">
           {/* Hero */}
           <section className="text-center mb-20">
-            <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Pricing</p>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-slate-900">
+            <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Pricing</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white">
               Simple pricing. No surprises.
             </h1>
-            <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light">
+            <p className="text-xl text-neutral-400 max-w-2xl mx-auto font-light">
               Free forever tier with AI included. No per-seat pricing games.
             </p>
           </section>
@@ -137,7 +137,7 @@ export default function PricingPage() {
           {/* Project Management Pricing */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Project Management</p>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Project Management</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
@@ -146,36 +146,36 @@ export default function PricingPage() {
                   key={index}
                   className={`rounded-2xl p-8 border transition-all duration-300 ${
                     plan.highlight
-                      ? "border-slate-900 bg-white shadow-lg"
-                      : "border-slate-200 bg-white hover:border-slate-300 hover:shadow-md"
+                      ? "border-violet-500/50 bg-violet-500/10"
+                      : "border-white/10 bg-white/5 hover:border-white/20 hover:bg-white/[0.07]"
                   }`}
                 >
                   {plan.highlight && (
-                    <div className="text-xs uppercase tracking-widest text-violet-600 mb-4">Most Popular</div>
+                    <div className="text-xs uppercase tracking-widest text-violet-400 mb-4">Most Popular</div>
                   )}
 
-                  <h3 className="text-xl font-semibold text-slate-900 mb-1">{plan.name}</h3>
+                  <h3 className="text-xl font-semibold text-white mb-1">{plan.name}</h3>
                   <div className="mb-4">
-                    <span className="text-4xl font-light text-slate-900">{plan.price}</span>
+                    <span className="text-4xl font-light text-white">{plan.price}</span>
                     {plan.period !== "contact us" && (
-                      <span className="text-slate-500 ml-2 text-sm">{plan.period}</span>
+                      <span className="text-neutral-500 ml-2 text-sm">{plan.period}</span>
                     )}
                     {plan.period === "contact us" && (
-                      <span className="text-slate-500 ml-2 text-sm">{plan.period}</span>
+                      <span className="text-neutral-500 ml-2 text-sm">{plan.period}</span>
                     )}
                   </div>
-                  <p className="text-sm text-slate-500 mb-8">{plan.description}</p>
+                  <p className="text-sm text-neutral-400 mb-8">{plan.description}</p>
 
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm text-slate-600">
-                        <div className="w-1 h-1 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                      <li key={idx} className="flex items-start gap-3 text-sm text-neutral-300">
+                        <div className="w-1 h-1 rounded-full bg-neutral-500 mt-2 flex-shrink-0" />
                         <span>{feature}</span>
                       </li>
                     ))}
                     {plan.limitations.map((limitation, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm text-slate-400">
-                        <div className="w-1 h-1 rounded-full bg-slate-300 mt-2 flex-shrink-0" />
+                      <li key={idx} className="flex items-start gap-3 text-sm text-neutral-500">
+                        <div className="w-1 h-1 rounded-full bg-neutral-600 mt-2 flex-shrink-0" />
                         <span>{limitation}</span>
                       </li>
                     ))}
@@ -183,10 +183,10 @@ export default function PricingPage() {
 
                   <Button
                     asChild
-                    className={`w-full rounded-lg py-6 ${
+                    className={`w-full rounded-full py-6 ${
                       plan.highlight
-                        ? "bg-slate-900 text-white hover:bg-slate-800"
-                        : "bg-white text-slate-900 border border-slate-300 hover:bg-slate-50"
+                        ? "bg-white text-black hover:bg-neutral-200"
+                        : "bg-white/10 text-white border border-white/20 hover:bg-white/20"
                     }`}
                   >
                     <a
@@ -203,29 +203,29 @@ export default function PricingPage() {
           </section>
 
           {/* GEO Analyzer Pricing */}
-          <section className="mb-24 bg-slate-50 -mx-4 px-4 py-16 md:-mx-8 md:px-8">
+          <section className="mb-24 bg-[#111] -mx-4 px-4 py-16 md:-mx-8 md:px-8 rounded-2xl">
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-12">
-                <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">GEO Analyzer</p>
+                <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">GEO Analyzer</p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 {geoPlans.map((plan, index) => (
-                  <div key={index} className="bg-white border border-slate-200 rounded-2xl p-8 hover:border-slate-300 hover:shadow-md transition-all duration-300">
-                    <h3 className="text-xl font-semibold text-slate-900 mb-1">{plan.name}</h3>
-                    <p className="text-3xl font-light text-slate-900 mb-2">{plan.price}</p>
-                    <p className="text-sm text-slate-500 mb-6">{plan.description}</p>
+                  <div key={index} className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-300">
+                    <h3 className="text-xl font-semibold text-white mb-1">{plan.name}</h3>
+                    <p className="text-3xl font-light text-white mb-2">{plan.price}</p>
+                    <p className="text-sm text-neutral-400 mb-6">{plan.description}</p>
 
                     <ul className="space-y-3 mb-8">
                       {plan.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-sm text-slate-600">
-                          <div className="w-1 h-1 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                        <li key={idx} className="flex items-start gap-3 text-sm text-neutral-300">
+                          <div className="w-1 h-1 rounded-full bg-neutral-500 mt-2 flex-shrink-0" />
                           <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
 
-                    <Button asChild className="w-full rounded-lg py-6 bg-white text-slate-900 border border-slate-300 hover:bg-slate-50">
+                    <Button asChild className="w-full rounded-full py-6 bg-white/10 text-white border border-white/20 hover:bg-white/20">
                       <a
                         href={plan.ctaLink}
                         target={plan.ctaLink.startsWith("http") ? "_blank" : undefined}
@@ -243,29 +243,29 @@ export default function PricingPage() {
           {/* Comparison */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Comparison</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">How we compare</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Comparison</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">How we compare</h2>
             </div>
 
-            <div className="border border-slate-200 rounded-2xl overflow-hidden overflow-x-auto">
+            <div className="border border-white/10 rounded-2xl overflow-hidden overflow-x-auto">
               <table className="w-full min-w-[500px]">
                 <thead>
-                  <tr className="border-b border-slate-200 bg-slate-50">
-                    <th className="text-left p-4 font-semibold text-slate-900">Feature</th>
-                    <th className="text-center p-4 font-semibold text-slate-900">Whatstask</th>
-                    <th className="text-center p-4 font-medium text-slate-500">ClickUp</th>
-                    <th className="text-center p-4 font-medium text-slate-500">Monday</th>
-                    <th className="text-center p-4 font-medium text-slate-500">Asana</th>
+                  <tr className="border-b border-white/10 bg-white/5">
+                    <th className="text-left p-4 font-semibold text-white">Feature</th>
+                    <th className="text-center p-4 font-semibold text-violet-400">Whatstask</th>
+                    <th className="text-center p-4 font-medium text-neutral-500">ClickUp</th>
+                    <th className="text-center p-4 font-medium text-neutral-500">Monday</th>
+                    <th className="text-center p-4 font-medium text-neutral-500">Asana</th>
                   </tr>
                 </thead>
                 <tbody>
                   {comparison.map((row, index) => (
-                    <tr key={index} className="border-b border-slate-100 last:border-0">
-                      <td className="p-4 font-medium text-slate-900">{row.feature}</td>
-                      <td className="p-4 text-center text-slate-900">{row.whatstask}</td>
-                      <td className="p-4 text-center text-slate-500">{row.clickup}</td>
-                      <td className="p-4 text-center text-slate-500">{row.monday}</td>
-                      <td className="p-4 text-center text-slate-500">{row.asana}</td>
+                    <tr key={index} className="border-b border-white/5 last:border-0">
+                      <td className="p-4 font-medium text-neutral-300">{row.feature}</td>
+                      <td className="p-4 text-center text-white">{row.whatstask}</td>
+                      <td className="p-4 text-center text-neutral-500">{row.clickup}</td>
+                      <td className="p-4 text-center text-neutral-500">{row.monday}</td>
+                      <td className="p-4 text-center text-neutral-500">{row.asana}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -273,7 +273,7 @@ export default function PricingPage() {
             </div>
 
             <div className="text-center mt-8">
-              <Link href="/compare/clickup" className="inline-flex items-center gap-2 text-slate-500 text-sm hover:text-slate-900 transition-colors">
+              <Link href="/compare/clickup" className="inline-flex items-center gap-2 text-neutral-400 text-sm hover:text-white transition-colors">
                 See full comparisons
                 <ArrowRight className="h-4 w-4" />
               </Link>
@@ -283,8 +283,8 @@ export default function PricingPage() {
           {/* FAQ */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">FAQ</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Frequently asked</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">FAQ</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Frequently asked</h2>
             </div>
 
             <div className="space-y-4 max-w-3xl mx-auto">
@@ -310,9 +310,9 @@ export default function PricingPage() {
                   a: "Contact us about Enterprise plans. We build custom solutions for teams with specific needs.",
                 },
               ].map((faq, index) => (
-                <div key={index} className="border border-slate-200 rounded-2xl p-6 hover:border-slate-300 transition-all duration-300">
-                  <h3 className="font-semibold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-500">{faq.a}</p>
+                <div key={index} className="border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all duration-300">
+                  <h3 className="font-semibold text-white mb-2">{faq.q}</h3>
+                  <p className="text-neutral-400">{faq.a}</p>
                 </div>
               ))}
             </div>
@@ -320,12 +320,12 @@ export default function PricingPage() {
 
           {/* CTA */}
           <section>
-            <div className="border border-slate-200 rounded-2xl p-10 md:p-16 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Start free today</h2>
-              <p className="text-slate-500 mb-10 text-lg font-light">
+            <div className="border border-violet-500/30 bg-violet-500/10 rounded-2xl p-10 md:p-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Start free today</h2>
+              <p className="text-neutral-300 mb-10 text-lg font-light">
                 No credit card required. No time limits. Just start working.
               </p>
-              <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6 text-lg">
+              <Button asChild className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6 text-lg">
                 <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                   Get Started Free
                 </a>
@@ -334,8 +334,8 @@ export default function PricingPage() {
           </section>
         </main>
 
-        <footer className="border-t border-slate-100 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
+        <footer className="border-t border-white/5 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-neutral-500">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

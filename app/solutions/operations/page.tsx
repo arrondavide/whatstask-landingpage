@@ -95,12 +95,12 @@ export default function OperationsSolutionPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-[#0a0a0a] text-white">
       {/* Header */}
-      <header className="border-b border-slate-200">
+      <header className="border-b border-white/10">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
+            <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
             <span className="text-xl font-bold">Whatstask</span>
           </Link>
           <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
@@ -115,11 +115,11 @@ export default function OperationsSolutionPage() {
       {/* Hero */}
       <section className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <p className="text-sm text-slate-500 mb-6">For Operations Teams</p>
+          <p className="text-sm text-neutral-400 mb-6">For Operations Teams</p>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             Operations Without the Operational Overhead
           </h1>
-          <p className="text-xl text-slate-600 leading-relaxed mb-8">
+          <p className="text-xl text-neutral-300 leading-relaxed mb-8">
             You keep the business running. Your project management shouldn't be another thing to
             manage. Whatstask gives ops teams visibility without complexity.
           </p>
@@ -129,7 +129,7 @@ export default function OperationsSolutionPage() {
                 Start Free on Telegram
               </a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
+            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
               <Link href="/templates">View Ops Templates</Link>
             </Button>
           </div>
@@ -139,17 +139,17 @@ export default function OperationsSolutionPage() {
       {/* Features Grid */}
       <section className="container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold text-center mb-4">Built for Operational Excellence</h2>
-        <p className="text-slate-600 text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-neutral-300 text-center mb-12 max-w-2xl mx-auto">
           From process documentation to resource tracking, Whatstask helps ops teams stay on top of everything.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-violet-500/30 transition-colors"
+              className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-violet-500/30 transition-colors"
             >
               <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-slate-600">{feature.description}</p>
+              <p className="text-neutral-300">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -160,9 +160,9 @@ export default function OperationsSolutionPage() {
         <h2 className="text-3xl font-bold text-center mb-12">Operations Use Cases</h2>
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {useCases.map((useCase, index) => (
-            <div key={index} className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+            <div key={index} className="bg-white/5 border border-white/10 rounded-xl p-6">
               <h3 className="font-semibold mb-2">{useCase.title}</h3>
-              <p className="text-slate-600 text-sm">{useCase.description}</p>
+              <p className="text-neutral-300 text-sm">{useCase.description}</p>
             </div>
           ))}
         </div>
@@ -174,7 +174,7 @@ export default function OperationsSolutionPage() {
           <h2 className="text-3xl font-bold text-center mb-8">Why Ops Teams Choose Whatstask</h2>
           <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {benefits.map((benefit, index) => (
-              <div key={index} className="text-slate-700">• {benefit}</div>
+              <div key={index} className="text-neutral-300">• {benefit}</div>
             ))}
           </div>
         </div>
@@ -184,7 +184,7 @@ export default function OperationsSolutionPage() {
       <section className="container mx-auto px-4 py-16">
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Streamline Operations?</h2>
-          <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-neutral-300 mb-8 max-w-2xl mx-auto">
             Join operations teams who've found a simpler way to stay organized.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -194,7 +194,7 @@ export default function OperationsSolutionPage() {
                 Start Free in Telegram
               </a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
+            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
               <Link href="/pricing" className="flex items-center gap-2">
                 View Pricing
                 <ArrowRight className="h-4 w-4" />
@@ -205,19 +205,19 @@ export default function OperationsSolutionPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 py-12">
+      <footer className="border-t border-white/10 py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo-black.png" alt="Whatstask Logo" width={24} height={24} />
+              <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} />
               <span className="font-bold">Whatstask</span>
             </Link>
-            <div className="flex flex-wrap gap-6 text-sm text-slate-600">
-              <Link href="/solutions/marketing" className="hover:text-slate-900 transition-colors">Marketing Teams</Link>
-              <Link href="/solutions/development" className="hover:text-slate-900 transition-colors">Development Teams</Link>
-              <Link href="/pricing" className="hover:text-slate-900 transition-colors">Pricing</Link>
+            <div className="flex flex-wrap gap-6 text-sm text-neutral-300">
+              <Link href="/solutions/marketing" className="hover:text-white transition-colors">Marketing Teams</Link>
+              <Link href="/solutions/development" className="hover:text-white transition-colors">Development Teams</Link>
+              <Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link>
             </div>
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-neutral-400">
               © {new Date().getFullYear()} Whatstask. All rights reserved.
             </p>
           </div>

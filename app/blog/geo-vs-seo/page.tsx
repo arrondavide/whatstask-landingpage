@@ -144,13 +144,13 @@ export default function GEOvsSEOPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <Navigation variant="solid" />
-      <div className="min-h-screen bg-white text-slate-900 pt-16">
+      <Navigation variant="dark" />
+      <div className="min-h-screen bg-[#0a0a0a] text-white pt-16">
         <main className="container mx-auto px-4 py-12">
           <article className="max-w-3xl mx-auto">
             {/* Article Header */}
             <header className="mb-12">
-              <div className="flex items-center gap-4 text-sm text-slate-600 mb-4">
+              <div className="flex items-center gap-4 text-sm text-neutral-300 mb-4">
                 <span className="bg-violet-500/10 text-violet-400 px-3 py-1 rounded-full">Comparison</span>
                 <span className="flex items-center gap-1">
                   <Clock className="h-4 w-4" />
@@ -162,7 +162,7 @@ export default function GEOvsSEOPage() {
                 GEO vs SEO: What's the Difference?
               </h1>
 
-              <p className="text-xl text-slate-600 leading-relaxed">
+              <p className="text-xl text-neutral-300 leading-relaxed">
                 Generative Engine Optimization (GEO) and Search Engine Optimization (SEO) both aim to increase
                 visibility—but they work in fundamentally different ways. Here's what you need to know.
               </p>
@@ -177,7 +177,7 @@ export default function GEOvsSEOPage() {
                   <Target className="h-5 w-5 text-violet-400" />
                   The Short Answer
                 </h2>
-                <p className="text-slate-700 m-0">
+                <p className="text-neutral-300 m-0">
                   <strong className="text-white">SEO</strong> gets you ranked in a list of search results.
                   <strong className="text-white"> GEO</strong> gets you cited inside AI-generated answers.
                   Both are important—and the best content strategy combines them.
@@ -203,17 +203,17 @@ export default function GEOvsSEOPage() {
               <div className="overflow-x-auto my-8 not-prose">
                 <table className="w-full border-collapse">
                   <thead>
-                    <tr className="border-b border-slate-200">
+                    <tr className="border-b border-white/10">
                       <th className="text-left p-4 font-bold">Aspect</th>
-                      <th className="text-left p-4 font-bold text-slate-600">SEO</th>
+                      <th className="text-left p-4 font-bold text-neutral-300">SEO</th>
                       <th className="text-left p-4 font-bold text-violet-400">GEO</th>
                     </tr>
                   </thead>
                   <tbody>
                     {comparison.map((row, index) => (
-                      <tr key={index} className="border-b border-slate-200">
+                      <tr key={index} className="border-b border-white/10">
                         <td className="p-4 font-medium">{row.aspect}</td>
-                        <td className="p-4 text-slate-600">{row.seo}</td>
+                        <td className="p-4 text-neutral-300">{row.seo}</td>
                         <td className="p-4">{row.geo}</td>
                       </tr>
                     ))}
@@ -278,27 +278,27 @@ export default function GEOvsSEOPage() {
               </p>
 
               <div className="grid md:grid-cols-2 gap-4 my-8 not-prose">
-                <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                   <h4 className="font-bold mb-2">Content Quality</h4>
-                  <p className="text-slate-600 text-sm m-0">
+                  <p className="text-neutral-300 text-sm m-0">
                     Both reward well-written, accurate, valuable content
                   </p>
                 </div>
-                <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                   <h4 className="font-bold mb-2">Authority</h4>
-                  <p className="text-slate-600 text-sm m-0">
+                  <p className="text-neutral-300 text-sm m-0">
                     Expertise and trustworthiness matter for both
                   </p>
                 </div>
-                <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                   <h4 className="font-bold mb-2">User Experience</h4>
-                  <p className="text-slate-600 text-sm m-0">
+                  <p className="text-neutral-300 text-sm m-0">
                     Readable, accessible content performs better in both
                   </p>
                 </div>
-                <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                   <h4 className="font-bold mb-2">Freshness</h4>
-                  <p className="text-slate-600 text-sm m-0">
+                  <p className="text-neutral-300 text-sm m-0">
                     Up-to-date content ranks better and gets cited more
                   </p>
                 </div>
@@ -315,21 +315,21 @@ export default function GEOvsSEOPage() {
                   <span className="bg-violet-500/20 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 text-violet-400 font-bold">1</span>
                   <div>
                     <h4 className="font-bold mb-1">Start with SEO fundamentals</h4>
-                    <p className="text-slate-600 m-0">Technical SEO, site structure, and keyword research still matter</p>
+                    <p className="text-neutral-300 m-0">Technical SEO, site structure, and keyword research still matter</p>
                   </div>
                 </li>
                 <li className="flex gap-4 items-start">
                   <span className="bg-violet-500/20 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 text-violet-400 font-bold">2</span>
                   <div>
                     <h4 className="font-bold mb-1">Layer in GEO principles</h4>
-                    <p className="text-slate-600 m-0">Clear answers, comprehensive coverage, structured data</p>
+                    <p className="text-neutral-300 m-0">Clear answers, comprehensive coverage, structured data</p>
                   </div>
                 </li>
                 <li className="flex gap-4 items-start">
                   <span className="bg-violet-500/20 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 text-violet-400 font-bold">3</span>
                   <div>
                     <h4 className="font-bold mb-1">Measure both</h4>
-                    <p className="text-slate-600 m-0">Track rankings AND citation rates in AI tools</p>
+                    <p className="text-neutral-300 m-0">Track rankings AND citation rates in AI tools</p>
                   </div>
                 </li>
               </ol>
@@ -343,7 +343,7 @@ export default function GEOvsSEOPage() {
 
               <div className="bg-gradient-to-br from-violet-500/10 to-cyan-500/10 rounded-2xl p-8 border border-violet-500/20 my-8 not-prose text-center">
                 <h3 className="text-2xl font-bold mb-4">Analyze Your Content</h3>
-                <p className="text-slate-600 mb-6">
+                <p className="text-neutral-300 mb-6">
                   Get your GEO score and specific improvement recommendations.
                 </p>
                 <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6">
@@ -361,17 +361,17 @@ export default function GEOvsSEOPage() {
                 equally important. The winners will be those who master both.
               </p>
 
-              <div className="bg-slate-50 rounded-xl p-6 border border-slate-200 my-8 not-prose">
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10 my-8 not-prose">
                 <Link href="/geoanalyzer/guide" className="flex items-center justify-between group">
                   <div>
                     <h3 className="font-bold mb-1 group-hover:text-violet-400 transition-colors">
                       Ready to Learn More?
                     </h3>
-                    <p className="text-slate-600 text-sm m-0">
+                    <p className="text-neutral-300 text-sm m-0">
                       Read the complete guide to Generative Engine Optimization
                     </p>
                   </div>
-                  <ArrowRight className="h-5 w-5 text-slate-600 group-hover:text-violet-400 transition-colors" />
+                  <ArrowRight className="h-5 w-5 text-neutral-300 group-hover:text-violet-400 transition-colors" />
                 </Link>
               </div>
 
@@ -382,21 +382,21 @@ export default function GEOvsSEOPage() {
           <section className="max-w-3xl mx-auto mt-16">
             <h2 className="text-xl font-bold mb-6">Related Articles</h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <Link href="/blog/what-is-geo" className="bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-violet-500/30 transition-all group">
+              <Link href="/blog/what-is-geo" className="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-violet-500/30 transition-all group">
                 <h3 className="font-bold mb-2 group-hover:text-violet-400 transition-colors">What is GEO?</h3>
-                <p className="text-slate-600 text-sm">Beginner's introduction to Generative Engine Optimization.</p>
+                <p className="text-neutral-300 text-sm">Beginner's introduction to Generative Engine Optimization.</p>
               </Link>
-              <Link href="/geoanalyzer/guide" className="bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-violet-500/30 transition-all group">
+              <Link href="/geoanalyzer/guide" className="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-violet-500/30 transition-all group">
                 <h3 className="font-bold mb-2 group-hover:text-violet-400 transition-colors">Complete GEO Guide</h3>
-                <p className="text-slate-600 text-sm">Everything you need to know about GEO.</p>
+                <p className="text-neutral-300 text-sm">Everything you need to know about GEO.</p>
               </Link>
             </div>
           </section>
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-slate-100 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
+        <footer className="border-t border-white/5 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-neutral-400">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

@@ -82,23 +82,23 @@ export default function EnterpriseUseCasePage() {
   return (
     <>
       <PageLoader />
-      <Navigation variant="solid" />
-      <div className="min-h-screen bg-white text-slate-900 pt-16">
+      <Navigation variant="dark" />
+      <div className="min-h-screen bg-[#0a0a0a] text-white pt-16">
         <main className="container mx-auto px-4 py-16 max-w-5xl">
           {/* Hero */}
           <section className="text-center mb-20">
-            <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Enterprise Solutions</p>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-slate-900">
+            <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Enterprise Solutions</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white">
               Enterprise-grade. Not enterprise-complex.
             </h1>
-            <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light mb-10">
+            <p className="text-xl text-neutral-400 max-w-2xl mx-auto font-light mb-10">
               Your 500-person company doesn't need 500 features. They need tools that work.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
+              <Button asChild className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6">
                 <a href="mailto:charlesaarondavid@gmail.com">Talk to Sales</a>
               </Button>
-              <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-slate-300 hover:bg-slate-50">
+              <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-white/20 hover:bg-white/5">
                 <Link href="/enterprise">Custom Solutions</Link>
               </Button>
             </div>
@@ -106,10 +106,10 @@ export default function EnterpriseUseCasePage() {
 
           {/* Philosophy */}
           <section className="mb-24">
-            <div className="border border-slate-200 rounded-2xl p-10 md:p-12 text-center">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Philosophy</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our philosophy for enterprise</h2>
-              <p className="text-slate-500 text-lg leading-relaxed max-w-2xl mx-auto">
+            <div className="border border-white/10 rounded-2xl p-10 md:p-12 text-center">
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Philosophy</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our philosophy for enterprise</h2>
+              <p className="text-neutral-400 text-lg leading-relaxed max-w-2xl mx-auto">
                 The software industry sold complexity as a feature. We believe the opposite.
                 Simple scales. Complexity doesn't.
               </p>
@@ -119,17 +119,17 @@ export default function EnterpriseUseCasePage() {
           {/* Capabilities */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Capabilities</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Enterprise capabilities</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Capabilities</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Enterprise capabilities</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               {capabilities.map((cap, index) => (
                 <div
                   key={index}
-                  className="border border-slate-200 rounded-2xl p-8 hover:border-slate-300 hover:shadow-md transition-all duration-300"
+                  className="border border-white/10 rounded-2xl p-8 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-300"
                 >
-                  <h3 className="text-lg font-semibold text-slate-900 mb-3">{cap.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">{cap.description}</p>
+                  <h3 className="text-lg font-semibold text-white mb-3">{cap.title}</h3>
+                  <p className="text-neutral-400 text-sm leading-relaxed">{cap.description}</p>
                 </div>
               ))}
             </div>
@@ -138,16 +138,16 @@ export default function EnterpriseUseCasePage() {
           {/* Features */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Included</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">What enterprise gets</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Included</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">What enterprise gets</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-4">
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-3 text-sm text-slate-600 border border-slate-200 rounded-xl p-4 hover:border-slate-300 transition-all duration-300"
+                  className="flex items-start gap-3 text-sm text-neutral-300 border border-white/10 rounded-xl p-4 hover:border-white/20 transition-all duration-300"
                 >
-                  <div className="w-1 h-1 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                  <div className="w-1 h-1 rounded-full bg-neutral-500 mt-2 flex-shrink-0" />
                   <span>{feature}</span>
                 </div>
               ))}
@@ -157,17 +157,17 @@ export default function EnterpriseUseCasePage() {
           {/* Switch Reasons */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Benefits</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Why enterprises switch to Whatstask</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Benefits</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Why enterprises switch to Whatstask</h2>
             </div>
             <div className="space-y-4">
               {switchReasons.map((item, index) => (
                 <div
                   key={index}
-                  className="border border-slate-200 rounded-xl p-6 hover:border-slate-300 hover:shadow-md transition-all duration-300"
+                  className="border border-white/10 rounded-xl p-6 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-300"
                 >
-                  <h3 className="font-semibold text-slate-900 mb-2">{item.title}</h3>
-                  <p className="text-slate-500 text-sm">{item.description}</p>
+                  <h3 className="font-semibold text-white mb-2">{item.title}</h3>
+                  <p className="text-neutral-400 text-sm">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -175,27 +175,27 @@ export default function EnterpriseUseCasePage() {
 
           {/* CTA */}
           <section>
-            <div className="border border-slate-200 rounded-2xl p-10 md:p-16 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Let's discuss your needs</h2>
-              <p className="text-slate-500 mb-10 text-lg font-light">
+            <div className="border border-white/10 rounded-2xl p-10 md:p-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Let's discuss your needs</h2>
+              <p className="text-neutral-400 mb-10 text-lg font-light">
                 Every enterprise is different. Let's talk about what you need.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-                <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
+                <Button asChild className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6">
                   <a href="mailto:charlesaarondavid@gmail.com">Email Us</a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-slate-300 hover:bg-slate-50">
+                <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-white/20 hover:bg-white/5">
                   <Link href="/contact">Contact Form</Link>
                 </Button>
               </div>
-              <p className="text-sm text-slate-400">charlesaarondavid@gmail.com</p>
+              <p className="text-sm text-neutral-400">charlesaarondavid@gmail.com</p>
             </div>
           </section>
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-slate-100 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
+        <footer className="border-t border-white/5 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-neutral-400">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

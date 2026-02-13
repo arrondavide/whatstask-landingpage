@@ -99,23 +99,23 @@ export default function SecurityPage() {
 
   return (
     <>
-      <Navigation variant="solid" />
-      <div className="min-h-screen bg-white text-slate-900 pt-16">
+      <Navigation variant="dark" />
+      <div className="min-h-screen bg-[#0a0a0a] text-white pt-16">
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <p className="text-sm text-slate-500 mb-6">Security & Trust</p>
+          <p className="text-sm text-neutral-400 mb-6">Security & Trust</p>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             Your Data Security is Our Priority
           </h1>
-          <p className="text-xl text-slate-600 leading-relaxed mb-8">
+          <p className="text-xl text-neutral-300 leading-relaxed mb-8">
             We understand that you're trusting us with your team's work. That's why we've built
             Whatstask with enterprise-grade security from the ground up.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm">
-            <span className="bg-slate-50 rounded-full px-4 py-2">256-bit Encryption</span>
-            <span className="bg-slate-50 rounded-full px-4 py-2">GDPR Compliant</span>
-            <span className="bg-slate-50 rounded-full px-4 py-2">99.9% Uptime</span>
+            <span className="bg-white/5 rounded-full px-4 py-2">256-bit Encryption</span>
+            <span className="bg-white/5 rounded-full px-4 py-2">GDPR Compliant</span>
+            <span className="bg-white/5 rounded-full px-4 py-2">99.9% Uptime</span>
           </div>
         </div>
       </section>
@@ -123,17 +123,17 @@ export default function SecurityPage() {
       {/* Security Features Grid */}
       <section className="container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold text-center mb-4">How We Protect Your Data</h2>
-        <p className="text-slate-600 text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-neutral-300 text-center mb-12 max-w-2xl mx-auto">
           Security isn't an afterthought—it's built into every layer of Whatstask.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {securityFeatures.map((feature, index) => (
             <div
               key={index}
-              className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-violet-500/30 transition-colors"
+              className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-violet-500/30 transition-colors"
             >
               <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-slate-600 leading-relaxed">{feature.description}</p>
+              <p className="text-neutral-300 leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -144,11 +144,11 @@ export default function SecurityPage() {
         <div className="bg-gradient-to-br from-violet-500/10 to-transparent border border-violet-500/20 rounded-3xl p-8 md:p-12">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-slate-500 text-sm mb-4">Telegram Integration Security</p>
+              <p className="text-neutral-400 text-sm mb-4">Telegram Integration Security</p>
               <h2 className="text-3xl font-bold mb-4">
                 Secure by Design with Telegram
               </h2>
-              <p className="text-slate-600 leading-relaxed mb-6">
+              <p className="text-neutral-300 leading-relaxed mb-6">
                 Whatstask leverages Telegram's robust security infrastructure, including their
                 MTProto encryption protocol. We only access the minimum permissions needed to
                 provide our service.
@@ -160,28 +160,28 @@ export default function SecurityPage() {
                   "You control exactly what data to share",
                   "Revoke access anytime from Telegram settings",
                 ].map((item, index) => (
-                  <li key={index} className="text-slate-700">• {item}</li>
+                  <li key={index} className="text-neutral-300">• {item}</li>
                 ))}
               </ul>
             </div>
-            <div className="bg-slate-100 rounded-2xl p-8 border border-slate-200">
+            <div className="bg-white/10 rounded-2xl p-8 border border-white/10">
               <h3 className="text-xl font-semibold mb-6">Telegram Bot Permissions</h3>
               <div className="space-y-4">
                 <div>
                   <p className="font-medium">✓ Send messages</p>
-                  <p className="text-sm text-slate-500">To deliver task notifications</p>
+                  <p className="text-sm text-neutral-400">To deliver task notifications</p>
                 </div>
                 <div>
                   <p className="font-medium">✓ Receive messages</p>
-                  <p className="text-sm text-slate-500">To process your commands</p>
+                  <p className="text-sm text-neutral-400">To process your commands</p>
                 </div>
                 <div className="opacity-50">
                   <p className="font-medium line-through">✗ Read private chats</p>
-                  <p className="text-sm text-slate-500">Never requested</p>
+                  <p className="text-sm text-neutral-400">Never requested</p>
                 </div>
                 <div className="opacity-50">
                   <p className="font-medium line-through">✗ Access contacts</p>
-                  <p className="text-sm text-slate-500">Never requested</p>
+                  <p className="text-sm text-neutral-400">Never requested</p>
                 </div>
               </div>
             </div>
@@ -192,17 +192,17 @@ export default function SecurityPage() {
       {/* Compliance Section */}
       <section className="container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold text-center mb-4">Compliance & Data Rights</h2>
-        <p className="text-slate-600 text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-neutral-300 text-center mb-12 max-w-2xl mx-auto">
           We're committed to respecting your privacy rights and meeting regulatory requirements.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {complianceItems.map((item, index) => (
             <div
               key={index}
-              className="bg-slate-50 border border-slate-200 rounded-xl p-6 text-center"
+              className="bg-white/5 border border-white/10 rounded-xl p-6 text-center"
             >
               <h3 className="font-semibold mb-2">{item.title}</h3>
-              <p className="text-sm text-slate-600">{item.description}</p>
+              <p className="text-sm text-neutral-300">{item.description}</p>
             </div>
           ))}
         </div>
@@ -212,14 +212,14 @@ export default function SecurityPage() {
       <section className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Our Security Practices</h2>
-          <p className="text-slate-600 text-center mb-12">
+          <p className="text-neutral-300 text-center mb-12">
             We follow industry best practices to keep your data safe.
           </p>
           <div className="grid md:grid-cols-2 gap-4">
             {securityPractices.map((practice, index) => (
               <div
                 key={index}
-                className="bg-slate-50 rounded-lg p-4 border border-slate-100 text-slate-700"
+                className="bg-white/5 rounded-lg p-4 border border-white/5 text-neutral-300"
               >
                 • {practice}
               </div>
@@ -230,31 +230,31 @@ export default function SecurityPage() {
 
       {/* Data Handling */}
       <section className="container mx-auto px-4 py-16">
-        <div className="bg-slate-50 border border-slate-200 rounded-3xl p-8 md:p-12">
+        <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">What Data We Collect</h2>
             <div className="space-y-6">
-              <div className="border-b border-slate-200 pb-6">
+              <div className="border-b border-white/10 pb-6">
                 <h3 className="font-semibold text-lg mb-2">Account Information</h3>
-                <p className="text-slate-600">
+                <p className="text-neutral-300">
                   Your Telegram user ID and display name to identify your account. We don't have access to your phone number or email unless you provide it.
                 </p>
               </div>
-              <div className="border-b border-slate-200 pb-6">
+              <div className="border-b border-white/10 pb-6">
                 <h3 className="font-semibold text-lg mb-2">Task & Project Data</h3>
-                <p className="text-slate-600">
+                <p className="text-neutral-300">
                   The tasks, projects, and notes you create within Whatstask. This data is encrypted and only accessible to you and your team members.
                 </p>
               </div>
-              <div className="border-b border-slate-200 pb-6">
+              <div className="border-b border-white/10 pb-6">
                 <h3 className="font-semibold text-lg mb-2">Usage Analytics</h3>
-                <p className="text-slate-600">
+                <p className="text-neutral-300">
                   Anonymous usage data to improve our service (feature usage, performance metrics). This data cannot be used to identify individual users.
                 </p>
               </div>
               <div>
                 <h3 className="font-semibold text-lg mb-2">What We Don't Collect</h3>
-                <p className="text-slate-600">
+                <p className="text-neutral-300">
                   We never access your private Telegram messages, contacts, or any data outside of your direct interactions with the Whatstask bot.
                 </p>
               </div>
@@ -267,25 +267,25 @@ export default function SecurityPage() {
       <section className="container mx-auto px-4 py-16">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold mb-4">Enterprise Security</h2>
-          <p className="text-slate-600 mb-8">
+          <p className="text-neutral-300 mb-8">
             Need additional security features? Enterprise plans include advanced security controls
             and compliance options.
           </p>
           <div className="grid sm:grid-cols-3 gap-6 mb-8">
-            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
               <h3 className="font-semibold mb-2">SSO Integration</h3>
-              <p className="text-sm text-slate-600">SAML 2.0 single sign-on support</p>
+              <p className="text-sm text-neutral-300">SAML 2.0 single sign-on support</p>
             </div>
-            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
               <h3 className="font-semibold mb-2">Audit Logs</h3>
-              <p className="text-sm text-slate-600">Detailed activity tracking</p>
+              <p className="text-sm text-neutral-300">Detailed activity tracking</p>
             </div>
-            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
               <h3 className="font-semibold mb-2">Custom DPA</h3>
-              <p className="text-sm text-slate-600">Tailored data agreements</p>
+              <p className="text-sm text-neutral-300">Tailored data agreements</p>
             </div>
           </div>
-          <Button asChild className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-6">
+          <Button asChild className="bg-[#0a0a0a] text-black hover:bg-[#0a0a0a]/90 rounded-full px-8 py-6">
             <Link href="/enterprise" className="flex items-center gap-2">
               Learn About Enterprise
               <ArrowRight className="h-4 w-4" />
@@ -298,7 +298,7 @@ export default function SecurityPage() {
       <section className="container mx-auto px-4 py-16">
         <div className="bg-gradient-to-r from-violet-500/20 to-violet-500/5 border border-violet-500/20 rounded-3xl p-8 md:p-12 text-center">
           <h2 className="text-3xl font-bold mb-4">Have Security Questions?</h2>
-          <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-neutral-300 mb-8 max-w-2xl mx-auto">
             Our team is here to answer any questions about our security practices. For security
             researchers, we welcome responsible disclosure of any vulnerabilities.
           </p>
@@ -308,7 +308,7 @@ export default function SecurityPage() {
                 Contact Security Team
               </Link>
             </Button>
-            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
+            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
               <a href="mailto:security@whatstask.com">
                 security@whatstask.com
               </a>
@@ -318,19 +318,19 @@ export default function SecurityPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 py-12">
+      <footer className="border-t border-white/10 py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo-black.png" alt="Whatstask Logo" width={24} height={24} />
+              <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} />
               <span className="font-bold">Whatstask</span>
             </Link>
-            <div className="flex flex-wrap gap-6 text-sm text-slate-600">
-              <Link href="/privacy" className="hover:text-slate-900 transition-colors">Privacy Policy</Link>
-              <Link href="/terms" className="hover:text-slate-900 transition-colors">Terms of Service</Link>
-              <Link href="/contact" className="hover:text-slate-900 transition-colors">Contact</Link>
+            <div className="flex flex-wrap gap-6 text-sm text-neutral-300">
+              <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+              <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
             </div>
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-neutral-400">
               © {new Date().getFullYear()} Whatstask. All rights reserved.
             </p>
           </div>

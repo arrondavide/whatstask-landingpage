@@ -72,29 +72,29 @@ export default function AsanaComparisonPage() {
   return (
     <>
       <PageLoader />
-      <Navigation variant="solid" />
-      <div className="min-h-screen bg-white text-slate-900 pt-16">
+      <Navigation variant="dark" />
+      <div className="min-h-screen bg-[#0a0a0a] text-white pt-16">
         <main className="container mx-auto px-4 py-16 max-w-5xl">
           {/* Hero */}
           <section className="text-center mb-20">
-            <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Comparison</p>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-slate-900">
+            <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Comparison</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white">
               Whatstask vs Asana
             </h1>
-            <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light">
+            <p className="text-xl text-neutral-400 max-w-2xl mx-auto font-light">
               Asana is enterprise-focused and complex. Whatstask is simple and works for everyone. Here's an honest comparison.
             </p>
           </section>
 
           {/* Quick Verdict */}
           <section className="mb-24">
-            <div className="border border-slate-200 rounded-2xl p-10 md:p-12">
+            <div className="border border-white/10 rounded-2xl p-10 md:p-12 bg-white/5">
               <div className="text-center mb-10">
-                <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Quick Verdict</p>
+                <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Quick Verdict</p>
               </div>
               <div className="grid md:grid-cols-2 gap-10">
                 <div>
-                  <h3 className="font-semibold text-slate-900 mb-4">Choose Whatstask if:</h3>
+                  <h3 className="font-semibold text-white mb-4">Choose Whatstask if:</h3>
                   <ul className="space-y-2">
                     {[
                       "You want AI features without Enterprise pricing",
@@ -103,15 +103,15 @@ export default function AsanaComparisonPage() {
                       "You prefer simplicity",
                       "You're a small to medium team",
                     ].map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm text-slate-600">
-                        <div className="w-1 h-1 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                      <li key={idx} className="flex items-start gap-3 text-sm text-neutral-300">
+                        <div className="w-1 h-1 rounded-full bg-neutral-500 mt-2 flex-shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-500 mb-4">Choose Asana if:</h3>
+                  <h3 className="font-semibold text-neutral-500 mb-4">Choose Asana if:</h3>
                   <ul className="space-y-2">
                     {[
                       "You need portfolio management",
@@ -120,8 +120,8 @@ export default function AsanaComparisonPage() {
                       "You're an enterprise with budget",
                       "You need advanced forms",
                     ].map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm text-slate-500">
-                        <div className="w-1 h-1 rounded-full bg-slate-300 mt-2 flex-shrink-0" />
+                      <li key={idx} className="flex items-start gap-3 text-sm text-neutral-500">
+                        <div className="w-1 h-1 rounded-full bg-neutral-600 mt-2 flex-shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -134,18 +134,18 @@ export default function AsanaComparisonPage() {
           {/* Key Differences */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Overview</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">The key differences</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Overview</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">The key differences</h2>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {keyDifferences.map((item, index) => (
                 <div
                   key={index}
-                  className="border border-slate-200 rounded-2xl p-8 hover:border-slate-300 hover:shadow-md transition-all duration-300 text-center"
+                  className="border border-white/10 rounded-2xl p-8 bg-white/5 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-300 text-center"
                 >
-                  <h3 className="text-lg font-semibold text-slate-900 mb-4">{item.title}</h3>
-                  <p className="text-slate-500 text-sm mb-2">Asana: {item.asana}</p>
-                  <p className="text-slate-900 text-sm font-medium">Whatstask: {item.whatstask}</p>
+                  <h3 className="text-lg font-semibold text-white mb-4">{item.title}</h3>
+                  <p className="text-neutral-500 text-sm mb-2">Asana: {item.asana}</p>
+                  <p className="text-white text-sm font-medium">Whatstask: {item.whatstask}</p>
                 </div>
               ))}
             </div>
@@ -154,26 +154,26 @@ export default function AsanaComparisonPage() {
           {/* Feature Comparison Table */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Details</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Feature comparison</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Details</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Feature comparison</h2>
             </div>
-            <div className="border border-slate-200 rounded-2xl overflow-hidden">
+            <div className="border border-white/10 rounded-2xl overflow-hidden">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-slate-200 bg-slate-50">
-                    <th className="text-left p-6 font-semibold text-slate-900">Feature</th>
-                    <th className="text-center p-6 font-semibold text-slate-900">Whatstask</th>
-                    <th className="text-center p-6 font-medium text-slate-500">Asana</th>
+                  <tr className="border-b border-white/10 bg-white/5">
+                    <th className="text-left p-6 font-semibold text-white">Feature</th>
+                    <th className="text-center p-6 font-semibold text-violet-400">Whatstask</th>
+                    <th className="text-center p-6 font-medium text-neutral-500">Asana</th>
                   </tr>
                 </thead>
                 <tbody>
                   {comparison.map((row, index) => (
-                    <tr key={index} className="border-b border-slate-100 last:border-0">
-                      <td className="p-6 text-slate-900">{row.feature}</td>
-                      <td className={`p-6 text-center ${row.winner === "whatstask" ? "text-slate-900 font-medium" : "text-slate-500"}`}>
+                    <tr key={index} className="border-b border-white/5 last:border-0">
+                      <td className="p-6 text-neutral-300">{row.feature}</td>
+                      <td className={`p-6 text-center ${row.winner === "whatstask" ? "text-white font-medium" : "text-neutral-500"}`}>
                         {row.whatstask}
                       </td>
-                      <td className={`p-6 text-center ${row.winner === "asana" ? "text-slate-900 font-medium" : "text-slate-500"}`}>
+                      <td className={`p-6 text-center ${row.winner === "asana" ? "text-white font-medium" : "text-neutral-500"}`}>
                         {row.asana}
                       </td>
                     </tr>
@@ -186,17 +186,17 @@ export default function AsanaComparisonPage() {
           {/* Switch Reasons */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Feedback</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Why teams switch from Asana</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Feedback</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Why teams switch from Asana</h2>
             </div>
             <div className="space-y-4">
               {switchReasons.map((item, index) => (
                 <div
                   key={index}
-                  className="border border-slate-200 rounded-xl p-6 hover:border-slate-300 hover:shadow-md transition-all duration-300"
+                  className="border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all duration-300"
                 >
-                  <h3 className="font-semibold text-slate-900 mb-2">{item.title}</h3>
-                  <p className="text-slate-500 text-sm">{item.description}</p>
+                  <h3 className="font-semibold text-white mb-2">{item.title}</h3>
+                  <p className="text-neutral-400 text-sm">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -204,18 +204,18 @@ export default function AsanaComparisonPage() {
 
           {/* CTA */}
           <section>
-            <div className="border border-slate-200 rounded-2xl p-10 md:p-16 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Try the simpler alternative</h2>
-              <p className="text-slate-500 mb-10 text-lg font-light">
+            <div className="border border-violet-500/30 bg-violet-500/10 rounded-2xl p-10 md:p-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Try the simpler alternative</h2>
+              <p className="text-neutral-300 mb-10 text-lg font-light">
                 AI included. Time tracking built-in. Ready in 30 seconds.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
+                <Button asChild className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6">
                   <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                     Try Whatstask Free
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-slate-300 hover:bg-slate-50">
+                <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20 text-white hover:bg-white/10 bg-transparent">
                   <Link href="/project-management">See All Features</Link>
                 </Button>
               </div>
@@ -224,8 +224,8 @@ export default function AsanaComparisonPage() {
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-slate-100 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
+        <footer className="border-t border-white/5 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-neutral-500">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

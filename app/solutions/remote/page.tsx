@@ -97,12 +97,12 @@ export default function RemoteSolutionPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-[#0a0a0a] text-white">
       {/* Header */}
-      <header className="border-b border-slate-200">
+      <header className="border-b border-white/10">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
+            <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
             <span className="text-xl font-bold">Whatstask</span>
           </Link>
           <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
@@ -117,11 +117,11 @@ export default function RemoteSolutionPage() {
       {/* Hero */}
       <section className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <p className="text-sm text-slate-500 mb-6">For Remote Teams</p>
+          <p className="text-sm text-neutral-400 mb-6">For Remote Teams</p>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             Async Collaboration That Actually Works
           </h1>
-          <p className="text-xl text-slate-600 leading-relaxed mb-8">
+          <p className="text-xl text-neutral-300 leading-relaxed mb-8">
             Your team is spread across time zones. Your project management should embrace that, not
             fight it. Whatstask is built async-first for distributed teams.
           </p>
@@ -131,7 +131,7 @@ export default function RemoteSolutionPage() {
                 Start Free on Telegram
               </a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
+            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
               <Link href="/how-it-works">See How It Works</Link>
             </Button>
           </div>
@@ -140,7 +140,7 @@ export default function RemoteSolutionPage() {
 
       {/* Timezone Visualization */}
       <section className="container mx-auto px-4 py-12">
-        <div className="bg-slate-50 border border-slate-200 rounded-3xl p-8 max-w-4xl mx-auto">
+        <div className="bg-white/5 border border-white/10 rounded-3xl p-8 max-w-4xl mx-auto">
           <h3 className="text-xl font-semibold text-center mb-8">Your Team, Across the World</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {timezones.map((tz, index) => (
@@ -151,11 +151,11 @@ export default function RemoteSolutionPage() {
                   {tz.status === "ending" && <Moon className="h-6 w-6 text-purple-400 mx-auto" />}
                 </div>
                 <p className="text-2xl font-bold">{tz.time}</p>
-                <p className="text-sm text-slate-600">{tz.city}</p>
+                <p className="text-sm text-neutral-300">{tz.city}</p>
               </div>
             ))}
           </div>
-          <p className="text-center text-slate-600 mt-6 text-sm">
+          <p className="text-center text-neutral-300 mt-6 text-sm">
             Whatstask shows deadlines in each team member's local timezone automatically.
           </p>
         </div>
@@ -164,17 +164,17 @@ export default function RemoteSolutionPage() {
       {/* Features Grid */}
       <section className="container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold text-center mb-4">Built for Distributed Teams</h2>
-        <p className="text-slate-600 text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-neutral-300 text-center mb-12 max-w-2xl mx-auto">
           No more timezone math. No more "did you see my message?" Just work that flows.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-violet-500/30 transition-colors"
+              className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-violet-500/30 transition-colors"
             >
               <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-slate-600">{feature.description}</p>
+              <p className="text-neutral-300">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -186,9 +186,9 @@ export default function RemoteSolutionPage() {
           <h2 className="text-3xl font-bold text-center mb-12">The Async Advantage</h2>
           <div className="grid md:grid-cols-2 gap-8">
             {asyncBenefits.map((benefit, index) => (
-              <div key={index} className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <div key={index} className="bg-white/5 rounded-xl p-6 border border-white/10">
                 <h3 className="font-semibold text-lg mb-2">{benefit.title}</h3>
-                <p className="text-slate-600">{benefit.description}</p>
+                <p className="text-neutral-300">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -200,23 +200,23 @@ export default function RemoteSolutionPage() {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">How Async Handoffs Work</h2>
           <div className="space-y-6">
-            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-              <p className="text-slate-700 mb-2">
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <p className="text-neutral-300 mb-2">
                 <span className="font-semibold">1. Sarah (SF) at 5pm:</span> Completes the design mockups
               </p>
-              <p className="text-sm text-slate-500">Updates task with notes: "Ready for dev. Used the new color palette. Questions? Leave a comment."</p>
+              <p className="text-sm text-neutral-400">Updates task with notes: "Ready for dev. Used the new color palette. Questions? Leave a comment."</p>
             </div>
-            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-              <p className="text-slate-700 mb-2">
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <p className="text-neutral-300 mb-2">
                 <span className="font-semibold">2. Alex (London) at 9am:</span> Sees the notification, starts implementing
               </p>
-              <p className="text-sm text-slate-500">Everything needed is in the task. No need to schedule a call.</p>
+              <p className="text-sm text-neutral-400">Everything needed is in the task. No need to schedule a call.</p>
             </div>
-            <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
-              <p className="text-slate-700 mb-2">
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <p className="text-neutral-300 mb-2">
                 <span className="font-semibold">3. Yuki (Tokyo) at 6pm:</span> Reviews the implementation, ships to staging
               </p>
-              <p className="text-sm text-slate-500">When Sarah wakes up, it's already live for testing. 24-hour progress.</p>
+              <p className="text-sm text-neutral-400">When Sarah wakes up, it's already live for testing. 24-hour progress.</p>
             </div>
           </div>
         </div>
@@ -235,15 +235,15 @@ export default function RemoteSolutionPage() {
                 "No VPN issues, no corporate firewalls",
                 "End-to-end encryption for sensitive projects",
               ].map((item, index) => (
-                <li key={index} className="text-slate-700">• {item}</li>
+                <li key={index} className="text-neutral-300">• {item}</li>
               ))}
             </ul>
           </div>
-          <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 text-center">
-            <p className="text-5xl font-bold text-slate-900 mb-2">800M+</p>
-            <p className="text-slate-600 mb-6">Telegram users worldwide</p>
-            <p className="text-5xl font-bold text-slate-900 mb-2">200+</p>
-            <p className="text-slate-600">Countries with active users</p>
+          <div className="bg-white/5 rounded-2xl p-8 border border-white/10 text-center">
+            <p className="text-5xl font-bold text-white mb-2">800M+</p>
+            <p className="text-neutral-300 mb-6">Telegram users worldwide</p>
+            <p className="text-5xl font-bold text-white mb-2">200+</p>
+            <p className="text-neutral-300">Countries with active users</p>
           </div>
         </div>
       </section>
@@ -252,7 +252,7 @@ export default function RemoteSolutionPage() {
       <section className="container mx-auto px-4 py-16">
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Go Async?</h2>
-          <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-neutral-300 mb-8 max-w-2xl mx-auto">
             Join distributed teams who've found a better way to work together.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -262,7 +262,7 @@ export default function RemoteSolutionPage() {
                 Start Free in Telegram
               </a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
+            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
               <Link href="/pricing" className="flex items-center gap-2">
                 View Pricing
                 <ArrowRight className="h-4 w-4" />
@@ -273,19 +273,19 @@ export default function RemoteSolutionPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 py-12">
+      <footer className="border-t border-white/10 py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo-black.png" alt="Whatstask Logo" width={24} height={24} />
+              <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} />
               <span className="font-bold">Whatstask</span>
             </Link>
-            <div className="flex flex-wrap gap-6 text-sm text-slate-600">
-              <Link href="/solutions/marketing" className="hover:text-slate-900 transition-colors">Marketing Teams</Link>
-              <Link href="/solutions/development" className="hover:text-slate-900 transition-colors">Development Teams</Link>
-              <Link href="/pricing" className="hover:text-slate-900 transition-colors">Pricing</Link>
+            <div className="flex flex-wrap gap-6 text-sm text-neutral-300">
+              <Link href="/solutions/marketing" className="hover:text-white transition-colors">Marketing Teams</Link>
+              <Link href="/solutions/development" className="hover:text-white transition-colors">Development Teams</Link>
+              <Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link>
             </div>
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-neutral-400">
               © {new Date().getFullYear()} Whatstask. All rights reserved.
             </p>
           </div>

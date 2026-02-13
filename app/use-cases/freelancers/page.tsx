@@ -110,45 +110,45 @@ export default function FreelancersPage() {
   return (
     <>
       <PageLoader />
-      <Navigation variant="solid" />
-      <div className="min-h-screen bg-white text-slate-900 pt-16">
+      <Navigation variant="dark" />
+      <div className="min-h-screen bg-[#0a0a0a] text-white pt-16">
         <main className="container mx-auto px-4 py-16 max-w-5xl">
           {/* Hero */}
           <section className="text-center mb-20">
-            <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">For Freelancers</p>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-slate-900">
+            <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">For Freelancers</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white">
               Manage clients without leaving Telegram
             </h1>
-            <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light mb-10">
+            <p className="text-xl text-neutral-400 max-w-2xl mx-auto font-light mb-10">
               You're already chatting with clients in Telegram. Why not manage your tasks there too?
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
+              <Button asChild className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6">
                 <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                   Start Free
                 </a>
               </Button>
-              <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-slate-300 hover:bg-slate-50">
+              <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-white/20 hover:bg-white/5">
                 <Link href="/pricing">View Pricing</Link>
               </Button>
             </div>
-            <p className="text-sm text-slate-400 mt-4">Free forever · No credit card · Setup in 60 seconds</p>
+            <p className="text-sm text-neutral-400 mt-4">Free forever · No credit card · Setup in 60 seconds</p>
           </section>
 
           {/* Benefits */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Features</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Why freelancers love Whatstask</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Features</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Why freelancers love Whatstask</h2>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {benefits.map((benefit, idx) => (
                 <div
                   key={idx}
-                  className="border border-slate-200 rounded-2xl p-8 hover:border-slate-300 hover:shadow-md transition-all duration-300"
+                  className="border border-white/10 rounded-2xl p-8 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-300"
                 >
-                  <h3 className="text-lg font-semibold text-slate-900 mb-3">{benefit.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">{benefit.description}</p>
+                  <h3 className="text-lg font-semibold text-white mb-3">{benefit.title}</h3>
+                  <p className="text-neutral-400 text-sm leading-relaxed">{benefit.description}</p>
                 </div>
               ))}
             </div>
@@ -157,24 +157,24 @@ export default function FreelancersPage() {
           {/* Workflows */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Real Workflows</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Freelancer problems, solved</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Real Workflows</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Freelancer problems, solved</h2>
             </div>
             <div className="space-y-4">
               {workflows.map((workflow, idx) => (
                 <div
                   key={idx}
-                  className="border border-slate-200 rounded-xl p-6 hover:border-slate-300 hover:shadow-md transition-all duration-300"
+                  className="border border-white/10 rounded-xl p-6 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-300"
                 >
-                  <h3 className="text-lg font-semibold text-slate-900 mb-4">{workflow.scenario}</h3>
+                  <h3 className="text-lg font-semibold text-white mb-4">{workflow.scenario}</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <p className="text-xs uppercase tracking-widest text-slate-400 mb-2">The problem</p>
-                      <p className="text-slate-600 text-sm">{workflow.problem}</p>
+                      <p className="text-xs uppercase tracking-widest text-neutral-400 mb-2">The problem</p>
+                      <p className="text-neutral-300 text-sm">{workflow.problem}</p>
                     </div>
                     <div>
-                      <p className="text-xs uppercase tracking-widest text-violet-600 mb-2">With Whatstask</p>
-                      <p className="text-slate-700 text-sm">{workflow.solution}</p>
+                      <p className="text-xs uppercase tracking-widest text-violet-400 mb-2">With Whatstask</p>
+                      <p className="text-neutral-300 text-sm">{workflow.solution}</p>
                     </div>
                   </div>
                 </div>
@@ -185,17 +185,17 @@ export default function FreelancersPage() {
           {/* Comparisons */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Comparison</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Why not just use...</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Comparison</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Why not just use...</h2>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {comparisons.map((item, idx) => (
                 <div
                   key={idx}
-                  className="border border-slate-200 rounded-xl p-6 hover:border-slate-300 hover:shadow-md transition-all duration-300"
+                  className="border border-white/10 rounded-xl p-6 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-300"
                 >
-                  <h3 className="font-semibold text-slate-900 mb-3">{item.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">{item.description}</p>
+                  <h3 className="font-semibold text-white mb-3">{item.title}</h3>
+                  <p className="text-neutral-400 text-sm leading-relaxed">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -204,64 +204,64 @@ export default function FreelancersPage() {
           {/* Pricing */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Pricing</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Built for freelance budgets</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Pricing</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Built for freelance budgets</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <div className="border border-slate-200 rounded-2xl p-8">
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">Free Plan</h3>
-                <p className="text-4xl font-light text-slate-900 mb-6">$0</p>
+              <div className="border border-white/10 rounded-2xl p-8">
+                <h3 className="text-xl font-semibold text-white mb-2">Free Plan</h3>
+                <p className="text-4xl font-light text-white mb-6">$0</p>
                 <ul className="space-y-3 mb-6">
                   {["Unlimited tasks", "Natural language input", "Smart reminders", "Free PDF tools"].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm text-slate-600">
-                      <div className="w-1 h-1 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                    <li key={idx} className="flex items-start gap-3 text-sm text-neutral-300">
+                      <div className="w-1 h-1 rounded-full bg-neutral-500 mt-2 flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
-                <p className="text-sm text-slate-500">Perfect for starting out</p>
+                <p className="text-sm text-neutral-400">Perfect for starting out</p>
               </div>
-              <div className="border border-slate-900 rounded-2xl p-8">
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">Pro Plan</h3>
-                <p className="text-4xl font-light text-slate-900 mb-6">$4.99<span className="text-lg text-slate-500">/month</span></p>
+              <div className="border border-white/10 rounded-2xl p-8">
+                <h3 className="text-xl font-semibold text-white mb-2">Pro Plan</h3>
+                <p className="text-4xl font-light text-white mb-6">$4.99<span className="text-lg text-neutral-400">/month</span></p>
                 <ul className="space-y-3 mb-6">
                   {["Everything in Free", "AI-powered suggestions", "Advanced analytics", "Priority support"].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm text-slate-600">
-                      <div className="w-1 h-1 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                    <li key={idx} className="flex items-start gap-3 text-sm text-neutral-300">
+                      <div className="w-1 h-1 rounded-full bg-neutral-500 mt-2 flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
-                <p className="text-sm text-slate-500">For serious freelancers</p>
+                <p className="text-sm text-neutral-400">For serious freelancers</p>
               </div>
             </div>
           </section>
 
           {/* CTA */}
           <section>
-            <div className="border border-slate-200 rounded-2xl p-10 md:p-16 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Start managing clients smarter</h2>
-              <p className="text-slate-500 mb-10 text-lg font-light">
+            <div className="border border-white/10 rounded-2xl p-10 md:p-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Start managing clients smarter</h2>
+              <p className="text-neutral-400 mb-10 text-lg font-light">
                 Join freelancers who simplified their workflows with Whatstask.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
+                <Button asChild className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6">
                   <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                     Start Free
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-slate-300 hover:bg-slate-50">
+                <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-white/20 hover:bg-white/5">
                   <Link href="/pricing">See Pricing</Link>
                 </Button>
               </div>
-              <p className="text-sm text-slate-400 mt-4">30 seconds to start · No credit card required</p>
+              <p className="text-sm text-neutral-400 mt-4">30 seconds to start · No credit card required</p>
             </div>
           </section>
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-slate-100 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
+        <footer className="border-t border-white/5 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-neutral-400">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

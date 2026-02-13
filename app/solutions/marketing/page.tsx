@@ -94,12 +94,12 @@ export default function MarketingSolutionPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-[#0a0a0a] text-white">
       {/* Header */}
-      <header className="border-b border-slate-200">
+      <header className="border-b border-white/10">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
+            <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
             <span className="text-xl font-bold">Whatstask</span>
           </Link>
           <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
@@ -114,11 +114,11 @@ export default function MarketingSolutionPage() {
       {/* Hero */}
       <section className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <p className="text-sm text-slate-500 mb-6">For Marketing Teams</p>
+          <p className="text-sm text-neutral-400 mb-6">For Marketing Teams</p>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             Run Campaigns Without the Chaos
           </h1>
-          <p className="text-xl text-slate-600 leading-relaxed mb-8">
+          <p className="text-xl text-neutral-300 leading-relaxed mb-8">
             Marketing moves fast. Your project management should keep up. Whatstask helps marketing
             teams ship campaigns, manage content, and collaborate—all without leaving Telegram.
           </p>
@@ -128,7 +128,7 @@ export default function MarketingSolutionPage() {
                 Start Free on Telegram
               </a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
+            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
               <Link href="/templates">View Marketing Templates</Link>
             </Button>
           </div>
@@ -138,17 +138,17 @@ export default function MarketingSolutionPage() {
       {/* Features Grid */}
       <section className="container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold text-center mb-4">Built for How Marketing Teams Work</h2>
-        <p className="text-slate-600 text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-neutral-300 text-center mb-12 max-w-2xl mx-auto">
           From content calendars to campaign launches, Whatstask adapts to your marketing workflow.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-violet-500/30 transition-colors"
+              className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-violet-500/30 transition-colors"
             >
               <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-slate-600">{feature.description}</p>
+              <p className="text-neutral-300">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -159,12 +159,12 @@ export default function MarketingSolutionPage() {
         <h2 className="text-3xl font-bold text-center mb-12">Marketing Use Cases</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {useCases.map((useCase, index) => (
-            <div key={index} className="bg-slate-50 border border-slate-200 rounded-2xl p-8">
+            <div key={index} className="bg-white/5 border border-white/10 rounded-2xl p-8">
               <h3 className="text-xl font-semibold mb-3">{useCase.title}</h3>
-              <p className="text-slate-600 mb-6">{useCase.description}</p>
+              <p className="text-neutral-300 mb-6">{useCase.description}</p>
               <ul className="space-y-2">
                 {useCase.tasks.map((task, i) => (
-                  <li key={i} className="text-sm text-slate-700">
+                  <li key={i} className="text-sm text-neutral-300">
                     • {task}
                   </li>
                 ))}
@@ -182,17 +182,17 @@ export default function MarketingSolutionPage() {
               <h2 className="text-3xl font-bold mb-6">Why Marketing Teams Choose Whatstask</h2>
               <ul className="space-y-4">
                 {benefits.map((benefit, index) => (
-                  <li key={index} className="text-slate-700">
+                  <li key={index} className="text-neutral-300">
                     • {benefit}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-black/50 rounded-2xl p-8 border border-slate-200">
+            <div className="bg-black/50 rounded-2xl p-8 border border-white/10">
               <div className="text-4xl font-bold text-pink-400 mb-2">30 seconds</div>
-              <p className="text-slate-600 mb-6">Average time to create a campaign in Whatstask</p>
+              <p className="text-neutral-300 mb-6">Average time to create a campaign in Whatstask</p>
               <div className="text-4xl font-bold text-pink-400 mb-2">$0</div>
-              <p className="text-slate-600">Cost to start using Whatstask for your team</p>
+              <p className="text-neutral-300">Cost to start using Whatstask for your team</p>
             </div>
           </div>
         </div>
@@ -202,7 +202,7 @@ export default function MarketingSolutionPage() {
       <section className="container mx-auto px-4 py-16">
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Simplify Your Marketing Workflow?</h2>
-          <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-neutral-300 mb-8 max-w-2xl mx-auto">
             Join marketing teams who've switched from complex tools to Whatstask's simple approach.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -212,7 +212,7 @@ export default function MarketingSolutionPage() {
                 Start Free in Telegram
               </a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
+            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
               <Link href="/compare/monday" className="flex items-center gap-2">
                 Compare to Monday.com
                 <ArrowRight className="h-4 w-4" />
@@ -223,19 +223,19 @@ export default function MarketingSolutionPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 py-12">
+      <footer className="border-t border-white/10 py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo-black.png" alt="Whatstask Logo" width={24} height={24} />
+              <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} />
               <span className="font-bold">Whatstask</span>
             </Link>
-            <div className="flex flex-wrap gap-6 text-sm text-slate-600">
-              <Link href="/solutions/development" className="hover:text-slate-900 transition-colors">Development Teams</Link>
-              <Link href="/solutions/remote" className="hover:text-slate-900 transition-colors">Remote Teams</Link>
-              <Link href="/pricing" className="hover:text-slate-900 transition-colors">Pricing</Link>
+            <div className="flex flex-wrap gap-6 text-sm text-neutral-300">
+              <Link href="/solutions/development" className="hover:text-white transition-colors">Development Teams</Link>
+              <Link href="/solutions/remote" className="hover:text-white transition-colors">Remote Teams</Link>
+              <Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link>
             </div>
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-neutral-400">
               © {new Date().getFullYear()} Whatstask. All rights reserved.
             </p>
           </div>

@@ -29,39 +29,39 @@ export default function AboutPage() {
   return (
     <>
       <PageLoader />
-      <Navigation variant="solid" />
-      <div className="min-h-screen bg-white text-slate-900 pt-16">
+      <Navigation variant="dark" />
+      <div className="min-h-screen bg-[#0a0a0a] text-white pt-16">
         <main className="container mx-auto px-4 py-16 max-w-4xl">
           {/* Hero */}
           <section className="text-center mb-20">
-            <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">About</p>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-slate-900">
+            <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">About</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white">
               Simple scales.
             </h1>
-            <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light">
+            <p className="text-xl text-neutral-400 max-w-2xl mx-auto font-light">
               We build work tools for teams of any size who want to work, not manage tools.
             </p>
           </section>
 
           {/* The Belief */}
           <section className="mb-20">
-            <div className="border border-slate-200 rounded-2xl p-10 md:p-16">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Philosophy</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8">What we believe</h2>
-              <div className="space-y-6 text-lg text-slate-500 leading-relaxed">
+            <div className="border border-white/10 rounded-2xl p-10 md:p-16 bg-white/5">
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Philosophy</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">What we believe</h2>
+              <div className="space-y-6 text-lg text-neutral-400 leading-relaxed">
                 <p>
                   The software industry got it wrong. Somewhere along the way, "powerful" became
                   "impossible to use without training." ClickUp has 15+ views. Monday needs a
                   consultant to configure. Asana charges enterprise prices for basic AI.
                 </p>
-                <p className="text-slate-900 font-medium">
+                <p className="text-white font-medium">
                   We believe simple scales.
                 </p>
                 <p>
                   A 5-person startup and a 500-person enterprise have the same core need: get work done.
                   They don't need different tools. They need the same tool—one that works.
                 </p>
-                <p className="text-slate-900 font-medium">
+                <p className="text-white font-medium">
                   Simple isn't "less than." Simple is "exactly enough."
                 </p>
               </div>
@@ -71,8 +71,8 @@ export default function AboutPage() {
           {/* Our Values */}
           <section className="mb-20">
             <div className="text-center mb-16">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Values</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">What guides us</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Values</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">What guides us</h2>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {[
@@ -92,20 +92,20 @@ export default function AboutPage() {
                     "Core features remain free. No artificial limitations. No dark patterns.",
                 },
               ].map((value, index) => (
-                <div key={index} className="border border-slate-200 rounded-2xl p-8 hover:border-slate-300 hover:shadow-md transition-all duration-300">
-                  <h3 className="text-xl font-semibold text-slate-900 mb-3">{value.title}</h3>
-                  <p className="text-slate-500 leading-relaxed">{value.description}</p>
+                <div key={index} className="border border-white/10 rounded-2xl p-8 hover:border-white/20 hover:bg-white/5 transition-all duration-300">
+                  <h3 className="text-xl font-semibold text-white mb-3">{value.title}</h3>
+                  <p className="text-neutral-400 leading-relaxed">{value.description}</p>
                 </div>
               ))}
             </div>
           </section>
 
           {/* What We Build */}
-          <section className="mb-20 bg-slate-50 -mx-4 px-4 py-16 md:-mx-8 md:px-8">
+          <section className="mb-20 bg-[#111] -mx-4 px-4 py-16 md:-mx-8 md:px-8 rounded-2xl">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-16">
-                <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Products</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900">What we build</h2>
+                <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Products</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-white">What we build</h2>
               </div>
               <div className="space-y-6">
                 {[
@@ -130,10 +130,10 @@ export default function AboutPage() {
                     href: "/tools",
                   },
                 ].map((product, index) => (
-                  <div key={index} className="bg-white border border-slate-200 rounded-2xl p-8 hover:border-slate-300 hover:shadow-md transition-all duration-300">
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3">{product.title}</h3>
-                    <p className="text-slate-500 mb-4">{product.description}</p>
-                    <Link href={product.href} className="inline-flex items-center gap-2 text-slate-500 text-sm hover:text-slate-900 transition-colors">
+                  <div key={index} className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-300">
+                    <h3 className="text-xl font-semibold text-white mb-3">{product.title}</h3>
+                    <p className="text-neutral-400 mb-4">{product.description}</p>
+                    <Link href={product.href} className="inline-flex items-center gap-2 text-neutral-400 text-sm hover:text-white transition-colors">
                       Learn more
                       <ArrowRight className="h-4 w-4" />
                     </Link>
@@ -145,15 +145,15 @@ export default function AboutPage() {
 
           {/* The Team */}
           <section className="mb-20">
-            <div className="border border-slate-200 rounded-2xl p-10 md:p-16">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Team</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Built by a small team</h2>
-              <p className="text-lg text-slate-500 leading-relaxed mb-6">
+            <div className="border border-white/10 rounded-2xl p-10 md:p-16 bg-white/5">
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Team</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Built by a small team</h2>
+              <p className="text-lg text-neutral-400 leading-relaxed mb-6">
                 Whatstask is developed by a lean team passionate about productivity tools.
                 We ship fast, listen to feedback, and believe that the best software
                 comes from people who actually use what they build.
               </p>
-              <Link href="/founder" className="inline-flex items-center gap-2 text-slate-500 text-sm hover:text-slate-900 transition-colors">
+              <Link href="/founder" className="inline-flex items-center gap-2 text-neutral-400 text-sm hover:text-white transition-colors">
                 Read about our founder
                 <ArrowRight className="h-4 w-4" />
               </Link>
@@ -163,17 +163,17 @@ export default function AboutPage() {
           {/* Contact */}
           <section className="mb-20">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Contact</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Get in touch</h2>
-              <p className="text-slate-500 text-lg font-light">
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Contact</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Get in touch</h2>
+              <p className="text-neutral-400 text-lg font-light">
                 Have questions, feedback, or ideas? We'd love to hear from you.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
+              <Button asChild className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6">
                 <a href="mailto:charlesaarondavid@gmail.com">Email Us</a>
               </Button>
-              <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-slate-300 hover:bg-slate-50">
+              <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20 text-white hover:bg-white/10 bg-transparent">
                 <Link href="/contact">Contact Form</Link>
               </Button>
             </div>
@@ -181,14 +181,14 @@ export default function AboutPage() {
 
           {/* CTA */}
           <section>
-            <div className="border border-slate-200 rounded-2xl p-10 md:p-16 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            <div className="border border-violet-500/30 bg-violet-500/10 rounded-2xl p-10 md:p-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Ready to simplify your work?
               </h2>
-              <p className="text-slate-500 mb-10 text-lg font-light">
+              <p className="text-neutral-300 mb-10 text-lg font-light">
                 Join teams who've chosen simplicity over complexity.
               </p>
-              <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6 text-lg">
+              <Button asChild className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6 text-lg">
                 <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                   Start Free
                 </a>
@@ -197,8 +197,8 @@ export default function AboutPage() {
           </section>
         </main>
 
-        <footer className="border-t border-slate-100 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
+        <footer className="border-t border-white/5 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-neutral-500">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

@@ -59,16 +59,16 @@ export default function BlogPage() {
   return (
     <>
       <PageLoader />
-      <Navigation variant="solid" />
-      <div className="min-h-screen bg-white text-slate-900 pt-16">
+      <Navigation variant="dark" />
+      <div className="min-h-screen bg-[#0a0a0a] text-white pt-16">
         <main className="container mx-auto px-4 py-16 max-w-5xl">
           {/* Hero */}
           <section className="text-center mb-20">
-            <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Blog</p>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-slate-900">
+            <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Blog</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white">
               Insights & Guides
             </h1>
-            <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light">
+            <p className="text-xl text-neutral-400 max-w-2xl mx-auto font-light">
               Productivity tips, Telegram tutorials, and task management strategies.
             </p>
           </section>
@@ -76,8 +76,8 @@ export default function BlogPage() {
           {/* Featured Posts */}
           <section className="mb-20">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Featured</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Latest Articles</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Featured</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Latest Articles</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               {blogPosts
@@ -86,20 +86,20 @@ export default function BlogPage() {
                   <Link
                     key={idx}
                     href={`/blog/${post.slug}`}
-                    className="group border border-slate-200 rounded-2xl p-8 hover:border-slate-300 hover:shadow-md transition-all duration-300"
+                    className="group border border-white/10 rounded-2xl p-8 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-300"
                   >
-                    <div className="flex items-center gap-4 mb-4 text-sm text-slate-500">
-                      <span className="bg-slate-100 px-3 py-1 rounded-full text-xs font-medium text-slate-600">
+                    <div className="flex items-center gap-4 mb-4 text-sm text-neutral-400">
+                      <span className="bg-white/5 px-3 py-1 rounded-full text-xs font-medium text-neutral-300">
                         {post.category}
                       </span>
                       <span>{new Date(post.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
                       <span>{post.readTime}</span>
                     </div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-slate-700 transition-colors">
+                    <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-neutral-300 transition-colors">
                       {post.title}
                     </h3>
-                    <p className="text-slate-500 text-sm leading-relaxed mb-4">{post.excerpt}</p>
-                    <span className="text-sm font-medium text-slate-900">
+                    <p className="text-neutral-400 text-sm leading-relaxed mb-4">{post.excerpt}</p>
+                    <span className="text-sm font-medium text-white">
                       Read Article →
                     </span>
                   </Link>
@@ -110,17 +110,17 @@ export default function BlogPage() {
           {/* Categories */}
           <section className="mb-20">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Categories</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Browse by Topic</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Categories</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Browse by Topic</h2>
             </div>
             <div className="grid md:grid-cols-4 gap-4">
               {["Guides", "Tutorials", "Productivity", "Case Studies"].map((category, idx) => (
                 <div
                   key={idx}
-                  className="border border-slate-200 rounded-xl p-6 hover:border-slate-300 hover:shadow-md transition-all duration-300 text-center"
+                  className="border border-white/10 rounded-xl p-6 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-300 text-center"
                 >
-                  <h3 className="font-semibold text-slate-900">{category}</h3>
-                  <p className="text-sm text-slate-400 mt-2">Coming soon</p>
+                  <h3 className="font-semibold text-white">{category}</h3>
+                  <p className="text-sm text-neutral-400 mt-2">Coming soon</p>
                 </div>
               ))}
             </div>
@@ -128,12 +128,12 @@ export default function BlogPage() {
 
           {/* CTA */}
           <section>
-            <div className="border border-slate-200 rounded-2xl p-10 md:p-16 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Stay Updated</h2>
-              <p className="text-slate-500 mb-10 text-lg font-light">
+            <div className="border border-white/10 rounded-2xl p-10 md:p-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Stay Updated</h2>
+              <p className="text-neutral-400 mb-10 text-lg font-light">
                 New productivity tips and Telegram guides delivered weekly.
               </p>
-              <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
+              <Button asChild className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6">
                 <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                   Follow on Telegram
                 </a>
@@ -143,8 +143,8 @@ export default function BlogPage() {
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-slate-100 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
+        <footer className="border-t border-white/5 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-neutral-400">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

@@ -30,7 +30,7 @@ interface NavigationProps {
   variant?: 'default' | 'solid' | 'dark'  // 'solid' for white bg pages, 'dark' for dark bg pages
 }
 
-export default function Navigation({ variant = 'default' }: NavigationProps) {
+export default function Navigation({ variant = 'dark' }: NavigationProps) {
   const [mounted, setMounted] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)

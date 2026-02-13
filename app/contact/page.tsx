@@ -1,218 +1,66 @@
-"use client"
+import type { Metadata } from "next"
+import ContactClient from "./contact-client"
+import Script from "next/script"
 
-import type React from "react"
-import { useState } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
-import PageLoader from "@/components/page-loader"
-import Navigation from "@/components/navigation"
+export const metadata: Metadata = {
+  title: "Contact Us - Get in Touch | Whatstask",
+  description:
+    "Contact Whatstask for questions, enterprise solutions, or partnership opportunities. We typically respond within 24 hours.",
+  keywords: [
+    "contact whatstask",
+    "enterprise solutions",
+    "partnership",
+    "custom development",
+    "white-label PM",
+    "telegram bot development",
+  ],
+  openGraph: {
+    title: "Contact Us - Whatstask",
+    description: "Questions, feedback, or interested in working together? Get in touch with the Whatstask team.",
+    url: "https://www.whatstask.com/contact",
+    siteName: "Whatstask",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Contact Whatstask",
+    description: "Get in touch with the Whatstask team for questions, enterprise solutions, or partnerships.",
+  },
+  alternates: {
+    canonical: "https://www.whatstask.com/contact",
+  },
+}
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    type: "general",
-    message: "",
-  })
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    const subject = encodeURIComponent(`[Whatstask ${formData.type}] Contact from ${formData.name}`)
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company}\nType: ${formData.type}\n\nMessage:\n${formData.message}`
-    )
-    window.location.href = `mailto:charlesaarondavid@gmail.com?subject=${subject}&body=${body}`
-    setSubmitted(true)
-  }
-
-  const contactReasons = [
-    { title: "General Inquiry", description: "Questions about our products", value: "general" },
-    { title: "Enterprise Solutions", description: "Custom development, white-label", value: "enterprise" },
-    { title: "Partnership", description: "Integration partners, affiliates", value: "partnership" },
-  ]
-
   return (
     <>
-      <PageLoader />
-      <Navigation variant="solid" />
-      <div className="min-h-screen bg-white text-slate-900 pt-16">
-        <main className="container mx-auto px-4 py-16 max-w-5xl">
-          {/* Hero */}
-          <section className="text-center mb-16">
-            <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Contact</p>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-slate-900">
-              Let's talk
-            </h1>
-            <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light">
-              Questions, feedback, or interested in working together?
-            </p>
-          </section>
+      <ContactClient />
 
-          <div className="grid md:grid-cols-2 gap-16">
-            {/* Contact Info */}
-            <div>
-              <h2 className="text-2xl font-bold text-slate-900 mb-8">Get in touch</h2>
-
-              {/* Direct Email */}
-              <div className="border border-slate-200 rounded-2xl p-8 mb-8">
-                <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Email</p>
-                <a
-                  href="mailto:charlesaarondavid@gmail.com"
-                  className="text-xl font-medium text-slate-900 hover:text-slate-600 transition-colors"
-                >
-                  charlesaarondavid@gmail.com
-                </a>
-                <p className="text-slate-500 text-sm mt-2">We typically respond within 24 hours</p>
-              </div>
-
-              {/* Quick Links */}
-              <div className="space-y-4 mb-10">
-                <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Quick links</p>
-                {[
-                  { title: "Try Project Management", href: "https://t.me/whatstaskbot" },
-                  { title: "Enterprise Solutions", href: "/enterprise" },
-                  { title: "See Pricing", href: "/pricing" },
-                ].map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.href}
-                    target={link.href.startsWith("http") ? "_blank" : undefined}
-                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="flex items-center justify-between p-4 border border-slate-200 rounded-xl hover:border-slate-300 hover:shadow-md transition-all duration-300 group"
-                  >
-                    <span className="text-slate-700 group-hover:text-slate-900 transition-colors">{link.title}</span>
-                    <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-slate-600 transition-colors" />
-                  </a>
-                ))}
-              </div>
-
-              {/* Contact Reasons */}
-              <div>
-                <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">How can we help?</p>
-                <div className="space-y-3">
-                  {contactReasons.map((reason, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setFormData({ ...formData, type: reason.value })}
-                      className={`w-full text-left p-4 rounded-xl border transition-all duration-300 ${
-                        formData.type === reason.value
-                          ? "border-slate-900 bg-white shadow-md"
-                          : "border-slate-200 hover:border-slate-300"
-                      }`}
-                    >
-                      <p className="font-medium text-slate-900">{reason.title}</p>
-                      <p className="text-sm text-slate-500">{reason.description}</p>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Contact Form */}
-            <div>
-              <h2 className="text-2xl font-bold text-slate-900 mb-8">Send a message</h2>
-
-              {submitted ? (
-                <div className="border border-slate-200 rounded-2xl p-10 text-center">
-                  <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Success</p>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">Email client opened</h3>
-                  <p className="text-slate-500 mb-6">
-                    Complete sending the email in your email client.
-                  </p>
-                  <Button
-                    onClick={() => setSubmitted(false)}
-                    variant="outline"
-                    className="rounded-lg border-slate-300 hover:bg-slate-50"
-                  >
-                    Send another message
-                  </Button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-slate-900 mb-2">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:border-slate-900 focus:outline-none transition-colors"
-                      placeholder="Your name"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-900 mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:border-slate-900 focus:outline-none transition-colors"
-                      placeholder="you@example.com"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-slate-900 mb-2">
-                      Company
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      value={formData.company}
-                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:border-slate-900 focus:outline-none transition-colors"
-                      placeholder="Your company (optional)"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-slate-900 mb-2">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      required
-                      rows={5}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:border-slate-900 focus:outline-none transition-colors resize-none"
-                      placeholder="How can we help you?"
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    className="w-full bg-slate-900 text-white hover:bg-slate-800 rounded-lg py-6 text-lg"
-                  >
-                    Send Message
-                  </Button>
-
-                  <p className="text-xs text-slate-400 text-center">
-                    This will open your email client with the message pre-filled.
-                  </p>
-                </form>
-              )}
-            </div>
-          </div>
-        </main>
-
-        <footer className="border-t border-slate-100 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
-            <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
-          </div>
-        </footer>
-      </div>
+      {/* Contact Page Schema */}
+      <Script
+        id="schema-contact"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            name: "Contact Whatstask",
+            description: "Contact page for Whatstask - AI-powered work infrastructure",
+            url: "https://www.whatstask.com/contact",
+            mainEntity: {
+              "@type": "Organization",
+              name: "Whatstask",
+              email: "charlesaarondavid@gmail.com",
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "charlesaarondavid@gmail.com",
+                contactType: "customer support",
+                availableLanguage: "English"
+              }
+            }
+          }),
+        }}
+      />
     </>
   )
 }

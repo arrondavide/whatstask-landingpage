@@ -100,8 +100,8 @@ export default function FounderPage() {
   return (
     <>
       <PageLoader />
-      <Navigation variant="solid" />
-      <div className="min-h-screen bg-white text-slate-900 pt-16">
+      <Navigation variant="dark" />
+      <div className="min-h-screen bg-[#0a0a0a] text-white pt-16">
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-20 lg:py-32">
           <div className="max-w-5xl mx-auto">
@@ -109,10 +109,10 @@ export default function FounderPage() {
               <h1 className="text-5xl lg:text-7xl font-extrabold mb-6 bg-gradient-to-r from-violet-500 to-blue-500 bg-clip-text text-transparent">
                 Charles Aaron David
               </h1>
-              <p className="text-2xl lg:text-3xl text-slate-600 mb-6">
+              <p className="text-2xl lg:text-3xl text-neutral-300 mb-6">
                 Founder & Creator of Whatstask
               </p>
-              <p className="text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-neutral-400 max-w-3xl mx-auto leading-relaxed">
                 AI engineer and entrepreneur building tools that empower teams to work smarter. Creator of 150+
                 applications serving over 10 million users worldwide.
               </p>
@@ -124,28 +124,28 @@ export default function FounderPage() {
                 href="https://charlesaarondavid.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-slate-100 hover:bg-slate-200 rounded-full border border-slate-200 transition-colors"
+                className="p-3 bg-white/10 hover:bg-white/10 rounded-full border border-white/10 transition-colors"
                 aria-label="Website"
               >
-                <Globe className="h-6 w-6 text-slate-700" />
+                <Globe className="h-6 w-6 text-neutral-300" />
               </a>
               <a
                 href="https://linkedin.com/in/charlesaarondavid"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-slate-100 hover:bg-slate-200 rounded-full border border-slate-200 transition-colors"
+                className="p-3 bg-white/10 hover:bg-white/10 rounded-full border border-white/10 transition-colors"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="h-6 w-6 text-slate-700" />
+                <Linkedin className="h-6 w-6 text-neutral-300" />
               </a>
               <a
                 href="https://twitter.com/charlesaarond"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-slate-100 hover:bg-slate-200 rounded-full border border-slate-200 transition-colors"
+                className="p-3 bg-white/10 hover:bg-white/10 rounded-full border border-white/10 transition-colors"
                 aria-label="Twitter"
               >
-                <Twitter className="h-6 w-6 text-slate-700" />
+                <Twitter className="h-6 w-6 text-neutral-300" />
               </a>
             </div>
 
@@ -154,12 +154,12 @@ export default function FounderPage() {
               {achievements.map((achievement, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl p-6 border border-slate-200 text-center hover:border-violet-500/50 hover:shadow-lg transition-all"
+                  className="bg-[#0a0a0a] rounded-2xl p-6 border border-white/10 text-center hover:border-violet-500/50 hover:bg-white/[0.07] transition-all"
                 >
                   <div className="flex justify-center mb-4">{achievement.icon}</div>
-                  <div className="text-4xl font-bold mb-2 text-slate-900">{achievement.number}</div>
-                  <div className="text-lg font-semibold mb-2 text-slate-800">{achievement.label}</div>
-                  <div className="text-sm text-slate-500">{achievement.description}</div>
+                  <div className="text-4xl font-bold mb-2 text-white">{achievement.number}</div>
+                  <div className="text-lg font-semibold mb-2 text-neutral-200">{achievement.label}</div>
+                  <div className="text-sm text-neutral-400">{achievement.description}</div>
                 </div>
               ))}
             </div>
@@ -167,27 +167,27 @@ export default function FounderPage() {
         </section>
 
         {/* About Section */}
-        <section className="container mx-auto px-4 py-20 border-t border-slate-100">
+        <section className="container mx-auto px-4 py-20 border-t border-white/5">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold mb-8 text-center text-slate-900">About Charles</h2>
-            <div className="bg-slate-50 rounded-2xl p-8 lg:p-12 border border-slate-200 mb-12">
-              <p className="text-lg text-slate-700 leading-relaxed mb-6">
+            <h2 className="text-4xl font-bold mb-8 text-center text-white">About Charles</h2>
+            <div className="bg-white/5 rounded-2xl p-8 lg:p-12 border border-white/10 mb-12">
+              <p className="text-lg text-neutral-300 leading-relaxed mb-6">
                 Charles Aaron David is an AI engineer, entrepreneur, and the founder of{" "}
                 <strong className="text-violet-500">Whatstask</strong> - a comprehensive work management platform built as
                 a Telegram Mini App. With a passion for creating user-centric solutions, Charles has built over 150
                 applications that collectively serve more than 10 million users worldwide.
               </p>
-              <p className="text-lg text-slate-700 leading-relaxed mb-6">
+              <p className="text-lg text-neutral-300 leading-relaxed mb-6">
                 His expertise spans artificial intelligence, large language models, Telegram Mini App development,
                 Web3 technologies, and full-stack engineering. Charles specializes in building sophisticated systems
                 that solve real-world problems at scale.
               </p>
-              <p className="text-lg text-slate-700 leading-relaxed mb-6">
+              <p className="text-lg text-neutral-300 leading-relaxed mb-6">
                 Before founding Whatstask, Charles worked on diverse projects including medical AI solutions with
                 retrieval-augmented generation systems, blockchain-based applications, gaming platforms, and AI
                 automation tools. His experience ranges from autonomous AI agents to voice emotion analysis systems.
               </p>
-              <p className="text-lg text-slate-700 leading-relaxed">
+              <p className="text-lg text-neutral-300 leading-relaxed">
                 Charles created Whatstask to address a critical need: empowering teams and freelancers to manage
                 tasks, track time, and collaborate efficiently - all within Telegram, where they already communicate.
                 The result is a full-featured Mini App that eliminates app-switching and brings powerful work
@@ -198,22 +198,22 @@ export default function FounderPage() {
         </section>
 
         {/* Journey Timeline */}
-        <section className="container mx-auto px-4 py-20 border-t border-slate-100">
+        <section className="container mx-auto px-4 py-20 border-t border-white/5">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold mb-12 text-center text-slate-900">The Journey</h2>
+            <h2 className="text-4xl font-bold mb-12 text-center text-white">The Journey</h2>
             <div className="space-y-8">
               {journey.map((milestone, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl p-8 border border-slate-200 hover:border-violet-500/50 hover:shadow-lg transition-all"
+                  className="bg-[#0a0a0a] rounded-2xl p-8 border border-white/10 hover:border-violet-500/50 hover:bg-white/[0.07] transition-all"
                 >
                   <div className="flex items-start gap-4">
                     <div className="bg-violet-500 text-white font-bold px-4 py-2 rounded-full text-sm whitespace-nowrap">
                       {milestone.year}
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold mb-3 text-slate-900">{milestone.title}</h3>
-                      <p className="text-slate-600 leading-relaxed">{milestone.description}</p>
+                      <h3 className="text-2xl font-bold mb-3 text-white">{milestone.title}</h3>
+                      <p className="text-neutral-300 leading-relaxed">{milestone.description}</p>
                     </div>
                   </div>
                 </div>
@@ -223,37 +223,37 @@ export default function FounderPage() {
         </section>
 
         {/* Vision Section */}
-        <section className="container mx-auto px-4 py-20 border-t border-slate-100">
+        <section className="container mx-auto px-4 py-20 border-t border-white/5">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold mb-8 text-center text-slate-900">Vision for Whatstask</h2>
-            <div className="bg-gradient-to-br from-violet-500/10 to-blue-500/10 rounded-2xl p-8 lg:p-12 border border-violet-200">
-              <p className="text-xl text-slate-600 leading-relaxed mb-6">
+            <h2 className="text-4xl font-bold mb-8 text-center text-white">Vision for Whatstask</h2>
+            <div className="bg-gradient-to-br from-violet-500/10 to-blue-500/10 rounded-2xl p-8 lg:p-12 border border-violet-500/20">
+              <p className="text-xl text-neutral-300 leading-relaxed mb-6">
                 "I built Whatstask because I believe work management should be effortless. Teams shouldn't need to
                 juggle multiple apps, pay for expensive tools, or waste time switching contexts. Everything you need -
                 tasks, time tracking, team collaboration - should be right where you already communicate."
               </p>
-              <p className="text-xl text-slate-600 leading-relaxed mb-6">
+              <p className="text-xl text-neutral-300 leading-relaxed mb-6">
                 "Telegram Mini Apps unlock incredible potential. With Whatstask, I'm proving that you can build
                 enterprise-grade work management tools that are as easy to use as sending a message, yet powerful
                 enough for serious teams and businesses."
               </p>
-              <p className="text-xl text-slate-600 leading-relaxed">
+              <p className="text-xl text-neutral-300 leading-relaxed">
                 "My goal is to help 100,000+ teams worldwide work smarter, faster, and more efficiently - all within
                 an app they already love."
               </p>
               <div className="text-right mt-6">
-                <p className="text-lg font-semibold text-violet-600">- Charles Aaron David</p>
-                <p className="text-sm text-slate-500">Founder, Whatstask</p>
+                <p className="text-lg font-semibold text-violet-400">- Charles Aaron David</p>
+                <p className="text-sm text-neutral-400">Founder, Whatstask</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="container mx-auto px-4 py-20 border-t border-slate-100">
-          <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-violet-500/10 to-violet-400/5 rounded-2xl p-12 border border-violet-200">
-            <h2 className="text-3xl font-bold mb-4 text-slate-900">Experience What Charles Built</h2>
-            <p className="text-xl text-slate-600 mb-8">
+        <section className="container mx-auto px-4 py-20 border-t border-white/5">
+          <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-violet-500/10 to-violet-400/5 rounded-2xl p-12 border border-violet-500/20">
+            <h2 className="text-3xl font-bold mb-4 text-white">Experience What Charles Built</h2>
+            <p className="text-xl text-neutral-300 mb-8">
               Try Whatstask and see how powerful work management can be when it's built right into Telegram.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -262,7 +262,7 @@ export default function FounderPage() {
                   Launch Whatstask Mini App
                 </a>
               </Button>
-              <Button asChild variant="outline" className="rounded-full px-8 py-6 text-lg border-slate-300 text-slate-700 hover:bg-slate-50">
+              <Button asChild variant="outline" className="rounded-full px-8 py-6 text-lg border-white/20 text-neutral-300 hover:bg-white/5">
                 <Link href="/features">Explore Features</Link>
               </Button>
             </div>
@@ -270,10 +270,10 @@ export default function FounderPage() {
         </section>
 
         {/* Footer */}
-        <footer className="border-t border-slate-200 bg-slate-50 py-12">
+        <footer className="border-t border-white/10 bg-white/5 py-12">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <p className="text-slate-600 mb-4">
+              <p className="text-neutral-300 mb-4">
                 Want to learn more about Charles or collaborate?
               </p>
               <div className="flex justify-center gap-4">
@@ -281,12 +281,12 @@ export default function FounderPage() {
                   href="https://charlesaarondavid.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-violet-600 hover:text-violet-700 transition-colors"
+                  className="text-violet-400 hover:text-violet-700 transition-colors"
                 >
                   Visit Personal Website
                 </a>
               </div>
-              <p className="text-slate-500 text-sm mt-8">
+              <p className="text-neutral-400 text-sm mt-8">
                 © {new Date().getFullYear()} Whatstask. Built with passion by Charles Aaron David.
               </p>
             </div>

@@ -101,12 +101,12 @@ export default function SmallTeamsSolutionPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-[#0a0a0a] text-white">
       {/* Header */}
-      <header className="border-b border-slate-200">
+      <header className="border-b border-white/10">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
+            <Image src="/logo.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
             <span className="text-xl font-bold">Whatstask</span>
           </Link>
           <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
@@ -121,11 +121,11 @@ export default function SmallTeamsSolutionPage() {
       {/* Hero */}
       <section className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <p className="text-sm text-slate-500 mb-6">For Teams of 2-10</p>
+          <p className="text-sm text-neutral-400 mb-6">For Teams of 2-10</p>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             Project Management That Doesn't Insult Your Intelligence
           </h1>
-          <p className="text-xl text-slate-600 leading-relaxed mb-8">
+          <p className="text-xl text-neutral-300 leading-relaxed mb-8">
             You're a small team. You don't need enterprise software. You need to know who's doing
             what and when it's due. That's it. That's Whatstask.
           </p>
@@ -135,7 +135,7 @@ export default function SmallTeamsSolutionPage() {
                 Start Free on Telegram
               </a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
+            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
               <Link href="/pricing">See Pricing</Link>
             </Button>
           </div>
@@ -145,14 +145,14 @@ export default function SmallTeamsSolutionPage() {
       {/* Pain Points */}
       <section className="container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold text-center mb-4">We Get It</h2>
-        <p className="text-slate-600 text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-neutral-300 text-center mb-12 max-w-2xl mx-auto">
           Most project management tools are built for enterprises. You're not an enterprise.
         </p>
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {painPoints.map((point, index) => (
-            <div key={index} className="bg-slate-50 border border-slate-200 rounded-xl p-6">
+            <div key={index} className="bg-white/5 border border-white/10 rounded-xl p-6">
               <p className="text-red-400 font-medium mb-2">"{point.problem}"</p>
-              <p className="text-slate-600">{point.description}</p>
+              <p className="text-neutral-300">{point.description}</p>
             </div>
           ))}
         </div>
@@ -162,21 +162,21 @@ export default function SmallTeamsSolutionPage() {
       <section className="container mx-auto px-4 py-16">
         <div className="bg-gradient-to-br from-violet-500/10 to-transparent border border-violet-500/20 rounded-3xl p-8 md:p-12 text-center">
           <h2 className="text-3xl font-bold mb-4">Whatstask is Different</h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-8">
+          <p className="text-xl text-neutral-300 max-w-2xl mx-auto mb-8">
             Built specifically for small teams. Simple by design, not by limitation.
           </p>
           <div className="grid md:grid-cols-3 gap-8 text-left max-w-4xl mx-auto">
             <div>
-              <p className="text-4xl font-bold text-slate-900 mb-2">$0</p>
-              <p className="text-slate-600">to get started</p>
+              <p className="text-4xl font-bold text-white mb-2">$0</p>
+              <p className="text-neutral-300">to get started</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-slate-900 mb-2">30 sec</p>
-              <p className="text-slate-600">to set up your team</p>
+              <p className="text-4xl font-bold text-white mb-2">30 sec</p>
+              <p className="text-neutral-300">to set up your team</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-slate-900 mb-2">4</p>
-              <p className="text-slate-600">views (not 40)</p>
+              <p className="text-4xl font-bold text-white mb-2">4</p>
+              <p className="text-neutral-300">views (not 40)</p>
             </div>
           </div>
         </div>
@@ -189,10 +189,10 @@ export default function SmallTeamsSolutionPage() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-violet-500/30 transition-colors"
+              className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-violet-500/30 transition-colors"
             >
               <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-              <p className="text-slate-600">{feature.description}</p>
+              <p className="text-neutral-300">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -202,17 +202,17 @@ export default function SmallTeamsSolutionPage() {
       <section className="container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold text-center mb-12">The Real Comparison</h2>
         <div className="max-w-3xl mx-auto">
-          <div className="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden">
-            <div className="grid grid-cols-3 bg-slate-100 p-4 font-semibold">
+          <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+            <div className="grid grid-cols-3 bg-white/5 p-4 font-semibold">
               <div>Feature</div>
               <div>Whatstask</div>
-              <div className="text-slate-600">Others</div>
+              <div className="text-neutral-300">Others</div>
             </div>
             {comparison.map((row, index) => (
-              <div key={index} className="grid grid-cols-3 p-4 border-t border-slate-100">
-                <div className="text-slate-700">{row.feature}</div>
+              <div key={index} className="grid grid-cols-3 p-4 border-t border-white/5">
+                <div className="text-neutral-300">{row.feature}</div>
                 <div className="font-medium">{row.whatstask}</div>
-                <div className="text-slate-500">{row.competitors}</div>
+                <div className="text-neutral-400">{row.competitors}</div>
               </div>
             ))}
           </div>
@@ -223,9 +223,9 @@ export default function SmallTeamsSolutionPage() {
       <section className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {testimonialStyle.map((testimonial, index) => (
-            <div key={index} className="bg-slate-50 border border-slate-200 rounded-2xl p-8">
-              <p className="text-lg text-slate-700 mb-4">"{testimonial.quote}"</p>
-              <p className="text-sm text-slate-500">— {testimonial.author}</p>
+            <div key={index} className="bg-white/5 border border-white/10 rounded-2xl p-8">
+              <p className="text-lg text-neutral-300 mb-4">"{testimonial.quote}"</p>
+              <p className="text-sm text-neutral-400">— {testimonial.author}</p>
             </div>
           ))}
         </div>
@@ -245,7 +245,7 @@ export default function SmallTeamsSolutionPage() {
             "Research teams",
             "Creator teams",
           ].map((team, index) => (
-            <div key={index} className="bg-slate-50 rounded-lg p-4 text-slate-700 text-center">
+            <div key={index} className="bg-white/5 rounded-lg p-4 text-neutral-300 text-center">
               {team}
             </div>
           ))}
@@ -256,7 +256,7 @@ export default function SmallTeamsSolutionPage() {
       <section className="container mx-auto px-4 py-16">
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Keep It Simple?</h2>
-          <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-neutral-300 mb-8 max-w-2xl mx-auto">
             Join small teams who've stopped fighting their tools and started getting things done.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -266,7 +266,7 @@ export default function SmallTeamsSolutionPage() {
                 Start Free in Telegram
               </a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
+            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
               <Link href="/use-cases/freelancers" className="flex items-center gap-2">
                 Working Solo? See Freelancer Page
                 <ArrowRight className="h-4 w-4" />
@@ -277,19 +277,19 @@ export default function SmallTeamsSolutionPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 py-12">
+      <footer className="border-t border-white/10 py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo-black.png" alt="Whatstask Logo" width={24} height={24} />
+              <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} />
               <span className="font-bold">Whatstask</span>
             </Link>
-            <div className="flex flex-wrap gap-6 text-sm text-slate-600">
-              <Link href="/solutions/marketing" className="hover:text-slate-900 transition-colors">Marketing Teams</Link>
-              <Link href="/solutions/development" className="hover:text-slate-900 transition-colors">Development Teams</Link>
-              <Link href="/pricing" className="hover:text-slate-900 transition-colors">Pricing</Link>
+            <div className="flex flex-wrap gap-6 text-sm text-neutral-300">
+              <Link href="/solutions/marketing" className="hover:text-white transition-colors">Marketing Teams</Link>
+              <Link href="/solutions/development" className="hover:text-white transition-colors">Development Teams</Link>
+              <Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link>
             </div>
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-neutral-400">
               © {new Date().getFullYear()} Whatstask. All rights reserved.
             </p>
           </div>

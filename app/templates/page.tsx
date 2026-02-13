@@ -3,6 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import Navigation from "@/components/navigation"
 export const metadata: Metadata = {
   title: "Free Project Templates | Whatstask",
   description:
@@ -227,30 +228,18 @@ export default function TemplatesPage() {
   const popularTemplates = templates.filter((t) => t.popular)
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
-      {/* Header */}
-      <header className="border-b border-slate-200">
-        <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-2">
-            <Image src="/logo-black.png" alt="Whatstask Logo" width={32} height={32} className="h-8 w-8" />
-            <span className="text-xl font-bold">Whatstask</span>
-          </Link>
-          <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-6">
-            <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
-              Try Free
-            </a>
-          </Button>
-        </div>
-      </header>
+    <>
+      <Navigation variant="dark" />
+      <div className="min-h-screen bg-[#0a0a0a] text-white pt-16">
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <p className="text-sm text-slate-500 mb-6">Project Templates</p>
+          <p className="text-sm text-neutral-400 mb-6">Project Templates</p>
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
             Start Projects Faster with Templates
           </h1>
-          <p className="text-xl text-slate-600 leading-relaxed mb-8">
+          <p className="text-xl text-neutral-300 leading-relaxed mb-8">
             Browse our collection of free project templates. From marketing campaigns to sprint
             planning, get started in seconds with pre-built task structures.
           </p>
@@ -278,7 +267,7 @@ export default function TemplatesPage() {
           {categories.map((category) => (
             <button
               key={category}
-              className="px-4 py-2 rounded-full bg-slate-50 border border-slate-200 hover:bg-slate-100 hover:border-slate-300 transition-colors text-sm"
+              className="px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-colors text-sm"
             >
               {category}
             </button>
@@ -293,7 +282,7 @@ export default function TemplatesPage() {
           <section key={category} className="container mx-auto px-4 py-8">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-bold">{category} Templates</h2>
-              <span className="text-sm text-slate-500">{categoryTemplates.length} templates</span>
+              <span className="text-sm text-neutral-400">{categoryTemplates.length} templates</span>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {categoryTemplates.map((template) => (
@@ -308,7 +297,7 @@ export default function TemplatesPage() {
       <section className="container mx-auto px-4 py-16">
         <div className="bg-gradient-to-r from-violet-500/20 to-violet-500/5 border border-violet-500/20 rounded-3xl p-8 md:p-12 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-neutral-300 mb-8 max-w-2xl mx-auto">
             All templates are free to use. Start in Telegram and customize any template to fit your
             team's workflow.
           </p>
@@ -318,7 +307,7 @@ export default function TemplatesPage() {
                 Start Free in Telegram
               </a>
             </Button>
-            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-slate-300">
+            <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20">
               <Link href="/pricing" className="flex items-center gap-2">
                 View Pricing
                 <ArrowRight className="h-4 w-4" />
@@ -332,42 +321,43 @@ export default function TemplatesPage() {
       <section className="container mx-auto px-4 py-12">
         <div className="max-w-2xl mx-auto text-center">
           <h3 className="text-xl font-bold mb-3">Don't See What You Need?</h3>
-          <p className="text-slate-600 mb-6">
+          <p className="text-neutral-300 mb-6">
             We're constantly adding new templates. Let us know what templates would help your team.
           </p>
-          <Button asChild variant="outline" className="rounded-full px-6 border-slate-300">
+          <Button asChild variant="outline" className="rounded-full px-6 border-white/20">
             <Link href="/contact">Request a Template</Link>
           </Button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 py-12">
+      <footer className="border-t border-white/10 py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/logo-black.png" alt="Whatstask Logo" width={24} height={24} />
+              <Image src="/logo.png" alt="Whatstask Logo" width={24} height={24} />
               <span className="font-bold">Whatstask</span>
             </Link>
-            <div className="flex flex-wrap gap-6 text-sm text-slate-600">
-              <Link href="/features" className="hover:text-slate-900 transition-colors">Features</Link>
-              <Link href="/pricing" className="hover:text-slate-900 transition-colors">Pricing</Link>
-              <Link href="/blog" className="hover:text-slate-900 transition-colors">Blog</Link>
-              <Link href="/contact" className="hover:text-slate-900 transition-colors">Contact</Link>
+            <div className="flex flex-wrap gap-6 text-sm text-neutral-300">
+              <Link href="/features" className="hover:text-white transition-colors">Features</Link>
+              <Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link>
+              <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+              <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
             </div>
-            <p className="text-sm text-slate-500">
+            <p className="text-sm text-neutral-400">
               © {new Date().getFullYear()} Whatstask. All rights reserved.
             </p>
           </div>
         </div>
       </footer>
     </div>
+    </>
   )
 }
 
 function TemplateCard({ template }: { template: Template }) {
   return (
-    <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:border-violet-500/30 transition-all group">
+    <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-violet-500/30 transition-all group">
       <div className="flex items-start justify-between mb-4">
         <h3 className="text-lg font-semibold group-hover:text-violet-400 transition-colors">
           {template.title}
@@ -376,10 +366,10 @@ function TemplateCard({ template }: { template: Template }) {
           <span className="text-xs bg-violet-500/20 text-violet-400 px-2 py-1 rounded-full">Popular</span>
         )}
       </div>
-      <p className="text-sm text-slate-600 mb-4 line-clamp-2">{template.description}</p>
+      <p className="text-sm text-neutral-300 mb-4 line-clamp-2">{template.description}</p>
       <div className="flex items-center justify-between">
-        <span className="text-xs text-slate-500">{template.tasks} tasks</span>
-        <span className="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">{template.category}</span>
+        <span className="text-xs text-neutral-400">{template.tasks} tasks</span>
+        <span className="text-xs text-neutral-400 bg-white/10 px-2 py-1 rounded">{template.category}</span>
       </div>
     </div>
   )
@@ -387,11 +377,11 @@ function TemplateCard({ template }: { template: Template }) {
 
 function TemplateCardSmall({ template }: { template: Template }) {
   return (
-    <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 hover:border-violet-500/30 transition-all group cursor-pointer">
+    <div className="bg-white/5 border border-white/10 rounded-xl p-4 hover:border-violet-500/30 transition-all group cursor-pointer">
       <h3 className="font-medium group-hover:text-violet-400 transition-colors text-sm mb-2">
         {template.title}
       </h3>
-      <p className="text-xs text-slate-500">{template.tasks} tasks</p>
+      <p className="text-xs text-neutral-400">{template.tasks} tasks</p>
     </div>
   )
 }

@@ -59,29 +59,29 @@ export default function MondayComparisonPage() {
   return (
     <>
       <PageLoader />
-      <Navigation variant="solid" />
-      <div className="min-h-screen bg-white text-slate-900 pt-16">
+      <Navigation variant="dark" />
+      <div className="min-h-screen bg-[#0a0a0a] text-white pt-16">
         <main className="container mx-auto px-4 py-16 max-w-5xl">
           {/* Hero */}
           <section className="text-center mb-20">
-            <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Comparison</p>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-slate-900">
+            <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Comparison</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white">
               Whatstask vs Monday.com
             </h1>
-            <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light">
+            <p className="text-xl text-neutral-400 max-w-2xl mx-auto font-light">
               Monday.com is feature-rich but expensive. Whatstask is simple and affordable. Here's an honest look at both.
             </p>
           </section>
 
           {/* Quick Verdict */}
           <section className="mb-24">
-            <div className="border border-slate-200 rounded-2xl p-10 md:p-12">
+            <div className="border border-white/10 rounded-2xl p-10 md:p-12 bg-white/5">
               <div className="text-center mb-10">
-                <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Quick Verdict</p>
+                <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Quick Verdict</p>
               </div>
               <div className="grid md:grid-cols-2 gap-10">
                 <div>
-                  <h3 className="font-semibold text-slate-900 mb-4">Choose Whatstask if:</h3>
+                  <h3 className="font-semibold text-white mb-4">Choose Whatstask if:</h3>
                   <ul className="space-y-2">
                     {[
                       "You want free AI features",
@@ -90,15 +90,15 @@ export default function MondayComparisonPage() {
                       "You need built-in time tracking",
                       "You prefer simple pricing",
                     ].map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm text-slate-600">
-                        <div className="w-1 h-1 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                      <li key={idx} className="flex items-start gap-3 text-sm text-neutral-300">
+                        <div className="w-1 h-1 rounded-full bg-neutral-500 mt-2 flex-shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-slate-500 mb-4">Choose Monday if:</h3>
+                  <h3 className="font-semibold text-neutral-500 mb-4">Choose Monday if:</h3>
                   <ul className="space-y-2">
                     {[
                       "You need visual dashboards",
@@ -107,8 +107,8 @@ export default function MondayComparisonPage() {
                       "Budget isn't a constraint",
                       "You need advanced reporting",
                     ].map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm text-slate-500">
-                        <div className="w-1 h-1 rounded-full bg-slate-300 mt-2 flex-shrink-0" />
+                      <li key={idx} className="flex items-start gap-3 text-sm text-neutral-500">
+                        <div className="w-1 h-1 rounded-full bg-neutral-600 mt-2 flex-shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -121,18 +121,18 @@ export default function MondayComparisonPage() {
           {/* Key Differences */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Overview</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">The key differences</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Overview</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">The key differences</h2>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {keyDifferences.map((item, index) => (
                 <div
                   key={index}
-                  className="border border-slate-200 rounded-2xl p-8 hover:border-slate-300 hover:shadow-md transition-all duration-300 text-center"
+                  className="border border-white/10 rounded-2xl p-8 bg-white/5 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-300 text-center"
                 >
-                  <h3 className="text-lg font-semibold text-slate-900 mb-4">{item.title}</h3>
-                  <p className="text-slate-500 text-sm mb-2">Monday: {item.monday}</p>
-                  <p className="text-slate-900 text-sm font-medium">Whatstask: {item.whatstask}</p>
+                  <h3 className="text-lg font-semibold text-white mb-4">{item.title}</h3>
+                  <p className="text-neutral-500 text-sm mb-2">Monday: {item.monday}</p>
+                  <p className="text-white text-sm font-medium">Whatstask: {item.whatstask}</p>
                 </div>
               ))}
             </div>
@@ -141,26 +141,26 @@ export default function MondayComparisonPage() {
           {/* Feature Comparison Table */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Details</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Feature comparison</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Details</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Feature comparison</h2>
             </div>
-            <div className="border border-slate-200 rounded-2xl overflow-hidden">
+            <div className="border border-white/10 rounded-2xl overflow-hidden">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b border-slate-200 bg-slate-50">
-                    <th className="text-left p-6 font-semibold text-slate-900">Feature</th>
-                    <th className="text-center p-6 font-semibold text-slate-900">Whatstask</th>
-                    <th className="text-center p-6 font-medium text-slate-500">Monday.com</th>
+                  <tr className="border-b border-white/10 bg-white/5">
+                    <th className="text-left p-6 font-semibold text-white">Feature</th>
+                    <th className="text-center p-6 font-semibold text-violet-400">Whatstask</th>
+                    <th className="text-center p-6 font-medium text-neutral-500">Monday.com</th>
                   </tr>
                 </thead>
                 <tbody>
                   {comparison.map((row, index) => (
-                    <tr key={index} className="border-b border-slate-100 last:border-0">
-                      <td className="p-6 text-slate-900">{row.feature}</td>
-                      <td className={`p-6 text-center ${row.winner === "whatstask" ? "text-slate-900 font-medium" : "text-slate-500"}`}>
+                    <tr key={index} className="border-b border-white/5 last:border-0">
+                      <td className="p-6 text-neutral-300">{row.feature}</td>
+                      <td className={`p-6 text-center ${row.winner === "whatstask" ? "text-white font-medium" : "text-neutral-500"}`}>
                         {row.whatstask}
                       </td>
-                      <td className={`p-6 text-center ${row.winner === "monday" ? "text-slate-900 font-medium" : "text-slate-500"}`}>
+                      <td className={`p-6 text-center ${row.winner === "monday" ? "text-white font-medium" : "text-neutral-500"}`}>
                         {row.monday}
                       </td>
                     </tr>
@@ -173,23 +173,23 @@ export default function MondayComparisonPage() {
           {/* Pricing Reality */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Pricing</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Monday.com pricing reality</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Pricing</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Monday.com pricing reality</h2>
             </div>
-            <div className="border border-slate-200 rounded-2xl p-10 md:p-12">
-              <p className="text-slate-500 mb-8 text-center font-light">
+            <div className="border border-white/10 rounded-2xl p-10 md:p-12 bg-white/5">
+              <p className="text-neutral-400 mb-8 text-center font-light">
                 Monday.com's pricing can be confusing. Here's what you actually pay:
               </p>
               <div className="space-y-4 max-w-md mx-auto">
                 {pricingComparison.map((item, idx) => (
-                  <div key={idx} className="flex justify-between items-center p-4 bg-slate-50 rounded-xl">
-                    <span className="text-slate-700">{item.tier}</span>
-                    <span className="text-slate-500">{item.price}</span>
+                  <div key={idx} className="flex justify-between items-center p-4 bg-[#0a0a0a] rounded-xl">
+                    <span className="text-neutral-300">{item.tier}</span>
+                    <span className="text-neutral-500">{item.price}</span>
                   </div>
                 ))}
-                <div className="flex justify-between items-center p-4 border border-slate-900 rounded-xl">
-                  <span className="text-slate-900 font-medium">Whatstask Pro (flat)</span>
-                  <span className="text-slate-900 font-medium">$4.99/month (AI included)</span>
+                <div className="flex justify-between items-center p-4 border border-violet-500/50 bg-violet-500/10 rounded-xl">
+                  <span className="text-white font-medium">Whatstask Pro (flat)</span>
+                  <span className="text-white font-medium">$4.99/month (AI included)</span>
                 </div>
               </div>
             </div>
@@ -197,18 +197,18 @@ export default function MondayComparisonPage() {
 
           {/* CTA */}
           <section>
-            <div className="border border-slate-200 rounded-2xl p-10 md:p-16 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Try the affordable alternative</h2>
-              <p className="text-slate-500 mb-10 text-lg font-light">
+            <div className="border border-violet-500/30 bg-violet-500/10 rounded-2xl p-10 md:p-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Try the affordable alternative</h2>
+              <p className="text-neutral-300 mb-10 text-lg font-light">
                 Same core features. Free AI. Fraction of the cost.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
+                <Button asChild className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6">
                   <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                     Try Whatstask Free
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-slate-300 hover:bg-slate-50">
+                <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20 text-white hover:bg-white/10 bg-transparent">
                   <Link href="/pricing">See Pricing</Link>
                 </Button>
               </div>
@@ -217,8 +217,8 @@ export default function MondayComparisonPage() {
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-slate-100 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
+        <footer className="border-t border-white/5 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-neutral-500">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

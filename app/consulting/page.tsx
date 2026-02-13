@@ -53,12 +53,12 @@ export default function ConsultingPage() {
   return (
     <>
       <PageLoader />
-      <Navigation variant="solid" />
-      <div className="min-h-screen bg-white text-slate-900 pt-16">
+      <Navigation variant="dark" />
+      <div className="min-h-screen bg-[#0a0a0a] text-white pt-16">
         {/* Hero */}
         <section className="container mx-auto px-4 py-20 text-center">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6">Scale Your Workflows with Expert IT Consulting</h1>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto mb-8">
             Custom bot development, workflow automation, and enterprise integrations. Our team helps businesses
             streamline operations with tailored task management solutions.
           </p>
@@ -72,10 +72,10 @@ export default function ConsultingPage() {
           <h2 className="text-3xl md:text-5xl font-extrabold text-center mb-16">Our Services</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {services.map((service, idx) => (
-              <div key={idx} className="bg-slate-50 backdrop-blur-lg rounded-2xl p-8 border border-slate-200">
+              <div key={idx} className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
                 <service.icon className="h-12 w-12 mb-4 text-violet-500" />
                 <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{service.description}</p>
+                <p className="text-neutral-300 leading-relaxed">{service.description}</p>
               </div>
             ))}
           </div>
@@ -83,9 +83,9 @@ export default function ConsultingPage() {
 
         {/* CTA */}
         <section className="container mx-auto px-4 py-20">
-          <div className="bg-slate-50 backdrop-blur-lg rounded-2xl p-12 border border-slate-200 max-w-3xl mx-auto text-center">
+          <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-12 border border-white/10 max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Workflows?</h2>
-            <p className="text-slate-600 mb-6">
+            <p className="text-neutral-300 mb-6">
               Contact us today for a free consultation. We'll analyze your needs and propose a custom solution.
             </p>
             <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6">

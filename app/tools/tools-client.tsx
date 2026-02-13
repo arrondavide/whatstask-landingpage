@@ -78,8 +78,8 @@ export default function ToolsClient() {
   return (
     <>
       <PageLoader />
-      <Navigation variant="solid" />
-      <div className="min-h-screen bg-white text-slate-900 pt-16">
+      <Navigation variant="dark" />
+      <div className="min-h-screen bg-[#0a0a0a] text-white pt-16">
         <main className="container mx-auto px-4 py-16 max-w-5xl">
           {/* Hero */}
           <section className="text-center mb-20">
@@ -88,11 +88,11 @@ export default function ToolsClient() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Free Tools</p>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-slate-900">
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Free Tools</p>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white">
                 Online tools that just work
               </h1>
-              <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light">
+              <p className="text-xl text-neutral-400 max-w-2xl mx-auto font-light">
                 No signups, no watermarks, no hassle. Simple, fast, and free.
               </p>
             </motion.div>
@@ -109,14 +109,14 @@ export default function ToolsClient() {
               {tools.map((tool, index) => (
                 <motion.div key={index} variants={fadeInUp} custom={index}>
                   <Link href={tool.link} className="block h-full">
-                    <div className="border border-slate-200 rounded-2xl p-8 h-full hover:border-slate-300 hover:shadow-md transition-all duration-300 flex flex-col">
-                      <h3 className="text-xl font-semibold text-slate-900 mb-2">{tool.name}</h3>
-                      <p className="text-slate-500 text-sm mb-4">{tool.description}</p>
-                      <p className="text-slate-400 text-sm leading-relaxed flex-grow">
+                    <div className="border border-white/10 rounded-2xl p-8 h-full hover:border-white/20 hover:bg-white/[0.07] transition-all duration-300 flex flex-col">
+                      <h3 className="text-xl font-semibold text-white mb-2">{tool.name}</h3>
+                      <p className="text-neutral-400 text-sm mb-4">{tool.description}</p>
+                      <p className="text-neutral-400 text-sm leading-relaxed flex-grow">
                         {tool.fullDescription}
                       </p>
-                      <div className="mt-6 pt-6 border-t border-slate-100">
-                        <span className="text-sm font-medium text-slate-900 hover:text-slate-700 transition-colors">
+                      <div className="mt-6 pt-6 border-t border-white/5">
+                        <span className="text-sm font-medium text-white hover:text-neutral-300 transition-colors">
                           Open Tool →
                         </span>
                       </div>
@@ -134,14 +134,14 @@ export default function ToolsClient() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="border border-slate-200 rounded-2xl p-10 md:p-12 text-center"
+              className="border border-white/10 rounded-2xl p-10 md:p-12 text-center"
             >
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">AI-Powered</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">GEO Analyzer</h2>
-              <p className="text-slate-500 mb-8 max-w-2xl mx-auto font-light">
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">AI-Powered</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">GEO Analyzer</h2>
+              <p className="text-neutral-400 mb-8 max-w-2xl mx-auto font-light">
                 Optimize your content for AI-powered search. Rank in ChatGPT, Google SGE, Perplexity, and more.
               </p>
-              <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
+              <Button asChild className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6">
                 <Link href="/geoanalyzer">
                   Try GEO Analyzer
                 </Link>
@@ -156,19 +156,19 @@ export default function ToolsClient() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="border border-slate-200 rounded-2xl p-10 md:p-16 text-center"
+              className="border border-white/10 rounded-2xl p-10 md:p-16 text-center"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Need project management?</h2>
-              <p className="text-slate-500 mb-10 text-lg font-light max-w-2xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Need project management?</h2>
+              <p className="text-neutral-400 mb-10 text-lg font-light max-w-2xl mx-auto">
                 Simple project management with AI features. List, Kanban, Calendar, and Timeline views.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
+                <Button asChild className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6">
                   <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                     Start Free
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-slate-300 hover:bg-slate-50">
+                <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-white/10 hover:bg-white/5">
                   <Link href="/project-management">Learn More</Link>
                 </Button>
               </div>
@@ -177,8 +177,8 @@ export default function ToolsClient() {
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-slate-100 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
+        <footer className="border-t border-white/5 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-neutral-400">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

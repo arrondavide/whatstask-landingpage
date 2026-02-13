@@ -94,7 +94,7 @@ export default function WhatIsGEOPage() {
   return (
     <>
       <PageLoader />
-      <Navigation variant="solid" />
+      <Navigation variant="dark" />
 
       <Script
         id="article-schema"
@@ -108,12 +108,12 @@ export default function WhatIsGEOPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <div className="min-h-screen bg-white text-slate-900 pt-16">
+      <div className="min-h-screen bg-[#0a0a0a] text-white pt-16">
         <main className="container mx-auto px-4 py-12">
           <article className="max-w-3xl mx-auto">
             {/* Article Header */}
             <header className="mb-12">
-              <div className="flex items-center gap-4 text-sm text-slate-600 mb-4">
+              <div className="flex items-center gap-4 text-sm text-neutral-300 mb-4">
                 <span className="bg-violet-500/10 text-violet-400 px-3 py-1 rounded-full">GEO Guide</span>
                 <span className="flex items-center gap-1">
                   <Clock className="h-4 w-4" />
@@ -125,7 +125,7 @@ export default function WhatIsGEOPage() {
                 What is GEO? Generative Engine Optimization Explained
               </h1>
 
-              <p className="text-xl text-slate-600 leading-relaxed">
+              <p className="text-xl text-neutral-300 leading-relaxed">
                 A beginner-friendly introduction to Generative Engine Optimization and why it's becoming
                 essential for content visibility in 2026.
               </p>
@@ -140,7 +140,7 @@ export default function WhatIsGEOPage() {
                   <Brain className="h-5 w-5 text-violet-400" />
                   Quick Answer
                 </h2>
-                <p className="text-slate-700 m-0">
+                <p className="text-neutral-300 m-0">
                   <strong className="text-white">GEO (Generative Engine Optimization)</strong> is the practice of
                   optimizing your content to be understood, cited, and surfaced by AI-powered search engines like
                   ChatGPT, Google SGE, and Perplexity. It's about making your content the source AI chooses to
@@ -174,17 +174,17 @@ export default function WhatIsGEOPage() {
               </p>
 
               <div className="grid md:grid-cols-3 gap-4 my-8 not-prose">
-                <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 text-center">
+                <div className="bg-white/5 rounded-xl p-4 border border-white/10 text-center">
                   <div className="text-3xl font-bold text-violet-400 mb-1">40%</div>
-                  <p className="text-slate-600 text-sm m-0">of searches will involve AI by 2026</p>
+                  <p className="text-neutral-300 text-sm m-0">of searches will involve AI by 2026</p>
                 </div>
-                <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 text-center">
+                <div className="bg-white/5 rounded-xl p-4 border border-white/10 text-center">
                   <div className="text-3xl font-bold text-violet-400 mb-1">3x</div>
-                  <p className="text-slate-600 text-sm m-0">more citations with GEO optimization</p>
+                  <p className="text-neutral-300 text-sm m-0">more citations with GEO optimization</p>
                 </div>
-                <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 text-center">
+                <div className="bg-white/5 rounded-xl p-4 border border-white/10 text-center">
                   <div className="text-3xl font-bold text-violet-400 mb-1">65%</div>
-                  <p className="text-slate-600 text-sm m-0">of Gen Z prefers AI search</p>
+                  <p className="text-neutral-300 text-sm m-0">of Gen Z prefers AI search</p>
                 </div>
               </div>
 
@@ -205,13 +205,13 @@ export default function WhatIsGEOPage() {
                 in traditional search too.
               </p>
 
-              <div className="bg-slate-50 rounded-xl p-6 border border-slate-200 my-8 not-prose">
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10 my-8 not-prose">
                 <Link href="/blog/geo-vs-seo" className="flex items-center justify-between group">
                   <div>
                     <h3 className="font-bold mb-1 group-hover:text-violet-400 transition-colors">GEO vs SEO: Complete Comparison</h3>
-                    <p className="text-slate-600 text-sm m-0">Deep dive into how these optimization strategies differ</p>
+                    <p className="text-neutral-300 text-sm m-0">Deep dive into how these optimization strategies differ</p>
                   </div>
-                  <ArrowRight className="h-5 w-5 text-slate-600 group-hover:text-violet-400 transition-colors" />
+                  <ArrowRight className="h-5 w-5 text-neutral-300 group-hover:text-violet-400 transition-colors" />
                 </Link>
               </div>
 
@@ -253,7 +253,7 @@ export default function WhatIsGEOPage() {
 
               <div className="bg-gradient-to-br from-violet-500/10 to-cyan-500/10 rounded-2xl p-8 border border-violet-500/20 my-8 not-prose text-center">
                 <h3 className="text-2xl font-bold mb-4">Check Your GEO Score</h3>
-                <p className="text-slate-600 mb-6">
+                <p className="text-neutral-300 mb-6">
                   See how well your content is optimized for AI search engines.
                 </p>
                 <Button asChild className="bg-violet-500 text-white hover:bg-violet-600 rounded-full px-8 py-6">
@@ -262,7 +262,7 @@ export default function WhatIsGEOPage() {
                     Try GEO Analyzer Free
                   </a>
                 </Button>
-                <p className="text-slate-500 text-sm mt-4">3 free analyses per day. No signup required.</p>
+                <p className="text-neutral-400 text-sm mt-4">3 free analyses per day. No signup required.</p>
               </div>
 
               <h2>Learn More</h2>
@@ -272,17 +272,17 @@ export default function WhatIsGEOPage() {
                 and implementation details, check out our complete guide.
               </p>
 
-              <div className="bg-slate-50 rounded-xl p-6 border border-slate-200 my-8 not-prose">
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10 my-8 not-prose">
                 <Link href="/geoanalyzer/guide" className="flex items-center justify-between group">
                   <div>
                     <h3 className="font-bold mb-1 group-hover:text-violet-400 transition-colors">
                       The Complete Guide to GEO
                     </h3>
-                    <p className="text-slate-600 text-sm m-0">
+                    <p className="text-neutral-300 text-sm m-0">
                       Everything you need to know about Generative Engine Optimization
                     </p>
                   </div>
-                  <ArrowRight className="h-5 w-5 text-slate-600 group-hover:text-violet-400 transition-colors" />
+                  <ArrowRight className="h-5 w-5 text-neutral-300 group-hover:text-violet-400 transition-colors" />
                 </Link>
               </div>
 
@@ -293,21 +293,21 @@ export default function WhatIsGEOPage() {
           <section className="max-w-3xl mx-auto mt-16">
             <h2 className="text-xl font-bold mb-6">Related Articles</h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <Link href="/blog/geo-vs-seo" className="bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-violet-500/30 transition-all group">
+              <Link href="/blog/geo-vs-seo" className="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-violet-500/30 transition-all group">
                 <h3 className="font-bold mb-2 group-hover:text-violet-400 transition-colors">GEO vs SEO: What's the Difference?</h3>
-                <p className="text-slate-600 text-sm">How GEO compares to traditional SEO strategies.</p>
+                <p className="text-neutral-300 text-sm">How GEO compares to traditional SEO strategies.</p>
               </Link>
-              <Link href="/geoanalyzer/guide" className="bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-violet-500/30 transition-all group">
+              <Link href="/geoanalyzer/guide" className="bg-white/5 rounded-xl p-6 border border-white/10 hover:border-violet-500/30 transition-all group">
                 <h3 className="font-bold mb-2 group-hover:text-violet-400 transition-colors">Complete GEO Guide</h3>
-                <p className="text-slate-600 text-sm">Comprehensive guide to mastering GEO.</p>
+                <p className="text-neutral-300 text-sm">Comprehensive guide to mastering GEO.</p>
               </Link>
             </div>
           </section>
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-slate-100 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
+        <footer className="border-t border-white/5 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-neutral-400">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>

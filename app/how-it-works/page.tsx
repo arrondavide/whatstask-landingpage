@@ -143,16 +143,16 @@ export default function HowItWorksPage() {
   return (
     <>
       <PageLoader />
-      <Navigation variant="solid" />
-      <div className="min-h-screen bg-white text-slate-900 pt-16">
+      <Navigation variant="dark" />
+      <div className="min-h-screen bg-[#0a0a0a] text-white pt-16">
         <main className="container mx-auto px-4 py-16 max-w-5xl">
           {/* Hero */}
           <section className="text-center mb-20">
-            <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">How It Works</p>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-slate-900">
+            <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">How It Works</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white">
               Get started in minutes
             </h1>
-            <p className="text-xl text-slate-500 max-w-2xl mx-auto font-light">
+            <p className="text-xl text-neutral-400 max-w-2xl mx-auto font-light">
               Launch the Mini App, create your workspace, manage tasks & time, and invite your team.
             </p>
           </section>
@@ -163,19 +163,19 @@ export default function HowItWorksPage() {
               {steps.map((step, idx) => (
                 <div
                   key={idx}
-                  className="border border-slate-200 rounded-2xl p-8 md:p-12 hover:border-slate-300 hover:shadow-md transition-all duration-300"
+                  className="border border-white/10 rounded-2xl p-8 md:p-12 bg-white/5 hover:border-white/20 transition-all duration-300"
                 >
                   <div className="grid md:grid-cols-2 gap-8 items-start">
                     <div>
-                      <span className="text-6xl font-light text-slate-200 block mb-4">{step.number}</span>
-                      <h2 className="text-2xl font-bold text-slate-900 mb-4">{step.title}</h2>
-                      <p className="text-slate-500 leading-relaxed mb-6">{step.description}</p>
+                      <span className="text-6xl font-light text-white/10 block mb-4">{step.number}</span>
+                      <h2 className="text-2xl font-bold text-white mb-4">{step.title}</h2>
+                      <p className="text-neutral-400 leading-relaxed mb-6">{step.description}</p>
                     </div>
                     <div>
                       <ul className="space-y-3">
                         {step.details.map((detail, detailIdx) => (
-                          <li key={detailIdx} className="flex items-start gap-3 text-sm text-slate-600">
-                            <div className="w-1 h-1 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
+                          <li key={detailIdx} className="flex items-start gap-3 text-sm text-neutral-300">
+                            <div className="w-1 h-1 rounded-full bg-neutral-500 mt-2 flex-shrink-0" />
                             <span>{detail}</span>
                           </li>
                         ))}
@@ -188,43 +188,45 @@ export default function HowItWorksPage() {
           </section>
 
           {/* Natural Language Examples */}
-          <section className="mb-24">
-            <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Natural Language</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Just type what you're thinking</h2>
-              <p className="text-slate-500 text-lg font-light max-w-2xl mx-auto">
-                No need to learn complex syntax or commands. Whatstask understands how you naturally speak.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {examples.map((example, idx) => (
-                <div
-                  key={idx}
-                  className="border border-slate-200 rounded-2xl p-6 hover:border-slate-300 hover:shadow-md transition-all duration-300"
-                >
-                  <div className="mb-6">
-                    <p className="text-xs uppercase tracking-widest text-slate-400 mb-2">You type</p>
-                    <div className="bg-slate-50 rounded-lg p-4 font-mono text-sm text-slate-700">
-                      {example.input}
+          <section className="mb-24 bg-[#111] -mx-4 px-4 py-16 md:-mx-8 md:px-8 rounded-2xl">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-12">
+                <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Natural Language</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Just type what you're thinking</h2>
+                <p className="text-neutral-400 text-lg font-light max-w-2xl mx-auto">
+                  No need to learn complex syntax or commands. Whatstask understands how you naturally speak.
+                </p>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                {examples.map((example, idx) => (
+                  <div
+                    key={idx}
+                    className="border border-white/10 rounded-2xl p-6 bg-white/5 hover:border-white/20 transition-all duration-300"
+                  >
+                    <div className="mb-6">
+                      <p className="text-xs uppercase tracking-widest text-neutral-500 mb-2">You type</p>
+                      <div className="bg-[#0a0a0a] rounded-lg p-4 font-mono text-sm text-neutral-300">
+                        {example.input}
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase tracking-widest text-neutral-500 mb-2">Whatstask creates</p>
+                      <div className="bg-[#0a0a0a] rounded-lg p-4 text-sm text-neutral-400 whitespace-pre-line">
+                        {example.output}
+                      </div>
                     </div>
                   </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-widest text-slate-400 mb-2">Whatstask creates</p>
-                    <div className="bg-slate-50 rounded-lg p-4 text-sm text-slate-600 whitespace-pre-line">
-                      {example.output}
-                    </div>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </section>
 
           {/* Quick Commands */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Shortcuts</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Quick Commands</h2>
-              <p className="text-slate-500 text-lg font-light max-w-2xl mx-auto">
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Shortcuts</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Quick Commands</h2>
+              <p className="text-neutral-400 text-lg font-light max-w-2xl mx-auto">
                 Speed up your workflow with optional shortcuts. Natural language always works too.
               </p>
             </div>
@@ -232,13 +234,13 @@ export default function HowItWorksPage() {
               {commands.map((cmd, idx) => (
                 <div
                   key={idx}
-                  className="border border-slate-200 rounded-xl p-5 hover:border-slate-300 hover:shadow-md transition-all duration-300"
+                  className="border border-white/10 rounded-xl p-5 bg-white/5 hover:border-white/20 transition-all duration-300"
                 >
                   <div className="flex items-start gap-4">
-                    <code className="bg-slate-100 px-3 py-1 rounded text-slate-700 font-mono text-sm whitespace-nowrap flex-shrink-0">
+                    <code className="bg-violet-500/20 px-3 py-1 rounded text-violet-300 font-mono text-sm whitespace-nowrap flex-shrink-0">
                       {cmd.command}
                     </code>
-                    <p className="text-slate-500 text-sm">{cmd.description}</p>
+                    <p className="text-neutral-400 text-sm">{cmd.description}</p>
                   </div>
                 </div>
               ))}
@@ -248,17 +250,17 @@ export default function HowItWorksPage() {
           {/* Advanced Features */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">Capabilities</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Advanced Features</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Capabilities</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Advanced Features</h2>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {advancedFeatures.map((feature, idx) => (
                 <div
                   key={idx}
-                  className="border border-slate-200 rounded-2xl p-8 hover:border-slate-300 hover:shadow-md transition-all duration-300"
+                  className="border border-white/10 rounded-2xl p-8 bg-white/5 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-300"
                 >
-                  <h3 className="text-lg font-semibold text-slate-900 mb-3">{feature.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">{feature.description}</p>
+                  <h3 className="text-lg font-semibold text-white mb-3">{feature.title}</h3>
+                  <p className="text-neutral-400 text-sm leading-relaxed">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -267,17 +269,17 @@ export default function HowItWorksPage() {
           {/* FAQ Section */}
           <section className="mb-24">
             <div className="text-center mb-12">
-              <p className="text-xs uppercase tracking-widest text-violet-600 mb-4">FAQ</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Common Questions</h2>
+              <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">FAQ</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Common Questions</h2>
             </div>
             <div className="space-y-4 max-w-3xl mx-auto">
               {faqs.map((faq, idx) => (
                 <div
                   key={idx}
-                  className="border border-slate-200 rounded-xl p-6 hover:border-slate-300 hover:shadow-md transition-all duration-300"
+                  className="border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all duration-300"
                 >
-                  <h3 className="font-semibold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">{faq.a}</p>
+                  <h3 className="font-semibold text-white mb-2">{faq.q}</h3>
+                  <p className="text-neutral-400 text-sm leading-relaxed">{faq.a}</p>
                 </div>
               ))}
             </div>
@@ -285,29 +287,29 @@ export default function HowItWorksPage() {
 
           {/* CTA */}
           <section>
-            <div className="border border-slate-200 rounded-2xl p-10 md:p-16 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Ready to get organized?</h2>
-              <p className="text-slate-500 mb-10 text-lg font-light">
+            <div className="border border-violet-500/30 bg-violet-500/10 rounded-2xl p-10 md:p-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to get organized?</h2>
+              <p className="text-neutral-300 mb-10 text-lg font-light">
                 No signup required, no complexity - just results. Free to start.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-8 py-6">
+                <Button asChild className="bg-white text-black hover:bg-neutral-200 rounded-full px-8 py-6">
                   <a href="https://t.me/whatstaskbot" target="_blank" rel="noopener noreferrer">
                     Start on Telegram
                   </a>
                 </Button>
-                <Button asChild variant="outline" className="rounded-lg px-8 py-6 border-slate-300 hover:bg-slate-50">
+                <Button asChild variant="outline" className="rounded-full px-8 py-6 border-white/20 text-white hover:bg-white/10 bg-transparent">
                   <Link href="/features">View Features</Link>
                 </Button>
               </div>
-              <p className="text-sm text-slate-400 mt-6">Takes less than 60 seconds to set up</p>
+              <p className="text-sm text-neutral-500 mt-6">Takes less than 60 seconds to set up</p>
             </div>
           </section>
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-slate-100 mt-20 py-8">
-          <div className="container mx-auto px-4 text-center text-sm text-slate-500">
+        <footer className="border-t border-white/5 mt-20 py-8">
+          <div className="container mx-auto px-4 text-center text-sm text-neutral-500">
             <p>© {new Date().getFullYear()} Whatstask. Simple scales.</p>
           </div>
         </footer>
