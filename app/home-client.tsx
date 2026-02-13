@@ -197,25 +197,6 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* Social Proof Bar */}
-      <section className="relative py-8 bg-[#111] border-y border-white/5">
-        <div className="container mx-auto max-w-5xl px-4">
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16">
-            {[
-              { stat: "10,000+", label: "tasks created" },
-              { stat: "500+", label: "teams" },
-              { stat: "50+", label: "countries" },
-              { stat: "4.8/5", label: "user rating" },
-            ].map((item, index) => (
-              <div key={index} className="text-center">
-                <p className="text-2xl md:text-3xl font-bold text-white">{item.stat}</p>
-                <p className="text-sm text-neutral-500">{item.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Three Pillars Section */}
       <section className="relative py-24 md:py-32 px-4 bg-[#0a0a0a]">
         <div className="container mx-auto max-w-6xl">
