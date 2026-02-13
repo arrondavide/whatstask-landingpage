@@ -14,15 +14,10 @@ import PageLoader from "@/components/page-loader"
 import { PhoneMockup } from "@/components/phone-mockup"
 
 export default function HomeClient() {
-  const [mounted, setMounted] = useState(false)
   const [privacyDialogOpen, setPrivacyDialogOpen] = useState(false)
 
   const { scrollY } = useScroll()
   const heroOpacity = useTransform(scrollY, [0, 300], [1, 0.3])
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   useEffect(() => {
     if (privacyDialogOpen) {
@@ -31,8 +26,6 @@ export default function HomeClient() {
       document.body.style.overflow = ""
     }
   }, [privacyDialogOpen])
-
-  if (!mounted) return null
 
   const handlePrivacyClick = (e: React.MouseEvent) => {
     e.preventDefault()

@@ -31,7 +31,6 @@ interface NavigationProps {
 }
 
 export default function Navigation({ variant = 'dark' }: NavigationProps) {
-  const [mounted, setMounted] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [mobileActiveSection, setMobileActiveSection] = useState<string | null>(null)
@@ -52,10 +51,6 @@ export default function Navigation({ variant = 'dark' }: NavigationProps) {
       setScrolled(latest > 50)
     }
   })
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -90,8 +85,6 @@ export default function Navigation({ variant = 'dark' }: NavigationProps) {
       setActiveDropdown(null)
     }, 150)
   }
-
-  if (!mounted) return null
 
   const ProductsDropdown = () => (
     <div className="grid grid-cols-3 gap-8 p-8">
