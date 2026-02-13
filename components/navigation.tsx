@@ -107,20 +107,23 @@ export default function Navigation({ variant = 'dark' }: NavigationProps) {
         </div>
       </div>
 
-      {/* AI Tools Column */}
+      {/* Integrations Column */}
       <div>
-        <h3 className={`text-xs font-semibold uppercase tracking-[0.15em] mb-4 ${scrolled ? 'text-neutral-400' : 'text-neutral-500'}`}>AI Tools</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-[0.15em] mb-4 ${scrolled ? 'text-neutral-400' : 'text-neutral-500'}`}>Integrations</h3>
         <div className="space-y-1">
-          <DropdownLink href="/project-management#ai" title="AI Task Creation" description="Create tasks with natural language" highlight dark={!scrolled} />
-          <DropdownLink href="/geoanalyzer" title="GEO Analyzer" description="AI search optimization tool" highlight dark={!scrolled} />
-          <DropdownLink href="/geoanalyzer/guide" title="GEO Guide" description="Learn about AI search" dark={!scrolled} />
+          <DropdownLink href="/pm-connect" title="PM Connect" description="Bridge Monday, ClickUp to Telegram" highlight dark={!scrolled} />
+          <DropdownLink href="/developers" title="Developer API" description="Send notifications from any app" highlight dark={!scrolled} />
         </div>
 
-        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 mt-8 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>Free PDF Tools</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 mt-8 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>AI Tools</h3>
+        <div className="space-y-1">
+          <DropdownLink href="/project-management#ai" title="AI Task Creation" description="Create tasks with natural language" dark={!scrolled} />
+          <DropdownLink href="/geoanalyzer" title="GEO Analyzer" description="AI search optimization tool" dark={!scrolled} />
+        </div>
+
+        <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 mt-6 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>Free Tools</h3>
         <div className="space-y-1">
           <DropdownLink href="/tools" title="All Tools" description="PDF & QR utilities" dark={!scrolled} />
-          <DropdownLink href="/pdf-merger" title="PDF Merger" description="Combine PDFs" dark={!scrolled} />
-          <DropdownLink href="/pdf-compressor" title="PDF Compressor" description="Reduce file size" dark={!scrolled} />
         </div>
       </div>
 
@@ -432,6 +435,8 @@ export default function Navigation({ variant = 'dark' }: NavigationProps) {
                   onToggle={() => setMobileActiveSection(mobileActiveSection === "Products" ? null : "Products")}
                 >
                   <MobileNavLink href="/project-management" onClick={() => setMobileMenuOpen(false)}>Project Management</MobileNavLink>
+                  <MobileNavLink href="/pm-connect" onClick={() => setMobileMenuOpen(false)}>PM Connect</MobileNavLink>
+                  <MobileNavLink href="/developers" onClick={() => setMobileMenuOpen(false)}>Developer API</MobileNavLink>
                   <MobileNavLink href="/features" onClick={() => setMobileMenuOpen(false)}>All Features</MobileNavLink>
                   <MobileNavLink href="/geoanalyzer" onClick={() => setMobileMenuOpen(false)}>GEO Analyzer</MobileNavLink>
                   <MobileNavLink href="/tools" onClick={() => setMobileMenuOpen(false)}>Free Tools</MobileNavLink>
