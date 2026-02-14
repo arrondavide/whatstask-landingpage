@@ -112,6 +112,7 @@ export default function Navigation({ variant = 'dark' }: NavigationProps) {
         <div className="space-y-1">
           <DropdownLink href="/project-management#ai" title="AI Task Creation" description="Create tasks with natural language" dark={!scrolled} />
           <DropdownLink href="/geoanalyzer" title="GEO Analyzer" description="AI search optimization tool" dark={!scrolled} />
+          <DropdownLink href="/ip-proof" title="IP Proof" description="Blockchain proof of creation" highlight dark={!scrolled} />
         </div>
 
         <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 mt-6 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>Free Tools</h3>
@@ -201,6 +202,7 @@ export default function Navigation({ variant = 'dark' }: NavigationProps) {
           <DropdownLink href="/help" title="Help Center" description="FAQs and documentation" dark={!scrolled} />
           <DropdownLink href="/contact" title="Contact Support" description="Get help from our team" dark={!scrolled} />
           <DropdownLink href="/security" title="Security" description="How we protect your data" dark={!scrolled} />
+          <DropdownLink href="/verify" title="Verify IP Proof" description="Check blockchain certificates" dark={!scrolled} />
         </div>
 
         <h3 className={`text-xs font-semibold uppercase tracking-wider mb-4 mt-8 ${scrolled ? 'text-slate-600' : 'text-slate-400'}`}>Company</h3>
@@ -432,6 +434,7 @@ export default function Navigation({ variant = 'dark' }: NavigationProps) {
                   <MobileNavLink href="/developers" onClick={() => setMobileMenuOpen(false)}>Developer API</MobileNavLink>
                   <MobileNavLink href="/features" onClick={() => setMobileMenuOpen(false)}>All Features</MobileNavLink>
                   <MobileNavLink href="/geoanalyzer" onClick={() => setMobileMenuOpen(false)}>GEO Analyzer</MobileNavLink>
+                  <MobileNavLink href="/ip-proof" onClick={() => setMobileMenuOpen(false)}>IP Proof</MobileNavLink>
                   <MobileNavLink href="/tools" onClick={() => setMobileMenuOpen(false)}>Free Tools</MobileNavLink>
                 </MobileNavSection>
 
