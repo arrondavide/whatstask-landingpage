@@ -11,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/geoanalyzer', priority: 0.9, changeFrequency: 'weekly' as const },
     { url: '/pm-connect', priority: 0.9, changeFrequency: 'weekly' as const },
     { url: '/developers', priority: 0.9, changeFrequency: 'weekly' as const },
+    { url: '/ip-proof', priority: 0.9, changeFrequency: 'weekly' as const },
+    { url: '/verify', priority: 0.8, changeFrequency: 'weekly' as const },
     { url: '/pricing', priority: 0.8, changeFrequency: 'weekly' as const },
     { url: '/enterprise', priority: 0.8, changeFrequency: 'monthly' as const },
     { url: '/contact', priority: 0.7, changeFrequency: 'monthly' as const },
