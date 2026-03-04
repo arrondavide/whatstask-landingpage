@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 export default function WhatstaskVsSkeddyPage() {
   const comparison = [
     { category: "Platform Type", whatstask: "Full Mini App (complete modern UI/UX)", skeddy: "Bot (command-based interface)", winner: "whatstask" },
-    { category: "Pricing", whatstask: "Free + $4.99/mo Pro", skeddy: "Free + $9.99/mo Premium", winner: "whatstask" },
+    { category: "Pricing", whatstask: "Free + 250 Stars/mo Pro (~$5)", skeddy: "Free + $9.99/mo Premium", winner: "whatstask" },
     { category: "Time Tracking", whatstask: "Built-in (clock in/out, detailed reports)", skeddy: "Not available", winner: "whatstask" },
     { category: "Team Collaboration", whatstask: "3-tier roles (Admin/Manager/Employee) - Free", skeddy: "Limited (Premium only)", winner: "whatstask" },
     { category: "Multi-Company Workspaces", whatstask: "Unlimited companies/projects", skeddy: "Not available", winner: "whatstask" },
@@ -50,13 +50,13 @@ export default function WhatstaskVsSkeddyPage() {
   ]
 
   const keyDifferences = [
-    { title: "Better Value", skeddy: "$9.99/month Premium", whatstask: "$4.99/month Pro (50% cheaper)" },
+    { title: "Better Value", skeddy: "$9.99/month Premium", whatstask: "250 Stars/month Pro (~$5, 50% cheaper)" },
     { title: "Time Tracking", skeddy: "Not available", whatstask: "Built-in with invoicing-ready reports" },
     { title: "Interface", skeddy: "Text-based bot commands", whatstask: "Modern Mini App with visual UI" },
   ]
 
   const whatstaskPros = [
-    "50% cheaper pricing ($4.99 vs $9.99/mo)",
+    "50% cheaper pricing (250 Stars ~$5 vs $9.99/mo)",
     "Built-in time tracking with invoicing",
     "AI-powered natural language understanding",
     "Free PDF tools (save $10-20/mo elsewhere)",
@@ -80,7 +80,7 @@ export default function WhatstaskVsSkeddyPage() {
   ]
 
   const skeddyCons = [
-    "2x more expensive ($9.99 vs $4.99/mo)",
+    "2x more expensive ($9.99 vs ~$5/mo for 250 Stars)",
     "No built-in time tracking",
     "No PDF tools included",
     "Limited natural language support",
@@ -272,8 +272,8 @@ export default function WhatstaskVsSkeddyPage() {
                 <div className="mb-6">
                   <p className="text-4xl font-light text-white mb-1">$0</p>
                   <p className="text-neutral-400 text-sm mb-4">Free Forever Plan</p>
-                  <p className="text-3xl font-light text-white mb-1">$4.99<span className="text-lg">/mo</span></p>
-                  <p className="text-neutral-400 text-sm">Pro Plan</p>
+                  <p className="text-3xl font-light text-white mb-1">250 ★<span className="text-lg">/mo</span></p>
+                  <p className="text-neutral-400 text-sm">Pro Plan (~$5)</p>
                 </div>
                 <ul className="space-y-2">
                   {[
@@ -399,7 +399,7 @@ export default function WhatstaskVsSkeddyPage() {
                   name: "What is the main difference between Whatstask and Skeddy?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Whatstask offers better natural language processing, includes free PDF tools, and costs less ($4.99/mo vs $9.99/mo for premium). Skeddy has more third-party integrations but lacks AI-powered features and PDF tools.",
+                    text: "Whatstask offers better natural language processing, includes free PDF tools, and costs less (250 Stars/mo ~$5 vs $9.99/mo for Skeddy Premium). Skeddy has more third-party integrations but lacks AI-powered features and PDF tools.",
                   },
                 },
                 {
@@ -407,7 +407,7 @@ export default function WhatstaskVsSkeddyPage() {
                   name: "Which is cheaper: Whatstask or Skeddy?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Whatstask is significantly cheaper. The Pro plan costs $4.99/month compared to Skeddy's Premium at $9.99/month. Both offer free tiers, but Whatstask includes more features in the free plan.",
+                    text: "Whatstask is significantly cheaper. The Pro plan costs 250 Telegram Stars/month (~$5) compared to Skeddy's Premium at $9.99/month. Both offer free tiers, but Whatstask includes more features in the free plan.",
                   },
                 },
                 {

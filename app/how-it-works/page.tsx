@@ -6,7 +6,7 @@ import Navigation from "@/components/navigation"
 import Script from "next/script"
 
 export const metadata: Metadata = {
-  title: "How It Works - Telegram Mini App Setup | Whatstask",
+  title: "How WhatsTask Works: Step-by-Step Telegram PM Setup Guide",
   description:
     "Get started with Whatstask in 4 simple steps: Launch Mini App, create workspace, manage tasks & time, invite team. Complete guide to work management in Telegram.",
   keywords:
@@ -150,7 +150,7 @@ export default function HowItWorksPage() {
           <section className="text-center mb-20">
             <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">How It Works</p>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white">
-              Get started in minutes
+              How to Set Up WhatsTask in Telegram
             </h1>
             <p className="text-xl text-neutral-400 max-w-2xl mx-auto font-light">
               Launch the Mini App, create your workspace, manage tasks & time, and invite your team.
@@ -192,7 +192,7 @@ export default function HowItWorksPage() {
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
                 <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Natural Language</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Just type what you're thinking</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Natural Language Task Creation: AI-Powered Examples</h2>
                 <p className="text-neutral-400 text-lg font-light max-w-2xl mx-auto">
                   No need to learn complex syntax or commands. Whatstask understands how you naturally speak.
                 </p>
@@ -225,7 +225,7 @@ export default function HowItWorksPage() {
           <section className="mb-24">
             <div className="text-center mb-12">
               <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Shortcuts</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Quick Commands</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Bot Commands for Task Management & Productivity</h2>
               <p className="text-neutral-400 text-lg font-light max-w-2xl mx-auto">
                 Speed up your workflow with optional shortcuts. Natural language always works too.
               </p>

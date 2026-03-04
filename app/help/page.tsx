@@ -118,7 +118,7 @@ export default function HelpPage() {
   const faqs = [
     {
       question: "Is Whatstask free?",
-      answer: "Yes! Whatstask is free to start with all basic features. Pro plans start at $4.99/user/month for advanced features like unlimited projects and priority support.",
+      answer: "Yes! Whatstask is free to start with all basic features. Pro plans start at 250 Telegram Stars/month (~$5) for advanced features like unlimited projects and priority support.",
     },
     {
       question: "Do I need to download an app?",

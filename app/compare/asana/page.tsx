@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function AsanaComparisonPage() {
   const comparison = [
-    { feature: "AI Features", whatstask: "Free", asana: "Enterprise only", winner: "whatstask" },
+    { feature: "AI Features", whatstask: "5/day free, 50 Pro", asana: "Enterprise only", winner: "whatstask" },
     { feature: "Setup Time", whatstask: "30 seconds", asana: "Weeks", winner: "whatstask" },
     { feature: "Time Tracking", whatstask: "Built-in free", asana: "Third-party integration", winner: "whatstask" },
     { feature: "Learning Curve", whatstask: "Minimal", asana: "Significant", winner: "whatstask" },
@@ -45,7 +45,7 @@ export default function AsanaComparisonPage() {
   ]
 
   const keyDifferences = [
-    { title: "AI Access", asana: "Enterprise tier only", whatstask: "Free for everyone" },
+    { title: "AI Access", asana: "Enterprise tier only", whatstask: "5/day free for everyone" },
     { title: "Setup Time", asana: "Weeks of configuration", whatstask: "30 seconds" },
     { title: "Complexity", asana: "Steep learning curve", whatstask: "Start instantly" },
   ]
@@ -53,7 +53,7 @@ export default function AsanaComparisonPage() {
   const switchReasons = [
     {
       title: '"AI features are locked behind Enterprise"',
-      description: "Asana's AI requires Enterprise pricing. Whatstask includes AI free for everyone.",
+      description: "Asana's AI requires Enterprise pricing. Whatstask includes 5 AI queries/day free.",
     },
     {
       title: '"Setup took way too long"',

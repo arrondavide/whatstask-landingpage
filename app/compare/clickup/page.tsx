@@ -32,22 +32,22 @@ export const metadata: Metadata = {
 export default function ClickUpComparisonPage() {
   const comparison = [
     { feature: "Views Available", whatstask: "4 essential views", clickup: "15+ views", winner: "depends" },
-    { feature: "AI Task Creation", whatstask: "Free", clickup: "$28/user/month", winner: "whatstask" },
+    { feature: "AI Task Creation", whatstask: "5/day free, 50 Pro", clickup: "$28/user/month", winner: "whatstask" },
     { feature: "Time Tracking", whatstask: "Built-in free", clickup: "Available", winner: "whatstask" },
     { feature: "Setup Time", whatstask: "30 seconds", clickup: "Days to weeks", winner: "whatstask" },
     { feature: "Learning Curve", whatstask: "Minimal", clickup: "Steep", winner: "whatstask" },
     { feature: "Mobile Experience", whatstask: "Mobile-first", clickup: "Desktop-first", winner: "whatstask" },
-    { feature: "Free Tier", whatstask: "Generous", clickup: "Limited", winner: "whatstask" },
+    { feature: "Free Tier", whatstask: "3 projects, 5 seats, 5 AI/day", clickup: "Limited", winner: "whatstask" },
     { feature: "Integrations", whatstask: "Telegram + growing", clickup: "1000+", winner: "clickup" },
     { feature: "Custom Fields", whatstask: "Basic", clickup: "Advanced", winner: "clickup" },
     { feature: "Automations", whatstask: "Coming soon", clickup: "Extensive", winner: "clickup" },
     { feature: "Team Collaboration", whatstask: "Full support", clickup: "Full support", winner: "tie" },
-    { feature: "Pricing (Pro)", whatstask: "$4.99/month", clickup: "$7-19/user/month", winner: "whatstask" },
+    { feature: "Pricing (Pro)", whatstask: "250 Stars/month (~$5)", clickup: "$7-19/user/month", winner: "whatstask" },
   ]
 
   const keyDifferences = [
     { title: "Complexity", clickup: "15+ views to learn", whatstask: "4 views that matter" },
-    { title: "AI Features", clickup: "$28/user/month extra", whatstask: "Included free" },
+    { title: "AI Features", clickup: "$28/user/month extra", whatstask: "5/day free, 50/day Pro" },
     { title: "Setup Time", clickup: "Days to weeks", whatstask: "30 seconds" },
   ]
 
@@ -62,7 +62,7 @@ export default function ClickUpComparisonPage() {
     },
     {
       title: '"AI features are too expensive"',
-      description: "ClickUp charges $28/user/month for AI. We include it free.",
+      description: "ClickUp charges $28/user/month for AI. We include 5 queries/day free, 50/day on Pro.",
     },
     {
       title: '"We wanted something faster"',

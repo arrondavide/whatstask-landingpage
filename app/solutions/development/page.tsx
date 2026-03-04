@@ -113,7 +113,7 @@ export default function DevelopmentSolutionPage() {
     },
     {
       problem: "Expensive per-seat pricing",
-      solution: "Free to start. Pro is $4.99/user. That's it.",
+      solution: "Free to start. Pro is 250 Stars/month (~$5). That's it.",
     },
   ]
 

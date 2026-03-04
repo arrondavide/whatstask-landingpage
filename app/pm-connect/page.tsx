@@ -8,7 +8,7 @@ import { ArrowRight, Check, Globe, Users, Zap, MessageSquare, Camera, ChevronDow
 import Image from "next/image"
 
 export const metadata: Metadata = {
-  title: "PM Connect - Bridge Your PM Tools to Telegram Workers | WhatsTask",
+  title: "PM Connect: Bridge Monday.com, ClickUp & Asana to Telegram",
   description:
     "Connect Monday.com, ClickUp, Asana, Trello to Telegram. Send tasks to field workers instantly. Receive updates, photos, completion status. No app switching.",
   keywords:
@@ -49,8 +49,7 @@ export default function PMConnectPage() {
               <span className="text-blue-400 text-sm font-medium">PM Connect</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white">
-              Don't replace your tools.
-              <br />Extend them to Telegram.
+              Bridge Monday.com, ClickUp & Asana to Telegram
             </h1>
             <p className="text-xl text-neutral-400 max-w-2xl mx-auto font-light mb-10">
               Your managers use Monday.com. Your field workers live in Telegram. PM Connect bridges the gap without forcing anyone to switch.
@@ -71,7 +70,7 @@ export default function PMConnectPage() {
           <section className="mb-24">
             <div className="text-center mb-12">
               <p className="text-xs uppercase tracking-widest text-blue-400 mb-4 font-medium">The Problem</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">Two worlds that don't connect</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">The Problem: PM Tools vs Field Workers</h2>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -518,7 +517,7 @@ export default function PMConnectPage() {
                 },
                 {
                   q: "Is there a limit to how many workers I can add?",
-                  a: "Free tier includes up to 5 workers per integration. Pro tier has unlimited workers.",
+                  a: "Free tier: 1 integration, 3 workers. Pro (350 Stars/month): 5 integrations, 25 workers. Business (750 Stars/month): unlimited.",
                 },
                 {
                   q: "Can managers see task progress in real-time?",
@@ -578,6 +577,22 @@ export default function PMConnectPage() {
                 price: "0",
                 priceCurrency: "USD",
               },
+            }),
+          }}
+        />
+
+        {/* Breadcrumb Schema */}
+        <Script
+          id="schema-breadcrumb-pm-connect"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://www.whatstask.com" },
+                { "@type": "ListItem", position: 2, name: "PM Connect", item: "https://www.whatstask.com/pm-connect" },
+              ],
             }),
           }}
         />

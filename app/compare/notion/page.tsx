@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 export default function NotionComparisonPage() {
   const comparison = [
     { feature: "Primary Focus", whatstask: "Project management", notion: "Everything (docs, wikis, tasks, etc.)", winner: "depends" },
-    { feature: "AI Features", whatstask: "Free", notion: "$8-10/member/month", winner: "whatstask" },
+    { feature: "AI Features", whatstask: "5/day free, 50 Pro", notion: "$8-10/member/month", winner: "whatstask" },
     { feature: "Setup Time", whatstask: "30 seconds", notion: "Hours to weeks", winner: "whatstask" },
     { feature: "Learning Curve", whatstask: "Minimal", notion: "Significant", winner: "whatstask" },
     { feature: "Time Tracking", whatstask: "Built-in", notion: "Requires setup/integration", winner: "whatstask" },

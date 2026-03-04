@@ -4,15 +4,26 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    // Enable image optimization for better SEO and Core Web Vitals
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    // Remove unoptimized flag to enable automatic optimization
   },
-
   eslint: {
     ignoreDuringBuilds: true,
+  },
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'Strict-Transport-Security', value: 'max-age=31536000; includeSubDomains' },
+          { key: 'Permissions-Policy', value: 'geolocation=(), microphone=(), camera=()' },
+        ],
+      },
+    ]
   },
 }
 

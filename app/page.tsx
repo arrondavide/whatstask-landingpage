@@ -3,9 +3,9 @@ import HomeClient from "./home-client"
 import Script from "next/script"
 
 export const metadata: Metadata = {
-  title: "Whatstask - AI-Powered Work Infrastructure in Telegram | Project Management",
+  title: "WhatsTask — Free AI Project Management in Telegram",
   description:
-    "Upload a document. AI creates every task and assigns your team. Connect your existing PM tools to Telegram workers. Send notifications from any app. Simple scales.",
+    "Free project management in Telegram. AI creates tasks from documents, connects to Monday & Asana, tracks field workers. Free tier + Pro plans with Telegram Stars.",
   keywords: [
     "AI project management",
     "Telegram task manager",
@@ -19,10 +19,11 @@ export const metadata: Metadata = {
     "Monday.com Telegram integration",
     "ClickUp Telegram",
     "Asana alternative",
+    "free project management",
   ],
-  authors: [{ name: "Whatstask" }],
-  creator: "Whatstask",
-  publisher: "Whatstask",
+  authors: [{ name: "WhatsTask" }],
+  creator: "WhatsTask",
+  publisher: "WhatsTask",
   robots: {
     index: true,
     follow: true,
@@ -35,17 +36,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Whatstask - AI-Powered Work Infrastructure in Telegram",
+    title: "WhatsTask — Free AI Project Management in Telegram",
     description:
-      "Upload a document. AI creates every task and assigns your team. Connect your existing PM tools. Send notifications. All inside Telegram.",
+      "Free project management for teams on Telegram. AI creates tasks from documents, connects to Monday & Asana, tracks field workers.",
     url: "https://www.whatstask.com",
-    siteName: "Whatstask",
+    siteName: "WhatsTask",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Whatstask - AI-Powered Work Infrastructure",
+        alt: "WhatsTask - Free AI Project Management in Telegram",
       },
     ],
     locale: "en_US",
@@ -53,9 +54,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Whatstask - AI-Powered Work Infrastructure in Telegram",
+    title: "WhatsTask — Free AI Project Management in Telegram",
     description:
-      "Upload a document. AI creates every task and assigns your team. Connect your tools. All inside Telegram.",
+      "Free project management for teams on Telegram. AI creates tasks, connects to Monday & Asana. No signup needed.",
     images: ["/og-image.png"],
   },
   alternates: {
@@ -77,23 +78,48 @@ export default function HomePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            name: "Whatstask",
+            name: "WhatsTask",
             url: "https://www.whatstask.com",
             logo: "https://www.whatstask.com/logo-black.png",
-            description: "AI-powered work infrastructure for teams. Project management, PM Connect, and Developer API - all in Telegram.",
+            description: "AI-powered project management for teams on Telegram. Create tasks from documents, connect PM tools, track field workers.",
             sameAs: [
-              "https://t.me/whatstaskbot"
+              "https://t.me/whatstask_bot",
+              "https://twitter.com/whatstask"
             ],
             contactPoint: {
               "@type": "ContactPoint",
-              email: "charlesaarondavid@gmail.com",
-              contactType: "customer support"
+              email: "support@whatstask.com",
+              contactType: "customer support",
+              availableLanguage: ["English"]
             }
           }),
         }}
       />
 
-      {/* Software Application Schema */}
+      {/* WebSite Schema */}
+      <Script
+        id="schema-website"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "WhatsTask",
+            url: "https://www.whatstask.com",
+            description: "Free AI project management in Telegram",
+            potentialAction: {
+              "@type": "SearchAction",
+              target: {
+                "@type": "EntryPoint",
+                urlTemplate: "https://www.whatstask.com/blog?q={search_term_string}",
+              },
+              "query-input": "required name=search_term_string",
+            },
+          }),
+        }}
+      />
+
+      {/* Software Application Schema - NO aggregateRating */}
       <Script
         id="schema-software"
         type="application/ld+json"
@@ -101,28 +127,43 @@ export default function HomePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            name: "Whatstask",
+            name: "WhatsTask",
             applicationCategory: "BusinessApplication",
-            operatingSystem: "Web, Telegram",
+            applicationSubCategory: "Project Management Software",
+            operatingSystem: "Web, Telegram, iOS, Android",
+            offers: [
+              {
+                "@type": "Offer",
+                name: "Free",
+                price: "0",
+                priceCurrency: "USD",
+                description: "3 projects, 5 seats, 5 AI queries/day"
+              },
+              {
+                "@type": "Offer",
+                name: "Pro",
+                price: "5",
+                priceCurrency: "USD",
+                description: "Unlimited projects, 15 seats, 50 AI queries/day (250 Telegram Stars/month)"
+              },
+              {
+                "@type": "Offer",
+                name: "Business",
+                price: "10",
+                priceCurrency: "USD",
+                description: "50 seats, 200 AI queries/day (500 Telegram Stars/month)"
+              }
+            ],
             description: "AI-powered project management that runs inside Telegram. Upload documents, create tasks with AI, manage teams, track time.",
-            offers: {
-              "@type": "Offer",
-              price: "0",
-              priceCurrency: "USD",
-              description: "Free tier available"
-            },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.8",
-              ratingCount: "500"
-            },
             featureList: [
               "AI task creation from documents",
-              "5 project views",
-              "Time tracking",
-              "Team collaboration",
-              "PM Connect integration",
-              "Developer notification API"
+              "5 project views (List, Kanban, Calendar, Timeline, Table)",
+              "Time tracking with clock in/out",
+              "Team collaboration with roles",
+              "PM Connect integration (Monday, ClickUp, Asana)",
+              "Developer notification API",
+              "Real-time analytics",
+              "Telegram notifications"
             ]
           }),
         }}
@@ -178,6 +219,26 @@ export default function HomePage() {
                 }
               }
             ]
+          }),
+        }}
+      />
+
+      {/* BreadcrumbList Schema */}
+      <Script
+        id="schema-breadcrumb"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://www.whatstask.com",
+              },
+            ],
           }),
         }}
       />

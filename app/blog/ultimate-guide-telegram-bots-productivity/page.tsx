@@ -50,7 +50,7 @@ export default function TelegramBotsGuidePage() {
       name: "Whatstask",
       description: "All-in-one task management with natural language input, smart reminders, and free PDF tools.",
       bestFor: "Individuals and small teams who want simplicity",
-      pricing: "Free + $4.99/mo Pro",
+      pricing: "Free + 250 Stars/mo Pro (~$5)",
       pros: ["Natural language understanding", "Free PDF tools", "No learning curve", "Affordable"],
       link: "https://t.me/whatstaskbot",
     },

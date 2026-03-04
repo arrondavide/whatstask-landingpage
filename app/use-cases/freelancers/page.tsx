@@ -56,7 +56,7 @@ export default function FreelancersPage() {
     },
     {
       title: "Affordable Pricing",
-      description: "Free forever for basic features. Pro at $4.99/mo - cheaper than coffee. No enterprise upsells.",
+      description: "Free forever for basic features. Pro at 250 Stars/mo (~$5) - cheaper than coffee. No enterprise upsells.",
     },
     {
       title: "Share with Clients",
@@ -223,7 +223,7 @@ export default function FreelancersPage() {
               </div>
               <div className="border border-white/10 rounded-2xl p-8">
                 <h3 className="text-xl font-semibold text-white mb-2">Pro Plan</h3>
-                <p className="text-4xl font-light text-white mb-6">$4.99<span className="text-lg text-neutral-400">/month</span></p>
+                <p className="text-4xl font-light text-white mb-6">250 ★<span className="text-lg text-neutral-400">/mo (~$5)</span></p>
                 <ul className="space-y-3 mb-6">
                   {["Everything in Free", "AI-powered suggestions", "Advanced analytics", "Priority support"].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3 text-sm text-neutral-300">
@@ -288,7 +288,7 @@ export default function FreelancersPage() {
                   name: "How much does Whatstask cost for freelancers?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Whatstask is free forever for basic features. Pro costs $4.99/month and includes AI suggestions, analytics, and priority support - much cheaper than enterprise tools like Asana or Monday.com.",
+                    text: "Whatstask is free forever for basic features. Pro costs 250 Telegram Stars/month (~$5) and includes AI suggestions, analytics, and priority support - much cheaper than enterprise tools like Asana or Monday.com.",
                   },
                 },
                 {

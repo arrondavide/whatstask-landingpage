@@ -75,22 +75,22 @@ export default function HomeClient() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                {/* Simple Scales Badge */}
+                {/* Badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8">
                   <div className="w-2 h-2 rounded-full bg-violet-500 animate-pulse" />
-                  <span className="text-white/70 text-sm font-medium tracking-wide">Simple Scales</span>
+                  <span className="text-white/70 text-sm font-medium tracking-wide">AI Task Management for Telegram</span>
                 </div>
 
                 {/* Main Headline */}
                 <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-[1.05] tracking-tight mb-8 text-white">
-                  AI-powered work
+                  Free AI Project
                   <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/60">infrastructure</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/60">Management</span>
                 </h1>
 
                 <p className="text-lg md:text-xl text-neutral-400 font-normal leading-relaxed max-w-2xl mx-auto mb-12">
-                  Upload a document. AI creates every task and assigns your team.
-                  <span className="text-neutral-300"> Connect your tools. Send notifications. All inside Telegram.</span>
+                  AI-powered project management that works inside Telegram.
+                  <span className="text-neutral-300"> Upload documents, create tasks instantly, manage your team — no app required. Connect Monday.com, ClickUp, or Asana.</span>
                 </p>
               </motion.div>
 
@@ -123,7 +123,7 @@ export default function HomeClient() {
               >
                 <span className="flex items-center gap-2">
                   <div className="w-1 h-1 rounded-full bg-green-500" />
-                  Free forever tier
+                  Free tier included
                 </span>
                 <span className="flex items-center gap-2">
                   <div className="w-1 h-1 rounded-full bg-green-500" />
@@ -153,7 +153,7 @@ export default function HomeClient() {
                   transition={{ duration: 0.6, delay: 0.7 }}
                   className="hidden sm:block scale-[0.6] md:scale-[0.7] origin-bottom -mr-6 md:-mr-10 opacity-80"
                 >
-                  <PhoneMockup src="/appui/app-projects.webp" alt="Projects Screen" />
+                  <PhoneMockup src="/appui/app-projects.webp" alt="WhatsTask project list showing tasks with priorities and due dates in Telegram" />
                 </motion.div>
 
                 <motion.div
@@ -164,7 +164,7 @@ export default function HomeClient() {
                 >
                   <div className="relative">
                     <div className="absolute inset-0 bg-violet-500/20 blur-3xl rounded-3xl scale-90" />
-                    <PhoneMockup src="/appui/app-onboarding.webp" alt="WhatsTask Onboarding" priority />
+                    <PhoneMockup src="/appui/app-onboarding.webp" alt="WhatsTask onboarding flow with AI-powered project setup in Telegram" priority />
                   </div>
                 </motion.div>
 
@@ -174,7 +174,7 @@ export default function HomeClient() {
                   transition={{ duration: 0.6, delay: 0.7 }}
                   className="hidden sm:block scale-[0.6] md:scale-[0.7] origin-bottom -ml-6 md:-ml-10 opacity-80"
                 >
-                  <PhoneMockup src="/appui/app-stats-personal.webp" alt="Statistics Screen" />
+                  <PhoneMockup src="/appui/app-stats-personal.webp" alt="WhatsTask analytics dashboard showing team productivity and time tracking" />
                 </motion.div>
               </div>
             </motion.div>
@@ -208,7 +208,7 @@ export default function HomeClient() {
           >
             <p className="text-sm text-neutral-500 uppercase tracking-[0.2em] mb-4 font-medium">One Platform, Three Modes</p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-white">
-              Everything connects through Telegram
+              Three Ways to Use WhatsTask: AI Tasks, PM Integrations & Developer API
             </h2>
             <p className="text-lg text-neutral-400 max-w-2xl mx-auto leading-relaxed">
               Use it as your PM tool. Connect your existing tools. Send notifications from any app. All simple. All scales.
@@ -353,7 +353,7 @@ export default function HomeClient() {
           >
             <p className="text-sm text-neutral-500 uppercase tracking-[0.2em] mb-4 font-medium">AI That Works</p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-white">
-              You describe. AI builds.
+              AI Task Creation: Turn Documents into Project Plans
             </h2>
             <p className="text-lg text-neutral-400 max-w-2xl mx-auto leading-relaxed">
               Stop creating tasks manually. Let AI handle the complexity while you stay focused on what matters.
@@ -431,7 +431,7 @@ export default function HomeClient() {
           >
             <p className="text-sm text-neutral-500 uppercase tracking-[0.2em] mb-4 font-medium">See It In Action</p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-white">
-              A complete workspace in Telegram
+              Telegram Project Management: Projects, Tasks, Analytics
             </h2>
             <p className="text-base md:text-lg text-neutral-400 max-w-xl mx-auto leading-relaxed">
               From project creation to team analytics, everything you need is accessible right from your chat app.
@@ -440,10 +440,10 @@ export default function HomeClient() {
 
           <div className="flex flex-wrap justify-center gap-10 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20">
             {[
-              { src: "/appui/app-create-project.webp", label: "Create Projects", desc: "Set up new projects with AI assistance" },
-              { src: "/appui/app-projects.webp", label: "Manage Tasks", desc: "View and organize all your work" },
-              { src: "/appui/app-team-management.webp", label: "Team Management", desc: "Invite members and assign roles" },
-              { src: "/appui/app-stats-team.webp", label: "Team Analytics", desc: "Track productivity across your team" },
+              { src: "/appui/app-create-project.webp", label: "Create Projects", desc: "Set up new projects with AI assistance", alt: "Creating a new project with AI task generation in WhatsTask Telegram app" },
+              { src: "/appui/app-projects.webp", label: "Manage Tasks", desc: "View and organize all your work", alt: "Kanban board view for task management in WhatsTask Telegram Mini App" },
+              { src: "/appui/app-team-management.webp", label: "Team Management", desc: "Invite members and assign roles", alt: "Team member management with role assignments in WhatsTask" },
+              { src: "/appui/app-stats-team.webp", label: "Team Analytics", desc: "Track productivity across your team", alt: "Real-time team analytics and burndown charts in WhatsTask" },
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -455,7 +455,7 @@ export default function HomeClient() {
                 style={{ width: '200px' }}
               >
                 <div className="mb-8 transition-transform duration-300 group-hover:scale-[1.02]">
-                  <PhoneMockup src={item.src} alt={item.label} />
+                  <PhoneMockup src={item.src} alt={item.alt} />
                 </div>
                 <h3 className="font-semibold text-white text-base md:text-lg mb-2">{item.label}</h3>
                 <p className="text-sm text-neutral-500 leading-relaxed">{item.desc}</p>
@@ -658,7 +658,7 @@ export default function HomeClient() {
           >
             <p className="text-sm text-neutral-500 uppercase tracking-[0.2em] mb-4 font-medium">Features</p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-white">
-              Everything you need, nothing you don't
+              Core Features: Views, Analytics, Time Tracking, Collaboration
             </h2>
             <p className="text-lg text-neutral-400 max-w-2xl mx-auto leading-relaxed">
               Built for simplicity. Designed for productivity. The essential tools without the bloat.
@@ -735,7 +735,7 @@ export default function HomeClient() {
           >
             <p className="text-sm text-neutral-500 uppercase tracking-[0.2em] mb-4 font-medium">Comparison</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight text-white">
-              Why teams choose WhatsTask
+              WhatsTask vs ClickUp vs Monday.com: Feature Comparison
             </h2>
             <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
               See how we compare to traditional project management tools.
@@ -769,7 +769,7 @@ export default function HomeClient() {
                       { feature: "Connect external PM tools", whatstask: true, trello: false, asana: false, monday: false },
                       { feature: "Multiple views", whatstask: "5", trello: "1", asana: "4", monday: "8" },
                       { feature: "Time tracking", whatstask: true, trello: "addon", asana: "addon", monday: "addon" },
-                      { feature: "Free tier", whatstask: "Generous", trello: "Limited", asana: "Limited", monday: "Limited" },
+                      { feature: "Free tier", whatstask: "3 projects, 5 seats", trello: "Limited", asana: "Limited", monday: "Limited" },
                     ].map((row, index) => (
                       <tr key={index} className="border-b border-white/5 last:border-0">
                         <td className="p-4 text-neutral-300">{row.feature}</td>
@@ -830,7 +830,7 @@ export default function HomeClient() {
           >
             <p className="text-sm text-neutral-500 uppercase tracking-[0.2em] mb-4 font-medium">How It Works</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight text-white">
-              From zero to productive in three steps
+              Get Started in 3 Steps: No Installation, No Setup Fees
             </h2>
             <p className="text-lg text-neutral-400 max-w-2xl mx-auto leading-relaxed">
               No lengthy onboarding. No complex setup. Just open Telegram and start.
@@ -971,7 +971,7 @@ export default function HomeClient() {
           >
             <p className="text-sm text-neutral-500 uppercase tracking-[0.2em] mb-4 font-medium">Solutions</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight text-white">
-              Built for teams of any size
+              Project Management for Freelancers, Small Teams & Enterprise
             </h2>
             <p className="text-lg text-neutral-400 max-w-xl mx-auto">
               From solo freelancers to enterprise teams.
@@ -1015,7 +1015,7 @@ export default function HomeClient() {
           >
             <p className="text-sm text-neutral-500 uppercase tracking-[0.2em] mb-4 font-medium">Products</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight text-white">
-              Two products, one philosophy
+              WhatsTask Project Management + GEO Analyzer
             </h2>
             <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
               Simple Scales. Work tools that grow with you.
@@ -1149,7 +1149,7 @@ export default function HomeClient() {
           >
             <p className="text-sm text-neutral-500 uppercase tracking-[0.2em] mb-4 font-medium">Free Tools</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-white">
-              Productivity utilities
+              Free Tools: PDF Merger, Compressor, Converter, QR Generator
             </h2>
             <p className="text-neutral-400">PDF tools, QR codes, and more. Forever free.</p>
           </motion.div>

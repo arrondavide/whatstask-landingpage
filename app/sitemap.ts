@@ -2,7 +2,8 @@ import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.whatstask.com'
-  const currentDate = new Date().toISOString()
+  // Use a fixed date instead of current date for reliable lastModified signals
+  const lastUpdate = '2026-02-14'
 
   // Core pages - highest priority
   const corePages = [
@@ -13,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/developers', priority: 0.9, changeFrequency: 'weekly' as const },
     { url: '/ip-proof', priority: 0.9, changeFrequency: 'weekly' as const },
     { url: '/verify', priority: 0.8, changeFrequency: 'weekly' as const },
-    { url: '/pricing', priority: 0.8, changeFrequency: 'weekly' as const },
+    { url: '/pricing', priority: 0.9, changeFrequency: 'weekly' as const },
     { url: '/enterprise', priority: 0.8, changeFrequency: 'monthly' as const },
     { url: '/contact', priority: 0.7, changeFrequency: 'monthly' as const },
     { url: '/about', priority: 0.7, changeFrequency: 'monthly' as const },
@@ -27,15 +28,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/blog/geo-vs-seo', priority: 0.8, changeFrequency: 'monthly' as const },
   ]
 
-  // Tools pages - traffic funnel
+  // Tools pages - traffic funnel (lower priority)
   const toolPages = [
-    { url: '/tools', priority: 0.8, changeFrequency: 'monthly' as const },
-    { url: '/pdf-merger', priority: 0.7, changeFrequency: 'monthly' as const },
-    { url: '/pdf-compressor', priority: 0.7, changeFrequency: 'monthly' as const },
-    { url: '/pdf-to-jpg', priority: 0.7, changeFrequency: 'monthly' as const },
-    { url: '/jpg-to-pdf', priority: 0.7, changeFrequency: 'monthly' as const },
-    { url: '/pdf-splitter', priority: 0.7, changeFrequency: 'monthly' as const },
-    { url: '/qr-code-generator', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/tools', priority: 0.7, changeFrequency: 'monthly' as const },
+    { url: '/pdf-merger', priority: 0.6, changeFrequency: 'monthly' as const },
+    { url: '/pdf-compressor', priority: 0.6, changeFrequency: 'monthly' as const },
+    { url: '/pdf-to-jpg', priority: 0.6, changeFrequency: 'monthly' as const },
+    { url: '/jpg-to-pdf', priority: 0.6, changeFrequency: 'monthly' as const },
+    { url: '/pdf-splitter', priority: 0.6, changeFrequency: 'monthly' as const },
+    { url: '/qr-code-generator', priority: 0.6, changeFrequency: 'monthly' as const },
   ]
 
   // Comparison pages - SEO competitive pages
@@ -69,7 +70,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const trustPages = [
     { url: '/security', priority: 0.8, changeFrequency: 'monthly' as const },
     { url: '/help', priority: 0.7, changeFrequency: 'weekly' as const },
-    { url: '/templates', priority: 0.8, changeFrequency: 'weekly' as const },
   ]
 
   // Blog and content pages
@@ -102,7 +102,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return allPages.map((page) => ({
     url: `${baseUrl}${page.url}`,
-    lastModified: currentDate,
+    lastModified: lastUpdate,
     changeFrequency: page.changeFrequency,
     priority: page.priority,
   }))

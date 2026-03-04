@@ -1,14 +1,15 @@
 {
-  "name": "Whatstask",
-  "short_name": "Whatstask",
+  "name": "WhatsTask",
+  "short_name": "WhatsTask",
+  "description": "Manage tasks, track time, collaborate — all inside Telegram",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
-      "sizes": "192x192",
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
       "type": "image/png"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "/logo.png",
       "sizes": "512x512",
       "type": "image/png"
     }

@@ -61,7 +61,7 @@ export default function SmallTeamsSolutionPage() {
     },
     {
       title: "Actually Affordable",
-      description: "Free for basic use. Pro is $4.99/user/month. A team of 5? That's less than one coffee run.",
+      description: "Free for basic use. Pro is 250 Stars/month (~$5). A team of 5? That's less than one coffee run.",
     },
     {
       title: "Built for Small Teams",

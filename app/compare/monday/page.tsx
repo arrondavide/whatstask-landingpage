@@ -30,12 +30,12 @@ export const metadata: Metadata = {
 
 export default function MondayComparisonPage() {
   const comparison = [
-    { feature: "AI Features", whatstask: "Free", monday: "$12/seat/month", winner: "whatstask" },
+    { feature: "AI Features", whatstask: "5/day free, 50 Pro", monday: "$12/seat/month", winner: "whatstask" },
     { feature: "Setup Time", whatstask: "30 seconds", monday: "Hours to days", winner: "whatstask" },
     { feature: "Time Tracking", whatstask: "Built-in free", monday: "Add-on required", winner: "whatstask" },
     { feature: "Learning Curve", whatstask: "Minimal", monday: "Moderate", winner: "whatstask" },
     { feature: "Mobile Experience", whatstask: "Mobile-first", monday: "Desktop-first", winner: "whatstask" },
-    { feature: "Free Tier", whatstask: "Generous", monday: "Very limited", winner: "whatstask" },
+    { feature: "Free Tier", whatstask: "3 projects, 5 seats", monday: "Very limited", winner: "whatstask" },
     { feature: "Pricing Transparency", whatstask: "Simple", monday: "Complex tiers", winner: "whatstask" },
     { feature: "Integrations", whatstask: "Growing", monday: "200+", winner: "monday" },
     { feature: "Automations", whatstask: "Basic", monday: "Extensive", winner: "monday" },
@@ -44,7 +44,7 @@ export default function MondayComparisonPage() {
   ]
 
   const keyDifferences = [
-    { title: "AI Pricing", monday: "$12/seat/month extra", whatstask: "Included free" },
+    { title: "AI Pricing", monday: "$12/seat/month extra", whatstask: "5/day free, 50/day Pro" },
     { title: "Time Tracking", monday: "Requires add-on", whatstask: "Built-in free" },
     { title: "Getting Started", monday: "Complex setup", whatstask: "30 seconds" },
   ]
@@ -189,7 +189,7 @@ export default function MondayComparisonPage() {
                 ))}
                 <div className="flex justify-between items-center p-4 border border-violet-500/50 bg-violet-500/10 rounded-xl">
                   <span className="text-white font-medium">Whatstask Pro (flat)</span>
-                  <span className="text-white font-medium">$4.99/month (AI included)</span>
+                  <span className="text-white font-medium">250 Stars/month (~$5, AI included)</span>
                 </div>
               </div>
             </div>

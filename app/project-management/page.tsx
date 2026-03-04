@@ -19,9 +19,9 @@ import Navigation from "@/components/navigation"
 import Script from "next/script"
 
 export const metadata: Metadata = {
-  title: "Project Management - Simple, AI-Powered Task Management | Whatstask",
+  title: "AI Project Management in Telegram: Free Tier + Pro Plans | WhatsTask",
   description:
-    "Project management that actually works. 4 views, free AI features, built-in time tracking. Works instantly in Telegram. For teams of any size - from freelancers to enterprises.",
+    "Project management in Telegram. 2 views on free tier (List + Kanban), 5 on Pro. AI task creation included. Time tracking built in. Free tier + Pro with Telegram Stars.",
   keywords: [
     "project management",
     "task management",
@@ -81,9 +81,9 @@ export default function ProjectManagementPage() {
   const capabilities = [
     {
       icon: Brain,
-      title: "Free AI Features",
+      title: "AI Features (5/day Free, 50/day Pro)",
       description:
-        "Natural language task creation, smart suggestions, daily digest, and risk detection. No $28/user fees.",
+        "Natural language task creation, smart suggestions, daily digest, and risk detection. Free tier: 5/day. Pro: 50/day. Business: 200/day.",
       highlight: true,
     },
     {
@@ -118,7 +118,7 @@ export default function ProjectManagementPage() {
     { feature: "Kanban Board", whatstask: true, clickup: true, monday: true, asana: true },
     { feature: "Calendar View", whatstask: true, clickup: true, monday: true, asana: true },
     { feature: "Timeline/Gantt", whatstask: true, clickup: true, monday: "Paid", asana: true },
-    { feature: "AI Task Creation", whatstask: "Free", clickup: "$28/user", monday: "$12/seat", asana: "Enterprise" },
+    { feature: "AI Task Creation", whatstask: "5/day free", clickup: "$28/user", monday: "$12/seat", asana: "Enterprise" },
     { feature: "Time Tracking", whatstask: "Built-in", clickup: true, monday: "Add-on", asana: "Add-on" },
     { feature: "Mobile-First", whatstask: true, clickup: false, monday: false, asana: false },
     { feature: "No App Download", whatstask: true, clickup: false, monday: false, asana: false },
@@ -136,11 +136,11 @@ export default function ProjectManagementPage() {
             <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Project Management</p>
 
             <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white">
-              Project management that gets out of your way
+              Free AI Project Management with Time Tracking & Collaboration
             </h1>
 
             <p className="text-xl text-neutral-400 mb-4 leading-relaxed font-light">
-              4 views. Free AI. Built-in time tracking. No complexity.
+              2 views free (List + Kanban). 5 views on Pro. AI included. Time tracking built in.
             </p>
             <p className="text-lg text-neutral-500 mb-10">
               Works for a 2-person startup or a 2000-person enterprise. Same simplicity.
@@ -192,9 +192,9 @@ export default function ProjectManagementPage() {
           <section className="mb-20">
             <div className="text-center mb-12">
               <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Views</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">4 views. That's it.</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">2 Views Free, 5 Views on Pro</h2>
               <p className="text-neutral-400 text-lg font-light">
-                Every feature earns its place. If it doesn't help you finish work, it doesn't exist.
+                Free tier: List + Kanban. Pro adds Table, Calendar, and Timeline views.
               </p>
             </div>
 

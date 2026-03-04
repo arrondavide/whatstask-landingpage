@@ -6,7 +6,6 @@ import { FileText, CheckCircle, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import PageLoader from "@/components/page-loader"
 import Navigation from "@/components/navigation"
-import Script from "next/script"
 
 interface ToolPageProps {
   toolName: string
@@ -125,26 +124,10 @@ export default function ToolPageTemplate({
     <>
       <PageLoader />
 
-      <Script
-        id={`schema-howto-${toolSlug}`}
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <Script
-        id={`schema-faq-${toolSlug}`}
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <Script
-        id={`schema-software-${toolSlug}`}
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
-      />
-      <Script
-        id={`schema-breadcrumb-${toolSlug}`}
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <Navigation variant="dark" />
       <div className="min-h-screen bg-[#0a0a0a] text-white pt-16">

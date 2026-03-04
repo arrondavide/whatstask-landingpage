@@ -41,7 +41,7 @@ export default function WhatstaskVsTodoistPage() {
     { category: "Subtasks & Checklists", whatstask: "Full support", todoist: "Full support", winner: "tie" },
     { category: "Analytics Dashboard", whatstask: "Personal & team time tracking metrics", todoist: "Karma points & productivity trends", winner: "tie" },
     { category: "Platform", whatstask: "Works in Telegram (no app needed)", todoist: "Dedicated app required", winner: "whatstask" },
-    { category: "Pricing", whatstask: "Free + $4.99/mo Pro", todoist: "Free + $4/mo Pro + $6/mo Business", winner: "tie" },
+    { category: "Pricing", whatstask: "Free + 250 Stars/mo Pro (~$5)", todoist: "Free + $4/mo Pro + $6/mo Business", winner: "tie" },
     { category: "Setup Time", whatstask: "Less than 60 seconds", todoist: "~5 minutes (download, signup, setup)", winner: "whatstask" },
     { category: "Integrations", whatstask: "Telegram ecosystem", todoist: "1000+ app integrations", winner: "todoist" },
     { category: "Task Organization", whatstask: "Categories, tags, companies", todoist: "Projects, sections, labels, filters", winner: "todoist" },
@@ -321,7 +321,7 @@ export default function WhatstaskVsTodoistPage() {
                   name: "Which is cheaper: Whatstask or Todoist?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Both have similar pricing. Whatstask Pro is $4.99/month, while Todoist Pro is $4/month. Whatstask includes free PDF tools which adds extra value. Both offer generous free tiers.",
+                    text: "Both have competitive pricing. Whatstask Pro is 250 Telegram Stars/month (~$5), while Todoist Pro is $4/month. Whatstask includes free PDF tools which adds extra value. Both offer generous free tiers.",
                   },
                 },
               ],

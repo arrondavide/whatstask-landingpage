@@ -7,7 +7,7 @@ import Script from "next/script"
 import { Check, X } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Features - Task Management, Time Tracking & Teams | Whatstask",
+  title: "WhatsTask Features: Task Management, Time Tracking & Team Collaboration",
   description:
     "Complete task management with subtasks, built-in time tracking, 3-tier team roles, multi-company workspaces, and real-time analytics. All in Telegram. Start free →",
   keywords:
@@ -110,7 +110,7 @@ export default function FeaturesPage() {
           <section className="text-center mb-20">
             <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Features</p>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white">
-              Complete work management
+              WhatsTask Features: Task Management, Time Tracking, Collaboration
             </h1>
             <p className="text-xl text-neutral-400 max-w-2xl mx-auto font-light">
               Task management, time tracking, team collaboration, and analytics. Everything you need, nothing you don't.
@@ -121,8 +121,8 @@ export default function FeaturesPage() {
           <section className="mb-24">
             <div className="grid md:grid-cols-3 gap-px bg-white/10 rounded-2xl overflow-hidden">
               {[
-                { stat: "4", label: "Views (all you need)" },
-                { stat: "Free", label: "AI task creation" },
+                { stat: "5", label: "Views (2 free, 5 on Pro)" },
+                { stat: "Included", label: "AI task creation (5/day free)" },
                 { stat: "30s", label: "To get started" },
               ].map((item, index) => (
                 <div key={index} className="bg-[#111] p-10 text-center">
@@ -161,7 +161,7 @@ export default function FeaturesPage() {
           <section className="mt-24 mb-24">
             <div className="text-center mb-12">
               <p className="text-xs uppercase tracking-widest text-violet-400 mb-4">Comparison</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">Whatstask vs Traditional Apps</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">WhatsTask vs Traditional Project Management Software</h2>
             </div>
 
             <div className="border border-white/10 rounded-2xl overflow-hidden">
