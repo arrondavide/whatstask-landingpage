@@ -75,15 +75,15 @@ export default function HomeClient() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                {/* Badge */}
+                {/* Simple Scales Badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8">
                   <div className="w-2 h-2 rounded-full bg-violet-500 animate-pulse" />
-                  <span className="text-white/70 text-sm font-medium tracking-wide">AI Task Management for Telegram</span>
+                  <span className="text-white/70 text-sm font-medium tracking-wide">Simple Scales</span>
                 </div>
 
                 {/* Main Headline */}
                 <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-[1.05] tracking-tight mb-8 text-white">
-                  Free AI Project
+                  AI Project
                   <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/60">Management</span>
                 </h1>
@@ -123,7 +123,7 @@ export default function HomeClient() {
               >
                 <span className="flex items-center gap-2">
                   <div className="w-1 h-1 rounded-full bg-green-500" />
-                  Free tier included
+                  Free forever tier
                 </span>
                 <span className="flex items-center gap-2">
                   <div className="w-1 h-1 rounded-full bg-green-500" />
