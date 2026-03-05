@@ -242,6 +242,63 @@ export default function HomePage() {
           }),
         }}
       />
+
+      {/* SiteNavigationElement Schema — helps Google understand nav structure for Sitelinks */}
+      <Script
+        id="schema-sitenav"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "WhatsTask Site Navigation",
+            itemListElement: [
+              {
+                "@type": "SiteNavigationElement",
+                position: 1,
+                name: "Features",
+                description: "Task management, time tracking, team collaboration, and analytics",
+                url: "https://www.whatstask.com/features",
+              },
+              {
+                "@type": "SiteNavigationElement",
+                position: 2,
+                name: "Pricing",
+                description: "Free tier, Pro 250 Stars/mo, Business 500 Stars/mo",
+                url: "https://www.whatstask.com/pricing",
+              },
+              {
+                "@type": "SiteNavigationElement",
+                position: 3,
+                name: "How It Works",
+                description: "Set up WhatsTask in Telegram in 4 simple steps",
+                url: "https://www.whatstask.com/how-it-works",
+              },
+              {
+                "@type": "SiteNavigationElement",
+                position: 4,
+                name: "Project Management",
+                description: "AI project management with views, time tracking and collaboration",
+                url: "https://www.whatstask.com/project-management",
+              },
+              {
+                "@type": "SiteNavigationElement",
+                position: 5,
+                name: "PM Connect",
+                description: "Bridge Monday.com, ClickUp and Asana to Telegram field workers",
+                url: "https://www.whatstask.com/pm-connect",
+              },
+              {
+                "@type": "SiteNavigationElement",
+                position: 6,
+                name: "GEO Analyzer",
+                description: "Analyze how AI search engines see your website",
+                url: "https://www.whatstask.com/geoanalyzer",
+              },
+            ],
+          }),
+        }}
+      />
     </>
   )
 }
