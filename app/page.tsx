@@ -128,6 +128,7 @@ export default function HomePage() {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
             name: "WhatsTask",
+            image: "https://www.whatstask.com/og-image.png",
             applicationCategory: "BusinessApplication",
             applicationSubCategory: "Project Management Software",
             operatingSystem: "Web, Telegram, iOS, Android",

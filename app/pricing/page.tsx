@@ -522,6 +522,7 @@ export default function PricingPage() {
               "@type": "Product",
               name: "WhatsTask",
               description: "AI-powered project management in Telegram",
+              image: "https://www.whatstask.com/og-image.png",
               brand: {
                 "@type": "Brand",
                 name: "WhatsTask",

@@ -71,6 +71,7 @@ export default function ToolPageTemplate({
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: toolName,
+    image: "https://www.whatstask.com/og-image.png",
     applicationCategory: "UtilitiesApplication",
     operatingSystem: "Web Browser",
     offers: {
