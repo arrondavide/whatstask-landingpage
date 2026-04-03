@@ -46,6 +46,7 @@ export default function IPProofPage() {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
             name: "WhatsTask IP Proof",
+            image: "https://www.whatstask.com/og-image.png",
             description: "Blockchain-powered proof of creation service using Bitcoin and OpenTimestamps",
             applicationCategory: "SecurityApplication",
             operatingSystem: "Web, Telegram",
@@ -53,6 +54,7 @@ export default function IPProofPage() {
               "@type": "Offer",
               price: "0",
               priceCurrency: "USD",
+              availability: "https://schema.org/InStock",
             },
             creator: {
               "@type": "Organization",

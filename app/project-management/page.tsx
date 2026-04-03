@@ -405,6 +405,7 @@ export default function ProjectManagementPage() {
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
             name: "Whatstask Project Management",
+            image: "https://www.whatstask.com/og-image.png",
             applicationCategory: "BusinessApplication",
             applicationSubCategory: "Project Management Software",
             operatingSystem: "Telegram Mini App, Web",
@@ -412,6 +413,7 @@ export default function ProjectManagementPage() {
               "@type": "Offer",
               price: "0",
               priceCurrency: "USD",
+              availability: "https://schema.org/InStock",
             },
             description:
               "Simple project management with 4 views, free AI features, and built-in time tracking. Works instantly in Telegram.",

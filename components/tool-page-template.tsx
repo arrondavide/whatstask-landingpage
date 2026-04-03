@@ -78,6 +78,7 @@ export default function ToolPageTemplate({
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
     },
     description: shortDescription,
     featureList: features,

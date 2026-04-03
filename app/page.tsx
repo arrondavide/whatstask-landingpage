@@ -138,21 +138,24 @@ export default function HomePage() {
                 name: "Free",
                 price: "0",
                 priceCurrency: "USD",
-                description: "3 projects, 5 seats, 5 AI queries/day"
+                description: "3 projects, 5 seats, 5 AI queries/day",
+                availability: "https://schema.org/InStock"
               },
               {
                 "@type": "Offer",
                 name: "Pro",
                 price: "5",
                 priceCurrency: "USD",
-                description: "Unlimited projects, 15 seats, 50 AI queries/day (250 Telegram Stars/month)"
+                description: "Unlimited projects, 15 seats, 50 AI queries/day (250 Telegram Stars/month)",
+                availability: "https://schema.org/InStock"
               },
               {
                 "@type": "Offer",
                 name: "Business",
                 price: "10",
                 priceCurrency: "USD",
-                description: "50 seats, 200 AI queries/day (500 Telegram Stars/month)"
+                description: "50 seats, 200 AI queries/day (500 Telegram Stars/month)",
+                availability: "https://schema.org/InStock"
               }
             ],
             description: "AI-powered project management that runs inside Telegram. Upload documents, create tasks with AI, manage teams, track time.",

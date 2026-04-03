@@ -534,6 +534,22 @@ export default function PricingPage() {
                   price: "0",
                   priceCurrency: "USD",
                   description: "3 projects, 5 seats, 5 AI queries/day",
+                  availability: "https://schema.org/InStock",
+                  hasMerchantReturnPolicy: {
+                    "@type": "MerchantReturnPolicy",
+                    applicableCountry: "US",
+                    returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+                  },
+                  shippingDetails: {
+                    "@type": "OfferShippingDetails",
+                    shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
+                    shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
+                    deliveryTime: {
+                      "@type": "ShippingDeliveryTime",
+                      handlingTime: { "@type": "QuantitativeValue", minValue: "0", maxValue: "0", unitCode: "d" },
+                      transitTime: { "@type": "QuantitativeValue", minValue: "0", maxValue: "0", unitCode: "d" },
+                    },
+                  },
                 },
                 {
                   "@type": "Offer",
@@ -541,6 +557,22 @@ export default function PricingPage() {
                   price: "5",
                   priceCurrency: "USD",
                   description: "Unlimited projects, 15 seats, 50 AI queries/day (250 Telegram Stars/month)",
+                  availability: "https://schema.org/InStock",
+                  hasMerchantReturnPolicy: {
+                    "@type": "MerchantReturnPolicy",
+                    applicableCountry: "US",
+                    returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+                  },
+                  shippingDetails: {
+                    "@type": "OfferShippingDetails",
+                    shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
+                    shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
+                    deliveryTime: {
+                      "@type": "ShippingDeliveryTime",
+                      handlingTime: { "@type": "QuantitativeValue", minValue: "0", maxValue: "0", unitCode: "d" },
+                      transitTime: { "@type": "QuantitativeValue", minValue: "0", maxValue: "0", unitCode: "d" },
+                    },
+                  },
                 },
                 {
                   "@type": "Offer",
@@ -548,6 +580,22 @@ export default function PricingPage() {
                   price: "10",
                   priceCurrency: "USD",
                   description: "50 seats, 200 AI queries/day, automations (500 Telegram Stars/month)",
+                  availability: "https://schema.org/InStock",
+                  hasMerchantReturnPolicy: {
+                    "@type": "MerchantReturnPolicy",
+                    applicableCountry: "US",
+                    returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+                  },
+                  shippingDetails: {
+                    "@type": "OfferShippingDetails",
+                    shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" },
+                    shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" },
+                    deliveryTime: {
+                      "@type": "ShippingDeliveryTime",
+                      handlingTime: { "@type": "QuantitativeValue", minValue: "0", maxValue: "0", unitCode: "d" },
+                      transitTime: { "@type": "QuantitativeValue", minValue: "0", maxValue: "0", unitCode: "d" },
+                    },
+                  },
                 },
               ],
             }),

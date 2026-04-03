@@ -20,7 +20,6 @@ import Link from "next/link"
 import Image from "next/image"
 import PageLoader from "@/components/page-loader"
 import Grainient from "@/components/grainient"
-import Script from "next/script"
 
 const features = [
   {
@@ -154,12 +153,14 @@ export default function GeoAnalyzerClient() {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: "GEO Analyzer",
+    image: "https://www.whatstask.com/og-image.png",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web Browser",
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
     },
     description:
       "Free Generative Engine Optimization tool to analyze and optimize content for AI-powered search engines like ChatGPT, Google SGE, and Perplexity.",
@@ -232,19 +233,10 @@ export default function GeoAnalyzerClient() {
     <>
       <PageLoader />
 
-      <Script
-        id="schema-product"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
-      />
-      <Script id="schema-faq" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <Script
-        id="schema-organization"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <Script
-        id="schema-breadcrumb"
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />

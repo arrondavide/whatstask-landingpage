@@ -569,6 +569,7 @@ export default function PMConnectPage() {
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
               name: "WhatsTask PM Connect",
+              image: "https://www.whatstask.com/og-image.png",
               description: "Bridge your PM tools (Monday.com, ClickUp, Asana, Trello) to Telegram workers.",
               applicationCategory: "BusinessApplication",
               operatingSystem: "Telegram",
@@ -576,6 +577,7 @@ export default function PMConnectPage() {
                 "@type": "Offer",
                 price: "0",
                 priceCurrency: "USD",
+                availability: "https://schema.org/InStock",
               },
             }),
           }}
