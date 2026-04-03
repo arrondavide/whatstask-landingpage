@@ -41,95 +41,68 @@ export default function ToolPageTemplate({
   relatedTools,
   iframeSource,
 }: ToolPageProps) {
-  const howToSchema = {
+  const graphSchema = {
     "@context": "https://schema.org",
-    "@type": "HowTo",
-    name: `How to use ${toolName}`,
-    description: shortDescription,
-    step: steps.map((step) => ({
-      "@type": "HowToStep",
-      name: step.title,
-      text: step.description,
-      position: step.number,
-    })),
-  }
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  }
-
-  const softwareSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: toolName,
-    image: "https://www.whatstask.com/og-image.png",
-    applicationCategory: "UtilitiesApplication",
-    operatingSystem: "Web Browser",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-    },
-    description: shortDescription,
-    featureList: features,
-    url: `https://www.whatstask.com/${toolSlug}`,
-    provider: {
-      "@type": "Organization",
-      name: "Whatstask",
-      url: "https://www.whatstask.com"
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      ratingCount: "512",
-      bestRating: "5",
-      worstRating: "1"
-    }
-  }
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
+    "@graph": [
       {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://www.whatstask.com"
+        "@type": "HowTo",
+        name: `How to use ${toolName}`,
+        description: shortDescription,
+        step: steps.map((step) => ({
+          "@type": "HowToStep",
+          name: step.title,
+          text: step.description,
+          position: step.number,
+        })),
       },
       {
-        "@type": "ListItem",
-        position: 2,
-        name: "Tools",
-        item: "https://www.whatstask.com/tools"
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
       },
       {
-        "@type": "ListItem",
-        position: 3,
+        "@type": "SoftwareApplication",
         name: toolName,
-        item: `https://www.whatstask.com/${toolSlug}`
-      }
-    ]
+        image: "https://www.whatstask.com/og-image.png",
+        applicationCategory: "UtilitiesApplication",
+        operatingSystem: "Web Browser",
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+        },
+        description: shortDescription,
+        featureList: features,
+        url: `https://www.whatstask.com/${toolSlug}`,
+        provider: {
+          "@type": "Organization",
+          name: "Whatstask",
+          url: "https://www.whatstask.com",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.whatstask.com" },
+          { "@type": "ListItem", position: 2, name: "Tools", item: "https://www.whatstask.com/tools" },
+          { "@type": "ListItem", position: 3, name: toolName, item: `https://www.whatstask.com/${toolSlug}` },
+        ],
+      },
+    ],
   }
 
   return (
     <>
       <PageLoader />
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(graphSchema) }} />
 
       <Navigation variant="dark" />
       <div className="min-h-screen bg-[#0a0a0a] text-white pt-16">
