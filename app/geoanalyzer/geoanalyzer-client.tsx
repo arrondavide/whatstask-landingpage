@@ -161,6 +161,8 @@ export default function GeoAnalyzerClient() {
       price: "0",
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
+      hasMerchantReturnPolicy: { "@type": "MerchantReturnPolicy", applicableCountry: "US", returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted" },
+      shippingDetails: { "@type": "OfferShippingDetails", shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" }, shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" }, deliveryTime: { "@type": "ShippingDeliveryTime", handlingTime: { "@type": "QuantitativeValue", minValue: "0", maxValue: "0", unitCode: "d" }, transitTime: { "@type": "QuantitativeValue", minValue: "0", maxValue: "0", unitCode: "d" } } },
     },
     description:
       "Free Generative Engine Optimization tool to analyze and optimize content for AI-powered search engines like ChatGPT, Google SGE, and Perplexity.",

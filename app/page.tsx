@@ -139,7 +139,9 @@ export default function HomePage() {
                 price: "0",
                 priceCurrency: "USD",
                 description: "3 projects, 5 seats, 5 AI queries/day",
-                availability: "https://schema.org/InStock"
+                availability: "https://schema.org/InStock",
+                hasMerchantReturnPolicy: { "@type": "MerchantReturnPolicy", applicableCountry: "US", returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted" },
+                shippingDetails: { "@type": "OfferShippingDetails", shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" }, shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" }, deliveryTime: { "@type": "ShippingDeliveryTime", handlingTime: { "@type": "QuantitativeValue", minValue: "0", maxValue: "0", unitCode: "d" }, transitTime: { "@type": "QuantitativeValue", minValue: "0", maxValue: "0", unitCode: "d" } } }
               },
               {
                 "@type": "Offer",
@@ -147,7 +149,9 @@ export default function HomePage() {
                 price: "5",
                 priceCurrency: "USD",
                 description: "Unlimited projects, 15 seats, 50 AI queries/day (250 Telegram Stars/month)",
-                availability: "https://schema.org/InStock"
+                availability: "https://schema.org/InStock",
+                hasMerchantReturnPolicy: { "@type": "MerchantReturnPolicy", applicableCountry: "US", returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted" },
+                shippingDetails: { "@type": "OfferShippingDetails", shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" }, shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" }, deliveryTime: { "@type": "ShippingDeliveryTime", handlingTime: { "@type": "QuantitativeValue", minValue: "0", maxValue: "0", unitCode: "d" }, transitTime: { "@type": "QuantitativeValue", minValue: "0", maxValue: "0", unitCode: "d" } } }
               },
               {
                 "@type": "Offer",
@@ -155,7 +159,9 @@ export default function HomePage() {
                 price: "10",
                 priceCurrency: "USD",
                 description: "50 seats, 200 AI queries/day (500 Telegram Stars/month)",
-                availability: "https://schema.org/InStock"
+                availability: "https://schema.org/InStock",
+                hasMerchantReturnPolicy: { "@type": "MerchantReturnPolicy", applicableCountry: "US", returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted" },
+                shippingDetails: { "@type": "OfferShippingDetails", shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "USD" }, shippingDestination: { "@type": "DefinedRegion", addressCountry: "US" }, deliveryTime: { "@type": "ShippingDeliveryTime", handlingTime: { "@type": "QuantitativeValue", minValue: "0", maxValue: "0", unitCode: "d" }, transitTime: { "@type": "QuantitativeValue", minValue: "0", maxValue: "0", unitCode: "d" } } }
               }
             ],
             description: "AI-powered project management that runs inside Telegram. Upload documents, create tasks with AI, manage teams, track time.",
@@ -288,13 +294,20 @@ export default function HomePage() {
               {
                 "@type": "SiteNavigationElement",
                 position: 5,
+                name: "CRM",
+                description: "Custom records, pipelines, team chat, and document templates for service businesses",
+                url: "https://www.whatstask.com/crm",
+              },
+              {
+                "@type": "SiteNavigationElement",
+                position: 6,
                 name: "PM Connect",
                 description: "Bridge Monday.com, ClickUp and Asana to Telegram field workers",
                 url: "https://www.whatstask.com/pm-connect",
               },
               {
                 "@type": "SiteNavigationElement",
-                position: 6,
+                position: 7,
                 name: "GEO Analyzer",
                 description: "Analyze how AI search engines see your website",
                 url: "https://www.whatstask.com/geoanalyzer",

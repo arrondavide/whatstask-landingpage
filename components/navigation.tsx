@@ -102,8 +102,9 @@ export default function Navigation({ variant = 'dark' }: NavigationProps) {
 
       {/* Integrations Column */}
       <div>
-        <h3 className={`text-xs font-semibold uppercase tracking-[0.15em] mb-4 ${scrolled ? 'text-neutral-400' : 'text-neutral-500'}`}>Integrations</h3>
+        <h3 className={`text-xs font-semibold uppercase tracking-[0.15em] mb-4 ${scrolled ? 'text-neutral-400' : 'text-neutral-500'}`}>Products</h3>
         <div className="space-y-1">
+          <DropdownLink href="/crm" title="CRM" description="Records, pipelines, documents" highlight dark={!scrolled} />
           <DropdownLink href="/pm-connect" title="PM Connect" description="Bridge Monday, ClickUp to Telegram" highlight dark={!scrolled} />
           <DropdownLink href="/developers" title="Developer API" description="Send notifications from any app" highlight dark={!scrolled} />
         </div>
